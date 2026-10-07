@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "status": "success",
+  "operation": "ppt.publish",
+  "kind": "ppt",
+  "page_count": 10,
+  "total_pages": 10,
+  "artifacts": [
+    {
+      "kind": "ppt",
+      "artifact_id": "2095587561665556480",
+      "artifact_version_id": "2095587561673945088",
+      "version": 1,
+      "status": "published",
+      "artifact_type": "presentation",
+      "file_type": "gen_ppt",
+      "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/03/upl_dc0cc7cb260a4a9ba758423145150e5f/ppt-urok_01_shcho_take_ai.zip",
+      "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_f503dba9c94e419f93bad96966319310/preview.png"
+    }
+  ],
+  "delivery": {
+    "artifact_id": "2095587561665556480",
+    "artifact_version_id": "2095587561673945088",
+    "version": 1,
+    "title": "Що таке AI насправді?",
+    "artifact_type": "presentation",
+    "file_type": "gen_ppt",
+    "page_count": 10,
+    "locator_items": [
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_b74b5eaafaa64017bf36065d7d1d5f77/1.html",
+        "index": 1,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_e40818f2503d4499b2740aee49152c6b/2.html",
+        "index": 2,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_8717797de4c947ab810e51f1685002d3/3.html",
+        "index": 3,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_db5ddb55c1fa4e84b8dde4c7c7ac3f05/4.html",
+        "index": 4,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_6950741a4e3449989e4677f85c8ad042/5.html",
+        "index": 5,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_4bc88e4f8d2f4c7c93cac053b4913d4d/6.html",
+        "index": 6,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_5f30ec9fdf0b41068559e1c42f0d5f5c/7.html",
+        "index": 7,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_6f9dcefc000548ceb146e4b24b0d4ea1/8.html",
+        "index": 8,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_232c43c72c1d4ddfa2c162cbfd5e1a63/9.html",
+        "index": 9,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_ebfda979ebb344adb0470bff3e9d86a5/10.html",
+        "index": 10,
+        "notes": ""
+      }
+    ],
+    "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/03/upl_dc0cc7cb260a4a9ba758423145150e5f/ppt-urok_01_shcho_take_ai.zip",
+    "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_f503dba9c94e419f93bad96966319310/preview.png",
+    "ppt_style": "html",
+    "metadata": {
+      "artifact_complete": true,
+      "delivery_status": "complete_published",
+      "failed_pages": null,
+      "generation_status": "success",
+      "image_model_used": "",
+      "image_models_used": [],
+      "is_nano_ppt": false,
+      "language": "Ukrainian",
+      "operation_id": "urok_01_shcho_take_ai",
+      "page_aspect_ratio": "16:9",
+      "page_height": 720,
+      "page_size": "1280_720",
+      "page_width": 1280,
+      "ppt_style": "html",
+      "prepared_state_id": "pps_a3512c10844f921b0b513bf3845b9a94",
+      "prepared_state_version": 1,
+      "publish_mode": "complete",
+      "render_mode": "html",
+      "resume_supported": false,
+      "stop_reason": "",
+      "style": "html",
+      "success_pages": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "total_pages": 10,
+      "used_nano_banana": false
+    }
+  },
+  "deliveryStatus": "complete_published",
+  "idempotency_key_hash": "ab2163895baf6aa6",
+  "pre_refresh_path": "ppt/urok_01_shcho_take_ai/.artifact/pre_refresh/v1",
+  "timing": {
+    "started_at": "2026-09-03T18:59:37.762475381Z",
+    "completed_at": "2026-09-03T18:59:43.885520835Z",
+    "duration_ms": 6123
+  },
+  "bundle_hash": "d502690a0f6fc3e17160ba78024041057b90deecee6ee149dd1285f4af278450"
+}

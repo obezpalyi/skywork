@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Workflow DEV-2: від вимог до плану впровадження</title>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+  :root {
+    --ppt-bg: #FDFDFD;
+    --ppt-bg-soft: #F4F7F6;
+    --ppt-surface: #FFFFFF;
+    --ppt-surface-2: #E9EFED;
+    --ppt-border: #D1D9D7;
+    --ppt-text-1: #121417;
+    --ppt-text-2: #4A5552;
+    --ppt-text-3: #879491;
+    --ppt-accent: #007A5E;
+    --ppt-accent-2: #00D3A4;
+    --ppt-chart-1: #007A5E;
+    --ppt-chart-2: #00D3A4;
+    --ppt-chart-3: #121417;
+    --ppt-chart-4: #879491;
+    --ppt-good: #107C10;
+    --ppt-warn: #D83B01;
+    --ppt-bad: #A80000;
+    --ppt-radius-sm: 2px;
+    --ppt-radius-md: 4px;
+    --ppt-radius-lg: 8px;
+    --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+    --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+    --ppt-font-display: "Inter", sans-serif;
+    --ppt-font-body: "Inter", sans-serif;
+    --ppt-font-mono: "JetBrains Mono", monospace;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {width: 1280px; height: 720px; overflow: hidden;   
+    background: transparent;
+    font-family: var(--ppt-font-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .slide-root {
+    width: 1280px; height: 720px;
+    background: var(--ppt-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    
+    position: relative;
+  }
+
+  /* Non-Cover-Page Title Region */
+  .title-region {
+    margin-top: 36px;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .title-region-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .title-region-badge {
+    font-family: var(--ppt-font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ppt-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--ppt-surface-2);
+    padding: 4px 8px;
+    border-radius: var(--ppt-radius-sm);
+    white-space: nowrap;
+  }
+
+  .title-region-divider {
+    height: 1px;
+    flex-grow: 1;
+    background: var(--ppt-border);
+  }
+
+  .title-region-title {
+    margin: 0;
+    font-family: var(--ppt-font-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--ppt-text-1);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  /* Main content body - flex growth */
+  .workflow-dev2-body {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: row;
+    margin: 0 56px 32px 56px;
+    gap: 24px;
+    
+  }
+
+  /* Left column (dominant) - process steps */
+  .workflow-dev2-left-column {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .workflow-dev2-process-card {
+    background: var(--ppt-surface);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-lg);
+    padding: 20px 20px 16px 20px;
+    box-shadow: var(--ppt-shadow-soft);
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .workflow-dev2-process-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .workflow-dev2-process-icon {
+    font-size: 18px;
+    color: var(--ppt-accent);
+    width: 24px;
+    text-align: center;
+  }
+
+  .workflow-dev2-process-title {
+    font-family: var(--ppt-font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+    letter-spacing: -0.01em;
+  }
+
+  .workflow-dev2-process-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 0;
+  }
+
+  .workflow-dev2-process-list-item {
+    font-family: var(--ppt-font-body);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.4;
+    padding-left: 20px;
+    position: relative;
+    display: block;
+  }
+
+  .workflow-dev2-process-list-item::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--ppt-accent-2);
+    border-radius: 50%;
+  }
+
+  /* Right column (supporting) - checklist + ADR */
+  .workflow-dev2-right-column {
+    flex: 0 0 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .workflow-dev2-support-card {
+    background: var(--ppt-surface);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-lg);
+    padding: 18px 18px 14px 18px;
+    box-shadow: var(--ppt-shadow-soft);
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .workflow-dev2-support-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .workflow-dev2-support-icon {
+    font-size: 18px;
+    color: var(--ppt-accent);
+    width: 22px;
+    text-align: center;
+  }
+
+  .workflow-dev2-support-title {
+    font-family: var(--ppt-font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+    letter-spacing: -0.01em;
+  }
+
+  .workflow-dev2-support-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 0;
+  }
+
+  .workflow-dev2-support-list-item {
+    font-family: var(--ppt-font-body);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.4;
+    padding-left: 18px;
+    position: relative;
+    display: block;
+  }
+
+  .workflow-dev2-support-list-item::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    background: var(--ppt-accent);
+    border-radius: 1px;
+  }
+
+  .workflow-dev2-adr-note {
+    margin-top: 8px;
+    padding: 10px 12px;
+    background: var(--ppt-bg-soft);
+    border-left: 3px solid var(--ppt-accent);
+    border-radius: 0 var(--ppt-radius-sm) var(--ppt-radius-sm) 0;
+    font-family: var(--ppt-font-body);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.4;
+  }
+
+  .workflow-dev2-adr-note strong {
+    font-weight: 600;
+    color: var(--ppt-text-1);
+  }
+
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+<div class="slide-root">
+  <!-- Title Region (fixed template) -->
+  <header class="title-region">
+    <div class="title-region-eyebrow-row">
+      <span class="title-region-badge">Developer Track</span>
+      <div class="title-region-divider"></div>
+    </div>
+    <h1 class="title-region-title">Workflow DEV-2: Від вимог до плану впровадження</h1>
+  </header>
+
+  <!-- Main content body -->
+  <div class="workflow-dev2-body">
+    <!-- Left column: 10-step process -->
+    <div class="workflow-dev2-left-column">
+      <div class="workflow-dev2-process-card">
+        <div class="workflow-dev2-process-header">
+          <i class="workflow-dev2-process-icon fa-solid fa-sitemap" aria-hidden="true"></i>
+          <span class="workflow-dev2-process-title">Алгоритм створення плану</span>
+        </div>
+        <ul class="workflow-dev2-process-list">
+          <li class="workflow-dev2-process-list-item">1. Визначити технічний результат із бізнес-вимог.</li>
+          <li class="workflow-dev2-process-list-item">2. Ідентифікувати зачеплені компоненти системи.</li>
+          <li class="workflow-dev2-process-list-item">3. Описати зміни кожного компонента.</li>
+          <li class="workflow-dev2-process-list-item">4. Специфікувати зміни API та подій.</li>
+          <li class="workflow-dev2-process-list-item">5. Визначити зміни моделі даних.</li>
+          <li class="workflow-dev2-process-list-item">6. Ідентифікувати залежності між сервісами.</li>
+          <li class="workflow-dev2-process-list-item">7. Створити технічні завдання (backlog).</li>
+          <li class="workflow-dev2-process-list-item">8. Додати сценарії відмов і відновлення.</li>
+          <li class="workflow-dev2-process-list-item">9. Сформувати чек-лист впровадження.</li>
+          <li class="workflow-dev2-process-list-item">10. Підготувати чернетку ADR за потреби.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right column: checklist + ADR -->
+    <div class="workflow-dev2-right-column">
+      <div class="workflow-dev2-support-card">
+        <div class="workflow-dev2-support-header">
+          <i class="workflow-dev2-support-icon fa-solid fa-clipboard-check" aria-hidden="true"></i>
+          <span class="workflow-dev2-support-title">Чек-лист впровадження</span>
+        </div>
+        <ul class="workflow-dev2-support-list">
+          <li class="workflow-dev2-support-list-item">Технічні завдання з контекстом і критеріями.</li>
+          <li class="workflow-dev2-support-list-item">Контракти API, даних і подій.</li>
+          <li class="workflow-dev2-support-list-item">Потрібні тести та документація.</li>
+          <li class="workflow-dev2-support-list-item">Власник і залежності кожного завдання.</li>
+        </ul>
+      </div>
+
+      <div class="workflow-dev2-support-card">
+        <div class="workflow-dev2-support-header">
+          <i class="workflow-dev2-support-icon fa-solid fa-file" aria-hidden="true"></i>
+          <span class="workflow-dev2-support-title">Чернетка ADR</span>
+        </div>
+        <div class="workflow-dev2-adr-note">
+          <strong>Xplore</strong> структурує порівняння варіантів; інженерний орган фіксує рішення.
+        </div>
+        <ul class="workflow-dev2-support-list" style="margin-top: 8px;">
+          <li class="workflow-dev2-support-list-item">Контекст і рушійні чинники.</li>
+          <li class="workflow-dev2-support-list-item">Варіанти та наслідки.</li>
+          <li class="workflow-dev2-support-list-item">Сумісність і операційні ефекти.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</body></html>

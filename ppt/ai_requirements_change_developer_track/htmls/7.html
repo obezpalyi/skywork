@@ -1,0 +1,409 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <title>Workflow DEV-1: від вимог до технічного уточнення</title>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+        :root {
+            --ppt-bg: #FDFDFD;
+            --ppt-bg-soft: #F4F7F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E9EFED;
+            --ppt-border: #D1D9D7;
+            --ppt-text-1: #121417;
+            --ppt-text-2: #4A5552;
+            --ppt-text-3: #879491;
+            --ppt-accent: #007A5E;
+            --ppt-accent-2: #00D3A4;
+            --ppt-chart-1: #007A5E;
+            --ppt-chart-2: #00D3A4;
+            --ppt-chart-3: #121417;
+            --ppt-chart-4: #879491;
+            --ppt-good: #107C10;
+            --ppt-warn: #D83B01;
+            --ppt-bad: #A80000;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+            --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+            --ppt-font-mono: "JetBrains Mono", monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .slide-root {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            
+            box-shadow: var(--ppt-shadow-strong);
+            position: relative;
+        }
+
+        /* Title Region — fixed cross-slide layout */
+        .title-region {
+            margin-top: 40px;
+            margin-left: 56px;
+            margin-right: 56px;
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .title-region-topline {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-track-label {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--ppt-surface-2);
+            padding: 4px 8px;
+            border-radius: var(--ppt-radius-sm);
+        }
+
+        .title-region-rule {
+            height: 1px;
+            flex-grow: 1;
+            background: var(--ppt-border);
+        }
+
+        .title-region-heading {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        /* Body region — flex growth fills remaining height */
+        .workflow-body {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            margin-left: 56px;
+            margin-right: 56px;
+            margin-bottom: 40px;
+            
+        }
+
+        /* Two-column asymmetric layout: left dominant workflow, right compact rail */
+        .dev1-workflow-layout {
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+            flex: 1 1 0;
+            align-items: stretch;
+            
+        }
+
+        /* Left column — workflow steps (dominant) */
+        .workflow-steps-left {
+            flex: 3 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            
+        }
+
+        .workflow-steps-panel {
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 20px 24px;
+            box-shadow: var(--ppt-shadow-soft);
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .workflow-steps-title {
+            font-family: var(--ppt-font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .workflow-steps-title i {
+            color: var(--ppt-accent);
+            font-size: 18px;
+        }
+
+        .workflow-step-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1 1 0;
+        }
+
+        .workflow-step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            line-height: 1.45;
+            color: var(--ppt-text-2);
+        }
+
+        .workflow-step-index {
+            font-family: var(--ppt-font-mono);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            background: var(--ppt-surface-2);
+            border-radius: var(--ppt-radius-sm);
+            padding: 2px 8px;
+            min-width: 32px;
+            text-align: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .workflow-step-text {
+            flex: 1;
+            font-weight: 400;
+        }
+
+        .workflow-step-text strong {
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }
+
+        /* Right column — acceptance criteria & questions (supporting rail) */
+        .supporting-rail-right {
+            flex: 2 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            
+        }
+
+        .rail-module {
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 18px 20px;
+            box-shadow: var(--ppt-shadow-soft);
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .rail-module-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--ppt-font-display);
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }
+
+        .rail-module-header i {
+            color: var(--ppt-accent);
+            font-size: 15px;
+        }
+
+        .rail-module-content {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--ppt-text-2);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1 1 0;
+        }
+
+        .rail-check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .rail-check-item i {
+            color: var(--ppt-accent);
+            font-size: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .rail-question-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .rail-question-item i {
+            color: var(--ppt-warn);
+            font-size: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .rail-note {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            color: var(--ppt-text-3);
+            border-left: 2px solid var(--ppt-accent-2);
+            padding-left: 10px;
+            margin-top: 4px;
+        }
+
+        /* No decorative lines, no page numbers, no absolute positioning */
+        .workflow-steps-panel,
+        .rail-module {
+            overflow: visible;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Non-Cover-Page Title Region (fixed structure) -->
+        <header class="title-region">
+            <div class="title-region-topline">
+                <span class="title-track-label">Developer Track</span>
+                <div class="title-region-rule"></div>
+            </div>
+            <h1 class="title-region-heading">Workflow DEV-1: від вимог до технічного уточнення</h1>
+        </header>
+
+        <!-- Body: asymmetric two-column composition -->
+        <div class="workflow-body">
+            <div class="dev1-workflow-layout" style="margin-bottom: 4px !important;">
+                <!-- Left dominant region: 8-step workflow -->
+                <div class="workflow-steps-left">
+                    <div class="workflow-steps-panel">
+                        <div class="workflow-steps-title">
+                            <i class="fa-solid fa-code-branch"></i> Кроки технічного уточнення
+                        </div>
+                        <ul class="workflow-step-list">
+                            <li class="workflow-step-item">
+                                <span class="workflow-step-index">1</span>
+                                <span class="workflow-step-text"><strong>Ідентифікувати технічні можливості</strong> — визначити, які можливості системи неявно вимагає бізнес-вимога.</span>
+                            </li>
+                            <li class="workflow-step-item">
+                                <span class="workflow-step-index">2</span>
+                                <span class="workflow-step-text"><strong>Мапування на компоненти</strong> — зіставити вимогу з поточними сервісами ServiceHub.</span>
+                            </li>
+                            <li class="workflow-step-item">
+                                <span class="workflow-step-index">3</span>
+                                <span class="workflow-step-text"><strong>Перевірити інтерфейси та обмеження даних</strong> — чи підтримують наявні контракти нові сценарії.</span>
+                            </li>
+                            <li class="workflow-step-item">
+                                <span class="workflow-step-index">4</span>
+                                <span class="workflow-step-text"><strong>Виявити прогалини продуктивності та безпеки</strong> — нефункціональні вимоги, що відсутні у завданні.</span>
+                            </li>
+                            <li class="workflow-step-item">
+                                <span class="workflow-step-index">5</span>
+                                <span class="workflow-step-text"><strong>Дослідити обробку помилок і відновлення</strong> — сценарії відмов та повторних спроб.</span>
+                            </li>
+                            <li class="workflow-step-item">
+                                <span class="workflow-step-index">6</span>
+                                <span class="workflow-step-text"><strong>Перевірити критерії прийнятності</strong> — усунути технічну неоднозначність у формулюваннях.</span>
+                            </li>
+                            <li class="workflow-step-item">
+                                <span class="workflow-step-index">7</span>
+                                <span class="workflow-step-text"><strong>Сформулювати запитання</strong> — для BA, QA, архітектора та DevOps.</span>
+                            </li>
+                            <li class="workflow-step-item">
+                                <span class="workflow-step-index">8</span>
+                                <span class="workflow-step-text"><strong>Призначити власників і рішення</strong> — визначити, хто ухвалює технічні рішення.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right supporting region: acceptance criteria + questions -->
+                <div class="supporting-rail-right">
+                    <!-- Acceptance criteria module -->
+                    <div class="rail-module">
+                        <div class="rail-module-header">
+                            <i class="fa-solid fa-circle-check"></i> Критерії прийнятності
+                        </div>
+                        <div class="rail-module-content">
+                            <div class="rail-check-item">
+                                <i class="fa-solid fa-check"></i> Технічно однозначні, без подвійних трактувань
+                            </div>
+                            <div class="rail-check-item">
+                                <i class="fa-solid fa-check"></i> Перевірні щодо поведінки, даних та інтерфейсів
+                            </div>
+                            <div class="rail-check-item">
+                                <i class="fa-solid fa-check"></i> Охоплюють помилки та граничні випадки
+                            </div>
+                            <div class="rail-check-item">
+                                <i class="fa-solid fa-check"></i> Відстежувані до бізнес-вимоги
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Questions module -->
+                    <div class="rail-module">
+                        <div class="rail-module-header">
+                            <i class="fa-solid fa-circle-question"></i> Запитання до стейкхолдерів
+                        </div>
+                        <div class="rail-module-content">
+                            <div class="rail-question-item">
+                                <i class="fa-solid fa-user-tie"></i> BA: який пріоритет має новий тип звернення?
+                            </div>
+                            <div class="rail-question-item">
+                                <i class="fa-solid fa-microchip"></i> Архітектор: чи потрібен новий API-параметр?
+                            </div>
+                            <div class="rail-question-item">
+                                <i class="fa-solid fa-vial"></i> QA: як перевірити сценарій повторних подій?
+                            </div>
+                            <div class="rail-question-item">
+                                <i class="fa-solid fa-server"></i> DevOps: чи вимагає зміна фіча-флаг?
+                            </div>
+                            <div class="rail-note">
+                                Xplore: лише структурує аналіз, рішення ухвалює людина.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome (required for icons) -->
+    
+
+</body></html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Справедливість і упередження</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap");
+    :root {
+      --ppt-bg: #FDFCFB;
+      --ppt-bg-soft: #F4F2EF;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9ECEF;
+      --ppt-border: #D8D2C2;
+      --ppt-text-1: #1A1A1A;
+      --ppt-text-2: #4A4A4A;
+      --ppt-text-3: #6C757D;
+      --ppt-accent: #005F73;
+      --ppt-accent-2: #9B2226;
+      --ppt-chart-1: #005F73;
+      --ppt-chart-2: #0A9396;
+      --ppt-chart-3: #EE9B00;
+      --ppt-chart-4: #BB3E03;
+      --ppt-good: #0A9396;
+      --ppt-warn: #E9D8A6;
+      --ppt-bad: #9B2226;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 8px;
+      --ppt-radius-lg: 0px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.08);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Manrope", sans-serif;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      font-family: var(--ppt-font-body);
+    }.ethics-bias-slide-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px 26px 64px;
+      
+      position: relative;
+    }.title-fairness-bias-region{
+      margin-top: 30px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .title-fairness-bias-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .title-fairness-bias-accent-bar {
+      width: 24px;
+      height: 4px;
+      background-color: var(--ppt-accent);
+    }
+    .title-fairness-bias-eyebrow-text {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+    .title-fairness-bias-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--ppt-text-1);
+    }
+    .title-fairness-bias-divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--ppt-border);
+      margin-top: 12px;
+    }.fairness-bias-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px 16px;
+      
+    }.fairness-bias-intro-panel{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 11px 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      align-items: flex-start;
+      gap: 11px 18px;
+      flex-shrink: 0;
+    }.fairness-bias-intro-icon{
+      color: var(--ppt-accent);
+      font-size: 28px;
+      width: 40px;
+      text-align: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .fairness-bias-intro-text {
+      font-size: 19px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+    .fairness-bias-intro-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }.fairness-bias-content-grid{
+      flex: 1 1 0;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 13px 20px;
+      
+    }.fairness-bias-causes-column{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 13px 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 8px 12px;
+      
+    }
+    .fairness-bias-causes-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .fairness-bias-causes-title i {
+      color: var(--ppt-accent);
+      font-size: 20px;
+    }.fairness-bias-causes-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 12px;
+      flex: 1 1 0;
+      justify-content: space-between;
+    }.fairness-bias-cause-list-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 8px 12px;
+      font-size: 17px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }.fairness-bias-cause-list-item i{
+      color: var(--ppt-accent);
+      font-size: 16px;
+      margin-top: 2px;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .fairness-bias-cause-list-item strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }.fairness-bias-case-column{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 13px 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 9px 14px;
+    }
+    .fairness-bias-case-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .fairness-bias-case-title i {
+      color: var(--ppt-accent-2);
+      font-size: 20px;
+    }.fairness-bias-case-description{
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      background: var(--ppt-bg-soft);
+      padding: 8px 14px;
+      border-radius: var(--ppt-radius-sm);
+      border-left: 4px solid var(--ppt-accent-2);
+    }
+    .fairness-bias-case-description strong {
+      color: var(--ppt-text-1);
+    }.fairness-bias-case-questions{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px 10px;
+    }.fairness-bias-case-question-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 6px 10px;
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }.fairness-bias-case-question-item i{
+      color: var(--ppt-accent-2);
+      font-size: 14px;
+      margin-top: 2px;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .fairness-bias-case-question-item strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }.fairness-bias-bottom-note{
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 9px 14px;
+      flex-shrink: 0;
+      border: 1px solid var(--ppt-border);
+    }
+    .fairness-bias-bottom-note i {
+      color: var(--ppt-accent);
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .fairness-bias-bottom-note-text {
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+    .fairness-bias-bottom-note-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+  
+html { overflow: hidden; }
+</style>
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="ethics-bias-slide-root">
+    <!-- Non-Cover Title Region -->
+    <div class="title-fairness-bias-region">
+      <div class="title-fairness-bias-eyebrow-row">
+        <div class="title-fairness-bias-accent-bar"></div>
+        <span class="title-fairness-bias-eyebrow-text">Етика та ШІ</span>
+      </div>
+      <h1 class="title-fairness-bias-heading">Справедливість і упередження</h1>
+      <div class="title-fairness-bias-divider"></div>
+    </div>
+
+    <!-- Main Body -->
+    <div class="fairness-bias-body-wrapper">
+      <!-- Intro panel -->
+      <div class="fairness-bias-intro-panel">
+        <i class="fa-solid fa-scale-balanced fairness-bias-intro-icon"></i>
+        <p class="fairness-bias-intro-text">
+          Нерівний результат часто виникає не через навмисну несправедливість, а через <strong>неповні дані</strong>, <strong>історичні нерівності</strong> або <strong>невдалий критерій</strong>. Алгоритм навчається на минулому, тому може відтворювати перекіс, який уже існує в суспільстві.
+        </p>
+      </div>
+
+      <!-- Two-column content: causes + case -->
+      <div class="fairness-bias-content-grid">
+        <!-- Left column: causes of bias -->
+        <div class="fairness-bias-causes-column">
+          <h2 class="fairness-bias-causes-title">
+            <i class="fa-solid fa-list-ul"></i> Джерела упередженості
+          </h2>
+          <ul class="fairness-bias-causes-list">
+            <li class="fairness-bias-cause-list-item">
+              <i class="fa-solid fa-database"></i>
+              <span><strong>Неповні дані:</strong> відсутність представників певних груп у навчальній вибірці.</span>
+            </li>
+            <li class="fairness-bias-cause-list-item">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <span><strong>Історичні нерівності:</strong> система вбирає упередження з минулих рішень.</span>
+            </li>
+            <li class="fairness-bias-cause-list-item">
+              <i class="fa-solid fa-tag"></i>
+              <span><strong>Неправильні мітки:</strong> помилки в розмітці даних спотворюють навчання.</span>
+            </li>
+            <li class="fairness-bias-cause-list-item">
+              <i class="fa-solid fa-filter"></i>
+              <span><strong>Невдалий критерій:</strong> проксі-показник, який не відображає справжню мету.</span>
+            </li>
+            <li class="fairness-bias-cause-list-item">
+              <i class="fa-solid fa-chart-line"></i>
+              <span><strong>Різна якість даних:</strong> для одних груп дані точніші, ніж для інших.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right column: case study -->
+        <div class="fairness-bias-case-column">
+          <h2 class="fairness-bias-case-title">
+            <i class="fa-solid fa-briefcase"></i> Кейс: відбір на стажування
+          </h2>
+          <p class="fairness-bias-case-description">
+            Система відбирає кандидатів за <strong>історичними даними</strong> попередніх стажувань. Оскільки в минулому перевагу отримували кандидати з певним профілем, алгоритм <strong>відтворює перекіс</strong> і не помічає талановитих кандидатів з інших груп.
+          </p>
+          <ul class="fairness-bias-case-questions">
+            <li class="fairness-bias-case-question-item">
+              <i class="fa-solid fa-user-slash"></i>
+              <span><strong>Хто відсутній у даних?</strong> Групи, які не потрапили до історичної вибірки.</span>
+            </li>
+            <li class="fairness-bias-case-question-item">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <span><strong>Для кого помилки частіші?</strong> Для тих, кого мало в навчальних прикладах.</span>
+            </li>
+            <li class="fairness-bias-case-question-item">
+              <i class="fa-solid fa-gavel"></i>
+              <span><strong>Чи можна оскаржити рішення?</strong> Без пояснення — ні, що порушує справедливість.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom note -->
+      <div class="fairness-bias-bottom-note" style="margin-bottom: 2px !important;">
+        <i class="fa-solid fa-lightbulb"></i>
+        <p class="fairness-bias-bottom-note-text">
+          <strong>Ключове питання:</strong> якщо система успадкувала упередження, хто несе відповідальність за несправедливий відбір — алгоритм, розробник чи організація, що його впровадила?
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body></html>

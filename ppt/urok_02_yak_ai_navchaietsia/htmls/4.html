@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Дані, ознаки та мітки</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+
+    :root {
+      --ppt-bg: #F9F9F7;
+      --ppt-bg-soft: #F0F0EB;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E5E5E0;
+      --ppt-border: #2D2D2D;
+      --ppt-text-1: #1A1A1A;
+      --ppt-text-2: #4A4A4A;
+      --ppt-text-3: #757575;
+      --ppt-accent: #00A896;
+      --ppt-accent-2: #FF6B6B;
+      --ppt-chart-1: #00A896;
+      --ppt-chart-2: #028090;
+      --ppt-chart-3: #F4D35E;
+      --ppt-chart-4: #EE964B;
+      --ppt-good: #27AE60;
+      --ppt-warn: #F39C12;
+      --ppt-bad: #E74C3C;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }.slide-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0;
+      
+      position: relative;
+    }/* Cross-slide consistent title region */
+    .title-region{
+      margin-top: 30px;
+      margin-right: 64px;
+      margin-bottom: 26px;
+      margin-left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-accent-bar {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .title-region-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .title-region-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }/* Body layout: flex-1 structural wrapper */
+    .data-components-body-wrapper{
+      flex: 1 1 0;
+      margin-right: 64px;
+      margin-left: 64px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px 28px;
+      
+    }/* Main three-column definitional row */
+    .definitional-peers-row{
+      display: flex;
+      align-items: stretch;
+      gap: 15px 24px;
+      flex: 1 1 0;
+    }.definitional-peer-column{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 15px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+    }.definitional-peer-icon{
+      font-size: 32px;
+      color: var(--ppt-accent);
+      margin-bottom: 8px;
+      line-height: 1;
+    }.definitional-peer-heading{
+      font-family: var(--ppt-font-display);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }.definitional-peer-divider{
+      width: 100%;
+      height: 2px;
+      background: var(--ppt-bg-soft);
+      margin-bottom: 8px;
+    }
+
+    .definitional-peer-description {
+      font-family: var(--ppt-font-body);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }.definitional-peer-list{
+      list-style: none;
+      margin-top: 8px;
+    }.definitional-peer-list-item{
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .definitional-peer-list-item::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--ppt-accent);
+      font-weight: 600;
+    }.definitional-peer-example{
+      margin-top: 9px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 6px 14px;
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      border-left: 4px solid var(--ppt-accent);
+    }/* Bottom insight strip */
+    .insight-strip{
+      flex-shrink: 0;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px 16px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .insight-strip-icon {
+      color: var(--ppt-accent);
+      font-size: 28px;
+      width: 40px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .insight-strip-text {
+      font-family: var(--ppt-font-body);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.5;
+    }
+
+    .insight-strip-text strong {
+      font-weight: 600;
+      color: var(--ppt-accent);
+    }
+
+    /* No fixed heights on any text container */
+    .definitional-peer-column,
+    .insight-strip {
+      height: auto;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title region (fixed cross-slide template) -->
+    <header class="title-region">
+      <div class="title-region-eyebrow">
+        <span class="title-region-accent-bar"></span>
+        <span class="title-region-label">УРОК ІНФОРМАТИКИ | ШТУЧНИЙ ІНТЕЛЕКТ</span>
+      </div>
+      <h1 class="title-region-heading">Дані, ознаки та мітки</h1>
+    </header>
+
+    <!-- Body: three peer columns + insight strip -->
+    <div class="data-components-body-wrapper">
+      <!-- Peer row: three equal definitional columns -->
+      <div class="definitional-peers-row">
+        <!-- Дані -->
+        <div class="definitional-peer-column">
+          <div class="definitional-peer-icon"><i class="fa-solid fa-database"></i></div>
+          <div class="definitional-peer-heading">Дані</div>
+          <div class="definitional-peer-divider"></div>
+          <p class="definitional-peer-description">
+            Приклади, які аналізує система. Це «сировина» для навчання: без достатньої кількості якісних даних модель не зможе виявити закономірності.
+          </p>
+          <ul class="definitional-peer-list">
+            <li class="definitional-peer-list-item">Об’єкти для аналізу</li>
+            <li class="definitional-peer-list-item">Набір прикладів із реального світу</li>
+            <li class="definitional-peer-list-item">Основа для тренування</li>
+          </ul>
+          <div class="definitional-peer-example">
+            <i class="fa-solid fa-leaf" style="margin-right: 6px; color: var(--ppt-accent);"></i>
+            Фотографії листя клена та дуба
+          </div>
+        </div>
+
+        <!-- Ознаки -->
+        <div class="definitional-peer-column">
+          <div class="definitional-peer-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+          <div class="definitional-peer-heading">Ознаки</div>
+          <div class="definitional-peer-divider"></div>
+          <p class="definitional-peer-description">
+            Характеристики прикладу, за якими модель розрізняє об’єкти. Вдало обрані ознаки визначають, наскільки точною буде класифікація.
+          </p>
+          <ul class="definitional-peer-list">
+            <li class="definitional-peer-list-item">Колір, форма, розмір</li>
+            <li class="definitional-peer-list-item">Кількість плям, текстура</li>
+            <li class="definitional-peer-list-item">Не всі ознаки однаково корисні</li>
+          </ul>
+          <div class="definitional-peer-example">
+            <i class="fa-solid fa-palette" style="margin-right: 6px; color: var(--ppt-accent);"></i>
+            Для листя: форма краю, глибина вирізів
+          </div>
+        </div>
+
+        <!-- Мітки -->
+        <div class="definitional-peer-column">
+          <div class="definitional-peer-icon"><i class="fa-solid fa-tag"></i></div>
+          <div class="definitional-peer-heading">Мітки</div>
+          <div class="definitional-peer-divider"></div>
+          <p class="definitional-peer-description">
+            Правильна відповідь, яку модель має передбачити. Мітки перетворюють навчання на керований процес: система порівнює свій прогноз із правильною відповіддю.
+          </p>
+          <ul class="definitional-peer-list">
+            <li class="definitional-peer-list-item">Категорія або значення</li>
+            <li class="definitional-peer-list-item">Еталон для оцінки помилки</li>
+            <li class="definitional-peer-list-item">Позначаються людиною або автоматично</li>
+          </ul>
+          <div class="definitional-peer-example">
+            <i class="fa-solid fa-circle-check" style="margin-right: 6px; color: var(--ppt-accent);"></i>
+            «клен» або «дуб»
+          </div>
+        </div>
+      </div>
+
+      <!-- Insight strip: key takeaway -->
+      <div class="insight-strip" style="margin-bottom: 2px !important;">
+        <div class="insight-strip-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <p class="insight-strip-text">
+          <strong>Ключова ідея:</strong> один і той самий об’єкт можна описати різними ознаками, але обирати варто ті, що справді розрізняють класи.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body></html>

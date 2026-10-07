@@ -1,0 +1,154 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "urok_02_yak_ai_navchaietsia",
+  "artifact_path": "ppt/urok_02_yak_ai_navchaietsia",
+  "pptTitle": "Як AI навчається?",
+  "ppt_title": "Як AI навчається?",
+  "outlineArtifactPath": "ppt/urok_02_yak_ai_navchaietsia/outline.md",
+  "outline_artifact_path": "ppt/urok_02_yak_ai_navchaietsia/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-c6ea47df3a.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-c6ea47df3a.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-c6ea47df3a.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_02_yak_ai_navchaietsia/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_02_yak_ai_navchaietsia/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-c6ea47df3a.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-c6ea47df3a.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_02_yak_ai_navchaietsia/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_02_yak_ai_navchaietsia/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи українською мовою окрему навчальну презентацію для уроку інформатики в 11 класі на тему «Як AI навчається?». Рівно 10 слайдів на основі наданого плану: два способи задавати поведінку, машинне навчання, дані/ознаки/мітки, цикл навчання, вправа «Фрум чи лора?», тестування, причини помилок, упередження даних, підсумок і домашнє завдання.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "auto_increase_ratio": 0.35,
+  "auto_increase_bucket": 0.5898,
+  "region": "US",
+  "prepared_session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "prepared_question_id": "Q-4a812a49c9b3",
+  "prepared_target_path": "ppt/urok_02_yak_ai_navchaietsia",
+  "prepared_state_id": "pps_0012b38c0c9f34e17a0739ba0615dcaa",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:3273868dfe382276f4155fc4123e3463791454b1b8ced6d119609d79cf0db23c",
+  "init_request_fingerprint": "sha256:8542ae9620196a197554a537904e5dcb25095e9b5932f2e4a71c044abcee6f4e",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:07b519fcfd1c81b14a3e5bdcec635d3faae4d61b0a1b8c8fbf50757918ebd23e",
+  "outline_artifact_sha256": "sha256:c4b69a009116494d507b7921d5fa75e4e9a18b95c70fba1bbf68832c90720959",
+  "prepared_inputs": [
+    {
+      "path": "ppt/urok_02_yak_ai_navchaietsia/design_guideline.md",
+      "size": 7738,
+      "sha256": "sha256:1602787106067c3a38c7073d21a5c4989b2a2515ed7197b1873ea214298278b4"
+    },
+    {
+      "path": "ppt/urok_02_yak_ai_navchaietsia/final_report.md",
+      "size": 6724,
+      "sha256": "sha256:07b519fcfd1c81b14a3e5bdcec635d3faae4d61b0a1b8c8fbf50757918ebd23e"
+    },
+    {
+      "path": "ppt/urok_02_yak_ai_navchaietsia/outline.json",
+      "size": 51459,
+      "sha256": "sha256:a9055ea89f09e599088d408d8536a3694a178840111035660f6aa5c465e1a977"
+    },
+    {
+      "path": "ppt/urok_02_yak_ai_navchaietsia/outline.md",
+      "size": 3329,
+      "sha256": "sha256:c4b69a009116494d507b7921d5fa75e4e9a18b95c70fba1bbf68832c90720959"
+    },
+    {
+      "path": "ppt/urok_02_yak_ai_navchaietsia/prepared_images/cover_5a773a2bf9c5_2095588008574488577.png",
+      "size": 1258142,
+      "sha256": "sha256:b6a93d12514186338f54692a501821189dd618598da2ceb816d58ff05940d557"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json",
+      "prepared_images/cover_5a773a2bf9c5_2095588008574488577.png"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "auto_mode",
+      "auto_increase_miss",
+      "standard_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "generated",
+      "applied": true
+    },
+    "dropped_images": null,
+    "warnings": null,
+    "mock": false
+  }
+}

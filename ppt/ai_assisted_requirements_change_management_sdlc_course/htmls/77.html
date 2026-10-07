@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <title>Управління вимогами та змінами в SDLC із застосуванням штучного інтелекту</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+    }
+
+    .title-region-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-text {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .main-content-layout-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: stretch;
+      gap: 32px;
+      padding: 0 60px 40px 60px;
+    }
+
+    .final-step-column-left,
+    .final-step-column-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .final-step-card-container {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 32px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card-icon-header-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .card-icon-wrapper {
+      width: 56px;
+      height: 56px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--ppt-accent);
+      font-size: 24px;
+    }
+
+    .card-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .card-body-list-wrapper {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card-list-item-block {
+      display: flex;
+      gap: 16px;
+    }
+
+    .item-bullet-marker {
+      margin-top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--ppt-accent);
+      flex-shrink: 0;
+    }
+
+    .item-content-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .item-main-label {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .item-secondary-description {
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .conclusion-summary-note-block {
+      margin: 0 60px 40px 60px;
+      padding: 16px 24px;
+      background-color: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      border-left: 4px solid var(--ppt-good);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .note-icon-element {
+      color: var(--ppt-good);
+      font-size: 20px;
+    }
+
+    .note-text-content {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-container">
+    <header class="title-region-wrapper">
+      <div class="title-region-subtitle">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-main-text">
+        Сертифікат та масштабування AI-workflows
+      </h1>
+    </header>
+
+    <main class="main-content-layout-wrapper">
+      <!-- Left Column: Certificate -->
+      <div class="final-step-column-left">
+        <div class="final-step-card-container">
+          <div class="card-icon-header-group">
+            <div class="card-icon-wrapper">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <h2 class="card-title-text">Підтвердження кваліфікації</h2>
+          </div>
+          <ul class="card-body-list-wrapper">
+            <li class="card-list-item-block">
+              <div class="item-bullet-marker"></div>
+              <div class="item-content-text-group">
+                <div class="item-main-label">Статус Xplore Expert</div>
+                <div class="item-secondary-description">Офіційне підтвердження навичок роботи з AI-асистентом у межах SDLC.</div>
+              </div>
+            </li>
+            <li class="card-list-item-block">
+              <div class="item-bullet-marker"></div>
+              <div class="item-content-text-group">
+                <div class="item-main-label">Валідація AI Playbook</div>
+                <div class="item-secondary-description">Захист власного набору промптів та методології обробки вимог.</div>
+              </div>
+            </li>
+            <li class="card-list-item-block">
+              <div class="item-bullet-marker"></div>
+              <div class="item-content-text-group">
+                <div class="item-main-label">Готовність до AI-моделі</div>
+                <div class="item-secondary-description">Сертифікат підтверджує здатність керувати ризиками ШІ та human review.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Column: Scaling -->
+      <div class="final-step-column-right">
+        <div class="final-step-card-container">
+          <div class="card-icon-header-group">
+            <div class="card-icon-wrapper">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+            <h2 class="card-title-text">Масштабування у проєкті</h2>
+          </div>
+          <ul class="card-body-list-wrapper">
+            <li class="card-list-item-block">
+              <div class="item-bullet-marker"></div>
+              <div class="item-content-text-group">
+                <div class="item-main-label">Впровадження пілоту</div>
+                <div class="item-secondary-description">Поступове переведення рутинних задач на AI-assisted workflows у команді.</div>
+              </div>
+            </li>
+            <li class="card-list-item-block">
+              <div class="item-bullet-marker"></div>
+              <div class="item-content-text-group">
+                <div class="item-main-label">Моніторинг ефективності</div>
+                <div class="item-secondary-description">Відстеження швидкості відновлення контексту та якості вимог.</div>
+              </div>
+            </li>
+            <li class="card-list-item-block">
+              <div class="item-bullet-marker"></div>
+              <div class="item-content-text-group">
+                <div class="item-main-label">Постійна адаптація</div>
+                <div class="item-secondary-description">Регулярне оновлення бази знань асистента та бібліотеки промптів.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer class="conclusion-summary-note-block">
+      <div class="note-icon-element">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <div class="note-text-content">
+        Курс завершено. Ви готові до реалізації AI-assisted моделі роботи у вашій професійній діяльності.
+      </div>
+    </footer>
+  </div>
+
+</body></html>

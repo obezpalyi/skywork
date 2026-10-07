@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1280, height=720"/>
+  <title>Нормалізація неповного change request</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">:root {
+  --ppt-chart-1: #2563EB;
+  --ppt-chart-2: #06B6D4;
+  --ppt-chart-3: #6366F1;
+  --ppt-chart-4: #F59E0B;
+  --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      box-sizing: border-box;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      color: var(--ppt-text-1);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }.title-region-wrapper{
+      margin-top: 32px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 19px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }.cr-normalization-main-content{
+      flex: 1;
+      display: flex;
+      padding: 0 60px 32px 60px;
+      gap: 19px 24px;
+      align-items: stretch;
+    }
+
+    .cr-normalization-left-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .cr-normalization-right-column {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .input-source-card-item {
+      background: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .input-source-icon-box {
+      width: 40px;
+      height: 40px;
+      background: var(--ppt-accent);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--ppt-radius-sm);
+      font-size: 18px;
+    }
+
+    .input-source-text-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-source-title {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--ppt-text-1);
+    }
+
+    .input-source-desc {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+    }
+
+    .ai-transformation-bridge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--ppt-accent);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+    }.structured-cr-template-card{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-accent);
+      border-radius: var(--ppt-radius-lg);
+      padding: 19px 24px;
+      box-shadow: var(--ppt-shadow-strong);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+    }.template-header-area{
+      display: flex;
+      align-items: center;
+      gap: 10px 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--ppt-bg-soft);
+    }
+
+    .template-header-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+    }.cr-fields-grid-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 12px;
+    }.cr-field-item-block{
+      background: var(--ppt-bg-soft);
+      padding: 10px 12px;
+      border-radius: var(--ppt-radius-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 3px 4px;
+    }
+
+    .cr-field-item-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ppt-text-3);
+      text-transform: uppercase;
+    }
+
+    .cr-field-item-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+    }
+
+    .cr-field-full-width {
+      grid-column: span 2;
+    }.ai-instruction-badge-note{
+      margin-top: 10px;
+      padding: 6px 12px;
+      background: rgba(37, 99, 235, 0.05);
+      border-left: 3px solid var(--ppt-accent-2);
+      font-size: 13px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .ai-instruction-badge-note strong {
+      color: var(--ppt-accent);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-container">
+    <header class="title-region-wrapper">
+      <div class="title-region-label">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-main">Нормалізація неповного change request</h1>
+    </header>
+
+    <main class="cr-normalization-main-content" style="margin-bottom: 3px !important;">
+      <!-- Left Column: Unstructured Inputs -->
+      <section class="cr-normalization-left-column">
+        <div class="input-source-card-item">
+          <div class="input-source-icon-box"><i class="fa-solid fa-envelope"></i></div>
+          <div class="input-source-text-content">
+            <span class="input-source-title">E-mail від замовника</span>
+            <span class="input-source-desc">«Треба додати кнопку...»</span>
+          </div>
+        </div>
+        <div class="input-source-card-item">
+          <div class="input-source-icon-box"><i class="fa-solid fa-comments"></i></div>
+          <div class="input-source-text-content">
+            <span class="input-source-title">Повідомлення в Slack</span>
+            <span class="input-source-desc">«Клієнт хоче змінити логіку...»</span>
+          </div>
+        </div>
+        <div class="input-source-card-item">
+          <div class="input-source-icon-box"><i class="fa-solid fa-microphone-lines"></i></div>
+          <div class="input-source-text-content">
+            <span class="input-source-title">Протокол зустрічі</span>
+            <span class="input-source-desc">Фрагментарні нотатки обговорення</span>
+          </div>
+        </div>
+
+        <div class="ai-transformation-bridge">
+          <i class="fa-solid fa-chevron-down"></i>
+          <span>AI Normalization Workflow</span>
+        </div>
+      </section>
+
+      <!-- Right Column: Structured Output -->
+      <section class="cr-normalization-right-column">
+        <div class="structured-cr-template-card">
+          <div class="template-header-area">
+            <i class="fa-solid fa-file-contract" style="color: var(--ppt-accent); font-size: 24px;"></i>
+            <span class="template-header-title">Structured Change Request Card</span>
+          </div>
+
+          <div class="cr-fields-grid-container">
+            <div class="cr-field-item-block cr-field-full-width">
+              <span class="cr-field-item-label">Вихідний запит (Raw Request)</span>
+              <span class="cr-field-item-value">Дослівне формулювання замовника без інтерпретацій.</span>
+            </div>
+            
+            <div class="cr-field-item-block">
+              <span class="cr-field-item-label">Бізнес-причина</span>
+              <span class="cr-field-item-value">Навіщо це потрібно бізнесу?</span>
+            </div>
+            <div class="cr-field-item-block">
+              <span class="cr-field-item-label">Бажаний результат</span>
+              <span class="cr-field-item-value">Критерії успіху зміни.</span>
+            </div>
+
+            <div class="cr-field-item-block">
+              <span class="cr-field-item-label">Affected Users / Systems</span>
+              <span class="cr-field-item-value">Хто та що зазнає впливу.</span>
+            </div>
+            <div class="cr-field-item-block">
+              <span class="cr-field-item-label">Статус: Поточний vs План</span>
+              <span class="cr-field-item-value">As-is vs To-be опис.</span>
+            </div>
+
+            <div class="cr-field-item-block">
+              <span class="cr-field-item-label">Scope &amp; Out of Scope</span>
+              <span class="cr-field-item-value">Межі реалізації запиту.</span>
+            </div>
+            <div class="cr-field-item-block">
+              <span class="cr-field-item-label">Пріоритет &amp; Обмеження</span>
+              <span class="cr-field-item-value">Терміни, бюджет, тех. ліміти.</span>
+            </div>
+
+            <div class="cr-field-item-block">
+              <span class="cr-field-item-label">Джерело &amp; Requester</span>
+              <span class="cr-field-item-value">Traceability до ініціатора.</span>
+            </div>
+            <div class="cr-field-item-block">
+              <span class="cr-field-item-label">Відкриті питання</span>
+              <span class="cr-field-item-value" style="color: var(--ppt-bad); font-weight: 600;">Блокуючі прогалини даних.</span>
+            </div>
+          </div>
+
+          <div class="ai-instruction-badge-note">
+            <strong>Принцип AI-асистента:</strong> ШІ не вигадує деталі, а структурує наявні факти та явно маркує відсутність інформації як <strong>блокуючі питання</strong> для BA.
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body></html>

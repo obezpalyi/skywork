@@ -1,0 +1,151 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "urok_07_etyka_shi",
+  "artifact_path": "ppt/urok_07_etyka_shi",
+  "pptTitle": "Етика штучного інтеле…",
+  "ppt_title": "Етика штучного інтеле…",
+  "outlineArtifactPath": "ppt/urok_07_etyka_shi/outline.md",
+  "outline_artifact_path": "ppt/urok_07_etyka_shi/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8f282e17fb.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8f282e17fb.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8f282e17fb.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_07_etyka_shi/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_07_etyka_shi/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8f282e17fb.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8f282e17fb.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_07_etyka_shi/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_07_etyka_shi/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи навчальну презентацію українською мовою для 11 класу на тему «Етика штучного інтелекту: хто відповідає за рішення ШІ?». Потрібно рівно 10 слайдів, без програмування, з етичними кейсами, етичною картою рішення, обговоренням справедливості, приватності, прозорості та людського контролю.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "force_html": true,
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "region": "US",
+  "prepared_session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "prepared_question_id": "Q-71ead7b392dc",
+  "prepared_target_path": "ppt/urok_07_etyka_shi",
+  "prepared_state_id": "pps_1697c1dc2aab58ec5f81ab9cd8f8e48c",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:195efbc50a70d34278dc5ac8c9c46302977f9714c834d511c0678dfcc6de565a",
+  "init_request_fingerprint": "sha256:89387ca8250671e1b7f11bb48116e056a25b7a18ab3351ccedfbf5cdac8e180e",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:de44ff246d9df9239791003d7395c26473053d3367abeb5afc9df966007f5776",
+  "outline_artifact_sha256": "sha256:e97157484b775e42b4a9d9f1b06d22b8948c13a9dbd3a7f9b6a57ab9b08886d1",
+  "prepared_inputs": [
+    {
+      "path": "ppt/urok_07_etyka_shi/design_guideline.md",
+      "size": 8626,
+      "sha256": "sha256:ce140c7f7cac2cff33d70027d2d44dfb6b0806336de3e90122d8ed72d873766a"
+    },
+    {
+      "path": "ppt/urok_07_etyka_shi/final_report.md",
+      "size": 7679,
+      "sha256": "sha256:de44ff246d9df9239791003d7395c26473053d3367abeb5afc9df966007f5776"
+    },
+    {
+      "path": "ppt/urok_07_etyka_shi/outline.json",
+      "size": 6059,
+      "sha256": "sha256:7811fba148bfc0279fc4ff971266f0957dc2ebbed56fc192604e6144d7b2cb97"
+    },
+    {
+      "path": "ppt/urok_07_etyka_shi/outline.md",
+      "size": 3726,
+      "sha256": "sha256:e97157484b775e42b4a9d9f1b06d22b8948c13a9dbd3a7f9b6a57ab9b08886d1"
+    },
+    {
+      "path": "ppt/urok_07_etyka_shi/prepared_images/cover_87320988c67c_2102354127894519809.png",
+      "size": 997398,
+      "sha256": "sha256:c7e12d226e09346a6d04d8b662ba4c8978c998f0b6eec6d0721e350c6be1417d"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json",
+      "prepared_images/cover_87320988c67c_2102354127894519809.png"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "force_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "generated",
+      "applied": true
+    },
+    "dropped_images": null,
+    "warnings": null,
+    "mock": false
+  }
+}

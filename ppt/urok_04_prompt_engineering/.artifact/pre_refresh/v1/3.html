@@ -1,0 +1,347 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+<title>Що таке промпт</title>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Inter:wght@400;600&display=swap");
+
+  :root {
+    --ppt-bg: #FDFCFB;
+    --ppt-bg-soft: #F3F4F6;
+    --ppt-surface: #FFFFFF;
+    --ppt-surface-2: #EEF2FF;
+    --ppt-border: #E5E7EB;
+    --ppt-text-1: #111827;
+    --ppt-text-2: #4B5563;
+    --ppt-text-3: #9CA3AF;
+    --ppt-accent: #6366F1;
+    --ppt-accent-2: #10B981;
+    --ppt-chart-1: #6366F1;
+    --ppt-chart-2: #10B981;
+    --ppt-chart-3: #F59E0B;
+    --ppt-chart-4: #EC4899;
+    --ppt-good: #059669;
+    --ppt-warn: #D97706;
+    --ppt-bad: #DC2626;
+    --ppt-radius-sm: 4px;
+    --ppt-radius-md: 8px;
+    --ppt-radius-lg: 16px;
+    --ppt-shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --ppt-font-display: "Montserrat", sans-serif;
+    --ppt-font-body: "Inter", sans-serif;
+  }*{
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
+  }
+
+  body {width: 1280px; height: 720px; overflow: hidden;   
+    background: var(--ppt-bg);
+    font-family: var(--ppt-font-body);
+  }
+
+  .slide-root {
+    width: 1280px; height: 720px;
+    display: flex;
+    flex-direction: column;
+    background: var(--ppt-bg);
+    
+    position: relative;
+  }.title-region{
+    margin-top: 19px;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .title-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .title-eyebrow-badge {
+    background-color: var(--ppt-accent);
+    color: #FFFFFF;
+    font-family: var(--ppt-font-display);
+    font-weight: 800;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .title-eyebrow-label {
+    color: var(--ppt-text-3);
+    font-family: var(--ppt-font-body);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .title-heading {
+    margin: 0;
+    color: var(--ppt-text-1);
+    font-family: var(--ppt-font-display);
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  .title-accent-rule {
+    width: 60px;
+    height: 4px;
+    background-color: var(--ppt-accent);
+    border-radius: 2px;
+    margin-top: 8px;
+  }.body-wrapper{
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 19px;
+    gap: 10px 20px;
+  }.definition-main-panel{
+    background: var(--ppt-surface);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-lg);
+    padding: 11px 28px;
+    box-shadow: var(--ppt-shadow-soft);
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px 16px;
+  }.definition-heading-row{
+    display: flex;
+    align-items: center;
+    gap: 6px 12px;
+  }
+
+  .definition-icon-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--ppt-radius-md);
+    background: var(--ppt-surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ppt-accent);
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .definition-title-text {
+    font-family: var(--ppt-font-display);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+    color: var(--ppt-text-1);
+  }
+
+  .definition-body-text {
+    font-family: var(--ppt-font-body);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--ppt-text-2);
+  }.definition-components-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px 16px;
+    margin-top: 2px;
+  }.prompt-component-item{
+    background: var(--ppt-bg-soft);
+    border-radius: var(--ppt-radius-md);
+    padding: 6px 16px;
+    display: block;
+  }.prompt-component-item-icon{
+    color: var(--ppt-accent);
+    font-size: 16px;
+    margin-bottom: 4px;
+    display: block;
+  }.prompt-component-item-title{
+    font-family: var(--ppt-font-display);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--ppt-text-1);
+    margin-bottom: 3px;
+  }
+
+  .prompt-component-item-desc {
+    font-family: var(--ppt-font-body);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ppt-text-2);
+  }.engineering-explanation-panel{
+    background: var(--ppt-surface-2);
+    border-radius: var(--ppt-radius-lg);
+    padding: 10px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 10px;
+    flex-shrink: 0;
+  }.engineering-heading-row{
+    display: flex;
+    align-items: center;
+    gap: 6px 12px;
+  }
+
+  .engineering-icon-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--ppt-radius-md);
+    background: var(--ppt-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ppt-accent-2);
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .engineering-title-text {
+    font-family: var(--ppt-font-display);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+    color: var(--ppt-text-1);
+  }
+
+  .engineering-body-text {
+    font-family: var(--ppt-font-body);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--ppt-text-2);
+  }.engineering-emphasis-text{
+    font-family: var(--ppt-font-body);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--ppt-accent);
+    margin-top: 2px;
+  }.skill-points-row{
+    display: flex;
+    gap: 8px 16px;
+    margin-top: 4px;
+  }.skill-point-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 4px 8px;
+    flex: 1;
+  }.skill-point-icon{
+    color: var(--ppt-accent-2);
+    font-size: 14px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .skill-point-text {
+    font-family: var(--ppt-font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--ppt-text-2);
+  }
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+<div class="slide-root">
+  <header class="title-region">
+    <div class="title-eyebrow-row">
+      <span class="title-eyebrow-badge">IT CLASS</span>
+      <span class="title-eyebrow-label">Prompt Engineering</span>
+    </div>
+    <h1 class="title-heading">Що таке промпт</h1>
+    <div class="title-accent-rule"></div>
+  </header>
+
+  <div class="body-wrapper">
+    <div class="definition-main-panel">
+      <div class="definition-heading-row">
+        <div class="definition-icon-badge">
+          <i class="fa-solid fa-terminal"></i>
+        </div>
+        <div class="definition-title-text">Промпт — це інструкція для моделі</div>
+      </div>
+      <p class="definition-body-text">
+        Промпт — це інструкція або повідомлення, яке користувач передає моделі штучного інтелекту. 
+        Він може містити запитання, вихідні дані, приклад, роль, вимоги до формату та критерії якості. 
+        Саме від того, наскільки чітко сформульований промпт, залежить корисність і точність відповіді моделі.
+      </p>
+      <div class="definition-components-grid">
+        <div class="prompt-component-item">
+          <i class="fa-solid fa-circle-question prompt-component-item-icon"></i>
+          <div class="prompt-component-item-title">Запитання</div>
+          <div class="prompt-component-item-desc">Чітко сформульоване питання, на яке модель має відповісти</div>
+        </div>
+        <div class="prompt-component-item">
+          <i class="fa-solid fa-database prompt-component-item-icon"></i>
+          <div class="prompt-component-item-title">Вихідні дані</div>
+          <div class="prompt-component-item-desc">Факти, цифри чи текст, на які спирається відповідь</div>
+        </div>
+        <div class="prompt-component-item">
+          <i class="fa-solid fa-lightbulb prompt-component-item-icon"></i>
+          <div class="prompt-component-item-title">Приклад</div>
+          <div class="prompt-component-item-desc">Зразок бажаного результату для наслідування</div>
+        </div>
+        <div class="prompt-component-item">
+          <i class="fa-solid fa-user-tag prompt-component-item-icon"></i>
+          <div class="prompt-component-item-title">Роль</div>
+          <div class="prompt-component-item-desc">Хто «грає» модель: репетитор, редактор, критик</div>
+        </div>
+        <div class="prompt-component-item">
+          <i class="fa-solid fa-list-check prompt-component-item-icon"></i>
+          <div class="prompt-component-item-title">Формат</div>
+          <div class="prompt-component-item-desc">Структура відповіді: список, таблиця, план, код</div>
+        </div>
+        <div class="prompt-component-item">
+          <i class="fa-solid fa-clipboard-check prompt-component-item-icon"></i>
+          <div class="prompt-component-item-title">Критерії якості</div>
+          <div class="prompt-component-item-desc">Вимоги до точності, обсягу та перевірюваності</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="engineering-explanation-panel" style="margin-bottom: 2px !important;">
+      <div class="engineering-heading-row">
+        <div class="engineering-icon-badge">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <div class="engineering-title-text">Prompt engineering — це навичка, а не магія</div>
+      </div>
+      <p class="engineering-body-text">
+        Prompt engineering — це не набір «магічних слів» чи секретних фраз, які гарантують ідеальну відповідь. 
+        Це вміння чітко описати задачу, зрозуміти можливості моделі та оцінити отриманий результат.
+      </p>
+      <div class="skill-points-row">
+        <div class="skill-point-item">
+          <i class="fa-solid fa-circle-check skill-point-icon"></i>
+          <span class="skill-point-text">Чітко описувати задачу та очікуваний результат</span>
+        </div>
+        <div class="skill-point-item">
+          <i class="fa-solid fa-check skill-point-icon"></i>
+          <span class="skill-point-text">Розуміти, яку інформацію модель потребує для відповіді</span>
+        </div>
+        <div class="skill-point-item">
+          <i class="fa-solid fa-anchor-circle-check skill-point-icon"></i>
+          <span class="skill-point-text">Критично оцінювати та вдосконалювати отриманий результат</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body></html>

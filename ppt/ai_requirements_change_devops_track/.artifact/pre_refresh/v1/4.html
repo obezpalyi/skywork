@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сесія OPS-1: Операційний контекст вимог</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;500&display=swap");
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #64748B;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #10B981;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #10B981;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #6366F1;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Roboto Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      font-family: var(--ppt-font-body);
+      
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    /* Non-cover title region */
+    .title-region {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-left: 6px solid var(--ppt-accent);
+      padding-left: 20px;
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .title-region-title {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--ppt-text-1);
+      margin: 0;
+    }
+
+    .title-region-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      margin-top: 2px;
+    }
+
+    /* Main body wrapper */
+    .session-ops1-body-wrapper {
+      flex: 1 1 0;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
+    }
+
+    /* Top row: objectives (dominant) + inputs (supporting) */
+    .ops1-top-row-layout {
+      display: flex;
+      flex: 1 1 0;
+      gap: 20px;
+      
+    }
+
+    .ops1-objectives-column {
+      flex: 3 1 0;
+      background-color: var(--ppt-surface);
+      border-radius: var(--ppt-radius-lg);
+      border: 1px solid var(--ppt-border);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .ops1-objectives-column-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .ops1-objectives-column-header i {
+      font-size: 24px;
+      color: var(--ppt-accent);
+    }
+
+    .ops1-objectives-column-header h2 {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .ops1-objectives-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1 1 0;
+    }
+
+    .ops1-objectives-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .ops1-objectives-list li i {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      margin-top: 2px;
+      width: 18px;
+      text-align: center;
+    }
+
+    .ops1-inputs-column {
+      flex: 2 1 0;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-lg);
+      border: 1px solid var(--ppt-border);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ops1-inputs-column-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .ops1-inputs-column-header i {
+      font-size: 24px;
+      color: var(--ppt-accent-2);
+    }
+
+    .ops1-inputs-column-header h2 {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .ops1-inputs-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      flex: 1 1 0;
+    }
+
+    .ops1-inputs-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .ops1-inputs-list li i {
+      color: var(--ppt-accent-2);
+      font-size: 13px;
+      width: 16px;
+      text-align: center;
+    }
+
+    /* Bottom row: compact note */
+    .ops1-bottom-note-row {
+      background-color: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      border: 1px solid var(--ppt-border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex-shrink: 0;
+    }
+
+    .ops1-bottom-note-row i {
+      font-size: 20px;
+      color: var(--ppt-warn);
+    }
+
+    .ops1-bottom-note-text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .ops1-bottom-note-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    /* Ensure no flex on list items */
+    .ops1-objectives-list li,
+    .ops1-inputs-list li {
+      display: flex;
+    }
+
+    /* Responsive internal spacing */
+    .ops1-objectives-list li:last-child,
+    .ops1-inputs-list li:last-child {
+      margin-bottom: 0;
+    }
+  
+html { overflow: hidden; }
+</style>
+  <!-- Font Awesome 6 (free) -->
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title region (fixed design) -->
+    <header class="title-region">
+      <div class="title-region-eyebrow">DEVOPS TRACK | AI-ASSISTED SDLC</div>
+      <h1 class="title-region-title">Сесія OPS-1: Операційний контекст вимог</h1>
+      <div class="title-region-subtitle">Цілі та вхідні дані для виявлення операційно значущих очікувань і зв&#39;язку вимог із сервісами та власниками</div>
+    </header>
+
+    <!-- Main body -->
+    <div class="session-ops1-body-wrapper">
+      <!-- Top row: objectives + inputs -->
+      <div class="ops1-top-row-layout">
+        <!-- Left column (dominant) : objectives -->
+        <div class="ops1-objectives-column">
+          <div class="ops1-objectives-column-header">
+            <i class="fa-solid fa-bullseye"></i>
+            <h2>Цілі сесії</h2>
+          </div>
+          <ul class="ops1-objectives-list">
+            <li><i class="fa-solid fa-circle-check"></i> Витягти операційно значущі очікування з канонічних вимог ServiceHub</li>
+            <li><i class="fa-solid fa-circle-check"></i> Виявити відсутні обмеження рівня обслуговування та підтримки</li>
+            <li><i class="fa-solid fa-circle-check"></i> Зв&#39;язати вимоги з конкретними сервісами та власниками</li>
+            <li><i class="fa-solid fa-circle-check"></i> Сформулювати уточнювальні запитання для BA, розробника та архітектора</li>
+            <li><i class="fa-solid fa-circle-check"></i> Безпечно працювати з операційною документацією та ранбуками</li>
+          </ul>
+        </div>
+
+        <!-- Right column (supporting) : inputs -->
+        <div class="ops1-inputs-column">
+          <div class="ops1-inputs-column-header">
+            <i class="fa-solid fa-database"></i>
+            <h2>Вхідні дані</h2>
+          </div>
+          <ul class="ops1-inputs-list">
+            <li><i class="fa-solid fa-angle-right"></i> Канонічні вимоги ServiceHub</li>
+            <li><i class="fa-solid fa-angle-right"></i> Каталог сервісів та матриця власності</li>
+            <li><i class="fa-solid fa-angle-right"></i> Топологія середовищ</li>
+            <li><i class="fa-solid fa-angle-right"></i> Поточний посібник з розгортання</li>
+            <li><i class="fa-solid fa-angle-right"></i> Runbook та SLI/SLO визначення</li>
+            <li><i class="fa-solid fa-angle-right"></i> Мапа інтеграцій</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom compact note -->
+      <div class="ops1-bottom-note-row" style="margin-bottom: 4px !important;">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div class="ops1-bottom-note-text">
+          <strong>Ключовий принцип:</strong> Xplore — це інструмент підтримки аналізу та документації, а не автономний виконавець production-змін. Усі рішення залишаються за людиною.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

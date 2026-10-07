@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Урок 5. AI vs людина - Вправа: Хто виконує?</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #F8F9FA;
+      --ppt-bg-soft: #EEF2F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9ECEF;
+      --ppt-border: #CED4DA;
+      --ppt-text-1: #212529;
+      --ppt-text-2: #495057;
+      --ppt-text-3: #6C757D;
+      --ppt-accent: #6366F1; /* AI Indigo */
+      --ppt-accent-2: #F43F5E; /* Human Rose */
+      --ppt-chart-1: #6366F1;
+      --ppt-chart-2: #F43F5E;
+      --ppt-chart-3: #10B981;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 12px;
+      --ppt-radius-lg: 20px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      
+    }
+
+    .slide-header-region {
+      margin-top: 48px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .slide-header-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .slide-header-badge-text {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+      background: var(--ppt-bg-soft);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .slide-header-divider {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .slide-header-title {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    /* Interactive Sorting Module */
+    .ai-task-sorting-module-wrapper {
+      flex: 1;
+      padding: 0 64px 48px 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .ai-task-deck-source-area {
+      background: var(--ppt-bg-soft);
+      border: 2px dashed var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px;
+      min-height: 180px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      gap: 16px;
+    }
+
+    .ai-category-zones-container {
+      display: flex;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .ai-category-zone-block {
+      flex: 1;
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-lg);
+      border: 2px solid transparent;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--ppt-shadow-soft);
+      transition: all 0.3s ease;
+    }
+
+    .ai-category-zone-block.zone-mostly-ai { border-color: rgba(99, 102, 241, 0.2); }
+    .ai-category-zone-block.zone-mostly-human { border-color: rgba(244, 63, 94, 0.2); }
+    .ai-category-zone-block.zone-best-together { border-color: rgba(16, 185, 129, 0.2); }
+
+    .ai-category-header-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--ppt-bg-soft);
+    }
+
+    .ai-category-icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+
+    .zone-mostly-ai .ai-category-icon-wrapper { background: rgba(99, 102, 241, 0.1); color: var(--ppt-accent); }
+    .zone-mostly-human .ai-category-icon-wrapper { background: rgba(244, 63, 94, 0.1); color: var(--ppt-accent-2); }
+    .zone-best-together .ai-category-icon-wrapper { background: rgba(16, 185, 129, 0.1); color: var(--ppt-good); }
+
+    .ai-category-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .ai-card-insertion-point {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 50px;
+    }
+
+    .ai-vs-human-task-card {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 16px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      width: fit-content;
+      max-width: 300px;
+    }
+
+    .ai-vs-human-task-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--ppt-shadow-strong);
+      border-color: var(--ppt-accent);
+    }
+
+    .ai-vs-human-task-card i {
+      font-size: 14px;
+      color: var(--ppt-text-3);
+    }
+
+    .ai-vs-human-task-card.is-sorted {
+      width: 100%;
+      max-width: 100%;
+      background: var(--ppt-bg-soft);
+      border-color: transparent;
+      cursor: default;
+      transform: scale(0.98);
+      animation: card-reveal 0.5s forwards;
+    }
+
+    @keyframes card-reveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ai-instruction-hint-banner {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      color: var(--ppt-text-3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+
+<div class="slide-root-container">
+  <header class="slide-header-region">
+    <div class="slide-header-badge-row">
+      <span class="slide-header-badge-text">Інформатика 11 клас</span>
+      <div class="slide-header-divider"></div>
+    </div>
+    <h1 class="slide-header-title">Вправа: Хто виконує?</h1>
+  </header>
+
+  <main class="ai-task-sorting-module-wrapper" id="sorting-game-container" data-interaction-trigger="true">
+    <div class="ai-task-deck-source-area" id="task-deck">
+      <!-- Cards will be injected by JS -->
+    </div>
+
+    <div class="ai-category-zones-container" style="margin-bottom: 4px !important;">
+      <!-- Zone: Mostly AI -->
+      <section class="ai-category-zone-block zone-mostly-ai">
+        <div class="ai-category-header-group">
+          <div class="ai-category-icon-wrapper">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <span class="ai-category-title-text">Переважно ШІ</span>
+        </div>
+        <div class="ai-card-insertion-point" id="zone-mostly-ai"></div>
+      </section>
+
+      <!-- Zone: Mostly Human -->
+      <section class="ai-category-zone-block zone-mostly-human">
+        <div class="ai-category-header-group">
+          <div class="ai-category-icon-wrapper">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <span class="ai-category-title-text">Переважно людина</span>
+        </div>
+        <div class="ai-card-insertion-point" id="zone-mostly-human"></div>
+      </section>
+
+      <!-- Zone: Best Together -->
+      <section class="ai-category-zone-block zone-best-together">
+        <div class="ai-category-header-group">
+          <div class="ai-category-icon-wrapper">
+            <i class="fa-solid fa-hands-holding-circle"></i>
+          </div>
+          <span class="ai-category-title-text">Найкраще разом</span>
+        </div>
+        <div class="ai-card-insertion-point" id="zone-best-together"></div>
+      </section>
+    </div>
+  </main>
+
+  <div class="ai-instruction-hint-banner">
+    <i class="fa-solid fa-arrow-pointer"></i>
+    Натисніть на картку, щоб знайти для неї правильну категорію
+  </div>
+
+  <script>
+    const taskData = [
+      { id: 't1', text: 'Перекласти чернетку листа', category: 'zone-best-together' },
+      { id: 't2', text: 'Оцінити конфлікт у класі', category: 'zone-mostly-human' },
+      { id: 't3', text: 'Створити 20 назв проєкту', category: 'zone-mostly-ai' },
+      { id: 't4', text: 'Ухвалити медичне рішення', category: 'zone-best-together' },
+      { id: 't5', text: 'Перевірити тисячі записів', category: 'zone-mostly-ai' },
+      { id: 't6', text: 'Підтримати друга в складній ситуації', category: 'zone-mostly-human' }
+    ];
+
+    function initGame() {
+      const deck = document.getElementById('task-deck');
+      
+      taskData.forEach(task => {
+        const card = document.createElement('div');
+        card.className = 'ai-vs-human-task-card';
+        card.id = task.id;
+        card.innerHTML = `<i class="fa-solid fa-grip-vertical"></i> ${task.text}`;
+        
+        card.onclick = () => {
+          if (!card.classList.contains('is-sorted')) {
+            moveToCategory(task.id, task.category);
+          }
+        };
+        
+        deck.appendChild(card);
+      });
+    }
+
+    function moveToCategory(cardId, zoneId) {
+      const card = document.getElementById(cardId);
+      const targetZone = document.getElementById(zoneId);
+      
+      // Visual feedback before moving
+      card.style.opacity = '0';
+      card.style.transform = 'scale(0.8)';
+      
+      setTimeout(() => {
+        card.classList.add('is-sorted');
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1)';
+        targetZone.appendChild(card);
+        
+        // Update icon to checkmark
+        card.querySelector('i').className = 'fa-solid fa-check';
+        card.querySelector('i').style.color = getComputedStyle(document.documentElement).getPropertyValue('--ppt-good');
+      }, 300);
+    }
+
+    window.onload = initGame;
+  </script>
+</div>
+
+
+</body></html>

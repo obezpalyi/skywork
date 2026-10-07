@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Критерії успішного виконання Capstone</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }/* reset */
+    *{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: transparent;
+      font-family: var(--ppt-font-body);
+    }
+
+    /* slide root */
+    .capstone-criteria-slide-root {
+      display: flex;
+      flex-direction: column;
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      color: var(--ppt-text-1);
+      
+      padding: 0 64px;
+    }/* title region — fixed per DESIGN */
+    .title-capstone-criteria-region{
+      display: flex;
+      flex-direction: column;
+      margin-top: 38px;
+      margin-bottom: 26px;
+      flex-shrink: 0;
+    }
+
+    .title-capstone-criteria-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .title-capstone-criteria-accent-bar {
+      width: 4px;
+      height: 16px;
+      background-color: var(--ppt-accent);
+    }
+
+    .title-capstone-criteria-eyebrow-label {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+
+    .title-capstone-criteria-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .title-capstone-criteria-subheading {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      margin-top: 6px;
+      line-height: 1.4;
+    }/* main body region — flex grow */
+    .capstone-criteria-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 19px 24px;
+      padding-bottom: 38px;
+       /* allowed here? NO — global prohibition. remove */
+    }
+
+    /* fix: no min-height anywhere */
+    .capstone-criteria-body-wrapper {
+       /* forbidden — remove */
+    }/* re-declare without min-height */
+    .capstone-criteria-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 19px 24px;
+      padding-bottom: 38px;
+    }/* criteria grid — asymmetric: left dominant, right supporting */
+    .capstone-criteria-main-grid{
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 19px 24px;
+      flex: 1 1 0;
+      align-items: stretch;
+    }
+
+    /* left column (dominant) */
+    .capstone-criteria-left-panel {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .capstone-criteria-left-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .capstone-criteria-left-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .capstone-criteria-left-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .capstone-criteria-left-icon {
+      color: var(--ppt-good);
+      font-size: 16px;
+      width: 20px;
+      text-align: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }/* right column (supporting) */
+    .capstone-criteria-right-panel{
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-lg);
+      padding: 19px 26px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--ppt-border);
+    }.capstone-criteria-right-heading{
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      margin-bottom: 13px;
+    }.capstone-criteria-right-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px 14px;
+      flex: 1;
+    }.capstone-criteria-right-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 8px 10px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .capstone-criteria-right-icon {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      width: 18px;
+      text-align: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }/* bottom compact evidence strip */
+    .capstone-criteria-evidence-band{
+      background: var(--ppt-surface);
+      border-left: 4px solid var(--ppt-accent);
+      padding: 13px 24px;
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      align-items: center;
+      gap: 13px 16px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .capstone-criteria-evidence-icon {
+      color: var(--ppt-accent-2);
+      font-size: 22px;
+      width: 28px;
+      text-align: center;
+    }
+
+    .capstone-criteria-evidence-text {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }
+
+    .capstone-criteria-evidence-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }/* no flex on single items */
+    .capstone-criteria-left-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }.capstone-criteria-right-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px 12px;
+    }
+
+    /* ensure no fixed heights */
+    .capstone-criteria-left-panel,
+    .capstone-criteria-right-panel,
+    .capstone-criteria-evidence-band {
+      height: auto;
+    }
+
+    /* list items are block-level, flex only for icon/text alignment */
+    .capstone-criteria-left-item,
+    .capstone-criteria-right-item {
+      display: flex;
+    }
+
+    /* complete content visibility */
+    .capstone-criteria-left-item span,
+    .capstone-criteria-right-item span {
+      display: block;
+    }
+
+  
+html { overflow: hidden; }
+</style>
+  <!-- Font Awesome 6 (free) -->
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="capstone-criteria-slide-root">
+    <!-- Title region (fixed per DESIGN) -->
+    <header class="title-capstone-criteria-region">
+      <div class="title-capstone-criteria-eyebrow-row">
+        <div class="title-capstone-criteria-accent-bar"></div>
+        <span class="title-capstone-criteria-eyebrow-label">SERVICEHUB QA TRACK</span>
+      </div>
+      <h1 class="title-capstone-criteria-heading">Критерії успішного виконання Capstone</h1>
+      <h2 class="title-capstone-criteria-subheading">Вимоги до якості результатів: обґрунтованість, простежуваність та відсутність вигаданої поведінки</h2>
+    </header>
+
+    <!-- Main body -->
+    <div class="capstone-criteria-body-wrapper">
+      <!-- asymmetric grid: left dominant, right supporting -->
+      <div class="capstone-criteria-main-grid">
+        <!-- left panel: core criteria -->
+        <div class="capstone-criteria-left-panel">
+          <div class="capstone-criteria-left-heading">
+            <i class="fa-solid fa-clipboard-check" style="margin-right: 8px; color: var(--ppt-accent);"></i> Обов&#39;язкові критерії якості
+          </div>
+          <ul class="capstone-criteria-left-list">
+            <li class="capstone-criteria-left-item">
+              <i class="fa-solid fa-circle-check capstone-criteria-left-icon"></i>
+              <span><strong>Жодної вигаданої поведінки</strong> — усі тести, очікувані результати та висновки базуються виключно на затвердженій базовій версії вимог.</span>
+            </li>
+            <li class="capstone-criteria-left-item">
+              <i class="fa-solid fa-circle-check capstone-criteria-left-icon"></i>
+              <span><strong>Прогалини тестованості обґрунтовані</strong> — кожне виявлене обмеження підкріплене прямим посиланням на конкретний пункт вимог або бізнес-правило.</span>
+            </li>
+            <li class="capstone-criteria-left-item">
+              <i class="fa-solid fa-circle-check capstone-criteria-left-icon"></i>
+              <span><strong>Покриття включає негативні та граничні сценарії</strong> — окрім happy path, перевірені некоректні входи, межі SLA, часові пояси та відмови інтеграцій.</span>
+            </li>
+            <li class="capstone-criteria-left-item">
+              <i class="fa-solid fa-circle-check capstone-criteria-left-icon"></i>
+              <span><strong>Тести простежуються до вимог</strong> — кожен тестовий випадок має зворотний зв&#39;язок із конкретним критерієм приймання або бізнес-правилом.</span>
+            </li>
+            <li class="capstone-criteria-left-item">
+              <i class="fa-solid fa-circle-check capstone-criteria-left-icon"></i>
+              <span><strong>Регресія враховує непрямий вплив</strong> — оцінені суміжні сервіси, спільні дані, ролі та інтеграції, а не лише змінену функціональність.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- right panel: додаткові критерії -->
+        <div class="capstone-criteria-right-panel">
+          <div class="capstone-criteria-right-heading">
+            <i class="fa-solid fa-list-check" style="margin-right: 8px; color: var(--ppt-accent-2);"></i> Контрольні точки
+          </div>
+          <ul class="capstone-criteria-right-list">
+            <li class="capstone-criteria-right-item">
+              <i class="fa-solid fa-shield-halved capstone-criteria-right-icon"></i>
+              <span>Класифікація дефект/зміна обґрунтована доказами.</span>
+            </li>
+            <li class="capstone-criteria-right-item">
+              <i class="fa-solid fa-shield-halved capstone-criteria-right-icon"></i>
+              <span>Ризики та блокери описані явно.</span>
+            </li>
+            <li class="capstone-criteria-right-item">
+              <i class="fa-solid fa-shield-halved capstone-criteria-right-icon"></i>
+              <span>Точки human-review та затвердження видимі.</span>
+            </li>
+            <li class="capstone-criteria-right-item">
+              <i class="fa-solid fa-shield-halved capstone-criteria-right-icon"></i>
+              <span>Висновок про готовність структурований.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- compact evidence band (conclusion) -->
+      <div class="capstone-criteria-evidence-band" style="margin-bottom: 3px !important;">
+        <i class="fa-solid fa-flag-checkered capstone-criteria-evidence-icon"></i>
+        <div class="capstone-criteria-evidence-text">
+          <strong>Успішний Capstone:</strong> повна відповідність затвердженому базлайну, обґрунтовані рішення, прозора простежуваність і видимі людські рішення.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

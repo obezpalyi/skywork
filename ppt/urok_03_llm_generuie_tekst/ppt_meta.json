@@ -1,0 +1,154 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "urok_03_llm_generuie_tekst",
+  "artifact_path": "ppt/urok_03_llm_generuie_tekst",
+  "pptTitle": "LLM: як машина генерує т…",
+  "ppt_title": "LLM: як машина генерує т…",
+  "outlineArtifactPath": "ppt/urok_03_llm_generuie_tekst/outline.md",
+  "outline_artifact_path": "ppt/urok_03_llm_generuie_tekst/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8b0c6ff5f8.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8b0c6ff5f8.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8b0c6ff5f8.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_03_llm_generuie_tekst/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_03_llm_generuie_tekst/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8b0c6ff5f8.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8b0c6ff5f8.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_03_llm_generuie_tekst/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_03_llm_generuie_tekst/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи українською мовою окрему навчальну презентацію для уроку інформатики в 11 класі на тему «LLM: як машина генерує текст?». Рівно 10 слайдів: розминка з наступним словом, визначення LLM, токени, контекст, покрокова генерація, гра «Жива мовна модель», варіативність відповідей, причини впевнених помилок, підсумок і домашнє завдання.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "auto_increase_ratio": 0.35,
+  "auto_increase_bucket": 0.5898,
+  "region": "US",
+  "prepared_session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "prepared_question_id": "Q-4a812a49c9b3",
+  "prepared_target_path": "ppt/urok_03_llm_generuie_tekst",
+  "prepared_state_id": "pps_cd3b0a04fb1fa0c56bc6f8efe2adff3a",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:3273868dfe382276f4155fc4123e3463791454b1b8ced6d119609d79cf0db23c",
+  "init_request_fingerprint": "sha256:329dfca84ee073d730bc8adb13841da4c8007e95327a54c5231f6f96fcf547f6",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:bc40613f7a19ded3adf33ce69548aa891ed90f0571a4b62c8fba9b586eb81ff6",
+  "outline_artifact_sha256": "sha256:c1f224a0cdf8a6e3128da71bb9586e32c6800656eda149b4e51fae3274beae3d",
+  "prepared_inputs": [
+    {
+      "path": "ppt/urok_03_llm_generuie_tekst/design_guideline.md",
+      "size": 9920,
+      "sha256": "sha256:a672de0022832a0f01871ccf7fefc80318a58b55c3c56e0e4f2bb4406b81d7a8"
+    },
+    {
+      "path": "ppt/urok_03_llm_generuie_tekst/final_report.md",
+      "size": 6584,
+      "sha256": "sha256:bc40613f7a19ded3adf33ce69548aa891ed90f0571a4b62c8fba9b586eb81ff6"
+    },
+    {
+      "path": "ppt/urok_03_llm_generuie_tekst/outline.json",
+      "size": 19549,
+      "sha256": "sha256:96485e2bf0c7eab8f146f33a0a89d6f83b958aa24e78769faefd5509498bab54"
+    },
+    {
+      "path": "ppt/urok_03_llm_generuie_tekst/outline.md",
+      "size": 3569,
+      "sha256": "sha256:c1f224a0cdf8a6e3128da71bb9586e32c6800656eda149b4e51fae3274beae3d"
+    },
+    {
+      "path": "ppt/urok_03_llm_generuie_tekst/prepared_images/cover_d4e0b9ae8ef2_2095589086322044929.png",
+      "size": 1376279,
+      "sha256": "sha256:6cf323d4946a39e887c5b2a93a0b7f828a4584bfc35b4332ddec295ed4307e47"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json",
+      "prepared_images/cover_d4e0b9ae8ef2_2095589086322044929.png"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "auto_mode",
+      "auto_increase_miss",
+      "standard_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "generated",
+      "applied": true
+    },
+    "dropped_images": null,
+    "warnings": null,
+    "mock": false
+  }
+}

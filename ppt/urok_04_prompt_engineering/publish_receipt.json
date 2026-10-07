@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "status": "success",
+  "operation": "ppt.publish",
+  "kind": "ppt",
+  "page_count": 10,
+  "total_pages": 10,
+  "artifacts": [
+    {
+      "kind": "ppt",
+      "artifact_id": "2095591320414294016",
+      "artifact_version_id": "2095591320422682624",
+      "version": 1,
+      "status": "published",
+      "artifact_type": "presentation",
+      "file_type": "gen_ppt",
+      "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/03/upl_92644766d2ba45e19ec5515422c582d5/ppt-urok_04_prompt_engineering.zip",
+      "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_83dec139f0834eb480d173903e171e36/preview.png"
+    }
+  ],
+  "delivery": {
+    "artifact_id": "2095591320414294016",
+    "artifact_version_id": "2095591320422682624",
+    "version": 1,
+    "title": "Prompt engineering",
+    "artifact_type": "presentation",
+    "file_type": "gen_ppt",
+    "page_count": 10,
+    "locator_items": [
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_67edc3f3946c412a96a6d33babdc97e2/1.html",
+        "index": 1,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_30433b73fcee4159bcb8853a7972120d/2.html",
+        "index": 2,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_2a57466feb714548b9784edbfdb68ce3/3.html",
+        "index": 3,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_206de8580b2c49588c22364f8e598c56/4.html",
+        "index": 4,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_fb363a89fc22467f9d0dee7ac725f70c/5.html",
+        "index": 5,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_dba61b6beeff45a699cfeda77cb57640/6.html",
+        "index": 6,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_f17e211dce3f4c7d955be1d2a8852617/7.html",
+        "index": 7,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_166e8b3a7a6141b8bcddb2b0ead0ab65/8.html",
+        "index": 8,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_6cc18186798a4fba987281c4211d4d78/9.html",
+        "index": 9,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_a435b24ae5af4dd191a51072fe5c91e6/10.html",
+        "index": 10,
+        "notes": ""
+      }
+    ],
+    "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/03/upl_92644766d2ba45e19ec5515422c582d5/ppt-urok_04_prompt_engineering.zip",
+    "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_83dec139f0834eb480d173903e171e36/preview.png",
+    "ppt_style": "html",
+    "metadata": {
+      "artifact_complete": true,
+      "delivery_status": "complete_published",
+      "failed_pages": null,
+      "generation_status": "success",
+      "image_model_used": "",
+      "image_models_used": [],
+      "is_nano_ppt": false,
+      "language": "Ukrainian",
+      "operation_id": "urok_04_prompt_engineering",
+      "page_aspect_ratio": "16:9",
+      "page_height": 720,
+      "page_size": "1280_720",
+      "page_width": 1280,
+      "ppt_style": "html",
+      "prepared_state_id": "pps_7ed8be816012739177c0f115d0520b73",
+      "prepared_state_version": 1,
+      "publish_mode": "complete",
+      "render_mode": "html",
+      "resume_supported": false,
+      "stop_reason": "",
+      "style": "html",
+      "success_pages": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "total_pages": 10,
+      "used_nano_banana": false
+    }
+  },
+  "deliveryStatus": "complete_published",
+  "idempotency_key_hash": "76292f444d4d9254",
+  "pre_refresh_path": "ppt/urok_04_prompt_engineering/.artifact/pre_refresh/v1",
+  "timing": {
+    "started_at": "2026-09-03T19:14:33.793604695Z",
+    "completed_at": "2026-09-03T19:14:40.047463651Z",
+    "duration_ms": 6253
+  },
+  "bundle_hash": "e1b380bbaed2dc26da819ac1ce92e6391bfc03e7608936af509f60a53058dabc"
+}

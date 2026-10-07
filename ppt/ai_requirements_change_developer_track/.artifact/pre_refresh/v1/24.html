@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Пакет технічної передачі для QA та DevOps</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-bg);
+      
+    }
+
+    /* Non-Cover Title Region — exactly per DESIGN */
+    .title-header {
+      margin-top: 40px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-overline-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-overline-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .title-overline-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-main-text {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+    }
+
+    /* Body wrapper consumes remaining height */
+    .body-content-wrapper {
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+       /* allowed for structural wrapper */
+    }
+
+    /* Two-column layout: QA handoff (dominant) + DevOps handoff (supporting) */
+    .handoff-columns-grid {
+      flex: 1 1 0;
+      display: flex;
+      align-items: stretch;
+      gap: 24px;
+    }
+
+    .handoff-column-left {
+      flex: 1.1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      box-shadow: var(--ppt-shadow-soft);
+      padding: 24px 24px 20px 24px;
+    }
+
+    .handoff-column-right {
+      flex: 0.9 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      box-shadow: var(--ppt-shadow-soft);
+      padding: 24px 24px 20px 24px;
+    }
+
+    .handoff-column-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+
+    .handoff-column-header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+
+    .handoff-column-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--ppt-radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ppt-surface-2);
+      color: var(--ppt-accent);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .handoff-column-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .handoff-list-left {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1 1 0;
+    }
+
+    .handoff-list-right {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1 1 0;
+    }
+
+    .handoff-list-item-left {
+      display: block;
+      list-style: none;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--ppt-text-2);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .handoff-list-item-right {
+      display: block;
+      list-style: none;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--ppt-text-2);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .handoff-list-item-left::before {
+      content: "›";
+      position: absolute;
+      left: 4px;
+      color: var(--ppt-accent);
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .handoff-list-item-right::before {
+      content: "›";
+      position: absolute;
+      left: 4px;
+      color: var(--ppt-accent);
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .handoff-item-strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    /* Bottom compact summary band — single line */
+    .handoff-bottom-band {
+      flex-shrink: 0;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .band-icon {
+      color: var(--ppt-accent);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .band-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .band-text em {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--ppt-accent);
+    }
+
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title region per DESIGN -->
+    <header class="title-header">
+      <div class="title-overline-row">
+        <span class="title-overline-label">Developer Track</span>
+        <div class="title-overline-line"></div>
+      </div>
+      <h1 class="title-main-text">Пакет технічної передачі для QA та DevOps</h1>
+    </header>
+
+    <!-- Body wrapper -->
+    <div class="body-content-wrapper">
+      <!-- Two-column handoff: QA (left, dominant) + DevOps (right, supporting) -->
+      <div class="handoff-columns-grid">
+        <!-- Left column: QA handoff -->
+        <div class="handoff-column-left">
+          <div class="handoff-column-header-left">
+            <div class="handoff-column-icon">
+              <i class="fa-solid fa-bug"></i>
+            </div>
+            <span class="handoff-column-title-text">Передача в QA</span>
+          </div>
+          <ul class="handoff-list-left">
+            <li class="handoff-list-item-left"><span class="handoff-item-strong">Змінена поведінка та інтерфейси</span> — нові поля API, правила валідації, семантика подій.</li>
+            <li class="handoff-list-item-left"><span class="handoff-item-strong">Сценарії помилок і відкату</span> — обробка відмов, retry, деградація при відсутності даних пріоритету.</li>
+            <li class="handoff-list-item-left"><span class="handoff-item-strong">Правила сумісності</span> — поведінка старих клієнтів, default-значення для відсутніх полів.</li>
+            <li class="handoff-list-item-left"><span class="handoff-item-strong">Очікування міграції даних</span> — перевірка backfill, онлайн/офлайн міграція, валідація.</li>
+            <li class="handoff-list-item-left"><span class="handoff-item-strong">Комбінації фіча-флагів</span> — увімкнення/вимкнення, вплив на критичний шлях ескалації.</li>
+            <li class="handoff-list-item-left"><span class="handoff-item-strong">Відомі ризики</span> — транзитивний вплив на споживачів, залежності від CRM і звітності.</li>
+          </ul>
+        </div>
+
+        <!-- Right column: DevOps handoff -->
+        <div class="handoff-column-right">
+          <div class="handoff-column-header-right">
+            <div class="handoff-column-icon">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <span class="handoff-column-title-text">Передача в DevOps</span>
+          </div>
+          <ul class="handoff-list-right">
+            <li class="handoff-list-item-right"><span class="handoff-item-strong">Порядок розгортання</span> — послідовність сервісів: Ticket → SLA → Notification → Reporting.</li>
+            <li class="handoff-list-item-right"><span class="handoff-item-strong">Кроки міграції</span> — застосування additive DDL, backfill історії ескалацій, валідація.</li>
+            <li class="handoff-list-item-right"><span class="handoff-item-strong">Конфігурація</span> — параметри нових правил SLA, event-топіки, таймаути.</li>
+            <li class="handoff-list-item-right"><span class="handoff-item-strong">Керування фіча-флагами</span> — власник активації, default-стан, критерії видалення.</li>
+            <li class="handoff-list-item-right"><span class="handoff-item-strong">Метрики та логи</span> — latency ескалації, помилки подій, healthcheck нових компонентів.</li>
+            <li class="handoff-list-item-right"><span class="handoff-item-strong">Умови відкату</span> — rollback за флагом, відкат міграції, співіснування версій.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Compact bottom summary band -->
+      <div class="handoff-bottom-band" style="margin-bottom: 4px !important;">
+        <div class="band-icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="band-text">
+          <em>Ключова вимога:</em> кожне твердження про сумісність підкріплене контрактом або доказом реалізації, а не припущенням.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome (loaded once for all icons) -->
+  
+
+</body></html>

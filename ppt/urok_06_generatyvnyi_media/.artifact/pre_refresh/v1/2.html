@@ -1,0 +1,509 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Генерація зображень</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background-color: #F9FAFB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+            
+            font-family: 'Inter', sans-serif;
+        }
+
+        .slide-root {
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Title region — fixed per design */
+        .title-region {
+            margin-top: 48px;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .title-eyebrow-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-accent-bar {
+            width: 4px;
+            height: 32px;
+            background: #6366F1;
+            border-radius: 4px;
+        }
+
+        .title-eyebrow-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #6366F1;
+        }
+
+        .title-heading {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: #111827;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        /* Main body wrapper — consumes remaining height */
+        .image-generation-body-wrapper {
+            flex: 1 1 0;
+            margin-left: 64px;
+            margin-right: 64px;
+            display: flex;
+            flex-direction: row;
+            gap: 28px;
+            
+            padding-bottom: 40px;
+        }
+
+        /* Left column — prompt anatomy (dominant) */
+        .left-prompt-anatomy-column {
+            flex: 3 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            min-width: 0;
+        }
+
+        .prompt-definition-panel {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 20px 22px;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .prompt-panel-title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .prompt-panel-icon {
+            font-size: 18px;
+            color: #6366F1;
+            width: 28px;
+            text-align: center;
+        }
+
+        .prompt-panel-title-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .prompt-panel-description {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #4B5563;
+        }
+
+        .prompt-anatomy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .prompt-anatomy-item {
+            background: #F3F4F6;
+            border-radius: 8px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .anatomy-item-icon {
+            color: #6366F1;
+            font-size: 16px;
+            width: 24px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .anatomy-item-text {
+            font-size: 15px;
+            font-weight: 500;
+            color: #111827;
+            line-height: 1.4;
+        }
+
+        .example-prompt-card {
+            background: #EEF2FF;
+            border-radius: 12px;
+            padding: 18px 20px;
+            border-left: 4px solid #6366F1;
+        }
+
+        .example-prompt-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .example-prompt-label i {
+            color: #6366F1;
+            font-size: 14px;
+        }
+
+        .example-prompt-label span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .example-prompt-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1F2937;
+            font-style: italic;
+        }
+
+        .reference-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            padding: 14px 16px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .reference-note i {
+            color: #06B6D4;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .reference-note-text {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #4B5563;
+        }
+
+        .reference-note-text strong {
+            color: #111827;
+            font-weight: 600;
+        }
+
+        /* Right column — noise to image (supporting) */
+        .right-noise-to-image-column {
+            flex: 2 1 0;
+            background: #FFFFFF;
+            border-radius: 12px;
+            border: 1px solid #E5E7EB;
+            padding: 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .noise-to-image-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .noise-to-image-header i {
+            font-size: 18px;
+            color: #06B6D4;
+        }
+
+        .noise-to-image-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+            list-style: none;
+        }
+
+        .step-list-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid #F3F4F6;
+        }
+
+        .step-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .step-marker {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #EEF2FF;
+            color: #6366F1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            font-family: 'Space Grotesk', sans-serif;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            font-size: 15px;
+            line-height: 1.4;
+            color: #4B5563;
+        }
+
+        .step-content strong {
+            color: #111827;
+            font-weight: 600;
+        }
+
+        .noise-visualization {
+            background: #F9FAFB;
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 4px;
+        }
+
+        .noise-visualization-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .noise-icon {
+            font-size: 26px;
+            color: #9CA3AF;
+        }
+
+        .noise-arrow {
+            font-size: 18px;
+            color: #6366F1;
+        }
+
+        .noise-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #6B7280;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .noise-caption {
+            font-size: 13px;
+            color: #9CA3AF;
+            text-align: center;
+            margin-top: 2px;
+        }
+
+        :root {
+            --ppt-bg: #F9FAFB;
+            --ppt-bg-soft: #EEF2FF;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #F3F4F6;
+            --ppt-border: #E5E7EB;
+            --ppt-text-1: #111827;
+            --ppt-text-2: #4B5563;
+            --ppt-text-3: #9CA3AF;
+            --ppt-accent: #6366F1;
+            --ppt-accent-2: #06B6D4;
+            --ppt-chart-1: #6366F1;
+            --ppt-chart-2: #06B6D4;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EC4899;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 8px;
+            --ppt-radius-lg: 16px;
+            --ppt-shadow-soft: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+            --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --ppt-font-display: 'Space Grotesk', sans-serif;
+            --ppt-font-body: 'Inter', sans-serif;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            font-family: var(--ppt-font-body);
+        }
+
+        .title-heading {
+            font-family: var(--ppt-font-display);
+        }
+
+        .prompt-panel-title-text,
+        .noise-to-image-title {
+            font-family: var(--ppt-font-display);
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Non-cover title region (fixed contract) -->
+        <div class="title-region">
+            <div class="title-eyebrow-row">
+                <div class="title-accent-bar"></div>
+                <span class="title-eyebrow-label">Технології майбутнього</span>
+            </div>
+            <h1 class="title-heading">Генерація зображень</h1>
+        </div>
+
+        <!-- Main body: left prompt anatomy + right noise-to-image -->
+        <div class="image-generation-body-wrapper" style="margin-bottom: 4px !important;">
+            <!-- LEFT COLUMN: prompt anatomy -->
+            <div class="left-prompt-anatomy-column">
+                <!-- Prompt definition panel -->
+                <div class="prompt-definition-panel">
+                    <div class="prompt-panel-title-row">
+                        <i class="fa-solid fa-pen-nib prompt-panel-icon"></i>
+                        <span class="prompt-panel-title-text">З чого складається промпт?</span>
+                    </div>
+                    <p class="prompt-panel-description">
+                        Генератор зображень отримує текстовий опис і перетворює його на візуальний образ. Чим точніші параметри — тим ближчий результат до задуму.
+                    </p>
+                </div>
+
+                <!-- Anatomy grid -->
+                <div class="prompt-anatomy-grid">
+                    <div class="prompt-anatomy-item">
+                        <i class="fa-solid fa-cube anatomy-item-icon"></i>
+                        <span class="anatomy-item-text">Об&#39;єкт та середовище</span>
+                    </div>
+                    <div class="prompt-anatomy-item">
+                        <i class="fa-solid fa-clock anatomy-item-icon"></i>
+                        <span class="anatomy-item-text">Час доби, освітлення</span>
+                    </div>
+                    <div class="prompt-anatomy-item">
+                        <i class="fa-solid fa-crop anatomy-item-icon"></i>
+                        <span class="anatomy-item-text">Композиція, план</span>
+                    </div>
+                    <div class="prompt-anatomy-item">
+                        <i class="fa-solid fa-palette anatomy-item-icon"></i>
+                        <span class="anatomy-item-text">Стиль і обмеження</span>
+                    </div>
+                </div>
+
+                <!-- Example prompt card -->
+                <div class="example-prompt-card">
+                    <div class="example-prompt-label">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <span>Приклад промпту</span>
+                    </div>
+                    <p class="example-prompt-text">
+                        «Ілюстрація старого дерев&#39;яного млина біля річки, світанок, м&#39;яке тепле світло, широкий план, акварельний стиль, без написів»
+                    </p>
+                </div>
+
+                <!-- Reference explanation -->
+                <div class="reference-note">
+                    <i class="fa-solid fa-image"></i>
+                    <div class="reference-note-text">
+                        <strong>Референс</strong> — це додаткове зображення або опис стилю, на який орієнтується модель. Він допомагає уточнити напрямок, але не гарантує точної копії.
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: noise to image -->
+            <div class="right-noise-to-image-column">
+                <div class="noise-to-image-header">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span class="noise-to-image-title">Від шуму до зображення</span>
+                </div>
+
+                <ul class="step-list">
+                    <li class="step-list-item">
+                        <div class="step-marker">1</div>
+                        <div class="step-content"><strong>Шум</strong> — випадкові пікселі, без змісту.</div>
+                    </li>
+                    <li class="step-list-item">
+                        <div class="step-marker">2</div>
+                        <div class="step-content"><strong>Наближення</strong> — модель поступово формує обриси.</div>
+                    </li>
+                    <li class="step-list-item">
+                        <div class="step-marker">3</div>
+                        <div class="step-content"><strong>Деталізація</strong> — додаються текстури, світло, стиль.</div>
+                    </li>
+                    <li class="step-list-item">
+                        <div class="step-marker">4</div>
+                        <div class="step-content"><strong>Результат</strong> — готове зображення за описом.</div>
+                    </li>
+                </ul>
+
+                <div class="noise-visualization">
+                    <div class="noise-visualization-item">
+                        <i class="fa-solid fa-circle-notch noise-icon"></i>
+                        <span class="noise-label">Шум</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right noise-arrow"></i>
+                    <div class="noise-visualization-item">
+                        <i class="fa-solid fa-shapes noise-icon" style="color:#A5B4FC;"></i>
+                        <span class="noise-label">Форма</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right noise-arrow"></i>
+                    <div class="noise-visualization-item">
+                        <i class="fa-solid fa-paint-roller noise-icon" style="color:#06B6D4;"></i>
+                        <span class="noise-label">Деталі</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right noise-arrow"></i>
+                    <div class="noise-visualization-item">
+                        <i class="fa-solid fa-image noise-icon" style="color:#6366F1;"></i>
+                        <span class="noise-label">Фінал</span>
+                    </div>
+                </div>
+                <p class="noise-caption">Спрощена схема — модель ітерує від хаосу до чіткого образу</p>
+            </div>
+        </div>
+    </div>
+
+</body></html>

@@ -1,0 +1,329 @@
+[
+  {
+    "page_num": 1,
+    "heading": "LLM: як машина генерує текст?",
+    "type": "title",
+    "des": "Титульна сторінка уроку для 11 класу, присвячена принципам роботи великих мовних моделей, поняттям токенів, контексту та імовірнісної генерації тексту.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/fb8c26042c4123d41741b4661b9a1729.jpg",
+        "filename": "Decoding Large Language Models: Their Roles, Costs, and Real-World Impact |  by Hemanth Raju Koneti | Artificial Intelligence in Plain English",
+        "img_desc": "A dark purple infographic titled \"Large Language Model\" shows a stylized purple brain in the center, with arrows indicating a process from training to adaptation. On the left, input types are listed with icons: structured data, text, voice, 3D signals, and images. On the right, colored brain icons represent applications including information extraction, instruction following, object recognition, image captioning, Q\u0026A, and sentiment analysis. The layout is clean and symmetrical, with high-contrast white text and neon-colored line illustrations on a dark gradient background.",
+        "caption": "Infographic illustrating large language model training and adaptation, with multimodal inputs on the left and applications such as information extraction, object recognition, image captioning, Q\u0026A, and sentiment analysis on the right.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x614",
+        "title": "Decoding Large Language Models: Their Roles, Costs, and Real-World Impact |  by Hemanth Raju Koneti | Artificial Intelligence in Plain English",
+        "width": 1024,
+        "height": 614,
+        "query": "large language model text generation concept"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/95917420d2cc5722fe59d5cbeed99b27.jpg",
+        "filename": "Large Language Models Explained in 3 Levels of Difficulty - KDnuggets",
+        "img_desc": "A hand-drawn encoder-decoder diagram illustrates English-to-Indonesian translation. On the left, three input words—\"I,\" \"wake,\" and \"up\"—feed into encoder blocks labeled E1, E2, and E3, which connect to a central context block marked C. On the right, decoder blocks D1, D2, and D3 generate the Indonesian words \"Saya,\" \"Bangun,\" and \"Tidur,\" with arrows showing sequential processing and dotted connections indicating attention. The diagram uses a white background, black outlines, light pastel shading, and red handwritten labels for \"Encoder\" and \"Decoder.\"",
+        "caption": "Hand-drawn encoder-decoder translation diagram showing English inputs being processed into Indonesian outputs through context and decoder stages.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "898x509",
+        "title": "Large Language Models Explained in 3 Levels of Difficulty - KDnuggets",
+        "width": 898,
+        "height": 509,
+        "query": "large language model text generation concept"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/ac77dddb640b919ca8e8652fc3cff77d.jpg",
+        "filename": "Free Making Predictions Activities \u0026 Read Aloud Lesson Plan",
+        "img_desc": "A close-up photograph shows a bright yellow classroom prediction activity worksheet placed on lined notebook paper. The worksheet is titled \"My Prediction\" and includes repeated sections labeled \"What Happened,\" with vertical text reading \"I can make predictions!\" A colorful illustrated educational poster is partially visible in the background. The image is sharply focused, well lit, and composed around the worksheet, with vivid yellow, red, blue, and green tones.",
+        "caption": "A yellow \"My Prediction\" classroom activity worksheet on lined notebook paper, designed for recording predictions and what happened.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x1365",
+        "title": "Free Making Predictions Activities \u0026 Read Aloud Lesson Plan",
+        "width": 1024,
+        "height": 1365,
+        "query": "students word prediction classroom activity"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/8c32b3ea101e6cf5b3834bb28b3632f7.jpg",
+        "filename": "Word Piece Tokenization Algorithm | by Abhishek Kumar Pandey | Medium",
+        "img_desc": "A clean educational diagram illustrates tokenization as the first step in an NLP pipeline. The quoted sentence “This is the first step in the NLP pipeline” appears at the top, with a downward arrow labeled “Tokenizer” leading to separate rounded boxes containing the tokens “This,” “is,” “the,” “first,” “step,” “in,” “the,” “NLP,” and “pipeline.” The diagram uses a minimal white background, dark outlines, purple handwritten-style text, and a simple horizontal composition.",
+        "caption": "An NLP tokenizer splits the sentence “This is the first step in the NLP pipeline” into individual word tokens.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x511",
+        "title": "Word Piece Tokenization Algorithm | by Abhishek Kumar Pandey | Medium",
+        "width": 1024,
+        "height": 511,
+        "query": "text tokenization words pieces concept"
+      },
+      {
+        "source": "text2image_cover",
+        "url": "https://skyagent-artifacts.skywork.ai/image/5940376570349285532/2095589086322044928/2095589086322044929.png",
+        "img_name": "2095589086322044929.png",
+        "img_desc": "A vast, luminous neural network sphere floats in deep cosmic space, composed of thousands of glowing cyan and blue nodes interconnected by fine threads of light. Inside the sphere, layered streams of energy pulse from the core outward, resembling flowing digital data. Around the sphere, a soft mist of tiny glowing particles drifts, creating depth and motion. The background is a dark gradient from deep blue to violet, with faint distant stars. Dramatic lighting highlights the bright core and casts subtle glow across translucent layers, giving a futuristic, high-tech atmosphere. The camera angle is slightly low, looking up at the massive structure, emphasizing its scale and mysterious intelligence.",
+        "img_type": "image",
+        "img_size": "1280x720",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 2,
+    "heading": "Передбач наступне слово",
+    "type": "content",
+    "des": "Інтерактивна вправа на доповнення речень, що демонструє залежність вибору наступного слова від контексту та імовірності різних варіантів продовження.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/ac77dddb640b919ca8e8652fc3cff77d.jpg",
+        "filename": "Free Making Predictions Activities \u0026 Read Aloud Lesson Plan",
+        "img_desc": "A close-up photograph shows a bright yellow classroom prediction activity worksheet placed on lined notebook paper. The worksheet is titled \"My Prediction\" and includes repeated sections labeled \"What Happened,\" with vertical text reading \"I can make predictions!\" A colorful illustrated educational poster is partially visible in the background. The image is sharply focused, well lit, and composed around the worksheet, with vivid yellow, red, blue, and green tones.",
+        "caption": "A yellow \"My Prediction\" classroom activity worksheet on lined notebook paper, designed for recording predictions and what happened.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x1365",
+        "title": "Free Making Predictions Activities \u0026 Read Aloud Lesson Plan",
+        "width": 1024,
+        "height": 1365,
+        "query": "students word prediction classroom activity"
+      }
+    ],
+    "videos": [],
+    "audios": [],
+    "advanced_visual": {
+      "animation_source_required": true,
+      "data_contract": "Використовувати лише текстові приклади та варіанти слів, надані в контенті слайда, без залучення сторонніх даних.",
+      "library": "html_css",
+      "page_idx": [
+        2
+      ],
+      "render_mode": "native_animation",
+      "role": "Інтерактивний віджет для передбачення наступного слова на основі контексту",
+      "visual_contract": "Створення інтерфейсу з кнопками вибору слів, що динамічно підсвічують імовірності та доповнюють речення при натисканні."
+    }
+  },
+  {
+    "page_num": 3,
+    "heading": "Що означає LLM",
+    "type": "content",
+    "des": "Розшифрування поняття великої мовної моделі як навченої математичної системи, що працює із закономірностями тексту та передбачає доречні продовження.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/fb8c26042c4123d41741b4661b9a1729.jpg",
+        "filename": "Decoding Large Language Models: Their Roles, Costs, and Real-World Impact |  by Hemanth Raju Koneti | Artificial Intelligence in Plain English",
+        "img_desc": "A dark purple infographic titled \"Large Language Model\" shows a stylized purple brain in the center, with arrows indicating a process from training to adaptation. On the left, input types are listed with icons: structured data, text, voice, 3D signals, and images. On the right, colored brain icons represent applications including information extraction, instruction following, object recognition, image captioning, Q\u0026A, and sentiment analysis. The layout is clean and symmetrical, with high-contrast white text and neon-colored line illustrations on a dark gradient background.",
+        "caption": "Infographic illustrating large language model training and adaptation, with multimodal inputs on the left and applications such as information extraction, object recognition, image captioning, Q\u0026A, and sentiment analysis on the right.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x614",
+        "title": "Decoding Large Language Models: Their Roles, Costs, and Real-World Impact |  by Hemanth Raju Koneti | Artificial Intelligence in Plain English",
+        "width": 1024,
+        "height": 614,
+        "query": "large language model text generation concept"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 4,
+    "heading": "Текст перетворюється на токени",
+    "type": "content",
+    "des": "Пояснення механізму перетворення людської мови на токени — частини слів, числа або знаки, які модель використовує як числові представлення для обчислень.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/8c32b3ea101e6cf5b3834bb28b3632f7.jpg",
+        "filename": "Word Piece Tokenization Algorithm | by Abhishek Kumar Pandey | Medium",
+        "img_desc": "A clean educational diagram illustrates tokenization as the first step in an NLP pipeline. The quoted sentence “This is the first step in the NLP pipeline” appears at the top, with a downward arrow labeled “Tokenizer” leading to separate rounded boxes containing the tokens “This,” “is,” “the,” “first,” “step,” “in,” “the,” “NLP,” and “pipeline.” The diagram uses a minimal white background, dark outlines, purple handwritten-style text, and a simple horizontal composition.",
+        "caption": "An NLP tokenizer splits the sentence “This is the first step in the NLP pipeline” into individual word tokens.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x511",
+        "title": "Word Piece Tokenization Algorithm | by Abhishek Kumar Pandey | Medium",
+        "width": 1024,
+        "height": 511,
+        "query": "text tokenization words pieces concept"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 5,
+    "heading": "Контекст змінює продовження",
+    "type": "content",
+    "des": "Аналіз впливу контексту на значення фрази та вибір наступних слів на прикладах різних галузей: від побуту до криптографії.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 6,
+    "heading": "Як народжується відповідь",
+    "type": "content",
+    "des": "Опис циклічного процесу генерації тексту: від отримання промпту користувача до покрокового додавання нових токенів у контекст до завершення відповіді.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/95917420d2cc5722fe59d5cbeed99b27.jpg",
+        "filename": "Large Language Models Explained in 3 Levels of Difficulty - KDnuggets",
+        "img_desc": "A hand-drawn encoder-decoder diagram illustrates English-to-Indonesian translation. On the left, three input words—\"I,\" \"wake,\" and \"up\"—feed into encoder blocks labeled E1, E2, and E3, which connect to a central context block marked C. On the right, decoder blocks D1, D2, and D3 generate the Indonesian words \"Saya,\" \"Bangun,\" and \"Tidur,\" with arrows showing sequential processing and dotted connections indicating attention. The diagram uses a white background, black outlines, light pastel shading, and red handwritten labels for \"Encoder\" and \"Decoder.\"",
+        "caption": "Hand-drawn encoder-decoder translation diagram showing English inputs being processed into Indonesian outputs through context and decoder stages.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "898x509",
+        "title": "Large Language Models Explained in 3 Levels of Difficulty - KDnuggets",
+        "width": 898,
+        "height": 509,
+        "query": "large language model text generation concept"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 7,
+    "heading": "Гра Жива мовна модель",
+    "type": "content",
+    "des": "Командна гра, у якій учні імітують роботу алгоритму, розподіляючи бали імовірності між можливими словами та спостерігаючи за зміною контексту.",
+    "images": [],
+    "videos": [],
+    "audios": [],
+    "advanced_visual": {
+      "animation_source_required": true,
+      "data_contract": "Заборонити використання вигаданих фактів або зовнішніх джерел даних, спираючись виключно на параметри гри, визначені в уроці.",
+      "library": "html_css",
+      "page_idx": [
+        7
+      ],
+      "render_mode": "native_animation",
+      "role": "Інтерактивний симулятор для командної гри «Жива мовна модель»",
+      "visual_contract": "Віджет для введення балів імовірності, що візуалізує процес вибору наступного токена та динамічне оновлення текстового вікна."
+    }
+  },
+  {
+    "page_num": 8,
+    "heading": "Чому відповіді можуть відрізнятися",
+    "type": "content",
+    "des": "Розгляд причин різноманітності відповідей на однакові запити та важливості оцінювання корисності й точності генерації залежно від задачі.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 9,
+    "heading": "Чому LLM може впевнено помилятися",
+    "type": "content",
+    "des": "Пояснення природи помилок мовних моделей: пріоритет правдоподібності над істинністю та відсутність автоматичної перевірки фактів за надійними джерелами.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 10,
+    "heading": "Підсумок і домашнє завдання",
+    "type": "content",
+    "des": "Закріплення знань через тези про токени та контекст, виконання вправи «Exit ticket» та отримання завдання для пояснення принципів роботи LLM іншим.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  }
+]

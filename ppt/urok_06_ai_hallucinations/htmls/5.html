@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Червоні прапорці · AI hallucinations</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    /* ===== base_css_theme (скопійовано повністю) ===== */
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap");
+
+    :root {
+      --ppt-bg: #0F172A;
+      --ppt-bg-soft: #1E293B;
+      --ppt-surface: #334155;
+      --ppt-surface-2: #475569;
+      --ppt-border: #38BDF8;
+      --ppt-text-1: #F8FAFC;
+      --ppt-text-2: #CBD5E1;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #38BDF8;
+      --ppt-accent-2: #818CF8;
+      --ppt-chart-1: #38BDF8;
+      --ppt-chart-2: #818CF8;
+      --ppt-chart-3: #2DD4BF;
+      --ppt-chart-4: #F472B6;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+      --ppt-font-display: "Space Grotesk", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }/* ===== reset / base ===== */
+    *{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: transparent;
+      font-family: var(--ppt-font-body);
+    }
+
+    /* ===== slide root — fixed 1280x720 ===== */
+    .red-flags-slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      
+      position: relative;
+    }/* ===== Non-Cover-Page Title Region (відтворено точно) ===== */
+    .title-region{
+      margin-top: 38px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 19px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .title-region-divider {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-surface);
+    }
+
+    .title-region-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-region-subtitle {
+      margin: 0;
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+    }/* ===== головний body-контейнер: flex 1, займає висоту ===== */
+    .red-flags-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 38px;
+       /* дозволено для структурного контейнера, без вмісту тексту */
+    }/* ===== спеціальний open layout: numbered_argument_flow ===== */
+    .red-flags-flow-container{
+      display: flex;
+      flex-direction: column;
+      gap: 10px 12px;
+      flex: 1 1 0;
+      justify-content: flex-start;
+    }/* кожен пункт — горизонтальна рейка: номер + опис */
+    .red-flags-flow-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 19px 24px;
+      background: transparent;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+      padding-bottom: 10px;
+      padding-top: 3px;
+    }
+
+    .red-flags-flow-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    /* великий порядковий номер у лівій рейці */
+    .red-flags-flow-number {
+      font-family: var(--ppt-font-display);
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--ppt-warn);
+      min-width: 72px;
+      text-align: left;
+      letter-spacing: -0.02em;
+    }/* опис ознаки */
+    .red-flags-flow-description{
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      padding-top: 5px;
+      max-width: 1020px;
+    }
+
+    /* виокремлення ключових слів у тексті */
+    .red-flags-highlight {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }/* маленький тег-акцент у кінці списку (підтримує ієрархію) */
+    .red-flags-callout{
+      margin-top: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px 12px;
+      background: rgba(56, 189, 248, 0.08);
+      border-left: 3px solid var(--ppt-accent);
+      padding: 6px 16px;
+      border-radius: 0 var(--ppt-radius-md) var(--ppt-radius-md) 0;
+      width: fit-content;
+    }
+
+    .red-flags-callout-icon {
+      color: var(--ppt-accent);
+      font-size: 20px;
+    }
+
+    .red-flags-callout-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: 0.01em;
+    }
+
+    /* універсальне правило: жодних зайвих елементів */
+    .red-flags-flow-container i, .red-flags-callout i {
+      font-style: normal;
+    }/* компактні відступи між елементами */
+    .red-flags-body-wrapper{
+      gap: 0 0;
+    }
+
+    /* гарантія, що контейнери не мають фіксованої висоти */
+    .red-flags-flow-container,
+    .red-flags-flow-item {
+      height: auto;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="red-flags-slide-root">
+    <!-- Title Region: точно за шаблоном DESIGN -->
+    <div class="title-region">
+      <div class="title-region-eyebrow-row">
+        <span class="title-region-eyebrow">Критичне мислення &amp; ШІ</span>
+        <div class="title-region-divider"></div>
+      </div>
+      <h1 class="title-region-heading">Червоні прапорці</h1>
+      <p class="title-region-subtitle">Ознаки потенційної помилки: надмірна точність без джерела, дивні посилання, категоричний тон та суперечність базовим фактам</p>
+    </div>
+
+    <!-- Головний body: спеціальний open layout — numbered_argument_flow -->
+    <div class="red-flags-body-wrapper">
+      <div class="red-flags-flow-container">
+        <!-- Пункт 1 -->
+        <div class="red-flags-flow-item">
+          <div class="red-flags-flow-number">01</div>
+          <div class="red-flags-flow-description">
+            <span class="red-flags-highlight">Надто точні числа без джерела.</span> 
+            Якщо модель наводить конкретні відсотки, дати або статистику, але не вказує, звідки вони взяті, — це сигнал до перевірки. Достовірна інформація завжди супроводжується посиланням або контекстом.
+          </div>
+        </div>
+
+        <!-- Пункт 2 -->
+        <div class="red-flags-flow-item">
+          <div class="red-flags-flow-number">02</div>
+          <div class="red-flags-flow-description">
+            <span class="red-flags-highlight">Цитата або посилання, які неможливо знайти.</span> 
+            Вигадані джерела, дивні назви сайтів або цитати, що не існують у відкритому доступі, — класична ознака галюцинації. Якщо посилання веде в нікуди або назва виглядає штучно, варто засумніватися.
+          </div>
+        </div>
+
+        <!-- Пункт 3 -->
+        <div class="red-flags-flow-item">
+          <div class="red-flags-flow-number">03</div>
+          <div class="red-flags-flow-description">
+            <span class="red-flags-highlight">Категоричний тон у спірній темі.</span> 
+            Впевнені формулювання («безсумнівно», «єдино правильний») без обґрунтування — тривожний маркер. Особливо, коли питання має кілька точок зору або потребує нюансів. Впевнений стиль не дорівнює достовірності.
+          </div>
+        </div>
+
+        <!-- Пункт 4 -->
+        <div class="red-flags-flow-item">
+          <div class="red-flags-flow-number">04</div>
+          <div class="red-flags-flow-description">
+            <span class="red-flags-highlight">Суперечність базовим фактам або плутанина дат та імен.</span> 
+            Якщо відповідь суперечить загальновідомим даним, містить помилки в іменах, датах або хронології, це явний сигнал. Також звертайте увагу, коли джерело не підтверджує наведене твердження — текст лише імітує надійність.
+          </div>
+        </div>
+
+        <!-- Компактний висновок-підказка (підтримує ієрархію) -->
+        <div class="red-flags-callout" style="margin-bottom: 3px !important;">
+          <i class="fa-solid fa-triangle-exclamation red-flags-callout-icon"></i>
+          <span class="red-flags-callout-text">Впевнений стиль ≠ достовірність. Перевіряйте факти!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

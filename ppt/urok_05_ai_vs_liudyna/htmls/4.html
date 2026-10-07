@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сильні сторони людини | AI vs людина</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+    :root {
+      --ppt-bg: #F8F9FA;
+      --ppt-bg-soft: #EEF2F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9ECEF;
+      --ppt-border: #CED4DA;
+      --ppt-text-1: #212529;
+      --ppt-text-2: #495057;
+      --ppt-text-3: #6C757D;
+      --ppt-accent: #6366F1;
+      --ppt-accent-2: #F43F5E;
+      --ppt-chart-1: #6366F1;
+      --ppt-chart-2: #F43F5E;
+      --ppt-chart-3: #10B981;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 12px;
+      --ppt-radius-lg: 20px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: transparent;
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }.slide-root-ai-vs-human-strengths{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px 24px 64px;
+      
+      position: relative;
+    }/* Title region — fixed cross-slide layout */
+    .title-region-human-strengths{
+      margin-top: 29px;
+      margin-bottom: 19px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-human-strengths .title-top-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-human-strengths .title-overline {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+      background: var(--ppt-bg-soft);
+      padding: 4px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .title-region-human-strengths .title-divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-human-strengths .title-main-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }/* Main body — fills remaining height */
+    .human-strengths-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: row;
+      gap: 24px 40px;
+       /* allowed only for flex children */
+    }/* Left dominant column — narrative + list */
+    .human-strengths-left-dominant{
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px 24px;
+      min-width: 0;
+    }.human-strengths-intro-block{
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      padding: 14px 28px;
+      box-shadow: var(--ppt-shadow-soft);
+      border: 1px solid var(--ppt-border);
+    }.human-strengths-intro-title{
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ppt-accent-2);
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+
+    .human-strengths-intro-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }.human-strengths-feature-grid{
+      display: flex;
+      flex-direction: column;
+      gap: 10px 16px;
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      padding: 14px 28px;
+      box-shadow: var(--ppt-shadow-soft);
+      border: 1px solid var(--ppt-border);
+      flex: 1 1 0;
+    }.human-strengths-feature-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px 16px;
+    }
+
+    .human-strengths-feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--ppt-bg-soft);
+      color: var(--ppt-accent-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .human-strengths-feature-content {
+      flex: 1;
+    }.human-strengths-feature-title{
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+
+    .human-strengths-feature-desc {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }/* Right supporting column — visual anchor with image */
+    .human-strengths-right-support{
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px 24px;
+      min-width: 0;
+    }
+
+    .human-strengths-image-card {
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--ppt-shadow-strong);
+      border: 1px solid var(--ppt-border);
+      display: flex;
+      flex-direction: column;
+    }.human-strengths-image-container{
+      width: 100%;
+      height: 238px;
+      overflow: hidden;
+    }
+
+    .human-strengths-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }.human-strengths-image-caption{
+      padding: 10px 20px;
+      font-size: 15px;
+      color: var(--ppt-text-3);
+      background: var(--ppt-surface);
+      border-top: 1px solid var(--ppt-border);
+      line-height: 1.4;
+    }.human-strengths-responsibility-card{
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      padding: 14px 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      border: 1px solid var(--ppt-border);
+      display: flex;
+      flex-direction: column;
+      gap: 7px 12px;
+      flex: 1 1 0;
+    }
+
+    .human-strengths-responsibility-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-accent-2);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .human-strengths-responsibility-title i {
+      font-size: 24px;
+      color: var(--ppt-accent-2);
+    }
+
+    .human-strengths-responsibility-text {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }.human-strengths-responsibility-highlight{
+      background: var(--ppt-bg-soft);
+      border-left: 4px solid var(--ppt-accent-2);
+      padding: 7px 16px;
+      border-radius: 4px;
+      font-size: 18px;
+      color: var(--ppt-text-1);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Clear left-right prefix classes */
+    .human-strengths-left-dominant,
+    .human-strengths-right-support {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .human-strengths-right-support {
+      background: transparent;
+    }
+
+    /* Ensure no fixed heights on text containers */
+    .human-strengths-intro-block,
+    .human-strengths-feature-grid,
+    .human-strengths-responsibility-card,
+    .human-strengths-image-card {
+      height: auto;
+    }
+
+    /* list items block-level */
+    .human-strengths-feature-grid {
+      list-style: none;
+    }
+
+    .human-strengths-feature-grid .human-strengths-feature-item {
+      display: flex;
+      list-style: none;
+    }
+
+    /* Force icon alignment */
+    .human-strengths-feature-item i {
+      font-size: 20px;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-ai-vs-human-strengths">
+    <!-- Fixed title region per DESIGN -->
+    <header class="title-region-human-strengths">
+      <div class="title-top-row">
+        <span class="title-overline">Інформатика 11 клас</span>
+        <div class="title-divider-line"></div>
+      </div>
+      <h1 class="title-main-heading">Сильні сторони людини</h1>
+    </header>
+
+    <!-- Main body: asymmetric 3/2 split -->
+    <div class="human-strengths-body-wrapper" style="margin-bottom: 2px !important;">
+      <!-- Left dominant column: narrative + list of strengths -->
+      <div class="human-strengths-left-dominant">
+        <div class="human-strengths-intro-block">
+          <div class="human-strengths-intro-title">Людський вимір у співпраці зі ШІ</div>
+          <p class="human-strengths-intro-text">
+            Людина задає напрям, сенс і відповідальність. Саме ці якості неможливо передати алгоритму: вони формують основу для безпечного та етичного використання штучного інтелекту.
+          </p>
+        </div>
+
+        <div class="human-strengths-feature-grid">
+          <div class="human-strengths-feature-item">
+            <div class="human-strengths-feature-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="human-strengths-feature-content">
+              <div class="human-strengths-feature-title">Постановка цілей і вибір цінностей</div>
+              <p class="human-strengths-feature-desc">Людина визначає, яка мета є справедливою чи бажаною, і обирає цінності, що спрямовують роботу ШІ.</p>
+            </div>
+          </div>
+          <div class="human-strengths-feature-item">
+            <div class="human-strengths-feature-icon"><i class="fa-solid fa-users"></i></div>
+            <div class="human-strengths-feature-content">
+              <div class="human-strengths-feature-title">Розуміння соціального й життєвого контексту</div>
+              <p class="human-strengths-feature-desc">Людина враховує приховані обставини, емоції та унікальний досвід, які недоступні статистичним моделям.</p>
+            </div>
+          </div>
+          <div class="human-strengths-feature-item">
+            <div class="human-strengths-feature-icon"><i class="fa-solid fa-heart"></i></div>
+            <div class="human-strengths-feature-content">
+              <div class="human-strengths-feature-title">Емпатія та побудова довіри</div>
+              <p class="human-strengths-feature-desc">Здатність розуміти почуття інших, встановлювати глибокий контакт і формувати довіру, що є основою комунікації.</p>
+            </div>
+          </div>
+          <div class="human-strengths-feature-item">
+            <div class="human-strengths-feature-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="human-strengths-feature-content">
+              <div class="human-strengths-feature-title">Моральна і юридична відповідальність</div>
+              <p class="human-strengths-feature-desc">Людина несе повну відповідальність за рішення та їхні наслідки, що неможливо делегувати алгоритму.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right supporting column: image + responsibility note -->
+      <div class="human-strengths-right-support">
+        <div class="human-strengths-image-card">
+          <div class="human-strengths-image-container">
+            <img src="https://agents-download.skywork.ai/image/rt/d5cd36a27ea371d82f4b4c11a7e0425e.jpg" alt="Емпатія в розмові"/>
+          </div>
+          <div class="human-strengths-image-caption">
+            Емпатія та підтримка — людська здатність, яка формує довіру в будь-якій взаємодії.
+          </div>
+        </div>
+
+        <div class="human-strengths-responsibility-card">
+          <div class="human-strengths-responsibility-title">
+            <i class="fa-solid fa-hand-holding-heart"></i> Переосмислення проблеми
+          </div>
+          <p class="human-strengths-responsibility-text">
+            Людина здатна вийти за межі початкової постановки, переосмислити завдання та врахувати наслідки для інших — те, що ШІ робити не може самостійно.
+          </p>
+          <div class="human-strengths-responsibility-highlight">
+            Робота з унікальним досвідом і наслідками для інших — ключова людська функція.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome icons -->
+  
+
+</body></html>

@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "status": "success",
+  "operation": "generate",
+  "operation_id": "urok_03_llm_generuie_tekst",
+  "session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "artifact_path": "ppt/urok_03_llm_generuie_tekst",
+  "display_name": "LLM: як машина генерує т…",
+  "ppt_style": "html",
+  "page_count": 10,
+  "total_pages": 10,
+  "success_pages": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "language": "Ukrainian",
+  "prepared_state_id": "pps_cd3b0a04fb1fa0c56bc6f8efe2adff3a",
+  "prepared_state_version": 1,
+  "generated_at": "2026-09-03T19:07:17.566327184Z"
+}

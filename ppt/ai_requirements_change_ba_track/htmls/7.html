@@ -1,0 +1,338 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Робочий процес BA-1</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+:root {
+  --ppt-bg: #F8FAFC;
+  --ppt-bg-soft: #EEF2F6;
+  --ppt-surface: #FFFFFF;
+  --ppt-surface-2: #F1F5F9;
+  --ppt-border: #CBD5E1;
+  --ppt-text-1: #0F172A;
+  --ppt-text-2: #475569;
+  --ppt-text-3: #94A3B8;
+  --ppt-accent: #0D9488;
+  --ppt-accent-2: #6366F1;
+  --ppt-chart-1: #0D9488;
+  --ppt-chart-2: #6366F1;
+  --ppt-chart-3: #F59E0B;
+  --ppt-chart-4: #EC4899;
+  --ppt-good: #10B981;
+  --ppt-warn: #F59E0B;
+  --ppt-bad: #EF4444;
+  --ppt-radius-sm: 2px;
+  --ppt-radius-md: 6px;
+  --ppt-radius-lg: 10px;
+  --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --ppt-font-display: "Inter", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+  --ppt-font-mono: "JetBrains Mono", monospace;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>*{
+            margin: 0 0;
+            padding: 0 0;
+            box-sizing: border-box;
+        }
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: #F8FAFC;
+            font-family: var(--ppt-font-body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .slide-root {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 56px;
+            
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }/* title region */
+        .title-region{
+            margin-top: 26px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .title-accent-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .title-accent-bar {
+            background-color: var(--ppt-accent);
+            width: 4px;
+            height: 32px;
+            border-radius: var(--ppt-radius-sm);
+        }
+        .title-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .title-eyebrow {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+        }
+        .title-main {
+            font-family: var(--ppt-font-display);
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+            margin: 0;
+        }
+        .title-subtitle {
+            font-family: var(--ppt-font-body);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            margin-left: 16px;
+            margin-top: 4px;
+        }
+        /* main body */
+        .body-region {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            
+        }.workflow-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 10px 16px;
+            flex: 1 1 0;
+            
+        }.workflow-step-panel{
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 10px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px 8px;
+            box-shadow: var(--ppt-shadow-soft);
+        }.step-header{
+            display: flex;
+            align-items: center;
+            gap: 8px 12px;
+        }.step-number{
+            font-family: var(--ppt-font-mono);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            background: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-sm);
+            padding: 2px 8px;
+            line-height: 1.2;
+        }
+        .step-title {
+            font-family: var(--ppt-font-display);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }
+        .step-desc {
+            font-family: var(--ppt-font-body);
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            margin-top: 2px;
+        }.human-review-band{
+            background: var(--ppt-surface-2);
+            border-left: 4px solid var(--ppt-accent-2);
+            border-radius: var(--ppt-radius-sm);
+            padding: 8px 16px;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 9px 14px;
+        }
+        .human-review-icon {
+            color: var(--ppt-accent-2);
+            font-size: 20px;
+            width: 32px;
+            flex-shrink: 0;
+        }.human-review-content{
+            display: flex;
+            flex-direction: column;
+            gap: 2px 2px;
+        }
+        .human-review-title {
+            font-family: var(--ppt-font-display);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }.human-review-list{
+            font-family: var(--ppt-font-body);
+            font-size: 14px;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            list-style: none;
+            padding: 0 0;
+            margin: 0 0;
+        }
+        .human-review-list li {
+            display: inline;
+            margin-right: 12px;
+        }
+        .human-review-list li i {
+            color: var(--ppt-accent-2);
+            margin-right: 4px;
+        }.footer-note{
+            font-family: var(--ppt-font-body);
+            font-size: 13px;
+            color: var(--ppt-text-3);
+            margin-top: 5px;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px 8px;
+        }
+        .footer-note i {
+            color: var(--ppt-accent);
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Title region per design -->
+        <header class="title-region">
+            <div class="title-accent-row">
+                <span class="title-accent-bar"></span>
+                <div class="title-text-group">
+                    <span class="title-eyebrow">BA Track | ServiceHub</span>
+                    <h1 class="title-main">Робочий процес BA-1: від джерел до пакету вимог</h1>
+                </div>
+            </div>
+            <p class="title-subtitle">Покроковий алгоритм витягування, класифікації та виявлення суперечностей</p>
+        </header>
+
+        <!-- Main content body -->
+        <div class="body-region">
+            <!-- 2x2 workflow grid -->
+            <div class="workflow-grid">
+                <!-- Step 1 -->
+                <div class="workflow-step-panel">
+                    <div class="step-header">
+                        <span class="step-number">01</span>
+                        <span class="step-title">Визначте бізнес-ціль</span>
+                    </div>
+                    <div class="step-desc">
+                        Зафіксуйте первинну бізнес-мету з протоколів, листів та чату. Це стане критерієм для всіх подальших рішень.
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="workflow-step-panel">
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                        <span class="step-title">Витягніть вимоги</span>
+                    </div>
+                    <div class="step-desc">
+                        Перетворіть неструктуровані матеріали на явні твердження. Зберігайте посилання на джерело для кожної вимоги.
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="workflow-step-panel">
+                    <div class="step-header">
+                        <span class="step-number">03</span>
+                        <span class="step-title">Класифікуйте вимоги</span>
+                    </div>
+                    <div class="step-desc">
+                        Розділіть функціональні (дії системи) та нефункціональні (SLA, безпека, продуктивність). Позначте бізнес-правила.
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="workflow-step-panel">
+                    <div class="step-header">
+                        <span class="step-number">04</span>
+                        <span class="step-title">Відокремте факти та рішення</span>
+                    </div>
+                    <div class="step-desc">
+                        Розрізняйте факти, припущення, зафіксовані рішення та відкриті питання. Це запобігає неперевіреним висновкам.
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="workflow-step-panel">
+                    <div class="step-header">
+                        <span class="step-number">05</span>
+                        <span class="step-title">Знайдіть дублікати й суперечності</span>
+                    </div>
+                    <div class="step-desc">
+                        Порівняйте вимоги між джерелами. Позначте конфлікти (наприклад, різні SLA) та дублікати для подальшого узгодження.
+                    </div>
+                </div>
+                <!-- Step 6 -->
+                <div class="workflow-step-panel">
+                    <div class="step-header">
+                        <span class="step-number">06</span>
+                        <span class="step-title">Створіть уточнювальні питання</span>
+                    </div>
+                    <div class="step-desc">
+                        Сформулюйте питання до власника продукту щодо відсутніх рішень та конфліктів. Зафіксуйте пріоритет кожного питання.
+                    </div>
+                </div>
+                <!-- Step 7 -->
+                <div class="workflow-step-panel">
+                    <div class="step-header">
+                        <span class="step-number">07</span>
+                        <span class="step-title">Побудуйте таблицю вимог</span>
+                    </div>
+                    <div class="step-desc">
+                        Зведіть вимоги, бізнес-правила та джерела в структуровану таблицю зі статусом підтвердження та власником.
+                    </div>
+                </div>
+                <!-- Step 8 -->
+                <div class="workflow-step-panel">
+                    <div class="step-header">
+                        <span class="step-number">08</span>
+                        <span class="step-title">Перевірте готовність до затвердження</span>
+                    </div>
+                    <div class="step-desc">
+                        Оцініть повноту покриття, відсутність відкритих блокерів та готовність пакету до рецензування людиною.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Human review band -->
+            <div class="human-review-band">
+                <div class="human-review-icon">
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
+                <div class="human-review-content">
+                    <span class="human-review-title">Точки перевірки аналітиком</span>
+                    <ul class="human-review-list">
+                        <li><i class="fa-solid fa-circle-check"></i>Коректність інтерпретації</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Повнота стейкхолдерів</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Валідність класифікації</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Пріоритети питань</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Готовність до апруву</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer note -->
+            <div class="footer-note">
+                <i class="fa-solid fa-robot"></i>
+                <span>Xplore підтримує витягування та порівняння, але людське судження визначає остаточну інтерпретацію.</span>
+            </div>
+        </div>
+    </div>
+
+</body></html>

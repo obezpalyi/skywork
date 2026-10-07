@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Вправа «Етичний кейс»</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap");
+
+        :root {
+            --ppt-bg: #FDFCFB;
+            --ppt-bg-soft: #F4F2EF;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E9ECEF;
+            --ppt-border: #D8D2C2;
+            --ppt-text-1: #1A1A1A;
+            --ppt-text-2: #4A4A4A;
+            --ppt-text-3: #6C757D;
+            --ppt-accent: #005F73;
+            --ppt-accent-2: #9B2226;
+            --ppt-chart-1: #005F73;
+            --ppt-chart-2: #0A9396;
+            --ppt-chart-3: #EE9B00;
+            --ppt-chart-4: #BB3E03;
+            --ppt-good: #0A9396;
+            --ppt-warn: #E9D8A6;
+            --ppt-bad: #9B2226;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 8px;
+            --ppt-radius-lg: 0px;
+            --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+            --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.08);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Manrope", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: transparent;
+            font-family: var(--ppt-font-body);
+        }
+
+        .ethics-case-practice-slide-root {
+            width: 1280px; height: 720px;
+            display: flex;
+            flex-direction: column;
+            background: var(--ppt-bg);
+            
+        }
+
+        .title-region-ethics-case-practice {
+            margin-top: 32px;
+            margin-right: 64px;
+            margin-bottom: 20px;
+            margin-left: 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .title-accent-line-ethics-case-practice {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-accent-bar-ethics-case-practice {
+            width: 24px;
+            height: 4px;
+            background-color: var(--ppt-accent);
+        }
+
+        .title-eyebrow-ethics-case-practice {
+            font-family: var(--ppt-font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+        }
+
+        .title-heading-ethics-case-practice {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--ppt-text-1);
+        }
+
+        .title-divider-ethics-case-practice {
+            width: 100%;
+            height: 1px;
+            background-color: var(--ppt-border);
+            margin-top: 8px;
+        }
+
+        .ethics-case-practice-body-wrapper {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            margin-right: 64px;
+            margin-left: 64px;
+            margin-bottom: 40px;
+            
+        }
+
+        .ethics-case-practice-intro-band {
+            flex-shrink: 0;
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-left: 4px solid var(--ppt-accent);
+            border-radius: var(--ppt-radius-md);
+            padding: 14px 20px;
+            margin-bottom: 20px;
+        }
+
+        .ethics-case-practice-intro-icon-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ethics-case-practice-intro-icon {
+            color: var(--ppt-accent);
+            font-size: 20px;
+        }
+
+        .ethics-case-practice-intro-text {
+            font-family: var(--ppt-font-body);
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 1.45;
+            color: var(--ppt-text-2);
+        }
+
+        .ethics-case-practice-main-grid {
+            flex: 1 1 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 16px;
+            
+        }
+
+        .ethics-case-card-item {
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--ppt-shadow-soft);
+        }
+
+        .ethics-case-card-header-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .ethics-case-card-numeral-badge {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--ppt-accent);
+            color: #fff;
+            font-family: var(--ppt-font-display);
+            font-size: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ethics-case-card-title {
+            font-family: var(--ppt-font-display);
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--ppt-text-1);
+        }
+
+        .ethics-case-card-description {
+            font-family: var(--ppt-font-body);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.45;
+            color: var(--ppt-text-2);
+            margin-bottom: 10px;
+        }
+
+        .ethics-case-card-question-label {
+            font-family: var(--ppt-font-display);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--ppt-accent-2);
+            margin-bottom: 6px;
+        }
+
+        .ethics-case-card-question-text {
+            font-family: var(--ppt-font-body);
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--ppt-text-3);
+            font-style: italic;
+        }
+
+        .ethics-case-card-item:nth-child(2) .ethics-case-card-numeral-badge {
+            background: var(--ppt-chart-2);
+        }
+
+        .ethics-case-card-item:nth-child(3) .ethics-case-card-numeral-badge {
+            background: var(--ppt-chart-3);
+            color: var(--ppt-text-1);
+        }
+
+        .ethics-case-card-item:nth-child(4) .ethics-case-card-numeral-badge {
+            background: var(--ppt-chart-4);
+        }
+
+        .ethics-case-card-item:nth-child(5) .ethics-case-card-numeral-badge {
+            background: var(--ppt-bad);
+        }
+
+        .ethics-case-card-item:nth-child(6) .ethics-case-card-numeral-badge {
+            background: var(--ppt-good);
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="ethics-case-practice-slide-root">
+        <div class="title-region-ethics-case-practice">
+            <div class="title-accent-line-ethics-case-practice">
+                <div class="title-accent-bar-ethics-case-practice"></div>
+                <span class="title-eyebrow-ethics-case-practice">Етика та ШІ</span>
+            </div>
+            <h1 class="title-heading-ethics-case-practice">Вправа «Етичний кейс»</h1>
+            <div class="title-divider-ethics-case-practice"></div>
+        </div>
+
+        <div class="ethics-case-practice-body-wrapper">
+            <div class="ethics-case-practice-intro-band">
+                <div class="ethics-case-practice-intro-icon-row">
+                    <i class="fa-solid fa-users ethics-case-practice-intro-icon"></i>
+                    <span class="ethics-case-practice-intro-text">
+                        Працюйте в групах: оберіть один кейс, проаналізуйте його за планом — користь, можлива шкода, постраждалі, дані, відповідальний, потреба в згоді та запобіжники.
+                    </span>
+                </div>
+            </div>
+
+            <div class="ethics-case-practice-main-grid" style="margin-bottom: 4px !important;">
+                <div class="ethics-case-card-item">
+                    <div class="ethics-case-card-header-row">
+                        <div class="ethics-case-card-numeral-badge">1</div>
+                        <h3 class="ethics-case-card-title">Автоматичне оцінювання робіт</h3>
+                    </div>
+                    <p class="ethics-case-card-description">
+                        Система оцінює письмові роботи й виставляє бали без участі вчителя. Чи враховує вона творчий підхід?
+                    </p>
+                    <div class="ethics-case-card-question-label">Питання для аналізу</div>
+                    <p class="ethics-case-card-question-text">
+                        Чи можна оскаржити оцінку, і хто пояснює критерії?
+                    </p>
+                </div>
+
+                <div class="ethics-case-card-item">
+                    <div class="ethics-case-card-header-row">
+                        <div class="ethics-case-card-numeral-badge">2</div>
+                        <h3 class="ethics-case-card-title">Розпізнавання облич у школі</h3>
+                    </div>
+                    <p class="ethics-case-card-description">
+                        Камери з розпізнаванням облич відстежують вхід учнів і фіксують відвідуваність. Чи знають учні та батьки про це?
+                    </p>
+                    <div class="ethics-case-card-question-label">Питання для аналізу</div>
+                    <p class="ethics-case-card-question-text">
+                        Хто має дати згоду, і чи можна відкликати дозвіл?
+                    </p>
+                </div>
+
+                <div class="ethics-case-card-item">
+                    <div class="ethics-case-card-header-row">
+                        <div class="ethics-case-card-numeral-badge">3</div>
+                        <h3 class="ethics-case-card-title">Порада чат-бота</h3>
+                    </div>
+                    <p class="ethics-case-card-description">
+                        Учень у складній життєвій ситуації отримує пораду від чат-бота. Чи безпечно покладатися на неї?
+                    </p>
+                    <div class="ethics-case-card-question-label">Питання для аналізу</div>
+                    <p class="ethics-case-card-question-text">
+                        Чи має бот попереджати про свої обмеження та скеровувати до людини?
+                    </p>
+                </div>
+
+                <div class="ethics-case-card-item">
+                    <div class="ethics-case-card-header-row">
+                        <div class="ethics-case-card-numeral-badge">4</div>
+                        <h3 class="ethics-case-card-title">Відео з образом людини</h3>
+                    </div>
+                    <p class="ethics-case-card-description">
+                        Штучний інтелект створює відео з обличчям реальної людини без її дозволу. Що це означає для приватності?
+                    </p>
+                    <div class="ethics-case-card-question-label">Питання для аналізу</div>
+                    <p class="ethics-case-card-question-text">
+                        Чи потрібна згода, і як маркувати синтетичний контент?
+                    </p>
+                </div>
+
+                <div class="ethics-case-card-item">
+                    <div class="ethics-case-card-header-row">
+                        <div class="ethics-case-card-numeral-badge">5</div>
+                        <h3 class="ethics-case-card-title">Відбір на стажування</h3>
+                    </div>
+                    <p class="ethics-case-card-description">
+                        Алгоритм відбирає кандидатів на стажування на основі історичних даних. Як уникнути упередженості?
+                    </p>
+                    <div class="ethics-case-card-question-label">Питання для аналізу</div>
+                    <p class="ethics-case-card-question-text">
+                        Хто відповідає за фінальне рішення, і чи можна його апелювати?
+                    </p>
+                </div>
+
+                <div class="ethics-case-card-item">
+                    <div class="ethics-case-card-header-row">
+                        <div class="ethics-case-card-numeral-badge">6</div>
+                        <h3 class="ethics-case-card-title">Персоналізована реклама</h3>
+                    </div>
+                    <p class="ethics-case-card-description">
+                        Освітня платформа показує персоналізовану рекламу курсів на основі поведінки учня. Це допомога чи маніпуляція?
+                    </p>
+                    <div class="ethics-case-card-question-label">Питання для аналізу</div>
+                    <p class="ethics-case-card-question-text">
+                        Які дані збираються, і чи є зрозуміла згода на це?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

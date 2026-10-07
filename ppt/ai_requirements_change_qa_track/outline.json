@@ -1,0 +1,570 @@
+[
+  {
+    "page_num": 1,
+    "heading": "AI-assisted Requirements and Change Management in SDLC: QA Track",
+    "type": "title",
+    "des": "Титульна сторінка курсу про управління вимогами та змінами за допомогою ШІ, адаптована спеціально для фахівців із забезпечення якості.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/555013ed846efb7f0432e60efb055227.jpg",
+        "filename": "Web Application Testing Services in the USA | QAwerk",
+        "img_desc": "A clean infographic presents \"Web Testing\" at the center, surrounded by six labeled testing categories: Interface Testing, Functional Testing, Usability Testing, Performance Testing, Security Testing, and Compatibility Testing. Each category appears in a pale blue circular panel with a red line icon, connected around a larger light-blue central shape. The design uses a simple flat style, blue and red accents, and a balanced radial composition on a transparent or black-looking background.",
+        "caption": "Infographic showing six key areas of web application testing: interface, functional, usability, performance, security, and compatibility testing.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "400x400",
+        "title": "Web Application Testing Services in the USA | QAwerk",
+        "width": 400,
+        "height": 400,
+        "query": "software quality assurance engineer testing web application"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/bdbd4a83d31963bad7391bc6683f1170.jpg",
+        "filename": "How to create test cases that boost QA efficiency in Jira | Vansah Test  Management For Jira",
+        "img_desc": "A professional office scene shows two QA team members reviewing test cases together at a table. The woman is writing notes beside an open laptop displaying a test-management interface, while the man works on another laptop. Printed documents, notebooks, mugs, and a water bottle are arranged on the table. Behind them, a whiteboard labeled \"END-TO-END TESTING WORKFLOW\" contains a process diagram, and office branding and greenery are visible in the background. The image has a realistic corporate photography style, bright neutral lighting, and a clear collaborative composition.",
+        "caption": "QA team members collaborate on test-case review using laptops and an end-to-end testing workflow board in an office.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x572",
+        "title": "How to create test cases that boost QA efficiency in Jira | Vansah Test  Management For Jira",
+        "width": 1024,
+        "height": 572,
+        "query": "QA team reviewing test cases office"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/280821b458b9a2e26959c04e6f9b1630.jpg",
+        "filename": "Top 5 Test Case Management Tools Compared (2025 Edition)",
+        "img_desc": "A QA team of four people is gathered around a wooden office table, using laptops and reviewing information on a tablet. Several translucent digital interface panels float across the scene, displaying charts, graphs, dashboards, and multiple \"QA\" labels, reinforcing the software testing and test-case management theme. The office has a modern, dark-toned interior with large windows and subtle greenery in the background. The image uses muted brown, teal, gray, and orange tones with cinematic lighting and a balanced group composition.",
+        "caption": "A QA team reviews test cases and analytics on laptops and a tablet in a modern office surrounded by floating dashboard graphics.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x559",
+        "title": "Top 5 Test Case Management Tools Compared (2025 Edition)",
+        "width": 1024,
+        "height": 559,
+        "query": "QA team reviewing test cases office"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/395ea05b90c8f0ffdc854a6861ec9ec4.jpg",
+        "filename": "Test Case Repositories: How They Help QA Teams Test More Efficiently",
+        "img_desc": "A group of five coworkers gathers around computer monitors in a bright modern office. One seated person points toward a screen while the others look on, suggesting collaborative review of software test cases or QA work. Multiple monitors, keyboards, and office equipment are visible on the desks. The image uses bright neutral tones with a clean, professional workplace composition and shallow background focus.",
+        "caption": "A QA team collaborates around office computers while reviewing software test cases.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1000x633",
+        "title": "Test Case Repositories: How They Help QA Teams Test More Efficiently",
+        "width": 1000,
+        "height": 633,
+        "query": "QA team reviewing test cases office"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c16f0fbb0664073a8a6bb7d2653d7c73.jpg",
+        "filename": "Quality Assurance: Five Crucial Activities For Software Testing |  #site_title",
+        "img_desc": "The image is a quality improvement process diagram centered on a four-part circular cycle labeled Operation, Design, Coding, and Integration, with a central \"Knowledge Base\" box and directional arrows indicating an iterative workflow. Surrounding text lists software testing and quality assurance activities, including regression testing, test planning, unit testing, static analysis, system testing, documentation, and test coverage analysis. The diagram uses muted purple, blue, beige, and pink tones with a symmetrical composition and a clear process-oriented layout. The text is generally legible, though some smaller bullet points are compact.",
+        "caption": "A quality improvement process diagram showing the iterative relationship among operation, design, coding, integration, and a central knowledge base, surrounded by software testing activities.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "601x507",
+        "title": "Quality Assurance: Five Crucial Activities For Software Testing |  #site_title",
+        "width": 601,
+        "height": 507,
+        "query": "quality assurance regression testing team"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/8aa377f29e209a2749ad1441290b84e1.jpg",
+        "filename": "Bug Triage Meeting in Agile: What You Need to Know | Careerist Blog",
+        "img_desc": "A minimalist black graphic shows a white rounded rectangle labeled \"BUG TRIAGE\" at the top, connected by thin lines to three stylized white insect-like icons below. The layout is symmetrical and diagrammatic, with strong white-on-black contrast and very limited visual detail.",
+        "caption": "Minimalist bug triage diagram with a central label connected to three insect icons.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "440x300",
+        "title": "Bug Triage Meeting in Agile: What You Need to Know | Careerist Blog",
+        "width": 440,
+        "height": 300,
+        "query": "software bug review meeting product team"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 2,
+    "heading": "Чому цей трек важливий для QA",
+    "type": "content",
+    "des": "Огляд критичних проблем у тестуванні, таких як неповні вимоги та слабка простежуваність, які вирішуються в межах цього навчального курсу.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 3,
+    "heading": "Навчальний маршрут та кінцеві результати",
+    "type": "content",
+    "des": "Опис чотирьох навчальних сесій та перелік фінальних артефактів, включаючи звіти про тестованість, матриці покриття та персональний AI Playbook.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/555013ed846efb7f0432e60efb055227.jpg",
+        "filename": "Web Application Testing Services in the USA | QAwerk",
+        "img_desc": "A clean infographic presents \"Web Testing\" at the center, surrounded by six labeled testing categories: Interface Testing, Functional Testing, Usability Testing, Performance Testing, Security Testing, and Compatibility Testing. Each category appears in a pale blue circular panel with a red line icon, connected around a larger light-blue central shape. The design uses a simple flat style, blue and red accents, and a balanced radial composition on a transparent or black-looking background.",
+        "caption": "Infographic showing six key areas of web application testing: interface, functional, usability, performance, security, and compatibility testing.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "400x400",
+        "title": "Web Application Testing Services in the USA | QAwerk",
+        "width": 400,
+        "height": 400,
+        "query": "software quality assurance engineer testing web application"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 4,
+    "heading": "Сесія QA-1: Цілі та вхідні дані",
+    "type": "content",
+    "des": "Визначення цілей аналізу тестованості на основі вимог ServiceHub, бізнес-правил та карти інтеграцій.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 5,
+    "heading": "Критерії тестованості вимог",
+    "type": "content",
+    "des": "Опис характеристик якісної вимоги: визначені ролі, стани, тригери та вимірювані умови без неоднозначних формулювань.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 6,
+    "heading": "Багаторазовий QA-промпт для аналізу",
+    "type": "content",
+    "des": "Структура промпту для Xplore, що включає роль рев'юера, контекст системи та вимоги до виявлення прогалин у тестованості.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 7,
+    "heading": "Воркфлоу QA-1: Аналіз тестованості",
+    "type": "content",
+    "des": "Покроковий процес від пошуку неоднозначностей до ранжування ризиків, пов'язаних із прогалинами у вимогах.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 8,
+    "heading": "Демонстрація на проєкті ServiceHub",
+    "type": "content",
+    "des": "Практичний приклад аналізу Critical Service Request на предмет відсутності ролей, SLA та правил обробки помилок.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 9,
+    "heading": "Практика та результати першої сесії",
+    "type": "content",
+    "des": "Завдання для учасників щодо виявлення дефектів тестованості та формування реєстру уточнювальних запитань для Product Owner.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/bdbd4a83d31963bad7391bc6683f1170.jpg",
+        "filename": "How to create test cases that boost QA efficiency in Jira | Vansah Test  Management For Jira",
+        "img_desc": "A professional office scene shows two QA team members reviewing test cases together at a table. The woman is writing notes beside an open laptop displaying a test-management interface, while the man works on another laptop. Printed documents, notebooks, mugs, and a water bottle are arranged on the table. Behind them, a whiteboard labeled \"END-TO-END TESTING WORKFLOW\" contains a process diagram, and office branding and greenery are visible in the background. The image has a realistic corporate photography style, bright neutral lighting, and a clear collaborative composition.",
+        "caption": "QA team members collaborate on test-case review using laptops and an end-to-end testing workflow board in an office.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x572",
+        "title": "How to create test cases that boost QA efficiency in Jira | Vansah Test  Management For Jira",
+        "width": 1024,
+        "height": 572,
+        "query": "QA team reviewing test cases office"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 10,
+    "heading": "Сесія QA-2: Цілі та вхідні дані",
+    "type": "content",
+    "des": "Перехід від затверджених вимог до створення збалансованого набору тестів для функціоналу, API та інтеграцій.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/395ea05b90c8f0ffdc854a6861ec9ec4.jpg",
+        "filename": "Test Case Repositories: How They Help QA Teams Test More Efficiently",
+        "img_desc": "A group of five coworkers gathers around computer monitors in a bright modern office. One seated person points toward a screen while the others look on, suggesting collaborative review of software test cases or QA work. Multiple monitors, keyboards, and office equipment are visible on the desks. The image uses bright neutral tones with a clean, professional workplace composition and shallow background focus.",
+        "caption": "A QA team collaborates around office computers while reviewing software test cases.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1000x633",
+        "title": "Test Case Repositories: How They Help QA Teams Test More Efficiently",
+        "width": 1000,
+        "height": 633,
+        "query": "QA team reviewing test cases office"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 11,
+    "heading": "Проєктування тестових умов",
+    "type": "content",
+    "des": "Визначення ключових сценаріїв: позитивні кейси, негативна поведінка, граничні значення та переходи між станами.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 12,
+    "heading": "Воркфлоу QA-2: Створення тестового набору",
+    "type": "content",
+    "des": "Алгоритм трансформації критеріїв приймання у пріоритезовані тестові випадки з чіткими передумовами.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 13,
+    "heading": "Генерація синтетичних тестових даних",
+    "type": "content",
+    "des": "Використання Xplore для створення безпечних тестових даних, таких як фіктивні користувачі та payloads для API.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 14,
+    "heading": "Матриця покриття та простежуваність",
+    "type": "content",
+    "des": "Побудова ланцюжка від вимоги до результату виконання тесту для виявлення неперевірених ризиків.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c16f0fbb0664073a8a6bb7d2653d7c73.jpg",
+        "filename": "Quality Assurance: Five Crucial Activities For Software Testing |  #site_title",
+        "img_desc": "The image is a quality improvement process diagram centered on a four-part circular cycle labeled Operation, Design, Coding, and Integration, with a central \"Knowledge Base\" box and directional arrows indicating an iterative workflow. Surrounding text lists software testing and quality assurance activities, including regression testing, test planning, unit testing, static analysis, system testing, documentation, and test coverage analysis. The diagram uses muted purple, blue, beige, and pink tones with a symmetrical composition and a clear process-oriented layout. The text is generally legible, though some smaller bullet points are compact.",
+        "caption": "A quality improvement process diagram showing the iterative relationship among operation, design, coding, integration, and a central knowledge base, surrounded by software testing activities.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "601x507",
+        "title": "Quality Assurance: Five Crucial Activities For Software Testing |  #site_title",
+        "width": 601,
+        "height": 507,
+        "query": "quality assurance regression testing team"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 15,
+    "heading": "Практика дизайну тестів ServiceHub",
+    "type": "content",
+    "des": "Створення тестового набору для критичних запитів, включаючи перевірку часових поясів, сповіщень та прав доступу.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 16,
+    "heading": "Сесія QA-3: Управління змінами та контекст",
+    "type": "content",
+    "des": "Порівняння базових версій вимог та визначення цілей для оцінки впливу змін на існуюче тестування.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 17,
+    "heading": "Воркфлоу QA-3: Від запиту на зміни до регресії",
+    "type": "content",
+    "des": "Процес ідентифікації змінених правил, застарілих тестів та аналізу непрямих ефектів на суміжні сервіси.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 18,
+    "heading": "Аналіз прямого та непрямого впливу",
+    "type": "content",
+    "des": "Розмежування впливу на основну логіку (SLA, пріоритети) та непрямих наслідків для звітів і CRM-синхронізації.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 19,
+    "heading": "Класифікація: Дефект чи запит на зміну",
+    "type": "content",
+    "des": "Методика визначення природи невідповідності на основі затверджених вимог та доказів з Xplore.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/8aa377f29e209a2749ad1441290b84e1.jpg",
+        "filename": "Bug Triage Meeting in Agile: What You Need to Know | Careerist Blog",
+        "img_desc": "A minimalist black graphic shows a white rounded rectangle labeled \"BUG TRIAGE\" at the top, connected by thin lines to three stylized white insect-like icons below. The layout is symmetrical and diagrammatic, with strong white-on-black contrast and very limited visual detail.",
+        "caption": "Minimalist bug triage diagram with a central label connected to three insect icons.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "440x300",
+        "title": "Bug Triage Meeting in Agile: What You Need to Know | Careerist Blog",
+        "width": 440,
+        "height": 300,
+        "query": "software bug review meeting product team"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 20,
+    "heading": "Ризик-орієнтований обсяг регресії",
+    "type": "content",
+    "des": "Формування плану регресійного тестування з урахуванням ймовірності відмови та впливу на бізнес.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 21,
+    "heading": "Практика аналізу впливу змін",
+    "type": "content",
+    "des": "Порівняння двох версій ServiceHub та класифікація спірних питань як дефектів або нових вимог.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 22,
+    "heading": "Сесія QA-4: Затверджені зміни та обмеження",
+    "type": "content",
+    "des": "Робота з новими обмеженнями, такими як підтримка кількох часових поясів, та їх узгодження з базовими вимогами.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 23,
+    "heading": "Воркфлоу QA-4: Оновлення QA-пакета",
+    "type": "content",
+    "des": "Фінальні кроки з актуалізації тестів, даних та перевірки готовності середовища перед релізом.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 24,
+    "heading": "Формування висновку про готовність",
+    "type": "content",
+    "des": "Структурування доказів щодо покриття, відкритих дефектів та залишків ризиків для прийняття рішення про реліз.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 25,
+    "heading": "Підсумковий проєкт QA Capstone",
+    "type": "content",
+    "des": "Комплексне завдання з опрацювання нової зміни в ServiceHub від аналізу тестованості до висновку про готовність.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/280821b458b9a2e26959c04e6f9b1630.jpg",
+        "filename": "Top 5 Test Case Management Tools Compared (2025 Edition)",
+        "img_desc": "A QA team of four people is gathered around a wooden office table, using laptops and reviewing information on a tablet. Several translucent digital interface panels float across the scene, displaying charts, graphs, dashboards, and multiple \"QA\" labels, reinforcing the software testing and test-case management theme. The office has a modern, dark-toned interior with large windows and subtle greenery in the background. The image uses muted brown, teal, gray, and orange tones with cinematic lighting and a balanced group composition.",
+        "caption": "A QA team reviews test cases and analytics on laptops and a tablet in a modern office surrounded by floating dashboard graphics.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x559",
+        "title": "Top 5 Test Case Management Tools Compared (2025 Edition)",
+        "width": 1024,
+        "height": 559,
+        "query": "QA team reviewing test cases office"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 26,
+    "heading": "Критерії успішного виконання Capstone",
+    "type": "content",
+    "des": "Вимоги до якості результатів: відсутність вигаданої поведінки, обґрунтованість ризиків та чітка простежуваність.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 27,
+    "heading": "Персональний QA AI Playbook",
+    "type": "content",
+    "des": "Збірник перевірених промптів для всіх етапів QA-процесу та чек-лісти для контролю якості роботи зі ШІ.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 28,
+    "heading": "Самостійна практика та вдосконалення",
+    "type": "content",
+    "des": "План десятиденної практики для закріплення навичок роботи з воркфлоу та оптимізації промптів у Xplore.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 29,
+    "heading": "Онлайн-тест та завершення курсу",
+    "type": "content",
+    "des": "Деталі фінального тестування, умови сертифікації та підтвердження практичного володіння інструментарієм курсу.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  }
+]

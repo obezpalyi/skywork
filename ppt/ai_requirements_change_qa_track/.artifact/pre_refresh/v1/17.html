@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Воркфлоу QA-3: Від запиту на зміни до регресії</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      
+      position: relative;
+    }/* Non-Cover-Page Title Region — fixed layout, no extra decoration */
+    .title-region{
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 11px;
+    }
+
+    .title-region-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .title-region-accent-bar {
+      width: 4px;
+      height: 16px;
+      background-color: var(--ppt-accent);
+    }
+
+    .title-region-eyebrow-text {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .title-region-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      margin-top: 4px;
+      line-height: 1.4;
+    }/* Main body: diagnostic list + evidence rail */
+    .qa3-workflow-body{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: row;
+      margin-left: 64px;
+      margin-right: 64px;
+      gap: 19px 40px;
+      
+      padding-bottom: 14px; /* bottom safety gap */
+    }/* Left dominant list region */
+    .qa3-diagnostic-list-left{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 14px;
+      min-width: 0;
+    }.qa3-step-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 8px 14px;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 7px 16px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .qa3-step-marker {
+      width: 28px;
+      height: 28px;
+      background-color: var(--ppt-accent);
+      color: #FFFFFF;
+      border-radius: var(--ppt-radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ppt-font-display);
+      font-weight: 700;
+      font-size: 15px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .qa3-step-content {
+      flex: 1;
+    }.qa3-step-title{
+      font-family: var(--ppt-font-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+
+    .qa3-step-desc {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }/* Right narrow evidence rail */
+    .qa3-evidence-rail-right{
+      width: 260px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+    }.qa3-rail-header{
+      display: flex;
+      align-items: center;
+      gap: 6px 8px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--ppt-border);
+    }
+
+    .qa3-rail-header-icon {
+      color: var(--ppt-accent);
+      font-size: 16px;
+    }
+
+    .qa3-rail-header-text {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ppt-text-1);
+    }.qa3-rail-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 8px 10px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--ppt-bg-soft);
+    }.qa3-rail-item-icon{
+      color: var(--ppt-accent);
+      font-size: 13px;
+      width: 18px;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .qa3-rail-item-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }.qa3-rail-note{
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 10px 14px;
+      margin-top: 6px;
+      border-left: 3px solid var(--ppt-accent);
+    }
+
+    .qa3-rail-note-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    /* Ensure no fixed pixel widths inside layout */
+    .qa3-step-item, .qa3-rail-item, .qa3-rail-note {
+      width: auto;
+    }
+
+    /* Compact spacing, no artificial stretching */
+    .qa3-diagnostic-list-left, .qa3-evidence-rail-right {
+      align-content: flex-start;
+    }/* last item bottom margin to keep gap */
+    .qa3-evidence-rail-right .qa3-rail-note:last-child{
+      margin-bottom: 3px;
+    }
+
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+
+    <!-- Title region -->
+    <header class="title-region">
+      <div class="title-region-eyebrow">
+        <div class="title-region-accent-bar"></div>
+        <span class="title-region-eyebrow-text">SERVICEHUB QA TRACK</span>
+      </div>
+      <h1 class="title-region-heading">Воркфлоу QA-3: Від запиту на зміни до регресії</h1>
+      <h2 class="title-region-subtitle">Ідентифікація змінених правил, застарілих тестів та непрямих ефектів на суміжні сервіси</h2>
+    </header>
+
+    <!-- Body: diagnostic list left + evidence rail right -->
+    <main class="qa3-workflow-body" style="margin-bottom: 2px !important;">
+
+      <!-- Left: dominant step list -->
+      <section class="qa3-diagnostic-list-left">
+
+        <div class="qa3-step-item">
+          <div class="qa3-step-marker">1</div>
+          <div class="qa3-step-content">
+            <div class="qa3-step-title">Порівняти старі та нові вимоги</div>
+            <div class="qa3-step-desc">Зіставити базову версію вимог із затвердженим Critical Service Request, зафіксувати дельту.</div>
+          </div>
+        </div>
+
+        <div class="qa3-step-item">
+          <div class="qa3-step-marker">2</div>
+          <div class="qa3-step-content">
+            <div class="qa3-step-title">Виявити додані, змінені та вилучені правила</div>
+            <div class="qa3-step-desc">Класифікувати кожну зміну: нова бізнес-логіка, модифікація наявної або видалення застарілого правила.</div>
+          </div>
+        </div>
+
+        <div class="qa3-step-item">
+          <div class="qa3-step-marker">3</div>
+          <div class="qa3-step-content">
+            <div class="qa3-step-title">Зіставити зміни з існуючими тестами</div>
+            <div class="qa3-step-desc">Визначити, які тест-кейси покривають змінену поведінку, та позначити їх як кандидатів на оновлення.</div>
+          </div>
+        </div>
+
+        <div class="qa3-step-item">
+          <div class="qa3-step-marker">4</div>
+          <div class="qa3-step-content">
+            <div class="qa3-step-title">Ідентифікувати застарілі тести</div>
+            <div class="qa3-step-desc">Позначити тести, що описують вилучені правила або суперечать новій базовій лінії.</div>
+          </div>
+        </div>
+
+        <div class="qa3-step-item">
+          <div class="qa3-step-marker">5</div>
+          <div class="qa3-step-content">
+            <div class="qa3-step-title">Знайти відсутні сценарії</div>
+            <div class="qa3-step-desc">Визначити прогалини покриття для нових або змінених правил, зокрема негативні та граничні випадки.</div>
+          </div>
+        </div>
+
+        <div class="qa3-step-item">
+          <div class="qa3-step-marker">6</div>
+          <div class="qa3-step-content">
+            <div class="qa3-step-title">Проаналізувати непрямі ефекти</div>
+            <div class="qa3-step-desc">Оцінити вплив на інтеграції, спільні сервіси, перевірки ролей, звіти та синхронізації.</div>
+          </div>
+        </div>
+
+        <div class="qa3-step-item">
+          <div class="qa3-step-marker">7</div>
+          <div class="qa3-step-content">
+            <div class="qa3-step-title">Пріоритезувати регресію за ймовірністю та впливом</div>
+            <div class="qa3-step-desc">Ранжувати області за ризиком відмови та бізнес-наслідками для фокусованого регресійного обсягу.</div>
+          </div>
+        </div>
+
+        <div class="qa3-step-item">
+          <div class="qa3-step-marker">8</div>
+          <div class="qa3-step-content">
+            <div class="qa3-step-title">Задокументувати припущення та блокери</div>
+            <div class="qa3-step-desc">Зафіксувати невизначеності, обмеження середовища та питання, що потребують рішення власника.</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Right: AI Checkpoint evidence rail -->
+      <aside class="qa3-evidence-rail-right">
+
+        <div class="qa3-rail-header">
+          <i class="fa-solid fa-robot qa3-rail-header-icon"></i>
+          <span class="qa3-rail-header-text">AI Checkpoint</span>
+        </div>
+
+        <div class="qa3-rail-item">
+          <i class="fa-solid fa-circle-check qa3-rail-item-icon"></i>
+          <div class="qa3-rail-item-text">Xplore готує порівняння базових версій та докази змін.</div>
+        </div>
+
+        <div class="qa3-rail-item">
+          <i class="fa-solid fa-triangle-exclamation qa3-rail-item-icon"></i>
+          <div class="qa3-rail-item-text">Авторизований власник підтверджує класифікацію: дефект, уточнення чи зміна.</div>
+        </div>
+
+        <div class="qa3-rail-item">
+          <i class="fa-solid fa-diagram-project qa3-rail-item-icon"></i>
+          <div class="qa3-rail-item-text">Аналіз непрямих ефектів: ролі, звіти, CRM, часові пояси, ретраї сповіщень.</div>
+        </div>
+
+        <div class="qa3-rail-item">
+          <i class="fa-solid fa-list-check qa3-rail-item-icon"></i>
+          <div class="qa3-rail-item-text">Регресійний обсяг містить обґрунтування виключених областей.</div>
+        </div>
+
+        <div class="qa3-rail-note">
+          <div class="qa3-rail-note-text">
+            <i class="fa-solid fa-user-shield" style="color: var(--ppt-accent); margin-right: 6px;"></i>
+            Людське рішення: ризик, прийняття та фінальне схвалення регресу залишаються за QA.
+          </div>
+        </div>
+
+      </aside>
+
+    </main>
+
+  </div>
+
+</body></html>

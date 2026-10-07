@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0"/>
+  <title>Урок 5: AI vs людина - Слайд 2</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">:root {
+  --ppt-chart-1: #6366F1;
+  --ppt-chart-2: #F43F5E;
+  --ppt-chart-3: #10B981;
+  --ppt-chart-4: #F59E0B;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #F8F9FA;
+      --ppt-bg-soft: #EEF2F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9ECEF;
+      --ppt-border: #CED4DA;
+      --ppt-text-1: #212529;
+      --ppt-text-2: #495057;
+      --ppt-text-3: #6C757D;
+      --ppt-accent: #6366F1;
+      --ppt-accent-2: #F43F5E;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 12px;
+      --ppt-radius-lg: 20px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }*{
+      box-sizing: border-box;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #212529;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .slide-root-canvas {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+    }.ai-human-header-region{
+      margin-top: 30px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px 8px;
+    }.ai-human-tag-wrapper{
+      display: flex;
+      align-items: center;
+      gap: 8px 12px;
+    }.ai-human-tag-label{
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+      background: var(--ppt-bg-soft);
+      padding: 2px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .ai-human-tag-divider {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }.ai-human-title-text{
+      margin: 0 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }.ai-human-main-content-wrapper{
+      flex: 1;
+      padding-left: 64px;
+      padding-right: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 21px 32px;
+    }.ai-human-instruction-block{
+      background: var(--ppt-surface);
+      padding: 8px 12px;
+      border-left: 4px solid var(--ppt-accent);
+      border-radius: var(--ppt-radius-sm);
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .ai-human-instruction-paragraph {
+      font-size: 20px;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }.ai-human-voting-grid-container{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px 24px;
+      flex: 1;
+    }.ai-human-profession-card-item{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 15px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 20px;
+      transition: all 0.3s ease;
+      box-shadow: var(--ppt-shadow-soft);
+    }.ai-human-profession-info-row{
+      display: flex;
+      align-items: center;
+      gap: 10px 16px;
+    }
+
+    .ai-human-profession-icon-box {
+      width: 48px;
+      height: 48px;
+      background: var(--ppt-bg-soft);
+      color: var(--ppt-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--ppt-radius-md);
+      font-size: 24px;
+    }
+
+    .ai-human-profession-name-text {
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }.ai-human-vote-action-group{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px 12px;
+    }.ai-human-vote-trigger-button{
+      padding: 8px 8px;
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-sm);
+      background: var(--ppt-surface);
+      color: var(--ppt-text-2);
+      font-family: var(--ppt-font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .ai-human-vote-trigger-button:hover {
+      background: var(--ppt-bg-soft);
+      border-color: var(--ppt-accent);
+    }
+
+    .ai-human-vote-trigger-button.is-active-yes {
+      background: var(--ppt-bad);
+      color: white;
+      border-color: var(--ppt-bad);
+    }
+
+    .ai-human-vote-trigger-button.is-active-no {
+      background: var(--ppt-good);
+      color: white;
+      border-color: var(--ppt-good);
+    }
+
+    .ai-human-vote-trigger-button.is-active-depends {
+      background: var(--ppt-warn);
+      color: white;
+      border-color: var(--ppt-warn);
+    }.ai-human-footer-note-region{
+      margin-top: 8px;
+      margin-bottom: 30px;
+      padding: 8px 12px;
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 8px 12px;
+    }
+
+    .ai-human-footer-note-icon {
+      color: var(--ppt-accent-2);
+      font-size: 18px;
+    }
+
+    .ai-human-footer-note-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+    }.ai-human-condition-prompt{
+      font-size: 13px;
+      color: var(--ppt-text-3);
+      margin-top: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .ai-human-condition-prompt.is-visible {
+      opacity: 1;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-canvas">
+    <!-- Header Region -->
+    <header class="ai-human-header-region">
+      <div class="ai-human-tag-wrapper">
+        <span class="ai-human-tag-label">Інформатика 11 клас</span>
+        <div class="ai-human-tag-divider"></div>
+      </div>
+      <h1 class="ai-human-title-text">
+        Швидке голосування
+      </h1>
+    </header>
+
+    <!-- Main Content Region -->
+    <main class="ai-human-main-content-wrapper">
+      <div class="ai-human-instruction-block">
+        <p class="ai-human-instruction-paragraph">
+          Чи може ШІ повністю замінити фахівця? Обирай варіант та обґрунтуй умову.
+        </p>
+      </div>
+
+      <!-- Interactive Voting Widget -->
+      <div class="ai-human-voting-grid-container" id="vote-runtime-root" data-runtime-root="true" data-interaction-trigger="true">
+        <!-- Cards will be rendered by JS for advanced visual contract -->
+      </div>
+
+      <!-- Footer Context Note -->
+      <div class="ai-human-footer-note-region">
+        <i class="fa-solid fa-lightbulb ai-human-footer-note-icon"></i>
+        <span class="ai-human-footer-note-text">
+          Наголос: оцінювати потрібно не професію загалом, а конкретні завдання всередині неї.
+        </span>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    (function() {
+      // Data Contract: Use professions from the document
+      const professionsData = [
+        { id: 'teacher', name: 'Вчитель', icon: 'fa-chalkboard-teacher' },
+        { id: 'doctor', name: 'Лікар', icon: 'fa-user-md' },
+        { id: 'designer', name: 'Дизайнер', icon: 'fa-paint-brush' },
+        { id: 'programmer', name: 'Програміст', icon: 'fa-code' }
+      ];
+
+      const options = [
+        { label: 'Так', class: 'is-active-yes' },
+        { label: 'Ні', class: 'is-active-no' },
+        { label: 'Залежить', class: 'is-active-depends' }
+      ];
+
+      const container = document.getElementById('vote-runtime-root');
+
+      function renderGrid() {
+        container.innerHTML = professionsData.map(prof => `
+          <div class="ai-human-profession-card-item" id="card-${prof.id}">
+            <div class="ai-human-profession-info-row">
+              <div class="ai-human-profession-icon-box">
+                <i class="fas ${prof.icon}"></i>
+              </div>
+              <div class="ai-human-profession-name-text">${prof.name}</div>
+            </div>
+            <div class="ai-human-vote-action-group">
+              ${options.map(opt => `
+                <div class="ai-human-vote-trigger-button" 
+                     onclick="handleVote('${prof.id}', '${opt.label}', '${opt.class}')">
+                  ${opt.label}
+                </div>
+              `).join('')}
+            </div>
+            <div class="ai-human-condition-prompt" id="prompt-${prof.id}">
+              <i class="fas fa-comment-dots"></i> Назви умову, за якої це можливо...
+            </div>
+          </div>
+        `).join('');
+      }
+
+      window.handleVote = function(profId, label, activeClass) {
+        const card = document.getElementById(`card-${profId}`);
+        const buttons = card.querySelectorAll('.ai-human-vote-trigger-button');
+        const prompt = document.getElementById(`prompt-${profId}`);
+
+        buttons.forEach(btn => {
+          btn.classList.remove('is-active-yes', 'is-active-no', 'is-active-depends');
+          if (btn.innerText === label) {
+            btn.classList.add(activeClass);
+          }
+        });
+
+        prompt.classList.add('is-visible');
+      };
+
+      renderGrid();
+    })();
+  </script>
+
+</body></html>

@@ -1,0 +1,19 @@
+{
+  "artifact_id": "",
+  "artifact_path": "artifacts/xplore_course_plan_ba_qa_devops.docx",
+  "artifact_type": "document",
+  "display_name": "План практичного курсу «Xplore для BA, QA та DevOps»",
+  "file_type": "gen_doc_convert",
+  "file_url": "",
+  "idempotency_key": "cli:0e163a609e5e47ca9647d5d47c1f7dfe3bbb611993bee00f621a1eabe1c7",
+  "locator_items": null,
+  "metadata": null,
+  "page_count": 0,
+  "path": "artifacts/xplore_course_plan_ba_qa_devops.docx",
+  "preview_url": "",
+  "session_id": "019ff605-7524-73f2-9939-8e95015faa7f",
+  "size_bytes": 50603,
+  "title": "План практичного курсу «Xplore для BA, QA та DevOps»",
+  "version_summary": "Published from skywork-cli",
+  "zip_url": ""
+}

@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Безпека і межі компетенції</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #F9FAFB;
+      --ppt-bg-soft: #F3F4F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF2FF;
+      --ppt-border: #E5E7EB;
+      --ppt-text-1: #111827;
+      --ppt-text-2: #4B5563;
+      --ppt-text-3: #9CA3AF;
+      --ppt-accent: #10B981;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #10B981;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EF4444;
+      --ppt-good: #059669;
+      --ppt-warn: #D97706;
+      --ppt-bad: #DC2626;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 0px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px 40px 64px;
+      
+      box-shadow: var(--ppt-shadow-strong);
+    }
+
+    /* Title region — exactly as per DESIGN */
+    .title-region {
+      margin-top: 48px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-accent-marker {
+      background-color: var(--ppt-accent);
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .title-eyebrow-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ppt-accent);
+      letter-spacing: 0.05em;
+    }
+
+    .title-main-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-divider-line {
+      width: 100%;
+      height: 1px;
+      background-color: var(--ppt-border);
+      margin-top: 8px;
+    }
+
+    /* Main body — structural flex growth */
+    .safety-body-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+       /* no, prohibited; we do not use min-height:0 */
+    }
+
+    /* Top strip: context / principle sentence */
+    .safety-principle-strip {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 16px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .safety-principle-icon {
+      color: var(--ppt-accent);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .safety-principle-text {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.5;
+    }
+
+    .safety-principle-text strong {
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    /* Two-column layout: left prohibition zone, right safe behaviour */
+    .safety-lower-grid {
+      flex: 1 1 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+       /* not used */
+    }
+
+    .safety-column-left,
+    .safety-column-right {
+      background-color: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      border: 1px solid var(--ppt-border);
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+      padding: 16px 20px 20px 20px;
+    }
+
+    .safety-column-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--ppt-border);
+      padding-bottom: 10px;
+    }
+
+    .safety-column-header-icon {
+      font-size: 18px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .safety-column-header-text {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .safety-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1 1 0;
+    }
+
+    .safety-list-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.45;
+    }
+
+    .safety-list-icon {
+      width: 20px;
+      font-size: 15px;
+      flex-shrink: 0;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .safety-list-content {
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      font-weight: 500;
+    }
+
+    .safety-list-content strong {
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    /* right column special bottom note */
+    .safety-right-note {
+      margin-top: 14px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-sm);
+      padding: 10px 12px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      border-left: 3px solid var(--ppt-accent);
+      line-height: 1.4;
+    }
+
+    .safety-right-note i {
+      color: var(--ppt-accent);
+      margin-right: 6px;
+    }
+
+    /* Icon colors */
+    .icon-bad {
+      color: var(--ppt-bad);
+    }
+    .icon-warn {
+      color: var(--ppt-warn);
+    }
+    .icon-good {
+      color: var(--ppt-good);
+    }
+    .icon-accent {
+      color: var(--ppt-accent);
+    }
+
+    /* ensure no flex on list items */
+    .safety-list-item {
+      display: flex; /* allowed? list item display flex prohibited? Actually list items must be block-level, but we use div as list item */
+    }
+
+    /* per requirement: list item containers must set list-style:none; we use ul and li? we use div inside ul? we use ul with li? 
+       we use <ul> with <li>; li must not be flex. So we use inner div for flex */
+    .safety-list {
+      list-style: none;
+    }
+
+    .safety-list li {
+      list-style: none;
+      display: block;
+    }
+
+    .safety-list-item-inner {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .safety-list-icon {
+      width: 20px;
+      font-size: 15px;
+      flex-shrink: 0;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .safety-list-content {
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+  
+html { overflow: hidden; }
+</style>
+  <!-- Font Awesome -->
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title Region: fixed layout from DESIGN -->
+    <header class="title-region">
+      <div class="title-eyebrow-row">
+        <span class="title-accent-marker"></span>
+        <span class="title-eyebrow-label">Лабораторна робота: AI-Помічник</span>
+      </div>
+      <h1 class="title-main-heading">Безпека і межі компетенції</h1>
+      <div class="title-divider-line"></div>
+    </header>
+
+    <!-- Body wrapper with flex growth -->
+    <div class="safety-body-wrapper">
+      <!-- Principle strip -->
+      <div class="safety-principle-strip">
+        <div class="safety-principle-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="safety-principle-text">
+          <strong>Ключовий принцип:</strong> помічник має прямо повідомляти про свої межі та пропонувати звернутися до відповідальної людини, коли питання виходить за його компетенцію.
+        </div>
+      </div>
+
+      <!-- Two-column layout -->
+      <div class="safety-lower-grid" style="margin-bottom: 4px !important;">
+        <!-- Left column: заборони -->
+        <div class="safety-column-left">
+          <div class="safety-column-header">
+            <span class="safety-column-header-icon" style="color: var(--ppt-bad);">
+              <i class="fa-solid fa-ban"></i>
+            </span>
+            <span class="safety-column-header-text">Помічник не повинен</span>
+          </div>
+          <ul class="safety-list">
+            <li>
+              <div class="safety-list-item-inner">
+                <span class="safety-list-icon icon-bad"><i class="fa-solid fa-lock"></i></span>
+                <span class="safety-list-content"><strong>Збирати приватні дані:</strong> не запитувати паролі, адреси, документи чи приватні дані інших людей.</span>
+              </div>
+            </li>
+            <li>
+              <div class="safety-list-item-inner">
+                <span class="safety-list-icon icon-bad"><i class="fa-solid fa-circle-exclamation"></i></span>
+                <span class="safety-list-content"><strong>Видавати неперевірене за факт:</strong> не подавати сумнівні твердження як достовірні факти.</span>
+              </div>
+            </li>
+            <li>
+              <div class="safety-list-item-inner">
+                <span class="safety-list-icon icon-bad"><i class="fa-solid fa-user-pen"></i></span>
+                <span class="safety-list-content"><strong>Виконувати завдання замість учня:</strong> не робити контрольну, не писати готові відповіді.</span>
+              </div>
+            </li>
+            <li>
+              <div class="safety-list-item-inner">
+                <span class="safety-list-icon icon-bad"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                <span class="safety-list-content"><strong>Надавати високоризикові рішення:</strong> остаточні медичні, юридичні чи інші критичні поради.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right column: коректна поведінка -->
+        <div class="safety-column-right">
+          <div class="safety-column-header">
+            <span class="safety-column-header-icon" style="color: var(--ppt-good);">
+              <i class="fa-solid fa-circle-check"></i>
+            </span>
+            <span class="safety-column-header-text">Натомість помічник має</span>
+          </div>
+          <ul class="safety-list">
+            <li>
+              <div class="safety-list-item-inner">
+                <span class="safety-list-icon icon-good"><i class="fa-solid fa-comment-medical"></i></span>
+                <span class="safety-list-content"><strong>Повідомляти про межі:</strong> прямо казати, коли питання поза його компетенцією.</span>
+              </div>
+            </li>
+            <li>
+              <div class="safety-list-item-inner">
+                <span class="safety-list-icon icon-good"><i class="fa-solid fa-user-check"></i></span>
+                <span class="safety-list-content"><strong>Скеровувати до фахівця:</strong> пропонувати звернутися до вчителя, лікаря чи відповідальної особи.</span>
+              </div>
+            </li>
+            <li>
+              <div class="safety-list-item-inner">
+                <span class="safety-list-icon icon-good"><i class="fa-solid fa-shield"></i></span>
+                <span class="safety-list-content"><strong>Захищати приватність:</strong> не збирати та не зберігати персональні дані.</span>
+              </div>
+            </li>
+            <li>
+              <div class="safety-list-item-inner">
+                <span class="safety-list-icon icon-good"><i class="fa-solid fa-hand-holding-heart"></i></span>
+                <span class="safety-list-content"><strong>Пропонувати безпечну альтернативу:</strong> надавати корисну дію в межах дозволеного.</span>
+              </div>
+            </li>
+          </ul>
+          <div class="safety-right-note">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Якщо інформації бракує — помічник уточнює, а не вигадує. Це частина тестових сценаріїв.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

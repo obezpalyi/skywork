@@ -1,0 +1,401 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сесія OPS-4: Операційна готовність та DevOps Capstone</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;500&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #64748B;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #10B981;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #10B981;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #6366F1;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Roboto Mono", monospace;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }/* Slide root: fixed 1280x720, flex column */
+    .ops4-slide-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 60px 15px 60px; /* bottom safety gap */
+      
+    }/* Title region – fixed cross-slide contract */
+    .title-region{
+      margin-top: 26px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-left: 6px solid var(--ppt-accent);
+      padding-left: 20px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .title-region-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--ppt-text-1);
+      margin: 0;
+    }
+
+    .title-region-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      margin-top: 2px;
+    }/* Main body wrapper – consumes remaining height */
+    .ops4-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px 16px;
+       /* allowed? NO — prohibited. Remove min-height. */
+    }/* Instead of min-height:0, we rely on flex-basis and overflow hidden on root */
+    .ops4-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px 16px;
+    }/* Constraint banner – new operational constraint */
+    .ops4-constraint-panel{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 10px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      align-items: center;
+      gap: 10px 16px;
+      flex-shrink: 0;
+    }
+
+    .ops4-constraint-icon {
+      color: var(--ppt-warn);
+      font-size: 28px;
+      width: 44px;
+      text-align: center;
+      flex-shrink: 0;
+    }.ops4-constraint-content{
+      display: flex;
+      flex-direction: column;
+      gap: 2px 4px;
+    }
+
+    .ops4-constraint-label {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .ops4-constraint-text {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }/* Two-column asymmetric layout: left dominant, right supporting */
+    .ops4-content-grid{
+      flex: 1 1 0;
+      display: flex;
+      gap: 13px 20px;
+      align-items: stretch;
+    }/* Left column – dominant: feature flag + integration constraints */
+    .ops4-left-column{
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+    }.ops4-left-card{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 14px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }.ops4-card-heading{
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px 10px;
+    }
+
+    .ops4-card-heading i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }.ops4-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 10px;
+    }.ops4-list-item{
+      display: flex;
+      gap: 10px 12px;
+      align-items: flex-start;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }.ops4-list-item i{
+      color: var(--ppt-accent-2);
+      margin-top: 2px;
+      font-size: 14px;
+      width: 18px;
+      flex-shrink: 0;
+    }/* Right column – supporting: incident context & reassessment */
+    .ops4-right-column{
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+    }.ops4-right-card{
+      background: var(--ppt-bg-soft);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 14px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }.ops4-right-card-heading{
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px 8px;
+    }
+
+    .ops4-right-card-heading i {
+      color: var(--ppt-bad);
+      font-size: 16px;
+    }.ops4-incident-item{
+      display: flex;
+      gap: 10px 12px;
+      align-items: flex-start;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      margin-bottom: 10px;
+    }
+
+    .ops4-incident-item i {
+      color: var(--ppt-warn);
+      margin-top: 2px;
+      font-size: 14px;
+      width: 18px;
+      flex-shrink: 0;
+    }.ops4-reassess-note{
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      padding: 10px 14px;
+      border-left: 4px solid var(--ppt-accent);
+      font-size: 13px;
+      color: var(--ppt-text-2);
+      margin-top: auto;
+    }
+
+    .ops4-reassess-note strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }/* Bottom compact conclusion band */
+    .ops4-conclusion-band{
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 9px 14px;
+      flex-shrink: 0;
+      border: 1px solid var(--ppt-border);
+    }
+
+    .ops4-conclusion-band i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .ops4-conclusion-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    /* No flex on list items */
+    .ops4-list-item, .ops4-incident-item {
+      display: flex; /* allowed for non-list-item divs? these are li. Prohibition: display:flex on list items. */
+      /* Revert: use block-level */
+    }
+
+    /* Correction: list items must be block-level flow */
+    .ops4-list-item {
+      display: block;
+      padding-left: 0;
+    }
+
+    .ops4-list-item i {
+      margin-right: 8px;
+      display: inline-block;
+    }
+
+    .ops4-list-item span {
+      display: inline;
+    }
+
+    .ops4-incident-item {
+      display: block;
+    }
+
+    .ops4-incident-item i {
+      margin-right: 8px;
+      display: inline-block;
+    }/* Adjust internal layout for block items */
+    .ops4-list-item{
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      margin-bottom: 8px;
+    }.ops4-incident-item{
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      margin-bottom: 8px;
+    }/* Ensure no flex on li */
+    .ops4-list{
+      list-style: none;
+      padding: 0 0;
+    }.ops4-incident-list{
+      list-style: none;
+      padding: 0 0;
+    }.ops4-incident-list{
+      list-style: none;
+      padding: 0 0;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="ops4-slide-root">
+    <!-- Title region -->
+    <header class="title-region">
+      <div class="title-region-eyebrow">DEVOPS TRACK | AI-ASSISTED SDLC</div>
+      <h1 class="title-region-heading">Сесія OPS-4: Операційна готовність та DevOps Capstone</h1>
+      <div class="title-region-subtitle">Нові обмеження: feature-flag керування та інтеграційні ризики</div>
+    </header>
+
+    <!-- Body wrapper -->
+    <div class="ops4-body-wrapper">
+      <!-- Constraint banner -->
+      <div class="ops4-constraint-panel">
+        <div class="ops4-constraint-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="ops4-constraint-content">
+          <div class="ops4-constraint-label">Нове операційне обмеження</div>
+          <div class="ops4-constraint-text">Microsoft Teams інтеграція не готова · реліз керується feature-flag · швидкий відкат має залишатися можливим</div>
+        </div>
+      </div>
+
+      <!-- Asymmetric content grid -->
+      <div class="ops4-content-grid">
+        <!-- Left column: dominant -->
+        <div class="ops4-left-column">
+          <!-- Feature flag constraints -->
+          <div class="ops4-left-card">
+            <div class="ops4-card-heading"><i class="fa-solid fa-flag"></i> Обмеження feature-flag</div>
+            <ul class="ops4-list">
+              <li class="ops4-list-item"><i class="fa-solid fa-circle-check"></i> <span>Розгортання контрольоване прапорцем; функціональність прихована до активації.</span></li>
+              <li class="ops4-list-item"><i class="fa-solid fa-check"></i> <span>Прапорець має бути незалежним від Teams-інтеграції.</span></li>
+              <li class="ops4-list-item"><i class="fa-solid fa-anchor-circle-check"></i> <span>Миттєве вимкнення прапорця = швидкий відкат без зміни коду.</span></li>
+              <li class="ops4-list-item"><i class="fa-solid fa-bridge-circle-check"></i> <span>Перевірка стану прапорця в ранбуку та моніторингу.</span></li>
+            </ul>
+          </div>
+          <!-- Integration constraints -->
+          <div class="ops4-left-card">
+            <div class="ops4-card-heading"><i class="fa-solid fa-plug"></i> Інтеграційні обмеження</div>
+            <ul class="ops4-list">
+              <li class="ops4-list-item"><i class="fa-solid fa-building-circle-check"></i> <span>Teams не готовий: нотифікації не доставляються через цей канал.</span></li>
+              <li class="ops4-list-item"><i class="fa-solid fa-envelope-circle-check"></i> <span>Альтернативний шлях сповіщень (email/лог) має бути підтверджений.</span></li>
+              <li class="ops4-list-item"><i class="fa-solid fa-file-circle-check"></i> <span>Відмова інтеграції не блокує основний процес ескалації.</span></li>
+              <li class="ops4-list-item"><i class="fa-solid fa-heart-circle-check"></i> <span>Задокументувати обробку збою доставки сповіщень.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right column: supporting -->
+        <div class="ops4-right-column">
+          <!-- Incident context -->
+          <div class="ops4-right-card">
+            <div class="ops4-right-card-heading"><i class="fa-solid fa-circle-question"></i> Контекст інциденту</div>
+            <ul class="ops4-incident-list">
+              <li class="ops4-incident-item"><i class="fa-solid fa-circle"></i> <span>Попередній реліз: поріг сповіщення не відповідав SLA клієнта.</span></li>
+              <li class="ops4-incident-item"><i class="fa-solid fa-circle"></i> <span>Дія з постмортему не була застосована до ранбуку.</span></li>
+            </ul>
+          </div>
+          <!-- Reassessment note -->
+          <div class="ops4-reassess-note">
+            <strong>Переоцінка готовності:</strong> учасник має врахувати обмеження та інциденти, оновити плани розгортання/відкату, метрики та ранбук.
+          </div>
+        </div>
+      </div>
+
+      <!-- Conclusion band -->
+      <div class="ops4-conclusion-band" style="margin-bottom: 2px !important;">
+        <i class="fa-solid fa-clipboard-check"></i>
+        <div class="ops4-conclusion-text">Підсумок: повторна оцінка операційної готовності з урахуванням feature-flag, інтеграційних ризиків та уроків минулих інцидентів.</div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

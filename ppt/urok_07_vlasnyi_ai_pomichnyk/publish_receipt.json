@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "status": "success",
+  "operation": "ppt.publish",
+  "kind": "ppt",
+  "page_count": 10,
+  "total_pages": 10,
+  "artifacts": [
+    {
+      "kind": "ppt",
+      "artifact_id": "2095592762178891776",
+      "artifact_version_id": "2095592762187280384",
+      "version": 1,
+      "status": "published",
+      "artifact_type": "presentation",
+      "file_type": "gen_ppt",
+      "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/03/upl_e4f5e8cf5ce449549e109df64ee4e862/ppt-urok_07_vlasnyi_ai_pomichnyk.zip",
+      "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_5f5ab7918a314aa4be2b13f4b85467af/preview.png"
+    }
+  ],
+  "delivery": {
+    "artifact_id": "2095592762178891776",
+    "artifact_version_id": "2095592762187280384",
+    "version": 1,
+    "title": "Створюємо власного AI-помічника",
+    "artifact_type": "presentation",
+    "file_type": "gen_ppt",
+    "page_count": 10,
+    "locator_items": [
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_810bc91079e84b51a71075c779f19922/1.html",
+        "index": 1,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_9640b5b11a094ca4a35f41ef908c38f1/2.html",
+        "index": 2,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_ddf754387b184d6eb7d2730c3021c21e/3.html",
+        "index": 3,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_48a7b0af7a324053ace211845aadea9d/4.html",
+        "index": 4,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_43673f28c38a482c8b5b6aff38628038/5.html",
+        "index": 5,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_0109b61653e54a26b1d3614b2a28c796/6.html",
+        "index": 6,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_a53984c2d75e42d9830872b529a7bd1a/7.html",
+        "index": 7,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_58e2cd20b63441fa8ae1e301e62309f5/8.html",
+        "index": 8,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_ba016b98a718402a801d5c1afe10443b/9.html",
+        "index": 9,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_9551f5c84f464305bd5a56ff5cddde3b/10.html",
+        "index": 10,
+        "notes": ""
+      }
+    ],
+    "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/03/upl_e4f5e8cf5ce449549e109df64ee4e862/ppt-urok_07_vlasnyi_ai_pomichnyk.zip",
+    "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_5f5ab7918a314aa4be2b13f4b85467af/preview.png",
+    "ppt_style": "html",
+    "metadata": {
+      "artifact_complete": true,
+      "delivery_status": "complete_published",
+      "failed_pages": null,
+      "generation_status": "success",
+      "image_model_used": "",
+      "image_models_used": [],
+      "is_nano_ppt": false,
+      "language": "Ukrainian",
+      "operation_id": "urok_07_vlasnyi_ai_pomichnyk",
+      "page_aspect_ratio": "16:9",
+      "page_height": 720,
+      "page_size": "1280_720",
+      "page_width": 1280,
+      "ppt_style": "html",
+      "prepared_state_id": "pps_af242cbde505e8d628175bffad07eaf2",
+      "prepared_state_version": 1,
+      "publish_mode": "complete",
+      "render_mode": "html",
+      "resume_supported": false,
+      "stop_reason": "",
+      "style": "html",
+      "success_pages": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "total_pages": 10,
+      "used_nano_banana": false
+    }
+  },
+  "deliveryStatus": "complete_published",
+  "idempotency_key_hash": "42ac33601a54639f",
+  "pre_refresh_path": "ppt/urok_07_vlasnyi_ai_pomichnyk/.artifact/pre_refresh/v1",
+  "timing": {
+    "started_at": "2026-09-03T19:20:17.429551887Z",
+    "completed_at": "2026-09-03T19:20:23.804432957Z",
+    "duration_ms": 6374
+  },
+  "bundle_hash": "baa5277e2a8233274ad6a5ef68e19e8bc751cae614730f37f6ffad1fa897dabc"
+}

@@ -1,0 +1,314 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0"/>
+  <title>Управління вимогами та змінами в SDLC із застосуванням ШІ</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-category {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .workflow-modes-layout {
+      flex: 1;
+      margin: 0 60px 40px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .workflow-description-block {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+      max-width: 900px;
+    }
+
+    .workflow-steps-grid {
+      display: flex;
+      gap: 20px;
+      align-items: stretch;
+      flex: 1;
+    }
+
+    .workflow-step-card-item {
+      flex: 1;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      position: relative;
+    }
+
+    .workflow-step-header-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .workflow-step-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--ppt-radius-md);
+      background-color: var(--ppt-bg-soft);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--ppt-accent);
+      font-size: 20px;
+    }
+
+    .workflow-step-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .workflow-step-body-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .workflow-step-desc-para {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }
+
+    .workflow-step-list-group {
+      list-style: none;
+      display: block;
+    }
+
+    .workflow-step-list-item {
+      display: block;
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      color: var(--ppt-text-1);
+      padding: 8px 0;
+      border-top: 1px solid var(--ppt-border);
+    }
+
+    .workflow-step-list-item i {
+      color: var(--ppt-accent-2);
+      margin-right: 8px;
+      font-size: 12px;
+    }
+
+    .workflow-connector-line {
+      position: absolute;
+      top: 50px;
+      right: -15px;
+      z-index: 2;
+      color: var(--ppt-text-3);
+      font-size: 18px;
+    }
+
+    .workflow-footer-note-box {
+      background-color: var(--ppt-surface-2);
+      border-left: 4px solid var(--ppt-accent-2);
+      padding: 16px 24px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .workflow-footer-note-text {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      font-style: italic;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-container">
+    <!-- Non-Cover-Page Title Region -->
+    <header class="title-region-wrapper">
+      <div class="title-region-category">
+        AI-MANAGED SDLC PLAYBOOK
+      </div>
+      <h1 class="title-region-main">
+        Чотири типи роботи з одним документом
+      </h1>
+    </header>
+
+    <main class="workflow-modes-layout">
+      <div class="workflow-description-block">
+        Взаємодія з проєктною інформацією через AI-асистента не є лінійною — один документ може послідовно пройти через чотири режими для повного вилучення цінності.
+      </div>
+
+      <div class="workflow-steps-grid">
+        <!-- Step 1: Пошук -->
+        <div class="workflow-step-card-item">
+          <div class="workflow-step-header-group">
+            <div class="workflow-step-icon-wrapper">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="workflow-step-title-text">Пошук</div>
+          </div>
+          <div class="workflow-step-body-content">
+            <p class="workflow-step-desc-para">Швидке вилучення конкретних даних або підтверджених рішень.</p>
+            <div class="workflow-step-list-group">
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Знайти дату погодження</div>
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Витягнути ліміти системи</div>
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Вказати owner вимоги</div>
+            </div>
+          </div>
+          <div class="workflow-connector-line"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+
+        <!-- Step 2: Q&amp;A -->
+        <div class="workflow-step-card-item">
+          <div class="workflow-step-header-group">
+            <div class="workflow-step-icon-wrapper">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <div class="workflow-step-title-text">Q&amp;A</div>
+          </div>
+          <div class="workflow-step-body-content">
+            <p class="workflow-step-desc-para">Роз&#39;яснення контексту та логіки, що стоїть за написаним текстом.</p>
+            <div class="workflow-step-list-group">
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Чому обрано цей шлях?</div>
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Як це впливає на UX?</div>
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Де описано винятки?</div>
+            </div>
+          </div>
+          <div class="workflow-connector-line"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+
+        <!-- Step 3: Аналіз -->
+        <div class="workflow-step-card-item">
+          <div class="workflow-step-header-group">
+            <div class="workflow-step-icon-wrapper">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="workflow-step-title-text">Аналіз</div>
+          </div>
+          <div class="workflow-step-body-content">
+            <p class="workflow-step-desc-para">Критичний огляд на предмет прогалин, ризиків та суперечностей.</p>
+            <div class="workflow-step-list-group">
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Знайти конфлікти версій</div>
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Виявити пропущені edge cases</div>
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Оцінити тестованість</div>
+            </div>
+          </div>
+          <div class="workflow-connector-line"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+
+        <!-- Step 4: Генерація -->
+        <div class="workflow-step-card-item">
+          <div class="workflow-step-header-group">
+            <div class="workflow-step-icon-wrapper">
+              <i class="fa-solid fa-file-export"></i>
+            </div>
+            <div class="workflow-step-title-text">Генерація</div>
+          </div>
+          <div class="workflow-step-body-content">
+            <p class="workflow-step-desc-para">Трансформація неструктурованого матеріалу в робочі артефакти.</p>
+            <div class="workflow-step-list-group">
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Створити Jira Task</div>
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Acceptance Criteria</div>
+              <div class="workflow-step-list-item"><i class="fa-solid fa-check"></i> Requirements Table</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="workflow-footer-note-box">
+        <div class="workflow-footer-note-text">
+          Принцип конвеєра: AI готує evidence-backed чернетку на кожному етапі, забезпечуючи швидкий перехід від сирих даних до готових до виконання задач.
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body></html>

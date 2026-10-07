@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Роль, аудиторія і контекст</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Inter:wght@400;600&display=swap");
+
+    :root {
+      --ppt-bg: #FDFCFB;
+      --ppt-bg-soft: #F3F4F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF2FF;
+      --ppt-border: #E5E7EB;
+      --ppt-text-1: #111827;
+      --ppt-text-2: #4B5563;
+      --ppt-text-3: #9CA3AF;
+      --ppt-accent: #6366F1;
+      --ppt-accent-2: #10B981;
+      --ppt-chart-1: #6366F1;
+      --ppt-chart-2: #10B981;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #059669;
+      --ppt-warn: #D97706;
+      --ppt-bad: #DC2626;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 8px;
+      --ppt-radius-lg: 16px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: transparent;
+      font-family: var(--ppt-font-body);
+    }.slide-role-audience-context-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px 45px 64px;
+      
+    }.title-region-prompt-engineering{
+      margin-top: 38px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-eyebrow-badge {
+      background-color: var(--ppt-accent);
+      color: white;
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .title-eyebrow-section-label {
+      color: var(--ppt-text-3);
+      font-family: var(--ppt-font-body);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .title-page-heading {
+      margin: 0;
+      color: var(--ppt-text-1);
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 38px;
+      line-height: 1.2;
+    }
+
+    .title-accent-divider {
+      width: 60px;
+      height: 4px;
+      background-color: var(--ppt-accent);
+      border-radius: 2px;
+      margin-top: 8px;
+    }.body-content-role-audience-context{
+      flex: 1 1 0;
+      display: flex;
+      gap: 19px 24px;
+      
+    }
+
+    .left-dominant-column {
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      min-width: 0;
+    }
+
+    .left-dominant-column .role-definition-surface,
+    .left-dominant-column .audience-context-surface {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px 28px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .role-definition-surface .role-icon-title-row,
+    .audience-context-surface .audience-context-icon-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .role-icon-title-row i,
+    .audience-context-icon-title-row i {
+      font-size: 22px;
+      color: var(--ppt-accent);
+      width: 32px;
+      text-align: center;
+    }
+
+    .role-icon-title-row .role-block-title,
+    .audience-context-icon-title-row .audience-block-title {
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--ppt-text-1);
+    }
+
+    .role-list-container,
+    .audience-list-container {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .role-list-container li,
+    .audience-list-container li {
+      display: block;
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      padding-left: 8px;
+      border-left: 3px solid var(--ppt-surface-2);
+    }
+
+    .role-list-container li strong,
+    .audience-list-container li strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    .audience-context-surface .audience-context-note {
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 16px;
+      border-left: 4px solid var(--ppt-accent);
+    }.right-supportive-column{
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 19px 24px;
+      min-width: 0;
+    }.example-role-prompt-surface{
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-lg);
+      padding: 19px 24px 16px 24px;
+      border: 1px solid var(--ppt-border);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 11px 14px;
+      box-shadow: var(--ppt-shadow-soft);
+    }.example-prompt-heading-row{
+      display: flex;
+      align-items: center;
+      gap: 8px 10px;
+    }
+
+    .example-prompt-heading-row i {
+      font-size: 20px;
+      color: var(--ppt-accent);
+    }
+
+    .example-prompt-heading-row .example-prompt-title {
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--ppt-text-1);
+    }.example-prompt-quote{
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--ppt-text-2);
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      padding: 13px 18px;
+      border-left: 4px solid var(--ppt-accent);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .example-prompt-quote strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      font-style: normal;
+    }.example-prompt-takeaway{
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      display: flex;
+      align-items: flex-start;
+      gap: 6px 8px;
+      margin-top: 3px;
+    }.example-prompt-takeaway i{
+      color: var(--ppt-accent-2);
+      font-size: 16px;
+      margin-top: 3px;
+    }.context-highlight-surface{
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 14px 20px;
+      border: 1px solid var(--ppt-border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px 10px;
+    }
+
+    .context-highlight-surface .context-highlight-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .context-highlight-title-row i {
+      color: var(--ppt-warn);
+      font-size: 18px;
+    }
+
+    .context-highlight-title-row .context-highlight-title {
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--ppt-text-1);
+    }
+
+    .context-highlight-surface p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-role-audience-context-root">
+    <header class="title-region-prompt-engineering">
+      <div class="title-eyebrow-row">
+        <span class="title-eyebrow-badge">IT CLASS</span>
+        <span class="title-eyebrow-section-label">Prompt Engineering</span>
+      </div>
+      <h1 class="title-page-heading">Роль, аудиторія і контекст</h1>
+      <div class="title-accent-divider"></div>
+    </header>
+
+    <div class="body-content-role-audience-context" style="margin-bottom: 3px !important;">
+      <!-- Ліва домінантна колонка -->
+      <div class="left-dominant-column">
+        <div class="role-definition-surface">
+          <div class="role-icon-title-row">
+            <i class="fa-solid fa-user-tag" aria-hidden="true"></i>
+            <span class="role-block-title">Роль задає спосіб допомоги</span>
+          </div>
+          <ul class="role-list-container">
+            <li><strong>Репетитор</strong> — пояснює крок за кроком, перевіряє розуміння.</li>
+            <li><strong>Редактор</strong> — покращує текст, виправляє стиль і структуру.</li>
+            <li><strong>Співрозмовник</strong> — ставить запитання, веде діалог.</li>
+            <li><strong>Критик</strong> — вказує на слабкі місця, пропонує альтернативи.</li>
+          </ul>
+        </div>
+
+        <div class="audience-context-surface">
+          <div class="audience-context-icon-title-row">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            <span class="audience-block-title">Аудиторія і контекст</span>
+          </div>
+          <ul class="audience-list-container">
+            <li><strong>Аудиторія</strong> — рівень пояснення: «учневі 8 класу» або «для 11 класу».</li>
+            <li><strong>Контекст</strong> — важливі вихідні умови: що вже знає учень, які дані доступні.</li>
+          </ul>
+          <div class="audience-context-note">
+            <i class="fa-solid fa-circle-info" style="color: var(--ppt-accent); margin-right: 8px;"></i>
+            Точна аудиторія та контекст усувають здогади моделі про рівень і деталізацію.
+          </div>
+        </div>
+      </div>
+
+      <!-- Права підтримувальна колонка -->
+      <div class="right-supportive-column">
+        <div class="example-role-prompt-surface">
+          <div class="example-prompt-heading-row">
+            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+            <span class="example-prompt-title">Приклад промпту</span>
+          </div>
+          <div class="example-prompt-quote">
+            «Ти — <strong>терплячий репетитор</strong>. Поясни <strong>учневі 11 класу</strong> цикл <strong>for</strong>; учень уже знає змінні та умови».
+          </div>
+          <div class="example-prompt-takeaway">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            <span>Роль, аудиторія та контекст — три складові, що роблять пояснення точним.</span>
+          </div>
+        </div>
+
+        <div class="context-highlight-surface">
+          <div class="context-highlight-title-row">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span class="context-highlight-title">Чому це працює?</span>
+          </div>
+          <p>Контекст «учень уже знає змінні та умови» дозволяє моделі не повторювати основи й одразу перейти до циклу <strong>for</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

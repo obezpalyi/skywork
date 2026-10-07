@@ -1,0 +1,774 @@
+[
+  {
+    "page_num": 1,
+    "heading": "AI-assisted Requirements and Change Management in SDLC: DevOps Track",
+    "type": "title",
+    "des": "Навчальний курс, зосереджений на управлінні вимогами та змінами в SDLC для DevOps-фахівців з використанням інструментів штучного інтелекту.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/b9372044ae5f5b54582f683bec5e6464.jpg",
+        "filename": "Google SRE - Learn sre incident management and response",
+        "img_desc": "A structured flowchart titled \"Overview of Google’s Incident Response Management\" presents the incident lifecycle. It is organized into three stages: Prepare, Respond, and Learn, with a vertical Communicate band spanning the process. The central sequence lists Prepare, Detect, Triage, Mitigate, Resolve, Learn, and Remediate, each paired with a concise explanation. Pastel green, yellow, pink, lavender, blue, and gray blocks create a clean instructional design with clear alignment and readable typography.",
+        "caption": "Flowchart illustrating Google’s incident response management lifecycle, from preparation and detection through mitigation, resolution, learning, and remediation, with communication throughout.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x921",
+        "title": "Google SRE - Learn sre incident management and response",
+        "width": 1024,
+        "height": 921,
+        "query": "site reliability engineering team incident response"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c4463a455b7c342174cf54f0d9137d9d.jpg",
+        "filename": "SRE Challenges \u0026 Best Practices to Build Resilient Systems | Xoriant",
+        "img_desc": "An infographic titled \"4 SRE BEST PRACTICES\" presents four recommendations around a central circular blue-and-cyan segmented ring. The four numbered panels read: \"Improve incident management,\" \"Include embedded SREs in Operations,\" \"Tailor the monitoring of monolithic vs. distributed environments,\" and \"Apply exhaustive rules in a managed cloud environment.\" Each panel includes a simple black line icon related to operations, monitoring, or alerts. The design uses a clean white and light-gray background with blue and cyan accents, rounded rectangular panels, and a balanced four-quadrant composition.",
+        "caption": "A clean blue-and-white infographic outlining four SRE best practices, including incident management, embedded SREs, tailored monitoring, and managed-cloud rules.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "871x630",
+        "title": "SRE Challenges \u0026 Best Practices to Build Resilient Systems | Xoriant",
+        "width": 871,
+        "height": 630,
+        "query": "site reliability engineering team incident response"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/3d9170d572816986aae91ead73529e27.jpg",
+        "filename": "The Complete Guide to Building a Deployment Plan — Before You Face the CAB  | by Blog Chip | Medium",
+        "img_desc": "A stylized vector illustration shows a deployment planning meeting with five team members seated around a conference table, several working on laptops while discussing the deployment process. A large wall display behind them is labeled \"DEPLOYMENT STRATEGY\" and includes deployment diagrams, a release schedule, \"CAB MEETING: FRIDAY 10 AM,\" and a planning progress bar. Additional workflow boxes and connecting lines are arranged across the tabletop. The image uses a clean, flat design with cool teal, blue, and gray tones and a balanced, organized composition.",
+        "caption": "A flat-style illustration of a DevOps deployment strategy meeting with a release schedule, CAB meeting details, workflow diagrams, and team members collaborating around laptops.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "833x802",
+        "title": "The Complete Guide to Building a Deployment Plan — Before You Face the CAB  | by Blog Chip | Medium",
+        "width": 833,
+        "height": 802,
+        "query": "devops deployment planning meeting"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c7ffcd0ee245bcaee30021b86c8fda14.jpg",
+        "filename": "DevOps Planning | Purple Griffon",
+        "img_desc": "A clean, high-contrast DevOps infinity-loop diagram is centered on a white background. The loop is divided into labeled stages including BUILD, CODE, TEST, RELEASE, DEPLOY, OPERATE, MONITOR, and PLAN, with \"Dev\" on the left and \"Ops\" on the right. Most sections are black with white lettering, while the PLAN segment is highlighted in orange. The graphic directly represents a continuous DevOps deployment and planning workflow, with a simple, polished infographic style.",
+        "caption": "A black-and-white DevOps infinity-loop workflow showing development and operations stages, with the PLAN segment highlighted in orange.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "800x428",
+        "title": "DevOps Planning | Purple Griffon",
+        "width": 800,
+        "height": 428,
+        "query": "devops deployment planning meeting"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/58fc867c25119485624475aa874c7f15.jpg",
+        "filename": "Infrastructure Monitoring: Comprehensive Guide \u0026 Best Practices -  UptimeRobot Knowledge Hub",
+        "img_desc": "A stylized isometric illustration depicts a central multicolored cloud connected by glowing green network lines to server stacks, virtual machines, and several distributed data-center icons. White labels identify \"virtual machines,\" \"multiple cloud providers,\" and \"data centers.\" The dark navy background, neon blue and green lighting, and purple accents create a polished technology-themed aesthetic with a balanced network diagram composition.",
+        "caption": "A neon isometric cloud infrastructure diagram showing virtual machines, multiple cloud providers, and interconnected data centers.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x578",
+        "title": "Infrastructure Monitoring: Comprehensive Guide \u0026 Best Practices -  UptimeRobot Knowledge Hub",
+        "width": 1024,
+        "height": 578,
+        "query": "cloud infrastructure monitoring operations center"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c9f8e0dd06f9a72c420d5c9d6a72813f.jpg",
+        "filename": "Overview of Monitoring",
+        "img_desc": "A clean architectural flow diagram titled \"Overview of Monitoring\" illustrates cloud infrastructure monitoring operations. Applications, services, resources, and resources at OCI feed into a monitoring system that collects raw metrics data and produces aggregated metric data. The metrics flow into an alarm decision based on CPU utilization, with a \"Yes\" path triggering an alarm and a \"No\" path indicating normal status. Outputs are directed to notifications or streaming, as well as the OCI Console, OCI SDK/CLI/API, and monitoring tools. The diagram uses a white background, thin dark teal and green outlines, simple line icons, and a clear left-to-right composition.",
+        "caption": "A cloud monitoring architecture diagram showing metric collection, aggregation, CPU-based alarms, notifications or streaming, and access through OCI tools.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x419",
+        "title": "Overview of Monitoring",
+        "width": 1024,
+        "height": 419,
+        "query": "cloud infrastructure monitoring operations center"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c8d4ab5c4548535b0f102f3d0c8de932.jpg",
+        "filename": "What is infrastructure monitoring? A fresh take for the modern sysadmin",
+        "img_desc": "An isometric blue-toned illustration depicts a data center and infrastructure monitoring environment. Multiple server racks surround a central glass-walled facility containing additional servers, screens, and two small human figures. Network lines and glowing nodes connect the components, while labels identify functions such as air conditioning, CCTV, access point, room monitoring, access system, and server virtualization application. The composition is clean and structured, with a dark navy background, cyan highlights, and occasional pink accents that create a modern technology aesthetic.",
+        "caption": "An isometric illustration of interconnected data center servers and infrastructure monitoring systems, with labeled operational components and glowing network connections.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x535",
+        "title": "What is infrastructure monitoring? A fresh take for the modern sysadmin",
+        "width": 1024,
+        "height": 535,
+        "query": "cloud infrastructure monitoring operations center"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/a12a4b39dc5f51a5d675af83d99ce101.jpg",
+        "filename": "ITIL release management: Process, best practices, roles, \u0026 release vs change",
+        "img_desc": "A colorful circular infographic presents the \"Release management cycle\" at its center. Six surrounding stages are arranged as segments: \"Initiate,\" \"Plan and design,\" \"Develop,\" \"Test,\" \"Deploy,\" and \"Post-deploy,\" each paired with a simple line icon. The diagram uses contrasting yellow, purple, pink, blue, orange, and green sections with dark outlines and a bright cyan central area. The composition is clean, symmetrical, and clearly structured for explaining a software release-management workflow.",
+        "caption": "A six-stage release management cycle infographic showing Initiate, Plan and design, Develop, Test, Deploy, and Post-deploy around a central Release management cycle.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "800x800",
+        "title": "ITIL release management: Process, best practices, roles, \u0026 release vs change",
+        "width": 800,
+        "height": 800,
+        "query": "software release management team office"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/2598c1a902a427eb030c16506d3cd19a.jpg",
+        "filename": "Agile Release Management Process | How to Improve It - Waydev",
+        "img_desc": "A clean circular process diagram titled \"Release Management Process\" is shown on a white background. A large blue circle in the center is surrounded by blue rounded labels connected by turquoise directional arrows. The stages shown are Request For Changes, Release Planning \u0026 Design, Software build, Review, Test, Deployment, Support, and Issue Reporting \u0026 Collection. The graphic uses a simple corporate style with blue and turquoise accents and a balanced radial composition.",
+        "caption": "A blue circular diagram outlining the stages of a software release management process.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x576",
+        "title": "Agile Release Management Process | How to Improve It - Waydev",
+        "width": 1024,
+        "height": 576,
+        "query": "software release management team office"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/584fcbeac58c30dcab61f453720c4d32.jpg",
+        "filename": "Steps Involved In The Software Release Management Process",
+        "img_desc": "A bright modern office scene shows a software development team gathered around a shared workstation. Several people are seated at desks or standing nearby, with multiple monitors displaying programming code and development interfaces. Laptops, keyboards, mugs, and other office items are arranged across the white desks. The composition uses a wide view with natural daylight, neutral tones, and a collaborative workplace atmosphere.",
+        "caption": "A software development team collaborating in an office surrounded by monitors displaying code.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x455",
+        "title": "Steps Involved In The Software Release Management Process",
+        "width": 1024,
+        "height": 455,
+        "query": "software release management team office"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 2,
+    "heading": "Чому цей трек важливий для DevOps",
+    "type": "content",
+    "des": "Усунення прогалин в операційних вимогах, прискорення роботи з документацією та запобігання помилкам при розгортанні й відкатах систем.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 3,
+    "heading": "Навчальний маршрут та очікувані результати",
+    "type": "content",
+    "des": "Огляд чотирьох сесій курсу від аналізу вимог до готовності до релізу та формування персонального DevOps AI Playbook.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c7ffcd0ee245bcaee30021b86c8fda14.jpg",
+        "filename": "DevOps Planning | Purple Griffon",
+        "img_desc": "A clean, high-contrast DevOps infinity-loop diagram is centered on a white background. The loop is divided into labeled stages including BUILD, CODE, TEST, RELEASE, DEPLOY, OPERATE, MONITOR, and PLAN, with \"Dev\" on the left and \"Ops\" on the right. Most sections are black with white lettering, while the PLAN segment is highlighted in orange. The graphic directly represents a continuous DevOps deployment and planning workflow, with a simple, polished infographic style.",
+        "caption": "A black-and-white DevOps infinity-loop workflow showing development and operations stages, with the PLAN segment highlighted in orange.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "800x428",
+        "title": "DevOps Planning | Purple Griffon",
+        "width": 800,
+        "height": 428,
+        "query": "devops deployment planning meeting"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 4,
+    "heading": "Сесія OPS-1: Операційний контекст вимог",
+    "type": "content",
+    "des": "Цілі та вхідні дані для виявлення операційно значущих очікувань і зв'язку вимог із сервісами та власниками.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 5,
+    "heading": "Критерії операційної повноти вимог",
+    "type": "content",
+    "des": "Перевірка доступності, продуктивності, масштабованості, безпеки та спостережуваності для забезпечення стабільної роботи системи.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c4463a455b7c342174cf54f0d9137d9d.jpg",
+        "filename": "SRE Challenges \u0026 Best Practices to Build Resilient Systems | Xoriant",
+        "img_desc": "An infographic titled \"4 SRE BEST PRACTICES\" presents four recommendations around a central circular blue-and-cyan segmented ring. The four numbered panels read: \"Improve incident management,\" \"Include embedded SREs in Operations,\" \"Tailor the monitoring of monolithic vs. distributed environments,\" and \"Apply exhaustive rules in a managed cloud environment.\" Each panel includes a simple black line icon related to operations, monitoring, or alerts. The design uses a clean white and light-gray background with blue and cyan accents, rounded rectangular panels, and a balanced four-quadrant composition.",
+        "caption": "A clean blue-and-white infographic outlining four SRE best practices, including incident management, embedded SREs, tailored monitoring, and managed-cloud rules.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "871x630",
+        "title": "SRE Challenges \u0026 Best Practices to Build Resilient Systems | Xoriant",
+        "width": 871,
+        "height": 630,
+        "query": "site reliability engineering team incident response"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 6,
+    "heading": "DevOps промпт для аналізу вимог",
+    "type": "content",
+    "des": "Структура промпту для аналізу операційних потреб із дотриманням правил безпеки та використанням плейсхолдерів для конфіденційних даних.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 7,
+    "heading": "Робочий процес OPS-1: Від вимог до операційного звіту",
+    "type": "content",
+    "des": "Етапи ідентифікації критичної поведінки бізнесу, залежностей, потреб у моніторингу та правил ескалації.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 8,
+    "heading": "Демонстрація на кейсі ServiceHub",
+    "type": "content",
+    "des": "Аналіз запиту на зміну Critical Service Request за допомогою Xplore для виявлення операційних ризиків та невідомих параметрів.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 9,
+    "heading": "Практика та результати першої сесії",
+    "type": "content",
+    "des": "Формування звіту про операційні вимоги, реєстру запитань та перевірених шаблонів промптів для DevOps.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/584fcbeac58c30dcab61f453720c4d32.jpg",
+        "filename": "Steps Involved In The Software Release Management Process",
+        "img_desc": "A bright modern office scene shows a software development team gathered around a shared workstation. Several people are seated at desks or standing nearby, with multiple monitors displaying programming code and development interfaces. Laptops, keyboards, mugs, and other office items are arranged across the white desks. The composition uses a wide view with natural daylight, neutral tones, and a collaborative workplace atmosphere.",
+        "caption": "A software development team collaborating in an office surrounded by monitors displaying code.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x455",
+        "title": "Steps Involved In The Software Release Management Process",
+        "width": 1024,
+        "height": 455,
+        "query": "software release management team office"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 10,
+    "heading": "Сесія OPS-2: Інфраструктура, конфігурація та спостережуваність",
+    "type": "content",
+    "des": "Оцінка впливу змін на середовища, ресурси та налаштування моніторингу на основі технічного дизайну.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 11,
+    "heading": "Домени операційного впливу",
+    "type": "content",
+    "des": "Огляд сфер впливу: від мережевих налаштувань та сховищ даних до конфігураційних параметрів і пайплайнів розгортання.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 12,
+    "heading": "Робочий процес OPS-2: Матриця операційного впливу",
+    "type": "content",
+    "des": "Мапування змін на сервіси, виявлення відмінностей між середовищами та визначення нових метрик і сповіщень.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 13,
+    "heading": "Огляд конфігурації та інфраструктури",
+    "type": "content",
+    "des": "Використання Xplore для структурування даних про ресурси та методи розгортання без передачі конфіденційних облікових даних.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/58fc867c25119485624475aa874c7f15.jpg",
+        "filename": "Infrastructure Monitoring: Comprehensive Guide \u0026 Best Practices -  UptimeRobot Knowledge Hub",
+        "img_desc": "A stylized isometric illustration depicts a central multicolored cloud connected by glowing green network lines to server stacks, virtual machines, and several distributed data-center icons. White labels identify \"virtual machines,\" \"multiple cloud providers,\" and \"data centers.\" The dark navy background, neon blue and green lighting, and purple accents create a polished technology-themed aesthetic with a balanced network diagram composition.",
+        "caption": "A neon isometric cloud infrastructure diagram showing virtual machines, multiple cloud providers, and interconnected data centers.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x578",
+        "title": "Infrastructure Monitoring: Comprehensive Guide \u0026 Best Practices -  UptimeRobot Knowledge Hub",
+        "width": 1024,
+        "height": 578,
+        "query": "cloud infrastructure monitoring operations center"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 14,
+    "heading": "Спостережуваність для Critical Service Request",
+    "type": "content",
+    "des": "Визначення сигналів успіху ескалації, затримок обробки та черг повідомлень для узгодження з бізнес-ризиками.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c9f8e0dd06f9a72c420d5c9d6a72813f.jpg",
+        "filename": "Overview of Monitoring",
+        "img_desc": "A clean architectural flow diagram titled \"Overview of Monitoring\" illustrates cloud infrastructure monitoring operations. Applications, services, resources, and resources at OCI feed into a monitoring system that collects raw metrics data and produces aggregated metric data. The metrics flow into an alarm decision based on CPU utilization, with a \"Yes\" path triggering an alarm and a \"No\" path indicating normal status. Outputs are directed to notifications or streaming, as well as the OCI Console, OCI SDK/CLI/API, and monitoring tools. The diagram uses a white background, thin dark teal and green outlines, simple line icons, and a clear left-to-right composition.",
+        "caption": "A cloud monitoring architecture diagram showing metric collection, aggregation, CPU-based alarms, notifications or streaming, and access through OCI tools.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x419",
+        "title": "Overview of Monitoring",
+        "width": 1024,
+        "height": 419,
+        "query": "cloud infrastructure monitoring operations center"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 15,
+    "heading": "Практика: Створення матриці операційного впливу",
+    "type": "content",
+    "des": "Документування впливу на IaC, визначення прогалин у сповіщеннях та підготовка переліку змін для спостережуваності.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 16,
+    "heading": "Сесія OPS-3: Розгортання, відкат та готовність до релізу",
+    "type": "content",
+    "des": "Планування впровадження схваленого дизайну, включаючи автоматичну ескалацію та зміни в моделі даних.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/a12a4b39dc5f51a5d675af83d99ce101.jpg",
+        "filename": "ITIL release management: Process, best practices, roles, \u0026 release vs change",
+        "img_desc": "A colorful circular infographic presents the \"Release management cycle\" at its center. Six surrounding stages are arranged as segments: \"Initiate,\" \"Plan and design,\" \"Develop,\" \"Test,\" \"Deploy,\" and \"Post-deploy,\" each paired with a simple line icon. The diagram uses contrasting yellow, purple, pink, blue, orange, and green sections with dark outlines and a bright cyan central area. The composition is clean, symmetrical, and clearly structured for explaining a software release-management workflow.",
+        "caption": "A six-stage release management cycle infographic showing Initiate, Plan and design, Develop, Test, Deploy, and Post-deploy around a central Release management cycle.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "800x800",
+        "title": "ITIL release management: Process, best practices, roles, \u0026 release vs change",
+        "width": 800,
+        "height": 800,
+        "query": "software release management team office"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 17,
+    "heading": "Робочий процес OPS-3: Планування розгортання",
+    "type": "content",
+    "des": "Визначення послідовності кроків, перевірок перед впровадженням та активації функціональних прапорців.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/2598c1a902a427eb030c16506d3cd19a.jpg",
+        "filename": "Agile Release Management Process | How to Improve It - Waydev",
+        "img_desc": "A clean circular process diagram titled \"Release Management Process\" is shown on a white background. A large blue circle in the center is surrounded by blue rounded labels connected by turquoise directional arrows. The stages shown are Request For Changes, Release Planning \u0026 Design, Software build, Review, Test, Deployment, Support, and Issue Reporting \u0026 Collection. The graphic uses a simple corporate style with blue and turquoise accents and a balanced radial composition.",
+        "caption": "A blue circular diagram outlining the stages of a software release management process.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x576",
+        "title": "Agile Release Management Process | How to Improve It - Waydev",
+        "width": 1024,
+        "height": 576,
+        "query": "software release management team office"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 18,
+    "heading": "Структура плану розгортання",
+    "type": "content",
+    "des": "Опис кроків міграції, конфігурації та верифікації з чітким визначенням відповідальних та очікуваної тривалості.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/3d9170d572816986aae91ead73529e27.jpg",
+        "filename": "The Complete Guide to Building a Deployment Plan — Before You Face the CAB  | by Blog Chip | Medium",
+        "img_desc": "A stylized vector illustration shows a deployment planning meeting with five team members seated around a conference table, several working on laptops while discussing the deployment process. A large wall display behind them is labeled \"DEPLOYMENT STRATEGY\" and includes deployment diagrams, a release schedule, \"CAB MEETING: FRIDAY 10 AM,\" and a planning progress bar. Additional workflow boxes and connecting lines are arranged across the tabletop. The image uses a clean, flat design with cool teal, blue, and gray tones and a balanced, organized composition.",
+        "caption": "A flat-style illustration of a DevOps deployment strategy meeting with a release schedule, CAB meeting details, workflow diagrams, and team members collaborating around laptops.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "833x802",
+        "title": "The Complete Guide to Building a Deployment Plan — Before You Face the CAB  | by Blog Chip | Medium",
+        "width": 833,
+        "height": 802,
+        "query": "devops deployment planning meeting"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 19,
+    "heading": "Стратегія та план відкату",
+    "type": "content",
+    "des": "Визначення тригерів для відкату, повноважень для прийняття рішень та забезпечення цілісності даних при поверненні до попередньої версії.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 20,
+    "heading": "Докази готовності до випуску",
+    "type": "content",
+    "des": "Перевірка інфраструктури, готовності моніторингу, наявності чергових інженерів та оцінка відомих ризиків перед релізом.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c8d4ab5c4548535b0f102f3d0c8de932.jpg",
+        "filename": "What is infrastructure monitoring? A fresh take for the modern sysadmin",
+        "img_desc": "An isometric blue-toned illustration depicts a data center and infrastructure monitoring environment. Multiple server racks surround a central glass-walled facility containing additional servers, screens, and two small human figures. Network lines and glowing nodes connect the components, while labels identify functions such as air conditioning, CCTV, access point, room monitoring, access system, and server virtualization application. The composition is clean and structured, with a dark navy background, cyan highlights, and occasional pink accents that create a modern technology aesthetic.",
+        "caption": "An isometric illustration of interconnected data center servers and infrastructure monitoring systems, with labeled operational components and glowing network connections.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x535",
+        "title": "What is infrastructure monitoring? A fresh take for the modern sysadmin",
+        "width": 1024,
+        "height": 535,
+        "query": "cloud infrastructure monitoring operations center"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 21,
+    "heading": "Практика: Підготовка процедур розгортання",
+    "type": "content",
+    "des": "Створення послідовності кроків розгортання, тригерів відкату та чернетки статусу готовності релізу.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 22,
+    "heading": "Сесія OPS-4: Операційна готовність та DevOps Capstone",
+    "type": "content",
+    "des": "Врахування нових обмежень, таких як використання feature-flags та інтеграція із зовнішніми системами.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 23,
+    "heading": "Робочий процес OPS-4: Оновлення операційного пакету",
+    "type": "content",
+    "des": "Аналіз попередніх інцидентів, оновлення планів розгортання, метрик та документації з урахуванням отриманих уроків.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/b9372044ae5f5b54582f683bec5e6464.jpg",
+        "filename": "Google SRE - Learn sre incident management and response",
+        "img_desc": "A structured flowchart titled \"Overview of Google’s Incident Response Management\" presents the incident lifecycle. It is organized into three stages: Prepare, Respond, and Learn, with a vertical Communicate band spanning the process. The central sequence lists Prepare, Detect, Triage, Mitigate, Resolve, Learn, and Remediate, each paired with a concise explanation. Pastel green, yellow, pink, lavender, blue, and gray blocks create a clean instructional design with clear alignment and readable typography.",
+        "caption": "Flowchart illustrating Google’s incident response management lifecycle, from preparation and detection through mitigation, resolution, learning, and remediation, with communication throughout.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x921",
+        "title": "Google SRE - Learn sre incident management and response",
+        "width": 1024,
+        "height": 921,
+        "query": "site reliability engineering team incident response"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 24,
+    "heading": "Оновлення експлуатаційної документації (Runbook)",
+    "type": "content",
+    "des": "Документування сигналів виявлення проблем, процедур ескалації та пом'якшення наслідків за допомогою Xplore.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 25,
+    "heading": "Підсумкове завдання DevOps Capstone",
+    "type": "content",
+    "des": "Комплексна робота над новим запитом ServiceHub: від аналізу вимог до підготовки рекомендації Go/No-Go.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 26,
+    "heading": "Критерії оцінки Capstone проекту",
+    "type": "content",
+    "des": "Перевірка повноти аналізу впливу, простежуваності змін, безпеки даних та явної участі людини в прийнятті рішень.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 27,
+    "heading": "Персональний DevOps AI Playbook",
+    "type": "content",
+    "des": "Збір перевірених промптів для аналізу вимог, інфраструктури, планів розгортання та оновлення ранбуків.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 28,
+    "heading": "Самостійна практика та закріплення навичок",
+    "type": "content",
+    "des": "Десять робочих днів для повторення воркфлоу, тестування промптів на складних кейсах та вдосконалення Playbook.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 29,
+    "heading": "Онлайн-тест та сертифікація курсу",
+    "type": "content",
+    "des": "Підсумкове тестування з 30 питань для підтвердження навичок використання AI-інструментів у DevOps-процесах.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  }
+]

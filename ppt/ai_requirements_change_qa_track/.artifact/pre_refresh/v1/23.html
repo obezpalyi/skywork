@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Воркфлоу QA-4 · Оновлення QA-пакета</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    /* slide root: fixed 1280x720, flex column */
+    .qa4-slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px 48px 64px; /* bottom safety gap */
+      
+    }
+
+    /* ---- Non-Cover-Page Title Region (fixed from DESIGN) ---- */
+    .title-qa4-header {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      margin-bottom: 28px;
+      flex-shrink: 0;
+    }
+
+    .title-qa4-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .title-qa4-accent-rail {
+      width: 4px;
+      height: 16px;
+      background-color: var(--ppt-accent);
+    }
+
+    .title-qa4-eyebrow-text {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+
+    .title-qa4-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .title-qa4-subheading {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* ---- Main body wrapper: flex:1 consumes remaining height ---- */
+    .qa4-body-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+       /* only for proper flex sizing, not for text shrink */
+      align-items: stretch;
+    }
+
+    /* ---- left dominant column: workflow steps (8 items) ---- */
+    .qa4-workflow-left {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: flex-start;
+      min-width: 0;
+    }
+
+    .qa4-workflow-step-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 8px 12px 8px 10px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 0 0 auto;
+    }
+
+    .qa4-step-index-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      background-color: var(--ppt-bg-soft);
+      color: var(--ppt-accent);
+      border-radius: var(--ppt-radius-sm);
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .qa4-step-text {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    /* ---- right narrow "AI Checkpoint" rail ---- */
+    .qa4-ai-checkpoint-rail {
+      width: 240px;
+      flex-shrink: 0;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 14px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-left: 3px solid var(--ppt-accent);
+    }
+
+    .qa4-checkpoint-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--ppt-font-display);
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+      margin-bottom: 2px;
+    }
+
+    .qa4-checkpoint-title i {
+      font-size: 16px;
+      color: var(--ppt-accent);
+    }
+
+    .qa4-checkpoint-rule {
+      height: 1px;
+      background-color: var(--ppt-border);
+      width: 100%;
+      margin: 2px 0 4px 0;
+    }
+
+    .qa4-checkpoint-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }
+
+    .qa4-checkpoint-item i {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      margin-top: 3px;
+      width: 16px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .qa4-checkpoint-item span {
+      font-weight: 400;
+    }
+
+    .qa4-checkpoint-note {
+      margin-top: 4px;
+      padding-top: 10px;
+      border-top: 1px solid var(--ppt-border);
+      font-size: 13px;
+      color: var(--ppt-text-3);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      line-height: 1.4;
+    }
+
+    .qa4-checkpoint-note i {
+      color: var(--ppt-warn);
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    /* everything must fit inside 720px height */
+    .qa4-slide-root, .qa4-body-wrapper {
+      max-height: 720px;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="qa4-slide-root">
+    <!-- fixed title region -->
+    <header class="title-qa4-header">
+      <div class="title-qa4-eyebrow-row">
+        <div class="title-qa4-accent-rail"></div>
+        <span class="title-qa4-eyebrow-text">SERVICEHUB QA TRACK · СЕСІЯ QA-4</span>
+      </div>
+      <h1 class="title-qa4-heading">Воркфлоу QA-4: Оновлення QA-пакета</h1>
+      <h2 class="title-qa4-subheading">Фінальні кроки: актуалізація тестів, даних та перевірка готовності середовища</h2>
+    </header>
+
+    <!-- body: dominant workflow list + narrow AI checkpoint rail -->
+    <div class="qa4-body-wrapper" style="margin-bottom: 4px !important;">
+      <!-- left: 8 workflow steps -->
+      <div class="qa4-workflow-left">
+        <div class="qa4-workflow-step-item">
+          <div class="qa4-step-index-badge">1</div>
+          <div class="qa4-step-text">Перевірити затверджений базовий рівень вимог (baseline)</div>
+        </div>
+        <div class="qa4-workflow-step-item">
+          <div class="qa4-step-index-badge">2</div>
+          <div class="qa4-step-text">Оновити тестові умови та тестові випадки</div>
+        </div>
+        <div class="qa4-workflow-step-item">
+          <div class="qa4-step-index-badge">3</div>
+          <div class="qa4-step-text">Актуалізувати синтетичні тестові дані</div>
+        </div>
+        <div class="qa4-workflow-step-item">
+          <div class="qa4-step-index-badge">4</div>
+          <div class="qa4-step-text">Оновити обсяг регресійного тестування</div>
+        </div>
+        <div class="qa4-workflow-step-item">
+          <div class="qa4-step-index-badge">5</div>
+          <div class="qa4-step-text">Ідентифікувати застарілі тести (obsolete)</div>
+        </div>
+        <div class="qa4-workflow-step-item">
+          <div class="qa4-step-index-badge">6</div>
+          <div class="qa4-step-text">Перевірити готовність середовища та інтеграцій</div>
+        </div>
+        <div class="qa4-workflow-step-item">
+          <div class="qa4-step-index-badge">7</div>
+          <div class="qa4-step-text">Оновити матрицю простежуваності</div>
+        </div>
+        <div class="qa4-workflow-step-item">
+          <div class="qa4-step-index-badge">8</div>
+          <div class="qa4-step-text">Сформувати висновок про тестову готовність</div>
+        </div>
+      </div>
+
+      <!-- right: AI Checkpoint rail -->
+      <aside class="qa4-ai-checkpoint-rail">
+        <div class="qa4-checkpoint-title">
+          <i class="fa-solid fa-microchip"></i>
+          <span>AI Checkpoint</span>
+        </div>
+        <div class="qa4-checkpoint-rule"></div>
+
+        <div class="qa4-checkpoint-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Xplore зіставляє зміни з попереднім baseline та вказує на розбіжності</span>
+        </div>
+        <div class="qa4-checkpoint-item">
+          <i class="fa-solid fa-shield"></i>
+          <span>Не створює нової очікуваної поведінки без затвердження власника</span>
+        </div>
+        <div class="qa4-checkpoint-item">
+          <i class="fa-solid fa-circle-question"></i>
+          <span>Автоматично пропонує оновлені тест-кейси та дані відповідно до правил</span>
+        </div>
+        <div class="qa4-checkpoint-item">
+          <i class="fa-solid fa-list-check"></i>
+          <span>Позначає застарілі тести та прогалини у простежуваності</span>
+        </div>
+        <div class="qa4-checkpoint-note">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Людське підтвердження обов&#39;язкове перед оновленням пакета</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+</body></html>

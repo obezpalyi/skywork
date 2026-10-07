@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+<title>Практика та результати аналізу впливу — Developer Track</title>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+  :root {
+    --ppt-bg: #FDFDFD;
+    --ppt-bg-soft: #F4F7F6;
+    --ppt-surface: #FFFFFF;
+    --ppt-surface-2: #E9EFED;
+    --ppt-border: #D1D9D7;
+    --ppt-text-1: #121417;
+    --ppt-text-2: #4A5552;
+    --ppt-text-3: #879491;
+    --ppt-accent: #007A5E;
+    --ppt-accent-2: #00D3A4;
+    --ppt-chart-1: #007A5E;
+    --ppt-chart-2: #00D3A4;
+    --ppt-chart-3: #121417;
+    --ppt-chart-4: #879491;
+    --ppt-good: #107C10;
+    --ppt-warn: #D83B01;
+    --ppt-bad: #A80000;
+    --ppt-radius-sm: 2px;
+    --ppt-radius-md: 4px;
+    --ppt-radius-lg: 8px;
+    --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+    --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+    --ppt-font-display: "Inter", sans-serif;
+    --ppt-font-body: "Inter", sans-serif;
+    --ppt-font-mono: "JetBrains Mono", monospace;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {width: 1280px; height: 720px; overflow: hidden;   
+    background: var(--ppt-bg);
+    font-family: var(--ppt-font-body);
+  }
+
+  .slide-root {
+    width: 1280px; height: 720px;
+    display: flex;
+    flex-direction: column;
+    background: var(--ppt-bg);
+    
+  }
+
+  /* Non-cover title region */
+  .title-region {
+    margin-top: 40px;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .title-region-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .title-region-eyebrow {
+    font-family: var(--ppt-font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ppt-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--ppt-surface-2);
+    padding: 4px 8px;
+    border-radius: var(--ppt-radius-sm);
+  }
+
+  .title-region-divider {
+    height: 1px;
+    flex-grow: 1;
+    background: var(--ppt-border);
+  }
+
+  .title-region-heading {
+    font-family: var(--ppt-font-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--ppt-text-1);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  /* Main body wrapper */
+  .impact-analysis-body-wrapper {
+    flex: 1 1 0;
+    margin-left: 56px;
+    margin-right: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    
+  }
+
+  /* Dominant narrative panel */
+  .impact-analysis-dominant-panel {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--ppt-surface);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-lg);
+    padding: 24px 28px;
+    box-shadow: var(--ppt-shadow-soft);
+    
+  }
+
+  .impact-analysis-panel-heading-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .impact-analysis-panel-icon {
+    color: var(--ppt-accent);
+    font-size: 18px;
+  }
+
+  .impact-analysis-panel-title {
+    font-family: var(--ppt-font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+    letter-spacing: -0.01em;
+  }
+
+  .impact-analysis-panel-subtitle {
+    font-family: var(--ppt-font-body);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.45;
+  }
+
+  /* Three-module row inside dominant panel */
+  .impact-analysis-module-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    flex: 1 1 0;
+    
+  }
+
+  .impact-analysis-module-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--ppt-bg-soft);
+    border-left: 3px solid var(--ppt-accent);
+    border-radius: var(--ppt-radius-sm);
+    padding: 18px 18px 16px 18px;
+  }
+
+  .impact-analysis-module-cell-accent-2 {
+    border-left-color: var(--ppt-accent-2);
+  }
+
+  .impact-analysis-module-cell-accent-3 {
+    border-left-color: var(--ppt-chart-3);
+  }
+
+  .impact-analysis-module-header-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .impact-analysis-module-icon {
+    color: var(--ppt-accent);
+    font-size: 16px;
+  }
+
+  .impact-analysis-module-icon-2 {
+    color: var(--ppt-accent-2);
+  }
+
+  .impact-analysis-module-icon-3 {
+    color: var(--ppt-chart-3);
+  }
+
+  .impact-analysis-module-name {
+    font-family: var(--ppt-font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ppt-text-1);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .impact-analysis-module-desc {
+    font-family: var(--ppt-font-body);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.5;
+  }
+
+  .impact-analysis-module-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .impact-analysis-module-list-item {
+    font-family: var(--ppt-font-body);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.4;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .impact-analysis-module-list-item::before {
+    content: "▸";
+    position: absolute;
+    left: 2px;
+    color: var(--ppt-accent);
+  }
+
+  /* Conclusion band */
+  .impact-analysis-conclusion-band {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--ppt-surface-2);
+    border-radius: var(--ppt-radius-md);
+    padding: 14px 20px;
+    border-left: 4px solid var(--ppt-accent);
+  }
+
+  .impact-analysis-conclusion-icon {
+    color: var(--ppt-accent);
+    font-size: 20px;
+  }
+
+  .impact-analysis-conclusion-text {
+    font-family: var(--ppt-font-body);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ppt-text-1);
+    line-height: 1.4;
+  }
+
+  .impact-analysis-conclusion-highlight {
+    font-weight: 600;
+    color: var(--ppt-accent);
+  }
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title region -->
+    <header class="title-region">
+      <div class="title-region-eyebrow-row">
+        <span class="title-region-eyebrow">Developer Track</span>
+        <div class="title-region-divider"></div>
+      </div>
+      <h1 class="title-region-heading">Практика та результати аналізу впливу</h1>
+    </header>
+
+    <!-- Main body -->
+    <div class="impact-analysis-body-wrapper">
+      <!-- Dominant panel -->
+      <div class="impact-analysis-dominant-panel">
+        <div class="impact-analysis-panel-heading-row">
+          <i class="fa-solid fa-diagram-project impact-analysis-panel-icon"></i>
+          <span class="impact-analysis-panel-title">Результати сесії на основі кейсу Critical Service Request</span>
+        </div>
+        <p class="impact-analysis-panel-subtitle">
+          Учасники застосовують Xplore для систематичного порівняння базових ліній, виявлення споживачів і залежностей, а також підготовки технічно обґрунтованих матеріалів для подальшого схвалення.
+        </p>
+
+        <!-- Three module grid -->
+        <div class="impact-analysis-module-grid">
+          <!-- Matrix module -->
+          <div class="impact-analysis-module-cell">
+            <div class="impact-analysis-module-header-row">
+              <i class="fa-solid fa-table-cells-large impact-analysis-module-icon"></i>
+              <span class="impact-analysis-module-name">Матриця впливу</span>
+            </div>
+            <p class="impact-analysis-module-desc">
+              Зіставлення змінених бізнес-правил із компонентами та споживачами.
+            </p>
+            <ul class="impact-analysis-module-list">
+              <li class="impact-analysis-module-list-item">Прямий вплив на Ticket, SLA, Notification</li>
+              <li class="impact-analysis-module-list-item">Транзитивний вплив на CRM та звітність</li>
+              <li class="impact-analysis-module-list-item">Ідентифікація власників і залежностей</li>
+            </ul>
+          </div>
+
+          <!-- Migration checklist module -->
+          <div class="impact-analysis-module-cell impact-analysis-module-cell-accent-2">
+            <div class="impact-analysis-module-header-row">
+              <i class="fa-solid fa-list-check impact-analysis-module-icon-2"></i>
+              <span class="impact-analysis-module-name">Чек-лист міграції</span>
+            </div>
+            <p class="impact-analysis-module-desc">
+              Перевірка готовності даних і зворотної сумісності.
+            </p>
+            <ul class="impact-analysis-module-list">
+              <li class="impact-analysis-module-list-item">Існуючі звернення та історія ескалацій</li>
+              <li class="impact-analysis-module-list-item">Резервні значення та зворотне заповнення</li>
+              <li class="impact-analysis-module-list-item">Співіснування версій і відкат</li>
+            </ul>
+          </div>
+
+          <!-- Risk register module -->
+          <div class="impact-analysis-module-cell impact-analysis-module-cell-accent-3">
+            <div class="impact-analysis-module-header-row">
+              <i class="fa-solid fa-triangle-exclamation impact-analysis-module-icon-3"></i>
+              <span class="impact-analysis-module-name">Реєстр ризиків</span>
+            </div>
+            <p class="impact-analysis-module-desc">
+              Оновлення ризиків із врахуванням технічного боргу.
+            </p>
+            <ul class="impact-analysis-module-list">
+              <li class="impact-analysis-module-list-item">Взаємодія з технічним боргом</li>
+              <li class="impact-analysis-module-list-item">Поведінка повторів і операційні алерти</li>
+              <li class="impact-analysis-module-list-item">Тест і пакети розгортання</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conclusion band -->
+      <div class="impact-analysis-conclusion-band" style="margin-bottom: 4px !important;">
+        <i class="fa-solid fa-circle-check impact-analysis-conclusion-icon"></i>
+        <p class="impact-analysis-conclusion-text">
+          Результат: <span class="impact-analysis-conclusion-highlight">технічна матриця впливу</span>, перевірений <span class="impact-analysis-conclusion-highlight">чек-лист міграції</span> та оновлений <span class="impact-analysis-conclusion-highlight">реєстр ризиків</span> — готові до технічного схвалення та передачі в розробку.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body></html>

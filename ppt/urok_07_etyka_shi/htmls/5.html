@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <title>Приватність і згода</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap");
+
+        :root {
+            --ppt-bg: #FDFCFB;
+            --ppt-bg-soft: #F4F2EF;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E9ECEF;
+            --ppt-border: #D8D2C2;
+            --ppt-text-1: #1A1A1A;
+            --ppt-text-2: #4A4A4A;
+            --ppt-text-3: #6C757D;
+            --ppt-accent: #005F73;
+            --ppt-accent-2: #9B2226;
+            --ppt-chart-1: #005F73;
+            --ppt-chart-2: #0A9396;
+            --ppt-chart-3: #EE9B00;
+            --ppt-chart-4: #BB3E03;
+            --ppt-good: #0A9396;
+            --ppt-warn: #E9D8A6;
+            --ppt-bad: #9B2226;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 8px;
+            --ppt-radius-lg: 0px;
+            --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+            --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.08);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Manrope", sans-serif;
+        }*{
+            margin: 0 0;
+            padding: 0 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .slide-root-privacy-consent {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 64px;
+            
+            position: relative;
+        }/* Title region — fixed per design */
+        .title-region-privacy-consent{
+            margin-top: 38px;
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .title-eyebrow-wrapper-privacy-consent {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-accent-bar-privacy-consent {
+            width: 24px;
+            height: 4px;
+            background-color: var(--ppt-accent);
+        }
+
+        .title-eyebrow-text-privacy-consent {
+            font-family: var(--ppt-font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+        }
+
+        .title-heading-privacy-consent {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--ppt-text-1);
+        }
+
+        .title-divider-privacy-consent {
+            width: 100%;
+            height: 1px;
+            background-color: var(--ppt-border);
+            margin-top: 12px;
+        }/* Main body — special open layout: privacy-anchor */
+        .body-content-privacy-consent{
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 38px 48px;
+            padding-bottom: 19px;
+            
+        }
+
+        /* Left anchor: large keyword ЗГОДА */
+        .left-anchor-consent-wrapper {
+            flex: 0 0 38%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background: transparent;
+        }
+
+        .consent-anchor-keyword {
+            font-family: var(--ppt-font-display);
+            font-size: 130px;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--ppt-accent);
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .consent-anchor-subline {
+            font-family: var(--ppt-font-body);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+            max-width: 340px;
+        }
+
+        /* Right side: three points separated by horizontal lines */
+        .right-points-consent-wrapper {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: transparent;
+            padding-right: 16px;
+        }.consent-point-item{
+            padding: 16px 0 16px 0;
+            border-bottom: 1px solid var(--ppt-border);
+        }
+
+        .consent-point-item:first-child {
+            padding-top: 0;
+        }
+
+        .consent-point-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }.consent-point-title-row{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .consent-point-icon {
+            width: 28px;
+            color: var(--ppt-accent);
+            font-size: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .consent-point-title {
+            font-family: var(--ppt-font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+        }
+
+        .consent-point-description {
+            font-family: var(--ppt-font-body);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.55;
+            padding-left: 40px;
+            max-width: 520px;
+        }
+
+        .consent-point-description strong {
+            font-weight: 700;
+            color: var(--ppt-text-1);
+        }/* Strong highlight for sensitive data examples */
+        .sensitive-data-tag-row{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 10px;
+            margin-top: 11px;
+            padding-left: 40px;
+            max-width: 520px;
+        }.sensitive-data-tag{
+            background: var(--ppt-bg-soft);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-sm);
+            padding: 3px 12px;
+            font-family: var(--ppt-font-body);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            white-space: nowrap;
+        }
+
+        .consent-point-description-condensed {
+            font-family: var(--ppt-font-body);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            padding-left: 40px;
+            max-width: 520px;
+        }
+
+        .consent-point-description-condensed strong {
+            font-weight: 700;
+            color: var(--ppt-text-1);
+        }
+
+        /* last point: right to withdraw */
+        .withdraw-highlight {
+            color: var(--ppt-accent-2);
+            font-weight: 700;
+        }
+
+        /* ensure no fixed heights on text containers */
+        .consent-anchor-keyword,
+        .consent-anchor-subline,
+        .consent-point-item,
+        .consent-point-title,
+        .consent-point-description,
+        .sensitive-data-tag {
+            height: auto;
+        }
+
+        /* left-right major blocks have explicit prefixes */
+        .left-anchor-consent-wrapper,
+        .right-points-consent-wrapper {
+            display: flex;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root-privacy-consent">
+        <!-- Fixed title region -->
+        <div class="title-region-privacy-consent">
+            <div class="title-eyebrow-wrapper-privacy-consent">
+                <div class="title-accent-bar-privacy-consent"></div>
+                <span class="title-eyebrow-text-privacy-consent">Етика та ШІ</span>
+            </div>
+            <h1 class="title-heading-privacy-consent">Приватність і згода</h1>
+            <div class="title-divider-privacy-consent"></div>
+        </div>
+
+        <!-- Special open layout: large keyword anchor + three right points -->
+        <div class="body-content-privacy-consent" style="margin-bottom: 3px !important;">
+            <!-- Left anchor: ЗГОДА -->
+            <div class="left-anchor-consent-wrapper">
+                <div class="consent-anchor-keyword">ЗГОДА</div>
+                <div class="consent-anchor-subline">
+                    Публічність ≠ автоматичний дозвіл на будь-яке використання даних
+                </div>
+            </div>
+
+            <!-- Right: three points about user rights -->
+            <div class="right-points-consent-wrapper">
+                <!-- Point 1: чутливі дані -->
+                <div class="consent-point-item">
+                    <div class="consent-point-title-row">
+                        <i class="fa-solid fa-shield-halved consent-point-icon"></i>
+                        <span class="consent-point-title">Чутливі дані потребують захисту</span>
+                    </div>
+                    <div class="consent-point-description">
+                        Фотографії, голос, біометричні ознаки, медичні дані, документи, місце перебування, історія поведінки та приватні листування — це потенційно чутлива інформація.
+                    </div>
+                    <div class="sensitive-data-tag-row">
+                        <span class="sensitive-data-tag">біометрія</span>
+                        <span class="sensitive-data-tag">голос</span>
+                        <span class="sensitive-data-tag">листування</span>
+                        <span class="sensitive-data-tag">меддані</span>
+                        <span class="sensitive-data-tag">геолокація</span>
+                    </div>
+                </div>
+
+                <!-- Point 2: зрозуміла згода -->
+                <div class="consent-point-item">
+                    <div class="consent-point-title-row">
+                        <i class="fa-solid fa-file-signature consent-point-icon"></i>
+                        <span class="consent-point-title">Згода: зрозуміла мета та обмеження</span>
+                    </div>
+                    <div class="consent-point-description-condensed">
+                        Потрібні <strong>згода</strong>, <strong>зрозуміла мета</strong>, <strong>обмеження використання</strong> та <strong>захист файлів</strong>. Приклад: шкільний клуб створює відео з голосами учнів — без чіткої згоди це порушення.
+                    </div>
+                </div>
+
+                <!-- Point 3: право відкликати -->
+                <div class="consent-point-item">
+                    <div class="consent-point-title-row">
+                        <i class="fa-solid fa-user-check consent-point-icon"></i>
+                        <span class="consent-point-title">Право відкликати дозвіл</span>
+                    </div>
+                    <div class="consent-point-description-condensed">
+                        Людина має право <strong class="withdraw-highlight">відкликати згоду</strong> у будь-який момент. Використання даних без можливості відкликання — ознака неетичної системи.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

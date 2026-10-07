@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <title>Workflow Requirement → Jira Task</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">:root {
+  --ppt-chart-1: #2563EB;
+  --ppt-chart-2: #06B6D4;
+  --ppt-chart-3: #6366F1;
+  --ppt-chart-4: #F59E0B;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .sdlc-slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-header-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-breadcrumb-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .sdlc-workflow-body-content {
+      flex: 1;
+      display: flex;
+      padding-left: 60px;
+      padding-right: 60px;
+      padding-bottom: 40px;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    /* Left Input Column */
+    .sdlc-workflow-left-input-column {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .sdlc-workflow-input-artifact-card {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 32px;
+      box-shadow: var(--ppt-shadow-soft);
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sdlc-workflow-input-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background-color: var(--ppt-bg-soft);
+      color: var(--ppt-text-2);
+      border-radius: var(--ppt-radius-sm);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+
+    .sdlc-workflow-input-title {
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .sdlc-workflow-input-details-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sdlc-workflow-input-details-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .sdlc-workflow-input-details-item i {
+      color: var(--ppt-accent);
+      margin-top: 4px;
+    }
+
+    /* Right Action Column */
+    .sdlc-workflow-right-action-column {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .sdlc-workflow-action-step-item {
+      background-color: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex: 1;
+      transition: border-color 0.2s ease;
+    }
+
+    .sdlc-workflow-action-step-item:hover {
+      border-color: var(--ppt-accent);
+    }
+
+    .sdlc-workflow-step-number-icon {
+      width: 48px;
+      height: 48px;
+      background-color: var(--ppt-accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .sdlc-workflow-step-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sdlc-workflow-step-heading-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .sdlc-workflow-step-description-text {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .sdlc-workflow-connector-arrow {
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ppt-border);
+      font-size: 24px;
+    }
+
+    .sdlc-workflow-visual-divider {
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, var(--ppt-border), transparent);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+
+  <div class="sdlc-slide-root-container">
+    <!-- Header Region -->
+    <header class="title-region-header-wrapper">
+      <div class="title-region-breadcrumb-label">
+        AI-MANAGED SDLC PLAYBOOK
+      </div>
+      <h1 class="title-region-main-heading">
+        Workflow Requirement → Jira Task
+      </h1>
+    </header>
+
+    <!-- Main Content Split Layout -->
+    <main class="sdlc-workflow-body-content" style="margin-bottom: 4px !important;">
+      
+      <!-- Left Column: Input Artifact -->
+      <section class="sdlc-workflow-left-input-column">
+        <div class="sdlc-workflow-input-artifact-card">
+          <div class="sdlc-workflow-input-badge">
+            <i class="fa-solid fa-file-circle-check"></i> Вхідний Артефакт
+          </div>
+          
+          <h2 class="sdlc-workflow-input-title">Погоджена Вимога</h2>
+          
+          <ul class="sdlc-workflow-input-details-list">
+            <li class="sdlc-workflow-input-details-item">
+              <i class="fa-solid fa-bullseye"></i>
+              <span><strong>Бізнес-ціль:</strong> Опис цінності та очікуваного результату для користувача.</span>
+            </li>
+            <li class="sdlc-workflow-input-details-item">
+              <i class="fa-solid fa-gears"></i>
+              <span><strong>Функціонал:</strong> Деталізований опис логіки, погоджений стейкхолдерами.</span>
+            </li>
+            <li class="sdlc-workflow-input-details-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span><strong>Обмеження:</strong> Технічні та бізнес-ліміти, що впливають на реалізацію.</span>
+            </li>
+          </ul>
+
+          <i class="fa-solid fa-chevron-right sdlc-workflow-connector-arrow"></i>
+        </div>
+      </section>
+
+      <!-- Right Column: 3 AI Actions -->
+      <section class="sdlc-workflow-right-action-column">
+        
+        <!-- Action 1 -->
+        <div class="sdlc-workflow-action-step-item">
+          <div class="sdlc-workflow-step-number-icon">
+            <i class="fa-solid fa-tags"></i>
+          </div>
+          <div class="sdlc-workflow-step-text-group">
+            <h3 class="sdlc-workflow-step-heading-text">1. Класифікація та Контекст</h3>
+            <p class="sdlc-workflow-step-description-text">
+              ШІ аналізує вимогу, обирає тип задачі (Story/Task), формує однозначну назву та визначає Business Value.
+            </p>
+          </div>
+        </div>
+
+        <!-- Action 2 -->
+        <div class="sdlc-workflow-action-step-item">
+          <div class="sdlc-workflow-step-number-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div class="sdlc-workflow-step-text-group">
+            <h3 class="sdlc-workflow-step-heading-text">2. Генерація Scope та AC</h3>
+            <p class="sdlc-workflow-step-description-text">
+              AI розгортає вимогу у межі робіт (Scope), Acceptance Criteria (Given/When/Then) та сценарії помилок (Edge Cases).
+            </p>
+          </div>
+        </div>
+
+        <!-- Action 3 -->
+        <div class="sdlc-workflow-action-step-item">
+          <div class="sdlc-workflow-step-number-icon">
+            <i class="fa-solid fa-link"></i>
+          </div>
+          <div class="sdlc-workflow-step-text-group">
+            <h3 class="sdlc-workflow-step-heading-text">3. Traceability та Метадані</h3>
+            <p class="sdlc-workflow-step-description-text">
+              Додавання технічних нотаток, посилань на джерела, маркування залежностей та ризиків для DevOps і QA.
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+
+</body></html>

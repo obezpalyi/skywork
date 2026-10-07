@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Що таке етика ШІ?</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap");
+
+        :root {
+            --ppt-bg: #FDFCFB;
+            --ppt-bg-soft: #F4F2EF;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E9ECEF;
+            --ppt-border: #D8D2C2;
+            --ppt-text-1: #1A1A1A;
+            --ppt-text-2: #4A4A4A;
+            --ppt-text-3: #6C757D;
+            --ppt-accent: #005F73;
+            --ppt-accent-2: #9B2226;
+            --ppt-chart-1: #005F73;
+            --ppt-chart-2: #0A9396;
+            --ppt-chart-3: #EE9B00;
+            --ppt-chart-4: #BB3E03;
+            --ppt-good: #0A9396;
+            --ppt-warn: #E9D8A6;
+            --ppt-bad: #9B2226;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 8px;
+            --ppt-radius-lg: 0px;
+            --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+            --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.08);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Manrope", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background-color: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .ethics-ai-slide-root {
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            
+            position: relative;
+        }
+
+        /* Non-Cover-Page Title Region — fixed per design */
+        .title-ethics-ai-header {
+            margin-top: 48px;
+            margin-right: 64px;
+            margin-bottom: 40px;
+            margin-left: 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .title-ethics-ai-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-ethics-ai-accent-bar {
+            width: 24px;
+            height: 4px;
+            background-color: var(--ppt-accent);
+            flex-shrink: 0;
+        }
+
+        .title-ethics-ai-eyebrow-text {
+            font-family: var(--ppt-font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+        }
+
+        .title-ethics-ai-heading {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--ppt-text-1);
+        }
+
+        .title-ethics-ai-divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--ppt-border);
+            margin-top: 12px;
+        }
+
+        /* Main body wrapper — fills remaining height */
+        .ethics-ai-body-wrapper {
+            flex: 1 1 0;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 48px;
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+             /* allowed for flex child but no shrink on content children */
+        }
+
+        /* Left column - dominant narrative */
+        .ethics-ai-left-column-def {
+            flex: 3 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            min-width: 0;
+        }
+
+        .ethics-ai-definition-block {
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 28px 32px;
+            box-shadow: var(--ppt-shadow-soft);
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 16px;
+        }
+
+        .ethics-ai-definition-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ethics-ai-definition-icon {
+            font-size: 24px;
+            color: var(--ppt-accent);
+            width: 28px;
+            text-align: center;
+        }
+
+        .ethics-ai-definition-title {
+            font-family: var(--ppt-font-display);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+        }
+
+        .ethics-ai-definition-text {
+            font-size: 19px;
+            line-height: 1.5;
+            color: var(--ppt-text-2);
+            font-weight: 400;
+        }
+
+        .ethics-ai-definition-text strong {
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }
+
+        .ethics-ai-principle-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-sm);
+            padding: 12px 16px;
+        }
+
+        .ethics-ai-principle-icon {
+            color: var(--ppt-accent);
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .ethics-ai-principle-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+        }
+
+        /* Right column - supporting questions */
+        .ethics-ai-right-column-questions {
+            flex: 2 1 0;
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 28px 28px;
+            box-shadow: var(--ppt-shadow-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 0;
+        }
+
+        .ethics-ai-questions-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--ppt-border);
+            padding-bottom: 12px;
+        }
+
+        .ethics-ai-questions-icon {
+            font-size: 22px;
+            color: var(--ppt-accent-2);
+            width: 28px;
+            text-align: center;
+        }
+
+        .ethics-ai-questions-title {
+            font-family: var(--ppt-font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+        }
+
+        .ethics-ai-question-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex: 1 1 0;
+        }
+
+        .ethics-ai-question-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 17px;
+            line-height: 1.45;
+            color: var(--ppt-text-2);
+        }
+
+        .ethics-ai-question-marker {
+            color: var(--ppt-accent);
+            font-size: 14px;
+            margin-top: 5px;
+            width: 18px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .ethics-ai-question-item strong {
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }
+
+        .ethics-ai-note-block {
+            background-color: var(--ppt-bg-soft);
+            border-left: 4px solid var(--ppt-accent);
+            padding: 14px 16px;
+            border-radius: var(--ppt-radius-sm);
+            margin-top: auto;
+        }
+
+        .ethics-ai-note-text {
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--ppt-text-2);
+            font-weight: 400;
+        }
+
+        .ethics-ai-note-text i {
+            color: var(--ppt-accent);
+            margin-right: 6px;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="ethics-ai-slide-root">
+        <!-- Title Region: fixed structure -->
+        <div class="title-ethics-ai-header">
+            <div class="title-ethics-ai-eyebrow">
+                <div class="title-ethics-ai-accent-bar"></div>
+                <span class="title-ethics-ai-eyebrow-text">Етика та ШІ</span>
+            </div>
+            <h1 class="title-ethics-ai-heading">Що таке етика ШІ?</h1>
+            <div class="title-ethics-ai-divider"></div>
+        </div>
+
+        <!-- Body: dominant definition + supporting question rail -->
+        <div class="ethics-ai-body-wrapper">
+            <!-- Left: definition &amp; principles -->
+            <div class="ethics-ai-left-column-def">
+                <div class="ethics-ai-definition-block">
+                    <div class="ethics-ai-definition-label">
+                        <i class="fa-solid fa-scale-balanced ethics-ai-definition-icon"></i>
+                        <span class="ethics-ai-definition-title">Систематичний аналіз впливу</span>
+                    </div>
+                    <p class="ethics-ai-definition-text">
+                        <strong>Етика ШІ</strong> — це систематичний аналіз того, як створення та використання 
+                        штучного інтелекту впливає на людей, їхні <strong>права</strong>, <strong>безпеку</strong>, 
+                        суспільство та <strong>довіру</strong>. Вона вивчає не лише технічні можливості, а й моральні 
+                        наслідки застосування алгоритмів у реальних життєвих ситуаціях.
+                    </p>
+                    <div class="ethics-ai-principle-row">
+                        <i class="fa-solid fa-user-check ethics-ai-principle-icon"></i>
+                        <span class="ethics-ai-principle-text">Технічна спроможність ≠ етична допустимість</span>
+                    </div>
+                    <div class="ethics-ai-principle-row">
+                        <i class="fa-solid fa-shield-halved ethics-ai-principle-icon"></i>
+                        <span class="ethics-ai-principle-text">Захист прав і безпеки людини — пріоритет</span>
+                    </div>
+                    <div class="ethics-ai-principle-row">
+                        <i class="fa-solid fa-hand-holding-heart ethics-ai-principle-icon"></i>
+                        <span class="ethics-ai-principle-text">Аналіз наслідків для суспільства та довіри</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: key questions -->
+            <div class="ethics-ai-right-column-questions">
+                <div class="ethics-ai-questions-header">
+                    <i class="fa-solid fa-circle-question ethics-ai-questions-icon"></i>
+                    <span class="ethics-ai-questions-title">Ключові питання аналізу</span>
+                </div>
+                <ul class="ethics-ai-question-list">
+                    <li class="ethics-ai-question-item">
+                        <i class="fa-solid fa-chevron-right ethics-ai-question-marker"></i>
+                        <span><strong>Яку проблему</strong> вирішує система?</span>
+                    </li>
+                    <li class="ethics-ai-question-item">
+                        <i class="fa-solid fa-chevron-right ethics-ai-question-marker"></i>
+                        <span><strong>Кому вона корисна</strong>, а кого може зачепити помилка?</span>
+                    </li>
+                    <li class="ethics-ai-question-item">
+                        <i class="fa-solid fa-chevron-right ethics-ai-question-marker"></i>
+                        <span><strong>Які дані</strong> використовуються і чи є згода?</span>
+                    </li>
+                    <li class="ethics-ai-question-item">
+                        <i class="fa-solid fa-chevron-right ethics-ai-question-marker"></i>
+                        <span><strong>Хто контролює</strong> результат і чи можна його пояснити?</span>
+                    </li>
+                    <li class="ethics-ai-question-item">
+                        <i class="fa-solid fa-chevron-right ethics-ai-question-marker"></i>
+                        <span><strong>Чи можна оскаржити</strong> рішення системи?</span>
+                    </li>
+                </ul>
+                <div class="ethics-ai-note-block">
+                    <p class="ethics-ai-note-text">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        Відповіді на ці питання допомагають визначити, чи є використання ШІ етично виправданим.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

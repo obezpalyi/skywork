@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "status": "success",
+  "operation": "generate",
+  "operation_id": "urok_05_ai_vs_liudyna",
+  "session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "artifact_path": "ppt/urok_05_ai_vs_liudyna",
+  "display_name": "AI vs людина",
+  "ppt_style": "html",
+  "page_count": 10,
+  "total_pages": 10,
+  "success_pages": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "language": "Ukrainian",
+  "prepared_state_id": "pps_d66aa15e2b180d03d2643afff772fc15",
+  "prepared_state_version": 1,
+  "generated_at": "2026-09-03T19:16:35.034467902Z"
+}

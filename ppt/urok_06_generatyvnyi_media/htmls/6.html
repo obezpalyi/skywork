@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Як написати промпт для медіа?</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --ppt-bg: #F9FAFB;
+            --ppt-bg-soft: #EEF2FF;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #F3F4F6;
+            --ppt-border: #E5E7EB;
+            --ppt-text-1: #111827;
+            --ppt-text-2: #4B5563;
+            --ppt-text-3: #9CA3AF;
+            --ppt-accent: #6366F1;
+            --ppt-accent-2: #06B6D4;
+            --ppt-chart-1: #6366F1;
+            --ppt-chart-2: #06B6D4;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EC4899;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 8px;
+            --ppt-radius-lg: 16px;
+            --ppt-shadow-soft: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+            --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --ppt-font-display: 'Space Grotesk', sans-serif;
+            --ppt-font-body: 'Inter', sans-serif;
+        }*{
+            margin: 0 0;
+            padding: 0 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+        }
+
+        .prompt-media-slide-root {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            
+        }.prompt-media-title-region{
+            margin-top: 38px;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .prompt-media-title-eyebrow-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prompt-media-title-accent-bar {
+            width: 4px;
+            height: 32px;
+            background: var(--ppt-accent);
+            border-radius: var(--ppt-radius-sm);
+        }
+
+        .prompt-media-title-eyebrow-text {
+            font-family: var(--ppt-font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+        }
+
+        .prompt-media-title-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+        }.prompt-media-body-wrapper{
+            flex: 1 1 0;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 38px;
+            display: flex;
+            flex-direction: column;
+            gap: 19px 24px;
+            
+        }.prompt-media-formula-section{
+            display: flex;
+            flex-direction: column;
+            gap: 10px 12px;
+            flex-shrink: 0;
+        }
+
+        .prompt-media-formula-title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .prompt-media-formula-title-icon {
+            color: var(--ppt-accent);
+            font-size: 18px;
+        }
+
+        .prompt-media-formula-title-text {
+            font-family: var(--ppt-font-display);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.4;
+        }.prompt-media-formula-box{
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 13px 20px;
+            box-shadow: var(--ppt-shadow-soft);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 12px;
+        }.prompt-media-formula-item{
+            display: flex;
+            align-items: center;
+            gap: 6px 8px;
+            background: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-md);
+            padding: 5px 12px;
+        }
+
+        .prompt-media-formula-item-icon {
+            color: var(--ppt-accent);
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .prompt-media-formula-item-text {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--ppt-text-1);
+            line-height: 1.4;
+            white-space: nowrap;
+        }
+
+        .prompt-media-formula-plus-icon {
+            color: var(--ppt-text-3);
+            font-size: 14px;
+        }.prompt-media-examples-section{
+            flex: 1 1 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px 20px;
+            
+        }.prompt-media-example-column{
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 11px 14px;
+            box-shadow: var(--ppt-shadow-soft);
+            
+        }.prompt-media-example-column-header{
+            display: flex;
+            align-items: center;
+            gap: 8px 10px;
+        }
+
+        .prompt-media-example-column-icon {
+            font-size: 20px;
+        }
+
+        .prompt-media-example-column-icon-image {
+            color: var(--ppt-chart-1);
+        }
+
+        .prompt-media-example-column-icon-music {
+            color: var(--ppt-chart-2);
+        }
+
+        .prompt-media-example-column-icon-video {
+            color: var(--ppt-chart-3);
+        }
+
+        .prompt-media-example-column-title {
+            font-family: var(--ppt-font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.4;
+        }.prompt-media-example-prompt-box{
+            background: var(--ppt-surface-2);
+            border-radius: var(--ppt-radius-md);
+            padding: 10px 14px;
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            border-left: 3px solid var(--ppt-accent);
+        }.prompt-media-example-note-list{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px 8px;
+        }.prompt-media-example-note-item{
+            display: flex;
+            align-items: flex-start;
+            gap: 6px 8px;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+        }.prompt-media-example-note-item-icon{
+            color: var(--ppt-good);
+            font-size: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }.prompt-media-bottom-note-section{
+            background: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-md);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px 12px;
+            flex-shrink: 0;
+        }
+
+        .prompt-media-bottom-note-icon {
+            color: var(--ppt-accent);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .prompt-media-bottom-note-text {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--ppt-text-1);
+            line-height: 1.5;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="prompt-media-slide-root">
+        <div class="prompt-media-title-region">
+            <div class="prompt-media-title-eyebrow-row">
+                <div class="prompt-media-title-accent-bar"></div>
+                <span class="prompt-media-title-eyebrow-text">Технології майбутнього</span>
+            </div>
+            <h1 class="prompt-media-title-heading">Як написати промпт для медіа?</h1>
+        </div>
+        <div class="prompt-media-body-wrapper">
+            <div class="prompt-media-formula-section">
+                <div class="prompt-media-formula-title-row">
+                    <i class="fa-solid fa-circle-question prompt-media-formula-title-icon"></i>
+                    <span class="prompt-media-formula-title-text">Універсальна формула промпту</span>
+                </div>
+                <div class="prompt-media-formula-box">
+                    <div class="prompt-media-formula-item">
+                        <i class="fa-solid fa-cube prompt-media-formula-item-icon"></i>
+                        <span class="prompt-media-formula-item-text">Об&#39;єкт або тема</span>
+                    </div>
+                    <i class="fa-solid fa-plus prompt-media-formula-plus-icon"></i>
+                    <div class="prompt-media-formula-item">
+                        <i class="fa-solid fa-person-walking prompt-media-formula-item-icon"></i>
+                        <span class="prompt-media-formula-item-text">Дія чи зміст</span>
+                    </div>
+                    <i class="fa-solid fa-plus prompt-media-formula-plus-icon"></i>
+                    <div class="prompt-media-formula-item">
+                        <i class="fa-solid fa-tree prompt-media-formula-item-icon"></i>
+                        <span class="prompt-media-formula-item-text">Середовище</span>
+                    </div>
+                    <i class="fa-solid fa-plus prompt-media-formula-plus-icon"></i>
+                    <div class="prompt-media-formula-item">
+                        <i class="fa-solid fa-palette prompt-media-formula-item-icon"></i>
+                        <span class="prompt-media-formula-item-text">Стиль</span>
+                    </div>
+                    <i class="fa-solid fa-plus prompt-media-formula-plus-icon"></i>
+                    <div class="prompt-media-formula-item">
+                        <i class="fa-solid fa-camera prompt-media-formula-item-icon"></i>
+                        <span class="prompt-media-formula-item-text">Композиція або рух</span>
+                    </div>
+                    <i class="fa-solid fa-plus prompt-media-formula-plus-icon"></i>
+                    <div class="prompt-media-formula-item">
+                        <i class="fa-solid fa-film prompt-media-formula-item-icon"></i>
+                        <span class="prompt-media-formula-item-text">Формат / тривалість</span>
+                    </div>
+                    <i class="fa-solid fa-plus prompt-media-formula-plus-icon"></i>
+                    <div class="prompt-media-formula-item">
+                        <i class="fa-solid fa-shield-halved prompt-media-formula-item-icon"></i>
+                        <span class="prompt-media-formula-item-text">Обмеження безпеки</span>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-media-examples-section">
+                <div class="prompt-media-example-column">
+                    <div class="prompt-media-example-column-header">
+                        <i class="fa-solid fa-image prompt-media-example-column-icon prompt-media-example-column-icon-image"></i>
+                        <span class="prompt-media-example-column-title">Зображення</span>
+                    </div>
+                    <div class="prompt-media-example-prompt-box">
+                        «Ілюстрація старого дерев&#39;яного млина біля річки, світанок, м&#39;яке тепле світло, широкий план, акварельний стиль, без написів»
+                    </div>
+                    <ul class="prompt-media-example-note-list">
+                        <li class="prompt-media-example-note-item">
+                            <i class="fa-solid fa-circle-check prompt-media-example-note-item-icon"></i>
+                            <span>Формат: співвідношення сторін 16:9, роздільна здатність HD</span>
+                        </li>
+                        <li class="prompt-media-example-note-item">
+                            <i class="fa-solid fa-check prompt-media-example-note-item-icon"></i>
+                            <span>Обмеження: без реальних облич і приватних даних</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="prompt-media-example-column">
+                    <div class="prompt-media-example-column-header">
+                        <i class="fa-solid fa-music prompt-media-example-column-icon prompt-media-example-column-icon-music"></i>
+                        <span class="prompt-media-example-column-title">Музика</span>
+                    </div>
+                    <div class="prompt-media-example-prompt-box">
+                        «Спокійний 30-секундний інструментальний вступ із фортепіано та м&#39;якими синтезаторами, помірний темп, без вокалу»
+                    </div>
+                    <ul class="prompt-media-example-note-list">
+                        <li class="prompt-media-example-note-item">
+                            <i class="fa-solid fa-anchor-circle-check prompt-media-example-note-item-icon"></i>
+                            <span>Формат: MP3, тривалість 30 секунд, стерео</span>
+                        </li>
+                        <li class="prompt-media-example-note-item">
+                            <i class="fa-solid fa-bridge-circle-check prompt-media-example-note-item-icon"></i>
+                            <span>Обмеження: без копіювання конкретного виконавця</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="prompt-media-example-column">
+                    <div class="prompt-media-example-column-header">
+                        <i class="fa-solid fa-video prompt-media-example-column-icon prompt-media-example-column-icon-video"></i>
+                        <span class="prompt-media-example-column-title">Відео</span>
+                    </div>
+                    <div class="prompt-media-example-prompt-box">
+                        «10-секундний ролик із паперовим літаком над шкільним подвір&#39;ям, плавний рух камери, без людей крупним планом»
+                    </div>
+                    <ul class="prompt-media-example-note-list">
+                        <li class="prompt-media-example-note-item">
+                            <i class="fa-solid fa-building-circle-check prompt-media-example-note-item-icon"></i>
+                            <span>Формат: 16:9, 10 секунд, Full HD, 30 кадрів/с</span>
+                        </li>
+                        <li class="prompt-media-example-note-item">
+                            <i class="fa-solid fa-envelope-circle-check prompt-media-example-note-item-icon"></i>
+                            <span>Обмеження: без облич, без реальних локацій</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="prompt-media-bottom-note-section" style="margin-bottom: 3px !important;">
+                <i class="fa-solid fa-lightbulb prompt-media-bottom-note-icon"></i>
+                <span class="prompt-media-bottom-note-text">Ключове: чітко вказуйте формат, співвідношення сторін, тривалість, роздільну здатність і заборону використання реальних облич чи приватних даних — це забезпечує якісний і безпечний результат.</span>
+            </div>
+        </div>
+    </div>
+
+</body></html>

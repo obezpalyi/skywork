@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1280, height=720"/>
+  <title>Workflow Requirement → Quality Report</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+       
+      
+      
+      background-color: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-breadcrumb-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .content-layout-main-split {
+      flex: 1;
+      display: flex;
+      align-items: stretch;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 60px;
+      gap: 40px;
+    }
+
+    .left-input-artifact-column {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right-ai-actions-column {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .input-artifact-visual-box {
+      flex: 1;
+      background-color: var(--ppt-surface-2);
+      border: 1px dashed var(--ppt-text-3);
+      border-radius: var(--ppt-radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 24px;
+    }
+
+    .artifact-icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background-color: var(--ppt-surface);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: var(--ppt-accent);
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .artifact-label-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .artifact-description-list {
+      list-style: none;
+      text-align: left;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .artifact-list-item {
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .artifact-list-item i {
+      font-size: 14px;
+      color: var(--ppt-accent-2);
+    }
+
+    .ai-action-card-module {
+      flex: 1 1 0;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-left: 4px solid var(--ppt-accent);
+      border-radius: var(--ppt-radius-md);
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .action-icon-container {
+      width: 48px;
+      height: 48px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--ppt-accent);
+      flex-shrink: 0;
+    }
+
+    .action-text-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .action-step-title {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .action-step-description {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .workflow-arrow-connector {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: var(--ppt-accent);
+      opacity: 0.5;
+      z-index: 10;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-container">
+    <header class="title-region-wrapper">
+      <div class="title-breadcrumb-label">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-main-heading">Workflow Requirement → Quality Report</h1>
+    </header>
+
+    <main class="content-layout-main-split">
+      <!-- Left Column: Input Artifact -->
+      <section class="left-input-artifact-column">
+        <div class="input-artifact-visual-box">
+          <div class="artifact-icon-wrapper">
+            <i class="fa-solid fa-file-contract"></i>
+          </div>
+          <div class="artifact-text-group">
+            <h2 class="artifact-label-heading">Вхідний артефакт</h2>
+            <p style="font-size: 14px; color: var(--ppt-text-3); margin-top: 4px;">Пакет вимог / Baseline</p>
+          </div>
+          <ul class="artifact-description-list">
+            <li class="artifact-list-item"><i class="fa-solid fa-check-double"></i> Робочі User Stories</li>
+            <li class="artifact-list-item"><i class="fa-solid fa-check-double"></i> Acceptance Criteria</li>
+            <li class="artifact-list-item"><i class="fa-solid fa-check-double"></i> Опис функціоналу</li>
+            <li class="artifact-list-item"><i class="fa-solid fa-check-double"></i> Технічні обмеження</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Right Column: 3 AI Actions -->
+      <section class="right-ai-actions-column">
+        <!-- Action 1 -->
+        <div class="ai-action-card-module">
+          <div class="action-icon-container">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+          </div>
+          <div class="action-text-content">
+            <h3 class="action-step-title">1. Аналіз та перехресна перевірка</h3>
+            <p class="action-step-description">AI порівнює формулювання для виявлення дублікатів та прямих суперечностей між новими та існуючими вимогами в межах одного baseline.</p>
+          </div>
+        </div>
+
+        <!-- Action 2 -->
+        <div class="ai-action-card-module">
+          <div class="action-icon-container">
+            <i class="fa-solid fa-vial-circle-check"></i>
+          </div>
+          <div class="action-text-content">
+            <h3 class="action-step-title">2. Верифікація тестованості</h3>
+            <p class="action-step-description">Перевірка повноти сценаріїв, однозначності очікуваного результату та виявлення прогалин (edge cases), що блокують створення тест-плану.</p>
+          </div>
+        </div>
+
+        <!-- Action 3 -->
+        <div class="ai-action-card-module">
+          <div class="action-icon-container">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="action-text-content">
+            <h3 class="action-step-title">3. Оцінка ризиків та виправлення</h3>
+            <p class="action-step-description">Ранжування виявлених проблем за рівнем впливу на реліз та генерація конкретних правок для усунення дефектів вимог.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Visual Connector -->
+    <div class="workflow-arrow-connector">
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+  </div>
+
+</body></html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Області впливу change request</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: var(--ppt-bg-soft);
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .title-region-header {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-header-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-header-text {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .impact-content-main-wrapper {
+      padding-left: 60px;
+      padding-right: 60px;
+      padding-bottom: 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .impact-analysis-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      flex: 1;
+    }
+
+    .sdlc-impact-card-item {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+      transition: transform 0.2s ease;
+    }
+
+    .sdlc-impact-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--ppt-bg-soft);
+    }
+
+    .sdlc-impact-icon-wrapper {
+      width: 36px;
+      height: 36px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .sdlc-impact-category-title {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .sdlc-impact-list-container {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sdlc-impact-list-item {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .sdlc-impact-bullet-marker {
+      color: var(--ppt-accent-2);
+      font-size: 10px;
+      margin-top: 6px;
+    }
+
+    .ai-insight-footer-block {
+      margin-top: 24px;
+      background-color: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px dashed var(--ppt-accent);
+    }
+
+    .ai-insight-icon-label {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ai-insight-description-text {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      font-style: italic;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-container">
+    <header class="title-region-header">
+      <div class="title-region-header-label">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-header-text">Області впливу change request</h1>
+    </header>
+
+    <main class="impact-content-main-wrapper">
+      <div class="impact-analysis-grid-layout">
+        <!-- Card 1: Scope &amp; Requirements -->
+        <div class="sdlc-impact-card-item">
+          <div class="sdlc-impact-card-header">
+            <div class="sdlc-impact-icon-wrapper">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="sdlc-impact-category-title">Сфера та Вимоги</div>
+          </div>
+          <ul class="sdlc-impact-list-container">
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Зміна Project Baseline та Scope</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Функціональні та нефункціональні вимоги</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Acceptance Criteria та User Stories</li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Jira &amp; Backlog -->
+        <div class="sdlc-impact-card-item">
+          <div class="sdlc-impact-card-header">
+            <div class="sdlc-impact-icon-wrapper">
+              <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <div class="sdlc-impact-category-title">Задачі та Беклог</div>
+          </div>
+          <ul class="sdlc-impact-list-container">
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Оновлення існуючих Jira tasks / epics</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Пріоритезація черги розробки</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Вплив на спринти та дедлайни</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Quality &amp; Testing -->
+        <div class="sdlc-impact-card-item">
+          <div class="sdlc-impact-card-header">
+            <div class="sdlc-impact-icon-wrapper">
+              <i class="fa-solid fa-vial"></i>
+            </div>
+            <div class="sdlc-impact-category-title">Якість та Тести</div>
+          </div>
+          <ul class="sdlc-impact-list-container">
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Test Cases та Regression Scope</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Тестові дані та сценарії автоматизації</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Визначення нових Edge Cases</li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Security &amp; Compliance -->
+        <div class="sdlc-impact-card-item">
+          <div class="sdlc-impact-card-header">
+            <div class="sdlc-impact-icon-wrapper">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="sdlc-impact-category-title">Безпека та Дані</div>
+          </div>
+          <ul class="sdlc-impact-list-container">
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Комерційні та персональні дані (GDPR)</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Модель доступу та авторизації</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Відповідність галузевим стандартам</li>
+          </ul>
+        </div>
+
+        <!-- Card 5: Deployment &amp; Ops -->
+        <div class="sdlc-impact-card-item">
+          <div class="sdlc-impact-card-header">
+            <div class="sdlc-impact-icon-wrapper">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <div class="sdlc-impact-category-title">Розгортання та Ops</div>
+          </div>
+          <ul class="sdlc-impact-list-container">
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Зміни в IaC та конфігураціях</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Rollback plan та стратегія релізу</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Метрики моніторингу та алертинг</li>
+          </ul>
+        </div>
+
+        <!-- Card 6: Documentation -->
+        <div class="sdlc-impact-card-item">
+          <div class="sdlc-impact-card-header">
+            <div class="sdlc-impact-icon-wrapper">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <div class="sdlc-impact-category-title">Документація</div>
+          </div>
+          <ul class="sdlc-impact-list-container">
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>User Guides та інструкції підтримки</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Release Notes та Runbooks</li>
+            <li class="sdlc-impact-list-item"><i class="fa-solid fa-circle sdlc-impact-bullet-marker"></i>Оновлення Decision Records</li>
+          </ul>
+        </div>
+      </div>
+
+      <footer class="ai-insight-footer-block">
+        <div class="ai-insight-icon-label">
+          <i class="fa-solid fa-robot"></i> AI CHECK:
+        </div>
+        <div class="ai-insight-description-text">
+          ШІ проводить перехресний аналіз для виявлення прихованих зв&#39;язків між кодом, вимогами та тестами, які людина може пропустити при ручній оцінці.
+        </div>
+      </footer>
+    </main>
+  </div>
+
+</body></html>

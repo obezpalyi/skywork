@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Упередження в даних</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+
+    :root {
+      --ppt-bg: #F9F9F7;
+      --ppt-bg-soft: #F0F0EB;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E5E5E0;
+      --ppt-border: #2D2D2D;
+      --ppt-text-1: #1A1A1A;
+      --ppt-text-2: #4A4A4A;
+      --ppt-text-3: #757575;
+      --ppt-accent: #00A896;
+      --ppt-accent-2: #FF6B6B;
+      --ppt-chart-1: #00A896;
+      --ppt-chart-2: #028090;
+      --ppt-chart-3: #F4D35E;
+      --ppt-chart-4: #EE964B;
+      --ppt-good: #27AE60;
+      --ppt-warn: #F39C12;
+      --ppt-bad: #E74C3C;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .bias-data-slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      
+      position: relative;
+    }
+
+    /* Title region — fixed cross-slide layout */
+    .bias-data-title-region {
+      margin-top: 48px;
+      margin-right: 64px;
+      margin-bottom: 40px;
+      margin-left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .bias-data-title-accent-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .bias-data-title-accent-bar {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .bias-data-title-eyebrow {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.2;
+    }
+
+    .bias-data-title-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    /* Main body wrapper — flex growth to fill remaining height */
+    .bias-data-body-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: row;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 48px;
+      gap: 32px;
+      
+      align-items: stretch;
+    }
+
+    /* Left giant anchor — keyword */
+    .bias-data-anchor-left {
+      flex: 0 0 36%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-bottom: 12px;
+    }
+
+    .bias-data-anchor-keyword {
+      font-family: var(--ppt-font-display);
+      font-size: 96px;
+      font-weight: 800;
+      line-height: 0.95;
+      color: var(--ppt-accent-2);
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      max-width: 100%;
+      word-break: break-word;
+    }
+
+    .bias-data-anchor-subnote {
+      margin-top: 24px;
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      max-width: 340px;
+    }
+
+    /* Right explanation column */
+    .bias-data-explain-right {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+      min-width: 0;
+    }
+
+    .bias-data-consequence-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .bias-data-consequence-label {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .bias-data-consequence-text {
+      font-family: var(--ppt-font-body);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ppt-text-1);
+      max-width: 560px;
+    }
+
+    .bias-data-light-example {
+      background-color: var(--ppt-bg-soft);
+      border-left: 4px solid var(--ppt-accent-2);
+      padding: 16px 20px;
+      border-radius: 0 var(--ppt-radius-md) var(--ppt-radius-md) 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .bias-data-light-example-title {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ppt-text-2);
+      letter-spacing: 0.02em;
+    }
+
+    .bias-data-light-example-desc {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--ppt-text-1);
+    }
+
+    .bias-data-question-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .bias-data-question-label {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ppt-text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .bias-data-question-text {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      max-width: 540px;
+    }
+
+    /* No flex on the root, no absolute used, all classes semantic 3+ parts */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="bias-data-slide-root">
+    <!-- Fixed title region -->
+    <header class="bias-data-title-region">
+      <div class="bias-data-title-accent-row">
+        <span class="bias-data-title-accent-bar"></span>
+        <span class="bias-data-title-eyebrow">УРОК ІНФОРМАТИКИ | ШТУЧНИЙ ІНТЕЛЕКТ</span>
+      </div>
+      <h1 class="bias-data-title-heading">Упередження в даних</h1>
+    </header>
+
+    <!-- Body: left giant anchor + right explanation -->
+    <div class="bias-data-body-wrapper">
+      <!-- Left dominant keyword anchor -->
+      <div class="bias-data-anchor-left">
+        <div class="bias-data-anchor-keyword">УПЕРЕДЖЕННЯ</div>
+        <div class="bias-data-anchor-subnote">
+          Нерепрезентативні дані → нерівномірна робота моделі
+        </div>
+      </div>
+
+      <!-- Right explanatory content -->
+      <div class="bias-data-explain-right">
+        <div class="bias-data-consequence-block">
+          <div class="bias-data-consequence-label">Наслідок</div>
+          <div class="bias-data-consequence-text">
+            Якщо навчальний набір представляє лише частину реального світу, модель може працювати нерівномірно для різних груп або ситуацій.
+          </div>
+        </div>
+
+        <div class="bias-data-light-example">
+          <div class="bias-data-light-example-title">Приклад для обговорення</div>
+          <div class="bias-data-light-example-desc">
+            Система розпізнавання навчалася лише на фотографіях при яскравому освітленні — що станеться з темними або розмитими фото?
+          </div>
+        </div>
+
+        <div class="bias-data-question-row">
+          <div class="bias-data-question-label">Ключові запитання</div>
+          <div class="bias-data-question-text">
+            Хто може постраждати від нерепрезентативних даних? Хто має перевіряти результат?
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

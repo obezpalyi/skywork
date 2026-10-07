@@ -1,0 +1,418 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1280, height=720"/>
+  <title>Управління актуальністю вимог та журнал змін</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .sdlc-slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-category {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .sdlc-content-main-layout {
+      flex: 1;
+      display: flex;
+      padding: 0 60px 40px 60px;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    /* Left Column Styles */
+    .sdlc-left-metadata-column {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .sdlc-metadata-card-item {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px;
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .sdlc-metadata-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .sdlc-metadata-card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--ppt-radius-sm);
+      background-color: var(--ppt-bg-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 16px;
+    }
+
+    .sdlc-metadata-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .sdlc-metadata-list-container {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sdlc-metadata-list-entry {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      line-height: 1.4;
+      padding: 4px 0;
+      border-bottom: 1px solid var(--ppt-bg-soft);
+    }
+
+    .sdlc-metadata-entry-label {
+      color: var(--ppt-text-2);
+      font-weight: 500;
+    }
+
+    .sdlc-metadata-entry-value {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* Right Column Styles */
+    .sdlc-right-history-column {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sdlc-history-log-wrapper {
+      flex: 1;
+      background-color: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sdlc-history-log-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sdlc-change-log-table-container {
+      flex: 1;
+      
+    }
+
+    .sdlc-change-log-table-element {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .sdlc-change-log-table-element thead tr {
+      background-color: var(--ppt-bg-soft);
+      border-bottom: 2px solid var(--ppt-border);
+    }
+
+    .sdlc-change-log-table-element th {
+      padding: 10px;
+      text-align: left;
+      font-weight: 600;
+      color: var(--ppt-text-2);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .sdlc-change-log-table-element td {
+      padding: 10px;
+      border-bottom: 1px solid var(--ppt-border);
+      color: var(--ppt-text-1);
+      vertical-align: top;
+    }
+
+    .sdlc-change-log-tag-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-sm);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+    }
+
+    .sdlc-impact-summary-banner {
+      background-color: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: var(--ppt-radius-md);
+      padding: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .sdlc-impact-banner-icon {
+      color: var(--ppt-accent);
+      margin-top: 3px;
+    }
+
+    .sdlc-impact-banner-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .sdlc-impact-banner-text strong {
+      color: var(--ppt-text-1);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="sdlc-slide-root">
+    <!-- Non-Cover-Page Title Region -->
+    <header class="title-region-wrapper">
+      <div class="title-region-category">
+        AI-MANAGED SDLC PLAYBOOK
+      </div>
+      <h1 class="title-region-main-heading">
+        Baseline, version, owner і журнал змін
+      </h1>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="sdlc-content-main-layout" style="margin-bottom: 4px !important;">
+      
+      <!-- Left Column: Current Baseline &amp; Responsibilities -->
+      <section class="sdlc-left-metadata-column">
+        
+        <!-- Baseline &amp; Version Card -->
+        <div class="sdlc-metadata-card-item">
+          <div class="sdlc-metadata-card-header">
+            <div class="sdlc-metadata-card-icon"><i class="fa-solid fa-code-branch"></i></div>
+            <h3 class="sdlc-metadata-card-title">Чинний Baseline</h3>
+          </div>
+          <div class="sdlc-metadata-list-container">
+            <div class="sdlc-metadata-list-entry">
+              <span class="sdlc-metadata-entry-label">Поточна версія</span>
+              <span class="sdlc-metadata-entry-value">v2.4.0</span>
+            </div>
+            <div class="sdlc-metadata-list-entry">
+              <span class="sdlc-metadata-entry-label">Статус рішення</span>
+              <span class="sdlc-metadata-entry-value">Approved</span>
+            </div>
+            <div class="sdlc-metadata-list-entry">
+              <span class="sdlc-metadata-entry-label">Дата baseline</span>
+              <span class="sdlc-metadata-entry-value">31.08.2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Responsibility Card -->
+        <div class="sdlc-metadata-card-item">
+          <div class="sdlc-metadata-card-header">
+            <div class="sdlc-metadata-card-icon"><i class="fa-solid fa-user-check"></i></div>
+            <h3 class="sdlc-metadata-card-title">Відповідальні</h3>
+          </div>
+          <div class="sdlc-metadata-list-container">
+            <div class="sdlc-metadata-list-entry">
+              <span class="sdlc-metadata-entry-label">Owner вимоги</span>
+              <span class="sdlc-metadata-entry-value">Senior BA</span>
+            </div>
+            <div class="sdlc-metadata-list-entry">
+              <span class="sdlc-metadata-entry-label">Approver</span>
+              <span class="sdlc-metadata-entry-value">Product Owner</span>
+            </div>
+            <div class="sdlc-metadata-list-entry">
+              <span class="sdlc-metadata-entry-label">Reviewers</span>
+              <span class="sdlc-metadata-entry-value">QA Lead, DevOps</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Traceability Card -->
+        <div class="sdlc-metadata-card-item">
+          <div class="sdlc-metadata-card-header">
+            <div class="sdlc-metadata-card-icon"><i class="fa-solid fa-link"></i></div>
+            <h3 class="sdlc-metadata-card-title">Traceability</h3>
+          </div>
+          <div class="sdlc-metadata-list-container">
+            <div class="sdlc-metadata-list-entry">
+              <span class="sdlc-metadata-entry-label">Джерело</span>
+              <span class="sdlc-metadata-entry-value">BRD-2026-08</span>
+            </div>
+            <div class="sdlc-metadata-list-entry">
+              <span class="sdlc-metadata-entry-label">Jira Epic</span>
+              <span class="sdlc-metadata-entry-value">PROJ-102</span>
+            </div>
+            <div class="sdlc-metadata-list-entry">
+              <span class="sdlc-metadata-entry-label">Тест-план</span>
+              <span class="sdlc-metadata-entry-value">TP-REG-v2</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Right Column: Change Log &amp; History -->
+      <section class="sdlc-right-history-column">
+        
+        <div class="sdlc-history-log-wrapper">
+          <div class="sdlc-history-log-title">
+            <i class="fa-solid fa-circle-question"></i> Журнал змін (Change Log)
+          </div>
+          <div class="sdlc-change-log-table-container">
+            <table class="sdlc-change-log-table-element">
+              <thead>
+                <tr>
+                  <th style="width: 15%;">Версія</th>
+                  <th style="width: 45%;">Що та чому змінилося</th>
+                  <th style="width: 20%;">Автор</th>
+                  <th style="width: 20%;">Дата</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="sdlc-change-log-tag-badge">v2.4.0</span></td>
+                  <td>Оновлення AC для обробки edge case з авторизацією через SSO.</td>
+                  <td>Lead BA</td>
+                  <td>31.08.2026</td>
+                </tr>
+                <tr>
+                  <td><span class="sdlc-change-log-tag-badge">v2.3.1</span></td>
+                  <td>Виправлення суперечності між функціональною вимогою та NFR безпеки.</td>
+                  <td>Senior QA</td>
+                  <td>28.08.2026</td>
+                </tr>
+                <tr>
+                  <td><span class="sdlc-change-log-tag-badge">v2.3.0</span></td>
+                  <td>Початковий baseline після погодження CR-012 (New Payment Gateway).</td>
+                  <td>PO</td>
+                  <td>20.08.2026</td>
+                </tr>
+                <tr>
+                  <td><span class="sdlc-change-log-tag-badge">v2.2.0</span></td>
+                  <td>Додано вимоги до моніторингу та логування (DevOps Review).</td>
+                  <td>DevOps Eng</td>
+                  <td>15.08.2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sdlc-impact-summary-banner">
+          <div class="sdlc-impact-banner-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+          <div class="sdlc-impact-banner-text">
+            <strong>Синхронізація:</strong> Будь-яка зміна в журналі повинна ініціювати оновлення пов’язаних Jira tasks, тест-кейсів та операційних runbooks для збереження цілісності документації.
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+</body></html>

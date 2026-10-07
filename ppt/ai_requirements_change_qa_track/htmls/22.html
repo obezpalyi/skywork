@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сесія QA-4: Затверджені зміни та обмеження</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --ppt-bg: #F8FAFC;
+  --ppt-bg-soft: #F1F5F9;
+  --ppt-surface: #FFFFFF;
+  --ppt-surface-2: #E2E8F0;
+  --ppt-border: #CBD5E1;
+  --ppt-text-1: #0F172A;
+  --ppt-text-2: #475569;
+  --ppt-text-3: #94A3B8;
+  --ppt-accent: #0D9488;
+  --ppt-accent-2: #6366F1;
+  --ppt-chart-1: #0D9488;
+  --ppt-chart-2: #6366F1;
+  --ppt-chart-3: #F59E0B;
+  --ppt-chart-4: #EC4899;
+  --ppt-good: #10B981;
+  --ppt-warn: #F59E0B;
+  --ppt-bad: #EF4444;
+  --ppt-radius-sm: 2px;
+  --ppt-radius-md: 4px;
+  --ppt-radius-lg: 8px;
+  --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --ppt-font-display: "Montserrat", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }.qa-session4-slide-root{
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px 14px 64px;
+      
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }.title-session4-header{
+      display: flex;
+      flex-direction: column;
+      margin-top: 14px;
+      margin-bottom: 9px;
+      flex-shrink: 0;
+    }
+
+    .title-session4-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .title-session4-accent-bar {
+      width: 4px;
+      height: 16px;
+      background-color: var(--ppt-accent);
+      border-radius: 0;
+    }
+
+    .title-session4-eyebrow-text {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+
+    .title-session4-main-title {
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .title-session4-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      margin-top: 4px;
+      line-height: 1.4;
+    }.session4-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px 24px;
+      
+    }.session4-constraint-banner{
+      background-color: var(--ppt-surface);
+      border-left: 6px solid var(--ppt-warn);
+      border-radius: var(--ppt-radius-md);
+      padding: 5px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+    }.session4-banner-label{
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-warn);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 2px 8px;
+    }
+
+    .session4-banner-label i {
+      font-size: 16px;
+    }
+
+    .session4-banner-text {
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.5;
+    }.session4-main-grid{
+      display: flex;
+      gap: 6px 24px;
+      flex: 1 1 0;
+      
+    }.session4-left-panel{
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px 20px;
+      min-width: 0;
+    }.session4-right-panel{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px 20px;
+      min-width: 0;
+    }.session4-card-surface{
+      background-color: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      padding: 7px 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      border: 1px solid var(--ppt-surface-2);
+      display: flex;
+      flex-direction: column;
+    }.session4-card-title-row{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+
+    .session4-card-title-row i {
+      color: var(--ppt-accent);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .session4-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ppt-text-1);
+    }.session4-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px 12px;
+    }.session4-list-item{
+      display: flex;
+      gap: 4px 12px;
+      align-items: flex-start;
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }
+
+    .session4-list-item i {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      margin-top: 2px;
+      width: 18px;
+      flex-shrink: 0;
+    }.session4-step-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px 8px;
+    }.session4-step-item{
+      display: flex;
+      gap: 3px 12px;
+      align-items: baseline;
+      font-family: var(--ppt-font-body);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }.session4-step-number{
+      font-family: var(--ppt-font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+      width: 22px;
+      flex-shrink: 0;
+      text-align: right;
+    }.session4-warning-note{
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 3px 16px;
+      display: flex;
+      gap: 3px 12px;
+      align-items: flex-start;
+      margin-top: 2px;
+    }.session4-warning-note i{
+      color: var(--ppt-warn);
+      font-size: 17px;
+      margin-top: 2px;
+    }.session4-warning-note-text{
+      font-family: var(--ppt-font-body);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }.session4-evidence-block{
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 5px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px 8px;
+      margin-top: 3px;
+    }.session4-evidence-row{
+      display: flex;
+      gap: 4px 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }.session4-evidence-row i{
+      color: var(--ppt-accent);
+      font-size: 13px;
+      width: 16px;
+      margin-top: 2px;
+    }.session4-footer-note{
+      font-family: var(--ppt-font-body);
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--ppt-text-3);
+      line-height: 1.4;
+      border-top: 1px solid var(--ppt-surface-2);
+      padding-top: 3px;
+      margin-top: auto;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="qa-session4-slide-root">
+    <header class="title-session4-header">
+      <div class="title-session4-eyebrow-row">
+        <div class="title-session4-accent-bar"></div>
+        <span class="title-session4-eyebrow-text">SERVICEHUB QA TRACK</span>
+      </div>
+      <h1 class="title-session4-main-title">Сесія QA-4: Затверджені зміни та обмеження</h1>
+      <h2 class="title-session4-subtitle">Нові обмеження, як-от багаточасові пояси, та їх узгодження з базовими вимогами</h2>
+    </header>
+
+    <div class="session4-body-wrapper">
+      <div class="session4-constraint-banner">
+        <div class="session4-banner-label">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          Нове обмеження
+        </div>
+        <div class="session4-banner-text">
+          Критичні запити мають працювати в кількох часових поясах, але критерії приймання не оновлено.
+        </div>
+      </div>
+
+      <div class="session4-main-grid">
+        <div class="session4-left-panel">
+          <div class="session4-card-surface">
+            <div class="session4-card-title-row">
+              <i class="fa-solid fa-circle-question"></i>
+              <span class="session4-card-title">Дії QA-фахівця</span>
+            </div>
+            <ul class="session4-list">
+              <li class="session4-list-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Виявити невідповідність між новим обмеженням і критеріями приймання.</span>
+              </li>
+              <li class="session4-list-item">
+                <i class="fa-solid fa-check"></i>
+                <span>Уникати трактування нового твердження як затвердженої поведінки.</span>
+              </li>
+              <li class="session4-list-item">
+                <i class="fa-solid fa-anchor-circle-check"></i>
+                <span>Визначити, які тести та дані зачіпаються.</span>
+              </li>
+              <li class="session4-list-item">
+                <i class="fa-solid fa-bridge-circle-check"></i>
+                <span>Запросити виправлення базової лінії.</span>
+              </li>
+              <li class="session4-list-item">
+                <i class="fa-solid fa-building-circle-check"></i>
+                <span>Оновлювати QA-пакет лише після підтвердження.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="session4-card-surface">
+            <div class="session4-card-title-row">
+              <i class="fa-solid fa-hourglass-half"></i>
+              <span class="session4-card-title">Вплив на тестування</span>
+            </div>
+            <div class="session4-evidence-block">
+              <div class="session4-evidence-row">
+                <i class="fa-solid fa-clock"></i>
+                <span>Перевірка межових моментів SLA у різних часових поясах.</span>
+              </div>
+              <div class="session4-evidence-row">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Сценарії ескалації та сповіщення залежно від локального часу.</span>
+              </div>
+              <div class="session4-evidence-row">
+                <i class="fa-solid fa-database"></i>
+                <span>Синтетичні дані: часові мітки для UTC, CST, Європа/Київ.</span>
+              </div>
+              <div class="session4-evidence-row">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Перевірка інтеграцій із CRM та звітами в умовах багаточасовості.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="session4-right-panel">
+          <div class="session4-card-surface">
+            <div class="session4-card-title-row">
+              <i class="fa-solid fa-list-ol"></i>
+              <span class="session4-card-title">Порядок дій</span>
+            </div>
+            <ol class="session4-step-list" style="list-style: none; padding-left: 0;">
+              <li class="session4-step-item">
+                <span class="session4-step-number">1</span>
+                <span>Порівняти нову вимогу з поточним базовим рівнем.</span>
+              </li>
+              <li class="session4-step-item">
+                <span class="session4-step-number">2</span>
+                <span>Зафіксувати, що критерії приймання не оновлені.</span>
+              </li>
+              <li class="session4-step-item">
+                <span class="session4-step-number">3</span>
+                <span>Оцінити вплив на тест-умови та набір даних.</span>
+              </li>
+              <li class="session4-step-item">
+                <span class="session4-step-number">4</span>
+                <span>Підготувати запит на виправлення базової лінії.</span>
+              </li>
+              <li class="session4-step-item">
+                <span class="session4-step-number">5</span>
+                <span>Оновити QA-пакет після підтвердження змін.</span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="session4-card-surface">
+            <div class="session4-card-title-row">
+              <i class="fa-solid fa-shield"></i>
+              <span class="session4-card-title">Принцип Xplore</span>
+            </div>
+            <div class="session4-warning-note">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div class="session4-warning-note-text">
+                Xplore готує докази та порівняння, але остаточне рішення про класифікацію та обсяг змін ухвалює уповноважений власник.
+              </div>
+            </div>
+            <div style="margin-top: 4px; font-size: 14px; font-weight: 500; color: var(--ppt-text-2); line-height: 1.45;">
+              <i class="fa-solid fa-user-check" style="color: var(--ppt-accent); margin-right: 8px;"></i>
+              Людський контроль є обов&#39;язковим.
+            </div>
+          </div>
+
+          <div class="session4-card-surface">
+            <div class="session4-card-title-row">
+              <i class="fa-solid fa-clipboard-check"></i>
+              <span class="session4-card-title">Результат сесії</span>
+            </div>
+            <ul class="session4-list" style="gap: 3px 8px;">
+              <li class="session4-list-item">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>Оновлений регресійний обсяг.</span>
+              </li>
+              <li class="session4-list-item">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>Скориговані тест-дані.</span>
+              </li>
+              <li class="session4-list-item">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>Висновок про готовність.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="session4-footer-note">
+        <i class="fa-solid fa-circle-info" style="color: var(--ppt-accent); margin-right: 6px;"></i>
+        Докази структурує Xplore, висновок ухвалює QA-фахівець.
+      </div>
+    </div>
+  </div>
+
+</body></html>

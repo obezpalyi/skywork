@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Прозорість і пояснюваність</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap");
+
+    :root {
+      --ppt-bg: #FDFCFB;
+      --ppt-bg-soft: #F4F2EF;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9ECEF;
+      --ppt-border: #D8D2C2;
+      --ppt-text-1: #1A1A1A;
+      --ppt-text-2: #4A4A4A;
+      --ppt-text-3: #6C757D;
+      --ppt-accent: #005F73;
+      --ppt-accent-2: #9B2226;
+      --ppt-chart-1: #005F73;
+      --ppt-chart-2: #0A9396;
+      --ppt-chart-3: #EE9B00;
+      --ppt-chart-4: #BB3E03;
+      --ppt-good: #0A9396;
+      --ppt-warn: #E9D8A6;
+      --ppt-bad: #9B2226;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 8px;
+      --ppt-radius-lg: 0px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.08);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Manrope", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-region {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      
+    }
+
+    .title-region {
+      margin-top: 48px;
+      margin-right: 64px;
+      margin-bottom: 40px;
+      margin-left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-eyebrow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-accent-line {
+      width: 24px;
+      height: 4px;
+      background-color: var(--ppt-accent);
+    }
+
+    .title-eyebrow-text {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+
+    .title-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--ppt-text-1);
+    }
+
+    .title-divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--ppt-border);
+      margin-top: 12px;
+    }
+
+    .body-wrapper {
+      flex: 1 1 0;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: row;
+      gap: 28px;
+      
+    }
+
+    .left-concept-column {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .concept-definition-block {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .concept-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .concept-icon {
+      color: var(--ppt-accent);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .concept-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .concept-description-text {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .right-accountability-column {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .accountability-block {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .accountability-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .accountability-icon {
+      color: var(--ppt-accent-2);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .accountability-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .accountability-description-text {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .insight-block {
+      background: var(--ppt-bg-soft);
+      border-left: 4px solid var(--ppt-accent-2);
+      padding: 12px 16px;
+      border-radius: 0 var(--ppt-radius-sm) var(--ppt-radius-sm) 0;
+      flex: 0 0 auto;
+    }
+
+    .insight-text {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-1);
+      font-weight: 500;
+    }
+
+    .insight-text strong {
+      color: var(--ppt-accent-2);
+      font-weight: 700;
+    }
+
+    .quote-block {
+      background: var(--ppt-surface);
+      border: 1px dashed var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 0 0 auto;
+    }
+
+    .quote-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quote-icon {
+      color: var(--ppt-chart-3);
+      font-size: 16px;
+    }
+
+    .quote-label {
+      font-family: var(--ppt-font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .quote-text {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      font-style: italic;
+    }
+
+    .quote-text strong {
+      font-style: normal;
+      color: var(--ppt-accent-2);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-region">
+    <div class="title-region">
+      <div class="title-eyebrow-wrapper">
+        <div class="title-accent-line"></div>
+        <span class="title-eyebrow-text">Етика та ШІ</span>
+      </div>
+      <h1 class="title-heading">Прозорість і пояснюваність</h1>
+      <div class="title-divider"></div>
+    </div>
+
+    <div class="body-wrapper">
+      <div class="left-concept-column">
+        <div class="concept-definition-block">
+          <div class="concept-title-row">
+            <i class="fa-solid fa-eye concept-icon" aria-hidden="true"></i>
+            <span class="concept-title-text">Прозорість</span>
+          </div>
+          <p class="concept-description-text">Інформація про мету, правила та дані системи. Хто бачить, як працює алгоритм і на основі чого він ухвалює рішення.</p>
+        </div>
+        <div class="concept-definition-block">
+          <div class="concept-title-row">
+            <i class="fa-solid fa-lightbulb concept-icon" aria-hidden="true"></i>
+            <span class="concept-title-text">Пояснюваність</span>
+          </div>
+          <p class="concept-description-text">Зрозуміле пояснення конкретного результату або його обмежень. Чому саме цей учень отримав відмову, а інший — ні.</p>
+        </div>
+      </div>
+
+      <div class="right-accountability-column">
+        <div class="accountability-block">
+          <div class="accountability-title-row">
+            <i class="fa-solid fa-user-check accountability-icon" aria-hidden="true"></i>
+            <span class="accountability-title-text">Підзвітність</span>
+          </div>
+          <p class="accountability-description-text">Наявність відповідальної особи чи організації, до якої можна звернутися за роз&#39;ясненням та оскарженням. Конкретна людина, а не безликий алгоритм.</p>
+        </div>
+
+        <div class="insight-block">
+          <p class="insight-text"><strong>Чому цього недостатньо:</strong> «Модель так вирішила» — не відповідь для людини, якій відмовили у важливій можливості. Потрібні конкретні причини та шлях для апеляції.</p>
+        </div>
+
+        <div class="quote-block">
+          <div class="quote-icon-row">
+            <i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i>
+            <span class="quote-label">Ключова вимога</span>
+          </div>
+          <p class="quote-text">Кожне рішення, що впливає на людину, має бути <strong>поясненним</strong> і <strong>оскаржним</strong> — інакше це не контроль, а свавілля.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

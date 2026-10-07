@@ -1,0 +1,316 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Після approval: Updated Delivery Pack</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+    }
+
+    .title-region-header {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-header-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-header-main {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .delivery-pack-content-wrapper {
+      flex: 1;
+      padding: 0 60px 40px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .delivery-pack-grid-container {
+      display: flex;
+      align-items: stretch;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .left-column-analytical-stack,
+    .center-column-quality-stack,
+    .right-column-operations-stack {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      gap: 16px;
+    }
+
+    .artifact-update-card-item {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1;
+    }
+
+    .artifact-card-header-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--ppt-border);
+      padding-bottom: 8px;
+    }
+
+    .artifact-card-icon-wrapper {
+      width: 32px;
+      height: 32px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 16px;
+    }
+
+    .artifact-card-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .artifact-list-container {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: block;
+    }
+
+    .artifact-list-item-row {
+      display: block;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      font-size: 15px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .artifact-list-item-row::before {
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--ppt-good);
+      font-size: 12px;
+    }
+
+    .artifact-list-item-row strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    .sync-status-footer-bar {
+      background-color: var(--ppt-text-1);
+      color: var(--ppt-surface);
+      padding: 16px 24px;
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .sync-status-label-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sync-status-tag-badge {
+      background-color: var(--ppt-accent);
+      color: white;
+      padding: 4px 10px;
+      border-radius: var(--ppt-radius-sm);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .sync-status-description-text {
+      font-size: 14px;
+      color: var(--ppt-text-3);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-container">
+    <header class="title-region-header">
+      <div class="title-region-header-label">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-header-main">Після approval: Updated Delivery Pack</h1>
+    </header>
+
+    <main class="delivery-pack-content-wrapper">
+      <div class="delivery-pack-grid-container">
+        <!-- Column 1: Analytical Stack -->
+        <div class="left-column-analytical-stack">
+          <div class="artifact-update-card-item">
+            <div class="artifact-card-header-group">
+              <div class="artifact-card-icon-wrapper">
+                <i class="fa-solid fa-file-signature"></i>
+              </div>
+              <div class="artifact-card-title-text">Аналітичні артефакти</div>
+            </div>
+            <div class="artifact-list-container">
+              <div class="artifact-list-item-row">
+                <strong>Оновлення вимог:</strong> Актуалізація чинної версії baseline та додавання CR до історії рішень.
+              </div>
+              <div class="artifact-list-item-row">
+                <strong>Коригування Jira:</strong> Оновлення описів задач, scope та out of scope згідно зі схваленою зміною.
+              </div>
+              <div class="artifact-list-item-row">
+                <strong>Acceptance Criteria:</strong> Синхронізація критеріїв приймання з новою бізнес-логікою.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quality Stack -->
+        <div class="center-column-quality-stack">
+          <div class="artifact-update-card-item">
+            <div class="artifact-card-header-group">
+              <div class="artifact-card-icon-wrapper">
+                <i class="fa-solid fa-vial-circle-check"></i>
+              </div>
+              <div class="artifact-card-title-text">Якість та Тестування</div>
+            </div>
+            <div class="artifact-list-container">
+              <div class="artifact-list-item-row">
+                <strong>Тест-кейси:</strong> Створення нових сценаріїв та маркування застарілих (deprecated) тестів.
+              </div>
+              <div class="artifact-list-item-row">
+                <strong>Regression Scope:</strong> Перегляд пріоритетів регресійного тестування через вплив зміни.
+              </div>
+              <div class="artifact-list-item-row">
+                <strong>Тестові дані:</strong> Генерація або підготовка нових наборів даних для перевірки CR.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Operations Stack -->
+        <div class="right-column-operations-stack">
+          <div class="artifact-update-card-item">
+            <div class="artifact-card-header-group">
+              <div class="artifact-card-icon-wrapper">
+                <i class="fa-solid fa-server"></i>
+              </div>
+              <div class="artifact-card-title-text">Реліз та Експлуатація</div>
+            </div>
+            <div class="artifact-list-container">
+              <div class="artifact-list-item-row">
+                <strong>Release Notes:</strong> Додавання інформації про зміну та її вплив на кінцевого користувача.
+              </div>
+              <div class="artifact-list-item-row">
+                <strong>Runbooks &amp; Ops:</strong> Оновлення інструкцій для підтримки та налаштувань моніторингу.
+              </div>
+              <div class="artifact-list-item-row">
+                <strong>Traceability Sync:</strong> Перевірка наскрізних зв&#39;язків від джерела до пакету розгортання.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="sync-status-footer-bar">
+        <div class="sync-status-label-group">
+          <div class="sync-status-tag-badge">AI Workflow Output</div>
+          <div style="font-size: 16px; font-weight: 600;">Результат: Структурований CR, Impact Matrix та оновлений перелік артефактів.</div>
+        </div>
+        <div class="sync-status-description-text">
+          <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i>
+          AI готує чернетку оновлень, людина верифікує синхронність усіх змін.
+        </div>
+      </footer>
+    </main>
+  </div>
+
+</body></html>

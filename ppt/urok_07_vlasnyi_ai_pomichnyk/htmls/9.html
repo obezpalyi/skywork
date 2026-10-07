@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Оцінюємо й удосконалюємо | AI-помічник</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #F9FAFB;
+      --ppt-bg-soft: #F3F4F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF2FF;
+      --ppt-border: #E5E7EB;
+      --ppt-text-1: #111827;
+      --ppt-text-2: #4B5563;
+      --ppt-text-3: #9CA3AF;
+      --ppt-accent: #10B981;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #10B981;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EF4444;
+      --ppt-good: #059669;
+      --ppt-warn: #D97706;
+      --ppt-bad: #DC2626;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 0px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }.slide-root{
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px 30px 64px;
+      
+      font-family: var(--ppt-font-body);
+    }/* Title region — fixed cross-slide layout */
+    .title-assessment-header{
+      margin-top: 30px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-assessment-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-assessment-marker {
+      background-color: var(--ppt-accent);
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      display: block;
+    }
+
+    .title-assessment-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ppt-accent);
+      letter-spacing: 0.05em;
+    }
+
+    .title-assessment-h1 {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-assessment-divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--ppt-border);
+      margin-top: 8px;
+    }/* Main body wrapper — consumes remaining height */
+    .assessment-main-body{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 20px;
+      
+    }/* Top section: criteria grid */
+    .assessment-criteria-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px 16px;
+      flex-shrink: 0;
+    }.assessment-criteria-item{
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 10px 18px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 5px 8px;
+    }.assessment-criteria-item-header{
+      display: flex;
+      align-items: center;
+      gap: 5px 8px;
+    }
+
+    .assessment-criteria-icon {
+      color: var(--ppt-accent);
+      font-size: 18px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .assessment-criteria-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .assessment-criteria-desc-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }/* Bottom row: improvement guidance + correction panel */
+    .assessment-improvement-row{
+      display: flex;
+      gap: 13px 20px;
+      flex: 1 1 0;
+      
+    }.assessment-improvement-left-panel{
+      flex: 1.2 1 0;
+      background-color: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px 12px;
+      border-left: 4px solid var(--ppt-accent-2);
+    }.assessment-left-heading{
+      display: flex;
+      align-items: center;
+      gap: 8px 10px;
+    }
+
+    .assessment-left-title-icon {
+      color: var(--ppt-accent-2);
+      font-size: 20px;
+    }
+
+    .assessment-left-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }.assessment-left-rule-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 10px;
+      flex: 1 1 0;
+    }.assessment-left-rule-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px 12px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      font-weight: 500;
+    }.assessment-left-rule-item i{
+      color: var(--ppt-accent-2);
+      margin-top: 4px;
+      width: 18px;
+      text-align: center;
+    }.assessment-right-correction-panel{
+      flex: 0.8 1 0;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px 12px;
+      box-shadow: var(--ppt-shadow-soft);
+    }.assessment-correction-heading{
+      display: flex;
+      align-items: center;
+      gap: 8px 10px;
+    }
+
+    .assessment-correction-icon {
+      color: var(--ppt-warn);
+      font-size: 20px;
+    }
+
+    .assessment-correction-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .assessment-correction-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ppt-text-2);
+      font-weight: 400;
+      flex: 1 1 0;
+    }.assessment-correction-highlight{
+      background-color: var(--ppt-bg-soft);
+      padding: 11px 16px;
+      border-radius: var(--ppt-radius-sm);
+      border-left: 3px solid var(--ppt-warn);
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .assessment-correction-highlight i {
+      color: var(--ppt-warn);
+      margin-right: 8px;
+    }
+  
+html { overflow: hidden; }
+</style>
+  <!-- Font Awesome (external icon library) -->
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title Region (fixed) -->
+    <header class="title-assessment-header">
+      <div class="title-assessment-eyebrow">
+        <span class="title-assessment-marker"></span>
+        <span class="title-assessment-label">Лабораторна робота: AI-Помічник</span>
+      </div>
+      <h1 class="title-assessment-h1">Оцінюємо й удосконалюємо</h1>
+      <div class="title-assessment-divider"></div>
+    </header>
+
+    <!-- Main Body -->
+    <div class="assessment-main-body">
+      <!-- 6 criteria grid (2 rows visual, but semantic peers) -->
+      <div class="assessment-criteria-grid">
+        <div class="assessment-criteria-item">
+          <div class="assessment-criteria-item-header">
+            <i class="fa-solid fa-circle-check assessment-criteria-icon"></i>
+            <span class="assessment-criteria-title-text">Корисність</span>
+          </div>
+          <div class="assessment-criteria-desc-text">Відповідь справді допомагає вирішити задачу, а не є загальною порадою.</div>
+        </div>
+        <div class="assessment-criteria-item">
+          <div class="assessment-criteria-item-header">
+            <i class="fa-solid fa-user-graduate assessment-criteria-icon"></i>
+            <span class="assessment-criteria-title-text">Рівень користувача</span>
+          </div>
+          <div class="assessment-criteria-desc-text">Мова й складність відповідають учню 11 класу, без надмірної спеціалізації.</div>
+        </div>
+        <div class="assessment-criteria-item">
+          <div class="assessment-criteria-item-header">
+            <i class="fa-solid fa-shield assessment-criteria-icon"></i>
+            <span class="assessment-criteria-title-text">Межі компетенції</span>
+          </div>
+          <div class="assessment-criteria-desc-text">Помічник не виходить за визначені рамки та не береться за заборонені дії.</div>
+        </div>
+        <div class="assessment-criteria-item">
+          <div class="assessment-criteria-item-header">
+            <i class="fa-solid fa-lock assessment-criteria-icon"></i>
+            <span class="assessment-criteria-title-text">Приватність</span>
+          </div>
+          <div class="assessment-criteria-desc-text">Не збирає персональні дані, паролі чи адреси; дотримується правил приватності.</div>
+        </div>
+        <div class="assessment-criteria-item">
+          <div class="assessment-criteria-item-header">
+            <i class="fa-solid fa-circle-question assessment-criteria-icon"></i>
+            <span class="assessment-criteria-title-text">Позначення невизначеності</span>
+          </div>
+          <div class="assessment-criteria-desc-text">Чітко вказує, коли бракує інформації або відповідь може бути неточною.</div>
+        </div>
+        <div class="assessment-criteria-item">
+          <div class="assessment-criteria-item-header">
+            <i class="fa-solid fa-circle-question assessment-criteria-icon"></i>
+            <span class="assessment-criteria-title-text">Пропозиція перевірки</span>
+          </div>
+          <div class="assessment-criteria-desc-text">Наприкінці відповіді пропонує крок самоперевірки для підтвердження результату.</div>
+        </div>
+      </div>
+
+      <!-- Bottom row: guidance + correction -->
+      <div class="assessment-improvement-row" style="margin-bottom: 2px !important;">
+        <div class="assessment-improvement-left-panel">
+          <div class="assessment-left-heading">
+            <i class="fa-solid fa-clipboard-list assessment-left-title-icon"></i>
+            <span class="assessment-left-title-text">Аналіз результатів тестування</span>
+          </div>
+          <ul class="assessment-left-rule-list">
+            <li class="assessment-left-rule-item">
+              <i class="fa-solid fa-arrow-right"></i>
+              <span><strong>Корисна відповідь:</strong> чи відповідає вона суті запиту та надає практичну допомогу?</span>
+            </li>
+            <li class="assessment-left-rule-item">
+              <i class="fa-solid fa-arrow-right"></i>
+              <span><strong>Відповідність рівню:</strong> чи зрозуміла мова та чи не надто складна термінологія?</span>
+            </li>
+            <li class="assessment-left-rule-item">
+              <i class="fa-solid fa-arrow-right"></i>
+              <span><strong>Дотримання меж:</strong> чи не виконує помічник дій, що виходять за його компетенцію?</span>
+            </li>
+            <li class="assessment-left-rule-item">
+              <i class="fa-solid fa-arrow-right"></i>
+              <span><strong>Захист даних:</strong> чи не запитує зайвих приватних даних і чи не збирає їх?</span>
+            </li>
+            <li class="assessment-left-rule-item">
+              <i class="fa-solid fa-arrow-right"></i>
+              <span><strong>Чесність:</strong> чи позначає невизначеність, коли не знає точної відповіді?</span>
+            </li>
+            <li class="assessment-left-rule-item">
+              <i class="fa-solid fa-arrow-right"></i>
+              <span><strong>Самоперевірка:</strong> чи пропонує користувачеві перевірити результат самостійно?</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="assessment-right-correction-panel">
+          <div class="assessment-correction-heading">
+            <i class="fa-solid fa-circle-question assessment-correction-icon"></i>
+            <span class="assessment-correction-title">Коригуємо інструкцію</span>
+          </div>
+          <div class="assessment-correction-text">
+            Якщо тест виявив помилку або небажану поведінку, <strong>не повторюйте той самий запит</strong> — змініть системну інструкцію. Уточніть роль, додайте обмеження або уточніть алгоритм дій, щоб виправити проблему.
+          </div>
+          <div class="assessment-correction-highlight">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span><strong>Правило:</strong> зміна інструкції, а не повторення запиту — ключ до покращення помічника.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

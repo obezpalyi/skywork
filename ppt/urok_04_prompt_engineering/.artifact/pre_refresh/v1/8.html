@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ітерація: перша відповідь не фінальна</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Inter:wght@400;600&display=swap");
+
+    :root {
+      --ppt-bg: #FDFCFB;
+      --ppt-bg-soft: #F3F4F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF2FF;
+      --ppt-border: #E5E7EB;
+      --ppt-text-1: #111827;
+      --ppt-text-2: #4B5563;
+      --ppt-text-3: #9CA3AF;
+      --ppt-accent: #6366F1;
+      --ppt-accent-2: #10B981;
+      --ppt-chart-1: #6366F1;
+      --ppt-chart-2: #10B981;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #059669;
+      --ppt-warn: #D97706;
+      --ppt-bad: #DC2626;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 8px;
+      --ppt-radius-lg: 16px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-iteration-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px;
+      
+    }
+
+    .title-iteration-header {
+      margin-top: 48px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-iteration-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-iteration-badge {
+      background-color: var(--ppt-accent);
+      color: white;
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .title-iteration-module-label {
+      color: var(--ppt-text-3);
+      font-family: var(--ppt-font-body);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .title-iteration-heading {
+      margin: 0;
+      color: var(--ppt-text-1);
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 38px;
+      line-height: 1.2;
+    }
+
+    .title-iteration-accent-line {
+      width: 60px;
+      height: 4px;
+      background-color: var(--ppt-accent);
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    .iteration-content-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
+    }
+
+    .iteration-cycle-row {
+      display: flex;
+      align-items: stretch;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 24px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .iteration-steps-column {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .iteration-step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .iteration-step-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .iteration-step-marker {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--ppt-surface-2);
+      color: var(--ppt-accent);
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .iteration-step-text {
+      color: var(--ppt-text-1);
+      font-family: var(--ppt-font-body);
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .iteration-arrow-column {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      flex-shrink: 0;
+    }
+
+    .iteration-arrow-icon {
+      color: var(--ppt-accent);
+      font-size: 24px;
+    }
+
+    .iteration-refine-panel {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 18px 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .iteration-refine-title {
+      color: var(--ppt-text-1);
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .iteration-refine-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .iteration-tag-chip {
+      background-color: var(--ppt-surface-2);
+      color: var(--ppt-text-2);
+      font-family: var(--ppt-font-body);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--ppt-border);
+      white-space: nowrap;
+    }
+
+    .iteration-note-banner {
+      background-color: var(--ppt-bg-soft);
+      border-left: 4px solid var(--ppt-accent);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .iteration-note-icon {
+      color: var(--ppt-accent);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .iteration-note-text {
+      color: var(--ppt-text-2);
+      font-family: var(--ppt-font-body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .iteration-note-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-iteration-root">
+    <header class="title-iteration-header">
+      <div class="title-iteration-eyebrow-row">
+        <span class="title-iteration-badge">IT CLASS</span>
+        <span class="title-iteration-module-label">Prompt Engineering</span>
+      </div>
+      <h1 class="title-iteration-heading">Ітерація: перша відповідь не фінальна</h1>
+      <div class="title-iteration-accent-line"></div>
+    </header>
+
+    <div class="iteration-content-wrapper">
+      <div class="iteration-cycle-row">
+        <div class="iteration-steps-column">
+          <ul class="iteration-step-list">
+            <li class="iteration-step-item">
+              <span class="iteration-step-marker">1</span>
+              <span class="iteration-step-text">Створити промпт</span>
+            </li>
+            <li class="iteration-step-item">
+              <span class="iteration-step-marker">2</span>
+              <span class="iteration-step-text">Оцінити відповідь</span>
+            </li>
+            <li class="iteration-step-item">
+              <span class="iteration-step-marker">3</span>
+              <span class="iteration-step-text">Знайти проблему</span>
+            </li>
+            <li class="iteration-step-item">
+              <span class="iteration-step-marker">4</span>
+              <span class="iteration-step-text">Уточнити інструкцію</span>
+            </li>
+            <li class="iteration-step-item">
+              <span class="iteration-step-marker">5</span>
+              <span class="iteration-step-text">Перевірити новий результат</span>
+            </li>
+          </ul>
+        </div>
+        <div class="iteration-arrow-column">
+          <i class="iteration-arrow-icon fa-solid fa-arrow-right"></i>
+        </div>
+        <div class="iteration-steps-column">
+          <ul class="iteration-step-list">
+            <li class="iteration-step-item">
+              <span class="iteration-step-marker">↺</span>
+              <span class="iteration-step-text">Повторити цикл за потреби</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="iteration-refine-panel">
+        <div class="iteration-refine-title">Корисні уточнення для наступної ітерації</div>
+        <div class="iteration-refine-tags">
+          <span class="iteration-tag-chip">Постав спочатку три запитання</span>
+          <span class="iteration-tag-chip">Наведи контрприклад</span>
+          <span class="iteration-tag-chip">Скороти пояснення</span>
+          <span class="iteration-tag-chip">Покажи припущення</span>
+          <span class="iteration-tag-chip">Подай відповідь у таблиці</span>
+        </div>
+      </div>
+
+      <div class="iteration-note-banner" style="margin-bottom: 4px !important;">
+        <i class="iteration-note-icon fa-solid fa-circle-question"></i>
+        <div class="iteration-note-text">
+          <strong>Принцип:</strong> перша відповідь — це лише чернетка. Ітерація перетворює посередній результат на точний і корисний, коли ви свідомо оцінюєте, уточнюєте та перевіряєте.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</body></html>

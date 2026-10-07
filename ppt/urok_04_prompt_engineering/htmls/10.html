@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Підсумок і exit ticket</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Inter:wght@400;600&display=swap");
+
+    :root {
+      --ppt-bg: #FDFCFB;
+      --ppt-bg-soft: #F3F4F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF2FF;
+      --ppt-border: #E5E7EB;
+      --ppt-text-1: #111827;
+      --ppt-text-2: #4B5563;
+      --ppt-text-3: #9CA3AF;
+      --ppt-accent: #6366F1;
+      --ppt-accent-2: #10B981;
+      --ppt-chart-1: #6366F1;
+      --ppt-chart-2: #10B981;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #059669;
+      --ppt-warn: #D97706;
+      --ppt-bad: #DC2626;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 8px;
+      --ppt-radius-lg: 16px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: transparent;
+      font-family: var(--ppt-font-body);
+    }
+
+    .ppt-slide-summary-exit {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      
+      position: relative;
+    }
+
+    /* Title Region — fixed from DESIGN */
+    .title-region-summary-exit {
+      margin-top: 48px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow-summary-exit {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-badge-summary-exit {
+      background-color: var(--ppt-accent);
+      color: #FFFFFF;
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .title-region-label-summary-exit {
+      color: var(--ppt-text-3);
+      font-family: var(--ppt-font-body);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .title-region-heading-summary-exit {
+      margin: 0;
+      color: var(--ppt-text-1);
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 38px;
+      line-height: 1.2;
+    }
+
+    .title-region-underline-summary-exit {
+      width: 60px;
+      height: 4px;
+      background-color: var(--ppt-accent);
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    /* Main body region */
+    .summary-exit-body-wrapper {
+      flex: 1 1 0;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
+    }
+
+    /* Criteria section (dominant) */
+    .summary-exit-criteria-section {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px 28px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .summary-exit-criteria-heading {
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.3;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .summary-exit-criteria-heading i {
+      color: var(--ppt-accent);
+      font-size: 22px;
+    }
+
+    .summary-exit-criteria-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 16px;
+      flex: 1 1 0;
+    }
+
+    .summary-exit-criterion-item {
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .summary-exit-criterion-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--ppt-text-1);
+    }
+
+    .summary-exit-criterion-title i {
+      color: var(--ppt-accent);
+      font-size: 16px;
+      width: 20px;
+    }
+
+    .summary-exit-criterion-text {
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+      padding-left: 30px;
+    }
+
+    /* Exit ticket + homework row (supporting) */
+    .summary-exit-ticket-homework-row {
+      display: flex;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    .summary-exit-ticket-card {
+      background-color: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+    }
+
+    .summary-exit-ticket-heading {
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .summary-exit-ticket-heading i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .summary-exit-ticket-text {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .summary-exit-homework-card {
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent-2);
+    }
+
+    .summary-exit-homework-heading {
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .summary-exit-homework-heading i {
+      color: var(--ppt-accent-2);
+      font-size: 18px;
+    }
+
+    .summary-exit-homework-text {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    /* Ensure no flex on list items */
+    .summary-exit-criterion-item,
+    .summary-exit-ticket-card,
+    .summary-exit-homework-card {
+      list-style: none;
+    }
+
+    /* No fixed heights, content-driven */
+    .summary-exit-criteria-section,
+    .summary-exit-ticket-card,
+    .summary-exit-homework-card {
+      height: auto;
+    }
+
+    /* Grid rows fill the section */
+    .summary-exit-criteria-grid {
+      height: auto;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="ppt-slide-summary-exit">
+    <!-- Title Region (fixed layout from DESIGN) -->
+    <header class="title-region-summary-exit">
+      <div class="title-region-eyebrow-summary-exit">
+        <span class="title-region-badge-summary-exit">IT CLASS</span>
+        <span class="title-region-label-summary-exit">Prompt Engineering</span>
+      </div>
+      <h1 class="title-region-heading-summary-exit">Підсумок і exit ticket</h1>
+      <div class="title-region-underline-summary-exit"></div>
+    </header>
+
+    <!-- Body content -->
+    <div class="summary-exit-body-wrapper">
+      <!-- Criteria section (dominant) -->
+      <div class="summary-exit-criteria-section">
+        <div class="summary-exit-criteria-heading">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Критерії якісного промпту</span>
+        </div>
+        <div class="summary-exit-criteria-grid">
+          <div class="summary-exit-criterion-item">
+            <div class="summary-exit-criterion-title">
+              <i class="fa-solid fa-bullseye"></i>
+              <span>Зрозумілий результат</span>
+            </div>
+            <div class="summary-exit-criterion-text">Чітка мета, яку модель має досягти у відповіді.</div>
+          </div>
+          <div class="summary-exit-criterion-item">
+            <div class="summary-exit-criterion-title">
+              <i class="fa-solid fa-database"></i>
+              <span>Достатній контекст</span>
+            </div>
+            <div class="summary-exit-criterion-text">Вихідні умови, аудиторія та необхідні деталі для точної відповіді.</div>
+          </div>
+          <div class="summary-exit-criterion-item">
+            <div class="summary-exit-criterion-title">
+              <i class="fa-solid fa-ruler-combined"></i>
+              <span>Формат і межі</span>
+            </div>
+            <div class="summary-exit-criterion-text">Обмеження обсягу, структура відповіді, часові рамки, складність.</div>
+          </div>
+          <div class="summary-exit-criterion-item">
+            <div class="summary-exit-criterion-title">
+              <i class="fa-solid fa-user-shield"></i>
+              <span>Безпека та перевірка</span>
+            </div>
+            <div class="summary-exit-criterion-text">Без приватних даних; чіткі критерії для самоперевірки результату.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exit ticket + Homework row -->
+      <div class="summary-exit-ticket-homework-row" style="margin-bottom: 4px !important;">
+        <div class="summary-exit-ticket-card">
+          <div class="summary-exit-ticket-heading">
+            <i class="fa-solid fa-pen"></i>
+            <span>Exit ticket</span>
+          </div>
+          <div class="summary-exit-ticket-text">
+            Створи промпт для плану підготовки до контрольної з інформатики. Використай формулу: роль, аудиторія, контекст, обмеження, формат, критерій перевірки.
+          </div>
+        </div>
+        <div class="summary-exit-homework-card">
+          <div class="summary-exit-homework-heading">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Домашнє завдання</span>
+          </div>
+          <div class="summary-exit-homework-text">
+            Створи початкову, уточнену та фінальну версію одного промпту. Поясни, які покращення ти вніс на кожному кроці ітерації.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

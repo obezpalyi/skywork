@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Матриця покриття та простежуваність</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px;
+      
+    }/* Non-Cover-Page Title Region */
+    .title-region{
+      display: flex;
+      flex-direction: column;
+      margin-top: 26px;
+      margin-bottom: 15px;
+      flex-shrink: 0;
+    }
+
+    .title-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .title-accent-bar {
+      width: 4px;
+      height: 16px;
+      background-color: var(--ppt-accent);
+    }
+
+    .title-eyebrow-text {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+
+    .title-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .title-subheading {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      margin-top: 6px;
+    }/* Main body */
+    .body-content{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px 24px;
+      
+      padding-bottom: 23px;
+    }/* Traceability chain (visual chain) */
+    .traceability-chain-section{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 10px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+    }.chain-section-title-row{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 9px;
+    }
+
+    .chain-section-title-icon {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .chain-section-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }.chain-flow-container{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px 12px;
+    }.chain-node-item{
+      display: flex;
+      align-items: center;
+      gap: 4px 6px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 5px 14px;
+      border: 1px solid var(--ppt-border);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+    }
+
+    .chain-node-icon {
+      color: var(--ppt-accent);
+      font-size: 14px;
+    }
+
+    .chain-arrow-icon {
+      color: var(--ppt-text-3);
+      font-size: 16px;
+    }/* Coverage matrix table + risk side panel */
+    .coverage-lower-region{
+      display: flex;
+      gap: 15px 24px;
+      flex: 1 1 0;
+      
+    }.coverage-table-wrapper{
+      flex: 3;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+    }.coverage-table-header-row{
+      display: flex;
+      align-items: center;
+      gap: 6px 10px;
+      margin-bottom: 9px;
+    }
+
+    .coverage-table-header-icon {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .coverage-table-header-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .coverage-table-scroll {
+      flex: 1 1 0;
+      overflow-y: auto;
+      border-radius: var(--ppt-radius-md);
+      border: 1px solid var(--ppt-border);
+    }
+
+    .coverage-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      color: var(--ppt-text-2);
+    }.coverage-table th{
+      background: var(--ppt-bg-soft);
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      text-align: left;
+      padding: 6px 12px;
+      border-bottom: 1px solid var(--ppt-border);
+      font-size: 13px;
+    }.coverage-table td{
+      padding: 6px 12px;
+      border-bottom: 1px solid var(--ppt-surface-2);
+      vertical-align: middle;
+    }
+
+    .coverage-table tr:last-child td {
+      border-bottom: none;
+    }.status-badge{
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .status-badge-ok {
+      background: #D1FAE5;
+      color: #065F46;
+    }
+
+    .status-badge-warn {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .status-badge-bad {
+      background: #FEE2E2;
+      color: #991B1B;
+    }.risk-panel{
+      flex: 2;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+    }.risk-panel-header-row{
+      display: flex;
+      align-items: center;
+      gap: 6px 10px;
+      margin-bottom: 9px;
+    }
+
+    .risk-panel-header-icon {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .risk-panel-header-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }.risk-list-container{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 12px;
+    }.risk-list-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 8px 12px;
+      padding: 8px 14px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      border-left: 4px solid var(--ppt-accent);
+    }
+
+    .risk-list-icon {
+      color: var(--ppt-accent);
+      font-size: 16px;
+      margin-top: 2px;
+    }.risk-list-content{
+      display: flex;
+      flex-direction: column;
+      gap: 2px 2px;
+    }
+
+    .risk-list-title {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      font-size: 15px;
+    }
+
+    .risk-list-desc {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    /* Bottom gap is preserved through padding-bottom on body-content */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title Region -->
+    <header class="title-region">
+      <div class="title-eyebrow-row">
+        <div class="title-accent-bar"></div>
+        <span class="title-eyebrow-text">SERVICEHUB QA TRACK</span>
+      </div>
+      <h1 class="title-heading">Матриця покриття та простежуваність</h1>
+      <h2 class="title-subheading">Ланцюг від вимоги до результату виконання тесту — виявлення неперевірених ризиків</h2>
+    </header>
+
+    <!-- Body Content -->
+    <div class="body-content">
+      <!-- Traceability Chain -->
+      <div class="traceability-chain-section">
+        <div class="chain-section-title-row">
+          <i class="fa-solid fa-link chain-section-title-icon"></i>
+          <span class="chain-section-title-text">Обов&#39;язковий ланцюг простежуваності</span>
+        </div>
+        <div class="chain-flow-container">
+          <div class="chain-node-item"><i class="fa-solid fa-file chain-node-icon"></i> Вимога</div>
+          <i class="fa-solid fa-chevron-right chain-arrow-icon"></i>
+          <div class="chain-node-item"><i class="fa-solid fa-circle-check chain-node-icon"></i> Критерій приймання</div>
+          <i class="fa-solid fa-chevron-right chain-arrow-icon"></i>
+          <div class="chain-node-item"><i class="fa-solid fa-list-check chain-node-icon"></i> Тестова умова</div>
+          <i class="fa-solid fa-chevron-right chain-arrow-icon"></i>
+          <div class="chain-node-item"><i class="fa-solid fa-vial chain-node-icon"></i> Тестовий випадок</div>
+          <i class="fa-solid fa-chevron-right chain-arrow-icon"></i>
+          <div class="chain-node-item"><i class="fa-solid fa-database chain-node-icon"></i> Тестові дані</div>
+          <i class="fa-solid fa-chevron-right chain-arrow-icon"></i>
+          <div class="chain-node-item"><i class="fa-solid fa-circle-play chain-node-icon"></i> Результат виконання</div>
+          <i class="fa-solid fa-chevron-right chain-arrow-icon"></i>
+          <div class="chain-node-item"><i class="fa-solid fa-bug chain-node-icon"></i> Дефект / доказ</div>
+        </div>
+      </div>
+
+      <!-- Coverage Table + Risk Panel -->
+      <div class="coverage-lower-region" style="margin-bottom: 2px !important;">
+        <!-- Table -->
+        <div class="coverage-table-wrapper">
+          <div class="coverage-table-header-row">
+            <i class="fa-solid fa-table coverage-table-header-icon"></i>
+            <span class="coverage-table-header-text">Матриця покриття — виявлені прогалини</span>
+          </div>
+          <div class="coverage-table-scroll">
+            <table class="coverage-table">
+              <thead>
+                <tr>
+                  <th>Вимога</th>
+                  <th>Тестовий випадок</th>
+                  <th>Статус</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Пріоритетний клієнт</td>
+                  <td>TC-12: перевірка пріоритету</td>
+                  <td><span class="status-badge status-badge-ok">Покрито</span></td>
+                </tr>
+                <tr>
+                  <td>SLA розрахунок</td>
+                  <td>TC-14: граничний час SLA</td>
+                  <td><span class="status-badge status-badge-ok">Покрито</span></td>
+                </tr>
+                <tr>
+                  <td>Ескалація логіки</td>
+                  <td>—</td>
+                  <td><span class="status-badge status-badge-bad">Прогалина</span></td>
+                </tr>
+                <tr>
+                  <td>Сповіщення (відмова)</td>
+                  <td>TC-21: збій сповіщення</td>
+                  <td><span class="status-badge status-badge-warn">Частково</span></td>
+                </tr>
+                <tr>
+                  <td>Часові пояси</td>
+                  <td>—</td>
+                  <td><span class="status-badge status-badge-bad">Прогалина</span></td>
+                </tr>
+                <tr>
+                  <td>Права ролей</td>
+                  <td>TC-08: несанкціонований</td>
+                  <td><span class="status-badge status-badge-ok">Покрито</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Risk Panel -->
+        <div class="risk-panel">
+          <div class="risk-panel-header-row">
+            <i class="fa-solid fa-triangle-exclamation risk-panel-header-icon"></i>
+            <span class="risk-panel-header-text">Ризики та рішення</span>
+          </div>
+          <div class="risk-list-container">
+            <div class="risk-list-item">
+              <i class="fa-solid fa-circle-exclamation risk-list-icon"></i>
+              <div class="risk-list-content">
+                <span class="risk-list-title">Неперевірені вимоги</span>
+                <span class="risk-list-desc">Ескалація та часові пояси без тестів — високий ризик регресу.</span>
+              </div>
+            </div>
+            <div class="risk-list-item">
+              <i class="fa-solid fa-clipboard-check risk-list-icon"></i>
+              <div class="risk-list-content">
+                <span class="risk-list-title">Дублікати тестів</span>
+                <span class="risk-list-desc">TC-14 дублює TC-16; об&#39;єднати для узгодженості.</span>
+              </div>
+            </div>
+            <div class="risk-list-item">
+              <i class="fa-solid fa-clock risk-list-icon"></i>
+              <div class="risk-list-content">
+                <span class="risk-list-title">Застарілі кейси</span>
+                <span class="risk-list-desc">TC-03 базується на старому SLA — потребує оновлення.</span>
+              </div>
+            </div>
+            <div class="risk-list-item">
+              <i class="fa-solid fa-shield-halved risk-list-icon"></i>
+              <div class="risk-list-content">
+                <span class="risk-list-title">Недостатня глибина</span>
+                <span class="risk-list-desc">Негативні сценарії для сповіщень відсутні — додати кейси.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

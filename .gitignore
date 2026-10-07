@@ -1,0 +1,27 @@
+# Skywork runtime state and local caches
+.skywork/runtime/
+.skywork/cache/
+.skywork/tmp/
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.secret
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node/tooling dependencies
+node_modules/
+

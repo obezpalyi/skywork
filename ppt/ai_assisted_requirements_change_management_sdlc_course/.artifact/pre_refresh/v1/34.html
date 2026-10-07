@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Self-review та Definition of Ready</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .sdlc-slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+    }
+
+    .title-region-header-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-metadata-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .sdlc-main-content-layout {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      padding-left: 60px;
+      padding-right: 60px;
+      margin-bottom: 40px;
+      align-items: stretch;
+    }
+
+    .sdlc-left-checklist-column {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .sdlc-right-status-column {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .sdlc-review-checklist-card {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1;
+    }
+
+    .sdlc-checklist-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sdlc-checklist-items-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .sdlc-checklist-item-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background-color: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      border-left: 3px solid var(--ppt-accent-2);
+    }
+
+    .sdlc-checklist-icon-wrapper {
+      color: var(--ppt-accent);
+      font-size: 16px;
+      margin-top: 2px;
+    }
+
+    .sdlc-checklist-text-content {
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+      font-weight: 500;
+    }
+
+    .sdlc-dor-status-panel {
+      background-color: var(--ppt-text-1);
+      color: var(--ppt-surface);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .sdlc-dor-badge-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-accent-2);
+    }
+
+    .sdlc-dor-rule-description {
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--ppt-surface-2);
+    }
+
+    .sdlc-blocker-warning-box {
+      margin-top: auto;
+      padding: 16px;
+      background-color: rgba(239, 68, 68, 0.1);
+      border: 1px dashed var(--ppt-bad);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sdlc-warning-icon {
+      color: var(--ppt-bad);
+      font-size: 20px;
+    }
+
+    .sdlc-warning-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-bad);
+      line-height: 1.3;
+    }
+
+    .sdlc-footer-annotation-row {
+      margin-top: auto;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--ppt-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sdlc-footer-note-text {
+      font-size: 14px;
+      color: var(--ppt-text-3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sdlc-footer-note-text i {
+      color: var(--ppt-accent);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="sdlc-slide-root-container">
+    <header class="title-region-header-wrapper">
+      <div class="title-region-metadata-label">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-main-heading">Self-review та Definition of Ready</h1>
+    </header>
+
+    <main class="sdlc-main-content-layout">
+      <!-- Left Column: AI-Review Checklist -->
+      <section class="sdlc-left-checklist-column">
+        <div class="sdlc-review-checklist-card">
+          <div class="sdlc-checklist-card-title">
+            <i class="fa-solid fa-check-double"></i>
+            Що перевіряє AI-assisted Self-review
+          </div>
+          <div class="sdlc-checklist-items-grid">
+            <div class="sdlc-checklist-item-box">
+              <div class="sdlc-checklist-icon-wrapper"><i class="fa-solid fa-file-contract"></i></div>
+              <div class="sdlc-checklist-text-content">Достатність бізнес-контексту для реалізації</div>
+            </div>
+            <div class="sdlc-checklist-item-box">
+              <div class="sdlc-checklist-icon-wrapper"><i class="fa-solid fa-vial"></i></div>
+              <div class="sdlc-checklist-text-content">Тестованість Acceptance Criteria</div>
+            </div>
+            <div class="sdlc-checklist-item-box">
+              <div class="sdlc-checklist-icon-wrapper"><i class="fa-solid fa-equals"></i></div>
+              <div class="sdlc-checklist-text-content">Відсутність суперечностей у вимогах</div>
+            </div>
+            <div class="sdlc-checklist-item-box">
+              <div class="sdlc-checklist-icon-wrapper"><i class="fa-solid fa-link"></i></div>
+              <div class="sdlc-checklist-text-content">Визначеність технічних залежностей</div>
+            </div>
+            <div class="sdlc-checklist-item-box">
+              <div class="sdlc-checklist-icon-wrapper"><i class="fa-solid fa-circle-question"></i></div>
+              <div class="sdlc-checklist-text-content">Маркування відкритих питань</div>
+            </div>
+            <div class="sdlc-checklist-item-box">
+              <div class="sdlc-checklist-icon-wrapper"><i class="fa-solid fa-users-gear"></i></div>
+              <div class="sdlc-checklist-text-content">Зрозумілість Scope для Dev, QA та DevOps</div>
+            </div>
+            <div class="sdlc-checklist-item-box">
+              <div class="sdlc-checklist-icon-wrapper"><i class="fa-solid fa-code-branch"></i></div>
+              <div class="sdlc-checklist-text-content">Наявність посилання на джерело (Traceability)</div>
+            </div>
+            <div class="sdlc-checklist-item-box">
+              <div class="sdlc-checklist-icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="sdlc-checklist-text-content">Покриття Edge Cases та ризиків</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: DoR Rule -->
+      <section class="sdlc-right-status-column">
+        <div class="sdlc-dor-status-panel">
+          <div class="sdlc-dor-badge-header">
+            <i class="fa-solid fa-clipboard-check"></i>
+            Definition of Ready (DoR)
+          </div>
+          <p class="sdlc-dor-rule-description">
+            Задача вважається Ready лише тоді, коли AI-асистент підтвердив відсутність логічних прогалин, а людина-фахівець провела фінальний Approval.
+          </p>
+          <p class="sdlc-dor-rule-description" style="font-size: 15px; border-left: 2px solid var(--ppt-accent-2); padding-left: 16px;">
+            AI діє як суворий критик, що перевіряє артефакт за 10+ критеріями якості SDLC Playbook.
+          </p>
+          
+          <div class="sdlc-blocker-warning-box">
+            <i class="fa-solid fa-triangle-exclamation sdlc-warning-icon"></i>
+            <div class="sdlc-warning-text">
+              AI заборонено автоматично переводити задачу в статус &#34;Ready&#34;, якщо знайдено хоча б один критичний блокер або суперечність.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="sdlc-footer-annotation-row">
+      <div class="sdlc-footer-note-text">
+        <i class="fa-solid fa-circle-info"></i>
+        Human-in-the-loop: AI готує доказову базу, людина приймає рішення про готовність.
+      </div>
+      <div class="sdlc-footer-note-text" style="font-weight: 600;">
+        Сесія 4: Вимога → готова Jira task
+      </div>
+    </footer>
+  </div>
+
+</body></html>

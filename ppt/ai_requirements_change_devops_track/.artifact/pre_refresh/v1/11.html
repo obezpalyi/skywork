@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Домени операційного впливу</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;500&display=swap");
+
+        :root {
+            --ppt-bg: #F8FAFC;
+            --ppt-bg-soft: #F1F5F9;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E2E8F0;
+            --ppt-border: #CBD5E1;
+            --ppt-text-1: #0F172A;
+            --ppt-text-2: #475569;
+            --ppt-text-3: #64748B;
+            --ppt-accent: #2563EB;
+            --ppt-accent-2: #10B981;
+            --ppt-chart-1: #2563EB;
+            --ppt-chart-2: #10B981;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #6366F1;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Roboto Mono", monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background-color: var(--ppt-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .slide-root {
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            
+            font-family: var(--ppt-font-body);
+            box-shadow: var(--ppt-shadow-strong);
+        }
+
+        /* Title region — fixed per design */
+        .title-region {
+            margin-top: 40px;
+            margin-left: 60px;
+            margin-right: 60px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-left: 6px solid var(--ppt-accent);
+            padding-left: 20px;
+            flex-shrink: 0;
+        }
+
+        .title-region-eyebrow {
+            font-family: var(--ppt-font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .title-region-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--ppt-text-1);
+            margin: 0;
+        }
+
+        .title-region-subtitle {
+            font-family: var(--ppt-font-body);
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            margin-top: 2px;
+        }
+
+        /* Main body wrapper — must consume remaining height */
+        .impact-domains-body-wrapper {
+            flex: 1 1 0;
+            margin-left: 60px;
+            margin-right: 60px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+             /* no, this is prohibited */
+        }
+
+        /* Dominant region: overview description */
+        .impact-overview-region {
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: var(--ppt-shadow-soft);
+            flex-shrink: 0;
+            margin-bottom: 20px;
+        }
+
+        .impact-overview-icon {
+            font-size: 28px;
+            color: var(--ppt-accent);
+            width: 48px;
+            height: 48px;
+            background-color: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .impact-overview-text {
+            font-family: var(--ppt-font-body);
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--ppt-text-2);
+        }
+
+        .impact-overview-text strong {
+            color: var(--ppt-text-1);
+            font-weight: 600;
+        }
+
+        /* Grid of impact domains — peer modules */
+        .impact-domains-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            flex: 1 1 0;
+            align-content: stretch;
+        }
+
+        .domain-module-item {
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 14px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            box-shadow: var(--ppt-shadow-soft);
+        }
+
+        .domain-module-icon {
+            font-size: 18px;
+            color: var(--ppt-accent);
+            width: 36px;
+            height: 36px;
+            background-color: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .domain-module-title {
+            font-family: var(--ppt-font-display);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+        }
+
+        .domain-module-desc {
+            font-family: var(--ppt-font-body);
+            font-size: 12px;
+            line-height: 1.4;
+            color: var(--ppt-text-3);
+        }
+
+        .domain-module-desc i {
+            margin-right: 4px;
+            color: var(--ppt-accent);
+            font-size: 11px;
+        }
+
+        /* Two additional small rows for remaining items */
+        .impact-extra-row {
+            display: flex;
+            gap: 14px;
+            margin-top: 14px;
+            flex-shrink: 0;
+        }
+
+        .extra-domain-module {
+            flex: 1;
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--ppt-shadow-soft);
+        }
+
+        .extra-domain-icon {
+            font-size: 16px;
+            color: var(--ppt-accent);
+            width: 30px;
+            height: 30px;
+            background-color: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .extra-domain-content {
+            font-family: var(--ppt-font-body);
+            font-size: 12px;
+            line-height: 1.4;
+            color: var(--ppt-text-2);
+        }
+
+        .extra-domain-content strong {
+            font-family: var(--ppt-font-display);
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            display: block;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        /* No flex on list items */
+        .domain-module-desc div, .extra-domain-content div {
+            display: block;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Title region per design -->
+        <header class="title-region">
+            <div class="title-region-eyebrow">DEVOPS TRACK | AI-ASSISTED SDLC</div>
+            <h1 class="title-region-heading">Домени операційного впливу</h1>
+            <div class="title-region-subtitle">Огляд сфер впливу: від мережевих налаштувань та сховищ даних до конфігураційних параметрів і пайплайнів розгортання</div>
+        </header>
+
+        <!-- Main body wrapper -->
+        <div class="impact-domains-body-wrapper">
+            <!-- Dominant overview region -->
+            <div class="impact-overview-region">
+                <div class="impact-overview-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                <div class="impact-overview-text">
+                    <strong>Операційний вплив охоплює всі рівні системи:</strong> від сервісів і залежностей до інфраструктури, конфігурації, спостережуваності та процесів розгортання. Кожна зміна має бути оцінена за цими доменами.
+                </div>
+            </div>
+
+            <!-- Grid of 8 peer modules (4x2) -->
+            <div class="impact-domains-grid">
+                <div class="domain-module-item">
+                    <div class="domain-module-icon"><i class="fa-solid fa-server"></i></div>
+                    <div class="domain-module-title">Сервіси та залежності</div>
+                    <div class="domain-module-desc"><i class="fa-solid fa-angle-right"></i>Мапування змін на всі пов&#39;язані сервіси та їх взаємодії</div>
+                </div>
+                <div class="domain-module-item">
+                    <div class="domain-module-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <div class="domain-module-title">Середовища</div>
+                    <div class="domain-module-desc"><i class="fa-solid fa-angle-right"></i>DEV, TEST, STAGE, PROD — різні конфігурації та ризики</div>
+                </div>
+                <div class="domain-module-item">
+                    <div class="domain-module-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <div class="domain-module-title">Інфраструктура</div>
+                    <div class="domain-module-desc"><i class="fa-solid fa-angle-right"></i>Обчислювальні ресурси, мережа, сховища, IaC-код</div>
+                </div>
+                <div class="domain-module-item">
+                    <div class="domain-module-icon"><i class="fa-solid fa-sliders"></i></div>
+                    <div class="domain-module-title">Конфігурація</div>
+                    <div class="domain-module-desc"><i class="fa-solid fa-angle-right"></i>Параметри, прапорці, джерела істини, методи розгортання</div>
+                </div>
+                <div class="domain-module-item">
+                    <div class="domain-module-icon"><i class="fa-solid fa-lock"></i></div>
+                    <div class="domain-module-title">Секрети та доступ</div>
+                    <div class="domain-module-desc"><i class="fa-solid fa-angle-right"></i>Ключі, паролі, ендпоінти — чутливі дані не передаються ШІ</div>
+                </div>
+                <div class="domain-module-item">
+                    <div class="domain-module-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="domain-module-title">Мережа та зберігання</div>
+                    <div class="domain-module-desc"><i class="fa-solid fa-angle-right"></i>Підключення, міграції даних, сумісність сховищ</div>
+                </div>
+                <div class="domain-module-item">
+                    <div class="domain-module-icon"><i class="fa-solid fa-code-branch"></i></div>
+                    <div class="domain-module-title">Пайплайн розгортання</div>
+                    <div class="domain-module-desc"><i class="fa-solid fa-angle-right"></i>CI/CD процеси, етапи випуску, автоматизація</div>
+                </div>
+                <div class="domain-module-item">
+                    <div class="domain-module-icon"><i class="fa-solid fa-eye"></i></div>
+                    <div class="domain-module-title">Моніторинг, логування, трейсинг</div>
+                    <div class="domain-module-desc"><i class="fa-solid fa-angle-right"></i>Метрики, алерти, ескалації, відповідність SLO</div>
+                </div>
+            </div>
+
+            <!-- Extra row for remaining domains -->
+            <div class="impact-extra-row" style="margin-bottom: 4px !important;">
+                <div class="extra-domain-module">
+                    <div class="extra-domain-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="extra-domain-content">
+                        <strong>Ємність та продуктивність</strong>
+                        Оцінка навантаження, масштабування, вузькі місця
+                    </div>
+                </div>
+                <div class="extra-domain-module">
+                    <div class="extra-domain-icon"><i class="fa-solid fa-shield"></i></div>
+                    <div class="extra-domain-content">
+                        <strong>Безпека та комплаєнс</strong>
+                        Політики, аудит, відповідність вимогам
+                    </div>
+                </div>
+                <div class="extra-domain-module">
+                    <div class="extra-domain-icon"><i class="fa-solid fa-book"></i></div>
+                    <div class="extra-domain-content">
+                        <strong>Runbook та документація</strong>
+                        Підтримка, процедури, оновлення знань
+                    </div>
+                </div>
+                <div class="extra-domain-module">
+                    <div class="extra-domain-icon"><i class="fa-solid fa-bell"></i></div>
+                    <div class="extra-domain-content">
+                        <strong>Алерти та ескалація</strong>
+                        Сповіщення, чергування, відповідальні
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ланцюжок машинного навчання</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+
+:root {
+  --ppt-bg: #F9F9F7;
+  --ppt-bg-soft: #F0F0EB;
+  --ppt-surface: #FFFFFF;
+  --ppt-surface-2: #E5E5E0;
+  --ppt-border: #2D2D2D;
+  --ppt-text-1: #1A1A1A;
+  --ppt-text-2: #4A4A4A;
+  --ppt-text-3: #757575;
+  --ppt-accent: #00A896;
+  --ppt-accent-2: #FF6B6B;
+  --ppt-chart-1: #00A896;
+  --ppt-chart-2: #028090;
+  --ppt-chart-3: #F4D35E;
+  --ppt-chart-4: #EE964B;
+  --ppt-good: #27AE60;
+  --ppt-warn: #F39C12;
+  --ppt-bad: #E74C3C;
+  --ppt-radius-sm: 2px;
+  --ppt-radius-md: 4px;
+  --ppt-radius-lg: 8px;
+  --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+  --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.1);
+  --ppt-font-display: "Inter", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }.ml-cycle-slide-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0;
+      margin: 0 0;
+      
+      font-family: var(--ppt-font-body);
+    }.title-region{
+      margin-top: 14px;
+      margin-right: 64px;
+      margin-bottom: 9px;
+      margin-left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .title-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .title-accent-bar {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .title-eyebrow-text {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.2;
+    }
+    .title-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }.ml-cycle-body-region{
+      flex: 1 1 0;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0 0;
+      
+    }.ml-cycle-flow-rail{
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      flex: 1 1 0;
+      justify-content: flex-start;
+      gap: 0 0;
+    }.ml-cycle-stage-row{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 9px 32px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--ppt-surface-2);
+      flex-shrink: 0;
+    }
+    .ml-cycle-stage-row:last-child {
+      border-bottom: none;
+    }.ml-cycle-stage-number{
+      font-family: var(--ppt-font-display);
+      font-size: 55px;
+      font-weight: 800;
+      color: var(--ppt-accent);
+      line-height: 1;
+      width: 80px;
+      flex-shrink: 0;
+      text-align: left;
+      letter-spacing: -0.02em;
+    }.ml-cycle-stage-content{
+      display: flex;
+      flex-direction: column;
+      gap: 2px 4px;
+      flex: 1 1 0;
+    }.ml-cycle-stage-name{
+      font-family: var(--ppt-font-display);
+      font-size: 23px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }.ml-cycle-stage-desc{
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }.ml-cycle-loop-footer{
+      margin-top: 5px;
+      padding-top: 5px;
+      border-top: 2px solid var(--ppt-accent);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px 16px;
+      flex-shrink: 0;
+    }
+    .ml-cycle-loop-icon {
+      color: var(--ppt-accent);
+      font-size: 28px;
+      width: 40px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .ml-cycle-loop-text {
+      font-family: var(--ppt-font-body);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="ml-cycle-slide-root">
+    <header class="title-region">
+      <div class="title-eyebrow-row">
+        <span class="title-accent-bar"></span>
+        <span class="title-eyebrow-text">УРОК ІНФОРМАТИКИ | ШТУЧНИЙ ІНТЕЛЕКТ</span>
+      </div>
+      <h1 class="title-heading">Ланцюжок машинного навчання</h1>
+    </header>
+    <div class="ml-cycle-body-region">
+      <div class="ml-cycle-flow-rail">
+        <!-- Етап 1: Зібрати дані -->
+        <div class="ml-cycle-stage-row">
+          <div class="ml-cycle-stage-number">01</div>
+          <div class="ml-cycle-stage-content">
+            <div class="ml-cycle-stage-name">Зібрати дані</div>
+            <div class="ml-cycle-stage-desc">Отримати вихідні приклади: зображення листя, описи об’єктів або будь-які вхідні спостереження для аналізу.</div>
+          </div>
+        </div>
+        <!-- Етап 2: Підготувати й позначити -->
+        <div class="ml-cycle-stage-row">
+          <div class="ml-cycle-stage-number">02</div>
+          <div class="ml-cycle-stage-content">
+            <div class="ml-cycle-stage-name">Підготувати й позначити приклади</div>
+            <div class="ml-cycle-stage-desc">Очистити дані, додати ознаки (колір, форма, розмір) та вказати правильні мітки («клен» чи «дуб»).</div>
+          </div>
+        </div>
+        <!-- Етап 3: Навчити модель -->
+        <div class="ml-cycle-stage-row">
+          <div class="ml-cycle-stage-number">03</div>
+          <div class="ml-cycle-stage-content">
+            <div class="ml-cycle-stage-name">Навчити модель</div>
+            <div class="ml-cycle-stage-desc">Модель аналізує підготовлені приклади, шукає закономірності та налаштовує внутрішні параметри, щоб зменшити помилки.</div>
+          </div>
+        </div>
+        <!-- Етап 4: Перевірити на нових даних -->
+        <div class="ml-cycle-stage-row">
+          <div class="ml-cycle-stage-number">04</div>
+          <div class="ml-cycle-stage-content">
+            <div class="ml-cycle-stage-name">Перевірити на нових даних</div>
+            <div class="ml-cycle-stage-desc">Випробувати модель на прикладах, яких не було в навчанні, щоб оцінити, чи вона справді узагальнює, а не запам’ятовує.</div>
+          </div>
+        </div>
+        <!-- Етап 5: Проаналізувати помилки -->
+        <div class="ml-cycle-stage-row">
+          <div class="ml-cycle-stage-number">05</div>
+          <div class="ml-cycle-stage-content">
+            <div class="ml-cycle-stage-name">Проаналізувати помилки</div>
+            <div class="ml-cycle-stage-desc">Дослідити, де і чому модель помиляється: брак прикладів, суперечливі мітки, невдалі ознаки чи неоднозначні випадки.</div>
+          </div>
+        </div>
+        <!-- Етап 6: Удосконалити дані або модель -->
+        <div class="ml-cycle-stage-row">
+          <div class="ml-cycle-stage-number">06</div>
+          <div class="ml-cycle-stage-content">
+            <div class="ml-cycle-stage-name">Удосконалити дані або модель</div>
+            <div class="ml-cycle-stage-desc">Додати нові приклади, уточнити мітки, обрати кращі ознаки або змінити алгоритм — і повторити цикл.</div>
+          </div>
+        </div>
+        <!-- Етап 7: Використати для прогнозу -->
+        <div class="ml-cycle-stage-row">
+          <div class="ml-cycle-stage-number">07</div>
+          <div class="ml-cycle-stage-content">
+            <div class="ml-cycle-stage-name">Використати для прогнозу</div>
+            <div class="ml-cycle-stage-desc">Застосувати натреновану модель до реальних нових прикладів, щоб отримати корисні передбачення в практичних задачах.</div>
+          </div>
+        </div>
+        <!-- Футер: повторюваний процес -->
+        <div class="ml-cycle-loop-footer">
+          <div class="ml-cycle-loop-icon">
+            <i class="fa-solid fa-circle-question"></i>
+          </div>
+          <div class="ml-cycle-loop-text">Навчання — повторюваний цикл, а не одноразова дія</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

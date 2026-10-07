@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Чому цей трек важливий для QA</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      box-sizing: border-box;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+    }.qa-track-slide-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0;
+      margin: 0 0;
+      
+    }/* Non-cover title region — fixed layout per design */
+    .title-servicehub-qa-header{
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 21px;
+    }
+
+    .title-eyebrow-accent-rail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .title-accent-bar-left {
+      width: 4px;
+      height: 16px;
+      background-color: var(--ppt-accent);
+    }
+
+    .title-eyebrow-label-text {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+
+    .title-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .title-subheading-text {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      margin-top: 6px;
+      line-height: 1.4;
+    }/* Main content body wrapper — fills remaining height */
+    .qa-challenges-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 30px;
+      gap: 15px 24px;
+       /* no, cannot use min-height:0 per rules */
+      /* we don't use min-height:0 */
+    }/* Dominant left narrative + right compact rail */
+    .qa-challenges-content-row{
+      flex: 1 1 0;
+      display: flex;
+      gap: 15px 24px;
+      align-items: stretch;
+    }.qa-challenges-left-dominant{
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-lg);
+      box-shadow: var(--ppt-shadow-soft);
+      border: 1px solid var(--ppt-border);
+      padding: 15px 28px;
+    }.qa-challenges-left-dominant-title-row{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .qa-challenges-left-title-icon {
+      font-size: 22px;
+      color: var(--ppt-accent);
+    }
+
+    .qa-challenges-left-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }.qa-challenges-left-intro-text{
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--ppt-text-2);
+      margin-bottom: 13px;
+    }.qa-challenges-left-points-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 12px;
+    }
+
+    .qa-challenges-left-point-item {
+      display: block;
+      padding-left: 28px;
+      position: relative;
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.45;
+    }
+
+    .qa-challenges-left-point-item i {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--ppt-accent);
+      font-size: 15px;
+      width: 18px;
+      text-align: center;
+    }
+
+    .qa-challenges-left-point-item strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    /* right compact rail */
+    .qa-challenges-right-support {
+      flex: 1.2 1 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-lg);
+      border: 1px solid var(--ppt-border);
+      padding: 24px 22px;
+      justify-content: flex-start; /* visible card uses flex-start */
+    }
+
+    .qa-challenges-right-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .qa-challenges-right-title-icon {
+      font-size: 20px;
+      color: var(--ppt-accent-2);
+    }
+
+    .qa-challenges-right-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .qa-challenges-right-context-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .qa-challenges-right-context-item {
+      display: block;
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+      padding-left: 26px;
+      position: relative;
+    }
+
+    .qa-challenges-right-context-item i {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 14px;
+      color: var(--ppt-accent-2);
+      width: 18px;
+      text-align: center;
+    }
+
+    .qa-challenges-right-context-item strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }/* bottom takeaway band */
+    .qa-challenges-bottom-takeaway{
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-lg);
+      border: 1px solid var(--ppt-border);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px 16px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .qa-challenges-bottom-takeaway-icon {
+      font-size: 24px;
+      color: var(--ppt-accent);
+    }
+
+    .qa-challenges-bottom-takeaway-text {
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.5;
+    }
+
+    .qa-challenges-bottom-takeaway-text span {
+      color: var(--ppt-accent);
+      font-weight: 700;
+    }
+
+    /* no flex on li items, all block */
+    /* ensure no fixed heights */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="qa-track-slide-root">
+    <!-- Non-cover title region -->
+    <header class="title-servicehub-qa-header">
+      <div class="title-eyebrow-accent-rail">
+        <div class="title-accent-bar-left"></div>
+        <span class="title-eyebrow-label-text">SERVICEHUB QA TRACK</span>
+      </div>
+      <h1 class="title-main-heading">Чому цей трек важливий для QA</h1>
+      <h2 class="title-subheading-text">Неповні вимоги, слабка простежуваність та зміни після підготовки тестів — ключові ризики якості</h2>
+    </header>
+
+    <!-- Main body wrapper -->
+    <div class="qa-challenges-body-wrapper">
+      <!-- Left dominant + right support row -->
+      <div class="qa-challenges-content-row">
+        <!-- Left dominant panel -->
+        <div class="qa-challenges-left-dominant">
+          <div class="qa-challenges-left-dominant-title-row">
+            <i class="fa-solid fa-triangle-exclamation qa-challenges-left-title-icon"></i>
+            <span class="qa-challenges-left-title-text">Критичні проблеми, які вирішує курс</span>
+          </div>
+          <p class="qa-challenges-left-intro-text">
+            QA часто отримує неповні або неоднозначні вимоги, а короткий запит на зміну може вплинути на дозволи, API, інтеграції, часові пояси, дані та продакшн-поведінку. Курс навчає виявляти такі прогалини системно.
+          </p>
+          <ul class="qa-challenges-left-points-list">
+            <li class="qa-challenges-left-point-item"><i class="fa-solid fa-circle-exclamation"></i><strong>Пізнє виявлення прогалин тестованості</strong> — аналіз вимог до початку тестування</li>
+            <li class="qa-challenges-left-point-item"><i class="fa-solid fa-circle-exclamation"></i><strong>Неповне покриття негативних і граничних сценаріїв</strong> — структурований підхід до граничних значень</li>
+            <li class="qa-challenges-left-point-item"><i class="fa-solid fa-circle-exclamation"></i><strong>Повільне створення та підтримка тест-кейсів</strong> — AI-асистована генерація та актуалізація</li>
+            <li class="qa-challenges-left-point-item"><i class="fa-solid fa-circle-exclamation"></i><strong>Слабка простежуваність</strong> — ланцюжок від вимоги до результату</li>
+            <li class="qa-challenges-left-point-item"><i class="fa-solid fa-circle-exclamation"></i><strong>Пропущені області регресії</strong> — оцінка прямого та непрямого впливу змін</li>
+            <li class="qa-challenges-left-point-item"><i class="fa-solid fa-circle-exclamation"></i><strong>Плутанина між дефектом і новим запитом на зміну</strong> — класифікація на основі затвердженого базлайну</li>
+            <li class="qa-challenges-left-point-item"><i class="fa-solid fa-circle-exclamation"></i><strong>Висновки про тестову готовність без достатніх доказів</strong> — структуроване обґрунтування рішення</li>
+          </ul>
+        </div>
+
+        <!-- Right support rail -->
+        <div class="qa-challenges-right-support">
+          <div class="qa-challenges-right-title-row">
+            <i class="fa-solid fa-shield-halved qa-challenges-right-title-icon"></i>
+            <span class="qa-challenges-right-title-text">Що змінює підхід</span>
+          </div>
+          <ul class="qa-challenges-right-context-list">
+            <li class="qa-challenges-right-context-item"><i class="fa-solid fa-check"></i><strong>Вимірювані критерії</strong> замість слів «швидко», «зручно», «автоматично»</li>
+            <li class="qa-challenges-right-context-item"><i class="fa-solid fa-check"></i><strong>Простежуваність</strong> кожного тесту до вимоги та бізнес-правила</li>
+            <li class="qa-challenges-right-context-item"><i class="fa-solid fa-check"></i><strong>Повне покриття</strong> негативних і граничних сценаріїв</li>
+            <li class="qa-challenges-right-context-item"><i class="fa-solid fa-check"></i><strong>Регресійний обсяг</strong> на основі ризику та бізнес-впливу</li>
+            <li class="qa-challenges-right-context-item"><i class="fa-solid fa-check"></i><strong>Доказова готовність</strong> до релізу замість припущень</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom takeaway band -->
+      <div class="qa-challenges-bottom-takeaway" style="margin-bottom: 2px !important;">
+        <i class="fa-solid fa-robot qa-challenges-bottom-takeaway-icon"></i>
+        <p class="qa-challenges-bottom-takeaway-text">
+          <span>Xplore</span> автоматизує аналіз і документування, але рішення щодо ризиків, прийняття тестів і релізу залишаються за людиною.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body></html>

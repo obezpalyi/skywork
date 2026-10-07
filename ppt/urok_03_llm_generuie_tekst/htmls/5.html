@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Контекст змінює продовження</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFB;
+      --ppt-bg-soft: #F4F5F0;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF0E7;
+      --ppt-border: #D1D5C8;
+      --ppt-text-1: #1A1C1E;
+      --ppt-text-2: #4A4D42;
+      --ppt-text-3: #8A8D7C;
+      --ppt-accent: #00BFA5;
+      --ppt-accent-2: #FF5252;
+      --ppt-chart-1: #00BFA5;
+      --ppt-chart-2: #4DB6AC;
+      --ppt-chart-3: #80CBC4;
+      --ppt-chart-4: #B2DFDB;
+      --ppt-good: #2E7D32;
+      --ppt-warn: #F57C00;
+      --ppt-bad: #C62828;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --ppt-font-display: "Outfit", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: #FDFDFB;
+    }
+
+    .context-impact-slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+      
+      position: relative;
+    }
+
+    /* Non-cover title region — fixed cross-slide template */
+    .title-region-context-page {
+      margin-top: 48px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-region-context-page .title-overline-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-context-page .title-lab-badge {
+      background: var(--ppt-accent);
+      color: #FFFFFF;
+      padding: 4px 12px;
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 14px;
+      border-radius: var(--ppt-radius-sm);
+      letter-spacing: 1px;
+      display: inline-block;
+      line-height: 1.2;
+    }
+
+    .title-region-context-page .title-divider-rule {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-context-page .title-page-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    /* Main content area — special open layout: context-impact-focus */
+    .context-impact-body-wrapper {
+      flex: 1 1 0;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 56px;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      
+    }
+
+    /* Left giant anchor: КОНТЕКСТ */
+    .context-impact-left-anchor {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 48px;
+    }
+
+    .context-impact-giant-word {
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 96px;
+      line-height: 1.02;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .context-impact-giant-sub {
+      margin-top: 18px;
+      font-family: var(--ppt-font-body);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+      max-width: 320px;
+    }
+
+    /* Vertical divider rail */
+    .context-impact-vertical-rule {
+      width: 1px;
+      background: var(--ppt-border);
+      flex-shrink: 0;
+      margin: 8px 0;
+    }
+
+    /* Right explanatory block with examples */
+    .context-impact-right-explain {
+      flex: 1;
+      padding-left: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 36px;
+    }
+
+    .context-impact-lead-sentence {
+      font-family: var(--ppt-font-display);
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ppt-text-1);
+    }
+
+    .context-impact-examples-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .context-impact-example-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .context-impact-example-domain {
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--ppt-accent);
+      min-width: 104px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .context-impact-example-text {
+      font-family: var(--ppt-font-body);
+      font-weight: 400;
+      color: var(--ppt-text-2);
+    }
+
+    .context-impact-example-text strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      background: var(--ppt-surface-2);
+      padding: 2px 6px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .context-impact-takeaway {
+      margin-top: 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--ppt-border);
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      font-weight: 400;
+      max-width: 90%;
+    }
+
+    .context-impact-takeaway i {
+      color: var(--ppt-accent);
+      margin-right: 8px;
+    }
+
+    /* All elements must stay inside; no absolute positioning */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="context-impact-slide-root">
+    <!-- Fixed title region per design -->
+    <header class="title-region-context-page">
+      <div class="title-overline-wrapper">
+        <span class="title-lab-badge">LAB // INFO-11</span>
+        <div class="title-divider-rule"></div>
+      </div>
+      <h1 class="title-page-heading">Контекст змінює продовження</h1>
+    </header>
+
+    <!-- Special open layout: context-impact-focus -->
+    <div class="context-impact-body-wrapper">
+      <!-- Left 40% giant anchor -->
+      <div class="context-impact-left-anchor">
+        <div class="context-impact-giant-word">
+          <span>Контекст</span>
+        </div>
+        <div class="context-impact-giant-sub">
+          Те саме слово, різні світи — модель обирає продовження залежно від оточення.
+        </div>
+      </div>
+
+      <!-- Vertical divider -->
+      <div class="context-impact-vertical-rule"></div>
+
+      <!-- Right explanation + examples -->
+      <div class="context-impact-right-explain">
+        <div class="context-impact-lead-sentence">
+          «Він узяв ключ…» — що далі?
+        </div>
+
+        <div class="context-impact-examples-stack">
+          <div class="context-impact-example-row">
+            <span class="context-impact-example-domain">Побут</span>
+            <span class="context-impact-example-text">— <strong>від квартири</strong> та відчинив двері.</span>
+          </div>
+          <div class="context-impact-example-row">
+            <span class="context-impact-example-domain">Авто</span>
+            <span class="context-impact-example-text">— <strong>і завів двигун</strong> автомобіля.</span>
+          </div>
+          <div class="context-impact-example-row">
+            <span class="context-impact-example-domain">Крипто</span>
+            <span class="context-impact-example-text">— <strong>для розшифрування</strong> повідомлення.</span>
+          </div>
+          <div class="context-impact-example-row">
+            <span class="context-impact-example-domain">Задача</span>
+            <span class="context-impact-example-text">— <strong>до правильного</strong> розв’язання рівняння.</span>
+          </div>
+        </div>
+
+        <div class="context-impact-takeaway">
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          Модель враховує попередні слова, щоб оцінити доречність наступних.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome for the arrow icon -->
+  
+
+</body></html>

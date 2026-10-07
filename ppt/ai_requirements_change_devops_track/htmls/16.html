@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сесія OPS-3: Розгортання, відкат та готовність до релізу</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;500&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #64748B;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #10B981;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #10B981;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #6366F1;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Roboto Mono", monospace;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: transparent;
+      font-family: var(--ppt-font-body);
+    }/* Slide root: fixed 1280x720 flex column */
+    .slide-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0;
+      
+      position: relative;
+    }/* Non-cover title region — fixed template from DESIGN */
+    .title-region{
+      margin-top: 21px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-left: 6px solid var(--ppt-accent);
+      padding-left: 20px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .title-region-title {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--ppt-text-1);
+      margin: 0;
+    }
+
+    .title-region-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      margin-top: 2px;
+    }/* Main body wrapper: consumes remaining height (flex: 1 1 0) */
+    .ops3-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 18px;
+       /* avoid overflow, but no min-height:0 on children */
+    }/* Two-column asymmetric layout: left 55% (dominant) + right 45% */
+    .ops3-columns-container{
+      display: flex;
+      align-items: stretch;
+      gap: 15px 24px;
+      flex: 1 1 0;
+      
+    }
+
+    /* LEFT COLUMN — genuinely dominant region (narrative) */
+    .ops3-left-column {
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* natural top-to-bottom */
+      gap: 0;
+    }
+
+    /* Left visible panel: approved design + inputs */
+    .ops3-left-panel-visible {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 18px 16px 18px;
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+      
+    }
+
+    .ops3-left-panel-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ops3-left-panel-title i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .ops3-approved-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .ops3-approved-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .ops3-approved-list-item i {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      margin-top: 3px;
+      width: 16px;
+      text-align: center;
+    }
+
+    .ops3-inputs-label {
+      font-family: var(--ppt-font-body);
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--ppt-text-3);
+      margin-bottom: 8px;
+    }
+
+    .ops3-inputs-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .ops3-input-tag {
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-sm);
+      padding: 4px 10px;
+      font-family: var(--ppt-font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      border: 1px solid var(--ppt-border);
+    }/* RIGHT COLUMN — supporting but structured (peer-like but asymmetric) */
+    .ops3-right-column{
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 8px 12px;
+    }/* Right card 1: Workflow OPS-3 (compact steps) */
+    .ops3-workflow-card{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 10px 14px 9px 14px;
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+    }.ops3-workflow-title{
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ops3-workflow-title i {
+      color: var(--ppt-accent);
+    }.ops3-workflow-steps{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px 6px;
+      padding-left: 0;
+    }.ops3-workflow-step-item{
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.3;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px 8px;
+    }.ops3-workflow-step-item i{
+      color: var(--ppt-accent-2);
+      font-size: 12px;
+      margin-top: 2px;
+      width: 14px;
+      text-align: center;
+    }/* Right card 2: Release readiness evidence (compact) */
+    .ops3-readiness-card{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 10px 14px 9px 14px;
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+    }.ops3-readiness-title{
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ops3-readiness-title i {
+      color: var(--ppt-accent);
+    }.ops3-readiness-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px 6px;
+      padding-left: 0;
+    }.ops3-readiness-item{
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.3;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px 8px;
+    }.ops3-readiness-item i{
+      color: var(--ppt-accent-2);
+      font-size: 12px;
+      margin-top: 2px;
+      width: 14px;
+      text-align: center;
+    }
+
+    /* Bottom compact band inside left panel (verifiable completion) */
+    .ops3-verification-band {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--ppt-border);
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      color: var(--ppt-text-3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ops3-verification-band i {
+      color: var(--ppt-warn);
+      font-size: 14px;
+    }
+
+    .ops3-verification-band strong {
+      color: var(--ppt-text-2);
+      font-weight: 500;
+    }
+
+    /* Ensure no flex on list items (block-level only) */
+    .ops3-approved-list-item,
+    .ops3-workflow-step-item,
+    .ops3-readiness-item {
+      display: flex; /* allowed for inline icon+text, but li itself is flex? rule: no flex on li */
+      /* Per instruction: list items must use block-level text flow, no flex/gap */
+      /* Override: use block with inline icon */
+    }
+
+    /* Rewrite list items as block with inline icon */
+    .ops3-approved-list-item,
+    .ops3-workflow-step-item,
+    .ops3-readiness-item {
+      display: block;
+      padding-left: 0;
+      line-height: 1.4;
+    }
+
+    .ops3-approved-list-item i,
+    .ops3-workflow-step-item i,
+    .ops3-readiness-item i {
+      display: inline-block;
+      width: 18px;
+      margin-right: 6px;
+      color: var(--ppt-accent);
+    }
+
+    .ops3-workflow-step-item i {
+      color: var(--ppt-accent-2);
+    }
+
+    .ops3-readiness-item i {
+      color: var(--ppt-accent-2);
+    }
+
+    /* Keep list-style none */
+    .ops3-approved-list,
+    .ops3-workflow-steps,
+    .ops3-readiness-list {
+      list-style: none;
+    }
+
+    /* fix gap for block items: use margin */
+    .ops3-approved-list-item {
+      margin-bottom: 8px;
+    }.ops3-workflow-step-item{
+      margin-bottom: 2px;
+    }.ops3-readiness-item{
+      margin-bottom: 2px;
+    }
+
+    /* no flex on li */
+    .ops3-approved-list, .ops3-workflow-steps, .ops3-readiness-list {
+      padding-left: 0;
+    }
+
+    /* additional spacing fixes */
+    .ops3-left-panel-title i, .ops3-workflow-title i, .ops3-readiness-title i {
+      margin-right: 6px;
+    }/* ensure bottom gap preserved */
+    .ops3-body-wrapper{
+      margin-bottom: 15px;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title region: fixed template -->
+    <header class="title-region">
+      <div class="title-region-eyebrow">DEVOPS TRACK | AI-ASSISTED SDLC</div>
+      <h1 class="title-region-title">Сесія OPS-3: Розгортання, відкат та готовність до релізу</h1>
+      <div class="title-region-subtitle">Планування впровадження схваленого дизайну, включаючи автоматичну ескалацію та зміни в моделі даних</div>
+    </header>
+
+    <!-- Main body wrapper: flex: 1 1 0 -->
+    <div class="ops3-body-wrapper">
+      <!-- Asymmetric two-column layout -->
+      <div class="ops3-columns-container" style="margin-bottom: 2px !important;">
+        <!-- LEFT COLUMN (dominant, ~60%) -->
+        <div class="ops3-left-column">
+          <div class="ops3-left-panel-visible">
+            <div class="ops3-left-panel-title">
+              <i class="fa-solid fa-clipboard-check"></i> Схвалений дизайн змін
+            </div>
+            <ul class="ops3-approved-list">
+              <li class="ops3-approved-list-item"><i class="fa-solid fa-circle"></i> Новий критичний пріоритет для запитів</li>
+              <li class="ops3-approved-list-item"><i class="fa-solid fa-circle"></i> Автоматична ескалація за SLA-таймером</li>
+              <li class="ops3-approved-list-item"><i class="fa-solid fa-circle"></i> Подієві сповіщення та звітність</li>
+              <li class="ops3-approved-list-item"><i class="fa-solid fa-circle"></i> Зміна моделі даних (міграція)</li>
+              <li class="ops3-approved-list-item"><i class="fa-solid fa-circle"></i> Поетапне ввімкнення через feature-flag</li>
+            </ul>
+            <div class="ops3-inputs-label">Вхідні артефакти</div>
+            <div class="ops3-inputs-tags">
+              <span class="ops3-input-tag">технічний дизайн</span>
+              <span class="ops3-input-tag">міграційні нотатки</span>
+              <span class="ops3-input-tag">CI/CD огляд</span>
+              <span class="ops3-input-tag">базовий деплой</span>
+              <span class="ops3-input-tag">поточна процедура відкату</span>
+            </div>
+            <div class="ops3-verification-band">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <strong>Кожен крок плану має мати верифіковану умову завершення.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN (supporting, ~40%) -->
+        <div class="ops3-right-column">
+          <!-- Workflow OPS-3 card -->
+          <div class="ops3-workflow-card">
+            <div class="ops3-workflow-title">
+              <i class="fa-solid fa-diagram-project"></i> Workflow OPS-3
+            </div>
+            <ul class="ops3-workflow-steps">
+              <li class="ops3-workflow-step-item"><i class="fa-solid fa-check"></i> 1. Перевірити затверджений обсяг і залежності</li>
+              <li class="ops3-workflow-step-item"><i class="fa-solid fa-check"></i> 2. Визначити порядок розгортання</li>
+              <li class="ops3-workflow-step-item"><i class="fa-solid fa-check"></i> 3. Конфігурація та кроки міграції</li>
+              <li class="ops3-workflow-step-item"><i class="fa-solid fa-check"></i> 4. Перед-деплойні перевірки</li>
+              <li class="ops3-workflow-step-item"><i class="fa-solid fa-check"></i> 5. Активація feature-flag</li>
+              <li class="ops3-workflow-step-item"><i class="fa-solid fa-check"></i> 6. Пост-деплойні перевірки</li>
+              <li class="ops3-workflow-step-item"><i class="fa-solid fa-check"></i> 7. Тригери та дії відкату</li>
+              <li class="ops3-workflow-step-item"><i class="fa-solid fa-check"></i> 8. Докази для рішення про реліз</li>
+              <li class="ops3-workflow-step-item"><i class="fa-solid fa-check"></i> 9. Комунікація зі стейкхолдерами</li>
+            </ul>
+          </div>
+
+          <!-- Release readiness evidence card -->
+          <div class="ops3-readiness-card">
+            <div class="ops3-readiness-title">
+              <i class="fa-solid fa-shield"></i> Докази готовності
+            </div>
+            <ul class="ops3-readiness-list">
+              <li class="ops3-readiness-item"><i class="fa-solid fa-check"></i> Затверджений обсяг і технічний дизайн</li>
+              <li class="ops3-readiness-item"><i class="fa-solid fa-check"></i> Завершені інфраструктурні зміни</li>
+              <li class="ops3-readiness-item"><i class="fa-solid fa-check"></i> Готовність середовищ і міграцій</li>
+              <li class="ops3-readiness-item"><i class="fa-solid fa-check"></i> Налаштована спостережуваність</li>
+              <li class="ops3-readiness-item"><i class="fa-solid fa-check"></i> Перевірка потужності та безпеки</li>
+              <li class="ops3-readiness-item"><i class="fa-solid fa-check"></i> Ретепетиція деплою та відкату</li>
+              <li class="ops3-readiness-item"><i class="fa-solid fa-check"></i> Власники та on-call покриття</li>
+              <li class="ops3-readiness-item"><i class="fa-solid fa-check"></i> Відомі ризики та блокери</li>
+              <li class="ops3-readiness-item"><i class="fa-solid fa-check"></i> Повноваження для Go/No-Go</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

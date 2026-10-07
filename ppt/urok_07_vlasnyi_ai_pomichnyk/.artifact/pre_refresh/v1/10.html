@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Захист мініпроєкту — рубрика оцінювання</title>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --ppt-bg: #F9FAFB;
+            --ppt-bg-soft: #F3F4F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #EEF2FF;
+            --ppt-border: #E5E7EB;
+            --ppt-text-1: #111827;
+            --ppt-text-2: #4B5563;
+            --ppt-text-3: #9CA3AF;
+            --ppt-accent: #10B981;
+            --ppt-accent-2: #6366F1;
+            --ppt-chart-1: #10B981;
+            --ppt-chart-2: #6366F1;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EF4444;
+            --ppt-good: #059669;
+            --ppt-warn: #D97706;
+            --ppt-bad: #DC2626;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 6px;
+            --ppt-radius-lg: 0px;
+            --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --ppt-font-display: "Montserrat", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+        }*{
+            margin: 0 0;
+            padding: 0 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background-color: var(--ppt-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            font-family: var(--ppt-font-body);
+        }/* Slide root: exactly 1280x720, fixed flex column */
+        .slide-root{
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 64px 38px 64px;
+            
+            position: relative;
+        }/* Title region: based on design cross-slide consistent header */
+        .title-section{
+            margin-top: 38px;
+            margin-bottom: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .title-eyebrow-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-accent-mark {
+            background-color: var(--ppt-accent);
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        .title-eyebrow-text {
+            font-family: var(--ppt-font-body);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--ppt-accent);
+            letter-spacing: 0.05em;
+        }
+
+        .title-heading {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+        }
+
+        .title-divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--ppt-border);
+            margin-top: 8px;
+        }
+
+        /* Main body: flex-grow to consume remaining height */
+        .body-content {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            
+        }/* Open grading matrix layout: no outer borders, only horizontal dividers */
+        .grading-matrix-container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            flex: 1 1 0;
+            justify-content: flex-start;
+            gap: 0 0;
+        }/* Presentation scheme section: compact rail */
+        .presentation-scheme-block{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px 18px;
+            margin-bottom: 16px;
+        }
+
+        .presentation-scheme-label {
+            font-family: var(--ppt-font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+        }.scheme-chip{
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: 24px;
+            padding: 5px 16px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            box-shadow: var(--ppt-shadow-soft);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px 6px;
+        }
+
+        .scheme-chip i {
+            color: var(--ppt-accent);
+            font-size: 14px;
+        }/* Exit ticket row: compact two-part statement */
+        .exit-ticket-block{
+            background-color: var(--ppt-surface-2);
+            border-radius: 10px;
+            padding: 11px 20px;
+            margin-bottom: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px 6px;
+            border-left: 4px solid var(--ppt-accent);
+        }
+
+        .exit-ticket-title {
+            font-family: var(--ppt-font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+        }.exit-ticket-phrases{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 19px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+        }
+
+        .exit-ticket-phrases span strong {
+            color: var(--ppt-good);
+            font-weight: 600;
+        }
+
+        .exit-ticket-phrases .exit-ticket-limitation strong {
+            color: var(--ppt-bad);
+        }
+
+        /* Open rubric table: only horizontal dividers, no outer border */
+        .rubric-table-wrapper {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            flex: 1 1 0;
+            height: auto;
+            font-family: var(--ppt-font-body);
+        }.rubric-table th, .rubric-table td{
+            padding: 8px 4px;
+            border-bottom: 1px solid var(--ppt-border);
+            vertical-align: middle;
+            font-size: 17px;
+            line-height: 1.4;
+            text-align: left;
+        }.rubric-table thead th{
+            font-family: var(--ppt-font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+            background-color: var(--ppt-bg-soft);
+            border-bottom: 1px solid var(--ppt-border);
+            padding: 10px 4px;
+        }
+
+        .rubric-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .rubric-criterion {
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            width: 45%;
+        }
+
+        .rubric-score {
+            color: var(--ppt-accent);
+            font-weight: 700;
+            font-size: 22px;
+            white-space: nowrap;
+            text-align: right;
+            width: 15%;
+        }
+
+        .rubric-desc {
+            color: var(--ppt-text-2);
+            font-size: 15px;
+            width: 40%;
+        }/* No extra modules, no card grids, only chips and table */
+        .rubric-note{
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--ppt-text-3);
+            font-weight: 400;
+            line-height: 1.4;
+            text-align: right;
+        }
+
+        .rubric-table tbody {
+            display: table-row-group;
+        }
+
+        /* No flex inside table; all children are table elements */
+    
+html { overflow: hidden; }
+</style>
+    <!-- Font Awesome 6 (free) -->
+    
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Title Region (fixed cross-slide template) -->
+        <header class="title-section">
+            <div class="title-eyebrow-wrapper">
+                <span class="title-accent-mark"></span>
+                <span class="title-eyebrow-text">Лабораторна робота: AI-Помічник</span>
+            </div>
+            <h1 class="title-heading">Захист мініпроєкту</h1>
+            <div class="title-divider"></div>
+        </header>
+
+        <!-- Main body: grading matrix open layout -->
+        <div class="body-content">
+            <div class="grading-matrix-container">
+                <!-- Presentation scheme (compact chips) -->
+                <div class="presentation-scheme-block">
+                    <span class="presentation-scheme-label"><i class="fa-solid fa-users" style="margin-right: 8px; color: var(--ppt-accent-2);"></i>Презентація пари:</span>
+                    <span class="scheme-chip"><i class="fa-solid fa-tag"></i> Назва</span>
+                    <span class="scheme-chip"><i class="fa-solid fa-user"></i> Для кого</span>
+                    <span class="scheme-chip"><i class="fa-solid fa-lightbulb"></i> Проблема</span>
+                    <span class="scheme-chip"><i class="fa-solid fa-star"></i> Ключова функція</span>
+                    <span class="scheme-chip"><i class="fa-solid fa-shield-halved"></i> Одна межа</span>
+                    <span class="scheme-chip"><i class="fa-solid fa-flask"></i> Складний тест</span>
+                    <span class="scheme-chip"><i class="fa-solid fa-check-double"></i> Самоперевірка</span>
+                </div>
+
+                <!-- Exit ticket compact block -->
+                <div class="exit-ticket-block">
+                    <div class="exit-ticket-title"><i class="fa-solid fa-door-open" style="margin-right: 8px; color: var(--ppt-accent);"></i>Exit ticket</div>
+                    <div class="exit-ticket-phrases">
+                        <span><strong>Мій помічник буде корисним, якщо…</strong> чітко вирішує заявлену проблему.</span>
+                        <span class="exit-ticket-limitation"><strong>Його не можна використовувати для…</strong> дій поза межами компетенції.</span>
+                    </div>
+                </div>
+
+                <!-- Open rubric: 12-point scale, only horizontal dividers -->
+                <div class="rubric-table-wrapper">
+                    <table class="rubric-table">
+                        <thead>
+                            <tr>
+                                <th>Критерій</th>
+                                <th>Опис</th>
+                                <th>Бали</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="rubric-criterion">Задача</td>
+                                <td class="rubric-desc">Конкретна проблема, чіткий користувач, реалістичний результат</td>
+                                <td class="rubric-score">0–3</td>
+                            </tr>
+                            <tr>
+                                <td class="rubric-criterion">Інструкція</td>
+                                <td class="rubric-desc">Роль, мета, алгоритм, обмеження, поведінка в непевних ситуаціях</td>
+                                <td class="rubric-score">0–3</td>
+                            </tr>
+                            <tr>
+                                <td class="rubric-criterion">Безпека</td>
+                                <td class="rubric-desc">Приватні дані, межі компетенції, відмова від ризикованих порад</td>
+                                <td class="rubric-score">0–3</td>
+                            </tr>
+                            <tr>
+                                <td class="rubric-criterion">Тестування й презентація</td>
+                                <td class="rubric-desc">Типовий, неоднозначний, небезпечний сценарії; аналіз і вдосконалення</td>
+                                <td class="rubric-score">0–3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="rubric-note" style="margin-bottom: 3px !important;">
+                        <i class="fa-solid fa-graduation-cap" style="margin-right: 6px; color: var(--ppt-accent);"></i>Сумарно — 12 балів
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

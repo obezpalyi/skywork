@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Шаблон безпечного промпту</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Inter:wght@400;600&display=swap");
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Inter:wght@400;600&display=swap");
+
+    :root {
+      --ppt-bg: #FDFCFB;
+      --ppt-bg-soft: #F3F4F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF2FF;
+      --ppt-border: #E5E7EB;
+      --ppt-text-1: #111827;
+      --ppt-text-2: #4B5563;
+      --ppt-text-3: #9CA3AF;
+      --ppt-accent: #6366F1;
+      --ppt-accent-2: #10B981;
+      --ppt-chart-1: #6366F1;
+      --ppt-chart-2: #10B981;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #059669;
+      --ppt-warn: #D97706;
+      --ppt-bad: #DC2626;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 8px;
+      --ppt-radius-lg: 16px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0 0 0;
+      
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+
+    /* Title region — exact per design */
+    .title-region {
+      margin-top: 48px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-region-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-badge {
+      background-color: var(--ppt-accent);
+      color: white;
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .title-region-section-label {
+      color: var(--ppt-text-3);
+      font-family: var(--ppt-font-body);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .title-region-h1 {
+      margin: 0;
+      color: var(--ppt-text-1);
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 38px;
+      line-height: 1.2;
+    }
+
+    .title-region-rule {
+      width: 60px;
+      height: 4px;
+      background-color: var(--ppt-accent);
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    /* Special open layout: dominant template block left, evidence strip right */
+    .safety-template-body {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 48px;
+      gap: 32px;
+    }
+
+    .dominant-template-panel {
+      flex: 2.2;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      box-shadow: var(--ppt-shadow-soft);
+      padding: 28px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .template-panel-heading-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .template-panel-icon {
+      color: var(--ppt-accent);
+      font-size: 22px;
+      width: 32px;
+      text-align: center;
+    }
+
+    .template-panel-title {
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.2px;
+    }
+
+    .template-panel-divider {
+      width: 100%;
+      height: 2px;
+      background-color: var(--ppt-surface-2);
+      border-radius: 1px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    .template-panel-script {
+      font-family: var(--ppt-font-body);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ppt-text-1);
+      background-color: var(--ppt-bg-soft);
+      padding: 16px 20px;
+      border-radius: var(--ppt-radius-sm);
+      border-left: 4px solid var(--ppt-accent);
+      margin: 0;
+    }
+
+    .template-script-line {
+      margin-bottom: 8px;
+    }
+
+    .template-script-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .template-script-placeholder {
+      color: var(--ppt-accent);
+      font-weight: 600;
+    }
+
+    .template-panel-note {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+      background-color: transparent;
+      padding: 0;
+      margin-top: 6px;
+    }
+
+    .template-panel-note strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    /* Right vertical strip — safety evidence points */
+    .safety-evidence-strip {
+      flex: 1;
+      background-color: var(--ppt-accent-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .safety-strip-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .safety-strip-icon {
+      color: white;
+      font-size: 20px;
+    }
+
+    .safety-strip-title {
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 22px;
+      color: #ffffff;
+      letter-spacing: -0.2px;
+    }
+
+    .safety-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .safety-point-icon {
+      color: #ffffff;
+      font-size: 16px;
+      margin-top: 2px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .safety-point-text {
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: #ffffff;
+      margin: 0;
+      padding-top: 2px;
+    }
+
+    .safety-point-sub {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+      margin-top: 4px;
+    }
+
+    .safety-strip-footer {
+      margin-top: auto;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      padding-top: 16px;
+    }
+
+    .safety-strip-footer-text {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.4;
+    }
+
+    /* No page numbers, no decorative lines */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title region (fixed per design) -->
+    <header class="title-region">
+      <div class="title-region-eyebrow-row">
+        <span class="title-region-badge">IT CLASS</span>
+        <span class="title-region-section-label">Prompt Engineering</span>
+      </div>
+      <h1 class="title-region-h1">Шаблон безпечного промпту</h1>
+      <div class="title-region-rule"></div>
+    </header>
+
+    <!-- Special open layout: focus template + evidence strip -->
+    <div class="safety-template-body">
+      <!-- Left dominant template block -->
+      <div class="dominant-template-panel">
+        <div class="template-panel-heading-wrapper">
+          <i class="fa-solid fa-clipboard-list template-panel-icon" aria-hidden="true"></i>
+          <span class="template-panel-title">Універсальна структура запиту</span>
+        </div>
+        <div class="template-panel-divider"></div>
+        <div class="template-panel-script">
+          <div class="template-script-line">
+            «Ти — <span class="template-script-placeholder">[роль]</span>. Допоможи 
+            <span class="template-script-placeholder">[аудиторії]</span> виконати 
+            <span class="template-script-placeholder">[завдання]</span>.
+          </div>
+          <div class="template-script-line">
+            Контекст: <span class="template-script-placeholder">[…].</span> Обмеження: 
+            <span class="template-script-placeholder">[…].</span> Формат: 
+            <span class="template-script-placeholder">[…].</span>
+          </div>
+          <div class="template-script-line">
+            Якщо даних недостатньо, постав до трьох уточнювальних запитань. 
+            Наприкінці вкажи, що потрібно перевірити самостійно».
+          </div>
+        </div>
+        <div class="template-panel-note">
+          <strong>Роль редактора:</strong> користувач залишається відповідальним автором результату — він перевіряє, редагує та ухвалює остаточну версію.
+        </div>
+      </div>
+
+      <!-- Right narrow vertical safety evidence strip -->
+      <div class="safety-evidence-strip">
+        <div class="safety-strip-heading">
+          <i class="fa-solid fa-shield-halved safety-strip-icon" aria-hidden="true"></i>
+          <span class="safety-strip-title">Правила безпеки</span>
+        </div>
+
+        <div class="safety-point-item">
+          <i class="fa-solid fa-user-check safety-point-icon" aria-hidden="true"></i>
+          <div>
+            <p class="safety-point-text">Без приватних даних</p>
+            <p class="safety-point-sub">Жодних персональних відомостей у промпті</p>
+          </div>
+        </div>
+
+        <div class="safety-point-item">
+          <i class="fa-solid fa-circle-question safety-point-icon" aria-hidden="true"></i>
+          <div>
+            <p class="safety-point-text">Запити на уточнення</p>
+            <p class="safety-point-sub">До 3 питань, якщо бракує контексту</p>
+          </div>
+        </div>
+
+        <div class="safety-point-item">
+          <i class="fa-solid fa-check-double safety-point-icon" aria-hidden="true"></i>
+          <div>
+            <p class="safety-point-text">Перевірка фактів</p>
+            <p class="safety-point-sub">Модель позначає, що варто перевірити</p>
+          </div>
+        </div>
+
+        <div class="safety-point-item">
+          <i class="fa-solid fa-user safety-point-icon" aria-hidden="true"></i>
+          <div>
+            <p class="safety-point-text">Автор — користувач</p>
+            <p class="safety-point-sub">Остаточне рішення за людиною</p>
+          </div>
+        </div>
+
+        <div class="safety-strip-footer">
+          <p class="safety-strip-footer-text">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i> 
+            Безпечний промпт = чіткі межі + відповідальність.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome via CDN -->
+  
+
+</body></html>

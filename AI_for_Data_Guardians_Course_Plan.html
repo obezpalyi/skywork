@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI for Data Guardians: Strategic Enablement &amp; Governance</title>
+  <style>
+    :root {
+      --ink: #1d2939;
+      --muted: #667085;
+      --navy: #17324d;
+      --blue: #2f6fed;
+      --blue-soft: #eef4ff;
+      --teal: #087f8c;
+      --teal-soft: #e9f8f8;
+      --orange: #b54708;
+      --orange-soft: #fff4e8;
+      --line: #d9e2ec;
+      --paper: #ffffff;
+      --canvas: #f4f7fb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
+    .page {
+      max-width: 1050px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 10px 35px rgba(23, 50, 77, .08);
+    }
+    header {
+      padding: 64px 72px 54px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(105, 201, 255, .25), transparent 28%),
+        linear-gradient(135deg, #102a43, #1f5f83 65%, #087f8c);
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: .82;
+    }
+    h1, h2, h3, h4 { line-height: 1.2; }
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      letter-spacing: -.04em;
+    }
+    .subtitle {
+      max-width: 700px;
+      margin: 18px 0 0;
+      color: #d9f4f5;
+      font-size: 1.22rem;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 11px;
+      border: 1px solid rgba(255,255,255,.32);
+      border-radius: 999px;
+      color: #fff;
+      font-size: .88rem;
+      background: rgba(255,255,255,.1);
+    }
+    main { padding: 54px 72px 72px; }
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 10px;
+      margin: 0 0 50px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fbfcfe;
+    }
+    .toc a {
+      color: var(--navy);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    section { margin-top: 58px; }
+    section:first-of-type { margin-top: 0; }
+    h2 {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: 2rem;
+      letter-spacing: -.025em;
+    }
+    h3 {
+      margin: 36px 0 12px;
+      color: var(--blue);
+      font-size: 1.35rem;
+    }
+    h4 {
+      margin: 22px 0 10px;
+      color: var(--navy);
+      font-size: 1.08rem;
+    }
+    p { margin: 0 0 14px; }
+    .lead {
+      max-width: 820px;
+      color: #344054;
+      font-size: 1.08rem;
+    }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .skill {
+      padding: 18px;
+      border: 1px solid #cfe0ff;
+      border-radius: 12px;
+      background: var(--blue-soft);
+    }
+    .skill strong { display: block; margin-bottom: 5px; color: var(--navy); }
+    .module {
+      margin-top: 34px;
+      padding: 24px 26px 28px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fcfdff;
+    }
+    .module > h3 { margin-top: 0; }
+    .module-intro {
+      color: var(--muted);
+      font-style: italic;
+    }
+    .session {
+      margin-top: 20px;
+      padding: 20px 22px;
+      border-left: 5px solid var(--teal);
+      border-radius: 0 12px 12px 0;
+      background: var(--teal-soft);
+      break-inside: avoid;
+    }
+    .session.onsite {
+      border-left-color: var(--orange);
+      background: var(--orange-soft);
+    }
+    .session h4 { margin-top: 0; }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      padding: 4px 9px;
+      border-radius: 999px;
+      color: #175cd3;
+      font-size: .8rem;
+      font-weight: 700;
+      background: #dbeafe;
+    }
+    .onsite .badge:first-child {
+      color: var(--orange);
+      background: #fedfcd;
+    }
+    .session ul, .skills ul { margin: 0; padding-left: 20px; }
+    .strategy {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .strategy-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+    }
+    .strategy-item strong { color: var(--navy); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 22px;
+      font-size: .95rem;
+    }
+    th, td {
+      padding: 14px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: #fff; background: var(--navy); }
+    tr:nth-child(even) td { background: #f8fafc; }
+    footer {
+      padding: 26px 72px 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .9rem;
+      background: #fbfcfe;
+    }
+    @media (max-width: 720px) {
+      header, main, footer { padding-left: 24px; padding-right: 24px; }
+      header { padding-top: 42px; padding-bottom: 38px; }
+      main { padding-top: 34px; }
+      h2 { font-size: 1.7rem; }
+    }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: none; box-shadow: none; }
+      header { padding: 42px 48px; }
+      main { padding: 34px 48px 48px; }
+      footer { padding-left: 48px; padding-right: 48px; }
+      .module, .session, .strategy-item { break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <p class="eyebrow">Training course plan</p>
+      <h1>AI for Data Stewards: Strategic Enablement &amp; Governance</h1>
+      <p class="subtitle">A comprehensive 14-session curriculum for data specialists.</p>
+      <div class="meta">
+        <span class="pill">14 sessions</span>
+        <span class="pill">60–90 minutes each</span>
+        <span class="pill">Onsite workshops + online modules</span>
+      </div>
+    </header>
+
+    <main>
+      <nav class="toc" aria-label="Contents">
+        <a href="#overview">1. Overview &amp; objectives</a>
+        <a href="#course-plan">2. Detailed course plan</a>
+        <a href="#assessment">3. Assessment &amp; reporting</a>
+        <a href="#recommendations">4. Recommendations</a>
+      </nav>
+
+      <section id="overview">
+        <h2>1. Program Overview &amp; Objectives</h2>
+        <p class="lead">This curriculum is designed for data specialists who already possess foundational AI knowledge. Moving beyond basic definitions, the course focuses on the intersection of data stewardship, AI governance, and strategic business value.</p>
+        <p class="lead">The program consists of <strong>14 sessions (60–90 minutes each)</strong>, structured with two intensive onsite workshops bookending a series of specialized online modules.</p>
+
+        <h3>Target skills addressed</h3>
+        <div class="skills">
+          <div class="skill"><strong>AI literacy &amp; safe usage</strong>Elevate awareness of AI capabilities, safe usage protocols, and proactive opportunity identification.</div>
+          <div class="skill"><strong>Enable high-quality AI use cases</strong>Identify, frame, and sponsor use cases that are technically feasible, data-ready, and aligned with organizational priorities.</div>
+          <div class="skill"><strong>Reduce delivery and governance risk</strong>Build awareness of data-readiness prerequisites, algorithmic limitations, ethical considerations, and regulatory compliance.</div>
+          <div class="skill"><strong>Drive adoption and time-to-value</strong>Help users understand, trust, and act on AI outputs by embedding AI into decision-making.</div>
+        </div>
+      </section>
+
+      <section id="course-plan">
+        <h2>2. Detailed Course Plan</h2>
+
+        <article class="module">
+          <h3>Module 1: Foundations &amp; Opportunity Identification <small>(Onsite Workshop 1)</small></h3>
+          <p class="module-intro">This initial onsite workshop sets the strategic baseline, fosters collaboration, and aligns data stewards with the organization’s AI vision.</p>
+
+          <div class="session onsite">
+            <h4>Session 1: The Evolving Role of the Data Steward in the AI Era</h4>
+            <div class="badges"><span class="badge">Onsite</span><span class="badge">90 minutes</span><span class="badge">AI literacy &amp; safe usage</span></div>
+            <ul><li><strong>Content:</strong> Transitioning from traditional data governance to AI data stewardship; overview of AI strategy and acceptable-use policies.</li><li><strong>Structure:</strong> 30-minute lecture, 40-minute interactive group discussion on governance bottlenecks, and 20-minute Q&amp;A.</li></ul>
+          </div>
+
+          <div class="session onsite">
+            <h4>Session 2: Identifying and Sponsoring High-Value AI Use Cases</h4>
+            <div class="badges"><span class="badge">Onsite</span><span class="badge">90 minutes</span><span class="badge">Enable high-quality AI use cases</span></div>
+            <ul><li><strong>Content:</strong> Frameworks for spotting AI opportunities and differentiating feasible, high-ROI projects from hype.</li><li><strong>Structure:</strong> 45-minute methodology presentation and 45-minute breakout workshop to brainstorm and pitch use-case ideas.</li></ul>
+          </div>
+        </article>
+
+        <article class="module">
+          <h3>Module 2: Data Readiness &amp; Problem Framing <small>(Online)</small></h3>
+          <p class="module-intro">This module focuses on the technical and structural prerequisites for successful AI deployment.</p>
+
+          <div class="session">
+            <h4>Session 3: Assessing Data Readiness for AI Models</h4>
+            <div class="badges"><span class="badge">Online</span><span class="badge">60 minutes</span><span class="badge">Reduce delivery risk</span></div>
+            <ul><li><strong>Content:</strong> Define “data-ready”; evaluate data quality, volume, velocity, and lineage requirements for machine learning and generative AI.</li><li><strong>Structure:</strong> Case study of an AI project that failed because of poor data readiness, followed by a checklist walkthrough.</li></ul>
+          </div>
+
+          <div class="session">
+            <h4>Session 4: Framing the AI Problem &amp; Defining Success Metrics</h4>
+            <div class="badges"><span class="badge">Online</span><span class="badge">60 minutes</span><span class="badge">Enable high-quality AI use cases</span></div>
+            <ul><li><strong>Content:</strong> Translate business problems into AI/ML problems; establish baselines and define “good” using accuracy, precision, recall, and business ROI.</li><li><strong>Structure:</strong> Interactive webinar with live polling and a framing exercise using a dataset scenario.</li></ul>
+          </div>
+
+          <div class="session">
+            <h4>Session 5: Feasibility Analysis &amp; Resource Scoping</h4>
+            <div class="badges"><span class="badge">Online</span><span class="badge">60 minutes</span><span class="badge">Enable high-quality AI use cases</span></div>
+            <ul><li><strong>Content:</strong> Assess technical and operational feasibility; understand the compute, talent, and time needed to move from proof of concept to production.</li><li><strong>Structure:</strong> Expert presentation followed by Q&amp;A with a senior AI product manager.</li></ul>
+          </div>
+        </article>
+
+        <article class="module">
+          <h3>Module 3: Governance, Risk, and Ethics <small>(Online)</small></h3>
+          <p class="module-intro">These sessions safeguard the organization against risks introduced by artificial intelligence.</p>
+
+          <div class="session">
+            <h4>Session 6: Understanding AI Limitations &amp; Hallucinations</h4>
+            <div class="badges"><span class="badge">Online</span><span class="badge">60 minutes</span><span class="badge">Reduce governance risk</span></div>
+            <ul><li><strong>Content:</strong> Model degradation, drift, and large-language-model hallucinations; how data stewards can monitor and flag these issues.</li><li><strong>Structure:</strong> Technical walkthrough of model-monitoring dashboards and real-world AI failure examples.</li></ul>
+          </div>
+
+          <div class="session">
+            <h4>Session 7: AI Ethics, Bias Mitigation, and Fairness</h4>
+            <div class="badges"><span class="badge">Online</span><span class="badge">90 minutes</span><span class="badge">Reduce governance risk</span></div>
+            <ul><li><strong>Content:</strong> Identify historical bias in training data and apply techniques for measuring and mitigating bias.</li><li><strong>Structure:</strong> 45-minute lecture and 45-minute interactive case study on algorithmic bias in financial or HR decision-making.</li></ul>
+          </div>
+
+          <div class="session">
+            <h4>Session 8: Regulatory Requirements &amp; Compliance Landscape</h4>
+            <div class="badges"><span class="badge">Online</span><span class="badge">60 minutes</span><span class="badge">Reduce governance risk</span></div>
+            <ul><li><strong>Content:</strong> Overview of global AI regulations, including the EU AI Act and local privacy laws; the data steward’s role in compliance and auditability.</li><li><strong>Structure:</strong> Guest lecture from Legal/Compliance followed by Q&amp;A.</li></ul>
+          </div>
+
+          <div class="session">
+            <h4>Session 9: Safe Usage, Security Protocols, and IP Protection</h4>
+            <div class="badges"><span class="badge">Online</span><span class="badge">60 minutes</span><span class="badge">AI literacy &amp; safe usage</span></div>
+            <ul><li><strong>Content:</strong> Secure AI data pipelines, prevent leakage through third-party APIs, and protect intellectual property.</li><li><strong>Structure:</strong> Threat-modeling exercise and review of internal security protocols.</li></ul>
+          </div>
+        </article>
+
+        <article class="module">
+          <h3>Module 4: Driving Adoption &amp; Time-to-Value <small>(Online)</small></h3>
+          <p class="module-intro">This module focuses on ensuring that AI tools are trusted, adopted, and effectively used by the business.</p>
+
+          <div class="session">
+            <h4>Session 10: Explainability: Understanding and Trusting AI Outputs</h4>
+            <div class="badges"><span class="badge">Online</span><span class="badge">60 minutes</span><span class="badge">Drive adoption &amp; time-to-value</span></div>
+            <ul><li><strong>Content:</strong> Introduction to explainable AI; interpret model outputs and communicate the “why” behind AI decisions to non-technical stakeholders.</li><li><strong>Structure:</strong> Demonstration of explainability concepts and tools such as SHAP and LIME.</li></ul>
+          </div>
+
+          <div class="session">
+            <h4>Session 11: Embedding AI into Decision-Making Workflows</h4>
+            <div class="badges"><span class="badge">Online</span><span class="badge">60 minutes</span><span class="badge">Drive adoption &amp; time-to-value</span></div>
+            <ul><li><strong>Content:</strong> Move from standalone dashboards to integrated workflows; design human-in-the-loop systems for critical decisions.</li><li><strong>Structure:</strong> Workflow-mapping exercise using digital whiteboards.</li></ul>
+          </div>
+
+          <div class="session">
+            <h4>Session 12: Change Management for AI Adoption</h4>
+            <div class="badges"><span class="badge">Online</span><span class="badge">60 minutes</span><span class="badge">Drive adoption &amp; time-to-value</span></div>
+            <ul><li><strong>Content:</strong> Overcome organizational resistance, upskill end users, and foster a data-driven culture.</li><li><strong>Structure:</strong> Panel discussion with business leaders who have driven AI adoption.</li></ul>
+          </div>
+        </article>
+
+        <article class="module">
+          <h3>Module 5: Capstone &amp; Assessment <small>(Onsite Workshop 2)</small></h3>
+          <p class="module-intro">The final onsite workshop assesses learning outcomes and provides a forum for program evaluation.</p>
+
+          <div class="session onsite">
+            <h4>Session 13: Capstone Presentations: Pitching a Governed AI Use Case</h4>
+            <div class="badges"><span class="badge">Onsite</span><span class="badge">90 minutes</span><span class="badge">Comprehensive assessment</span></div>
+            <ul><li><strong>Content:</strong> Present a fully framed AI use case developed throughout the course, addressing data readiness, risk mitigation, and adoption strategy.</li><li><strong>Structure:</strong> Ten-minute presentations per group followed by feedback from senior leaders acting as sponsors.</li></ul>
+          </div>
+
+          <div class="session onsite">
+            <h4>Session 14: Program Review, Feedback, and Continuous Improvement</h4>
+            <div class="badges"><span class="badge">Onsite</span><span class="badge">60 minutes</span><span class="badge">Program effectiveness</span></div>
+            <ul><li><strong>Content:</strong> Review key takeaways, collect structured feedback, discuss next steps, and identify continuous learning paths.</li><li><strong>Structure:</strong> Facilitated retrospective, detailed feedback survey, and closing remarks.</li></ul>
+          </div>
+        </article>
+      </section>
+
+      <section id="assessment">
+        <h2>3. Assessment, Feedback &amp; Reporting Strategy</h2>
+        <div class="strategy">
+          <div class="strategy-item"><strong>Participant progress.</strong> Use the Session 13 capstone as the primary practical assessment. Add three-question pulse checks at the end of each online session.</div>
+          <div class="strategy-item"><strong>Formative feedback.</strong> Collect anonymous digital polls after Modules 2 and 3 to support mid-course corrections.</div>
+          <div class="strategy-item"><strong>Summative feedback.</strong> Use a standardized Session 14 survey covering NPS, content relevance, and instructor effectiveness.</div>
+          <div class="strategy-item"><strong>Final summary report.</strong> Within two weeks of completion, report cohort performance and engagement, the portfolio of generated AI use cases, aggregated feedback, and recommendations for curriculum improvement.</div>
+        </div>
+      </section>
+
+      <section id="recommendations">
+        <h2>4. Recommendations Based on Successful AI Literacy Projects</h2>
+        <table>
+          <thead><tr><th>Recommendation</th><th>Rationale and implementation</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Establish an “AI Champions” network</strong></td><td>Identify high-performing data stewards to serve as peer resources in their departments, reducing the bottleneck on central data-science teams.</td></tr>
+            <tr><td><strong>Implement a “Use Case Sandbox”</strong></td><td>Provide a secure, ring-fenced environment where participants can explore LLMs or ML models with synthetic company data.</td></tr>
+            <tr><td><strong>Gamify risk identification</strong></td><td>Use a red-teaming exercise in Sessions 6–9 to find flaws, bias, and security loopholes in a dummy AI model.</td></tr>
+            <tr><td><strong>Create continuous-learning micro-modules</strong></td><td>Offer a quarterly 30-minute AI Update webinar covering regulation, model capabilities, and changes to data-readiness standards.</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>AI for Data Guardians — Course Plan</strong></p>
+      <p>Prepared as a self-contained HTML course-plan document from the supplied Markdown source.</p>
+    </footer>
+  </div>
+</body>
+</html>

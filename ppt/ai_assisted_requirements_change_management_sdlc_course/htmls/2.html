@@ -1,0 +1,294 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Робоча проблема, яку вирішує курс</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">:root {
+  --ppt-chart-1: #2563EB;
+  --ppt-chart-2: #06B6D4;
+  --ppt-chart-3: #6366F1;
+  --ppt-chart-4: #F59E0B;
+  --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .sdlc-slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      
+    }
+
+    .title-region-header-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-breadcrumb-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .sdlc-problem-main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0 60px 40px 60px;
+      gap: 32px;
+    }
+
+    .sdlc-context-lead-statement {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      padding-left: 12px;
+      border-left: 2px solid var(--ppt-border);
+    }
+
+    .sdlc-problem-grid-layout {
+      display: flex;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .sdlc-problem-card-item {
+      flex: 1;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .sdlc-problem-card-icon-box {
+      width: 48px;
+      height: 48px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--ppt-accent);
+      font-size: 24px;
+    }
+
+    .sdlc-problem-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .sdlc-problem-card-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sdlc-problem-card-list-entry {
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .sdlc-problem-card-list-entry i {
+      color: var(--ppt-text-3);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .sdlc-impact-summary-wrapper {
+      background-color: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sdlc-impact-summary-label {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ppt-bad);
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sdlc-impact-grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .sdlc-impact-outcome-badge {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px;
+      background-color: var(--ppt-surface);
+      border-left: 3px solid var(--ppt-bad);
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .sdlc-impact-outcome-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .sdlc-impact-outcome-desc {
+      font-size: 13px;
+      color: var(--ppt-text-2);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="sdlc-slide-root-container">
+    <header class="title-region-header-wrapper">
+      <div class="title-region-breadcrumb-label">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-main-heading">Робоча проблема, яку вирішує курс</h1>
+    </header>
+
+    <main class="sdlc-problem-main-content">
+      <div class="sdlc-context-lead-statement">
+        Команди одночасно підтримують багато проєктів і продуктів у динамічному середовищі
+      </div>
+
+      <div class="sdlc-problem-grid-layout">
+        <section class="sdlc-problem-card-item">
+          <div class="sdlc-problem-card-icon-box">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h2 class="sdlc-problem-card-title">Розпорошеність даних</h2>
+          <ul class="sdlc-problem-card-list">
+            <li class="sdlc-problem-card-list-entry"><i class="fa-solid fa-circle"></i> Вимоги в протоколах зустрічей, пошті та ТЗ</li>
+            <li class="sdlc-problem-card-list-entry"><i class="fa-solid fa-circle"></i> Розрив між Jira та проєктною документацією</li>
+          </ul>
+        </section>
+
+        <section class="sdlc-problem-card-item">
+          <div class="sdlc-problem-card-icon-box">
+            <i class="fa-solid fa-file-circle-exclamation"></i>
+          </div>
+          <h2 class="sdlc-problem-card-title">Хаотичні зміни</h2>
+          <ul class="sdlc-problem-card-list">
+            <li class="sdlc-problem-card-list-entry"><i class="fa-solid fa-circle"></i> Change requests «мовою замовника»</li>
+            <li class="sdlc-problem-card-list-entry"><i class="fa-solid fa-circle"></i> Відсутність контексту та аналізу впливу</li>
+          </ul>
+        </section>
+
+        <section class="sdlc-problem-card-item">
+          <div class="sdlc-problem-card-icon-box">
+            <i class="fa-solid fa-users-slash"></i>
+          </div>
+          <h2 class="sdlc-problem-card-title">Комунікаційний розрив</h2>
+          <ul class="sdlc-problem-card-list">
+            <li class="sdlc-problem-card-list-entry"><i class="fa-solid fa-circle"></i> Різне розуміння змін BA, QA та DevOps</li>
+            <li class="sdlc-problem-card-list-entry"><i class="fa-solid fa-circle"></i> Втрата знань при зміні складу команди</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="sdlc-impact-summary-wrapper" style="margin-bottom: 4px !important;">
+        <div class="sdlc-impact-summary-label">
+          <i class="fa-solid fa-triangle-exclamation"></i> Бізнес-наслідки та ризики
+        </div>
+        <div class="sdlc-impact-grid-container">
+          <div class="sdlc-impact-outcome-badge">
+            <div class="sdlc-impact-outcome-title">Повторна робота</div>
+            <div class="sdlc-impact-outcome-desc">Через некоректне розуміння</div>
+          </div>
+          <div class="sdlc-impact-outcome-badge">
+            <div class="sdlc-impact-outcome-title">Пропущені сценарії</div>
+            <div class="sdlc-impact-outcome-desc">Вимоги не покриті тестами</div>
+          </div>
+          <div class="sdlc-impact-outcome-badge">
+            <div class="sdlc-impact-outcome-title">Ризики релізу</div>
+            <div class="sdlc-impact-outcome-desc">Непередбачуваний вплив змін</div>
+          </div>
+          <div class="sdlc-impact-outcome-badge">
+            <div class="sdlc-impact-outcome-title">Неактуальність</div>
+            <div class="sdlc-impact-outcome-desc">Застаріла документація</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body></html>

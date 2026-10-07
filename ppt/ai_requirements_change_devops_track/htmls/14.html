@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Спостережуваність для Critical Service Request</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;500&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #64748B;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #10B981;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #10B981;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #6366F1;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Roboto Mono", monospace;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }.slide-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 60px 19px 60px;
+      
+      box-shadow: var(--ppt-shadow-strong);
+    }.title-region{
+      margin-top: 24px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-left: 6px solid var(--ppt-accent);
+      padding-left: 20px;
+      flex-shrink: 0;
+    }
+
+    .title-eyebrow {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .title-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--ppt-text-1);
+      margin: 0;
+    }
+
+    .title-subheading {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      margin-top: 2px;
+    }.observability-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px 16px;
+      
+    }.observability-signal-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 8px 14px;
+      flex: 1 1 0;
+    }.signal-module-left, .signal-module-right{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 11px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .signal-module-left {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .signal-module-right {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    .signal-module-left-secondary {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    .signal-module-right-secondary {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }.signal-module-header{
+      display: flex;
+      align-items: center;
+      gap: 6px 10px;
+      margin-bottom: 7px;
+    }
+
+    .signal-module-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--ppt-radius-md);
+      background: var(--ppt-bg-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .signal-module-title {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ppt-text-1);
+    }.signal-module-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px 8px;
+      flex: 1 1 0;
+    }
+
+    .signal-module-list-item {
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .signal-module-list-item::before {
+      content: "›";
+      position: absolute;
+      left: 4px;
+      color: var(--ppt-accent);
+      font-weight: 600;
+    }.signal-module-note{
+      margin-top: 7px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: var(--ppt-text-3);
+      border-top: 1px solid var(--ppt-surface-2);
+      padding-top: 6px;
+    }.observability-chart-container{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 8px 16px 5px 16px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 0;
+      
+    }.observability-chart-header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2px;
+      flex-shrink: 0;
+    }
+
+    .observability-chart-title {
+      font-family: var(--ppt-font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .observability-chart-subtitle {
+      font-size: 12px;
+      color: var(--ppt-text-3);
+    }.chart-box{
+      width: 100%;
+      height: 153px;
+      flex-shrink: 0;
+    }
+
+    .observability-footer-note {
+      margin-top: 2px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: var(--ppt-text-3);
+      padding-left: 4px;
+      flex-shrink: 0;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title Region -->
+    <header class="title-region">
+      <div class="title-eyebrow">DevOps Track | AI-Assisted SDLC</div>
+      <h1 class="title-heading">Спостережуваність для Critical Service Request</h1>
+      <div class="title-subheading">Сигнали успіху ескалації, затримки обробки та черги повідомлень у відповідності до бізнес-ризиків</div>
+    </header>
+
+    <!-- Body Content -->
+    <div class="observability-body-wrapper">
+      <!-- Top row: two signal modules -->
+      <div class="observability-signal-grid">
+        <!-- Left module: success &amp; failure signals -->
+        <div class="signal-module-left">
+          <div class="signal-module-header">
+            <div class="signal-module-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="signal-module-title">Сигнали успіху та збоїв ескалації</div>
+          </div>
+          <ul class="signal-module-list">
+            <li class="signal-module-list-item">Кількість створених критичних запитів</li>
+            <li class="signal-module-list-item">Подія успішної ескалації (success)</li>
+            <li class="signal-module-list-item">Помилка ескалації (failure)</li>
+            <li class="signal-module-list-item">Час до SLA та прострочені запити</li>
+          </ul>
+          <div class="signal-module-note">SLO-поріг підтверджується власником сервісу</div>
+        </div>
+
+        <!-- Right module: latency &amp; queues -->
+        <div class="signal-module-right">
+          <div class="signal-module-header">
+            <div class="signal-module-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="signal-module-title">Затримки обробки та черги</div>
+          </div>
+          <ul class="signal-module-list">
+            <li class="signal-module-list-item">Латентність обробки запиту (p95/p99)</li>
+            <li class="signal-module-list-item">Поточна довжина черги повідомлень</li>
+            <li class="signal-module-list-item">Дублікати подій ескалації</li>
+            <li class="signal-module-list-item">Стан feature-flag та регіон/клієнт</li>
+          </ul>
+          <div class="signal-module-note">Пороги не вигадуються Xplore — потрібне підтвердження власника</div>
+        </div>
+
+        <!-- Left secondary: notification delivery -->
+        <div class="signal-module-left signal-module-left-secondary">
+          <div class="signal-module-header">
+            <div class="signal-module-icon"><i class="fa-solid fa-bell"></i></div>
+            <div class="signal-module-title">Доставка сповіщень</div>
+          </div>
+          <ul class="signal-module-list">
+            <li class="signal-module-list-item">Успіх/помилка доставки email або Teams</li>
+            <li class="signal-module-list-item">Час доставки сповіщення</li>
+            <li class="signal-module-list-item">Повторні спроби та альтернативний канал</li>
+          </ul>
+          <div class="signal-module-note">Відмова каналу не має блокувати ескалацію</div>
+        </div>
+
+        <!-- Right secondary: business alignment -->
+        <div class="signal-module-right signal-module-right-secondary">
+          <div class="signal-module-header">
+            <div class="signal-module-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="signal-module-title">Узгодження з бізнес-ризиками</div>
+          </div>
+          <ul class="signal-module-list">
+            <li class="signal-module-list-item">Метрика відповідності обробки критичних запитів</li>
+            <li class="signal-module-list-item">Алерт відповідає SLA, а не лише CPU</li>
+            <li class="signal-module-list-item">Вимірювання черги та затримки як індикатор ризику</li>
+          </ul>
+          <div class="signal-module-note">Спостережуваність відображає бізнес-критичну поведінку</div>
+        </div>
+      </div>
+
+      <!-- Chart block (single bar chart) -->
+      <div class="observability-chart-container">
+        <div class="observability-chart-header">
+          <span class="observability-chart-title">Ключові сигнали моніторингу</span>
+          <span class="observability-chart-subtitle">індикативні значення для Critical Service Request</span>
+        </div>
+        <div id="observabilityChart" class="chart-box"></div>
+        <div class="observability-footer-note">Джерело: Session OPS-2, слайд 14 — сигнали для Critical Service Request</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome -->
+  
+
+  <!-- ECharts -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+
+  <script>
+    (function() {
+      var chartDom = document.getElementById('observabilityChart');
+      if (!chartDom) return;
+      var myChart = echarts.init(chartDom);
+      var option = {
+        grid: {
+          top: 20,
+          right: 20,
+          bottom: 30,
+          left: 80
+        },
+        xAxis: {
+          type: 'category',
+          data: ['Створено запитів', 'Ескалацій успішно', 'Помилок ескалації', 'Прострочено SLA', 'Дублікатів подій'],
+          axisLabel: {
+            color: '#475569',
+            fontSize: 11,
+            interval: 0,
+            rotate: 15,
+            overflow: 'break'
+          },
+          axisLine: {
+            lineStyle: { color: '#CBD5E1' }
+          }
+        },
+        yAxis: {
+          type: 'value',
+          name: 'кількість',
+          nameTextStyle: { color: '#64748B', fontSize: 11 },
+          axisLabel: { color: '#475569', fontSize: 11 },
+          splitLine: {
+            lineStyle: { color: '#E2E8F0' }
+          }
+        },
+        series: [{
+          type: 'bar',
+          data: [120, 108, 12, 7, 3],
+          itemStyle: {
+            color: '#2563EB',
+            borderRadius: [2, 2, 0, 0]
+          },
+          label: {
+            show: true,
+            position: 'top',
+            color: '#0F172A',
+            fontSize: 12,
+            fontWeight: 600
+          },
+          barWidth: '40%'
+        }]
+      };
+      myChart.setOption(option);
+
+      window.addEventListener('resize', function() {
+        myChart.resize();
+      });
+    })();
+  </script>
+
+</body></html>

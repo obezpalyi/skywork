@@ -1,0 +1,401 @@
+{
+  "schema_version": 2,
+  "ppt_style": "html",
+  "page_count": 77,
+  "pages": [
+    {
+      "id": "1",
+      "html": "htmls/1.html"
+    },
+    {
+      "id": "2",
+      "html": "htmls/2.html"
+    },
+    {
+      "id": "3",
+      "html": "htmls/3.html"
+    },
+    {
+      "id": "4",
+      "html": "htmls/4.html"
+    },
+    {
+      "id": "5",
+      "html": "htmls/5.html"
+    },
+    {
+      "id": "6",
+      "html": "htmls/6.html"
+    },
+    {
+      "id": "7",
+      "html": "htmls/7.html"
+    },
+    {
+      "id": "8",
+      "html": "htmls/8.html"
+    },
+    {
+      "id": "9",
+      "html": "htmls/9.html"
+    },
+    {
+      "id": "10",
+      "html": "htmls/10.html"
+    },
+    {
+      "id": "11",
+      "html": "htmls/11.html"
+    },
+    {
+      "id": "12",
+      "html": "htmls/12.html"
+    },
+    {
+      "id": "13",
+      "html": "htmls/13.html"
+    },
+    {
+      "id": "14",
+      "html": "htmls/14.html"
+    },
+    {
+      "id": "15",
+      "html": "htmls/15.html"
+    },
+    {
+      "id": "16",
+      "html": "htmls/16.html"
+    },
+    {
+      "id": "17",
+      "html": "htmls/17.html"
+    },
+    {
+      "id": "18",
+      "html": "htmls/18.html"
+    },
+    {
+      "id": "19",
+      "html": "htmls/19.html"
+    },
+    {
+      "id": "20",
+      "html": "htmls/20.html"
+    },
+    {
+      "id": "21",
+      "html": "htmls/21.html"
+    },
+    {
+      "id": "22",
+      "html": "htmls/22.html"
+    },
+    {
+      "id": "23",
+      "html": "htmls/23.html"
+    },
+    {
+      "id": "24",
+      "html": "htmls/24.html"
+    },
+    {
+      "id": "25",
+      "html": "htmls/25.html"
+    },
+    {
+      "id": "26",
+      "html": "htmls/26.html"
+    },
+    {
+      "id": "27",
+      "html": "htmls/27.html"
+    },
+    {
+      "id": "28",
+      "html": "htmls/28.html"
+    },
+    {
+      "id": "29",
+      "html": "htmls/29.html"
+    },
+    {
+      "id": "30",
+      "html": "htmls/30.html"
+    },
+    {
+      "id": "31",
+      "html": "htmls/31.html"
+    },
+    {
+      "id": "32",
+      "html": "htmls/32.html"
+    },
+    {
+      "id": "33",
+      "html": "htmls/33.html"
+    },
+    {
+      "id": "34",
+      "html": "htmls/34.html"
+    },
+    {
+      "id": "35",
+      "html": "htmls/35.html"
+    },
+    {
+      "id": "36",
+      "html": "htmls/36.html"
+    },
+    {
+      "id": "37",
+      "html": "htmls/37.html"
+    },
+    {
+      "id": "38",
+      "html": "htmls/38.html"
+    },
+    {
+      "id": "39",
+      "html": "htmls/39.html"
+    },
+    {
+      "id": "40",
+      "html": "htmls/40.html"
+    },
+    {
+      "id": "41",
+      "html": "htmls/41.html"
+    },
+    {
+      "id": "42",
+      "html": "htmls/42.html"
+    },
+    {
+      "id": "43",
+      "html": "htmls/43.html"
+    },
+    {
+      "id": "44",
+      "html": "htmls/44.html"
+    },
+    {
+      "id": "45",
+      "html": "htmls/45.html"
+    },
+    {
+      "id": "46",
+      "html": "htmls/46.html"
+    },
+    {
+      "id": "47",
+      "html": "htmls/47.html"
+    },
+    {
+      "id": "48",
+      "html": "htmls/48.html"
+    },
+    {
+      "id": "49",
+      "html": "htmls/49.html"
+    },
+    {
+      "id": "50",
+      "html": "htmls/50.html"
+    },
+    {
+      "id": "51",
+      "html": "htmls/51.html"
+    },
+    {
+      "id": "52",
+      "html": "htmls/52.html"
+    },
+    {
+      "id": "53",
+      "html": "htmls/53.html"
+    },
+    {
+      "id": "54",
+      "html": "htmls/54.html"
+    },
+    {
+      "id": "55",
+      "html": "htmls/55.html"
+    },
+    {
+      "id": "56",
+      "html": "htmls/56.html"
+    },
+    {
+      "id": "57",
+      "html": "htmls/57.html"
+    },
+    {
+      "id": "58",
+      "html": "htmls/58.html"
+    },
+    {
+      "id": "59",
+      "html": "htmls/59.html"
+    },
+    {
+      "id": "60",
+      "html": "htmls/60.html"
+    },
+    {
+      "id": "61",
+      "html": "htmls/61.html"
+    },
+    {
+      "id": "62",
+      "html": "htmls/62.html"
+    },
+    {
+      "id": "63",
+      "html": "htmls/63.html"
+    },
+    {
+      "id": "64",
+      "html": "htmls/64.html"
+    },
+    {
+      "id": "65",
+      "html": "htmls/65.html"
+    },
+    {
+      "id": "66",
+      "html": "htmls/66.html"
+    },
+    {
+      "id": "67",
+      "html": "htmls/67.html"
+    },
+    {
+      "id": "68",
+      "html": "htmls/68.html"
+    },
+    {
+      "id": "69",
+      "html": "htmls/69.html"
+    },
+    {
+      "id": "70",
+      "html": "htmls/70.html"
+    },
+    {
+      "id": "71",
+      "html": "htmls/71.html"
+    },
+    {
+      "id": "72",
+      "html": "htmls/72.html"
+    },
+    {
+      "id": "73",
+      "html": "htmls/73.html"
+    },
+    {
+      "id": "74",
+      "html": "htmls/74.html"
+    },
+    {
+      "id": "75",
+      "html": "htmls/75.html"
+    },
+    {
+      "id": "76",
+      "html": "htmls/76.html"
+    },
+    {
+      "id": "77",
+      "html": "htmls/77.html"
+    }
+  ],
+  "generation": {
+    "status": "success",
+    "total_pages": 77,
+    "success_pages": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "48",
+      "49",
+      "50",
+      "51",
+      "52",
+      "53",
+      "54",
+      "55",
+      "56",
+      "57",
+      "58",
+      "59",
+      "60",
+      "61",
+      "62",
+      "63",
+      "64",
+      "65",
+      "66",
+      "67",
+      "68",
+      "69",
+      "70",
+      "71",
+      "72",
+      "73",
+      "74",
+      "75",
+      "76",
+      "77"
+    ],
+    "language": "Ukrainian",
+    "prepared_state_id": "pps_07aa75cab74104117e4ad73d37df7b05",
+    "prepared_state_version": 1
+  }
+}

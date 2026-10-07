@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <title>Управління вимогами та змінами в SDLC із застосуванням штучного інтелекту</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      box-sizing: border-box;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }.title-region-wrapper{
+      margin-top: 32px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }.content-main-layout{
+      flex: 1;
+      display: flex;
+      align-items: stretch;
+      gap: 26px 32px;
+      padding: 0 60px 38px 60px;
+    }
+
+    .left-workflow-column {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }.right-analysis-column{
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 19px 24px;
+    }
+
+    .process-steps-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px;
+    }
+
+    .process-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding-bottom: 20px;
+      position: relative;
+      list-style: none;
+    }
+
+    .process-step-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 24px;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--ppt-border);
+    }
+
+    .process-step-marker {
+      width: 24px;
+      height: 24px;
+      background-color: var(--ppt-accent);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 10px;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .process-step-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .process-step-title {
+      font-family: var(--ppt-font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .process-step-desc {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+    }.analysis-card-module{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 19px 24px;
+      box-shadow: var(--ppt-shadow-soft);
+    }.analysis-card-header{
+      display: flex;
+      align-items: center;
+      gap: 10px 12px;
+      margin-bottom: 13px;
+    }
+
+    .analysis-card-icon {
+      font-size: 20px;
+      color: var(--ppt-accent);
+    }
+
+    .analysis-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }.analysis-list-wrapper{
+      display: flex;
+      flex-direction: column;
+      gap: 10px 12px;
+    }.analysis-list-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px 12px;
+      list-style: none;
+    }.analysis-list-bullet{
+      margin-top: 5px;
+      font-size: 8px;
+      color: var(--ppt-accent-2);
+    }
+
+    .analysis-list-text {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .analysis-list-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }.footer-takeaway-box{
+      margin-top: 13px;
+      padding: 10px 12px;
+      background-color: rgba(37, 99, 235, 0.05);
+      border-left: 3px solid var(--ppt-accent);
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      font-style: italic;
+    }
+
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+
+  <div class="slide-root-container">
+    <header class="title-region-wrapper">
+      <div class="title-region-subtitle">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-heading">Карта поточного процесу</h1>
+    </header>
+
+    <main class="content-main-layout" style="margin-bottom: 3px !important;">
+      <!-- Left: As-Is Manual Workflow -->
+      <section class="left-workflow-column">
+        <div class="process-steps-container">
+          <div style="font-size: 14px; font-weight: 700; color: var(--ppt-text-3); text-transform: uppercase; margin-bottom: 16px;">Поточний ручний workflow (AS-IS)</div>
+          
+          <div class="process-step-item">
+            <div class="process-step-marker"><i class="fa-solid fa-inbox"></i></div>
+            <div class="process-step-content">
+              <span class="process-step-title">Отримання запиту (Intake)</span>
+              <span class="process-step-desc">Листи, месенджери, протоколи зустрічей.</span>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div class="process-step-marker"><i class="fa-solid fa-circle-question"></i></div>
+            <div class="process-step-content">
+              <span class="process-step-title">Ручний пошук контексту</span>
+              <span class="process-step-desc">Перевірка старих ТЗ, Jira та листування.</span>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div class="process-step-marker"><i class="fa-solid fa-pen-nib"></i></div>
+            <div class="process-step-content">
+              <span class="process-step-title">Формування вимоги</span>
+              <span class="process-step-desc">Складання чернетки на основі власного досвіду.</span>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div class="process-step-marker"><i class="fa-solid fa-comments"></i></div>
+            <div class="process-step-content">
+              <span class="process-step-title">Цикли уточнень</span>
+              <span class="process-step-desc">Зустрічі з SME для заповнення прогалин.</span>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div class="process-step-marker"><i class="fa-solid fa-circle-question"></i></div>
+            <div class="process-step-content">
+              <span class="process-step-title">Оновлення артефактів</span>
+              <span class="process-step-desc">Ручне перенесення даних у Jira та Wiki.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Friction Points &amp; Risk Zones -->
+      <section class="right-analysis-column">
+        <!-- Card 1: Delay Points -->
+        <div class="analysis-card-module">
+          <div class="analysis-card-header">
+            <i class="fa-solid fa-hourglass-half analysis-card-icon"></i>
+            <h2 class="analysis-card-title">Точки затримок</h2>
+          </div>
+          <div class="analysis-list-wrapper">
+            <div class="analysis-list-item">
+              <i class="fa-solid fa-circle analysis-list-bullet"></i>
+              <span class="analysis-list-text"><strong>Розпорошеність даних:</strong> Витрати часу на пошук рішень у різних джерелах.</span>
+            </div>
+            <div class="analysis-list-item">
+              <i class="fa-solid fa-circle analysis-list-bullet"></i>
+              <span class="analysis-list-text"><strong>Ручне копіювання:</strong> Перенесення вимог між документами та Task Tracker.</span>
+            </div>
+            <div class="analysis-list-item">
+              <i class="fa-solid fa-circle analysis-list-bullet"></i>
+              <span class="analysis-list-text"><strong>Очікування SME:</strong> Паузи через неможливість швидко знайти відповідь у документації.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Risk Zones -->
+        <div class="analysis-card-module">
+          <div class="analysis-card-header">
+            <i class="fa-solid fa-triangle-exclamation analysis-card-icon" style="color: var(--ppt-warn);"></i>
+            <h2 class="analysis-card-title">Зони ризику</h2>
+          </div>
+          <div class="analysis-list-wrapper">
+            <div class="analysis-list-item">
+              <i class="fa-solid fa-circle analysis-list-bullet"></i>
+              <span class="analysis-list-text"><strong>Втрата контексту:</strong> Неврахування попередніх рішень або обмежень системи.</span>
+            </div>
+            <div class="analysis-list-item">
+              <i class="fa-solid fa-circle analysis-list-bullet"></i>
+              <span class="analysis-list-text"><strong>Суперечливі версії:</strong> Використання застарілих вимог при оцінці змін.</span>
+            </div>
+            <div class="analysis-list-item">
+              <i class="fa-solid fa-circle analysis-list-bullet"></i>
+              <span class="analysis-list-text"><strong>Human Factor:</strong> Пропущені edge cases або нефункціональні критерії.</span>
+            </div>
+          </div>
+          <div class="footer-takeaway-box">
+            Мета: виявити етапи, де AI-асистент може забезпечити миттєве відновлення контексту та валідацію.
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+</body></html>

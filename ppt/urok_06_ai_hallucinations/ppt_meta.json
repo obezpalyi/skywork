@@ -1,0 +1,172 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "urok_06_ai_hallucinations",
+  "artifact_path": "ppt/urok_06_ai_hallucinations",
+  "pptTitle": "AI hallucinations",
+  "ppt_title": "AI hallucinations",
+  "outlineArtifactPath": "ppt/urok_06_ai_hallucinations/outline.md",
+  "outline_artifact_path": "ppt/urok_06_ai_hallucinations/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-2e737975f6.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-2e737975f6.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-2e737975f6.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_06_ai_hallucinations/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_06_ai_hallucinations/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-2e737975f6.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-2e737975f6.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_06_ai_hallucinations/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_06_ai_hallucinations/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи українською мовою окрему навчальну презентацію для уроку інформатики в 11 класі на тему «AI hallucinations». Рівно 10 слайдів: порівняння двох відповідей, визначення галюцинації, причини, червоні прапорці, алгоритм фактчекінгу, лабораторія перевірки, ієрархія джерел, промпт для перевірки, підсумок і домашнє завдання.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "auto_increase_ratio": 0.35,
+  "auto_increase_bucket": 0.5898,
+  "region": "US",
+  "prepared_session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "prepared_question_id": "Q-4a812a49c9b3",
+  "prepared_target_path": "ppt/urok_06_ai_hallucinations",
+  "prepared_state_id": "pps_ceebdcd397d1e3cfe6c9f0c30ac6c5c5",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:3273868dfe382276f4155fc4123e3463791454b1b8ced6d119609d79cf0db23c",
+  "init_request_fingerprint": "sha256:4039c28a71b89ed0b1d25dc3cccee206ec60a5da9fe75bcd79469b400c19a8cf",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:dddcbc51e3968e1cc5f9d33379aa09b631455241183d2facd0a83bd44aeb6aad",
+  "outline_artifact_sha256": "sha256:f93332213071c2bc46591783f2fc63ee1582b1b682958a566d77fabe88653778",
+  "prepared_inputs": [
+    {
+      "path": "ppt/urok_06_ai_hallucinations/design_guideline.md",
+      "size": 8710,
+      "sha256": "sha256:c6b952307f4890b0b9fb2b7202f719952cfc3fd225f107ca9f3c2ca0a77dae6b"
+    },
+    {
+      "path": "ppt/urok_06_ai_hallucinations/final_report.md",
+      "size": 5442,
+      "sha256": "sha256:dddcbc51e3968e1cc5f9d33379aa09b631455241183d2facd0a83bd44aeb6aad"
+    },
+    {
+      "path": "ppt/urok_06_ai_hallucinations/outline.json",
+      "size": 28766,
+      "sha256": "sha256:17543c57e72c396c379027f1954e137bbdaddebc42f70466d67d754083185595"
+    },
+    {
+      "path": "ppt/urok_06_ai_hallucinations/outline.md",
+      "size": 3466,
+      "sha256": "sha256:f93332213071c2bc46591783f2fc63ee1582b1b682958a566d77fabe88653778"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success_with_warnings",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "auto_mode",
+      "auto_increase_miss",
+      "standard_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "skipped_not_needed"
+    },
+    "dropped_images": null,
+    "warnings": [
+      {
+        "scope": "image_description",
+        "image_index": 6,
+        "source": "search",
+        "error_code": "internalError",
+        "impact": "dropped_candidate",
+        "terminal": false
+      },
+      {
+        "scope": "image_description",
+        "image_index": 7,
+        "source": "search",
+        "error_code": "internalError",
+        "impact": "dropped_candidate",
+        "terminal": false
+      },
+      {
+        "scope": "image_description",
+        "image_index": 19,
+        "source": "search",
+        "error_code": "internalError",
+        "impact": "dropped_candidate",
+        "terminal": false
+      }
+    ],
+    "mock": false
+  }
+}

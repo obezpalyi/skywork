@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Вправа «Ремонт промпту»</title>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Inter:wght@400;600&display=swap");
+
+        :root {
+            --ppt-bg: #FDFCFB;
+            --ppt-bg-soft: #F3F4F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #EEF2FF;
+            --ppt-border: #E5E7EB;
+            --ppt-text-1: #111827;
+            --ppt-text-2: #4B5563;
+            --ppt-text-3: #9CA3AF;
+            --ppt-accent: #6366F1;
+            --ppt-accent-2: #10B981;
+            --ppt-chart-1: #6366F1;
+            --ppt-chart-2: #10B981;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EC4899;
+            --ppt-good: #059669;
+            --ppt-warn: #D97706;
+            --ppt-bad: #DC2626;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 8px;
+            --ppt-radius-lg: 16px;
+            --ppt-shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --ppt-font-display: "Montserrat", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+        }*{
+            margin: 0 0;
+            padding: 0 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+        }.slide-root{
+            width: 1280px; height: 720px;
+            display: flex;
+            flex-direction: column;
+            background: var(--ppt-bg);
+            
+            padding: 0 64px 19px 64px;
+        }.title-region-wrapper{
+            margin-top: 29px;
+            margin-bottom: 19px;
+            flex-shrink: 0;
+        }
+
+        .title-region-eyebrow-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .title-region-badge {
+            background-color: var(--ppt-accent);
+            color: white;
+            font-family: var(--ppt-font-display);
+            font-weight: 800;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .title-region-label {
+            color: var(--ppt-text-3);
+            font-family: var(--ppt-font-body);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .title-region-heading {
+            margin: 0;
+            color: var(--ppt-text-1);
+            font-family: var(--ppt-font-display);
+            font-weight: 800;
+            font-size: 38px;
+            line-height: 1.2;
+        }
+
+        .title-region-accent-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--ppt-accent);
+            border-radius: 2px;
+            margin-top: 8px;
+        }.body-wrapper{
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px 24px;
+            
+        }.exercise-instruction-panel{
+            background: var(--ppt-surface-2);
+            border-radius: var(--ppt-radius-lg);
+            padding: 11px 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px 16px;
+            border: 1px solid var(--ppt-border);
+            flex-shrink: 0;
+        }
+
+        .exercise-instruction-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--ppt-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .exercise-instruction-text {
+            color: var(--ppt-text-1);
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.5;
+        }.prompt-repair-grid{
+            flex: 1 1 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 12px 20px;
+            
+        }.prompt-repair-card{
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 12px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px 12px;
+            box-shadow: var(--ppt-shadow-soft);
+            
+        }.prompt-repair-card-header{
+            display: flex;
+            align-items: center;
+            gap: 7px 12px;
+        }
+
+        .prompt-repair-card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background-color: var(--ppt-surface-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ppt-accent);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .prompt-repair-card-title {
+            font-family: var(--ppt-font-display);
+            font-weight: 600;
+            font-size: 20px;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+        }
+
+        .prompt-repair-divider {
+            height: 1px;
+            background-color: var(--ppt-border);
+            width: 100%;
+        }.prompt-repair-card-body{
+            display: flex;
+            flex-direction: column;
+            gap: 6px 10px;
+        }
+
+        .prompt-repair-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--ppt-text-3);
+        }.prompt-repair-original{
+            background-color: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-md);
+            padding: 7px 16px;
+            border-left: 4px solid var(--ppt-warn);
+        }
+
+        .prompt-repair-original-text {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            font-style: italic;
+            line-height: 1.4;
+        }.prompt-repair-guide{
+            font-size: 15px;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px 8px;
+        }.prompt-repair-guide i{
+            color: var(--ppt-accent);
+            font-size: 14px;
+            margin-top: 2px;
+        }.prompt-repair-footer-note{
+            margin-top: auto;
+            font-size: 14px;
+            color: var(--ppt-text-3);
+            line-height: 1.4;
+            background-color: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-sm);
+            padding: 5px 12px;
+            border-left: 3px solid var(--ppt-accent);
+        }
+
+        .prompt-repair-footer-note strong {
+            color: var(--ppt-text-1);
+            font-weight: 600;
+        }
+    
+html { overflow: hidden; }
+</style>
+    <!-- Font Awesome 6 (free) -->
+    
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Title Region (fixed cross-slide layout) -->
+        <header class="title-region-wrapper">
+            <div class="title-region-eyebrow-row">
+                <span class="title-region-badge">IT CLASS</span>
+                <span class="title-region-label">Prompt Engineering</span>
+            </div>
+            <h1 class="title-region-heading">Вправа «Ремонт промпту»</h1>
+            <div class="title-region-accent-line"></div>
+        </header>
+
+        <!-- Body Composition -->
+        <div class="body-wrapper">
+            <!-- Instruction Panel (compact, low-height) -->
+            <div class="exercise-instruction-panel">
+                <div class="exercise-instruction-icon">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+                <div class="exercise-instruction-text">
+                    Робота в групах: перетворіть нечіткий запит на якісну інструкцію за формулою з шести компонентів. Поясніть, що саме стало зрозумілішим.
+                </div>
+            </div>
+
+            <!-- 2x2 Grid of Prompt Repair Cards -->
+            <div class="prompt-repair-grid" style="margin-bottom: 2px !important;">
+                <!-- Card 1: Зроби презентацію -->
+                <div class="prompt-repair-card">
+                    <div class="prompt-repair-card-header">
+                        <div class="prompt-repair-card-icon">
+                            <i class="fa-solid fa-file-powerpoint"></i>
+                        </div>
+                        <div class="prompt-repair-card-title">Презентація</div>
+                    </div>
+                    <div class="prompt-repair-divider"></div>
+                    <div class="prompt-repair-card-body">
+                        <div class="prompt-repair-label">Початковий запит</div>
+                        <div class="prompt-repair-original">
+                            <div class="prompt-repair-original-text">«Зроби презентацію»</div>
+                        </div>
+                        <div class="prompt-repair-guide">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span>Додайте тему, аудиторію, кількість слайдів та мету виступу.</span>
+                        </div>
+                    </div>
+                    <div class="prompt-repair-footer-note">
+                        <strong>Підказка:</strong> роль, завдання, контекст, обмеження, формат, перевірка.
+                    </div>
+                </div>
+
+                <!-- Card 2: Допоможи з твором -->
+                <div class="prompt-repair-card">
+                    <div class="prompt-repair-card-header">
+                        <div class="prompt-repair-card-icon">
+                            <i class="fa-solid fa-pen-fancy"></i>
+                        </div>
+                        <div class="prompt-repair-card-title">Твір</div>
+                    </div>
+                    <div class="prompt-repair-divider"></div>
+                    <div class="prompt-repair-card-body">
+                        <div class="prompt-repair-label">Початковий запит</div>
+                        <div class="prompt-repair-original">
+                            <div class="prompt-repair-original-text">«Допоможи з твором»</div>
+                        </div>
+                        <div class="prompt-repair-guide">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span>Вкажіть тему, обсяг, стиль, ключові аргументи та критерії оцінювання.</span>
+                        </div>
+                    </div>
+                    <div class="prompt-repair-footer-note">
+                        <strong>Підказка:</strong> уточніть жанр, цільову аудиторію та бажану структуру.
+                    </div>
+                </div>
+
+                <!-- Card 3: Напиши код -->
+                <div class="prompt-repair-card">
+                    <div class="prompt-repair-card-header">
+                        <div class="prompt-repair-card-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="prompt-repair-card-title">Код</div>
+                    </div>
+                    <div class="prompt-repair-divider"></div>
+                    <div class="prompt-repair-card-body">
+                        <div class="prompt-repair-label">Початковий запит</div>
+                        <div class="prompt-repair-original">
+                            <div class="prompt-repair-original-text">«Напиши код»</div>
+                        </div>
+                        <div class="prompt-repair-guide">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span>Зазначте мову, задачу, вхідні/вихідні дані, обмеження та приклади.</span>
+                        </div>
+                    </div>
+                    <div class="prompt-repair-footer-note">
+                        <strong>Підказка:</strong> додайте очікуваний формат відповіді та спосіб перевірки.
+                    </div>
+                </div>
+
+                <!-- Card 4: Підготуй до контрольної -->
+                <div class="prompt-repair-card">
+                    <div class="prompt-repair-card-header">
+                        <div class="prompt-repair-card-icon">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <div class="prompt-repair-card-title">Контрольна</div>
+                    </div>
+                    <div class="prompt-repair-divider"></div>
+                    <div class="prompt-repair-card-body">
+                        <div class="prompt-repair-label">Початковий запит</div>
+                        <div class="prompt-repair-original">
+                            <div class="prompt-repair-original-text">«Підготуй мене до контрольної»</div>
+                        </div>
+                        <div class="prompt-repair-guide">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span>Вкажіть тему, рівень складності, тип завдань та бажані пояснення.</span>
+                        </div>
+                    </div>
+                    <div class="prompt-repair-footer-note">
+                        <strong>Підказка:</strong> додайте контекст (що вже вивчено) та формат підготовки.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

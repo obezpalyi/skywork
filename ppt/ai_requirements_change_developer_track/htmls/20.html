@@ -1,0 +1,316 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+<title>Міграція, фіча-флаги та стратегії відкату</title>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+:root {
+  --ppt-bg: #FDFDFD;
+  --ppt-bg-soft: #F4F7F6;
+  --ppt-surface: #FFFFFF;
+  --ppt-surface-2: #E9EFED;
+  --ppt-border: #D1D9D7;
+  --ppt-text-1: #121417;
+  --ppt-text-2: #4A5552;
+  --ppt-text-3: #879491;
+  --ppt-accent: #007A5E;
+  --ppt-accent-2: #00D3A4;
+  --ppt-chart-1: #007A5E;
+  --ppt-chart-2: #00D3A4;
+  --ppt-chart-3: #121417;
+  --ppt-chart-4: #879491;
+  --ppt-good: #107C10;
+  --ppt-warn: #D83B01;
+  --ppt-bad: #A80000;
+  --ppt-radius-sm: 2px;
+  --ppt-radius-md: 4px;
+  --ppt-radius-lg: 8px;
+  --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+  --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+  --ppt-font-display: "Inter", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+  --ppt-font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {width: 1280px; height: 720px; overflow: hidden;   
+  background: transparent;
+  font-family: var(--ppt-font-body);
+  color: var(--ppt-text-1);
+}
+
+.slide-root {
+  width: 1280px; height: 720px;
+  display: flex;
+  flex-direction: column;
+  background: var(--ppt-bg);
+  
+  position: relative;
+}
+
+.title-region {
+  margin-top: 40px;
+  margin-left: 56px;
+  margin-right: 56px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.title-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-eyebrow-label {
+  font-family: var(--ppt-font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ppt-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: var(--ppt-surface-2);
+  padding: 4px 8px;
+  border-radius: var(--ppt-radius-sm);
+  white-space: nowrap;
+}
+
+.title-divider-line {
+  height: 1px;
+  flex-grow: 1;
+  background: var(--ppt-border);
+}
+
+.title-main-heading {
+  margin: 0;
+  font-family: var(--ppt-font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--ppt-text-1);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.migration-flag-body-wrapper {
+  flex: 1 1 0;
+  margin-left: 56px;
+  margin-right: 56px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+}
+
+.migration-flag-intro-band {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--ppt-bg-soft);
+  border-left: 4px solid var(--ppt-accent);
+  padding: 12px 16px;
+  border-radius: 0 var(--ppt-radius-md) var(--ppt-radius-md) 0;
+  flex-shrink: 0;
+}
+
+.migration-flag-intro-icon {
+  color: var(--ppt-accent);
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.migration-flag-intro-text {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ppt-text-2);
+}
+
+.migration-flag-intro-text strong {
+  color: var(--ppt-text-1);
+  font-weight: 600;
+}
+
+.migration-flag-main-grid {
+  flex: 1 1 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  
+}
+
+.migration-analysis-panel,
+.feature-flag-analysis-panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--ppt-surface);
+  border: 1px solid var(--ppt-border);
+  border-radius: var(--ppt-radius-md);
+  padding: 14px 16px;
+  gap: 10px;
+  
+}
+
+.panel-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.panel-heading-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--ppt-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  background: var(--ppt-surface-2);
+  color: var(--ppt-accent);
+  flex-shrink: 0;
+}
+
+.panel-heading-title {
+  font-family: var(--ppt-font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ppt-text-1);
+  line-height: 1.2;
+}
+
+.panel-body-list {
+  list-style: none;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+}
+
+.panel-body-list-item {
+  display: block;
+  padding-left: 18px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ppt-text-2);
+}
+
+.panel-body-list-item::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--ppt-accent);
+  border-radius: 1px;
+}
+
+.panel-body-list-item strong {
+  color: var(--ppt-text-1);
+  font-weight: 600;
+}
+
+.feature-flag-note-band {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--ppt-bg-soft);
+  border-radius: var(--ppt-radius-md);
+  padding: 10px 12px;
+  flex-shrink: 0;
+}
+
+.feature-flag-note-icon {
+  color: var(--ppt-warn);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.feature-flag-note-text {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ppt-text-2);
+}
+
+.feature-flag-note-text strong {
+  color: var(--ppt-text-1);
+  font-weight: 600;
+}
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+<div class="slide-root">
+  <header class="title-region">
+    <div class="title-eyebrow-row">
+      <span class="title-eyebrow-label">Developer Track</span>
+      <div class="title-divider-line"></div>
+    </div>
+    <h1 class="title-main-heading">Міграція, фіча-флаги та стратегії відкату</h1>
+  </header>
+
+  <div class="migration-flag-body-wrapper">
+    <div class="migration-flag-intro-band">
+      <i class="fa-solid fa-shield-halved migration-flag-intro-icon"></i>
+      <p class="migration-flag-intro-text">
+        Планування має захистити <strong>наявні дані</strong> та <strong>активні шляхи виконання</strong> під час впровадження нової критичної пріоритетності, одночасно забезпечуючи можливість <strong>контрольованого відкату</strong> без простою системи.
+      </p>
+    </div>
+
+    <div class="migration-flag-main-grid" style="margin-bottom: 4px !important;">
+      <div class="migration-analysis-panel">
+        <div class="panel-heading-row">
+          <div class="panel-heading-icon"><i class="fa-solid fa-database"></i></div>
+          <h2 class="panel-heading-title">Аналіз міграції даних</h2>
+        </div>
+        <ul class="panel-body-list">
+          <li class="panel-body-list-item"><strong>Існуючі записи</strong> — усі поточні запити ServiceHub потребують визначеної пріоритетності після впровадження нового значення.</li>
+          <li class="panel-body-list-item"><strong>Історія ескалацій</strong> — зберігання минулих подій підвищення пріоритету має лишитись сумісним для аналітики та аудиту.</li>
+          <li class="panel-body-list-item"><strong>Значення за замовчуванням</strong> — визначення поведінки системи, коли поле пріоритету відсутнє у старому клієнті.</li>
+          <li class="panel-body-list-item"><strong>Зворотне заповнення</strong> — необхідність бекфілу нових полів для вже наявних сутностей.</li>
+          <li class="panel-body-list-item"><strong>Онлайн чи офлайн</strong> — міграція без зупинки обробки звичайних запитів проти окремого вікна обслуговування.</li>
+          <li class="panel-body-list-item"><strong>Валідація та відкат</strong> — перевірка цілісності даних після перенесення та чіткий план повернення до попереднього стану.</li>
+          <li class="panel-body-list-item"><strong>Співіснування версій</strong> — робота старих і нових інстансів застосунку під час поетапного розгортання.</li>
+        </ul>
+      </div>
+
+      <div class="feature-flag-analysis-panel">
+        <div class="panel-heading-row">
+          <div class="panel-heading-icon"><i class="fa-solid fa-toggle-on"></i></div>
+          <h2 class="panel-heading-title">Аналіз фіча-флагів</h2>
+        </div>
+        <ul class="panel-body-list">
+          <li class="panel-body-list-item"><strong>Обсяг захисту</strong> — флаг покриває всі змінені шляхи: ескалацію, сповіщення, звітність та аудит.</li>
+          <li class="panel-body-list-item"><strong>Стан за замовчуванням</strong> — флаг вимкнено, щоб старі клієнти не отримували нову поведінку до повної готовності.</li>
+          <li class="panel-body-list-item"><strong>Власник активації</strong> — чітке призначення відповідальної особи, яка ухвалює рішення про вмикання.</li>
+          <li class="panel-body-list-item"><strong>Поведінка відкату</strong> — миттєве вимкнення флага повертає систему до попереднього стану без втрати даних.</li>
+          <li class="panel-body-list-item"><strong>Критерії видалення</strong> — умови, після яких флаг стає постійним і може бути прибраний з коду.</li>
+          <li class="panel-body-list-item"><strong>Спостережуваність</strong> — метрики та журнали, що підтверджують коректну роботу обох станів флага.</li>
+        </ul>
+        <div class="feature-flag-note-band">
+          <i class="fa-solid fa-triangle-exclamation feature-flag-note-icon"></i>
+          <p class="feature-flag-note-text">
+            <strong>Вимога до доказів:</strong> кожне твердження про сумісність або захист шляху виконання має підтверджуватись контрактом або реалізацією, а не лише описом наміру.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body></html>

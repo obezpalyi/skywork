@@ -1,0 +1,41 @@
+{
+  "name": "AI for Data Stewards",
+  "slug": "ai-for-data-stewards",
+  "type": "training-course",
+  "status": "in-progress",
+  "source_project": "AI for Data Stewards Course Plan",
+  "imported_artifacts": [
+    {
+      "name": "AI for Data Stewards — Participant Workbook",
+      "filename": "AI_for_Data_Stewards_Participant_Workbook.docx",
+      "format": "docx",
+      "pages": 21,
+      "status": "imported"
+    },
+    {
+      "name": "AI for Data Stewards — Proposal Brief",
+      "filename": "AI_for_Data_Stewards_Proposal_Brief.docx",
+      "format": "docx",
+      "pages": 2,
+      "status": "imported"
+    },
+    {
+      "name": "AI for Data Guardians — Course Plan",
+      "filename": "AI_for_Data_Guardians_Course_Plan.md",
+      "format": "markdown",
+      "sessions": 14,
+      "status": "imported"
+    }
+  ],
+  "artifact_plan": [
+    "course-charter",
+    "roadmap-and-module-plan",
+    "lesson-plans",
+    "presentation-decks",
+    "facilitator-notes",
+    "learner-exercises",
+    "ai-prompt-playbook",
+    "assessments",
+    "glossary-and-resources"
+  ]
+}

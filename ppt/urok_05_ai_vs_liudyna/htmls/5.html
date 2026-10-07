@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Де ШІ слабкий</title>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+        :root {
+            --ppt-bg: #F8F9FA;
+            --ppt-bg-soft: #EEF2F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E9ECEF;
+            --ppt-border: #CED4DA;
+            --ppt-text-1: #212529;
+            --ppt-text-2: #495057;
+            --ppt-text-3: #6C757D;
+            --ppt-accent: #6366F1;
+            --ppt-accent-2: #F43F5E;
+            --ppt-chart-1: #6366F1;
+            --ppt-chart-2: #F43F5E;
+            --ppt-chart-3: #10B981;
+            --ppt-chart-4: #F59E0B;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 12px;
+            --ppt-radius-lg: 20px;
+            --ppt-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --ppt-shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+            --ppt-font-mono: "JetBrains Mono", monospace;
+        }*{
+            box-sizing: border-box;
+            margin: 0 0;
+            padding: 0 0;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            font-family: var(--ppt-font-body);
+        }
+
+        /* Slide root: fixed 1280x720, flex column */
+        .ai-weakness-slide-root {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 64px;
+            
+            box-shadow: var(--ppt-shadow-strong);
+        }/* Fixed Non-Cover-Page Title Region (from DESIGN) */
+        .title-region{
+            margin-top: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .title-region-topline {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-region-eyebrow {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+            background: var(--ppt-bg-soft);
+            padding: 4px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .title-region-line {
+            height: 1px;
+            flex-grow: 1;
+            background: var(--ppt-border);
+        }
+
+        .title-region-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+            margin: 0;
+        }/* Main body wrapper: consumes remaining height (flex: 1 1 0) */
+        .weakness-body-wrapper{
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 18px 48px;
+             /* intentionally not used; we avoid min-height:0 */
+            /* bottom safety gap is preserved via slide padding */
+            padding-bottom: 18px;
+        }
+
+        /* LEFT anchor: large keyword "ОБМЕЖЕННЯ" */
+        .weakness-left-anchor {
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .weakness-anchor-text {
+            font-family: var(--ppt-font-display);
+            font-size: 88px;
+            font-weight: 800;
+            line-height: 0.95;
+            color: var(--ppt-accent);
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--ppt-accent) 0%, #4F46E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .weakness-anchor-sub {
+            margin-top: 16px;
+            font-family: var(--ppt-font-mono);
+            font-size: 15px;
+            color: var(--ppt-text-3);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-left: 3px solid var(--ppt-accent-2);
+            padding-left: 12px;
+            line-height: 1.4;
+        }/* RIGHT content: open list of weaknesses */
+        .weakness-right-list{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px 20px;
+        }.weakness-item{
+            display: flex;
+            align-items: flex-start;
+            gap: 6px 16px;
+        }.weakness-item-icon{
+            width: 28px;
+            height: 28px;
+            border-radius: var(--ppt-radius-sm);
+            background: var(--ppt-bg-soft);
+            color: var(--ppt-accent-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .weakness-item-content {
+            flex: 1;
+        }.weakness-item-title{
+            font-family: var(--ppt-font-display);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+            margin-bottom: 2px;
+        }.weakness-item-desc{
+            font-size: 17px;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            font-weight: 400;
+        }/* subtle divider between items */
+        .weakness-item + .weakness-item{
+            border-top: 1px solid var(--ppt-border);
+            padding-top: 8px;
+        }
+
+        /* ensure list-style none on any ul, but we use divs */
+        ul {
+            list-style: none;
+        }
+
+        /* No flex on list items */
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="ai-weakness-slide-root">
+        <!-- Fixed Title Region -->
+        <div class="title-region">
+            <div class="title-region-topline">
+                <span class="title-region-eyebrow">Інформатика 11 клас</span>
+                <div class="title-region-line"></div>
+            </div>
+            <h1 class="title-region-heading">Де ШІ слабкий</h1>
+        </div>
+
+        <!-- Special Open Layout: large anchor left + open list right -->
+        <div class="weakness-body-wrapper" style="margin-bottom: 2px !important;">
+            <!-- LEFT: Large keyword anchor -->
+            <div class="weakness-left-anchor">
+                <div class="weakness-anchor-text">Обмеження</div>
+                <div class="weakness-anchor-sub">межі штучного інтелекту</div>
+            </div>
+
+            <!-- RIGHT: Open list of weaknesses -->
+            <div class="weakness-right-list">
+                <!-- Item 1 -->
+                <div class="weakness-item">
+                    <div class="weakness-item-icon">
+                        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                    </div>
+                    <div class="weakness-item-content">
+                        <div class="weakness-item-title">Переконливі помилки</div>
+                        <div class="weakness-item-desc">ШІ може впевнено демонструвати хибні твердження, які важко відрізнити від правди.</div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="weakness-item">
+                    <div class="weakness-item-icon">
+                        <i class="fa-solid fa-database" aria-hidden="true"></i>
+                    </div>
+                    <div class="weakness-item-content">
+                        <div class="weakness-item-title">Залежність від даних</div>
+                        <div class="weakness-item-desc">Якість результатів прямо залежить від повноти, чистоти та неупередженості вхідних даних.</div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="weakness-item">
+                    <div class="weakness-item-icon">
+                        <i class="fa-solid fa-eye-slash" aria-hidden="true"></i>
+                    </div>
+                    <div class="weakness-item-content">
+                        <div class="weakness-item-title">Приховані обставини</div>
+                        <div class="weakness-item-desc">ШІ не бачить неявного контексту, соціальних нюансів та ненаписаних правил ситуації.</div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="weakness-item">
+                    <div class="weakness-item-icon">
+                        <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+                    </div>
+                    <div class="weakness-item-content">
+                        <div class="weakness-item-title">Відтворення упереджень</div>
+                        <div class="weakness-item-desc">Модель може посилювати стереотипи та дискримінацію, закладені в тренувальних даних.</div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="weakness-item">
+                    <div class="weakness-item-icon">
+                        <i class="fa-solid fa-user-slash" aria-hidden="true"></i>
+                    </div>
+                    <div class="weakness-item-content">
+                        <div class="weakness-item-title">Відсутність відповідальності</div>
+                        <div class="weakness-item-desc">ШІ не несе моральної чи юридичної відповідальності за наслідки своїх рішень.</div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="weakness-item">
+                    <div class="weakness-item-icon">
+                        <i class="fa-solid fa-flag" aria-hidden="true"></i>
+                    </div>
+                    <div class="weakness-item-content">
+                        <div class="weakness-item-title">Не визначає справедливість</div>
+                        <div class="weakness-item-desc">Система не здатна самостійно обирати, яка мета є справедливою, етичною чи бажаною.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome icons (external) -->
+    
+
+</body></html>

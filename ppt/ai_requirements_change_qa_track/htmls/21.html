@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Практика аналізу впливу змін · QA Track</title>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+        :root {
+            --ppt-bg: #F8FAFC;
+            --ppt-bg-soft: #F1F5F9;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E2E8F0;
+            --ppt-border: #CBD5E1;
+            --ppt-text-1: #0F172A;
+            --ppt-text-2: #475569;
+            --ppt-text-3: #94A3B8;
+            --ppt-accent: #0D9488;
+            --ppt-accent-2: #6366F1;
+            --ppt-chart-1: #0D9488;
+            --ppt-chart-2: #6366F1;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EC4899;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+            --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --ppt-font-display: "Montserrat", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: transparent;
+            font-family: var(--ppt-font-body);
+        }
+
+        .slide-root {
+            width: 1280px; height: 720px;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--ppt-bg);
+            color: var(--ppt-text-1);
+            
+            padding: 0;
+        }
+
+        /* Non-cover title region — fixed per design */
+        .title-region {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 28px;
+            flex-shrink: 0;
+        }
+
+        .title-eyebrow-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .title-accent-bar {
+            width: 4px;
+            height: 16px;
+            background-color: var(--ppt-accent);
+        }
+
+        .title-eyebrow-text {
+            font-family: var(--ppt-font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+        }
+
+        .title-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .title-subheading {
+            font-family: var(--ppt-font-body);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        /* Main body — flex fills remaining height */
+        .main-body-wrapper {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 40px;
+            gap: 20px;
+             /* allowed for flex child, but we avoid min-height:0 on content containers */
+        }
+
+        /* Asymmetric layout: left dominant + right rail */
+        .practice-layout {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            align-items: stretch;
+            
+        }
+
+        .left-dominant-column {
+            flex: 3 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            
+        }
+
+        .right-support-column {
+            flex: 2 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            
+        }
+
+        /* shared surface for baseline comparison */
+        .baseline-comparison-surface {
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 20px 22px;
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            
+            box-shadow: var(--ppt-shadow-soft);
+        }
+
+        .surface-title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .surface-title-icon {
+            font-size: 18px;
+            color: var(--ppt-accent);
+            width: 24px;
+            text-align: center;
+        }
+
+        .surface-title-text {
+            font-family: var(--ppt-font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+        }
+
+        .two-version-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            flex: 1 1 0;
+            
+        }
+
+        .version-block {
+            background-color: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-md);
+            padding: 14px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            border-left: 3px solid var(--ppt-accent);
+        }
+
+        .version-label {
+            font-family: var(--ppt-font-display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--ppt-text-2);
+            letter-spacing: 0.02em;
+        }
+
+        .version-item-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .version-item {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--ppt-text-1);
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .version-item i {
+            color: var(--ppt-accent);
+            font-size: 13px;
+            margin-top: 2px;
+            width: 16px;
+            text-align: center;
+        }
+
+        .version-change-badge {
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-sm);
+            padding: 3px 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ppt-text-2);
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+        /* classification cards */
+        .classification-card {
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 16px 18px;
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            
+            box-shadow: var(--ppt-shadow-soft);
+        }
+
+        .classification-title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .classification-title-icon {
+            font-size: 18px;
+            color: var(--ppt-accent-2);
+            width: 24px;
+            text-align: center;
+        }
+
+        .classification-title-text {
+            font-family: var(--ppt-font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+        }
+
+        .classification-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1 1 0;
+        }
+
+        .classification-item {
+            background-color: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-md);
+            padding: 10px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-left: 3px solid var(--ppt-accent-2);
+        }
+
+        .classification-item-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .classification-item-header i {
+            font-size: 15px;
+            color: var(--ppt-accent-2);
+            width: 20px;
+            text-align: center;
+        }
+
+        .classification-item-title {
+            font-family: var(--ppt-font-display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+        }
+
+        .classification-item-desc {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.45;
+            padding-left: 28px;
+        }
+
+        /* bottom compact note */
+        .practice-note-band {
+            background-color: var(--ppt-bg-soft);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+
+        .practice-note-icon {
+            font-size: 18px;
+            color: var(--ppt-accent);
+            width: 28px;
+            text-align: center;
+        }
+
+        .practice-note-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ppt-text-1);
+            line-height: 1.4;
+        }
+
+        .practice-note-text strong {
+            font-weight: 700;
+            color: var(--ppt-text-1);
+        }/* icons from font awesome */
+        .fa, .fas, .far{
+            
+            font-weight: 900;
+        }
+    
+html { overflow: hidden; }
+</style>
+    
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Title region -->
+        <header class="title-region">
+            <div class="title-eyebrow-wrapper">
+                <div class="title-accent-bar"></div>
+                <span class="title-eyebrow-text">SERVICEHUB QA TRACK</span>
+            </div>
+            <h1 class="title-heading">Практика аналізу впливу змін</h1>
+            <h2 class="title-subheading">Порівняння двох версій ServiceHub та класифікація спірних питань як дефектів або нових вимог</h2>
+        </header>
+
+        <!-- Main content -->
+        <div class="main-body-wrapper">
+            <!-- Asymmetric layout: left dominant (baseline comparison) + right support (classification) -->
+            <div class="practice-layout">
+                <!-- Left column: baseline comparison surface -->
+                <div class="left-dominant-column">
+                    <div class="baseline-comparison-surface">
+                        <div class="surface-title-row">
+                            <i class="fa-solid fa-code-compare surface-title-icon"></i>
+                            <span class="surface-title-text">Порівняння базових версій</span>
+                        </div>
+                        <div class="two-version-grid">
+                            <!-- Version A -->
+                            <div class="version-block">
+                                <div class="version-label">Базова версія (до зміни)</div>
+                                <ul class="version-item-list">
+                                    <li class="version-item"><i class="fa-solid fa-circle-check"></i> Пріоритет: стандартні рівні</li>
+                                    <li class="version-item"><i class="fa-solid fa-check"></i> SLA: робочі години 9–18</li>
+                                    <li class="version-item"><i class="fa-solid fa-anchor-circle-check"></i> Ескалація: 3 рівні</li>
+                                    <li class="version-item"><i class="fa-solid fa-bridge-circle-check"></i> Сповіщення: лише email</li>
+                                    <li class="version-item"><i class="fa-solid fa-building-circle-check"></i> Час: локальна зона</li>
+                                </ul>
+                            </div>
+                            <!-- Version B -->
+                            <div class="version-block">
+                                <div class="version-label">Нова версія (після зміни)</div>
+                                <ul class="version-item-list">
+                                    <li class="version-item"><i class="fa-solid fa-arrow-up"></i> Пріоритет: + «критичний» <span class="version-change-badge">зміна</span></li>
+                                    <li class="version-item"><i class="fa-solid fa-arrow-up"></i> SLA: 24/7 для критичних <span class="version-change-badge">зміна</span></li>
+                                    <li class="version-item"><i class="fa-solid fa-arrow-up"></i> Ескалація: + 4-й рівень <span class="version-change-badge">нова</span></li>
+                                    <li class="version-item"><i class="fa-solid fa-arrow-up"></i> Сповіщення: + SMS, push <span class="version-change-badge">зміна</span></li>
+                                    <li class="version-item"><i class="fa-solid fa-arrow-up"></i> Час: мультизона (UTC) <span class="version-change-badge">зміна</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column: classification card -->
+                <div class="right-support-column">
+                    <div class="classification-card">
+                        <div class="classification-title-row">
+                            <i class="fa-solid fa-scale-balanced classification-title-icon"></i>
+                            <span class="classification-title-text">Класифікація спірних питань</span>
+                        </div>
+                        <ul class="classification-list">
+                            <li class="classification-item">
+                                <div class="classification-item-header">
+                                    <i class="fa-solid fa-bug"></i>
+                                    <span class="classification-item-title">Дефект</span>
+                                </div>
+                                <div class="classification-item-desc">Поведінка суперечить затвердженому очікуванню</div>
+                            </li>
+                            <li class="classification-item">
+                                <div class="classification-item-header">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="classification-item-title">Уточнення</span>
+                                </div>
+                                <div class="classification-item-desc">Формулювання явне без зміни поведінки</div>
+                            </li>
+                            <li class="classification-item">
+                                <div class="classification-item-header">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                    <span class="classification-item-title">Запит на зміну</span>
+                                </div>
+                                <div class="classification-item-desc">Зміна правила, поведінки або обмеження</div>
+                            </li>
+                            <li class="classification-item">
+                                <div class="classification-item-header">
+                                    <i class="fa-solid fa-flask"></i>
+                                    <span class="classification-item-title">Проблема тесту</span>
+                                </div>
+                                <div class="classification-item-desc">Неправильні дані, середовище чи тест-кейс</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom compact note -->
+            <div class="practice-note-band" style="margin-bottom: 4px !important;">
+                <i class="fa-solid fa-user-check practice-note-icon"></i>
+                <div class="practice-note-text">
+                    <strong>Завдання учасникам:</strong> порівняйте дві версії, позначте змінені правила, знайдіть застарілі тести та класифікуйте кожну розбіжність. Xplore готує докази, рішення підтверджує власник.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

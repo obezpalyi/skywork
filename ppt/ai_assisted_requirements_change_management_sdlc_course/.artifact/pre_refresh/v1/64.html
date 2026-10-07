@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Capstone: кроки 7–10</title>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --ppt-bg: #FCFCFD;
+  --ppt-bg-soft: #F1F5F9;
+  --ppt-surface: #FFFFFF;
+  --ppt-surface-2: #F8FAFC;
+  --ppt-border: #E2E8F0;
+  --ppt-text-1: #0F172A;
+  --ppt-text-2: #475569;
+  --ppt-text-3: #94A3B8;
+  --ppt-accent: #2563EB;
+  --ppt-accent-2: #06B6D4;
+  --ppt-chart-1: #2563EB;
+  --ppt-chart-2: #06B6D4;
+  --ppt-chart-3: #6366F1;
+  --ppt-chart-4: #F59E0B;
+  --ppt-good: #10B981;
+  --ppt-warn: #F59E0B;
+  --ppt-bad: #EF4444;
+  --ppt-radius-sm: 2px;
+  --ppt-radius-md: 6px;
+  --ppt-radius-lg: 10px;
+  --ppt-shadow-soft: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1);
+  --ppt-shadow-strong: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+}*{
+  box-sizing: border-box;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+body {width: 1280px; height: 734px; overflow: hidden;   
+  background: #CBD5E1;
+  display: block;
+}
+
+.capstone-slide-root {
+  width: 1280px; height: 734px;
+  background: var(--ppt-bg);
+  
+  font-family: var(--ppt-font-body);
+}.capstone-title-region{
+  margin-top: 14px;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 4px solid var(--ppt-accent);
+  padding-left: 24px;
+}
+
+.capstone-title-eyebrow {
+  font-family: var(--ppt-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ppt-accent);
+}
+
+.capstone-title-heading {
+  font-family: var(--ppt-font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--ppt-text-1);
+  line-height: 1.2;
+}.capstone-content-area{
+  margin-left: 60px;
+  margin-right: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px 16px;
+  align-items: stretch;
+}
+
+.capstone-left-column {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}.capstone-right-column{
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px 12px;
+}
+
+.capstone-step-card {
+  background: var(--ppt-surface);
+  border: 1px solid var(--ppt-border);
+  border-radius: var(--ppt-radius-md);
+  box-shadow: var(--ppt-shadow-soft);
+  padding: 12px;
+  flex: 1 1 0;
+}
+
+.capstone-step-card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.capstone-step-number-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ppt-accent);
+  color: #FFFFFF;
+  font-family: var(--ppt-font-display);
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.capstone-step-card-title {
+  font-family: var(--ppt-font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ppt-text-1);
+  line-height: 1.3;
+}
+
+.capstone-step-card-icon {
+  margin-left: auto;
+  font-size: 15px;
+  color: var(--ppt-accent-2);
+  flex-shrink: 0;
+}
+
+.capstone-step-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.capstone-step-bullet-item {
+  font-family: var(--ppt-font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ppt-text-2);
+  line-height: 1.45;
+  padding-left: 14px;
+  position: relative;
+}
+
+.capstone-step-bullet-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ppt-accent);
+  flex-shrink: 0;
+}.capstone-bottom-strip{
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 4px;
+  background: var(--ppt-bg-soft);
+  border: 1px solid var(--ppt-border);
+  border-radius: var(--ppt-radius-md);
+  padding: 3px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px 12px;
+}
+
+.capstone-bottom-strip-icon {
+  font-size: 16px;
+  color: var(--ppt-good);
+  flex-shrink: 0;
+}
+
+.capstone-bottom-strip-label {
+  font-family: var(--ppt-font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ppt-text-1);
+  flex-shrink: 0;
+}
+
+.capstone-bottom-strip-text {
+  font-family: var(--ppt-font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ppt-text-2);
+  line-height: 1.4;
+}
+
+.capstone-step-card-divider {
+  height: 1px;
+  background: var(--ppt-border);
+  margin-bottom: 8px;
+}
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+<div class="capstone-slide-root">
+
+  <header class="capstone-title-region">
+    <div class="capstone-title-eyebrow">AI-MANAGED SDLC PLAYBOOK</div>
+    <h1 class="capstone-title-heading">Capstone: кроки 7–10</h1>
+  </header>
+
+  <div class="capstone-content-area">
+
+    <div class="capstone-left-column">
+
+      <div class="capstone-step-card">
+        <div class="capstone-step-card-header">
+          <div class="capstone-step-number-badge">7</div>
+          <div class="capstone-step-card-title">Оцінка впливу на QA</div>
+          <i class="fa-solid fa-flask capstone-step-card-icon"></i>
+        </div>
+        <div class="capstone-step-card-divider"></div>
+        <ul class="capstone-step-bullet-list">
+          <li class="capstone-step-bullet-item">Визначити тест-сценарії, порушені зміною</li>
+          <li class="capstone-step-bullet-item">Оновити regression scope та acceptance criteria</li>
+          <li class="capstone-step-bullet-item">Виявити нові граничні умови та edge cases</li>
+          <li class="capstone-step-bullet-item">Перевірити наявність тестових даних і середовищ</li>
+          <li class="capstone-step-bullet-item">Зафіксувати test readiness conclusion</li>
+        </ul>
+      </div>
+
+      <div class="capstone-step-card">
+        <div class="capstone-step-card-header">
+          <div class="capstone-step-number-badge">8</div>
+          <div class="capstone-step-card-title">Оцінка впливу на DevOps</div>
+          <i class="fa-solid fa-server capstone-step-card-icon"></i>
+        </div>
+        <div class="capstone-step-card-divider"></div>
+        <ul class="capstone-step-bullet-list">
+          <li class="capstone-step-bullet-item">Перевірити зміни в deployment, IaC та конфігурації</li>
+          <li class="capstone-step-bullet-item">Оновити monitoring і alerting під нову логіку</li>
+          <li class="capstone-step-bullet-item">Переглянути rollback plan та runbook</li>
+          <li class="capstone-step-bullet-item">Підтвердити operational readiness checklist</li>
+          <li class="capstone-step-bullet-item">Зафіксувати відкриті операційні питання</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="capstone-right-column">
+
+      <div class="capstone-step-card">
+        <div class="capstone-step-card-header">
+          <div class="capstone-step-number-badge">9</div>
+          <div class="capstone-step-card-title">Підготовка traceability matrix</div>
+          <i class="fa-solid fa-table-cells capstone-step-card-icon"></i>
+        </div>
+        <div class="capstone-step-card-divider"></div>
+        <ul class="capstone-step-bullet-list">
+          <li class="capstone-step-bullet-item">Побудувати зв&#39;язок: джерело → вимога → Jira task → тест</li>
+          <li class="capstone-step-bullet-item">Перевірити, що кожна вимога покрита тестом</li>
+          <li class="capstone-step-bullet-item">Виявити вимоги без задач або тестів</li>
+          <li class="capstone-step-bullet-item">Переконатись, що CR відображено в матриці</li>
+          <li class="capstone-step-bullet-item">Зберегти матрицю як артефакт capstone</li>
+        </ul>
+      </div>
+
+      <div class="capstone-step-card">
+        <div class="capstone-step-card-header">
+          <div class="capstone-step-number-badge">10</div>
+          <div class="capstone-step-card-title">Фінальна перевірка синхронізації</div>
+          <i class="fa-solid fa-circle-check capstone-step-card-icon"></i>
+        </div>
+        <div class="capstone-step-card-divider"></div>
+        <ul class="capstone-step-bullet-list">
+          <li class="capstone-step-bullet-item">Звірити всі артефакти: вимоги, задачі, тести, runbook</li>
+          <li class="capstone-step-bullet-item">Перевірити відсутність застарілих версій документів</li>
+          <li class="capstone-step-bullet-item">Підтвердити, що decision record відображає фінальний стан</li>
+          <li class="capstone-step-bullet-item">Отримати human sign-off перед захистом</li>
+          <li class="capstone-step-bullet-item">Зафіксувати метрики покращення процесу</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="capstone-bottom-strip" style="margin-bottom: 2px !important;">
+    <i class="fa-solid fa-link capstone-bottom-strip-icon"></i>
+    <span class="capstone-bottom-strip-label">Ключовий принцип:</span>
+    <span class="capstone-bottom-strip-text">Traceability matrix та фінальна синхронізація гарантують, що жодна зміна не залишила артефакти в неузгодженому стані — AI готує evidence, людина підтверджує готовність до релізу.</span>
+  </div>
+
+</div>
+
+</body></html>

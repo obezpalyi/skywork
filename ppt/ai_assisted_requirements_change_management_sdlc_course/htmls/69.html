@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Як обрати use case для пілоту</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      box-sizing: border-box;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #F0F2F5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .pilot-use-case-slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      
+    }.title-region-wrapper{
+      margin-top: 32px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-category {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }.pilot-use-case-content-area{
+      flex: 1;
+      padding-left: 60px;
+      padding-right: 60px;
+      padding-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px 32px;
+    }
+
+    .pilot-use-case-intro-text {
+      font-family: var(--ppt-font-body);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-2);
+      line-height: 1.3;
+      max-width: 900px;
+    }.pilot-use-case-criteria-grid{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px 20px;
+      width: 100%;
+    }.pilot-use-case-card-module{
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 19px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+      transition: all 0.3s ease;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .pilot-use-case-icon-box {
+      width: 48px;
+      height: 48px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--ppt-accent);
+      font-size: 24px;
+    }
+
+    .pilot-use-case-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .pilot-use-case-card-description {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }.pilot-use-case-footer-summary{
+      background-color: var(--ppt-surface-2);
+      border-left: 4px solid var(--ppt-accent-2);
+      padding: 16px 24px;
+      border-radius: var(--ppt-radius-md);
+      margin-top: 6px;
+    }.pilot-use-case-summary-label{
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-accent-2);
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .pilot-use-case-summary-text {
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    .pilot-use-case-list-reset {
+      list-style: none;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+
+  <div class="pilot-use-case-slide-root">
+    
+    <!-- Title Region -->
+    <header class="title-region-wrapper">
+      <div class="title-region-category">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-main-heading">Як обрати use case для пілоту</h1>
+    </header>
+
+    <!-- Content Area -->
+    <main class="pilot-use-case-content-area">
+      
+      <div class="pilot-use-case-intro-text">
+        Критерії вибору процесу для автоматизації: пріоритезація завдань, що принесуть максимальну цінність при впровадженні ШІ.
+      </div>
+
+      <!-- Criteria Grid -->
+      <div class="pilot-use-case-criteria-grid">
+        
+        <!-- Card 1: Repeatability -->
+        <section class="pilot-use-case-card-module">
+          <div class="pilot-use-case-icon-box">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </div>
+          <h2 class="pilot-use-case-card-title">Повторюваність</h2>
+          <p class="pilot-use-case-card-description">
+            Обирайте процеси, що виконуються регулярно (щодня або в кожному спринті). Стабільний workflow легше перетворити на багаторазовий prompt-шаблон.
+          </p>
+        </section>
+
+        <!-- Card 2: Time-consuming -->
+        <section class="pilot-use-case-card-module">
+          <div class="pilot-use-case-icon-box">
+            <i class="fa-solid fa-hourglass-half"></i>
+          </div>
+          <h2 class="pilot-use-case-card-title">Часозатратність</h2>
+          <p class="pilot-use-case-card-description">
+            Фокусуйтеся на рутинних завданнях, де ручний пошук, аналіз або генерація документації займають години, але мають чітку структуру.
+          </p>
+        </section>
+
+        <!-- Card 3: Data Availability -->
+        <section class="pilot-use-case-card-module">
+          <div class="pilot-use-case-icon-box">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h2 class="pilot-use-case-card-title">Наявність знань</h2>
+          <p class="pilot-use-case-card-description">
+            Для пілоту необхідний доступ до достатнього корпусу корпоративних документів (ТЗ, протоколи, історія змін), які стануть контекстом для AI.
+          </p>
+        </section>
+
+        <!-- Card 4: Verifiability -->
+        <section class="pilot-use-case-card-module">
+          <div class="pilot-use-case-icon-box">
+            <i class="fa-solid fa-user-check"></i>
+          </div>
+          <h2 class="pilot-use-case-card-title">Можливість перевірки</h2>
+          <p class="pilot-use-case-card-description">
+            Людина повинна мати змогу швидко провалідувати результат AI. Уникайте на старті сфер, де помилка є критичною і миттєво незворотною.
+          </p>
+        </section>
+
+      </div>
+
+      <!-- Footer Summary Block -->
+      <div class="pilot-use-case-footer-summary">
+        <div class="pilot-use-case-summary-label">Головне правило вибору</div>
+        <div class="pilot-use-case-summary-text">
+          Ідеальний use case — це процес із високою частотою виконання та наявними джерелами даних, де AI скорочує час підготовки чернетки мінімум на 50%.
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+
+</body></html>

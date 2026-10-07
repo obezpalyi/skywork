@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+:root {
+  --ppt-bg: #F8FAFC;
+  --ppt-bg-soft: #EEF2F6;
+  --ppt-surface: #FFFFFF;
+  --ppt-surface-2: #F1F5F9;
+  --ppt-border: #CBD5E1;
+  --ppt-text-1: #0F172A;
+  --ppt-text-2: #475569;
+  --ppt-text-3: #94A3B8;
+  --ppt-accent: #0D9488;
+  --ppt-accent-2: #6366F1;
+  --ppt-chart-1: #0D9488;
+  --ppt-chart-2: #6366F1;
+  --ppt-chart-3: #F59E0B;
+  --ppt-chart-4: #EC4899;
+  --ppt-good: #10B981;
+  --ppt-warn: #F59E0B;
+  --ppt-bad: #EF4444;
+  --ppt-radius-sm: 2px;
+  --ppt-radius-md: 6px;
+  --ppt-radius-lg: 10px;
+  --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --ppt-font-display: "Inter", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+  --ppt-font-mono: "JetBrains Mono", monospace;
+}*{
+  margin: 0 0;
+  padding: 0 0;
+  box-sizing: border-box;
+}
+
+html, body {width: 1280px; height: 720px; overflow: hidden;   
+   
+  
+  background: var(--ppt-bg);
+}
+
+.slide-root {
+  width: 1280px; height: 720px;
+  display: flex;
+  flex-direction: column;
+  background: var(--ppt-bg);
+  font-family: var(--ppt-font-body);
+  color: var(--ppt-text-1);
+}.title-region-header{
+  margin-top: 38px;
+  margin-left: 56px;
+  margin-right: 56px;
+  margin-bottom: 19px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.title-region-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-region-accent-bar {
+  background-color: var(--ppt-accent);
+  width: 4px;
+  height: 32px;
+  border-radius: var(--ppt-radius-sm);
+  flex-shrink: 0;
+}
+
+.title-region-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-region-eyebrow {
+  font-family: var(--ppt-font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ppt-accent);
+}
+
+.title-region-title {
+  margin: 0;
+  font-family: var(--ppt-font-display);
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--ppt-text-1);
+  line-height: 1.2;
+}
+
+.title-region-subtitle {
+  margin: 0;
+  margin-left: 16px;
+  font-family: var(--ppt-font-body);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ppt-text-2);
+  line-height: 1.4;
+}.why-track-body-wrapper{
+  flex: 1 1 0;
+  margin-left: 56px;
+  margin-right: 56px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px 16px;
+  
+}.why-track-overview-surface{
+  background: var(--ppt-surface);
+  border: 1px solid var(--ppt-border);
+  border-radius: var(--ppt-radius-lg);
+  padding: 16px 24px;
+  box-shadow: var(--ppt-shadow-soft);
+  flex-shrink: 0;
+}
+
+.why-track-overview-lead {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ppt-text-2);
+}
+
+.why-track-overview-lead strong {
+  color: var(--ppt-text-1);
+  font-weight: 600;
+}.why-track-challenges-grid{
+  flex: 1 1 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 11px 14px;
+  
+}.why-track-challenge-item{
+  background: var(--ppt-surface);
+  border: 1px solid var(--ppt-border);
+  border-radius: var(--ppt-radius-md);
+  padding: 13px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px 6px;
+  box-shadow: var(--ppt-shadow-soft);
+  
+}.why-track-challenge-item-header{
+  display: flex;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+.why-track-challenge-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--ppt-radius-sm);
+  background: var(--ppt-bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ppt-accent);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.why-track-challenge-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ppt-text-1);
+  line-height: 1.3;
+}
+
+.why-track-challenge-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ppt-text-2);
+  line-height: 1.4;
+}.why-track-risk-banner{
+  background: var(--ppt-surface-2);
+  border-radius: var(--ppt-radius-md);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px 12px;
+  flex-shrink: 0;
+}
+
+.why-track-risk-icon {
+  color: var(--ppt-warn);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.why-track-risk-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ppt-text-2);
+  line-height: 1.4;
+}
+
+.why-track-risk-text strong {
+  color: var(--ppt-text-1);
+  font-weight: 600;
+}
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+<div class="slide-root">
+  <header class="title-region-header">
+    <div class="title-region-wrapper">
+      <span class="title-region-accent-bar"></span>
+      <div class="title-region-text-group">
+        <span class="title-region-eyebrow">BA Track | ServiceHub</span>
+        <h1 class="title-region-title">Чому цей трек важливий для сучасного аналітика</h1>
+      </div>
+    </div>
+    <p class="title-region-subtitle">Розрізнені джерела, неповні запити на зміни та ризики слабкої простежуваності вимог у Jira</p>
+  </header>
+
+  <div class="why-track-body-wrapper">
+    <div class="why-track-overview-surface">
+      <p class="why-track-overview-lead">
+        Аналітики часто працюють з кількома продуктами, де вимоги розпорошені між специфікаціями, Jira, нотатками зустрічей, електронними листами та чатами. Запити на зміни надходять мовою клієнта — без повного опису обсягу, впливу чи історії рішень.
+      </p>
+    </div>
+
+    <div class="why-track-challenges-grid">
+      <div class="why-track-challenge-item">
+        <div class="why-track-challenge-item-header">
+          <span class="why-track-challenge-icon"><i class="fa-solid fa-clock"></i></span>
+          <span class="why-track-challenge-title">Час на відновлення контексту</span>
+        </div>
+        <p class="why-track-challenge-desc">Аналітик витрачає години на пошук попередніх рішень та передумов, розкиданих по різних джерелах, замість фокусу на аналізі.</p>
+      </div>
+      <div class="why-track-challenge-item">
+        <div class="why-track-challenge-item-header">
+          <span class="why-track-challenge-icon"><i class="fa-solid fa-rotate"></i></span>
+          <span class="why-track-challenge-title">Несумісні та застарілі вимоги</span>
+        </div>
+        <p class="why-track-challenge-desc">Версії документів розходяться, правила бізнесу суперечать одне одному, а актуальність записів ніхто системно не перевіряє.</p>
+      </div>
+      <div class="why-track-challenge-item">
+        <div class="why-track-challenge-item-header">
+          <span class="why-track-challenge-icon"><i class="fa-solid fa-comments"></i></span>
+          <span class="why-track-challenge-title">Повторні цикли уточнень</span>
+        </div>
+        <p class="why-track-challenge-desc">Неповні запити змушують повертатися до замовника кілька разів, що подовжує цикл і створює ризик втрати деталей.</p>
+      </div>
+      <div class="why-track-challenge-item">
+        <div class="why-track-challenge-item-header">
+          <span class="why-track-challenge-icon"><i class="fa-solid fa-list-check"></i></span>
+          <span class="why-track-challenge-title">Неповні завдання Jira</span>
+        </div>
+        <p class="why-track-challenge-desc">Описи без чітких критеріїв приймання та меж передаються в розробку, що призводить до додаткових питань на етапі реалізації.</p>
+      </div>
+      <div class="why-track-challenge-item">
+        <div class="why-track-challenge-item-header">
+          <span class="why-track-challenge-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+          <span class="why-track-challenge-title">Пропущені ефекти змін</span>
+        </div>
+        <p class="why-track-challenge-desc">Зміна в одному місці впливає на бізнес-правила, інтеграції чи документацію — і цей вплив залишається невиявленим.</p>
+      </div>
+      <div class="why-track-challenge-item">
+        <div class="why-track-challenge-item-header">
+          <span class="why-track-challenge-icon"><i class="fa-solid fa-link"></i></span>
+          <span class="why-track-challenge-title">Слабка простежуваність</span>
+        </div>
+        <p class="why-track-challenge-desc">Немає зв&#39;язку між джерелом, вимогою, беклогом та затвердженням, тому рішення важко перевірити або обґрунтувати заднім числом.</p>
+      </div>
+    </div>
+
+    <div class="why-track-risk-banner" style="margin-bottom: 3px !important;">
+      <span class="why-track-risk-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+      <p class="why-track-risk-text">
+        <strong>Ключовий ризик:</strong> незафіксовані рішення та відсутність простежуваності між джерелами, вимогами та погодженнями ускладнюють аудит і роблять зміни некерованими.
+      </p>
+    </div>
+  </div>
+</div>
+
+</body></html>

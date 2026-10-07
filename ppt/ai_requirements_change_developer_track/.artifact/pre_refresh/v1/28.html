@@ -1,0 +1,451 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Самостійна практика та підготовка</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    /* ===== Base Theme (from DESIGN) ===== */
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {width: 1280px; height: 720px; overflow: hidden;   
+       
+      
+      background: var(--ppt-bg);
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+    }
+
+    /* ===== Slide Root ===== */
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0; /* no padding on root to avoid overflow */
+    }
+
+    /* ===== Title Region (fixed per DESIGN) ===== */
+    .title-region {
+      margin-top: 40px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-eyebrow-badge {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+      white-space: nowrap;
+    }
+
+    .title-divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-main-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* ===== Main Body Wrapper (flex growth) ===== */
+    .practice-body-wrapper {
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+       /* allowed here for proper flex overflow, but we avoid min-height:0 on content containers */
+    }
+
+    /* ===== Day Plan grid ===== */
+    .day-plan-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .day-plan-card {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 14px 12px 12px 12px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .day-plan-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .day-plan-day-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      background: var(--ppt-surface-2);
+      padding: 2px 6px;
+      border-radius: var(--ppt-radius-sm);
+      letter-spacing: 0.02em;
+    }
+
+    .day-plan-icon {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      width: 18px;
+      text-align: center;
+    }
+
+    .day-plan-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .day-plan-desc {
+      font-size: 12px;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .day-plan-desc li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+
+    .day-plan-desc li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--ppt-accent);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* ===== Bottom row: focus areas + playbook refinement ===== */
+    .practice-bottom-row {
+      display: flex;
+      gap: 16px;
+      flex: 1 1 0;
+       /* allow internal scroll if needed, but we avoid overflow */
+    }
+
+    .focus-area-block {
+      flex: 1 1 0;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 18px;
+      border-left: 4px solid var(--ppt-accent);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .focus-area-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .focus-area-title i {
+      color: var(--ppt-accent);
+      font-size: 16px;
+    }
+
+    .focus-area-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .focus-area-list li {
+      font-size: 13px;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .focus-area-list li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: var(--ppt-accent);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .playbook-refine-block {
+      flex: 1 1 0;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 18px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .playbook-refine-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .playbook-refine-title i {
+      color: var(--ppt-accent);
+      font-size: 16px;
+    }
+
+    .playbook-refine-text {
+      font-size: 13px;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .playbook-refine-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .playbook-tag {
+      background: var(--ppt-surface-2);
+      color: var(--ppt-text-2);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--ppt-border);
+      font-family: var(--ppt-font-mono);
+    }
+
+    /* ===== Annotation / footnote ===== */
+    .practice-footnote {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--ppt-text-3);
+      border-top: 1px solid var(--ppt-border);
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .practice-footnote i {
+      color: var(--ppt-accent);
+      font-size: 13px;
+    }
+
+    /* ===== no extra decorations ===== */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title Region: Developer Track / title -->
+    <header class="title-region">
+      <div class="title-eyebrow-row">
+        <span class="title-eyebrow-badge">Developer Track</span>
+        <div class="title-divider-line"></div>
+      </div>
+      <h1 class="title-main-heading">Самостійна практика та підготовка</h1>
+    </header>
+
+    <!-- Main body -->
+    <div class="practice-body-wrapper">
+      <!-- 10 working days grid -->
+      <div class="day-plan-grid">
+        <!-- Day 1-2 -->
+        <div class="day-plan-card">
+          <div class="day-plan-card-header">
+            <span class="day-plan-day-label">Дні 1–2</span>
+            <i class="fa-solid fa-rotate day-plan-icon"></i>
+          </div>
+          <div class="day-plan-title">Повторення DEV-1 та DEV-2</div>
+          <ul class="day-plan-desc">
+            <li>Технічне уточнення вимог</li>
+            <li>Декомпозиція та план</li>
+            <li>Оновлення промптів</li>
+          </ul>
+        </div>
+        <!-- Day 3-4 -->
+        <div class="day-plan-card">
+          <div class="day-plan-card-header">
+            <span class="day-plan-day-label">Дні 3–4</span>
+            <i class="fa-solid fa-route day-plan-icon"></i>
+          </div>
+          <div class="day-plan-title">Повторення DEV-3</div>
+          <ul class="day-plan-desc">
+            <li>Аналіз технічного впливу</li>
+            <li>Матриця впливу та ризики</li>
+            <li>Сумісність і міграція</li>
+          </ul>
+        </div>
+        <!-- Day 5-6 -->
+        <div class="day-plan-card">
+          <div class="day-plan-card-header">
+            <span class="day-plan-day-label">Дні 5–6</span>
+            <i class="fa-solid fa-code-branch day-plan-icon"></i>
+          </div>
+          <div class="day-plan-title">Нові change-запити</div>
+          <ul class="day-plan-desc">
+            <li>Додаткові сценарії ServiceHub</li>
+            <li>Тест на неповних контекстах</li>
+            <li>Фіксація розбіжностей</li>
+          </ul>
+        </div>
+        <!-- Day 7-8 -->
+        <div class="day-plan-card">
+          <div class="day-plan-card-header">
+            <span class="day-plan-day-label">Дні 7–8</span>
+            <i class="fa-solid fa-flask day-plan-icon"></i>
+          </div>
+          <div class="day-plan-title">Стрес-тест промптів</div>
+          <ul class="day-plan-desc">
+            <li>Конфліктні вимоги</li>
+            <li>Відсутні дані</li>
+            <li>Оцінка якості відповідей</li>
+          </ul>
+        </div>
+        <!-- Day 9-10 -->
+        <div class="day-plan-card">
+          <div class="day-plan-card-header">
+            <span class="day-plan-day-label">Дні 9–10</span>
+            <i class="fa-solid fa-book-open day-plan-icon"></i>
+          </div>
+          <div class="day-plan-title">Фіналізація Playbook</div>
+          <ul class="day-plan-desc">
+            <li>Інтеграція зворотного зв&#39;язку</li>
+            <li>Оновлення чек-листів</li>
+            <li>Підготовка до тесту</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom row: focus + playbook -->
+      <div class="practice-bottom-row">
+        <div class="focus-area-block">
+          <div class="focus-area-title">
+            <i class="fa-solid fa-crosshairs"></i>
+            Фокус на складних контекстах
+          </div>
+          <ul class="focus-area-list">
+            <li>Неповні або суперечливі технічні вхідні дані</li>
+            <li>Приховані залежності та транзитивний вплив</li>
+            <li>Сценарії відмов та зворотної сумісності</li>
+            <li>Розділення фактів, припущень і рішень</li>
+            <li>Перевірка критеріїв прийнятності</li>
+          </ul>
+        </div>
+        <div class="playbook-refine-block">
+          <div class="playbook-refine-title">
+            <i class="fa-solid fa-wrench"></i>
+            Удосконалення AI Playbook
+          </div>
+          <div class="playbook-refine-text">
+            Щоденне оновлення на основі виявлених помилок та нових патернів. Додавання перевірених формулювань і журналу помилок промптів.
+          </div>
+          <div class="playbook-refine-tags">
+            <span class="playbook-tag">журнал помилок</span>
+            <span class="playbook-tag">оновлення промптів</span>
+            <span class="playbook-tag">чек-листи</span>
+            <span class="playbook-tag">фінальна версія</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footnote -->
+      <div class="practice-footnote" style="margin-bottom: 4px !important;">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>10 робочих днів · повторення всіх 4 workflow · тестування на реальних кейсах ServiceHub</span>
+      </div>
+    </div>
+  </div>
+
+</body></html>

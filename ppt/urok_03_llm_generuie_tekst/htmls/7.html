@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0"/>
+  <title>Гра «Жива мовна модель»</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFB;
+      --ppt-bg-soft: #F4F5F0;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF0E7;
+      --ppt-border: #D1D5C8;
+      --ppt-text-1: #1A1C1E;
+      --ppt-text-2: #4A4D42;
+      --ppt-text-3: #8A8D7C;
+      --ppt-accent: #00BFA5;
+      --ppt-accent-2: #FF5252;
+      --ppt-chart-1: #00BFA5;
+      --ppt-chart-2: #4DB6AC;
+      --ppt-chart-3: #80CBC4;
+      --ppt-chart-4: #B2DFDB;
+      --ppt-good: #2E7D32;
+      --ppt-warn: #F57C00;
+      --ppt-bad: #C62828;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --ppt-font-display: "Outfit", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+       
+      background: var(--ppt-bg);
+      color: var(--ppt-text-1);
+      font-family: var(--ppt-font-body);
+      
+    }
+
+    .llm-slide-root {
+      width: 1280px; height: 720px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .llm-header-region {
+      margin-top: 48px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .llm-header-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .llm-header-badge {
+      background: var(--ppt-accent);
+      color: white;
+      padding: 4px 12px;
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 14px;
+      border-radius: var(--ppt-radius-sm);
+      letter-spacing: 1px;
+    }
+
+    .llm-header-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .llm-header-title {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .llm-content-grid {
+      flex: 1;
+      display: flex;
+      padding: 0 64px 64px 64px;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .llm-left-instructions-column {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .llm-right-simulator-column {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .llm-instruction-card {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 32px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .llm-instruction-title {
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .llm-instruction-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .llm-instruction-item {
+      display: flex;
+      gap: 16px;
+      font-size: 18px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .llm-instruction-number {
+      background: var(--ppt-surface-2);
+      color: var(--ppt-text-1);
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .llm-simulator-container {
+      background: var(--ppt-text-1);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      height: 100%;
+      box-shadow: var(--ppt-shadow-strong);
+      color: white;
+    }
+
+    .llm-context-window {
+      background: #000;
+      border: 1px solid #333;
+      padding: 16px;
+      border-radius: var(--ppt-radius-md);
+      min-height: 100px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 22px;
+      line-height: 1.5;
+      color: var(--ppt-accent);
+      position: relative;
+    }
+
+    .llm-context-label {
+      position: absolute;
+      top: -10px;
+      left: 12px;
+      background: var(--ppt-text-1);
+      padding: 0 8px;
+      font-size: 12px;
+      color: var(--ppt-text-3);
+      font-family: var(--ppt-font-display);
+      letter-spacing: 1px;
+    }
+
+    .llm-prediction-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .llm-token-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .llm-token-input {
+      flex: 3;
+      background: #222;
+      border: 1px solid #444;
+      padding: 12px;
+      border-radius: var(--ppt-radius-sm);
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .llm-token-input:focus {
+      border-color: var(--ppt-accent);
+    }
+
+    .llm-prob-input {
+      flex: 1;
+      background: #222;
+      border: 1px solid #444;
+      padding: 12px;
+      border-radius: var(--ppt-radius-sm);
+      color: var(--ppt-accent);
+      font-size: 16px;
+      text-align: center;
+      outline: none;
+    }
+
+    .llm-generate-btn {
+      background: var(--ppt-accent);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: var(--ppt-radius-md);
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .llm-generate-btn:hover {
+      background: #008f7a;
+      transform: translateY(-2px);
+    }
+
+    .llm-generate-btn:active {
+      transform: translateY(0);
+    }
+
+    .llm-prob-sum-indicator {
+      text-align: right;
+      font-size: 13px;
+      color: var(--ppt-text-3);
+      margin-top: -8px;
+    }
+
+    .llm-prob-sum-indicator.error {
+      color: var(--ppt-accent-2);
+    }
+
+    .llm-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 22px;
+      background: var(--ppt-accent);
+      vertical-align: middle;
+      margin-left: 4px;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .llm-step-hint {
+      margin-top: auto;
+      padding: 12px;
+      background: rgba(0, 191, 165, 0.1);
+      border-radius: var(--ppt-radius-md);
+      font-size: 14px;
+      color: var(--ppt-text-3);
+      font-style: italic;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="llm-slide-root">
+    <header class="llm-header-region">
+      <div class="llm-header-badge-row">
+        <span class="llm-header-badge">LAB // INFO-11</span>
+        <div class="llm-header-line"></div>
+      </div>
+      <h1 class="llm-header-title">Гра «Жива мовна модель»</h1>
+    </header>
+
+    <main class="llm-content-grid" style="margin-bottom: 4px !important;">
+      <!-- Left Column: Instructions -->
+      <div class="llm-left-instructions-column">
+        <section class="llm-instruction-card">
+          <div class="llm-instruction-title">
+            <i class="fa-solid fa-microchip"></i>
+            Алгоритм гри
+          </div>
+          <div class="llm-instruction-list">
+            <div class="llm-instruction-item">
+              <span class="llm-instruction-number">1</span>
+              <div>Кожна команда отримує початкову фразу в «Контекстне вікно».</div>
+            </div>
+            <div class="llm-instruction-item">
+              <span class="llm-instruction-number">2</span>
+              <div>Запропонуйте <strong>3 варіанти</strong> продовження речення (наступні токени).</div>
+            </div>
+            <div class="llm-instruction-item">
+              <span class="llm-instruction-number">3</span>
+              <div>Розподіліть рівно <strong>100 балів</strong> імовірності між ними.</div>
+            </div>
+            <div class="llm-instruction-item">
+              <span class="llm-instruction-number">4</span>
+              <div>Модель обирає токен з найбільшим балом та додає його до контексту.</div>
+            </div>
+          </div>
+          <div class="llm-step-hint">
+            <i class="fa-solid fa-circle-info"></i> Подивіться, як кожен вибір токена радикально змінює майбутні варіанти продовження!
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column: Interactive Simulator -->
+      <div class="llm-right-simulator-column">
+        <div class="llm-simulator-container" data-interaction-trigger="true" data-runtime-root="true">
+          <div class="llm-context-window" id="context-display">
+            <span class="llm-context-label">CONTEXT_WINDOW</span>
+            <span id="current-text">Сьогодні на уроці ми</span><span class="llm-cursor"></span>
+          </div>
+
+          <div class="llm-prediction-panel">
+            <div class="llm-token-row">
+              <input type="text" class="llm-token-input" id="word-1" placeholder="Варіант 1 (напр. вивчаємо)"/>
+              <input type="number" class="llm-prob-input" id="prob-1" value="40" min="0" max="100"/>
+            </div>
+            <div class="llm-token-row">
+              <input type="text" class="llm-token-input" id="word-2" placeholder="Варіант 2 (напр. граємо)"/>
+              <input type="number" class="llm-prob-input" id="prob-2" value="30" min="0" max="100"/>
+            </div>
+            <div class="llm-token-row">
+              <input type="text" class="llm-token-input" id="word-3" placeholder="Варіант 3 (напр. побачили)"/>
+              <input type="number" class="llm-prob-input" id="prob-3" value="30" min="0" max="100"/>
+            </div>
+            <div class="llm-prob-sum-indicator" id="sum-indicator">Сума балів: 100/100</div>
+          </div>
+
+          <button class="llm-generate-btn" id="gen-btn">
+            <i class="fa-solid fa-play"></i> ГЕНЕРУВАТИ НАСТУПНИЙ ТОКЕН
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const genBtn = document.getElementById('gen-btn');
+    const currentTextEl = document.getElementById('current-text');
+    const sumIndicator = document.getElementById('sum-indicator');
+    
+    const words = [
+      document.getElementById('word-1'),
+      document.getElementById('word-2'),
+      document.getElementById('word-3')
+    ];
+    
+    const probs = [
+      document.getElementById('prob-1'),
+      document.getElementById('prob-2'),
+      document.getElementById('prob-3')
+    ];
+
+    function updateSum() {
+      const sum = Array.from(probs).reduce((acc, input) => acc + (parseInt(input.value) || 0), 0);
+      sumIndicator.textContent = `Сума балів: ${sum}/100`;
+      if (sum !== 100) {
+        sumIndicator.classList.add('error');
+      } else {
+        sumIndicator.classList.remove('error');
+      }
+    }
+
+    probs.forEach(input => input.addEventListener('input', updateSum));
+
+    genBtn.addEventListener('click', () => {
+      const wordVals = words.map(input => input.value.trim());
+      const probVals = probs.map(input => parseInt(input.value) || 0);
+      const sum = probVals.reduce((a, b) => a + b, 0);
+
+      // Validation
+      if (wordVals.some(w => w === "")) {
+        alert("Будь ласка, заповніть усі 3 варіанти слів.");
+        return;
+      }
+      
+      if (sum !== 100) {
+        alert("Сума імовірностей має дорівнювати рівно 100 балам.");
+        return;
+      }
+
+      // Selection logic (Greedy for demonstration)
+      let maxIdx = 0;
+      for (let i = 1; i < probVals.length; i++) {
+        if (probVals[i] > probVals[maxIdx]) maxIdx = i;
+      }
+
+      const chosenWord = wordVals[maxIdx];
+
+      // Visual feedback: Highlight winner
+      const winnerRow = words[maxIdx].parentElement;
+      winnerRow.style.transition = "background 0.3s";
+      winnerRow.style.background = "rgba(0, 191, 165, 0.2)";
+      
+      setTimeout(() => {
+        // Update Context
+        currentTextEl.textContent += " " + chosenWord;
+        
+        // Reset inputs for next turn
+        words.forEach(input => input.value = "");
+        probs.forEach(input => input.value = "0");
+        winnerRow.style.background = "transparent";
+        updateSum();
+        
+        // Scroll context into view if needed
+        const contextDisplay = document.getElementById('context-display');
+        contextDisplay.scrollTop = contextDisplay.scrollHeight;
+      }, 500);
+    });
+
+    // Initial check
+    updateSum();
+  </script>
+
+</body></html>

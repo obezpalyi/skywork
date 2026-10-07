@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Робочий маршрут change request</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-header {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-breadcrumb {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .title-region-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      margin-top: 4px;
+    }
+
+    .cr-workflow-content-wrapper {
+      flex: 1;
+      display: flex;
+      padding-left: 60px;
+      padding-right: 60px;
+      padding-bottom: 40px;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .cr-workflow-left-artifact-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cr-workflow-artifact-container {
+      background-color: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1;
+    }
+
+    .cr-workflow-artifact-label {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ppt-text-3);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cr-workflow-raw-input-box {
+      background-color: var(--ppt-surface);
+      border: 1px dashed var(--ppt-text-3);
+      padding: 20px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ppt-text-2);
+      font-style: italic;
+      position: relative;
+    }
+
+    .cr-workflow-raw-input-box::before {
+      content: '"';
+      position: absolute;
+      top: 0;
+      left: 8px;
+      font-size: 40px;
+      color: var(--ppt-border);
+      font-family: serif;
+    }
+
+    .cr-workflow-artifact-details {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cr-workflow-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--ppt-text-2);
+    }
+
+    .cr-workflow-detail-icon {
+      color: var(--ppt-text-3);
+      margin-top: 4px;
+      width: 16px;
+      text-align: center;
+    }
+
+    .cr-workflow-right-actions-section {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .cr-workflow-action-card {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-left: 4px solid var(--ppt-accent);
+      border-radius: var(--ppt-radius-md);
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1;
+    }
+
+    .cr-workflow-action-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--ppt-accent);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .cr-workflow-action-text-content {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cr-workflow-action-title {
+      font-family: var(--ppt-font-display);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .cr-workflow-action-description {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .cr-workflow-action-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      margin-top: 8px;
+      width: fit-content;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-container">
+    <header class="title-region-header">
+      <div class="title-region-breadcrumb">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-main-heading">Робочий маршрут change request</h1>
+      <div class="title-region-subtitle">
+        Повний цикл обробки CR: від реєстрації та нормалізації до синхронізації delivery pack.
+      </div>
+    </header>
+
+    <main class="cr-workflow-content-wrapper" style="margin-bottom: 4px !important;">
+      <!-- Left Column: Input Artifact -->
+      <section class="cr-workflow-left-artifact-section">
+        <div class="cr-workflow-artifact-container">
+          <div class="cr-workflow-artifact-label">
+            <i class="fa-solid fa-file-lines"></i>
+            Вхідний артефакт (Document)
+          </div>
+          <div class="cr-workflow-raw-input-box">
+            &#34;Нам потрібно терміново додати підтримку Apple Pay для VIP-клієнтів на сторінці чекауту, бо конкуренти це вже зробили. Бажано до кінця спрінту, і щоб не зламало існуючі знижки.&#34;
+          </div>
+          <div class="cr-workflow-artifact-details">
+            <div class="cr-workflow-detail-item">
+              <i class="fa-solid fa-circle-info cr-workflow-detail-icon"></i>
+              <span><strong>Тип:</strong> Неструктурований запит (Slack/Email)</span>
+            </div>
+            <div class="cr-workflow-detail-item">
+              <i class="fa-solid fa-circle-exclamation cr-workflow-detail-icon"></i>
+              <span><strong>Стан:</strong> Відсутній контекст впливу та детальні AC</span>
+            </div>
+            <div class="cr-workflow-detail-item">
+              <i class="fa-solid fa-link cr-workflow-detail-icon"></i>
+              <span><strong>Зв&#39;язки:</strong> Не визначено (потребує аналізу)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: 3 AI Actions -->
+      <section class="cr-workflow-right-actions-section">
+        <!-- AI Action 1 -->
+        <div class="cr-workflow-action-card">
+          <div class="cr-workflow-action-icon-wrapper">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div class="cr-workflow-action-text-content">
+            <div class="cr-workflow-action-title">1. Нормалізація та Clarification</div>
+            <div class="cr-workflow-action-description">
+              ШІ перетворює текст на структурований CR паспорт: бізнес-ціль, опис зміни, пріоритет та маркування відсутніх даних (блокерів).
+            </div>
+            <div class="cr-workflow-action-badge">OUTPUT: Structured CR Record</div>
+          </div>
+        </div>
+
+        <!-- AI Action 2 -->
+        <div class="cr-workflow-action-card">
+          <div class="cr-workflow-action-icon-wrapper">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <div class="cr-workflow-action-text-content">
+            <div class="cr-workflow-action-title">2. Impact Analysis (Оцінка впливу)</div>
+            <div class="cr-workflow-action-description">
+              Аналіз зв&#39;язків у корпусі документів: виявлення залежних вимог, Jira tasks, тестових сценаріїв та ризиків для релізу.
+            </div>
+            <div class="cr-workflow-action-badge">OUTPUT: Impact Matrix &amp; Risks</div>
+          </div>
+        </div>
+
+        <!-- AI Action 3 -->
+        <div class="cr-workflow-action-card">
+          <div class="cr-workflow-action-icon-wrapper">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </div>
+          <div class="cr-workflow-action-text-content">
+            <div class="cr-workflow-action-title">3. Синхронізація артефактів</div>
+            <div class="cr-workflow-action-description">
+              Після Approval людини ШІ готує оновлені Acceptance Criteria, нові Jira tasks та оновлює Regression Scope у QA плані.
+            </div>
+            <div class="cr-workflow-action-badge">OUTPUT: Updated Delivery Pack</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body></html>

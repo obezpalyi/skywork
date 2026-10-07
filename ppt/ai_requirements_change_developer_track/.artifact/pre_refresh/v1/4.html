@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+<title>Сесія DEV-1: Технічний аналіз вимог</title>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+:root {
+  --ppt-bg: #FDFDFD;
+  --ppt-bg-soft: #F4F7F6;
+  --ppt-surface: #FFFFFF;
+  --ppt-surface-2: #E9EFED;
+  --ppt-border: #D1D9D7;
+  --ppt-text-1: #121417;
+  --ppt-text-2: #4A5552;
+  --ppt-text-3: #879491;
+  --ppt-accent: #007A5E;
+  --ppt-accent-2: #00D3A4;
+  --ppt-chart-1: #007A5E;
+  --ppt-chart-2: #00D3A4;
+  --ppt-chart-3: #121417;
+  --ppt-chart-4: #879491;
+  --ppt-good: #107C10;
+  --ppt-warn: #D83B01;
+  --ppt-bad: #A80000;
+  --ppt-radius-sm: 2px;
+  --ppt-radius-md: 4px;
+  --ppt-radius-lg: 8px;
+  --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+  --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+  --ppt-font-display: "Inter", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+  --ppt-font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {width: 1280px; height: 720px; overflow: hidden;   
+  background: var(--ppt-bg);
+  font-family: var(--ppt-font-body);
+}
+
+.dev1-session-slide-root {
+  width: 1280px; height: 720px;
+  background: var(--ppt-bg);
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.dev1-session-title-region {
+  margin-top: 40px;
+  margin-left: 56px;
+  margin-right: 56px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dev1-session-title-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dev1-session-title-eyebrow-label {
+  font-family: var(--ppt-font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ppt-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: var(--ppt-surface-2);
+  padding: 4px 8px;
+  border-radius: var(--ppt-radius-sm);
+}
+
+.dev1-session-title-rule {
+  height: 1px;
+  flex-grow: 1;
+  background: var(--ppt-border);
+}
+
+.dev1-session-title-heading {
+  margin: 0;
+  font-family: var(--ppt-font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--ppt-text-1);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.dev1-session-body-wrapper {
+  flex: 1 1 0;
+  margin-left: 56px;
+  margin-right: 56px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+
+.dev1-session-objectives-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--ppt-surface);
+  border: 1px solid var(--ppt-border);
+  border-radius: var(--ppt-radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--ppt-shadow-soft);
+}
+
+.dev1-session-objectives-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dev1-session-objectives-title-icon {
+  color: var(--ppt-accent);
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+
+.dev1-session-objectives-title-text {
+  font-family: var(--ppt-font-display);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ppt-text-1);
+}
+
+.dev1-session-objectives-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.dev1-session-objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--ppt-bg-soft);
+  border-radius: var(--ppt-radius-md);
+  padding: 12px 14px;
+}
+
+.dev1-session-objective-check-icon {
+  color: var(--ppt-accent);
+  font-size: 14px;
+  width: 18px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.dev1-session-objective-text {
+  font-family: var(--ppt-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--ppt-text-2);
+}
+
+.dev1-session-inputs-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--ppt-bg-soft);
+  border: 1px solid var(--ppt-border);
+  border-radius: var(--ppt-radius-lg);
+  padding: 18px 24px;
+  flex: 1 1 0;
+}
+
+.dev1-session-inputs-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dev1-session-inputs-title-icon {
+  color: var(--ppt-accent);
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+
+.dev1-session-inputs-title-text {
+  font-family: var(--ppt-font-display);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ppt-text-1);
+}
+
+.dev1-session-inputs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  list-style: none;
+  flex: 1 1 0;
+  align-content: start;
+}
+
+.dev1-session-input-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--ppt-surface);
+  border-radius: var(--ppt-radius-md);
+  padding: 10px 12px;
+  border-left: 3px solid var(--ppt-accent);
+}
+
+.dev1-session-input-item-icon {
+  color: var(--ppt-accent);
+  font-size: 13px;
+  width: 16px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.dev1-session-input-item-text {
+  font-family: var(--ppt-font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ppt-text-2);
+}
+
+.dev1-session-input-item-code {
+  font-family: var(--ppt-font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ppt-accent);
+}
+
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+<div class="dev1-session-slide-root">
+  <header class="dev1-session-title-region">
+    <div class="dev1-session-title-eyebrow-row">
+      <span class="dev1-session-title-eyebrow-label">Developer Track</span>
+      <div class="dev1-session-title-rule"></div>
+    </div>
+    <h1 class="dev1-session-title-heading">Сесія DEV-1: Технічний аналіз вимог</h1>
+  </header>
+
+  <div class="dev1-session-body-wrapper">
+    <div class="dev1-session-objectives-panel">
+      <div class="dev1-session-objectives-title-row">
+        <i class="fa-solid fa-bullseye dev1-session-objectives-title-icon"></i>
+        <span class="dev1-session-objectives-title-text">Цілі сесії</span>
+      </div>
+      <div class="dev1-session-objectives-grid">
+        <div class="dev1-session-objective-item">
+          <i class="fa-solid fa-check dev1-session-objective-check-icon"></i>
+          <span class="dev1-session-objective-text">Витягувати технічно значущі твердження з вимог ServiceHub</span>
+        </div>
+        <div class="dev1-session-objective-item">
+          <i class="fa-solid fa-check dev1-session-objective-check-icon"></i>
+          <span class="dev1-session-objective-text">Виявляти відсутні обмеження реалізації та приховані технічні ризики</span>
+        </div>
+        <div class="dev1-session-objective-item">
+          <i class="fa-solid fa-check dev1-session-objective-check-icon"></i>
+          <span class="dev1-session-objective-text">Розмежовувати бізнес-рішення і технічні припущення</span>
+        </div>
+        <div class="dev1-session-objective-item">
+          <i class="fa-solid fa-check dev1-session-objective-check-icon"></i>
+          <span class="dev1-session-objective-text">Формулювати питання для BA, QA, архітектора та DevOps</span>
+        </div>
+        <div class="dev1-session-objective-item">
+          <i class="fa-solid fa-check dev1-session-objective-check-icon"></i>
+          <span class="dev1-session-objective-text">Перевіряти технічну інтерпретованість критеріїв прийнятності</span>
+        </div>
+        <div class="dev1-session-objective-item">
+          <i class="fa-solid fa-check dev1-session-objective-check-icon"></i>
+          <span class="dev1-session-objective-text">Підготувати основу для технічного уточнення через Xplore</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dev1-session-inputs-panel">
+      <div class="dev1-session-inputs-title-row">
+        <i class="fa-solid fa-diagram-project dev1-session-inputs-title-icon"></i>
+        <span class="dev1-session-inputs-title-text">Вхідні дані для аналізу</span>
+      </div>
+      <ul class="dev1-session-inputs-list" style="margin-bottom: 4px !important;">
+        <li class="dev1-session-input-list-item">
+          <i class="fa-solid fa-file-lines dev1-session-input-item-icon"></i>
+          <span class="dev1-session-input-item-text">Канонічний пакет вимог <span class="dev1-session-input-item-code">ServiceHub</span></span>
+        </li>
+        <li class="dev1-session-input-list-item">
+          <i class="fa-brands fa-jira dev1-session-input-item-icon"></i>
+          <span class="dev1-session-input-item-text">Беклог <span class="dev1-session-input-item-code">Jira</span></span>
+        </li>
+        <li class="dev1-session-input-list-item">
+          <i class="fa-solid fa-sitemap dev1-session-input-item-icon"></i>
+          <span class="dev1-session-input-item-text">Діаграма системного контексту</span>
+        </li>
+        <li class="dev1-session-input-list-item">
+          <i class="fa-solid fa-cubes dev1-session-input-item-icon"></i>
+          <span class="dev1-session-input-item-text">Карта компонентів системи</span>
+        </li>
+        <li class="dev1-session-input-list-item">
+          <i class="fa-solid fa-code dev1-session-input-item-icon"></i>
+          <span class="dev1-session-input-item-text">Поточна специфікація <span class="dev1-session-input-item-code">API</span></span>
+        </li>
+        <li class="dev1-session-input-list-item">
+          <i class="fa-solid fa-database dev1-session-input-item-icon"></i>
+          <span class="dev1-session-input-item-text">Поточна модель даних</span>
+        </li>
+        <li class="dev1-session-input-list-item">
+          <i class="fa-solid fa-network-wired dev1-session-input-item-icon"></i>
+          <span class="dev1-session-input-item-text">Карта інтеграцій</span>
+        </li>
+        <li class="dev1-session-input-list-item">
+          <i class="fa-solid fa-triangle-exclamation dev1-session-input-item-icon"></i>
+          <span class="dev1-session-input-item-text">Відомі технічні обмеження</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body></html>

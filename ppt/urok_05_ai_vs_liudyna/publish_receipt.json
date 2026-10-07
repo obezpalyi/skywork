@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "status": "success",
+  "operation": "ppt.publish",
+  "kind": "ppt",
+  "page_count": 10,
+  "total_pages": 10,
+  "artifacts": [
+    {
+      "kind": "ppt",
+      "artifact_id": "2095591847752015872",
+      "artifact_version_id": "2095591847760404480",
+      "version": 1,
+      "status": "published",
+      "artifact_type": "presentation",
+      "file_type": "gen_ppt",
+      "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/03/upl_8481821298be49cbb5aa9a56dd1a2f0c/ppt-urok_05_ai_vs_liudyna.zip",
+      "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_f200c0765bea401e9e94f7dcf76f8c34/preview.png"
+    }
+  ],
+  "delivery": {
+    "artifact_id": "2095591847752015872",
+    "artifact_version_id": "2095591847760404480",
+    "version": 1,
+    "title": "AI vs людина",
+    "artifact_type": "presentation",
+    "file_type": "gen_ppt",
+    "page_count": 10,
+    "locator_items": [
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_0cbba1af2e534b518896dec0c11e367a/1.html",
+        "index": 1,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_c62b6c3bf5694a3eba9a22cf4bd84c5c/2.html",
+        "index": 2,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_91052e0c55d84de688252b6411c241b5/3.html",
+        "index": 3,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_c442a64d2c414fc8b5db499465c4fef2/4.html",
+        "index": 4,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_fb58a40ab02e48c7b8edbdd59476e9d6/5.html",
+        "index": 5,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_6ea7610d95d34cfe900515cfb9737628/6.html",
+        "index": 6,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_829f8c56ffdb4509a58ef74511b0986c/7.html",
+        "index": 7,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_fcab6ca7a77e480f8e750be39472e004/8.html",
+        "index": 8,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_bc0942adbe6c450a86c962f43782c94b/9.html",
+        "index": 9,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_450d6b78fc8f4cfaad58c63ab2973c0c/10.html",
+        "index": 10,
+        "notes": ""
+      }
+    ],
+    "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/03/upl_8481821298be49cbb5aa9a56dd1a2f0c/ppt-urok_05_ai_vs_liudyna.zip",
+    "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_f200c0765bea401e9e94f7dcf76f8c34/preview.png",
+    "ppt_style": "html",
+    "metadata": {
+      "artifact_complete": true,
+      "delivery_status": "complete_published",
+      "failed_pages": null,
+      "generation_status": "success",
+      "image_model_used": "",
+      "image_models_used": [],
+      "is_nano_ppt": false,
+      "language": "Ukrainian",
+      "operation_id": "urok_05_ai_vs_liudyna",
+      "page_aspect_ratio": "16:9",
+      "page_height": 720,
+      "page_size": "1280_720",
+      "page_width": 1280,
+      "ppt_style": "html",
+      "prepared_state_id": "pps_d66aa15e2b180d03d2643afff772fc15",
+      "prepared_state_version": 1,
+      "publish_mode": "complete",
+      "render_mode": "html",
+      "resume_supported": false,
+      "stop_reason": "",
+      "style": "html",
+      "success_pages": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "total_pages": 10,
+      "used_nano_banana": false
+    }
+  },
+  "deliveryStatus": "complete_published",
+  "idempotency_key_hash": "c40ad6e02b69576c",
+  "pre_refresh_path": "ppt/urok_05_ai_vs_liudyna/.artifact/pre_refresh/v1",
+  "timing": {
+    "started_at": "2026-09-03T19:16:35.372987973Z",
+    "completed_at": "2026-09-03T19:16:45.772334403Z",
+    "duration_ms": 10399
+  },
+  "bundle_hash": "8be43d52aef6b4e206fe837ab1666bdecdc10903adc67371ffa08a16ef2eebf7"
+}

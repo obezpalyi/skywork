@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+==========================================================================
+【AI HANDOVER NOTE】
+1. DESIGN PHILOSOPHY:
+   - Corporate Authority meets Tech-Forward Minimalism: This design system embodies professional certification standards while maintaining Softengi's modern tech identity
+   - Visual hierarchy emphasizes credibility through structured layouts, premium materials feel, and institutional gravitas
+   - The certificate design requires a landscape A4 format (297×210mm) with decorative borders, prominent logo placement, and clear information hierarchy
+   - Balance between ceremonial formality (for achievement recognition) and contemporary digital-age aesthetics
+
+2. TYPOGRAPHY:
+   - Montserrat: Primary sans-serif chosen for its geometric precision and professional authority, matching Softengi's uppercase navigation style. Use weights 600-800 for certificate headings, 400-500 for body text
+   - Inter: Secondary UI font for digital interfaces, providing excellent readability at small sizes for metadata and supporting information
+   - Typography scale should emphasize recipient names (large, bold) and course titles (prominent but secondary), with institutional details in refined smaller sizes
+
+3. COLOR SYSTEM:
+   - Brand Primary: Deep navy blue (Hue 230°) extracted from Softengi's #1a2a6c / #0d1b4b palette, representing trust, professionalism, and institutional authority
+   - Brand Accent: Olive-gold yellow (Hue 60°) from logo's #b8b800 / #c9b800, used sparingly for premium accents, seals, and decorative elements
+   - Teal/Cyan (Hue 190°) from website banner #00b4d8, serves as secondary accent for modern tech feel and visual interest
+   - --primary maps to navy for main text and borders; --accent maps to gold for highlights and seals; --ring uses teal for interactive elements
+   - Certificate borders should use gradient combinations: navy-to-teal or gold accents on navy base
+   - Semantic colors maintain professional restraint: muted success green for validation marks, subtle warning amber for expiration notices
+
+4. USAGE GUIDE:
+   - Layout: Full-width landscape certificate design with 40-60px margins, decorative corner elements using brand colors
+   - Certificate structure: Top third for logo and institution name, center for recipient/course details, bottom third for signatures and seal
+   - Decorative elements: Use subtle geometric patterns (hexagonal motifs echoing logo), thin gold accent lines, and navy borders with 2-3px width
+   - Background: Pure white (#ffffff) for print quality, with optional subtle texture overlay (5% opacity) for premium feel
+   - Logo placement: Top-center or top-left, minimum 80px height, with adequate whitespace
+   - Signature area: Dual signature lines with printed names beneath, official seal/stamp area on right side
+   - Interactive elements (if digital): Use teal ring color for verification QR codes or clickable elements
+   - Print specifications: Ensure all colors are print-safe (avoid pure blacks, use rich navy instead), minimum 300 DPI for graphics
+   - Accessibility: Maintain 7:1 contrast ratio for body text on white background, 4.5:1 minimum for decorative elements
+==========================================================================
+*/
+
+:root {
+  /* Typography */
+  --font-sans: Montserrat, Inter, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  /* Radius */
+  --radius: 0.5rem;
+
+  /* Core UI Tokens */
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.15 0.02 230);
+  --card: oklch(0.98 0.005 230);
+  --card-foreground: oklch(0.18 0.02 230);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.15 0.02 230);
+  --primary: oklch(0.25 0.08 230);
+  --primary-foreground: oklch(0.98 0.005 60);
+  --secondary: oklch(0.92 0.01 230);
+  --secondary-foreground: oklch(0.22 0.06 230);
+  --muted: oklch(0.95 0.005 230);
+  --muted-foreground: oklch(0.48 0.02 230);
+  --accent: oklch(0.72 0.14 60);
+  --accent-foreground: oklch(0.15 0.02 230);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0.005 25);
+  --border: oklch(0.88 0.01 230);
+  --input: oklch(0.88 0.01 230);
+  --ring: oklch(0.58 0.18 190);
+  
+  /* Chart Tokens */
+  --chart-1: oklch(0.25 0.08 230);
+  --chart-2: oklch(0.58 0.18 190);
+  --chart-3: oklch(0.72 0.14 60);
+  --chart-4: oklch(0.48 0.12 150);
+  --chart-5: oklch(0.62 0.16 280);
+  
+  /* Sidebar Tokens */
+  --sidebar: oklch(0.97 0.005 230);
+  --sidebar-foreground: oklch(0.25 0.06 230);
+  --sidebar-primary: oklch(0.25 0.08 230);
+  --sidebar-primary-foreground: oklch(0.98 0.005 60);
+  --sidebar-accent: oklch(0.72 0.14 60);
+  --sidebar-accent-foreground: oklch(0.15 0.02 230);
+  --sidebar-border: oklch(0.90 0.01 230);
+  --sidebar-ring: oklch(0.58 0.18 190);
+}
+
+.dark {
+  --background: oklch(0.12 0.02 230);
+  --foreground: oklch(0.95 0.01 230);
+  --card: oklch(0.15 0.025 230);
+  --card-foreground: oklch(0.93 0.01 230);
+  --popover: oklch(0.13 0.02 230);
+  --popover-foreground: oklch(0.95 0.01 230);
+  --primary: oklch(0.68 0.16 190);
+  --primary-foreground: oklch(0.12 0.02 230);
+  --secondary: oklch(0.22 0.04 230);
+  --secondary-foreground: oklch(0.90 0.01 230);
+  --muted: oklch(0.20 0.03 230);
+  --muted-foreground: oklch(0.62 0.02 230);
+  --accent: oklch(0.78 0.16 60);
+  --accent-foreground: oklch(0.12 0.02 230);
+  --destructive: oklch(0.62 0.24 25);
+  --destructive-foreground: oklch(0.95 0.01 25);
+  --border: oklch(0.25 0.04 230);
+  --input: oklch(0.25 0.04 230);
+  --ring: oklch(0.68 0.20 190);
+  
+  /* Chart Tokens */
+  --chart-1: oklch(0.68 0.16 190);
+  --chart-2: oklch(0.78 0.16 60);
+  --chart-3: oklch(0.58 0.14 150);
+  --chart-4: oklch(0.70 0.18 280);
+  --chart-5: oklch(0.65 0.20 340);
+  
+  /* Sidebar Tokens */
+  --sidebar: oklch(0.14 0.025 230);
+  --sidebar-foreground: oklch(0.88 0.01 230);
+  --sidebar-primary: oklch(0.68 0.16 190);
+  --sidebar-primary-foreground: oklch(0.12 0.02 230);
+  --sidebar-accent: oklch(0.78 0.16 60);
+  --sidebar-accent-foreground: oklch(0.12 0.02 230);
+  --sidebar-border: oklch(0.22 0.04 230);
+  --sidebar-ring: oklch(0.68 0.20 190);
+}
+
+@theme inline {
+  /* Shadcn Core Mapping */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Charts Mapping */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar Mapping */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Typography */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* Radius */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans min-h-screen;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  code, pre {
+    @apply font-mono;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40;
+  }
+}

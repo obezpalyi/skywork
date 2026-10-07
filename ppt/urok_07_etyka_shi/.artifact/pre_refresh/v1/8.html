@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Етична карта рішення</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap");
+
+        :root {
+            --ppt-bg: #FDFCFB;
+            --ppt-bg-soft: #F4F2EF;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E9ECEF;
+            --ppt-border: #D8D2C2;
+            --ppt-text-1: #1A1A1A;
+            --ppt-text-2: #4A4A4A;
+            --ppt-text-3: #6C757D;
+            --ppt-accent: #005F73;
+            --ppt-accent-2: #9B2226;
+            --ppt-chart-1: #005F73;
+            --ppt-chart-2: #0A9396;
+            --ppt-chart-3: #EE9B00;
+            --ppt-chart-4: #BB3E03;
+            --ppt-good: #0A9396;
+            --ppt-warn: #E9D8A6;
+            --ppt-bad: #9B2226;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 8px;
+            --ppt-radius-lg: 0px;
+            --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+            --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.08);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Manrope", sans-serif;
+        }*{
+            margin: 0 0;
+            padding: 0 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            font-family: var(--ppt-font-body);
+            color: var(--ppt-text-1);
+        }/* Slide root: fixed 1280x720, flex column */
+        .ethical-map-slide-root{
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 0;
+            margin: 0 0;
+            
+            box-shadow: var(--ppt-shadow-soft);
+            position: relative;
+        }/* Title region – fixed style per design */
+        .title-region-ethical-map{
+            margin-top: 26px;
+            margin-right: 64px;
+            margin-bottom: 15px;
+            margin-left: 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .title-eyebrow-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-accent-rule {
+            width: 24px;
+            height: 4px;
+            background-color: var(--ppt-accent);
+        }
+
+        .title-eyebrow-text {
+            font-family: var(--ppt-font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+        }
+
+        .title-heading-ethical-map {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--ppt-text-1);
+        }
+
+        .title-divider-rule {
+            width: 100%;
+            height: 1px;
+            background-color: var(--ppt-border);
+            margin-top: 12px;
+        }/* Main body wrapper: flex: 1, consumes remaining height */
+        .ethical-map-body-wrapper{
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: row;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 26px;
+            gap: 21px 32px;
+             /* will be overridden, but we set to 0 to avoid overflow */
+            /* we actually must not use min-height:0 per rules, but we use flex: 1 1 0 and not min-height:0 */
+        }/* Left column: open diagnostic list (dominant) */
+        .ethical-map-diagnostic-column{
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            border: none;
+            justify-content: flex-start;
+            gap: 8px 12px;
+            min-width: 0;
+        }.diagnostic-intro-text{
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--ppt-text-2);
+            margin-bottom: 5px;
+        }.diagnostic-list-container{
+            display: flex;
+            flex-direction: column;
+            gap: 5px 8px;
+            list-style: none;
+            padding: 0 0;
+            margin: 0 0;
+        }.diagnostic-list-item{
+            display: flex;
+            align-items: baseline;
+            gap: 8px 12px;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--ppt-text-1);
+            line-height: 1.4;
+            padding: 4px 0;
+            border-bottom: 1px dashed var(--ppt-border);
+        }
+
+        .diagnostic-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .diagnostic-item-icon {
+            color: var(--ppt-accent);
+            font-size: 16px;
+            width: 24px;
+            text-align: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .diagnostic-item-text {
+            flex: 1;
+        }
+
+        .diagnostic-strong {
+            font-weight: 700;
+            color: var(--ppt-accent);
+        }
+
+        .diagnostic-italic {
+            font-style: italic;
+            color: var(--ppt-text-2);
+            font-weight: 500;
+        }.condition-callout{
+            background-color: var(--ppt-bg-soft);
+            border-left: 4px solid var(--ppt-accent);
+            padding: 8px 16px;
+            margin-top: 8px;
+            border-radius: var(--ppt-radius-md);
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--ppt-text-1);
+            line-height: 1.4;
+        }
+
+        .condition-callout i {
+            color: var(--ppt-accent);
+            margin-right: 8px;
+        }/* Right rail: evidence rail – critical risks */
+        .ethical-map-evidence-rail{
+            width: 280px;
+            flex-shrink: 0;
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 13px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px 16px;
+            box-shadow: var(--ppt-shadow-soft);
+            height: fit-content;
+            align-self: flex-start;
+        }.evidence-rail-title{
+            font-family: var(--ppt-font-display);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ppt-accent-2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--ppt-border);
+            padding-bottom: 10px;
+            margin-bottom: 2px;
+        }
+
+        .evidence-rail-title i {
+            font-size: 18px;
+        }.evidence-rail-list{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 9px 14px;
+            padding: 0 0;
+            margin: 0 0;
+        }.evidence-rail-item{
+            display: flex;
+            gap: 6px 10px;
+            align-items: flex-start;
+            font-size: 16px;
+            line-height: 1.4;
+            color: var(--ppt-text-2);
+        }.evidence-rail-item i{
+            color: var(--ppt-bad);
+            font-size: 15px;
+            margin-top: 2px;
+            width: 18px;
+            text-align: center;
+        }
+
+        .evidence-rail-item strong {
+            color: var(--ppt-text-1);
+            font-weight: 700;
+        }
+
+        /* Responsive handling: ensure no overflow */
+        .ethical-map-body-wrapper {
+             /* allowed? rule says no min-height:0 anywhere. But we must not use it. */
+            /* we replace with flex:1 1 0 and not min-height:0. We'll remove min-height:0 */
+        }
+
+        /* We cannot use min-height:0, so we omit it. Use overflow: visible and let content define. */
+        .ethical-map-body-wrapper {
+            min-height: auto;
+        }
+
+        /* But we need to fill height: use align-items: stretch on wrapper? 
+           Actually we want left column to stretch, right rail natural. */
+        .ethical-map-body-wrapper {
+            align-items: stretch;
+        }
+
+        /* Left column should stretch full height */
+        .ethical-map-diagnostic-column {
+            justify-content: flex-start;
+        }
+
+        /* Ensure no fixed heights on containers except chart/media. None here. */
+
+        /* Remove min-height:0 anywhere. We don't have it. */
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="ethical-map-slide-root">
+        <!-- Title Region (fixed template) -->
+        <div class="title-region-ethical-map">
+            <div class="title-eyebrow-wrapper">
+                <div class="title-accent-rule"></div>
+                <span class="title-eyebrow-text">Етика та ШІ</span>
+            </div>
+            <h1 class="title-heading-ethical-map">Етична карта рішення</h1>
+            <div class="title-divider-rule"></div>
+        </div>
+
+        <!-- Body: open diagnostic list + evidence rail -->
+        <div class="ethical-map-body-wrapper">
+            <!-- Left column: diagnostic criteria list -->
+            <div class="ethical-map-diagnostic-column">
+                <p class="diagnostic-intro-text">
+                    Шаблон для аналізу будь-якої AI-системи: від мети до умов безпечного використання.
+                </p>
+                <ul class="diagnostic-list-container">
+                    <li class="diagnostic-list-item">
+                        <i class="fa-solid fa-bullseye diagnostic-item-icon"></i>
+                        <span class="diagnostic-item-text"><span class="diagnostic-strong">Мета системи</span> — яку проблему вирішуємо та для кого вона призначена.</span>
+                    </li>
+                    <li class="diagnostic-list-item">
+                        <i class="fa-solid fa-users diagnostic-item-icon"></i>
+                        <span class="diagnostic-item-text"><span class="diagnostic-strong">Користувачі та зацікавлені сторони</span> — хто впливає і на кого впливає рішення.</span>
+                    </li>
+                    <li class="diagnostic-list-item">
+                        <i class="fa-solid fa-triangle-exclamation diagnostic-item-icon"></i>
+                        <span class="diagnostic-item-text"><span class="diagnostic-strong">Можливі ризики</span> — які помилки можуть зашкодити людям.</span>
+                    </li>
+                    <li class="diagnostic-list-item">
+                        <i class="fa-solid fa-skull-crossbones diagnostic-item-icon"></i>
+                        <span class="diagnostic-item-text"><span class="diagnostic-strong">Найгірша помилка</span> — що станеться, якщо система спрацює неправильно.</span>
+                    </li>
+                    <li class="diagnostic-list-item">
+                        <i class="fa-solid fa-user-check diagnostic-item-icon"></i>
+                        <span class="diagnostic-item-text"><span class="diagnostic-strong">Необхідний людський контроль</span> — які рішення має перевіряти людина.</span>
+                    </li>
+                    <li class="diagnostic-list-item">
+                        <i class="fa-solid fa-comment-dots diagnostic-item-icon"></i>
+                        <span class="diagnostic-item-text"><span class="diagnostic-strong">Пояснення рішення</span> — як система обґрунтовує результат користувачу.</span>
+                    </li>
+                    <li class="diagnostic-list-item">
+                        <i class="fa-solid fa-gavel diagnostic-item-icon"></i>
+                        <span class="diagnostic-item-text"><span class="diagnostic-strong">Апеляція</span> — чи можна оскаржити рішення та до кого звернутись.</span>
+                    </li>
+                    <li class="diagnostic-list-item">
+                        <i class="fa-solid fa-database diagnostic-item-icon"></i>
+                        <span class="diagnostic-item-text"><span class="diagnostic-strong">Дані, які не потрібно збирати</span> — мінімізація зайвої інформації.</span>
+                    </li>
+                    <li class="diagnostic-list-item">
+                        <i class="fa-solid fa-shield diagnostic-item-icon"></i>
+                        <span class="diagnostic-item-text"><span class="diagnostic-strong">Умова безпечного використання</span> — обмеження, за яких система допустима.</span>
+                    </li>
+                </ul>
+
+                <!-- Condition callout: completion phrase -->
+                <div class="condition-callout">
+                    <i class="fa-solid fa-pen-fancy"></i>
+                    <span><span class="diagnostic-strong">Формулювання умови:</span> «Ми дозволили б використовувати цю систему лише за умови, що…»</span>
+                </div>
+            </div>
+
+            <!-- Right rail: evidence rail – critical risks (human control) -->
+            <div class="ethical-map-evidence-rail">
+                <div class="evidence-rail-title">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Критичні ризики
+                </div>
+                <ul class="evidence-rail-list">
+                    <li class="evidence-rail-item">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span><strong>Непрозорий алгоритм</strong> — неможливо пояснити відмову людині.</span>
+                    </li>
+                    <li class="evidence-rail-item">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span><strong>Упереджені дані</strong> — система відтворює історичні нерівності.</span>
+                    </li>
+                    <li class="evidence-rail-item">
+                        <i class="fa-solid fa-user-lock"></i>
+                        <span><strong>Порушення приватності</strong> — збір чутливих даних без згоди.</span>
+                    </li>
+                    <li class="evidence-rail-item">
+                        <i class="fa-solid fa-robot"></i>
+                        <span><strong>Автономне рішення</strong> — відсутність людського контролю над важливими наслідками.</span>
+                    </li>
+                    <li class="evidence-rail-item">
+                        <i class="fa-solid fa-eye-slash"></i>
+                        <span><strong>Відсутність апеляції</strong> — людина не може оскаржити рішення.</span>
+                    </li>
+                </ul>
+                <div style="margin-top: 5px; font-size: 15px; color: var(--ppt-text-3); border-top: 1px solid var(--ppt-border); padding-top: 8px;">
+                    <i class="fa-solid fa-user-shield" style="color: var(--ppt-accent); margin-right: 6px;"></i>
+                    Людський контроль — обов&#39;язкова умова для високоризикових систем.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Навчальний маршрут та кінцеві результати</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+
+        :root {
+            --ppt-bg: #F8FAFC;
+            --ppt-bg-soft: #F1F5F9;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E2E8F0;
+            --ppt-border: #CBD5E1;
+            --ppt-text-1: #0F172A;
+            --ppt-text-2: #475569;
+            --ppt-text-3: #94A3B8;
+            --ppt-accent: #0D9488;
+            --ppt-accent-2: #6366F1;
+            --ppt-chart-1: #0D9488;
+            --ppt-chart-2: #6366F1;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EC4899;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+            --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --ppt-font-display: "Montserrat", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            font-family: var(--ppt-font-body);
+        }
+
+        .slide-root {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            
+            box-shadow: var(--ppt-shadow-strong);
+        }
+
+        .title-region {
+            margin-top: 36px;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 24px;
+        }
+
+        .title-region-eyebrow-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .title-region-accent-bar {
+            width: 4px;
+            height: 16px;
+            background-color: var(--ppt-accent);
+        }
+
+        .title-region-eyebrow-text {
+            font-family: var(--ppt-font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+        }
+
+        .title-region-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .title-region-subheading {
+            font-family: var(--ppt-font-body);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            margin-top: 6px;
+        }
+
+        .main-body-wrapper {
+            flex: 1 1 0;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 36px;
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            
+        }
+
+        /* Left rail with large numbers */
+        .left-session-rail {
+            width: 110px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .session-number-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1 1 0;
+        }
+
+        .session-number {
+            font-family: var(--ppt-font-display);
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--ppt-accent-2);
+            opacity: 0.25;
+            letter-spacing: -0.02em;
+        }
+
+        .session-number-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--ppt-border);
+            margin-top: 12px;
+        }
+
+        /* Right content blocks */
+        .right-session-content {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 0;
+        }
+
+        .session-item {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            gap: 16px;
+            padding: 0 0 8px 0;
+        }
+
+        .session-item-title {
+            font-family: var(--ppt-font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .session-item-desc {
+            font-family: var(--ppt-font-body);
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+            flex: 1 1 0;
+            min-width: 0;
+        }
+
+        .final-artifacts-region {
+            border-top: 2px solid var(--ppt-accent);
+            margin-top: 20px;
+            padding-top: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .final-artifacts-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ppt-accent);
+            letter-spacing: 0.02em;
+        }
+
+        .artifact-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+        }
+
+        .artifact-tag {
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: 999px;
+            padding: 4px 14px;
+            font-family: var(--ppt-font-body);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            box-shadow: var(--ppt-shadow-soft);
+            white-space: nowrap;
+        }
+
+        .artifact-tag i {
+            margin-right: 6px;
+            color: var(--ppt-accent);
+            font-size: 12px;
+        }
+
+        .artifact-tag-highlight {
+            background: var(--ppt-accent);
+            border-color: var(--ppt-accent);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .artifact-tag-highlight i {
+            color: #ffffff;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Title Region per design -->
+        <header class="title-region">
+            <div class="title-region-eyebrow-row">
+                <div class="title-region-accent-bar"></div>
+                <span class="title-region-eyebrow-text">SERVICEHUB QA TRACK</span>
+            </div>
+            <h1 class="title-region-heading">Навчальний маршрут та кінцеві результати</h1>
+            <h2 class="title-region-subheading">Чотири сесії від тестованості до регресії, що завершуються практичними артефактами</h2>
+        </header>
+
+        <!-- Main body with left rail and right content -->
+        <div class="main-body-wrapper">
+            <!-- Left rail with large numbers 1-4 -->
+            <div class="left-session-rail">
+                <div class="session-number-block">
+                    <div class="session-number">1</div>
+                </div>
+                <div class="session-number-block">
+                    <div class="session-number">2</div>
+                </div>
+                <div class="session-number-block">
+                    <div class="session-number">3</div>
+                </div>
+                <div class="session-number-block">
+                    <div class="session-number">4</div>
+                </div>
+            </div>
+
+            <!-- Right side: session descriptions + final artifacts -->
+            <div class="right-session-content">
+                <!-- Session list -->
+                <div class="session-item">
+                    <div class="session-item-title">Сесія QA-1</div>
+                    <div class="session-item-desc">Вимога → Огляд тестованості: аналіз прогалин, формулювання питань, оцінка ризиків.</div>
+                </div>
+                <div class="session-item">
+                    <div class="session-item-title">Сесія QA-2</div>
+                    <div class="session-item-desc">Вимога → Тестовий пакет: проєктування умов, генерація даних, матриця покриття.</div>
+                </div>
+                <div class="session-item">
+                    <div class="session-item-title">Сесія QA-3</div>
+                    <div class="session-item-desc">Запит на зміну → Регресійний вплив: прямі та непрямі наслідки, класифікація дефектів.</div>
+                </div>
+                <div class="session-item">
+                    <div class="session-item-title">Сесія QA-4</div>
+                    <div class="session-item-desc">Затверджена зміна → Оновлений QA-пакет: оновлення тестів, даних та висновок про готовність.</div>
+                </div>
+
+                <!-- Final artifacts -->
+                <div class="final-artifacts-region">
+                    <div class="final-artifacts-heading">
+                        <i class="fa-solid fa-flag-checkered" style="margin-right: 8px;"></i>Кінцеві артефакти
+                    </div>
+                    <div class="artifact-tags-container">
+                        <div class="artifact-tag"><i class="fa-solid fa-file"></i>Звіт про тестованість</div>
+                        <div class="artifact-tag"><i class="fa-solid fa-clipboard-list"></i>Реєстр питань</div>
+                        <div class="artifact-tag"><i class="fa-solid fa-vial"></i>Тестовий пакет</div>
+                        <div class="artifact-tag"><i class="fa-solid fa-database"></i>Синтетичні дані</div>
+                        <div class="artifact-tag"><i class="fa-solid fa-circle-question"></i>Матриця покриття</div>
+                        <div class="artifact-tag"><i class="fa-solid fa-circle-question"></i>Звіт про регресію</div>
+                        <div class="artifact-tag"><i class="fa-solid fa-circle-check"></i>Висновок готовності</div>
+                        <div class="artifact-tag artifact-tag-highlight"><i class="fa-solid fa-robot"></i>QA AI Playbook</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

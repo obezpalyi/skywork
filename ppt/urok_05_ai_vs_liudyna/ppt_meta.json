@@ -1,0 +1,171 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "urok_05_ai_vs_liudyna",
+  "artifact_path": "ppt/urok_05_ai_vs_liudyna",
+  "pptTitle": "AI vs людина",
+  "ppt_title": "AI vs людина",
+  "outlineArtifactPath": "ppt/urok_05_ai_vs_liudyna/outline.md",
+  "outline_artifact_path": "ppt/urok_05_ai_vs_liudyna/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-290f285cd3.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-290f285cd3.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-290f285cd3.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_05_ai_vs_liudyna/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_05_ai_vs_liudyna/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-290f285cd3.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-290f285cd3.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_05_ai_vs_liudyna/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_05_ai_vs_liudyna/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи українською мовою окрему навчальну презентацію для уроку інформатики в 11 класі на тему «AI vs людина». Рівно 10 слайдів: голосування про професії, сильні сторони ШІ, сильні сторони людини, слабкі сторони ШІ, аналіз конкретних задач, вправа «Хто виконує?», міні-дебати, модель «ШІ допомагає — людина відповідає», підсумок і домашнє завдання.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "auto_increase_ratio": 0.35,
+  "auto_increase_bucket": 0.5898,
+  "region": "US",
+  "prepared_session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "prepared_question_id": "Q-4a812a49c9b3",
+  "prepared_target_path": "ppt/urok_05_ai_vs_liudyna",
+  "prepared_state_id": "pps_d66aa15e2b180d03d2643afff772fc15",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:3273868dfe382276f4155fc4123e3463791454b1b8ced6d119609d79cf0db23c",
+  "init_request_fingerprint": "sha256:7d54a4949214f8b7f2094692e98561bb1ff141b1e083622c2592303121d1eefd",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:1bcd93be886080ca0358bb889de80ff95e20ad74b0ddd36135e691dc7052c010",
+  "outline_artifact_sha256": "sha256:af4d0f736da1cff296a01d991bbcbbb5adfcce79734402bb5285797e7c1f5f9e",
+  "prepared_inputs": [
+    {
+      "path": "ppt/urok_05_ai_vs_liudyna/design_guideline.md",
+      "size": 9374,
+      "sha256": "sha256:4048ea4c5288eb1ce8a3e80026f90f3033c25055ff89bddbf08c293444d00e2b"
+    },
+    {
+      "path": "ppt/urok_05_ai_vs_liudyna/final_report.md",
+      "size": 5348,
+      "sha256": "sha256:1bcd93be886080ca0358bb889de80ff95e20ad74b0ddd36135e691dc7052c010"
+    },
+    {
+      "path": "ppt/urok_05_ai_vs_liudyna/outline.json",
+      "size": 57718,
+      "sha256": "sha256:5ed5185695131ad47e568bd6fd8b34cf4eb7e5df4d47230439360e186bab78b3"
+    },
+    {
+      "path": "ppt/urok_05_ai_vs_liudyna/outline.md",
+      "size": 3043,
+      "sha256": "sha256:af4d0f736da1cff296a01d991bbcbbb5adfcce79734402bb5285797e7c1f5f9e"
+    },
+    {
+      "path": "ppt/urok_05_ai_vs_liudyna/prepared_images/cover_2ed0fbc6cbd7_2095591442036109313.png",
+      "size": 1212600,
+      "sha256": "sha256:2ccb306f12595195535ca3da6c4c9cd61d02c058943b83ab86436e95a8e06974"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success_with_warnings",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json",
+      "prepared_images/cover_2ed0fbc6cbd7_2095591442036109313.png"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "auto_mode",
+      "auto_increase_miss",
+      "standard_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "generated",
+      "applied": true
+    },
+    "dropped_images": null,
+    "warnings": [
+      {
+        "scope": "image_description",
+        "image_index": 10,
+        "source": "search",
+        "error_code": "internalError",
+        "impact": "dropped_candidate",
+        "terminal": false
+      },
+      {
+        "scope": "image_description",
+        "image_index": 19,
+        "source": "search",
+        "error_code": "internalError",
+        "impact": "dropped_candidate",
+        "terminal": false
+      }
+    ],
+    "mock": false
+  }
+}

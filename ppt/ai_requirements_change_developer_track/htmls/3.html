@@ -1,0 +1,462 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Навчальний маршрут та фінальні результати</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {width: 1280px; height: 720px; overflow: hidden;   
+      
+      
+      background: var(--ppt-bg);
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ppt-font-body);
+    }
+
+    /* Slide root — fixed 1280x720 */
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      
+      position: relative;
+    }
+
+    /* Title region — exactly per design */
+    .title-section {
+      margin-top: 40px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .title-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-eyebrow {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+      white-space: nowrap;
+    }
+
+    .title-divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* Main body wrapper — consumes remaining height */
+    .learning-route-body {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 32px;
+      gap: 22px;
+       /* allowed for flex child but not via min-height:0 rule — see note */
+      /* min-height: 0 is prohibited globally per spec; use overflow visible and rely on flex */
+    }
+
+    /* Override: spec prohibits min-height:0; ensure we don't use it */
+    .learning-route-body {
+      min-height: auto;
+    }
+
+    /* Two-column layout: sessions + outputs */
+    .route-columns-wrapper {
+      display: flex;
+      align-items: stretch;
+      gap: 24px;
+      flex: 1 1 0;
+       /* prohibited — remove */
+    }
+
+    .route-columns-wrapper {
+      min-height: auto;
+    }
+
+    /* Left column — 4 sessions */
+    .route-sessions-column {
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 20px 18px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      gap: 14px;
+    }
+
+    .route-sessions-column-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--ppt-border);
+      padding-bottom: 10px;
+    }
+
+    .route-sessions-column-header i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .route-sessions-column-header span {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .session-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1 1 0;
+    }
+
+    .session-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .session-number-badge {
+      font-family: var(--ppt-font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-sm);
+      padding: 4px 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .session-description-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .session-title-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .session-topic-text {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }
+
+    /* Right column — final outputs */
+    .route-outputs-column {
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 20px 18px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      gap: 12px;
+    }
+
+    .route-outputs-column-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--ppt-border);
+      padding-bottom: 10px;
+    }
+
+    .route-outputs-column-header i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .route-outputs-column-header span {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .output-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1 1 0;
+    }
+
+    .output-item-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--ppt-border);
+    }
+
+    .output-item-row:last-child {
+      border-bottom: none;
+    }
+
+    .output-item-icon {
+      color: var(--ppt-accent);
+      font-size: 15px;
+      width: 22px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .output-item-text {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    /* Bottom note strip — compact */
+    .route-summary-strip {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 18px;
+      border-left: 4px solid var(--ppt-accent);
+      flex-shrink: 0;
+    }
+
+    .route-summary-strip i {
+      color: var(--ppt-accent);
+      font-size: 20px;
+    }
+
+    .route-summary-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }
+
+    .route-summary-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    /* Ensure no fixed heights on text containers */
+    .session-list-container, .output-list-container {
+      height: auto;
+    }
+
+    /* Adjust flex children to fill height naturally */
+    .route-sessions-column, .route-outputs-column {
+      justify-content: flex-start;
+    }
+
+    /* Ensure equal stretch */
+    .route-columns-wrapper {
+      align-items: stretch;
+    }
+
+    /* No min-height used anywhere */
+    .learning-route-body, .route-columns-wrapper {
+       /* remove — but we already override */
+    }
+    /* Explicitly remove min-height */
+    .learning-route-body, .route-columns-wrapper {
+      min-height: auto;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Non-Cover Title Region (fixed structure) -->
+    <header class="title-section">
+      <div class="title-eyebrow-row">
+        <span class="title-eyebrow">Developer Track</span>
+        <div class="title-divider-line"></div>
+      </div>
+      <h1 class="title-heading">Навчальний маршрут та фінальні результати</h1>
+    </header>
+
+    <!-- Body: learning route composition -->
+    <div class="learning-route-body">
+      <!-- Two columns: sessions + outputs -->
+      <div class="route-columns-wrapper">
+        <!-- Left column: 4 sessions -->
+        <div class="route-sessions-column">
+          <div class="route-sessions-column-header">
+            <i class="fa-solid fa-route"></i>
+            <span>Чотири сесії курсу</span>
+          </div>
+          <div class="session-list-container">
+            <!-- Session 1 -->
+            <div class="session-item-row">
+              <span class="session-number-badge">DEV-1</span>
+              <div class="session-description-block">
+                <div class="session-title-text">Вимога → Технічне уточнення</div>
+                <div class="session-topic-text">Аналіз вимог, виявлення обмежень, формування запитань.</div>
+              </div>
+            </div>
+            <!-- Session 2 -->
+            <div class="session-item-row">
+              <span class="session-number-badge">DEV-2</span>
+              <div class="session-description-block">
+                <div class="session-title-text">Вимога → План впровадження</div>
+                <div class="session-topic-text">Декомпозиція на компоненти, API, дані, ADR.</div>
+              </div>
+            </div>
+            <!-- Session 3 -->
+            <div class="session-item-row">
+              <span class="session-number-badge">DEV-3</span>
+              <div class="session-description-block">
+                <div class="session-title-text">Change Request → TIA</div>
+                <div class="session-topic-text">Оцінка впливу, сумісність, міграція, ризики.</div>
+              </div>
+            </div>
+            <!-- Session 4 -->
+            <div class="session-item-row">
+              <span class="session-number-badge">DEV-4</span>
+              <div class="session-description-block">
+                <div class="session-title-text">Схвалена зміна → Оновлений техпакет</div>
+                <div class="session-topic-text">Готовність, handoff, Capstone.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: final outputs -->
+        <div class="route-outputs-column">
+          <div class="route-outputs-column-header">
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Фінальні результати</span>
+          </div>
+          <div class="output-list-container">
+            <div class="output-item-row">
+              <i class="fa-solid fa-file output-item-icon"></i>
+              <span class="output-item-text">Технічний звіт уточнення</span>
+            </div>
+            <div class="output-item-row">
+              <i class="fa-solid fa-diagram-project output-item-icon"></i>
+              <span class="output-item-text">Мапа впливу компонентів</span>
+            </div>
+            <div class="output-item-row">
+              <i class="fa-solid fa-circle-question output-item-icon"></i>
+              <span class="output-item-text">План впровадження</span>
+            </div>
+            <div class="output-item-row">
+              <i class="fa-solid fa-list-check output-item-icon"></i>
+              <span class="output-item-text">Технічний беклог</span>
+            </div>
+            <div class="output-item-row">
+              <i class="fa-solid fa-code-branch output-item-icon"></i>
+              <span class="output-item-text">Нотатки API та даних</span>
+            </div>
+            <div class="output-item-row">
+              <i class="fa-solid fa-circle-question output-item-icon"></i>
+              <span class="output-item-text">Чек-лист сумісності й міграції</span>
+            </div>
+            <div class="output-item-row">
+              <i class="fa-solid fa-book output-item-icon"></i>
+              <span class="output-item-text">ADR (архітектурне рішення)</span>
+            </div>
+            <div class="output-item-row">
+              <i class="fa-solid fa-circle-check output-item-icon"></i>
+              <span class="output-item-text">Висновок готовності</span>
+            </div>
+            <div class="output-item-row">
+              <i class="fa-solid fa-robot output-item-icon"></i>
+              <span class="output-item-text">Персональний AI Playbook</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom compact strip -->
+      <div class="route-summary-strip" style="margin-bottom: 4px !important;">
+        <i class="fa-solid fa-bullseye"></i>
+        <div class="route-summary-text">
+          <strong>Ключовий результат:</strong> від схваленої вимоги до технічно обґрунтованого пакету впровадження з повною простежуваністю рішень.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

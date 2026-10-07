@@ -1,0 +1,421 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Технічний беклог та управління залежностями</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+    }
+
+    .technical-backlog-slide-root {
+      display: flex;
+      flex-direction: column;
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      
+      padding: 0;
+    }
+
+    /* Title region — fixed per design */
+    .title-backlog-header {
+      margin-top: 32px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .title-backlog-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-backlog-eyebrow-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .title-backlog-divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-backlog-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* Main body — fills remaining height */
+    .backlog-body-wrapper {
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
+    }
+
+    /* Top row: task structure + dependency map */
+    .backlog-content-row {
+      flex: 1 1 0;
+      display: flex;
+      gap: 20px;
+      
+    }
+
+    .backlog-task-card {
+      flex: 1 1 0;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 18px 20px 16px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .backlog-dependency-card {
+      flex: 1 1 0;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 18px 20px 16px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .backlog-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .backlog-card-header-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--ppt-radius-sm);
+      background: var(--ppt-surface-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 14px;
+    }
+
+    .backlog-card-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .backlog-task-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1 1 0;
+    }
+
+    .backlog-task-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13.5px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .backlog-task-list-item i {
+      color: var(--ppt-accent);
+      font-size: 12px;
+      margin-top: 3px;
+      width: 14px;
+      text-align: center;
+    }
+
+    .backlog-task-list-item strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .backlog-dependency-visual {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    .backlog-dependency-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .backlog-dependency-node {
+      background: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 4px 8px;
+      font-family: var(--ppt-font-mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .backlog-dependency-node-accent {
+      background: var(--ppt-accent);
+      border-color: var(--ppt-accent);
+      color: #ffffff;
+    }
+
+    .backlog-dependency-line {
+      color: var(--ppt-text-3);
+      font-size: 11px;
+    }
+
+    .backlog-dependency-legend {
+      display: flex;
+      gap: 14px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+
+    .backlog-dependency-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--ppt-text-2);
+    }
+
+    .backlog-dependency-legend-color {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+    }
+
+    /* Bottom row: dependency map note */
+    .backlog-dependency-note {
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 3px solid var(--ppt-accent);
+      flex-shrink: 0;
+    }
+
+    .backlog-dependency-note i {
+      color: var(--ppt-accent);
+      font-size: 14px;
+    }
+
+    .backlog-dependency-note-text {
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .backlog-dependency-note-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="technical-backlog-slide-root">
+    <!-- Fixed title region -->
+    <header class="title-backlog-header">
+      <div class="title-backlog-eyebrow-row">
+        <span class="title-backlog-eyebrow-label">Developer Track</span>
+        <div class="title-backlog-divider-line"></div>
+      </div>
+      <h1 class="title-backlog-heading">Технічний беклог та управління залежностями</h1>
+    </header>
+
+    <!-- Main body -->
+    <div class="backlog-body-wrapper">
+      <!-- Top row: two equal peer cards -->
+      <div class="backlog-content-row">
+        <!-- Left card: структура технічного завдання -->
+        <div class="backlog-task-card">
+          <div class="backlog-card-header">
+            <div class="backlog-card-header-icon">
+              <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <span class="backlog-card-title-text">Структура технічного завдання</span>
+          </div>
+          <ul class="backlog-task-list">
+            <li class="backlog-task-list-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Контекст</strong> і пов&#39;язана вимога</span>
+            </li>
+            <li class="backlog-task-list-item">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>Компонент і власник</strong> — відповідальний за зміну</span>
+            </li>
+            <li class="backlog-task-list-item">
+              <i class="fa-solid fa-anchor-circle-check"></i>
+              <span><strong>Очікувана зміна</strong> — поведінка та інтерфейс</span>
+            </li>
+            <li class="backlog-task-list-item">
+              <i class="fa-solid fa-bridge-circle-check"></i>
+              <span><strong>Інтерфейс/дані</strong> — контракт, поля, правила</span>
+            </li>
+            <li class="backlog-task-list-item">
+              <i class="fa-solid fa-building-circle-check"></i>
+              <span><strong>Обмеження</strong> — технічні, архітектурні, безпекові</span>
+            </li>
+            <li class="backlog-task-list-item">
+              <i class="fa-solid fa-envelope-circle-check"></i>
+              <span><strong>Залежність</strong> — від інших завдань/сервісів</span>
+            </li>
+            <li class="backlog-task-list-item">
+              <i class="fa-solid fa-file-circle-check"></i>
+              <span><strong>Чек-лист прийняття</strong> — критерії готовності</span>
+            </li>
+            <li class="backlog-task-list-item">
+              <i class="fa-solid fa-heart-circle-check"></i>
+              <span><strong>Тести та документація</strong> — оновлення та перевірка</span>
+            </li>
+            <li class="backlog-task-list-item">
+              <i class="fa-solid fa-house-circle-check"></i>
+              <span><strong>Відкрите питання</strong> — для рев&#39;юера</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right card: карта залежностей -->
+        <div class="backlog-dependency-card">
+          <div class="backlog-card-header">
+            <div class="backlog-card-header-icon">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <span class="backlog-card-title-text">Карта залежностей ServiceHub</span>
+          </div>
+          <div class="backlog-dependency-visual">
+            <div class="backlog-dependency-row">
+              <span class="backlog-dependency-node backlog-dependency-node-accent">Ticket Service</span>
+              <i class="fa-solid fa-arrow-right backlog-dependency-line"></i>
+              <span class="backlog-dependency-node">Customer Profile</span>
+            </div>
+            <div class="backlog-dependency-row">
+              <span class="backlog-dependency-node backlog-dependency-node-accent">Ticket Service</span>
+              <i class="fa-solid fa-arrow-right backlog-dependency-line"></i>
+              <span class="backlog-dependency-node">SLA / Escalation</span>
+            </div>
+            <div class="backlog-dependency-row">
+              <span class="backlog-dependency-node">SLA / Escalation</span>
+              <i class="fa-solid fa-arrow-right backlog-dependency-line"></i>
+              <span class="backlog-dependency-node">Notification</span>
+            </div>
+            <div class="backlog-dependency-row">
+              <span class="backlog-dependency-node">SLA / Escalation</span>
+              <i class="fa-solid fa-arrow-right backlog-dependency-line"></i>
+              <span class="backlog-dependency-node">Reporting</span>
+            </div>
+            <div class="backlog-dependency-row">
+              <span class="backlog-dependency-node">Ticket Service</span>
+              <i class="fa-solid fa-arrow-right backlog-dependency-line"></i>
+              <span class="backlog-dependency-node">Audit Service</span>
+            </div>
+            <div class="backlog-dependency-row">
+              <span class="backlog-dependency-node">Notification</span>
+              <i class="fa-solid fa-arrow-right backlog-dependency-line"></i>
+              <span class="backlog-dependency-node">Event Bus</span>
+            </div>
+          </div>
+
+          <!-- Legend -->
+          <div class="backlog-dependency-legend">
+            <div class="backlog-dependency-legend-item">
+              <span class="backlog-dependency-legend-color" style="background: var(--ppt-accent);"></span>
+              <span>Прямий вплив</span>
+            </div>
+            <div class="backlog-dependency-legend-item">
+              <span class="backlog-dependency-legend-color" style="background: var(--ppt-surface-2); border: 1px solid var(--ppt-border);"></span>
+              <span>Транзитивний вплив</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom note: залежності як мапа -->
+      <div class="backlog-dependency-note" style="margin-bottom: 4px !important;">
+        <i class="fa-solid fa-circle-info"></i>
+        <span class="backlog-dependency-note-text">
+          <strong>Залежності подаються як мапа</strong>, а не лише текст у Jira-завданнях — це дозволяє бачити повний ланцюг впливу та уникати прихованих зв&#39;язків між сервісами.
+        </span>
+      </div>
+    </div>
+  </div>
+
+</body></html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Практика та результати першої сесії</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    /* Slide root – fixed 1280x720 flex column */
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      
+      box-shadow: var(--ppt-shadow-strong);
+    }
+
+    /* Non-cover title region – exactly as per DESIGN */
+    .title-region {
+      margin-top: 40px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-top-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-badge {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .title-region-divider {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* Main body wrapper – consumes remaining height flexibly */
+    .body-wrapper {
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+       /* allowed by design for structural wrapper */
+    }
+
+    /* Two-column layout: left tasks, right results */
+    .practice-results-columns {
+      display: flex;
+      align-items: stretch;
+      gap: 24px;
+      flex: 1 1 0;
+      
+    }
+
+    /* Left column – participant tasks (dominant) */
+    .left-tasks-column {
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      
+    }
+
+    .left-tasks-surface {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .task-section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 2px;
+    }
+
+    .task-section-header i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+      width: 22px;
+      text-align: center;
+    }
+
+    .task-section-header h2 {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .task-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 2px;
+    }
+
+    .task-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }
+
+    .task-list li i {
+      color: var(--ppt-accent-2);
+      font-size: 14px;
+      margin-top: 3px;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .task-list li span {
+      flex: 1;
+    }
+
+    /* Right column – session results */
+    .right-results-column {
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      
+    }
+
+    .right-results-surface {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .results-section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 2px;
+    }
+
+    .results-section-header i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+      width: 22px;
+      text-align: center;
+    }
+
+    .results-section-header h2 {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .results-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 2px;
+    }
+
+    .results-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }
+
+    .results-list li i {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      margin-top: 3px;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .results-list li span {
+      flex: 1;
+    }
+
+    /* Bottom compact strip – verified templates */
+    .verified-templates-strip {
+      background: var(--ppt-bg-soft);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .verified-templates-strip i {
+      color: var(--ppt-good);
+      font-size: 20px;
+    }
+
+    .verified-templates-strip .strip-text {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    .verified-templates-strip .strip-text strong {
+      font-weight: 800;
+      color: var(--ppt-accent);
+    }
+
+    /* Responsive-ish but fixed slide */
+    .slide-root, .title-region, .body-wrapper {
+      max-width: 1280px;
+    }
+
+    .body-wrapper {
+      width: auto;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title region – fixed structure -->
+    <header class="title-region">
+      <div class="title-region-top-line">
+        <span class="title-region-badge">Developer Track</span>
+        <div class="title-region-divider"></div>
+      </div>
+      <h1 class="title-region-heading">Практика та результати першої сесії</h1>
+    </header>
+
+    <!-- Main body wrapper -->
+    <div class="body-wrapper">
+      <!-- Left-right asymmetric columns -->
+      <div class="practice-results-columns">
+        <!-- Left: participant tasks -->
+        <div class="left-tasks-column">
+          <div class="left-tasks-surface">
+            <div class="task-section-header">
+              <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+              <h2>Завдання учасників</h2>
+            </div>
+            <ul class="task-list">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Мапувати вимогу на можливості та компоненти ServiceHub</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Виявити відсутні обмеження інтерфейсів, даних, безпеки та продуктивності</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Сформулювати технічні запитання для BA, QA, Architect та DevOps</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Зафіксувати припущення та відокремити їх від підтверджених фактів</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Перевірити критерії прийнятності на технічну однозначність</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Покращити промпт після рецензування колег</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right: session results -->
+        <div class="right-results-column">
+          <div class="right-results-surface">
+            <div class="results-section-header">
+              <i class="fa-solid fa-file-signature" aria-hidden="true"></i>
+              <h2>Результати сесії</h2>
+            </div>
+            <ul class="results-list">
+              <li>
+                <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                <span><strong>Звіт про технічне уточнення</strong> – задокументовані рішення та відкриті питання</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                <span><strong>Початкова карта впливу</strong> – компоненти та їхні зв&#39;язки</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-clipboard-question" aria-hidden="true"></i>
+                <span><strong>Пріоритизований реєстр запитань</strong> – із власниками та рішеннями</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom compact strip: verified templates -->
+      <div class="verified-templates-strip" style="margin-bottom: 4px !important;">
+        <i class="fa-solid fa-check" aria-hidden="true"></i>
+        <div class="strip-text">
+          <strong>2 верифіковані шаблони промптів</strong> – готові для повторного використання в наступних сесіях та реальних задачах.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

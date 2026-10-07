@@ -1,0 +1,611 @@
+[
+  {
+    "page_num": 1,
+    "heading": "Prompt engineering",
+    "type": "title",
+    "des": "Мета уроку: навчитися формулювати конкретні та безпечні запити до ШІ, розуміючи причини різної якості відповідей моделі.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/084e867251743a42de05d58879042e79.jpg",
+        "filename": "AI in schools: risky tech or classroom tool?",
+        "img_desc": "A group of students sits around a classroom table, working on several laptops and looking at their screens. The scene includes classroom furnishings, colorful wall displays, and warm indoor lighting. The photograph has a candid documentary style, with a warm color palette and a close, slightly angled composition focused on collaborative computer use.",
+        "caption": "Students collaborate around laptops in a classroom setting, illustrating the use of digital tools and AI chatbots for schoolwork.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x681",
+        "title": "AI in schools: risky tech or classroom tool?",
+        "width": 1024,
+        "height": 681,
+        "query": "students using AI chatbot classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/ea2fe50019c436397f865f15ad63d242.jpg",
+        "filename": "Here's how professors are using AI chatbots in the classroom : NPR",
+        "img_desc": "An editorial-style illustration shows a busy classroom where students sit at desks and in tiered seating, many using laptops or tablets. Several instructors or presenters are visible at the front and among the students, while a large wall display contains diagrams and prominent AI-related text. The composition emphasizes collaborative discussion, raised hands, and technology-assisted learning. Soft pink, beige, blue, and muted green tones create a warm, modern educational aesthetic, with bold outlines and layered foreground and background figures.",
+        "caption": "An illustrated classroom scene depicting students and instructors using laptops and discussing AI chatbots in an interactive learning environment.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x682",
+        "title": "Here's how professors are using AI chatbots in the classroom : NPR",
+        "width": 1024,
+        "height": 682,
+        "query": "students using AI chatbot classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/a0e3c2cacd919dbaa1e160b0a36714d9.jpg",
+        "filename": "More Teachers Are Using AI in Their Classrooms. Here's Why",
+        "img_desc": "A classroom scene shows several students seated around tables using tablets and other digital devices. In the foreground, an adult holds up a tablet displaying the words \"AI CHATBOT\" with a simple chatbot icon. The room is brightly lit by large windows, with a colorful bulletin board in the background. The image has a warm, educational, technology-focused aesthetic, with the foreground tablet emphasized and the background slightly out of focus.",
+        "caption": "Students use digital devices in a classroom while an instructor presents a tablet labeled \"AI CHATBOT.\"",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x684",
+        "title": "More Teachers Are Using AI in Their Classrooms. Here's Why",
+        "width": 1024,
+        "height": 684,
+        "query": "students using AI chatbot classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/19b76ef20c3453b1a824e93509bbb439.jpg",
+        "filename": "A.I. Literacy' Is Trending in Schools. Here's Why. - The New York Times",
+        "img_desc": "A classroom scene shows students working at desks, with a Dell laptop in the foreground displaying a dark-themed chatbot or web interface. A student with braided hair sits behind the laptop, while other students and an adult are visible in the softly blurred background. The room has colorful walls, desks, chairs, and blue flooring. The photograph uses shallow depth of field and natural classroom lighting, creating a documentary-style composition focused on students using digital tools.",
+        "caption": "Students work with a chatbot on a laptop in a classroom while classmates and an adult are visible in the background.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "600x408",
+        "title": "A.I. Literacy' Is Trending in Schools. Here's Why. - The New York Times",
+        "width": 600,
+        "height": 408,
+        "query": "students using AI chatbot classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/1d89d30dab2ea1ca27a60ed2e1e7290c.jpg",
+        "filename": "How AI Chatbots Are Transforming Personalized Learning in Classrooms",
+        "img_desc": "An illustrated classroom scene shows students seated at individual desks using laptops and blue digital learning interfaces, accompanied by several humanoid AI robots. A teacher stands near the front beside a board displaying an AI chatbot graphic, while signs reference personalized feedback and chatbot-based learning. The room includes bookshelves, large windows, pendant lights, plants, and educational charts. The composition is colorful and wide-ranging, with a polished, digitally rendered educational-technology aesthetic.",
+        "caption": "A colorful digital illustration of students and humanoid AI robots using chatbot-based learning tools in a modern classroom.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x576",
+        "title": "How AI Chatbots Are Transforming Personalized Learning in Classrooms",
+        "width": 1024,
+        "height": 576,
+        "query": "students using AI chatbot classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/5fe162aa0f8def42add1e2d32ca27f77.jpg",
+        "filename": "What is collaborative writing?",
+        "img_desc": "An overhead photograph shows a group of students gathered around a wooden table, collaboratively working on writing and coursework. One student writes on a printed worksheet, another writes in an open notebook, and another uses a laptop while others lean in and participate. Pens, notebooks, papers, and drinks are scattered across the table. The image has warm indoor lighting, natural colors, and a clear documentary-style composition focused on teamwork.",
+        "caption": "Students collaborate on writing and coursework around a table using notebooks, worksheets, and a laptop.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x576",
+        "title": "What is collaborative writing?",
+        "width": 1024,
+        "height": 576,
+        "query": "students collaborative writing classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/be683e0cebf6e659f98478b5dbd8e308.jpg",
+        "filename": "Collaborative Writing, Common Core, and ELLs | Edutopia",
+        "img_desc": "Several students sit together at classroom desks, holding white sheets of paper and appearing to participate in a collaborative writing activity. They wear matching white shirts with red trim, while notebooks and colorful school materials rest on the desks. The classroom has pale walls with children’s artwork displayed in the background. The photograph is well lit, candid, and composed as a medium-wide classroom scene with warm, natural colors.",
+        "caption": "Students collaborate during a classroom writing activity, holding papers and working together at their desks.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "958x719",
+        "title": "Collaborative Writing, Common Core, and ELLs | Edutopia",
+        "width": 958,
+        "height": 719,
+        "query": "students collaborative writing classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/d10e3ae163793e80e3f36795971b70ee.jpg",
+        "filename": "Collaborative Writing | Building Student Success - B.C. Curriculum",
+        "img_desc": "The image shows several young students gathered around a small blue classroom table, collaboratively writing and reviewing a large sheet of paper. One child is writing with a marker while the others point to or look at the handwritten text. The classroom background includes colorful student artwork, educational displays, supplies, and a green storage bin. The scene is a candid, well-lit photograph with warm, natural colors and a clear focus on cooperative learning.",
+        "caption": "Students collaboratively write and review a shared piece of work at a classroom table.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "640x480",
+        "title": "Collaborative Writing | Building Student Success - B.C. Curriculum",
+        "width": 640,
+        "height": 480,
+        "query": "students collaborative writing classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/ce07b49324c4afc757ca7bee8093b224.jpg",
+        "filename": "How I Finally Figured Out Collaborative Writing",
+        "img_desc": "The image shows students working together in a computer classroom. In the foreground, two students sit side by side at desktop computers, while one points toward a monitor and holds a printed sheet. Several other students are visible using computers in the background. The computer screens display colorful horizontal lines and text-like interface elements. The scene is a candid classroom photograph with neutral indoor lighting, a busy arrangement of monitors and desks, and predominantly gray, green, and wood tones.",
+        "caption": "Students collaborate at desktop computers in a classroom, discussing information displayed on their screens and a printed worksheet.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "680x510",
+        "title": "How I Finally Figured Out Collaborative Writing",
+        "width": 680,
+        "height": 510,
+        "query": "students collaborative writing classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/263912ae073386162506407bd3f17552.jpg",
+        "filename": "Failing fast, using feedback loops, and the benefits of iterative design |  by Tom Waterton | IBM Design | Medium",
+        "img_desc": "A clean circular iterative design diagram is centered on a pale background. The loop uses directional arrows to connect the stages \"Idea,\" \"Build,\" \"Prototype,\" \"Measure,\" \"Data,\" and \"Learn.\" The upper-right portion is pink, while the lower and left portions are dark purple, visually emphasizing a repeating feedback cycle. The composition is minimal, with bold sans-serif labels and ample negative space.",
+        "caption": "A circular feedback loop showing the iterative design cycle from Idea and Build through Prototype, Measure, Data, and Learn.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x559",
+        "title": "Failing fast, using feedback loops, and the benefits of iterative design |  by Tom Waterton | IBM Design | Medium",
+        "width": 1024,
+        "height": 559,
+        "query": "prompt iteration feedback loop concept"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/2e063eb6d8200006eeb7966497f6d43e.jpg",
+        "filename": "How to Create a User Feedback Loop",
+        "img_desc": "A clean infographic titled \"Iterative Feedback Loop\" from Thematic. The left side contains explanatory text and a colorful illustration of three people handling a looping purple ribbon, with gear and checkmark icons. The right side presents four purple rounded boxes connected by arrows: \"Collecting Feedback,\" \"Analyzing Feedback,\" \"Implementing Changes,\" and \"Closing the Loop,\" with a dashed arrow returning to the first step. The design uses a light background, dark purple typography, and flat vector-style illustrations in a clear, balanced layout.",
+        "caption": "Infographic explaining an iterative user feedback loop through four stages: collecting, analyzing, implementing changes, and closing the loop.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x853",
+        "title": "How to Create a User Feedback Loop",
+        "width": 1024,
+        "height": 853,
+        "query": "prompt iteration feedback loop concept"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/83b308c66b24a691dba8adc27717598c.jpg",
+        "filename": "K-12 Cybersecurity Best Practices to Safeguard Your School",
+        "img_desc": "A clean infographic titled \"6 Common Cyberattacks on Schools\" presents six types of cyberattacks in a vertically organized list: Malware, Ransomware, DDoS Attacks, Phishing, Advanced Persistent Threats, and IoT-based Attacks. Each item includes a short explanatory sentence and a blue circular line icon, while a larger blue icon of a masked computer user appears near the title. The design uses a white background with bold black text, bright blue icons, and orange horizontal accent bars. Decorative concentric curves appear in the lower-right corner, giving the composition a modern educational and cybersecurity-themed appearance.",
+        "caption": "Infographic explaining six common cyberattacks affecting schools, with blue icons and brief definitions for malware, ransomware, DDoS attacks, phishing, advanced persistent threats, and IoT-based attacks.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "614x1024",
+        "title": "K-12 Cybersecurity Best Practices to Safeguard Your School",
+        "width": 614,
+        "height": 1024,
+        "query": "cybersecurity password student learning"
+      },
+      {
+        "source": "text2image_cover",
+        "url": "https://skyagent-artifacts.skywork.ai/image/5940376570349285532/2095590954905276416/2095590954905276417.png",
+        "img_name": "2095590954905276417.png",
+        "img_desc": "Photorealistic close-up of a person’s hands typing on a sleek laptop keyboard in a dimly lit modern workspace. The screen glows with soft abstract blue light and contains no text, icons, or letters. From the keyboard, a graceful translucent ribbon of cyan and violet light spirals upward, composed of thousands of tiny glowing particles and thin luminous threads. A warm desk lamp on the left adds orange contrast, while the right side is cool blue. The background is softly blurred, with shelves and a plant barely visible. Shallow depth of field, crisp textures on the brushed metal keyboard and skin, mood of focused human–machine collaboration, cinematic lighting.",
+        "img_type": "image",
+        "img_size": "1280x720",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 2,
+    "heading": "Порівняємо два запити",
+    "type": "content",
+    "des": "Аналіз двох варіантів запитів про кібербезпеку для виявлення елементів, що допомагають створити максимально корисну та точну відповідь.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/83b308c66b24a691dba8adc27717598c.jpg",
+        "filename": "K-12 Cybersecurity Best Practices to Safeguard Your School",
+        "img_desc": "A clean infographic titled \"6 Common Cyberattacks on Schools\" presents six types of cyberattacks in a vertically organized list: Malware, Ransomware, DDoS Attacks, Phishing, Advanced Persistent Threats, and IoT-based Attacks. Each item includes a short explanatory sentence and a blue circular line icon, while a larger blue icon of a masked computer user appears near the title. The design uses a white background with bold black text, bright blue icons, and orange horizontal accent bars. Decorative concentric curves appear in the lower-right corner, giving the composition a modern educational and cybersecurity-themed appearance.",
+        "caption": "Infographic explaining six common cyberattacks affecting schools, with blue icons and brief definitions for malware, ransomware, DDoS attacks, phishing, advanced persistent threats, and IoT-based attacks.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "614x1024",
+        "title": "K-12 Cybersecurity Best Practices to Safeguard Your School",
+        "width": 614,
+        "height": 1024,
+        "query": "cybersecurity password student learning"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 3,
+    "heading": "Що таке промпт",
+    "type": "content",
+    "des": "Визначення промпту як інструкції для моделі та пояснення Prompt engineering як вміння чітко описувати задачі й оцінювати результат.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/1d89d30dab2ea1ca27a60ed2e1e7290c.jpg",
+        "filename": "How AI Chatbots Are Transforming Personalized Learning in Classrooms",
+        "img_desc": "An illustrated classroom scene shows students seated at individual desks using laptops and blue digital learning interfaces, accompanied by several humanoid AI robots. A teacher stands near the front beside a board displaying an AI chatbot graphic, while signs reference personalized feedback and chatbot-based learning. The room includes bookshelves, large windows, pendant lights, plants, and educational charts. The composition is colorful and wide-ranging, with a polished, digitally rendered educational-technology aesthetic.",
+        "caption": "A colorful digital illustration of students and humanoid AI robots using chatbot-based learning tools in a modern classroom.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x576",
+        "title": "How AI Chatbots Are Transforming Personalized Learning in Classrooms",
+        "width": 1024,
+        "height": 576,
+        "query": "students using AI chatbot classroom"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 4,
+    "heading": "Формула якісного промпту",
+    "type": "content",
+    "des": "Огляд шести ключових компонентів ідеального запиту, які допомагають прибрати неоднозначність при виконанні складних навчальних завдань.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/ea2fe50019c436397f865f15ad63d242.jpg",
+        "filename": "Here's how professors are using AI chatbots in the classroom : NPR",
+        "img_desc": "An editorial-style illustration shows a busy classroom where students sit at desks and in tiered seating, many using laptops or tablets. Several instructors or presenters are visible at the front and among the students, while a large wall display contains diagrams and prominent AI-related text. The composition emphasizes collaborative discussion, raised hands, and technology-assisted learning. Soft pink, beige, blue, and muted green tones create a warm, modern educational aesthetic, with bold outlines and layered foreground and background figures.",
+        "caption": "An illustrated classroom scene depicting students and instructors using laptops and discussing AI chatbots in an interactive learning environment.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x682",
+        "title": "Here's how professors are using AI chatbots in the classroom : NPR",
+        "width": 1024,
+        "height": 682,
+        "query": "students using AI chatbot classroom"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 5,
+    "heading": "Роль, аудиторія і контекст",
+    "type": "content",
+    "des": "Використання ролей, визначення цільової аудиторії та надання контексту для отримання точних пояснень на прикладі вивчення програмування.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/19b76ef20c3453b1a824e93509bbb439.jpg",
+        "filename": "A.I. Literacy' Is Trending in Schools. Here's Why. - The New York Times",
+        "img_desc": "A classroom scene shows students working at desks, with a Dell laptop in the foreground displaying a dark-themed chatbot or web interface. A student with braided hair sits behind the laptop, while other students and an adult are visible in the softly blurred background. The room has colorful walls, desks, chairs, and blue flooring. The photograph uses shallow depth of field and natural classroom lighting, creating a documentary-style composition focused on students using digital tools.",
+        "caption": "Students work with a chatbot on a laptop in a classroom while classmates and an adult are visible in the background.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "600x408",
+        "title": "A.I. Literacy' Is Trending in Schools. Here's Why. - The New York Times",
+        "width": 600,
+        "height": 408,
+        "query": "students using AI chatbot classroom"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 6,
+    "heading": "Обмеження, формат і перевірка",
+    "type": "content",
+    "des": "Встановлення меж обсягу, вибір структури відповіді та правила безпеки щодо використання приватних даних у промптах.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/a0e3c2cacd919dbaa1e160b0a36714d9.jpg",
+        "filename": "More Teachers Are Using AI in Their Classrooms. Here's Why",
+        "img_desc": "A classroom scene shows several students seated around tables using tablets and other digital devices. In the foreground, an adult holds up a tablet displaying the words \"AI CHATBOT\" with a simple chatbot icon. The room is brightly lit by large windows, with a colorful bulletin board in the background. The image has a warm, educational, technology-focused aesthetic, with the foreground tablet emphasized and the background slightly out of focus.",
+        "caption": "Students use digital devices in a classroom while an instructor presents a tablet labeled \"AI CHATBOT.\"",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x684",
+        "title": "More Teachers Are Using AI in Their Classrooms. Here's Why",
+        "width": 1024,
+        "height": 684,
+        "query": "students using AI chatbot classroom"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 7,
+    "heading": "Вправа «Ремонт промпту»",
+    "type": "content",
+    "des": "Практична групова робота з перетворення нечітких запитів на якісні інструкції за допомогою вивченої формули з шести компонентів.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/5fe162aa0f8def42add1e2d32ca27f77.jpg",
+        "filename": "What is collaborative writing?",
+        "img_desc": "An overhead photograph shows a group of students gathered around a wooden table, collaboratively working on writing and coursework. One student writes on a printed worksheet, another writes in an open notebook, and another uses a laptop while others lean in and participate. Pens, notebooks, papers, and drinks are scattered across the table. The image has warm indoor lighting, natural colors, and a clear documentary-style composition focused on teamwork.",
+        "caption": "Students collaborate on writing and coursework around a table using notebooks, worksheets, and a laptop.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x576",
+        "title": "What is collaborative writing?",
+        "width": 1024,
+        "height": 576,
+        "query": "students collaborative writing classroom"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 8,
+    "heading": "Ітерація: перша відповідь не фінальна",
+    "type": "content",
+    "des": "Процес циклічного вдосконалення результатів через оцінку відповідей, виявлення проблем та використання конкретних уточнювальних інструкцій.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/263912ae073386162506407bd3f17552.jpg",
+        "filename": "Failing fast, using feedback loops, and the benefits of iterative design |  by Tom Waterton | IBM Design | Medium",
+        "img_desc": "A clean circular iterative design diagram is centered on a pale background. The loop uses directional arrows to connect the stages \"Idea,\" \"Build,\" \"Prototype,\" \"Measure,\" \"Data,\" and \"Learn.\" The upper-right portion is pink, while the lower and left portions are dark purple, visually emphasizing a repeating feedback cycle. The composition is minimal, with bold sans-serif labels and ample negative space.",
+        "caption": "A circular feedback loop showing the iterative design cycle from Idea and Build through Prototype, Measure, Data, and Learn.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x559",
+        "title": "Failing fast, using feedback loops, and the benefits of iterative design |  by Tom Waterton | IBM Design | Medium",
+        "width": 1024,
+        "height": 559,
+        "query": "prompt iteration feedback loop concept"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 9,
+    "heading": "Шаблон безпечного промпту",
+    "type": "content",
+    "des": "Представлення готової структури для створення безпечних запитів, де користувач залишається відповідальним редактором і автором результату.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 10,
+    "heading": "Підсумок і exit ticket",
+    "type": "content",
+    "des": "Узагальнення критеріїв якості промпту, виконання перевірочного завдання та отримання домашньої роботи з ітераційного покращення запиту.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/2e063eb6d8200006eeb7966497f6d43e.jpg",
+        "filename": "How to Create a User Feedback Loop",
+        "img_desc": "A clean infographic titled \"Iterative Feedback Loop\" from Thematic. The left side contains explanatory text and a colorful illustration of three people handling a looping purple ribbon, with gear and checkmark icons. The right side presents four purple rounded boxes connected by arrows: \"Collecting Feedback,\" \"Analyzing Feedback,\" \"Implementing Changes,\" and \"Closing the Loop,\" with a dashed arrow returning to the first step. The design uses a light background, dark purple typography, and flat vector-style illustrations in a clear, balanced layout.",
+        "caption": "Infographic explaining an iterative user feedback loop through four stages: collecting, analyzing, implementing changes, and closing the loop.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x853",
+        "title": "How to Create a User Feedback Loop",
+        "width": 1024,
+        "height": 853,
+        "query": "prompt iteration feedback loop concept"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  }
+]

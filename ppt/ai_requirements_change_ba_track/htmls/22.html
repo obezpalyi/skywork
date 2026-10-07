@@ -1,0 +1,529 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Сесія BA-4: Затверджені зміни та фінальний проєкт</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+        :root {
+            --ppt-bg: #F8FAFC;
+            --ppt-bg-soft: #EEF2F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #F1F5F9;
+            --ppt-border: #CBD5E1;
+            --ppt-text-1: #0F172A;
+            --ppt-text-2: #475569;
+            --ppt-text-3: #94A3B8;
+            --ppt-accent: #0D9488;
+            --ppt-accent-2: #6366F1;
+            --ppt-chart-1: #0D9488;
+            --ppt-chart-2: #6366F1;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EC4899;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 6px;
+            --ppt-radius-lg: 10px;
+            --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+            --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+            --ppt-font-mono: "JetBrains Mono", monospace;
+        }*{
+            margin: 0 0;
+            padding: 0 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }.slide-root-ba4-approval-capstone{
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 0;
+            
+            box-shadow: var(--ppt-shadow-strong);
+        }/* Title region — fixed design layout */
+        .title-region-ba4-header{
+            margin: 30px 56px 15px 56px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .title-region-ba4-inner {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-region-ba4-accent-bar {
+            background-color: var(--ppt-accent);
+            width: 4px;
+            height: 40px;
+            border-radius: var(--ppt-radius-sm);
+            flex-shrink: 0;
+        }
+
+        .title-region-ba4-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-region-ba4-eyebrow {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+            margin-bottom: 4px;
+        }
+
+        .title-region-ba4-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .title-region-ba4-subtitle {
+            margin: 0 0 0 16px;
+            font-family: var(--ppt-font-body);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+        }/* Main body wrapper — flex growth to fill remaining height */
+        .body-content-ba4-main{
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            margin: 0 56px 26px 56px;
+            gap: 13px 20px;
+             /* do not shrink below content */
+        }/* Asymmetric composition: left dominant, right supporting */
+        .ba4-layout-grid{
+            display: flex;
+            gap: 13px 20px;
+            flex: 1 1 0;
+            align-items: stretch;
+        }
+
+        /* Left column — dominant region */
+        .ba4-left-column-dominant {
+            flex: 3 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-width: 0;
+        }
+
+        .ba4-left-card-baseline {
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 20px 24px;
+            box-shadow: var(--ppt-shadow-soft);
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ba4-left-card-baseline-title {
+            font-family: var(--ppt-font-display);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ba4-left-card-baseline-title i {
+            color: var(--ppt-accent);
+            font-size: 20px;
+        }
+
+        .ba4-workflow-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .ba4-workflow-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+        }
+
+        .ba4-workflow-item-icon {
+            color: var(--ppt-accent);
+            font-size: 14px;
+            margin-top: 5px;
+            width: 18px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .ba4-workflow-item strong {
+            color: var(--ppt-text-1);
+            font-weight: 600;
+            margin-right: 6px;
+        }
+
+        .ba4-left-card-trigger {
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 18px 24px;
+            box-shadow: var(--ppt-shadow-soft);
+        }
+
+        .ba4-trigger-title {
+            font-family: var(--ppt-font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ba4-trigger-title i {
+            color: var(--ppt-accent-2);
+        }
+
+        .ba4-trigger-text {
+            font-size: 16px;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            padding-left: 28px;
+            border-left: 2px solid var(--ppt-border);
+        }/* Right column — supporting region */
+        .ba4-right-column-support{
+            flex: 2 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px 16px;
+            min-width: 0;
+        }.ba4-right-card-decisions{
+            background-color: var(--ppt-surface-2);
+            border-radius: var(--ppt-radius-lg);
+            padding: 11px 20px;
+            border: 1px solid var(--ppt-border);
+            flex: 1 1 0;
+        }.ba4-right-card-decisions-title{
+            font-family: var(--ppt-font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            margin-bottom: 9px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ba4-right-card-decisions-title i {
+            color: var(--ppt-accent-2);
+        }.ba4-decision-list{
+            list-style: none;
+            padding: 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px 12px;
+        }
+
+        .ba4-decision-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+        }
+
+        .ba4-decision-item i {
+            color: var(--ppt-accent-2);
+            font-size: 14px;
+            margin-top: 4px;
+            width: 16px;
+            flex-shrink: 0;
+            text-align: center;
+        }.ba4-right-card-capstone{
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 13px 22px;
+            box-shadow: var(--ppt-shadow-soft);
+        }.ba4-capstone-title{
+            font-family: var(--ppt-font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ba4-capstone-title i {
+            color: var(--ppt-warn);
+        }.ba4-capstone-text{
+            font-size: 15px;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }.ba4-capstone-badge-row{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px 8px;
+        }.ba4-capstone-badge{
+            background-color: var(--ppt-bg-soft);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 2px 12px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ppt-text-1);
+        }/* Bottom compact note */
+        .ba4-bottom-note{
+            background-color: var(--ppt-surface-2);
+            border-radius: var(--ppt-radius-md);
+            padding: 6px 18px;
+            border-left: 4px solid var(--ppt-accent);
+            flex-shrink: 0;
+        }.ba4-bottom-note-text{
+            font-size: 14px;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            gap: 6px 10px;
+        }
+
+        .ba4-bottom-note-text i {
+            color: var(--ppt-accent);
+            font-size: 16px;
+        }
+
+        /* Ensure no fixed heights on text cards, content-driven */
+        .ba4-left-card-baseline, .ba4-left-card-trigger, .ba4-right-card-decisions, .ba4-right-card-capstone {
+             /* allowed: no fixed heights, content-driven */
+        }
+
+        /* List items must be block-level, no flex on li */
+        .ba4-workflow-item, .ba4-decision-item {
+            display: flex; /* allowed on container but not on li itself? per rules: list items block-level only */
+            /* fix: use block for li, inner wrapper for icon+text */
+        }
+
+        /* Correct approach: li is block, inner div handles flex */
+        .ba4-workflow-item {
+            display: block;
+        }
+
+        .ba4-workflow-item-inner {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .ba4-decision-item {
+            display: block;
+        }.ba4-decision-item-inner{
+            display: flex;
+            align-items: flex-start;
+            gap: 8px 12px;
+        }
+
+        /* li must have list-style none */
+        .ba4-workflow-list li, .ba4-decision-list li {
+            list-style: none;
+        }
+
+        /* Typography adjustments */
+        .ba4-workflow-item-inner strong {
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }
+
+        .ba4-decision-item-inner span {
+            font-size: 15px;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root-ba4-approval-capstone">
+        <!-- Title Region (fixed layout from DESIGN) -->
+        <header class="title-region-ba4-header">
+            <div class="title-region-ba4-inner">
+                <span class="title-region-ba4-accent-bar"></span>
+                <div class="title-region-ba4-text-group">
+                    <span class="title-region-ba4-eyebrow">BA Track | ServiceHub</span>
+                    <h1 class="title-region-ba4-heading">Сесія BA-4: Затверджені зміни та фінальний проєкт</h1>
+                </div>
+            </div>
+            <p class="title-region-ba4-subtitle">Оновлення базового плану після затвердження змін та підготовка до випробування Capstone</p>
+        </header>
+
+        <!-- Main body wrapper -->
+        <div class="body-content-ba4-main">
+            <!-- Asymmetric layout: left dominant, right supporting -->
+            <div class="ba4-layout-grid">
+                <!-- Left column: workflow + trigger -->
+                <div class="ba4-left-column-dominant">
+                    <div class="ba4-left-card-baseline">
+                        <div class="ba4-left-card-baseline-title">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span>Оновлення базового плану</span>
+                        </div>
+                        <ul class="ba4-workflow-list">
+                            <li>
+                                <div class="ba4-workflow-item-inner">
+                                    <span class="ba4-workflow-item-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                                    <div><strong>Порівняти</strong> стан до та після затвердження змін</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ba4-workflow-item-inner">
+                                    <span class="ba4-workflow-item-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                                    <div><strong>Ідентифікувати</strong> додані, змінені та вилучені твердження</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ba4-workflow-item-inner">
+                                    <span class="ba4-workflow-item-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                                    <div><strong>Оновити</strong> бізнес- та функціональні вимоги</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ba4-workflow-item-inner">
+                                    <span class="ba4-workflow-item-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                                    <div><strong>Скоригувати</strong> критерії приймання та Jira-завдання</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ba4-workflow-item-inner">
+                                    <span class="ba4-workflow-item-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                                    <div><strong>Оновити</strong> простежуваність та журнал змін</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ba4-workflow-item-inner">
+                                    <span class="ba4-workflow-item-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                                    <div><strong>Підготувати</strong> handoff-інформацію для команди</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ba4-workflow-item-inner">
+                                    <span class="ba4-workflow-item-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                                    <div><strong>Перевірити</strong> синхронізацію всіх артефактів</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ba4-left-card-trigger">
+                        <div class="ba4-trigger-title">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span>Нова обмежувальна умова</span>
+                        </div>
+                        <div class="ba4-trigger-text">
+                            Після затвердження рішення клієнт змінює визначення «пріоритетного клієнта». Необхідно визначити, які затверджені рішення зачіпаються, та оцінити потребу в повторному затвердженні.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column: decisions + capstone -->
+                <div class="ba4-right-column-support">
+                    <div class="ba4-right-card-decisions">
+                        <div class="ba4-right-card-decisions-title">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                            <span>Ключові дії аналітика</span>
+                        </div>
+                        <ul class="ba4-decision-list">
+                            <li>
+                                <div class="ba4-decision-item-inner">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Визначити затверджені рішення, на які впливає зміна визначення</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ba4-decision-item-inner">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Оцінити необхідність повторного затвердження змін</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ba4-decision-item-inner">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Оновити вимоги, беклог та критерії приймання</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ba4-decision-item-inner">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Запобігти потраплянню незафіксованої зміни в delivery</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ba4-decision-item-inner">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Підтримувати простежуваність через обидва цикли змін</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ba4-right-card-capstone">
+                        <div class="ba4-capstone-title">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Підготовка до Capstone</span>
+                        </div>
+                        <div class="ba4-capstone-text">
+                            Фінальне завдання охоплює повний цикл управління вимогами: від нового повідомлення клієнта до оновлення базового плану.
+                        </div>
+                        <div class="ba4-capstone-badge-row">
+                            <span class="ba4-capstone-badge">Витяг потреб</span>
+                            <span class="ba4-capstone-badge">Jira-завдання</span>
+                            <span class="ba4-capstone-badge">Аналіз впливу</span>
+                            <span class="ba4-capstone-badge">Decision Record</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom compact note -->
+            <div class="ba4-bottom-note" style="margin-bottom: 2px !important;">
+                <div class="ba4-bottom-note-text">
+                    <i class="fa-solid fa-user-check"></i>
+                    <span>Людські точки перевірки: підтвердження класифікації, валідація впливу та рішення щодо повторного затвердження залишаються за бізнес-аналітиком.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

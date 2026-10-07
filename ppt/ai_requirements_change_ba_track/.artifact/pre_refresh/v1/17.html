@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+<title>Робочий процес обробки запитів на зміни</title>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+  :root {
+    --ppt-bg: #F8FAFC;
+    --ppt-bg-soft: #EEF2F6;
+    --ppt-surface: #FFFFFF;
+    --ppt-surface-2: #F1F5F9;
+    --ppt-border: #CBD5E1;
+    --ppt-text-1: #0F172A;
+    --ppt-text-2: #475569;
+    --ppt-text-3: #94A3B8;
+    --ppt-accent: #0D9488;
+    --ppt-accent-2: #6366F1;
+    --ppt-chart-1: #0D9488;
+    --ppt-chart-2: #6366F1;
+    --ppt-chart-3: #F59E0B;
+    --ppt-chart-4: #EC4899;
+    --ppt-good: #10B981;
+    --ppt-warn: #F59E0B;
+    --ppt-bad: #EF4444;
+    --ppt-radius-sm: 2px;
+    --ppt-radius-md: 6px;
+    --ppt-radius-lg: 10px;
+    --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+    --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --ppt-font-display: "Inter", sans-serif;
+    --ppt-font-body: "Inter", sans-serif;
+    --ppt-font-mono: "JetBrains Mono", monospace;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {width: 1280px; height: 720px; overflow: hidden;   
+    background: var(--ppt-bg);
+    font-family: var(--ppt-font-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .ppt-slide-root {
+    width: 1280px; height: 720px;
+    background: var(--ppt-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    
+    box-shadow: var(--ppt-shadow-strong);
+  }
+  .title-region {
+    margin-top: 40px;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .title-region-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .title-accent-bar {
+    background-color: var(--ppt-accent);
+    width: 4px;
+    height: 32px;
+    border-radius: var(--ppt-radius-sm);
+    flex-shrink: 0;
+  }
+  .title-text-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .title-eyebrow {
+    font-family: var(--ppt-font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ppt-accent);
+  }
+  .title-main {
+    margin: 0;
+    font-family: var(--ppt-font-display);
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--ppt-text-1);
+    line-height: 1.2;
+  }
+  .title-subtitle {
+    margin: 0;
+    margin-left: 16px;
+    font-family: var(--ppt-font-body);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+  }
+  .body-region {
+    flex: 1 1 0;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    
+  }
+  /* workflow steps grid */
+  .workflow-five-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    flex-shrink: 0;
+  }
+  .workflow-step-item {
+    background: var(--ppt-surface);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-lg);
+    padding: 16px 12px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: var(--ppt-shadow-soft);
+    
+  }
+  .step-header-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .step-icon-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ppt-bg-soft);
+    color: var(--ppt-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .step-number-label {
+    font-family: var(--ppt-font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ppt-text-3);
+    letter-spacing: 0.05em;
+  }
+  .step-title {
+    font-family: var(--ppt-font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+    line-height: 1.3;
+  }
+  .step-desc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .step-desc-list li {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.4;
+    position: relative;
+    padding-left: 14px;
+  }
+  .step-desc-list li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--ppt-accent);
+    font-weight: 600;
+  }
+  /* ba actions section */
+  .ba-actions-panel {
+    background: var(--ppt-surface-2);
+    border-radius: var(--ppt-radius-lg);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border-left: 4px solid var(--ppt-accent);
+    flex-shrink: 0;
+  }
+  .ba-actions-icon {
+    color: var(--ppt-accent);
+    font-size: 28px;
+    width: 48px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .ba-actions-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .ba-actions-title {
+    font-family: var(--ppt-font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+  }
+  .ba-actions-text {
+    font-size: 15px;
+    color: var(--ppt-text-2);
+    line-height: 1.5;
+  }
+  /* bottom row: human review + handoff */
+  .bottom-review-row {
+    display: flex;
+    gap: 24px;
+    flex: 1 1 0;
+    
+  }
+  .human-review-card {
+    background: var(--ppt-bg-soft);
+    border-radius: var(--ppt-radius-lg);
+    padding: 18px 20px;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid var(--ppt-border);
+  }
+  .human-review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .human-review-icon {
+    color: var(--ppt-accent-2);
+    font-size: 20px;
+  }
+  .human-review-title {
+    font-family: var(--ppt-font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+  }
+  .human-review-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 4px;
+  }
+  .human-review-list li {
+    font-size: 14px;
+    color: var(--ppt-text-2);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    line-height: 1.4;
+  }
+  .human-review-list i {
+    color: var(--ppt-accent-2);
+    font-size: 12px;
+    width: 16px;
+    flex-shrink: 0;
+  }
+  .decision-card {
+    background: var(--ppt-surface);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-lg);
+    padding: 18px 20px;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--ppt-shadow-soft);
+  }
+  .decision-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .decision-icon {
+    color: var(--ppt-good);
+    font-size: 20px;
+  }
+  .decision-title {
+    font-family: var(--ppt-font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+  }
+  .decision-desc {
+    font-size: 14px;
+    color: var(--ppt-text-2);
+    line-height: 1.5;
+  }
+  .decision-badge {
+    background: var(--ppt-surface-2);
+    border-radius: var(--ppt-radius-md);
+    padding: 8px 10px;
+    font-size: 13px;
+    color: var(--ppt-text-2);
+    border-left: 3px solid var(--ppt-accent);
+    margin-top: 4px;
+  }
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="ppt-slide-root">
+    <!-- Title region fixed per design -->
+    <header class="title-region">
+      <div class="title-region-header">
+        <span class="title-accent-bar"></span>
+        <div class="title-text-group">
+          <span class="title-eyebrow">BA Track | ServiceHub</span>
+          <h1 class="title-main">Робочий процес обробки запитів на зміни</h1>
+        </div>
+      </div>
+      <p class="title-subtitle">Етапи обробки: реєстрація, нормалізація, уточнення, оцінка та прийняття рішення щодо зміни</p>
+    </header>
+
+    <!-- Body composition -->
+    <div class="body-region">
+      <!-- 5 workflow steps -->
+      <div class="workflow-five-steps">
+        <!-- Step 1 -->
+        <div class="workflow-step-item">
+          <div class="step-header-wrap">
+            <div class="step-icon-circle"><i class="fa-solid fa-inbox"></i></div>
+            <span class="step-number-label">КРОК 01</span>
+          </div>
+          <div class="step-title">Реєстрація</div>
+          <ul class="step-desc-list">
+            <li>Запис оригінального запиту</li>
+            <li>Без інтерпретації</li>
+            <li>Фіксація джерела</li>
+          </ul>
+        </div>
+        <!-- Step 2 -->
+        <div class="workflow-step-item">
+          <div class="step-header-wrap">
+            <div class="step-icon-circle"><i class="fa-solid fa-align-left"></i></div>
+            <span class="step-number-label">КРОК 02</span>
+          </div>
+          <div class="step-title">Нормалізація</div>
+          <ul class="step-desc-list">
+            <li>Формулювання бізнес-цілі</li>
+            <li>Бажаний результат</li>
+            <li>Структурований опис</li>
+          </ul>
+        </div>
+        <!-- Step 3 -->
+        <div class="workflow-step-item">
+          <div class="step-header-wrap">
+            <div class="step-icon-circle"><i class="fa-solid fa-circle-question"></i></div>
+            <span class="step-number-label">КРОК 03</span>
+          </div>
+          <div class="step-title">Уточнення</div>
+          <ul class="step-desc-list">
+            <li>Класифікація зміни</li>
+            <li>Виявлення пропусків</li>
+            <li>Перелік питань</li>
+          </ul>
+        </div>
+        <!-- Step 4 -->
+        <div class="workflow-step-item">
+          <div class="step-header-wrap">
+            <div class="step-icon-circle"><i class="fa-solid fa-chart-line"></i></div>
+            <span class="step-number-label">КРОК 04</span>
+          </div>
+          <div class="step-title">Оцінка</div>
+          <ul class="step-desc-list">
+            <li>Зв’язок із базовим планом</li>
+            <li>Бізнес і функціональний вплив</li>
+            <li>Підготовка варіантів</li>
+          </ul>
+        </div>
+        <!-- Step 5 -->
+        <div class="workflow-step-item">
+          <div class="step-header-wrap">
+            <div class="step-icon-circle"><i class="fa-solid fa-check-double"></i></div>
+            <span class="step-number-label">КРОК 05</span>
+          </div>
+          <div class="step-title">Рішення</div>
+          <ul class="step-desc-list">
+            <li>Фіксація затвердженого рішення</li>
+            <li>Власник і рішення</li>
+            <li>Готовність до впровадження</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BA actions strip -->
+      <div class="ba-actions-panel">
+        <div class="ba-actions-icon">
+          <i class="fa-solid fa-user-check"></i>
+        </div>
+        <div class="ba-actions-content">
+          <div class="ba-actions-title">Роль бізнес-аналітика в процесі</div>
+          <div class="ba-actions-text">
+            BA фіксує запит без переосмислення, пов’язує з поточним базовим планом, оцінює вплив та готує рішення. 
+            Xplore надає докази для класифікації, але остаточне рішення затверджує уповноважений власник.
+          </div>
+        </div>
+      </div>
+
+      <!-- bottom row: human review + decision -->
+      <div class="bottom-review-row" style="margin-bottom: 4px !important;">
+        <div class="human-review-card">
+          <div class="human-review-header">
+            <i class="fa-solid fa-user human-review-icon"></i>
+            <span class="human-review-title">Точки людської перевірки</span>
+          </div>
+          <ul class="human-review-list">
+            <li><i class="fa-solid fa-circle"></i> Класифікація зміни підтверджується власником</li>
+            <li><i class="fa-solid fa-circle"></i> Вплив поза межами BA передається як питання</li>
+            <li><i class="fa-solid fa-circle"></i> Рішення фіксується з власником і датою</li>
+          </ul>
+        </div>
+        <div class="decision-card">
+          <div class="decision-header">
+            <i class="fa-solid fa-gavel decision-icon"></i>
+            <span class="decision-title">Критерій рішення</span>
+          </div>
+          <div class="decision-desc">
+            Запит на зміну вважається обробленим після запису затвердженого рішення, що включає обсяг, 
+            вплив та відповідальних за виконання.
+          </div>
+          <div class="decision-badge">
+            <i class="fa-solid fa-file-signature"></i> Рішення фіксується в decision record
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

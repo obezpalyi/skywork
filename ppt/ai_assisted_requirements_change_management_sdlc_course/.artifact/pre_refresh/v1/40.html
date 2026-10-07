@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1280, height=720"/>
+  <title>Ризик і пріоритизація питань</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: var(--ppt-bg-soft);
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+      
+    }
+
+    .presentation-slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .slide-title-header {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .slide-breadcrumb-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .slide-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .risk-content-main-layout {
+      flex: 1;
+      display: flex;
+      padding: 0 60px 40px 60px;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .risk-criteria-column-left {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .prioritization-column-right {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .risk-factor-group-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .risk-factor-card-item {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1;
+    }
+
+    .risk-factor-icon-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ppt-accent);
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .risk-factor-description-text {
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .prioritization-strategy-container {
+      background-color: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .strategy-heading-accent {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      border-bottom: 2px solid var(--ppt-accent);
+      padding-bottom: 8px;
+      margin-bottom: 4px;
+    }
+
+    .strategy-step-list-block {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .strategy-step-item-node {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .step-badge-indicator {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--ppt-accent);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .step-content-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .step-main-label {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--ppt-text-1);
+    }
+
+    .step-sub-detail {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.3;
+    }
+
+    .critical-rule-banner-note {
+      margin-top: auto;
+      background-color: rgba(37, 99, 235, 0.05);
+      border-left: 4px solid var(--ppt-accent);
+      padding: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+    }
+
+    .impact-high-tag {
+      color: var(--ppt-bad);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="presentation-slide-root">
+    <header class="slide-title-header">
+      <div class="slide-breadcrumb-label">
+        AI-MANAGED SDLC PLAYBOOK
+      </div>
+      <h1 class="slide-main-heading">
+        Ризик і пріоритизація питань
+      </h1>
+    </header>
+
+    <main class="risk-content-main-layout" style="margin-bottom: 4px !important;">
+      <!-- Left Column: Risk Criteria -->
+      <div class="risk-criteria-column-left">
+        <div style="font-family: var(--ppt-font-display); font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--ppt-text-2);">
+          Критерії оцінки проблем та ризиків
+        </div>
+        <div class="risk-factor-group-wrapper">
+          <div class="risk-factor-card-item">
+            <div class="risk-factor-icon-title">
+              <i class="fa-solid fa-users"></i>
+              <span>Вплив на користувача</span>
+            </div>
+            <div class="risk-factor-description-text">
+              Чи блокує проблема критичний шлях користувача? Наскільки погіршується UX або безпека даних?
+            </div>
+          </div>
+          <div class="risk-factor-card-item">
+            <div class="risk-factor-icon-title">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Вплив на Scope</span>
+            </div>
+            <div class="risk-factor-description-text">
+              Чи змінює це межі проєкту, бюджет або критичні терміни розробки? Чи потрібні нові ресурси?
+            </div>
+          </div>
+          <div class="risk-factor-card-item">
+            <div class="risk-factor-icon-title">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span>Ризик Rework</span>
+            </div>
+            <div class="risk-factor-description-text">
+              Вартість виправлення помилки на поточному етапі проти етапу Production. Складність переробки.
+            </div>
+          </div>
+          <div class="risk-factor-card-item">
+            <div class="risk-factor-icon-title">
+              <i class="fa-solid fa-rocket"></i>
+              <span>Вплив на Release</span>
+            </div>
+            <div class="risk-factor-description-text">
+              Вплив на стабільність релізу, процеси тестування (QA) та операційну готовність (DevOps).
+            </div>
+          </div>
+          <div class="risk-factor-card-item">
+            <div class="risk-factor-icon-title">
+              <i class="fa-solid fa-circle-question"></i>
+              <span>Складність рішення</span>
+            </div>
+            <div class="risk-factor-description-text">
+              Кількість систем, інтеграцій та команд, які потрібно залучити для розв&#39;язання питання.
+            </div>
+          </div>
+          <div class="risk-factor-card-item">
+            <div class="risk-factor-icon-title">
+              <i class="fa-solid fa-clock"></i>
+              <span>Терміновість</span>
+            </div>
+            <div class="risk-factor-description-text">
+              Час до моменту, коли відсутність рішення стане блокером для наступної фази SDLC.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Prioritization Strategy -->
+      <div class="prioritization-column-right">
+        <div class="prioritization-strategy-container">
+          <div class="strategy-heading-accent">Пріоритизація питань</div>
+          <div class="strategy-step-list-block">
+            <div class="strategy-step-item-node">
+              <div class="step-badge-indicator" style="background-color: var(--ppt-bad);">1</div>
+              <div class="step-content-text-group">
+                <div class="step-main-label">Критичні блокери</div>
+                <div class="step-sub-detail">Питання, без яких неможливо почати розробку або тестування основних функцій.</div>
+              </div>
+            </div>
+            <div class="strategy-step-item-node">
+              <div class="step-badge-indicator" style="background-color: var(--ppt-warn);">2</div>
+              <div class="step-content-text-group">
+                <div class="step-main-label">High-impact невизначеність</div>
+                <div class="step-sub-detail">Прогалини у вимогах, що можуть призвести до значного rework або зміни архітектури.</div>
+              </div>
+            </div>
+            <div class="strategy-step-item-node">
+              <div class="step-badge-indicator">3</div>
+              <div class="step-content-text-group">
+                <div class="step-main-label">Операційні ризики</div>
+                <div class="step-sub-detail">Вплив на моніторинг, підтримку та стабільність середовищ.</div>
+              </div>
+            </div>
+            <div class="strategy-step-item-node">
+              <div class="step-badge-indicator" style="background-color: var(--ppt-text-3);">4</div>
+              <div class="step-content-text-group">
+                <div class="step-main-label">Другорядні уточнення</div>
+                <div class="step-sub-detail">Косметичні зміни, документарні правки та низькопріоритетні побажання.</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="critical-rule-banner-note">
+            <i class="fa-solid fa-triangle-exclamation" style="color: var(--ppt-warn); margin-right: 8px;"></i>
+            <strong>Правило:</strong> Уточнюючі питання спочатку ставляться для блокерів і high-impact невизначеності.
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body></html>

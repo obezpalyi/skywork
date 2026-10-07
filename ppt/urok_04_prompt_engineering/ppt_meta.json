@@ -1,0 +1,154 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "urok_04_prompt_engineering",
+  "artifact_path": "ppt/urok_04_prompt_engineering",
+  "pptTitle": "Prompt engineering",
+  "ppt_title": "Prompt engineering",
+  "outlineArtifactPath": "ppt/urok_04_prompt_engineering/outline.md",
+  "outline_artifact_path": "ppt/urok_04_prompt_engineering/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8f00bdb57b.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8f00bdb57b.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8f00bdb57b.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_04_prompt_engineering/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_04_prompt_engineering/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8f00bdb57b.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-8f00bdb57b.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_04_prompt_engineering/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_04_prompt_engineering/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи українською мовою окрему навчальну презентацію для уроку інформатики в 11 класі на тему «Prompt engineering». Рівно 10 слайдів: порівняння двох запитів, визначення промпту, формула якісного промпту, роль/аудиторія/контекст, обмеження/формат/перевірка, вправа «Ремонт промпту», ітерація, шаблон безпечного запиту, підсумок і домашнє завдання.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "auto_increase_ratio": 0.35,
+  "auto_increase_bucket": 0.5898,
+  "region": "US",
+  "prepared_session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "prepared_question_id": "Q-4a812a49c9b3",
+  "prepared_target_path": "ppt/urok_04_prompt_engineering",
+  "prepared_state_id": "pps_7ed8be816012739177c0f115d0520b73",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:3273868dfe382276f4155fc4123e3463791454b1b8ced6d119609d79cf0db23c",
+  "init_request_fingerprint": "sha256:bfa5d880589f174811eaff49b5d2d79e8a1669cd74c868cca418488fbdf7b650",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:15cc58702a11adeb11fdee2afb4f834883c4ba3cec6a5ff3b67e520c93e72132",
+  "outline_artifact_sha256": "sha256:9b03e1dabaa2ef1912611534427bd17dd4f8a36cb8735eb5b55e12faea411b54",
+  "prepared_inputs": [
+    {
+      "path": "ppt/urok_04_prompt_engineering/design_guideline.md",
+      "size": 7526,
+      "sha256": "sha256:35d6af7b631c03c5337976537331018095027fdb5f974c75b5063168eeb4bbfb"
+    },
+    {
+      "path": "ppt/urok_04_prompt_engineering/final_report.md",
+      "size": 5587,
+      "sha256": "sha256:15cc58702a11adeb11fdee2afb4f834883c4ba3cec6a5ff3b67e520c93e72132"
+    },
+    {
+      "path": "ppt/urok_04_prompt_engineering/outline.json",
+      "size": 33417,
+      "sha256": "sha256:b5d221d3ebc87f85462f9f3557345697805b2ff3b0302221906fa7d52b8b6d85"
+    },
+    {
+      "path": "ppt/urok_04_prompt_engineering/outline.md",
+      "size": 3225,
+      "sha256": "sha256:9b03e1dabaa2ef1912611534427bd17dd4f8a36cb8735eb5b55e12faea411b54"
+    },
+    {
+      "path": "ppt/urok_04_prompt_engineering/prepared_images/cover_d00768416f06_2095590954905276417.png",
+      "size": 1098148,
+      "sha256": "sha256:469ab548ef5e7b3b35a29b5503be8577d7441f89865915e01b90cd86b719ce42"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json",
+      "prepared_images/cover_d00768416f06_2095590954905276417.png"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "auto_mode",
+      "auto_increase_miss",
+      "standard_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "generated",
+      "applied": true
+    },
+    "dropped_images": null,
+    "warnings": null,
+    "mock": false
+  }
+}

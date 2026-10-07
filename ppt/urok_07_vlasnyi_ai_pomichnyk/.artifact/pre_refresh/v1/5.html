@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Що таке системна інструкція</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #F9FAFB;
+      --ppt-bg-soft: #F3F4F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF2FF;
+      --ppt-border: #E5E7EB;
+      --ppt-text-1: #111827;
+      --ppt-text-2: #4B5563;
+      --ppt-text-3: #9CA3AF;
+      --ppt-accent: #10B981;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #10B981;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EF4444;
+      --ppt-good: #059669;
+      --ppt-warn: #D97706;
+      --ppt-bad: #DC2626;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 0px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      
+      box-shadow: var(--ppt-shadow-strong);
+    }
+
+    .title-region {
+      margin-top: 48px;
+      margin-right: 64px;
+      margin-bottom: 24px;
+      margin-left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-accent-mark {
+      background-color: var(--ppt-accent);
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .title-region-eyebrow-text {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ppt-accent);
+      letter-spacing: 0.05em;
+    }
+
+    .title-region-headline {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-region-divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--ppt-border);
+      margin-top: 8px;
+    }
+
+    .content-body-wrapper {
+      flex: 1 1 0;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 48px;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 48px;
+      
+    }
+
+    .left-anchor-column {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .left-anchor-keyword-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .keyword-primary {
+      font-family: var(--ppt-font-display);
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .keyword-secondary {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+    }
+
+    .right-definition-column {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .definition-list-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .definition-list-item {
+      border-bottom: 1px solid var(--ppt-border);
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    .definition-list-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .definition-item-label {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ppt-accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .definition-item-label i {
+      font-size: 14px;
+      color: var(--ppt-accent);
+      width: 20px;
+    }
+
+    .definition-item-text {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .definition-item-text strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .bottom-safety-gap {
+      height: 0;
+      flex-shrink: 0;
+    }
+
+    /* ensure no extra horizontal overflow */
+    .content-body-wrapper,
+    .title-region {
+      max-width: calc(1280px - 128px);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Non-Cover-Page Title Region -->
+    <header class="title-region">
+      <div class="title-region-eyebrow-wrapper">
+        <span class="title-region-accent-mark"></span>
+        <span class="title-region-eyebrow-text">Лабораторна робота: AI-Помічник</span>
+      </div>
+      <h1 class="title-region-headline">Що таке системна інструкція</h1>
+      <div class="title-region-divider"></div>
+    </header>
+
+    <!-- Current Page Special Open Layout: conceptual-anchor -->
+    <div class="content-body-wrapper">
+      <!-- Giant keyword anchor (left) -->
+      <div class="left-anchor-column">
+        <div class="left-anchor-keyword-wrapper">
+          <div class="keyword-primary">SYSTEM</div>
+          <div class="keyword-secondary">PROMPT</div>
+        </div>
+      </div>
+
+      <!-- Right side: three concise definition points, separated by weak horizontal lines -->
+      <div class="right-definition-column">
+        <div class="definition-list-container">
+          <!-- Point 1: Роль і мета -->
+          <div class="definition-list-item">
+            <div class="definition-item-label">
+              <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+              Роль і мета
+            </div>
+            <div class="definition-item-text">
+              <strong>Роль</strong> визначає, ким виступає помічник, а <strong>мета</strong> — яку задачу він виконує для користувача.
+            </div>
+          </div>
+
+          <!-- Point 2: Стиль і алгоритм -->
+          <div class="definition-list-item">
+            <div class="definition-item-label">
+              <i class="fa-solid fa-list-ol" aria-hidden="true"></i>
+              Стиль і алгоритм
+            </div>
+            <div class="definition-item-text">
+              Задає <strong>тон відповідей</strong> і <strong>порядок дій</strong>: від уточнення запиту до покрокового пояснення.
+            </div>
+          </div>
+
+          <!-- Point 3: Межі та тестування -->
+          <div class="definition-list-item">
+            <div class="definition-item-label">
+              <i class="fa-solid fa-flask" aria-hidden="true"></i>
+              Межі та тестування
+            </div>
+            <div class="definition-item-text">
+              Описує <strong>обмеження</strong> та поведінку в непевних ситуаціях, роблячи інструкцію <strong>конкретною і перевірюваною</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom safety gap is preserved via margin-bottom on content-body-wrapper -->
+  </div>
+
+</body></html>

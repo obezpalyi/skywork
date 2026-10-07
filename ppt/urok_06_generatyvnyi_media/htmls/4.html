@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --ppt-bg: #F9FAFB;
+    --ppt-bg-soft: #EEF2FF;
+    --ppt-surface: #FFFFFF;
+    --ppt-surface-2: #F3F4F6;
+    --ppt-border: #E5E7EB;
+    --ppt-text-1: #111827;
+    --ppt-text-2: #4B5563;
+    --ppt-text-3: #9CA3AF;
+    --ppt-accent: #6366F1;
+    --ppt-accent-2: #06B6D4;
+    --ppt-chart-1: #6366F1;
+    --ppt-chart-2: #06B6D4;
+    --ppt-chart-3: #F59E0B;
+    --ppt-chart-4: #EC4899;
+    --ppt-good: #10B981;
+    --ppt-warn: #F59E0B;
+    --ppt-bad: #EF4444;
+    --ppt-radius-sm: 4px;
+    --ppt-radius-md: 8px;
+    --ppt-radius-lg: 16px;
+    --ppt-shadow-soft: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+    --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --ppt-font-display: 'Space Grotesk', sans-serif;
+    --ppt-font-body: 'Inter', sans-serif;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {width: 1280px; height: 720px; overflow: hidden;   
+    background: var(--ppt-bg);
+    font-family: var(--ppt-font-body);
+  }
+
+  .video-generation-slide-root {
+    width: 1280px; height: 720px;
+    display: flex;
+    flex-direction: column;
+    background: var(--ppt-bg);
+    overflow: hidden;
+  }
+
+  .video-generation-title-region {
+    margin-top: 48px;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .video-generation-title-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .video-generation-title-accent-bar {
+    width: 4px;
+    height: 32px;
+    background: var(--ppt-accent);
+    border-radius: var(--ppt-radius-sm);
+  }
+
+  .video-generation-title-eyebrow-label {
+    font-family: var(--ppt-font-display);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ppt-accent);
+  }
+
+  .video-generation-title-heading {
+    font-family: var(--ppt-font-display);
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--ppt-text-1);
+    line-height: 1.2;
+  }
+
+  .video-generation-body-wrapper {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 48px;
+    gap: 20px;
+    
+  }
+
+  .video-generation-main-panel {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex: 1 1 0;
+    
+  }
+
+  .video-generation-left-prompt-panel {
+    flex: 3 1 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--ppt-surface);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-lg);
+    padding: 24px;
+    box-shadow: var(--ppt-shadow-soft);
+    gap: 16px;
+    
+  }
+
+  .video-generation-prompt-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .video-generation-prompt-section-icon {
+    color: var(--ppt-accent);
+    font-size: 20px;
+  }
+
+  .video-generation-prompt-section-title {
+    font-family: var(--ppt-font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+  }
+
+  .video-generation-prompt-parameter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .video-generation-parameter-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .video-generation-parameter-icon {
+    color: var(--ppt-accent-2);
+    font-size: 14px;
+    margin-top: 4px;
+    width: 18px;
+    text-align: center;
+  }
+
+  .video-generation-parameter-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ppt-text-2);
+  }
+
+  .video-generation-parameter-desc {
+    font-size: 14px;
+    color: var(--ppt-text-2);
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+
+  .video-generation-example-prompt-block {
+    background: var(--ppt-bg-soft);
+    border-radius: var(--ppt-radius-md);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .video-generation-example-prompt-label {
+    font-family: var(--ppt-font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ppt-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .video-generation-example-prompt-text {
+    font-size: 16px;
+    color: var(--ppt-text-1);
+    line-height: 1.5;
+  }
+
+  .video-generation-right-challenge-panel {
+    flex: 2 1 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--ppt-surface);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-lg);
+    padding: 24px;
+    box-shadow: var(--ppt-shadow-soft);
+    gap: 16px;
+    
+  }
+
+  .video-generation-challenge-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .video-generation-challenge-icon {
+    color: var(--ppt-warn);
+    font-size: 20px;
+  }
+
+  .video-generation-challenge-title {
+    font-family: var(--ppt-font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+  }
+
+  .video-generation-challenge-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .video-generation-challenge-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .video-generation-challenge-list-icon {
+    color: var(--ppt-bad);
+    font-size: 14px;
+    margin-top: 4px;
+    width: 18px;
+    text-align: center;
+  }
+
+  .video-generation-challenge-list-text {
+    font-size: 15px;
+    color: var(--ppt-text-2);
+    line-height: 1.5;
+  }
+
+  .video-generation-challenge-list-text strong {
+    color: var(--ppt-text-1);
+    font-weight: 600;
+  }
+
+  .video-generation-consistency-note {
+    background: var(--ppt-surface-2);
+    border-radius: var(--ppt-radius-md);
+    padding: 12px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .video-generation-consistency-note-icon {
+    color: var(--ppt-accent);
+    font-size: 16px;
+    margin-top: 2px;
+  }
+
+  .video-generation-consistency-note-text {
+    font-size: 14px;
+    color: var(--ppt-text-2);
+    line-height: 1.5;
+  }
+
+  .video-generation-bottom-summary-bar {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    background: var(--ppt-bg-soft);
+    border-radius: var(--ppt-radius-md);
+    padding: 14px 20px;
+  }
+
+  .video-generation-bottom-summary-icon {
+    color: var(--ppt-accent-2);
+    font-size: 18px;
+  }
+
+  .video-generation-bottom-summary-text {
+    font-size: 16px;
+    color: var(--ppt-text-1);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+<div class="video-generation-slide-root">
+  <div class="video-generation-title-region">
+    <div class="video-generation-title-eyebrow-row">
+      <div class="video-generation-title-accent-bar"></div>
+      <span class="video-generation-title-eyebrow-label">Технології майбутнього</span>
+    </div>
+    <h1 class="video-generation-title-heading">Генерація відео</h1>
+  </div>
+
+  <div class="video-generation-body-wrapper">
+    <div class="video-generation-main-panel">
+      <div class="video-generation-left-prompt-panel">
+        <div class="video-generation-prompt-section-heading">
+          <i class="fa-solid fa-video video-generation-prompt-section-icon"></i>
+          <span class="video-generation-prompt-section-title">Що має описувати відеопромпт?</span>
+        </div>
+        <div class="video-generation-prompt-parameter-grid">
+          <div class="video-generation-parameter-item">
+            <i class="fa-solid fa-cube video-generation-parameter-icon"></i>
+            <div>
+              <div class="video-generation-parameter-label">Об&#39;єкт або персонаж</div>
+              <div class="video-generation-parameter-desc">Хто або що є в кадрі</div>
+            </div>
+          </div>
+          <div class="video-generation-parameter-item">
+            <i class="fa-solid fa-person-running video-generation-parameter-icon"></i>
+            <div>
+              <div class="video-generation-parameter-label">Дія</div>
+              <div class="video-generation-parameter-desc">Що відбувається з об&#39;єктом</div>
+            </div>
+          </div>
+          <div class="video-generation-parameter-item">
+            <i class="fa-solid fa-tree video-generation-parameter-icon"></i>
+            <div>
+              <div class="video-generation-parameter-label">Середовище</div>
+              <div class="video-generation-parameter-desc">Де відбувається сцена</div>
+            </div>
+          </div>
+          <div class="video-generation-parameter-item">
+            <i class="fa-solid fa-camera video-generation-parameter-icon"></i>
+            <div>
+              <div class="video-generation-parameter-label">Рух камери</div>
+              <div class="video-generation-parameter-desc">Наближення, панорама, зсув</div>
+            </div>
+          </div>
+          <div class="video-generation-parameter-item">
+            <i class="fa-solid fa-sun video-generation-parameter-icon"></i>
+            <div>
+              <div class="video-generation-parameter-label">Освітлення</div>
+              <div class="video-generation-parameter-desc">Час доби, характер світла</div>
+            </div>
+          </div>
+          <div class="video-generation-parameter-item">
+            <i class="fa-solid fa-clock video-generation-parameter-icon"></i>
+            <div>
+              <div class="video-generation-parameter-label">Тривалість і формат</div>
+              <div class="video-generation-parameter-desc">Секунди, співвідношення сторін</div>
+            </div>
+          </div>
+        </div>
+        <div class="video-generation-example-prompt-block">
+          <div class="video-generation-example-prompt-label">Приклад промпту</div>
+          <div class="video-generation-example-prompt-text">«10-секундний ролик: паперовий літак летить над шкільним подвір&#39;ям, плавний рух камери слідом за літаком, ранкове світло, без людей крупним планом»</div>
+        </div>
+      </div>
+
+      <div class="video-generation-right-challenge-panel">
+        <div class="video-generation-challenge-heading">
+          <i class="fa-solid fa-triangle-exclamation video-generation-challenge-icon"></i>
+          <span class="video-generation-challenge-title">Чому відео складніше за один кадр?</span>
+        </div>
+        <ul class="video-generation-challenge-list">
+          <li class="video-generation-challenge-list-item">
+            <i class="fa-solid fa-shuffle video-generation-challenge-list-icon"></i>
+            <span class="video-generation-challenge-list-text"><strong>Узгодженість об&#39;єктів:</strong> модель має зберігати форму, колір і деталі об&#39;єктів між кадрами без спотворень.</span>
+          </li>
+          <li class="video-generation-challenge-list-item">
+            <i class="fa-solid fa-wave-square video-generation-challenge-list-icon"></i>
+            <span class="video-generation-challenge-list-text"><strong>Природність руху:</strong> рухи персонажів і камери повинні виглядати плавно та фізично правдоподібно.</span>
+          </li>
+          <li class="video-generation-challenge-list-item">
+            <i class="fa-solid fa-brain video-generation-challenge-list-icon"></i>
+            <span class="video-generation-challenge-list-text"><strong>Один опис — багато кадрів:</strong> ШІ створює десятки зображень, які мають скластися в єдину послідовну історію.</span>
+          </li>
+        </ul>
+        <div class="video-generation-consistency-note">
+          <i class="fa-solid fa-link video-generation-consistency-note-icon"></i>
+          <span class="video-generation-consistency-note-text">Ключова вимога — <strong>стабільність</strong>: однаковий стиль, освітлення та об&#39;єкти протягом усього ролика.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-generation-bottom-summary-bar" style="margin-bottom: 4px !important;">
+      <i class="fa-solid fa-lightbulb video-generation-bottom-summary-icon"></i>
+      <span class="video-generation-bottom-summary-text">Чим детальніший опис руху та середовища, тим легше моделі створити зв&#39;язне відео без стрибків між кадрами.</span>
+    </div>
+  </div>
+</div>
+
+</body></html>

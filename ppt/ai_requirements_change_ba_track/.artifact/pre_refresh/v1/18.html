@@ -1,0 +1,412 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Класифікація: Дефект, уточнення чи запит на зміну</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #EEF2F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F1F5F9;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      
+      box-shadow: var(--ppt-shadow-strong);
+    }
+
+    /* Title region – fixed per design */
+    .title-region {
+      margin-top: 32px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-region-top-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-accent-bar {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 32px;
+      border-radius: var(--ppt-radius-sm);
+      flex-shrink: 0;
+    }
+
+    .title-region-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .title-region-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-region-subtitle {
+      margin: 0;
+      margin-left: 16px;
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    /* Main body – fills remaining height */
+    .classification-body-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 32px;
+      gap: 20px;
+      
+    }
+
+    /* Core classification grid – 4 modules */
+    .classification-grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      flex: 1 1 0;
+      
+    }
+
+    .classification-grid-item {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 16px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+      
+    }
+
+    .classification-item-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .classification-item-icon {
+      font-size: 20px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--ppt-radius-sm);
+      flex-shrink: 0;
+    }
+
+    .classification-item-icon-bug {
+      background: rgba(239, 68, 68, 0.12);
+      color: var(--ppt-bad);
+    }
+
+    .classification-item-icon-clarify {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--ppt-warn);
+    }
+
+    .classification-item-icon-change {
+      background: rgba(99, 102, 241, 0.12);
+      color: var(--ppt-accent-2);
+    }
+
+    .classification-item-icon-missing {
+      background: rgba(13, 148, 136, 0.12);
+      color: var(--ppt-accent);
+    }
+
+    .classification-item-title {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .classification-item-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .classification-item-desc {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .classification-item-example {
+      background: var(--ppt-surface-2);
+      border-left: 3px solid var(--ppt-border);
+      padding: 6px 10px;
+      border-radius: 0 var(--ppt-radius-sm) var(--ppt-radius-sm) 0;
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .classification-item-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--ppt-font-body);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--ppt-bg-soft);
+      color: var(--ppt-text-1);
+      margin-top: 4px;
+      width: fit-content;
+    }
+
+    .classification-item-tag i {
+      font-size: 12px;
+      color: var(--ppt-accent);
+    }
+
+    /* Bottom band – decision authority */
+    .classification-decision-band {
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid var(--ppt-border);
+      flex-shrink: 0;
+    }
+
+    .decision-band-icon {
+      font-size: 24px;
+      color: var(--ppt-accent);
+      width: 40px;
+      height: 40px;
+      background: rgba(13, 148, 136, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .decision-band-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .decision-band-title {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .decision-band-text {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .decision-band-authority {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      padding: 6px 14px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+
+    .decision-band-authority i {
+      color: var(--ppt-accent-2);
+      font-size: 14px;
+    }
+
+    .decision-band-authority span {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      white-space: nowrap;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Fixed title region per design contract -->
+    <header class="title-region">
+      <div class="title-region-top-row">
+        <span class="title-region-accent-bar"></span>
+        <div class="title-region-text-group">
+          <span class="title-region-eyebrow">BA Track | ServiceHub</span>
+          <h1 class="title-region-heading">Класифікація: дефект, уточнення чи зміна</h1>
+        </div>
+      </div>
+      <p class="title-region-subtitle">Базовий план вимог визначає тип запиту та необхідність контролю змін</p>
+    </header>
+
+    <!-- Main content body -->
+    <div class="classification-body-wrapper">
+      <!-- 4 classification modules -->
+      <div class="classification-grid-container">
+        <!-- Defect -->
+        <div class="classification-grid-item">
+          <div class="classification-item-header">
+            <span class="classification-item-icon classification-item-icon-bug"><i class="fa-solid fa-bug"></i></span>
+            <h2 class="classification-item-title">Дефект</h2>
+          </div>
+          <div class="classification-item-body">
+            <p class="classification-item-desc">Реалізована поведінка не відповідає затвердженій вимозі. Система працює інакше, ніж визначено в базовому плані.</p>
+            <p class="classification-item-example">&#34;Критичний запит не ескалюється автоматично, хоча вимога це передбачає&#34;</p>
+            <span class="classification-item-tag"><i class="fa-solid fa-circle-check"></i> Виправлення без зміни обсягу</span>
+          </div>
+        </div>
+
+        <!-- Clarification -->
+        <div class="classification-grid-item">
+          <div class="classification-item-header">
+            <span class="classification-item-icon classification-item-icon-clarify"><i class="fa-solid fa-circle-question"></i></span>
+            <h2 class="classification-item-title">Уточнення</h2>
+          </div>
+          <div class="classification-item-body">
+            <p class="classification-item-desc">Формулювання робиться явним без зміни узгодженої поведінки чи обсягу. Уточнюється термін, але суть вимоги не змінюється.</p>
+            <p class="classification-item-example">&#34;Уточнити, що &#39;понаднормовий час&#39; означає 18:00–08:00&#34;</p>
+            <span class="classification-item-tag"><i class="fa-solid fa-pen"></i> Явне формулювання, обсяг той самий</span>
+          </div>
+        </div>
+
+        <!-- Change request -->
+        <div class="classification-grid-item">
+          <div class="classification-item-header">
+            <span class="classification-item-icon classification-item-icon-change"><i class="fa-solid fa-circle-question"></i></span>
+            <h2 class="classification-item-title">Запит на зміну</h2>
+          </div>
+          <div class="classification-item-body">
+            <p class="classification-item-desc">Очікувана поведінка, обсяг, правило, обмеження або прийнятий результат змінюються. Це впливає на затверджений базовий план.</p>
+            <p class="classification-item-example">&#34;Додати новий пріоритет &#39;критичний&#39; з SLA 2 години замість 4&#34;</p>
+            <span class="classification-item-tag"><i class="fa-solid fa-circle-question"></i> Зміна базового плану → контроль змін</span>
+          </div>
+        </div>
+
+        <!-- Missing requirement -->
+        <div class="classification-grid-item">
+          <div class="classification-item-header">
+            <span class="classification-item-icon classification-item-icon-missing"><i class="fa-solid fa-circle-plus"></i></span>
+            <h2 class="classification-item-title">Відсутня вимога</h2>
+          </div>
+          <div class="classification-item-body">
+            <p class="classification-item-desc">Необхідна поведінка ніколи не була затверджена і має увійти в контроль змін як нова вимога.</p>
+            <p class="classification-item-example">&#34;Сповіщення менеджерів не було в жодному документі – це нова вимога&#34;</p>
+            <span class="classification-item-tag"><i class="fa-solid fa-clipboard-list"></i> Входить через процес змін</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decision authority band -->
+      <div class="classification-decision-band" style="margin-bottom: 4px !important;">
+        <div class="decision-band-icon"><i class="fa-solid fa-user-check"></i></div>
+        <div class="decision-band-content">
+          <h3 class="decision-band-title">Роль аналітика та власника</h3>
+          <p class="decision-band-text">Xplore надає докази для класифікації, але авторизований власник підтверджує тип запиту та рішення про контроль змін.</p>
+        </div>
+        <div class="decision-band-authority">
+          <i class="fa-solid fa-shield"></i>
+          <span>Людське рішення</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

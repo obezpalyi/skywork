@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <title>Етика штучного інтелекту: хто відповідає за рішення ШІ?</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    /* 
+      Base CSS Theme 
+      Importing fonts and defining color variables as per <DESIGN>
+    */
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap");
+
+    :root {
+      --ppt-bg: #FDFCFB;
+      --ppt-bg-soft: #F4F2EF;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9ECEF;
+      --ppt-border: #D8D2C2;
+      --ppt-text-1: #1A1A1A;
+      --ppt-text-2: #4A4A4A;
+      --ppt-text-3: #6C757D;
+      --ppt-accent: #005F73;
+      --ppt-accent-2: #9B2226;
+      --ppt-chart-1: #005F73;
+      --ppt-chart-2: #0A9396;
+      --ppt-chart-3: #EE9B00;
+      --ppt-chart-4: #BB3E03;
+      --ppt-good: #0A9396;
+      --ppt-warn: #E9D8A6;
+      --ppt-bad: #9B2226;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 8px;
+      --ppt-radius-lg: 0px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.08);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Manrope", sans-serif;
+    }
+
+    /* 
+      Page Layout and Structure 
+      Slide root fixed at 1280x720px. 
+    */
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      
+      
+      background-color: #333333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    .ai-ethics-cover-page-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    /* 
+      Background Layer 
+    */
+    .ai-ethics-cover-background-image {
+      grid-area: 1 / 1;
+      width: 100%; height: 720px;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* 
+      Content Layer with Gradient Overlay 
+      Ensures text readability over the dark image.
+    */
+    .ai-ethics-cover-content-layer {
+      grid-area: 1 / 1;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      padding-top: 80px;
+      padding-bottom: 60px;
+      padding-left: 64px;
+      padding-right: 64px;
+      background: linear-gradient(
+        to right,
+        rgba(253, 252, 251, 0.98) 0%,
+        rgba(253, 252, 251, 0.9) 35%,
+        rgba(253, 252, 251, 0.6) 55%,
+        rgba(253, 252, 251, 0) 100%
+      );
+    }
+
+    /* 
+      Title Region 
+    */
+    .ai-ethics-cover-left-title-container {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .ai-ethics-cover-main-title {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 68px;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--ppt-text-1);
+    }
+
+    .ai-ethics-cover-accent-divider {
+      width: 80px;
+      height: 6px;
+      background-color: var(--ppt-accent);
+    }
+
+    .ai-ethics-cover-main-subtitle {
+      margin: 0;
+      font-family: var(--ppt-font-body);
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--ppt-text-2);
+    }
+
+    /* 
+      Spacer to push content 
+    */
+    .ai-ethics-cover-vertical-spacer {
+      height: 240px;
+    }
+
+    /* 
+      Footer Metadata Region 
+    */
+    .ai-ethics-cover-right-footer-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      gap: 8px;
+    }
+
+    .ai-ethics-cover-info-metadata {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .ai-ethics-cover-tag-label {
+      font-family: var(--ppt-font-display);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--ppt-accent);
+      margin-bottom: 4px;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="ai-ethics-cover-page-root">
+    <!-- Background Image -->
+    <img src="https://skyagent-artifacts.skywork.ai/image/5940376570349285532/2102354127894519808/2102354127894519809.png" alt="AI Ethics Visual" class="ai-ethics-cover-background-image"/>
+
+    <!-- Foreground Content -->
+    <div class="ai-ethics-cover-content-layer">
+      
+      <!-- Title Section -->
+      <div class="ai-ethics-cover-left-title-container">
+        <h1 class="ai-ethics-cover-main-title">
+          Етика штучного<br/>інтелекту
+        </h1>
+        <div class="ai-ethics-cover-accent-divider"></div>
+        <h2 class="ai-ethics-cover-main-subtitle">
+          Хто відповідає за рішення ШІ?
+        </h2>
+      </div>
+
+      <!-- Spacer for Layout Balance -->
+      <div class="ai-ethics-cover-vertical-spacer"></div>
+
+      <!-- Metadata Section -->
+      <div class="ai-ethics-cover-right-footer-container">
+        <div class="ai-ethics-cover-tag-label">Навчальна презентація</div>
+        <div class="ai-ethics-cover-info-metadata">
+          11 клас | Урок інформатики та етики
+        </div>
+        <div class="ai-ethics-cover-info-metadata">
+          Урок 7 • 2026-09-22
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body></html>

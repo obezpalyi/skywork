@@ -1,0 +1,119 @@
+<!-- Page: 1 -->
+
+<!-- PROPOSED PROGRAMME BRIEF -->
+
+# AI FOR DATA STEWARDS
+
+## Applying AI effectively and responsibly in the data stewardship role
+
+Programme proposition. This practical course equips experienced data stewards to use AI as an assistive capability in their existing work: accelerating analysis and documentation, strengthening quality and governance activities, and making sound, accountable decisions about where AI should—and should not—be used.
+
+## Who it is for
+
+Practising data stewards and adjacent data governance or quality professionals who already understand their organisational responsibilities and now need practical methods for applying AI without weakening human accountability, privacy, security or control.
+
+## What participants will learn
+
+## 1. Identify valuable AI uses
+
+Select stewardship tasks where AI can save time or improve consistency, while recognising tasks that require direct human judgement.
+
+## 3. Accelerate stewardship work
+
+Apply AI to draft metadata, profile issues, classify information, summarise findings and prepare governance communications.
+
+## 5. Support AI-ready data
+
+Assess whether data is sufficiently documented, governed and fit for an AI-enabled use case, then prioritise stewardship actions.
+
+## 2. Prompt and verify outputs
+
+Frame effective instructions, supply appropriate context, test results and document the evidence used to accept, revise or reject AI output.
+
+## 4. Protect data and trust
+
+Recognise privacy, confidentiality, bias, hallucination, security and over-reliance risks; apply proportionate safeguards.
+
+## 6. Embed accountable practice
+
+Define human review, decision rights, audit evidence, escalation and monitoring for AI-assisted stewardship workflows.
+
+## Learning approach
+
+Blended and applied. Short expert inputs are followed by guided tool practice, scenario work, peer review and an individual or team capstone. Participants practise with approved or simulated information, and every day ends with an artefact that can be adapted to their stewardship environment.
+
+## What participants receive
+
+Participant workbook
+
+| Participant workbook | Plain-language AI concepts, guided exercises, reflection prompts and space to capture role-specific applications. |
+| --- | --- |
+| AI practice toolkit | Prompt canvas, output-verification checklist, safe-use decision guide, risk review and human-oversight templates. |
+| Stewardship scenarios | Simulated datasets, metadata records, issue logs and governance requests for practical AI-assisted exercises. |
+| Transfer pack | Job aids, glossary, capstone template and a 30-day action plan for applying learning after the course. |
+
+
+Stewardship scenarios
+
+Transfer pack
+
+Plain-language AI concepts, guided exercises, reflection prompts and space to capture role-specific applications.
+
+Prompt canvas, output-verification checklist, safe-use decision guide, risk review and human-oversight templates.
+
+Simulated datasets, metadata records, issue logs and governance requests for practical AI-assisted exercises.
+
+Job aids, glossary, capstone template and a 30-day action plan for applying learning after the course.
+
+<!-- AI for Data Stewards | Proposal Brief -->
+
+1
+
+<!-- Page: 2 -->
+
+<!-- PROPOSED PROGRAMME BRIEF -->
+
+## Four-day delivery plan
+
+Yes. The programme can be completed in four days, including pre- and post-assessment, provided it is delivered as an intensive cohort experience with protected workshop time. The timetable below is a proposed design and can be adapted to local governance requirements.
+
+| When | Focus | Core activity | Output |
+| --- | --- | --- | --- |
+| Pre-course | 30-45 min self-paced | Baseline knowledge and confidence check; submit one recurring stewardship task for exploration. | Facilitator diagnostic and personal use-case canvas. |
+| Day 1 | AI in the steward's role | Understand capabilities and limitations; select suitable tasks; practise prompt, context and verification basics. | Prioritised AI opportunity map and tested prompt pattern. |
+| Day 2 | AI-assisted stewardship work | Use AI to draft metadata, explore quality issues, classify information and improve stakeholder communications. | Reviewed metadata, quality and communication artefacts. |
+| Day 3 | Responsible and controlled use | Test for weak outputs and risk; define privacy, security, human-review, evidence and escalation safeguards. | Safe-use checklist and controlled workflow design. |
+| Day 4 | Applied capstone and assessment | Build and peer-review an AI-assisted stewardship workflow; complete post-assessment and a 30-day transfer plan. | Assessed capstone and individual action plan. |
+| Post-course | Optional follow-up | Manager check-in or community-of-practice session to review implementation progress. | Follow-up commitments and evidence of adoption. |
+
+
+## Hands-on learning: built into every day
+
+The course is deliberately practice-led rather than demonstration-led. Participants use an approved AI tool with simulated, public or specifically authorised information, then apply professional judgement to verify and improve each result.
+
+Day 1: compare prompts, context and verification methods on a familiar stewardship task; record what improved the result.
+
+Day 2: generate draft metadata, investigate a quality issue and translate findings into clear stakeholder communication.
+
+Day 3: challenge an AI output for error, unsupported claims, bias and sensitive-data risk; design a controlled human-review workflow.
+
+Day 4: build and peer-review a repeatable AI-assisted stewardship workflow, then refine it against shared acceptance criteria.
+
+## Assessment and evidence of learning
+
+| Point | Method | Evidence / purpose |
+| --- | --- | --- |
+| Pre-assessment | Short diagnostic and confidence survey | Tailors facilitation; establishes a baseline. Not a pass/fail gate. |
+| During course | Facilitator observation, peer feedback and artefact checks | Provides rapid feedback on practical stewardship decisions. |
+| Post-assessment | Scenario-based knowledge check plus capstone review | Measures change from baseline and confirms applied understanding. |
+
+
+## Completion recommendation
+
+Recommended cadence: four consecutive full days, or two two-day blocks within two weeks. Reserve approximately 30–45 minutes for the pre-assessment before Day 1 and 45–60 minutes for the post-assessment and capstone review on Day 4. Participants should bring a non- sensitive, representative stewardship task; where this is not possible, the scenario pack supplies a controlled exercise.
+
+Decision: feasible in four days. Success depends on using an approved AI environment, keeping examples focused on the steward’s real work, and protecting time for practice, the capstone and both assessments.
+
+<!-- AI for Data Stewards | Proposal Brief -->
+
+2

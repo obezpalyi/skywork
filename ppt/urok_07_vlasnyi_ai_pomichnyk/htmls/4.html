@@ -1,0 +1,434 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Картка проєкту | AI-помічник</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --ppt-bg: #F9FAFB;
+  --ppt-bg-soft: #F3F4F6;
+  --ppt-surface: #FFFFFF;
+  --ppt-surface-2: #EEF2FF;
+  --ppt-border: #E5E7EB;
+  --ppt-text-1: #111827;
+  --ppt-text-2: #4B5563;
+  --ppt-text-3: #9CA3AF;
+  --ppt-accent: #10B981;
+  --ppt-accent-2: #6366F1;
+  --ppt-chart-1: #10B981;
+  --ppt-chart-2: #6366F1;
+  --ppt-chart-3: #F59E0B;
+  --ppt-chart-4: #EF4444;
+  --ppt-good: #059669;
+  --ppt-warn: #D97706;
+  --ppt-bad: #DC2626;
+  --ppt-radius-sm: 4px;
+  --ppt-radius-md: 6px;
+  --ppt-radius-lg: 0px;
+  --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --ppt-font-display: "Montserrat", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }.project-card-workspace-slide{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0;
+      
+      box-shadow: var(--ppt-shadow-strong);
+    }/* Title Region — strict per DESIGN */
+    .title-project-card-region{
+      margin-top: 32px;
+      margin-right: 64px;
+      margin-bottom: 19px;
+      margin-left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-project-card-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-project-card-accent-marker {
+      background-color: var(--ppt-accent);
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .title-project-card-eyebrow-text {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ppt-accent);
+      letter-spacing: 0.05em;
+      margin: 0;
+    }
+
+    .title-project-card-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .title-project-card-divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--ppt-border);
+      margin-top: 8px;
+    }/* Main body wrapper — flex: 1 1 0 to consume remaining height */
+    .project-card-body-wrapper{
+      flex: 1 1 0;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 38px;
+      display: flex;
+      flex-direction: column;
+       /* allowed for structural wrappers, not text */
+    }/* Asymmetric layout: left dominant form + right compact summary */
+    .project-card-layout-grid{
+      display: flex;
+      flex: 1 1 0;
+      gap: 19px 24px;
+      align-items: stretch;
+    }/* Left column — dominant: full project card fields */
+    .project-card-left-panel{
+      flex: 2 1 0;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 19px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+      box-shadow: var(--ppt-shadow-soft);
+      
+    }.project-card-left-panel-header{
+      display: flex;
+      align-items: center;
+      gap: 8px 10px;
+      border-bottom: 1px solid var(--ppt-border);
+      padding-bottom: 10px;
+    }
+
+    .project-card-left-panel-icon {
+      color: var(--ppt-accent);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .project-card-left-panel-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }/* Grid of fields — 2 columns for compactness */
+    .project-card-fields-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px 20px;
+      align-items: start;
+      flex: 1 1 0;
+    }.project-card-field-item{
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 10px 14px;
+      border-left: 4px solid var(--ppt-accent);
+      
+    }.project-card-field-label{
+      display: flex;
+      align-items: center;
+      gap: 6px 8px;
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ppt-text-2);
+      margin-bottom: 5px;
+      text-transform: none;
+      letter-spacing: 0.01em;
+    }
+
+    .project-card-field-label i {
+      color: var(--ppt-accent-2);
+      width: 18px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .project-card-field-desc {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--ppt-text-1);
+      padding-left: 26px;
+    }
+
+    .project-card-field-desc strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    /* Right column — supporting compact success criteria */
+    .project-card-right-panel {
+      flex: 1 1 0;
+      background: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .project-card-right-panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--ppt-border);
+      padding-bottom: 12px;
+    }
+
+    .project-card-right-panel-icon {
+      color: var(--ppt-accent-2);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .project-card-right-panel-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .project-card-success-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1 1 0;
+    }
+
+    .project-card-success-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 14px;
+      border: 1px solid var(--ppt-border);
+    }
+
+    .project-card-success-item-icon {
+      color: var(--ppt-good);
+      font-size: 16px;
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .project-card-success-item-text {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .project-card-success-item-text strong {
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }/* Compact bottom strip inside left panel — pairs working note */
+    .project-card-pair-note{
+      display: flex;
+      align-items: center;
+      gap: 10px 12px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 8px 16px;
+      border: 1px dashed var(--ppt-accent-2);
+      margin-top: 3px;
+    }
+
+    .project-card-pair-note-icon {
+      color: var(--ppt-accent-2);
+      font-size: 18px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .project-card-pair-note-text {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .project-card-pair-note-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    /* Ensure no fixed heights for text containers */
+    .project-card-left-panel, .project-card-right-panel,
+    .project-card-fields-grid, .project-card-success-list,
+    .project-card-field-item, .project-card-success-item {
+      height: auto;
+    }
+
+    /* no flex on list items */
+    .project-card-success-item {
+      display: flex; /* allowed for icon/text row inside item, but item itself is flex container, not list-item */
+    }
+    .project-card-success-list {
+      list-style: none;
+    }
+    .project-card-success-list li {
+      display: block;
+    }
+    .project-card-success-item {
+      display: flex;
+    }
+
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="project-card-workspace-slide">
+    <!-- Fixed Title Region -->
+    <header class="title-project-card-region">
+      <div class="title-project-card-eyebrow-row">
+        <span class="title-project-card-accent-marker"></span>
+        <span class="title-project-card-eyebrow-text">Лабораторна робота: AI-Помічник</span>
+      </div>
+      <h1 class="title-project-card-heading">Картка проєкту</h1>
+      <div class="title-project-card-divider"></div>
+    </header>
+
+    <!-- Body: asymmetric composition -->
+    <div class="project-card-body-wrapper">
+      <div class="project-card-layout-grid" style="margin-bottom: 3px !important;">
+        <!-- Left dominant panel: core components -->
+        <div class="project-card-left-panel">
+          <div class="project-card-left-panel-header">
+            <i class="fa-solid fa-clipboard-list project-card-left-panel-icon"></i>
+            <span class="project-card-left-panel-title">Компоненти картки</span>
+          </div>
+
+          <div class="project-card-fields-grid">
+            <div class="project-card-field-item">
+              <div class="project-card-field-label"><i class="fa-solid fa-tag"></i>Назва</div>
+              <div class="project-card-field-desc"><strong>Коротка, зрозуміла назва</strong> помічника (напр., «Тренер з підготовки»)</div>
+            </div>
+            <div class="project-card-field-item">
+              <div class="project-card-field-label"><i class="fa-solid fa-user"></i>Користувач</div>
+              <div class="project-card-field-desc"><strong>Хто саме</strong> буде використовувати помічника</div>
+            </div>
+            <div class="project-card-field-item">
+              <div class="project-card-field-label"><i class="fa-solid fa-circle-exclamation"></i>Проблема</div>
+              <div class="project-card-field-desc"><strong>Конкретна задача</strong>, яку полегшує помічник</div>
+            </div>
+            <div class="project-card-field-item">
+              <div class="project-card-field-label"><i class="fa-solid fa-list-check"></i>3–5 функцій</div>
+              <div class="project-card-field-desc"><strong>Основні дії</strong>, які помічник виконує</div>
+            </div>
+            <div class="project-card-field-item">
+              <div class="project-card-field-label"><i class="fa-solid fa-ban"></i>Заборонені дії</div>
+              <div class="project-card-field-desc"><strong>Що не можна робити</strong> (напр., розв&#39;язувати завдання)</div>
+            </div>
+            <div class="project-card-field-item">
+              <div class="project-card-field-label"><i class="fa-solid fa-shield-halved"></i>Приватність</div>
+              <div class="project-card-field-desc"><strong>Правила збору даних</strong>, жодних паролів/адрес</div>
+            </div>
+            <div class="project-card-field-item">
+              <div class="project-card-field-label"><i class="fa-solid fa-vial"></i>Що перевіряти</div>
+              <div class="project-card-field-desc"><strong>Тестові сценарії</strong> для перевірки поведінки</div>
+            </div>
+            <div class="project-card-field-item">
+              <div class="project-card-field-label"><i class="fa-solid fa-bullseye"></i>Критерій успіху</div>
+              <div class="project-card-field-desc"><strong>Як зрозуміти</strong>, що помічник працює добре</div>
+            </div>
+          </div>
+
+          <div class="project-card-pair-note">
+            <i class="fa-solid fa-people-group project-card-pair-note-icon"></i>
+            <div class="project-card-pair-note-text"><strong>Робота в парах:</strong> сформулюйте кожен пункт одним-двома реченнями.</div>
+          </div>
+        </div>
+
+        <!-- Right supporting panel: success criteria -->
+        <div class="project-card-right-panel">
+          <div class="project-card-right-panel-header">
+            <i class="fa-solid fa-star project-card-right-panel-icon"></i>
+            <span class="project-card-right-panel-title">Критерії успіху</span>
+          </div>
+
+          <ul class="project-card-success-list">
+            <li>
+              <div class="project-card-success-item">
+                <i class="fa-solid fa-circle-check project-card-success-item-icon"></i>
+                <span class="project-card-success-item-text"><strong>Відповідь корисна</strong> та відповідає рівню учня</span>
+              </div>
+            </li>
+            <li>
+              <div class="project-card-success-item">
+                <i class="fa-solid fa-circle-check project-card-success-item-icon"></i>
+                <span class="project-card-success-item-text"><strong>Не виходить за межі</strong> компетенції</span>
+              </div>
+            </li>
+            <li>
+              <div class="project-card-success-item">
+                <i class="fa-solid fa-circle-check project-card-success-item-icon"></i>
+                <span class="project-card-success-item-text"><strong>Не збирає приватні дані</strong> та позначає невизначеність</span>
+              </div>
+            </li>
+            <li>
+              <div class="project-card-success-item">
+                <i class="fa-solid fa-circle-check project-card-success-item-icon"></i>
+                <span class="project-card-success-item-text"><strong>Пропонує крок самоперевірки</strong> наприкінці</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

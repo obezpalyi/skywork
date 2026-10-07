@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Підсумкове завдання Developer Capstone</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+        :root {
+            --ppt-bg: #FDFDFD;
+            --ppt-bg-soft: #F4F7F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E9EFED;
+            --ppt-border: #D1D9D7;
+            --ppt-text-1: #121417;
+            --ppt-text-2: #4A5552;
+            --ppt-text-3: #879491;
+            --ppt-accent: #007A5E;
+            --ppt-accent-2: #00D3A4;
+            --ppt-chart-1: #007A5E;
+            --ppt-chart-2: #00D3A4;
+            --ppt-chart-3: #121417;
+            --ppt-chart-4: #879491;
+            --ppt-good: #107C10;
+            --ppt-warn: #D83B01;
+            --ppt-bad: #A80000;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+            --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+            --ppt-font-mono: "JetBrains Mono", monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .slide-root {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            
+            box-shadow: var(--ppt-shadow-strong);
+        }
+
+        /* Non-Cover-Page Title Region — fixed layout */
+        .title-capstone-region {
+            margin-top: 40px;
+            margin-left: 56px;
+            margin-right: 56px;
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .title-capstone-eyebrow-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-capstone-eyebrow {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--ppt-surface-2);
+            padding: 4px 8px;
+            border-radius: var(--ppt-radius-sm);
+            white-space: nowrap;
+        }
+
+        .title-capstone-divider-line {
+            height: 1px;
+            flex-grow: 1;
+            background: var(--ppt-border);
+        }
+
+        .title-capstone-heading {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        /* Main body wrapper — consumes remaining height */
+        .capstone-body-wrapper {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            margin-left: 56px;
+            margin-right: 56px;
+            margin-bottom: 40px;
+            
+        }
+
+        /* Asymmetric layout: dominant left workflow + right compact summary */
+        .capstone-asymmetric-layout {
+            display: flex;
+            flex: 1 1 0;
+            gap: 24px;
+            align-items: stretch;
+            
+        }
+
+        /* Dominant left region — workflow steps */
+        .capstone-workflow-left-panel {
+            flex: 3;
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--ppt-shadow-soft);
+            
+        }
+
+        .capstone-workflow-left-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .capstone-workflow-left-heading i {
+            color: var(--ppt-accent);
+            font-size: 16px;
+        }
+
+        .capstone-workflow-steps-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+            justify-content: flex-start;
+        }
+
+        .capstone-workflow-step-item {
+            display: block;
+            background: var(--ppt-bg-soft);
+            border-left: 3px solid var(--ppt-accent);
+            border-radius: var(--ppt-radius-sm);
+            padding: 8px 12px;
+        }
+
+        .capstone-workflow-step-text {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+        }
+
+        .capstone-workflow-step-text strong {
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            font-family: var(--ppt-font-mono);
+            font-size: 13px;
+        }
+
+        /* Right supporting region — capstone snapshot */
+        .capstone-summary-right-panel {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            
+        }
+
+        .capstone-summary-card {
+            background: var(--ppt-surface-2);
+            border-radius: var(--ppt-radius-lg);
+            padding: 16px 18px;
+            border: 1px solid var(--ppt-border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .capstone-summary-card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .capstone-summary-card-header i {
+            color: var(--ppt-accent);
+            font-size: 14px;
+            width: 18px;
+        }
+
+        .capstone-summary-card-title {
+            font-family: var(--ppt-font-display);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+        }
+
+        .capstone-summary-card-content {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+        }
+
+        .capstone-summary-card-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .capstone-summary-card-content li {
+            margin-bottom: 4px;
+            padding-left: 0;
+            display: flex;
+            gap: 6px;
+            align-items: baseline;
+        }
+
+        .capstone-summary-card-content li i {
+            color: var(--ppt-accent);
+            font-size: 10px;
+            width: 14px;
+            align-self: center;
+        }
+
+        .capstone-constraint-note {
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 12px 14px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            box-shadow: var(--ppt-shadow-soft);
+        }
+
+        .capstone-constraint-note i {
+            color: var(--ppt-warn);
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .capstone-constraint-note-text {
+            font-size: 13px;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+        }
+
+        .capstone-constraint-note-text strong {
+            color: var(--ppt-text-1);
+            font-weight: 600;
+        }
+
+        .capstone-ready-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-md);
+            padding: 10px 14px;
+            border: 1px solid var(--ppt-border);
+        }
+
+        .capstone-ready-badge i {
+            color: var(--ppt-good);
+            font-size: 18px;
+        }
+
+        .capstone-ready-badge-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+        }
+
+        .capstone-ready-badge-text span {
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            font-size: 13px;
+        }
+
+        /* ensure no flex on list items */
+        .capstone-workflow-step-item,
+        .capstone-summary-card-content li {
+            display: block;
+        }
+
+        .capstone-summary-card-content li i {
+            display: inline-block;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Title Region per DESIGN -->
+        <header class="title-capstone-region">
+            <div class="title-capstone-eyebrow-row">
+                <span class="title-capstone-eyebrow">Developer Track</span>
+                <div class="title-capstone-divider-line"></div>
+            </div>
+            <h1 class="title-capstone-heading">Підсумкове завдання Developer Capstone</h1>
+        </header>
+
+        <!-- Main body: asymmetric layout, dominant workflow + supporting summary -->
+        <div class="capstone-body-wrapper">
+            <div class="capstone-asymmetric-layout" style="margin-bottom: 4px !important;">
+                <!-- Left dominant panel: full workflow cycle -->
+                <div class="capstone-workflow-left-panel">
+                    <div class="capstone-workflow-left-heading">
+                        <i class="fa-solid fa-code-branch"></i>
+                        <span>Повний цикл аналізу зміни ServiceHub</span>
+                    </div>
+                    <ul class="capstone-workflow-steps-list">
+                        <li class="capstone-workflow-step-item">
+                            <div class="capstone-workflow-step-text"><strong>1. Уточнення</strong> — сформувати технічні запитання до вимог, виокремити припущення та рішення.</div>
+                        </li>
+                        <li class="capstone-workflow-step-item">
+                            <div class="capstone-workflow-step-text"><strong>2. Мапування</strong> — визначити уражені компоненти та їхні залежності в архітектурі ServiceHub.</div>
+                        </li>
+                        <li class="capstone-workflow-step-item">
+                            <div class="capstone-workflow-step-text"><strong>3. План впровадження</strong> — декомпозувати роботу в технічні завдання з критеріями приймання.</div>
+                        </li>
+                        <li class="capstone-workflow-step-item">
+                            <div class="capstone-workflow-step-text"><strong>4. Контракти</strong> — зафіксувати зміни в API, моделях даних і схемах подій.</div>
+                        </li>
+                        <li class="capstone-workflow-step-item">
+                            <div class="capstone-workflow-step-text"><strong>5. Сумісність</strong> — проаналізувати зворотну сумісність, міграцію та стратегію відкату.</div>
+                        </li>
+                        <li class="capstone-workflow-step-item">
+                            <div class="capstone-workflow-step-text"><strong>6. ADR</strong> — підготувати проєкт архітектурного рішення з варіантами та наслідками.</div>
+                        </li>
+                        <li class="capstone-workflow-step-item">
+                            <div class="capstone-workflow-step-text"><strong>7. Оновлення пакету</strong> — врахувати нові обмеження, оновити технічні завдання та ризики.</div>
+                        </li>
+                        <li class="capstone-workflow-step-item">
+                            <div class="capstone-workflow-step-text"><strong>8. Readiness</strong> — виконати фінальну перевірку готовності до реалізації.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right supporting region: scope, constraint, output badge -->
+                <div class="capstone-summary-right-panel">
+                    <div class="capstone-summary-card">
+                        <div class="capstone-summary-card-header">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <span class="capstone-summary-card-title">Обсяг завдання</span>
+                        </div>
+                        <div class="capstone-summary-card-content">
+                            <ul>
+                                <li><i class="fa-solid fa-circle-check"></i> Нова зміна в ServiceHub</li>
+                                <li><i class="fa-solid fa-check"></i> Повний цикл аналізу</li>
+                                <li><i class="fa-solid fa-anchor-circle-check"></i> Від уточнення до готовності</li>
+                                <li><i class="fa-solid fa-bridge-circle-check"></i> Інженерне рішення залишається за вами</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="capstone-constraint-note">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <div class="capstone-constraint-note-text">
+                            <strong>Нове обмеження:</strong> API-зміни мають бути зворотно сумісними, а зміна БД — без даунтайму.
+                        </div>
+                    </div>
+
+                    <div class="capstone-ready-badge">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                        <div class="capstone-ready-badge-text">
+                            Результат: оновлений технічний пакет<br/>
+                            <span>з перевіркою готовності до розробки</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

@@ -1,0 +1,166 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "ai_requirements_change_ba_track",
+  "artifact_path": "ppt/ai_requirements_change_ba_track",
+  "pptTitle": "ШІ-підтримка управлін…",
+  "ppt_title": "ШІ-підтримка управлін…",
+  "outlineArtifactPath": "ppt/ai_requirements_change_ba_track/outline.md",
+  "outline_artifact_path": "ppt/ai_requirements_change_ba_track/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-a1a81da807.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-a1a81da807.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-a1a81da807.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/ai_requirements_change_ba_track/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/ai_requirements_change_ba_track/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-a1a81da807.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-a1a81da807.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/ai_requirements_change_ba_track/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/ai_requirements_change_ba_track/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи окрему навчальну презентацію для Business Analyst Track курсу AI-assisted Requirements and Change Management in SDLC. Презентація має містити 29 слайдів: 3 вступні, чотири рольові сесії по 6 слайдів кожна та 2 завершальні. Не більше 10 слайдів на сесію. Використай навчальний проєкт ServiceHub, рольові workflows, BA capstone, 10 робочих днів самостійної практики й онлайн-тест. Xplore подавай як практичний засіб, а не як головну тему курсу.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "auto_increase_ratio": 0.35,
+  "auto_increase_bucket": 0.3657,
+  "region": "US",
+  "prepared_session_id": "019ff605-7524-73f2-9939-8e95015faa7f",
+  "prepared_question_id": "Q-00cb192032b6",
+  "prepared_target_path": "ppt/ai_requirements_change_ba_track",
+  "prepared_state_id": "pps_9fa5ca36556c4a3c758c9d1dbcb87bb9",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "2": [],
+    "20": [],
+    "21": [],
+    "22": [],
+    "23": [],
+    "24": [],
+    "25": [],
+    "26": [],
+    "27": [],
+    "28": [],
+    "29": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:0560045e3c240c3d1c2acee6448abae9d24b457b885b12c07a50169cbc0fb5bf",
+  "init_request_fingerprint": "sha256:e950f8998e626a2d12e2f64496d0faa0e4dba61e61aa1f1a5452d953d26c73b7",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:9e1b2c848eb0b0d11f72841bce932f561979763820cc3891fab2a1862eb472ce",
+  "outline_artifact_sha256": "sha256:c03de77b67b271cf4fae87947051ef80b42f86f6edf33caadedf68c92557c8ba",
+  "prepared_inputs": [
+    {
+      "path": "ppt/ai_requirements_change_ba_track/design_guideline.md",
+      "size": 9219,
+      "sha256": "sha256:24b8f478113cc3c4b9e7d1ae8d69f450005ba85172578dfe21779cbe1664d235"
+    },
+    {
+      "path": "ppt/ai_requirements_change_ba_track/final_report.md",
+      "size": 14867,
+      "sha256": "sha256:9e1b2c848eb0b0d11f72841bce932f561979763820cc3891fab2a1862eb472ce"
+    },
+    {
+      "path": "ppt/ai_requirements_change_ba_track/outline.json",
+      "size": 33491,
+      "sha256": "sha256:88365598a681046505f841ef6e10ae468d5ca011b486d52d519d46b6385f308c"
+    },
+    {
+      "path": "ppt/ai_requirements_change_ba_track/outline.md",
+      "size": 9302,
+      "sha256": "sha256:c03de77b67b271cf4fae87947051ef80b42f86f6edf33caadedf68c92557c8ba"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "auto_mode",
+      "auto_increase_miss",
+      "standard_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "skipped_not_needed"
+    },
+    "dropped_images": null,
+    "warnings": null,
+    "mock": false
+  }
+}

@@ -1,0 +1,103 @@
+[
+  {
+    "page_num": 1,
+    "heading": "Етика штучного інтелекту: хто відповідає за рішення ШІ?",
+    "type": "title",
+    "des": "Вступ до етики ШІ, аналіз цінностей та ризиків. Головне питання уроку: хто несе відповідальність за рішення, запропоновані алгоритмами в складних ситуаціях.",
+    "images": [
+      {
+        "source": "text2image_cover",
+        "url": "https://skyagent-artifacts.skywork.ai/image/5940376570349285532/2102354127894519808/2102354127894519809.png",
+        "img_name": "2102354127894519809.png",
+        "img_desc": "A cinematic close-up photograph of a human hand and a sleek humanoid robot hand reaching toward each other, fingertips almost touching in the center of a dark, reflective space. The human hand, with realistic skin texture and warm tones, is illuminated by soft golden light from the upper left. The robot hand, made of matte white polymer and brushed silver metal, mirrors the human gesture from the right, with faint cool-blue glow along its articulated joints. Their fingertips are separated by a few centimeters, creating a feeling of hesitation and shared responsibility. The background is a deep charcoal environment with soft bokeh lights and subtle reflections, evoking a modern high-tech space without any readable elements. The composition is balanced and symmetrical, with shallow depth of field and dramatic, moody lighting. Color palette: warm amber, cool cyan, charcoal black. Mood: contemplative, responsible, human-centered. Camera angle: intimate close-up, slightly low, emphasizing fine material details and texture.",
+        "img_type": "image",
+        "img_size": "1280x720",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 2,
+    "heading": "Що таке етика ШІ?",
+    "type": "content",
+    "des": "Визначення етики ШІ як аналізу впливу технологій на права та безпеку людей. Ключові питання щодо користі, помилок та контролю результатів.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 3,
+    "heading": "Хто відповідає за рішення ШІ?",
+    "type": "content",
+    "des": "Розподіл ролей між розробником, організацією, оператором та користувачем. Наголос на тому, що фраза «так вирішив алгоритм» не знімає відповідальності з людини.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 4,
+    "heading": "Справедливість і упередження",
+    "type": "content",
+    "des": "Причини виникнення нерівних результатів через неповні або історично упереджені дані. Аналіз кейсу з автоматичним відбором кандидатів на стажування.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 5,
+    "heading": "Приватність і згода",
+    "type": "content",
+    "des": "Захист чутливих даних, таких як біометрія та приватне листування. Важливість отримання зрозумілої згоди та право на відкликання дозволу на використання даних.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 6,
+    "heading": "Прозорість і пояснюваність",
+    "type": "content",
+    "des": "Різниця між прозорістю, пояснюваністю та підзвітністю. Чому важливо мати зрозуміле обґрунтування результату та відповідальну особу для оскарження рішення.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 7,
+    "heading": "Вправа «Етичний кейс»",
+    "type": "content",
+    "des": "Практична робота в групах з аналізу реальних ситуацій: від автоматичного оцінювання робіт до розпізнавання облич та використання образів реальних людей.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 8,
+    "heading": "Етична карта рішення",
+    "type": "content",
+    "des": "Шаблон для аналізу системи: мета, ризики, людський контроль та умови безпечного використання. Формулювання критеріїв, за яких використання ШІ є допустимим.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 9,
+    "heading": "Запобіжники відповідального використання",
+    "type": "content",
+    "des": "Перелік технічних та організаційних заходів: людська перевірка, аудит, маркування синтетичного контенту та можливість зупинити систему в разі потреби.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 10,
+    "heading": "Підсумок і exit ticket",
+    "type": "content",
+    "des": "Основні тези про етичну допустимість та людський контроль. Рефлексія через exit ticket та домашнє завдання з розробки етичної карти.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  }
+]

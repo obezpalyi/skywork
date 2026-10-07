@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Десять робочих днів самостійної практики</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      
+      
+      background-color: var(--ppt-bg);
+      
+    }
+
+    .sdlc-slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .title-region-header-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-header-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-header-text {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .sdlc-content-body-layout {
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .sdlc-practice-phase-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background-color: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px;
+    }
+
+    .sdlc-phase-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background-color: var(--ppt-accent);
+      color: white;
+      border-radius: var(--ppt-radius-sm);
+      font-family: var(--ppt-font-body);
+      font-size: 12px;
+      font-weight: 700;
+      width: fit-content;
+    }
+
+    .sdlc-phase-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      margin-bottom: 8px;
+    }
+
+    .sdlc-task-list-wrapper {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sdlc-task-item-container {
+      display: flex;
+      gap: 12px;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      padding: 12px;
+      border-radius: var(--ppt-radius-md);
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .sdlc-task-icon-box {
+      color: var(--ppt-accent);
+      font-size: 16px;
+      padding-top: 2px;
+    }
+
+    .sdlc-task-content-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sdlc-task-headline-label {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .sdlc-task-description-text {
+      font-family: var(--ppt-font-body);
+      font-size: 13px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .sdlc-practice-footer-ribbon {
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 40px;
+      background-color: var(--ppt-text-1);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sdlc-footer-callout-text {
+      font-family: var(--ppt-font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .sdlc-footer-deliverables-list {
+      display: flex;
+      gap: 24px;
+    }
+
+    .sdlc-footer-deliverable-tag {
+      font-family: var(--ppt-font-body);
+      font-size: 13px;
+      color: var(--ppt-accent-2);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sdlc-footer-deliverable-tag i {
+      font-size: 10px;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="sdlc-slide-root-container">
+    <header class="title-region-header-wrapper">
+      <div class="title-region-header-label">
+        AI-MANAGED SDLC PLAYBOOK
+      </div>
+      <h1 class="title-region-header-text">
+        Десять робочих днів самостійної практики
+      </h1>
+    </header>
+
+    <main class="sdlc-content-body-layout">
+      <!-- Phase 1: Days 1-3 -->
+      <section class="sdlc-practice-phase-column">
+        <div class="sdlc-phase-header-badge">
+          <i class="fa-solid fa-calendar-day"></i> ДНІ 1–3
+        </div>
+        <h2 class="sdlc-phase-title-text">Налаштування та База</h2>
+        <div class="sdlc-task-list-wrapper">
+          <div class="sdlc-task-item-container">
+            <div class="sdlc-task-icon-box"><i class="fa-solid fa-robot"></i></div>
+            <div class="sdlc-task-content-block">
+              <span class="sdlc-task-headline-label">Адаптація асистента</span>
+              <p class="sdlc-task-description-text">Перенесення корпоративних шаблонів та глосарію у власні інструкції.</p>
+            </div>
+          </div>
+          <div class="sdlc-task-item-container">
+            <div class="sdlc-task-icon-box"><i class="fa-solid fa-file-import"></i></div>
+            <div class="sdlc-task-content-block">
+              <span class="sdlc-task-headline-label">Workflow: Doc → Req</span>
+              <p class="sdlc-task-description-text">Аналіз протоколів зустрічей останнього тижня для витягування вимог.</p>
+            </div>
+          </div>
+          <div class="sdlc-task-item-container">
+            <div class="sdlc-task-icon-box"><i class="fa-solid fa-bug-slash"></i></div>
+            <div class="sdlc-task-content-block">
+              <span class="sdlc-task-headline-label">Журнал помилок</span>
+              <p class="sdlc-task-description-text">Фіксація перших випадків галюцинацій та коригування обмежень prompt.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 2: Days 4-7 -->
+      <section class="sdlc-practice-phase-column">
+        <div class="sdlc-phase-header-badge">
+          <i class="fa-solid fa-calendar-day"></i> ДНІ 4–7
+        </div>
+        <h2 class="sdlc-phase-title-text">Глибока інтеграція</h2>
+        <div class="sdlc-task-list-wrapper">
+          <div class="sdlc-task-item-container">
+            <div class="sdlc-task-icon-box"><i class="fa-solid fa-list-check"></i></div>
+            <div class="sdlc-task-content-block">
+              <span class="sdlc-task-headline-label">Workflow: Req → Jira</span>
+              <p class="sdlc-task-description-text">Генерація повних Jira tasks з Acceptance Criteria на реальному беклозі.</p>
+            </div>
+          </div>
+          <div class="sdlc-task-item-container">
+            <div class="sdlc-task-icon-box"><i class="fa-solid fa-shuffle"></i></div>
+            <div class="sdlc-task-content-block">
+              <span class="sdlc-task-headline-label">Обробка змін (CR)</span>
+              <p class="sdlc-task-description-text">Побудова Impact Matrix для вхідних запитів від замовника.</p>
+            </div>
+          </div>
+          <div class="sdlc-task-item-container">
+            <div class="sdlc-task-icon-box"><i class="fa-solid fa-vial"></i></div>
+            <div class="sdlc-task-content-block">
+              <span class="sdlc-task-headline-label">QA/DevOps Review</span>
+              <p class="sdlc-task-description-text">Перевірка вимог на тестованість та операційну готовність асистентом.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 3: Days 8-10 -->
+      <section class="sdlc-practice-phase-column">
+        <div class="sdlc-practice-phase-column-inner" style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="sdlc-phase-header-badge">
+            <i class="fa-solid fa-calendar-day"></i> ДНІ 8–10
+          </div>
+          <h2 class="sdlc-phase-title-text">Валідація та Звіт</h2>
+          <div class="sdlc-task-list-wrapper">
+            <div class="sdlc-task-item-container">
+              <div class="sdlc-task-icon-box"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+              <div class="sdlc-task-content-block">
+                <span class="sdlc-task-headline-label">Self-Review метрик</span>
+                <p class="sdlc-task-description-text">Оцінка швидкості відновлення контексту та якості артефактів.</p>
+              </div>
+            </div>
+            <div class="sdlc-task-item-container">
+              <div class="sdlc-task-icon-box"><i class="fa-solid fa-book-bookmark"></i></div>
+              <div class="sdlc-task-content-block">
+                <span class="sdlc-task-headline-label">Фіналізація Playbook</span>
+                <p class="sdlc-task-description-text">Зведення перевірених prompts у єдиний робочий довідник команди.</p>
+              </div>
+            </div>
+            <div class="sdlc-task-item-container">
+              <div class="sdlc-task-icon-box"><i class="fa-solid fa-certificate"></i></div>
+              <div class="sdlc-task-content-block">
+                <span class="sdlc-task-headline-label">Підготовка до тесту</span>
+                <p class="sdlc-task-description-text">Повторення принципів безпеки та правил human-in-the-loop.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="sdlc-practice-footer-ribbon">
+      <div class="sdlc-footer-callout-text">ОЧІКУВАНІ РЕЗУЛЬТАТИ ПРАКТИКИ:</div>
+      <div class="sdlc-footer-deliverables-list">
+        <div class="sdlc-footer-deliverable-tag"><i class="fa-solid fa-circle"></i> Персональний AI Playbook</div>
+        <div class="sdlc-footer-deliverable-tag"><i class="fa-solid fa-circle"></i> Журнал «Помилка → Виправлення»</div>
+        <div class="sdlc-footer-deliverable-tag"><i class="fa-solid fa-circle"></i> Валідований прототип асистента</div>
+      </div>
+    </footer>
+  </div>
+
+</body></html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }/* Slide root: fixed 1280x720, flex column */
+    .slide-capstone-criteria-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0;
+      
+      box-shadow: var(--ppt-shadow-strong);
+    }/* Non-cover title region — exact copy from DESIGN */
+    .title-region-capstone-criteria{
+      margin-top: 32px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-region-capstone-criteria .title-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-capstone-criteria .title-eyebrow-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .title-region-capstone-criteria .title-eyebrow-divider {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-capstone-criteria .title-page-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }/* Main body wrapper: flex:1, fills remaining height below title */
+    .capstone-criteria-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 32px;
+      gap: 19px 24px;
+       /* allowed for structural wrapper, not for text cards */
+    }/* Primary dominant region: assessment statement + two content rails */
+    .capstone-criteria-main-assessment{
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+    }.capstone-criteria-intro-banner{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-left: 4px solid var(--ppt-accent);
+      border-radius: var(--ppt-radius-md);
+      padding: 11px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .capstone-criteria-intro-banner .criteria-intro-text {
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }
+
+    .capstone-criteria-intro-banner .criteria-intro-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }/* Two-column layout: left criteria checklist, right handoff readiness */
+    .capstone-criteria-columns-layout{
+      display: flex;
+      gap: 19px 24px;
+      flex: 1 1 0;
+      align-items: stretch;
+    }
+
+    .capstone-criteria-left-column {
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 20px 22px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .capstone-criteria-left-column .criteria-column-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--ppt-surface-2);
+      padding-bottom: 10px;
+    }
+
+    .capstone-criteria-left-column .criteria-column-heading i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .criteria-checklist-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .criteria-checklist-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .criteria-checklist-list li i {
+      color: var(--ppt-accent);
+      font-size: 15px;
+      margin-top: 3px;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .criteria-checklist-list li strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }.capstone-criteria-right-column{
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 22px;
+      box-shadow: var(--ppt-shadow-soft);
+    }.capstone-criteria-right-column .criteria-handoff-heading{
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 8px 10px;
+      border-bottom: 1px solid var(--ppt-surface-2);
+      padding-bottom: 8px;
+    }
+
+    .capstone-criteria-right-column .criteria-handoff-heading i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }.handoff-readiness-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px 12px;
+    }.handoff-readiness-list li{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px 12px;
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }.handoff-readiness-list li i{
+      color: var(--ppt-accent-2);
+      font-size: 15px;
+      margin-top: 2px;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .handoff-readiness-list li strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }/* Compact bottom summary band */
+    .capstone-criteria-bottom-note{
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px 12px;
+      border: 1px solid var(--ppt-border);
+    }
+
+    .capstone-criteria-bottom-note i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .capstone-criteria-bottom-note .bottom-note-text {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .capstone-criteria-bottom-note .bottom-note-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-capstone-criteria-root">
+    <!-- Non-cover page title region (fixed design) -->
+    <header class="title-region-capstone-criteria">
+      <div class="title-eyebrow-row">
+        <span class="title-eyebrow-label">Developer Track</span>
+        <div class="title-eyebrow-divider"></div>
+      </div>
+      <h1 class="title-page-heading">Критерії оцінювання Capstone проєкту</h1>
+    </header>
+
+    <!-- Main content body -->
+    <div class="capstone-criteria-body-wrapper">
+      <!-- Dominant intro banner (key message) -->
+      <div class="capstone-criteria-main-assessment" style="margin-bottom: 3px !important;">
+        <div class="capstone-criteria-intro-banner">
+          <p class="criteria-intro-text">
+            <strong>Успішний результат</strong> зберігає бізнес-намір, розділяє припущення та рішення, і робить технічний вплив повністю простежуваним — від вимоги до передачі в QA та DevOps.
+          </p>
+        </div>
+
+        <!-- Two supporting columns: criteria + handoff readiness -->
+        <div class="capstone-criteria-columns-layout">
+          <!-- Left column: core evaluation criteria -->
+          <div class="capstone-criteria-left-column">
+            <div class="criteria-column-heading">
+              <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+              Ключові критерії оцінювання
+            </div>
+            <ul class="criteria-checklist-list">
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span><strong>Бізнес-намір збережено</strong> — технічне рішення відповідає початковій бізнес-вимозі без підміни суті.</span></li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span><strong>Припущення відокремлені від рішень</strong> — кожне припущення має власника та статус.</span></li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span><strong>Зачеплені компоненти та споживачі ідентифіковані</strong> — прямі та транзитивні впливи задокументовані.</span></li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span><strong>Технічні завдання простежувані</strong> — кожне завдання пов&#39;язане з вимогою, компонентом і контрактом.</span></li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span><strong>Вплив на API, дані та події явний</strong> — зміни полів, схем та подій описані однозначно.</span></li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span><strong>Ризики сумісності та міграції адресовані</strong> — зворотна сумісність і план міграції наявні.</span></li>
+            </ul>
+          </div>
+
+          <!-- Right column: handoff &amp; review readiness -->
+          <div class="capstone-criteria-right-column">
+            <div class="criteria-handoff-heading">
+              <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+              Готовність до передачі
+            </div>
+            <ul class="handoff-readiness-list">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span><strong>ADR із статусом та затверджувачем</strong> — рішення зафіксовані, статус видимий.</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span><strong>Повний handoff для QA та DevOps</strong> — сценарії помилок, конфігурації, метрики.</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span><strong>Точки людського огляду явні</strong> — де потрібен інженерний розгляд або затвердження.</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span><strong>Технічний пакет оновлено</strong> — завдання, контракти, міграція, ризики.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Compact bottom summary note -->
+        <div class="capstone-criteria-bottom-note">
+          <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i>
+          <span class="bottom-note-text">
+            <strong>Підсумок:</strong> Capstone вважається успішним, коли всі критерії підтверджені, а технічний пакет готовий до незалежної перевірки та впровадження.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

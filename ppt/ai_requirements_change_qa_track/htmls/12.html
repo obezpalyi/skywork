@@ -1,0 +1,392 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Воркфлоу QA-2: Створення тестового набору</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+
+        :root {
+            --ppt-bg: #F8FAFC;
+            --ppt-bg-soft: #F1F5F9;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E2E8F0;
+            --ppt-border: #CBD5E1;
+            --ppt-text-1: #0F172A;
+            --ppt-text-2: #475569;
+            --ppt-text-3: #94A3B8;
+            --ppt-accent: #0D9488;
+            --ppt-accent-2: #6366F1;
+            --ppt-chart-1: #0D9488;
+            --ppt-chart-2: #6366F1;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EC4899;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+            --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --ppt-font-display: "Montserrat", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+        }*{
+            margin: 0 0;
+            padding: 0 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: transparent;
+            font-family: var(--ppt-font-body);
+        }.slide-root{
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 0;
+            
+            position: relative;
+        }/* Title region — fixed layout from DESIGN */
+        .title-region{
+            margin-top: 30px;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-eyebrow-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .title-accent-bar {
+            width: 4px;
+            height: 16px;
+            background-color: var(--ppt-accent);
+        }
+
+        .title-eyebrow-text {
+            font-family: var(--ppt-font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+        }
+
+        .title-main-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .title-subheading {
+            font-family: var(--ppt-font-body);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            margin-top: 4px;
+        }/* Body main wrapper — flex: 1 to consume remaining height */
+        .qa2-workflow-body-wrapper{
+            flex: 1 1 0;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 26px;
+            display: flex;
+            gap: 15px 24px;
+             /* allowed only for flex child, not for container itself */
+        }/* Dominant left list — diagnostic list */
+        .qa2-dominant-steps-left{
+            flex: 1 1 0;
+            background-color: var(--ppt-surface);
+            border-radius: var(--ppt-radius-lg);
+            box-shadow: var(--ppt-shadow-soft);
+            padding: 19px 28px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--ppt-border);
+        }.qa2-steps-intro-label{
+            font-family: var(--ppt-font-body);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--ppt-text-3);
+            margin-bottom: 13px;
+        }.qa2-workflow-steps-list{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px 12px;
+            flex: 1 1 0;
+        }.qa2-workflow-step-item{
+            display: flex;
+            align-items: flex-start;
+            gap: 11px 14px;
+            padding: 5px 0;
+            border-bottom: 1px solid var(--ppt-bg-soft);
+        }
+        .qa2-workflow-step-item:last-child {
+            border-bottom: none;
+        }
+
+        .qa2-step-number-badge {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background-color: var(--ppt-bg-soft);
+            color: var(--ppt-accent);
+            font-family: var(--ppt-font-display);
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .qa2-step-text-group {
+            flex: 1;
+            display: block;
+        }
+
+        .qa2-step-title {
+            font-family: var(--ppt-font-body);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.4;
+        }
+
+        .qa2-step-detail {
+            font-family: var(--ppt-font-body);
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+            margin-top: 2px;
+        }/* Right rail — AI Checkpoint */
+        .qa2-ai-checkpoint-rail-right{
+            width: 260px;
+            flex-shrink: 0;
+            background-color: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-md);
+            padding: 16px 16px;
+            border-left: 3px solid var(--ppt-accent);
+            display: flex;
+            flex-direction: column;
+            gap: 13px 16px;
+        }.qa2-checkpoint-header{
+            display: flex;
+            align-items: center;
+            gap: 6px 8px;
+            margin-bottom: 3px;
+        }
+
+        .qa2-checkpoint-icon {
+            color: var(--ppt-accent);
+            font-size: 18px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .qa2-checkpoint-title {
+            font-family: var(--ppt-font-display);
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--ppt-text-1);
+        }.qa2-checkpoint-rule{
+            border: 0;
+            border-top: 1px solid var(--ppt-border);
+            margin: 3px 0 6px 0;
+        }.qa2-checkpoint-item{
+            display: flex;
+            align-items: flex-start;
+            gap: 8px 10px;
+            padding: 3px 0;
+        }.qa2-checkpoint-marker{
+            color: var(--ppt-accent);
+            font-size: 12px;
+            margin-top: 3px;
+            width: 14px;
+            flex-shrink: 0;
+        }
+
+        .qa2-checkpoint-text {
+            font-family: var(--ppt-font-body);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            line-height: 1.45;
+        }.qa2-checkpoint-note{
+            background-color: var(--ppt-surface);
+            border-radius: var(--ppt-radius-sm);
+            padding: 8px 12px;
+            border: 1px solid var(--ppt-border);
+            font-family: var(--ppt-font-body);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+            margin-top: 3px;
+        }
+
+        .qa2-checkpoint-note i {
+            color: var(--ppt-accent);
+            margin-right: 6px;
+        }
+
+        /* no flex on li */
+        .qa2-workflow-step-item {
+            display: flex;
+        }
+
+        .qa2-workflow-step-item {
+            display: flex;
+        }
+
+        /* ensure no fixed heights */
+        .qa2-dominant-steps-left,
+        .qa2-ai-checkpoint-rail-right {
+            height: auto;
+        }
+
+        .qa2-workflow-body-wrapper {
+            align-items: stretch;
+        }
+
+        .qa2-dominant-steps-left {
+            justify-content: flex-start;
+        }
+
+        .qa2-ai-checkpoint-rail-right {
+            justify-content: flex-start;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Non-cover title region (fixed from DESIGN) -->
+        <header class="title-region">
+            <div class="title-eyebrow-row">
+                <div class="title-accent-bar"></div>
+                <span class="title-eyebrow-text">SERVICEHUB QA TRACK</span>
+            </div>
+            <h1 class="title-main-heading">Воркфлоу QA-2: Створення тестового набору</h1>
+            <h2 class="title-subheading">Алгоритм трансформації критеріїв приймання у пріоритезовані тестові випадки з чіткими передумовами</h2>
+        </header>
+
+        <!-- Body region: dominant left steps + narrow AI checkpoint rail -->
+        <div class="qa2-workflow-body-wrapper">
+            <!-- Left dominant: diagnostic list of workflow steps -->
+            <div class="qa2-dominant-steps-left">
+                <div class="qa2-steps-intro-label">
+                    <i class="fa-solid fa-list-ul" style="margin-right: 8px; color: var(--ppt-accent);"></i>
+                    Алгоритм дій
+                </div>
+                <ul class="qa2-workflow-steps-list">
+                    <li class="qa2-workflow-step-item">
+                        <span class="qa2-step-number-badge">1</span>
+                        <div class="qa2-step-text-group">
+                            <div class="qa2-step-title">Розбір критеріїв приймання та бізнес-правил</div>
+                            <div class="qa2-step-detail">Виділити явні та неявні правила з бази вимог ServiceHub.</div>
+                        </div>
+                    </li>
+                    <li class="qa2-workflow-step-item">
+                        <span class="qa2-step-number-badge">2</span>
+                        <div class="qa2-step-text-group">
+                            <div class="qa2-step-title">Створення тестових умов</div>
+                            <div class="qa2-step-detail">Покрити happy path, негативні сценарії, граничні значення.</div>
+                        </div>
+                    </li>
+                    <li class="qa2-workflow-step-item">
+                        <span class="qa2-step-number-badge">3</span>
+                        <div class="qa2-step-text-group">
+                            <div class="qa2-step-title">Класифікація за типом</div>
+                            <div class="qa2-step-detail">UI, API, інтеграція, дані та нефункціональні перевірки.</div>
+                        </div>
+                    </li>
+                    <li class="qa2-workflow-step-item">
+                        <span class="qa2-step-number-badge">4</span>
+                        <div class="qa2-step-text-group">
+                            <div class="qa2-step-title">Створення позитивних, негативних і граничних кейсів</div>
+                            <div class="qa2-step-detail">Включно з переходами станів, валідацією, дублікатами подій.</div>
+                        </div>
+                    </li>
+                    <li class="qa2-workflow-step-item">
+                        <span class="qa2-step-number-badge">5</span>
+                        <div class="qa2-step-text-group">
+                            <div class="qa2-step-title">Визначення передумов і тестових даних</div>
+                            <div class="qa2-step-detail">Зафіксувати початковий стан, ролі, синтетичні дані.</div>
+                        </div>
+                    </li>
+                    <li class="qa2-workflow-step-item">
+                        <span class="qa2-step-number-badge">6</span>
+                        <div class="qa2-step-text-group">
+                            <div class="qa2-step-title">Зв&#39;язок тестів з вимогами</div>
+                            <div class="qa2-step-detail">Кожен тест має посилатися на унікальну вимогу (traceability).</div>
+                        </div>
+                    </li>
+                    <li class="qa2-workflow-step-item">
+                        <span class="qa2-step-number-badge">7</span>
+                        <div class="qa2-step-text-group">
+                            <div class="qa2-step-title">Рев&#39;ю на прогалини, дублікати, застарілі кейси</div>
+                            <div class="qa2-step-detail">Виявити відсутні сценарії та зайві тести.</div>
+                        </div>
+                    </li>
+                    <li class="qa2-workflow-step-item">
+                        <span class="qa2-step-number-badge">8</span>
+                        <div class="qa2-step-text-group">
+                            <div class="qa2-step-title">Пріоритизація за ризиком</div>
+                            <div class="qa2-step-detail">Ключові бізнес-функції та високий вплив — першочергово.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right narrow AI Checkpoint rail -->
+            <aside class="qa2-ai-checkpoint-rail-right">
+                <div class="qa2-checkpoint-header">
+                    <i class="fa-solid fa-robot qa2-checkpoint-icon"></i>
+                    <span class="qa2-checkpoint-title">AI Checkpoint</span>
+                </div>
+                <hr class="qa2-checkpoint-rule"/>
+                <div class="qa2-checkpoint-item">
+                    <i class="fa-solid fa-circle-check qa2-checkpoint-marker"></i>
+                    <span class="qa2-checkpoint-text">Xplore структурує тестові умови, але не створює очікуваної поведінки.</span>
+                </div>
+                <div class="qa2-checkpoint-item">
+                    <i class="fa-solid fa-check qa2-checkpoint-marker"></i>
+                    <span class="qa2-checkpoint-text">Кожен тест має посилатися на затверджену вимогу.</span>
+                </div>
+                <div class="qa2-checkpoint-item">
+                    <i class="fa-solid fa-anchor-circle-check qa2-checkpoint-marker"></i>
+                    <span class="qa2-checkpoint-text">Людський рев&#39;ю підтверджує релевантність і повноту.</span>
+                </div>
+                <div class="qa2-checkpoint-note">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Кількість кейсів — не метрика якості. Головне — покриття суттєвих ризиків.
+                </div>
+                <div class="qa2-checkpoint-note" style="margin-top: 6px;">
+                    <i class="fa-solid fa-shield"></i>
+                    Пріоритезація за ризиком: ймовірність × бізнес-вплив.
+                </div>
+            </aside>
+        </div>
+    </div>
+
+</body></html>

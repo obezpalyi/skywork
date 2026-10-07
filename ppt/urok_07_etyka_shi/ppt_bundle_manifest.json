@@ -1,0 +1,66 @@
+{
+  "schema_version": 2,
+  "ppt_style": "html",
+  "page_count": 10,
+  "pages": [
+    {
+      "id": "1",
+      "html": "htmls/1.html"
+    },
+    {
+      "id": "2",
+      "html": "htmls/2.html"
+    },
+    {
+      "id": "3",
+      "html": "htmls/3.html"
+    },
+    {
+      "id": "4",
+      "html": "htmls/4.html"
+    },
+    {
+      "id": "5",
+      "html": "htmls/5.html"
+    },
+    {
+      "id": "6",
+      "html": "htmls/6.html"
+    },
+    {
+      "id": "7",
+      "html": "htmls/7.html"
+    },
+    {
+      "id": "8",
+      "html": "htmls/8.html"
+    },
+    {
+      "id": "9",
+      "html": "htmls/9.html"
+    },
+    {
+      "id": "10",
+      "html": "htmls/10.html"
+    }
+  ],
+  "generation": {
+    "status": "success",
+    "total_pages": 10,
+    "success_pages": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "language": "Ukrainian",
+    "prepared_state_id": "pps_1697c1dc2aab58ec5f81ab9cd8f8e48c",
+    "prepared_state_version": 1
+  }
+}

@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <title>Управління вимогами та змінами в SDLC із застосуванням штучного інтелекту</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">:root {
+  --ppt-chart-1: #2563EB;
+  --ppt-chart-2: #06B6D4;
+  --ppt-chart-3: #6366F1;
+  --ppt-chart-4: #F59E0B;
+  --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root-canvas {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-header {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-breadcrumb {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .cr-main-content-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      margin-left: 60px;
+      margin-right: 60px;
+      flex: 1;
+      align-items: stretch;
+      padding-bottom: 40px;
+    }
+
+    .cr-left-analysis-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cr-right-classification-column {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cr-instruction-card-item {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px;
+      margin-bottom: 16px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1;
+    }
+
+    .cr-card-heading-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .cr-card-icon-wrapper {
+      width: 32px;
+      height: 32px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 16px;
+    }
+
+    .cr-card-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .cr-card-body-list {
+      list-style: none;
+    }
+
+    .cr-card-list-item {
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .cr-card-list-item::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--ppt-accent);
+      font-weight: 700;
+    }
+
+    .cr-classification-grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .cr-status-box-block {
+      padding: 12px;
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      height: 100%;
+    }
+
+    .cr-status-block-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .cr-status-block-description {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .bg-bad-light {
+      background-color: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      color: var(--ppt-bad);
+    }
+
+    .bg-warn-light {
+      background-color: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      color: var(--ppt-warn);
+    }
+
+    .cr-stakeholder-footer-panel {
+      margin-top: 16px;
+      padding: 12px;
+      background: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+    }
+
+    .cr-stakeholder-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: var(--ppt-text-1);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .cr-tag-wrapper-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cr-tag-item-node {
+      background: var(--ppt-bg);
+      border: 1px solid var(--ppt-border);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--ppt-text-2);
+    }
+
+    .cr-logic-note-text {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--ppt-text-3);
+      margin-top: 12px;
+      text-align: right;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-canvas">
+    <header class="title-region-header">
+      <div class="title-region-breadcrumb">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-main-heading">
+        Уточнюючі питання та блокери: Аналіз прогалин ШІ
+      </h1>
+    </header>
+
+    <main class="cr-main-content-wrapper" style="margin-bottom: 4px !important;">
+      <!-- Left Column: AI Role -->
+      <section class="cr-left-analysis-column">
+        <div class="cr-instruction-card-item">
+          <div class="cr-card-heading-group">
+            <div class="cr-card-icon-wrapper">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="cr-card-title-text">Принципи AI-аналізу</div>
+          </div>
+          <ul class="cr-card-body-list">
+            <li class="cr-card-list-item"><strong>Жодних припущень:</strong> ШІ не заповнює прогалини здогадками, а маркує їх як &#34;Unknown&#34;.</li>
+            <li class="cr-card-list-item"><strong>Виявлення конфліктів:</strong> Пошук суперечностей між новим запитом та існуючим Baseline.</li>
+            <li class="cr-card-list-item"><strong>Мінімальний контекст:</strong> Визначення критичного набору даних для старту Impact Analysis.</li>
+            <li class="cr-card-list-item"><strong>Цільові запити:</strong> Формування конкретних питань замість загального &#34;поясніть детальніше&#34;.</li>
+          </ul>
+        </div>
+        
+        <div class="cr-stakeholder-footer-panel">
+          <div class="cr-stakeholder-title-group">
+            <i class="fa-solid fa-users"></i>
+            <span>Кого залучити для уточнення?</span>
+          </div>
+          <div class="cr-tag-wrapper-flex">
+            <span class="cr-tag-item-node">Product Owner</span>
+            <span class="cr-tag-item-node">System Architect</span>
+            <span class="cr-tag-item-node">Security Officer</span>
+            <span class="cr-tag-item-node">Legal/Compliance</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Classification -->
+      <section class="cr-right-classification-column">
+        <div class="cr-classification-grid-container">
+          <!-- Blocking -->
+          <div class="cr-status-box-block bg-bad-light">
+            <div class="cr-status-block-header">
+              <i class="fa-solid fa-hand"></i>
+              <span>Блокуючі (Blocking)</span>
+            </div>
+            <div class="cr-status-block-description">
+              <p>Зупиняють аналіз або вибір рішення. Без цієї інформації неможливо оцінити вплив на систему чи бюджет.</p>
+              <ul class="cr-card-body-list" style="margin-top: 10px;">
+                <li class="cr-card-list-item" style="color: inherit; font-size: 13px;">Яка бізнес-мета зміни?</li>
+                <li class="cr-card-list-item" style="color: inherit; font-size: 13px;">Хто володіє цими даними?</li>
+                <li class="cr-card-list-item" style="color: inherit; font-size: 13px;">Чи є це критичним для безпеки?</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Non-blocking -->
+          <div class="cr-status-box-block bg-warn-light">
+            <div class="cr-status-block-header">
+              <i class="fa-solid fa-circle-info"></i>
+              <span>Уточнюючі (Non-blocking)</span>
+            </div>
+            <div class="cr-status-block-description">
+              <p>Важливі для деталізації реалізації, але дозволяють розпочати попередню оцінку впливу та підготовку.</p>
+              <ul class="cr-card-body-list" style="margin-top: 10px;">
+                <li class="cr-card-list-item" style="color: inherit; font-size: 13px;">Який формат виводу даних?</li>
+                <li class="cr-card-list-item" style="color: inherit; font-size: 13px;">Локалізація інтерфейсу?</li>
+                <li class="cr-card-list-item" style="color: inherit; font-size: 13px;">Порядок елементів у списку?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-logic-note-text">
+          * AI готує перелік, людина валідує критичність кожного питання.
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body></html>

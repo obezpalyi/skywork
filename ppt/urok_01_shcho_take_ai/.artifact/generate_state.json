@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "status": "success",
+  "operation": "generate",
+  "operation_id": "urok_01_shcho_take_ai",
+  "session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "artifact_path": "ppt/urok_01_shcho_take_ai",
+  "display_name": "Що таке AI насправді?",
+  "ppt_style": "html",
+  "page_count": 10,
+  "total_pages": 10,
+  "success_pages": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "language": "Ukrainian",
+  "prepared_state_id": "pps_a3512c10844f921b0b513bf3845b9a94",
+  "prepared_state_version": 1,
+  "generated_at": "2026-09-03T18:59:23.619689912Z"
+}

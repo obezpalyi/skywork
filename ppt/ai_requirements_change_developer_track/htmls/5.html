@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Бізнес-контекст проти контексту впровадження</title>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+        :root {
+            --ppt-bg: #FDFDFD;
+            --ppt-bg-soft: #F4F7F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E9EFED;
+            --ppt-border: #D1D9D7;
+            --ppt-text-1: #121417;
+            --ppt-text-2: #4A5552;
+            --ppt-text-3: #879491;
+            --ppt-accent: #007A5E;
+            --ppt-accent-2: #00D3A4;
+            --ppt-chart-1: #007A5E;
+            --ppt-chart-2: #00D3A4;
+            --ppt-chart-3: #121417;
+            --ppt-chart-4: #879491;
+            --ppt-good: #107C10;
+            --ppt-warn: #D83B01;
+            --ppt-bad: #A80000;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+            --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+            --ppt-font-mono: "JetBrains Mono", monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+        }
+
+        .slide-root {
+            width: 1280px; height: 720px;
+            display: flex;
+            flex-direction: column;
+            background: var(--ppt-bg);
+            
+            position: relative;
+        }
+
+        /* Non-Cover-Page Title Region */
+        .title-region {
+            margin-top: 40px;
+            margin-left: 56px;
+            margin-right: 56px;
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .title-region-top-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-region-eyebrow {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--ppt-surface-2);
+            padding: 4px 8px;
+            border-radius: var(--ppt-radius-sm);
+        }
+
+        .title-region-rule {
+            height: 1px;
+            flex-grow: 1;
+            background: var(--ppt-border);
+        }
+
+        .title-region-heading {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        /* Main body wrapper — consumes remaining height */
+        .diptych-body-region {
+            flex: 1 1 0;
+            margin-left: 56px;
+            margin-right: 56px;
+            margin-bottom: 48px;
+            display: flex;
+            align-items: stretch;
+            
+        }
+
+        /* Two-column equal split with a thin center line */
+        .conceptual-split-diptych {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            border: none;
+            padding: 0;
+        }
+
+        .diptych-left-panel {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            padding-right: 32px;
+            border-right: 1px solid var(--ppt-border);
+        }
+
+        .diptych-right-panel {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            padding-left: 32px;
+        }
+
+        .diptych-side-label {
+            font-family: var(--ppt-font-mono);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 20px;
+        }
+
+        .diptych-side-title {
+            font-family: var(--ppt-font-display);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .diptych-open-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .diptych-list-item {
+            font-family: var(--ppt-font-body);
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .diptych-list-item i {
+            color: var(--ppt-accent);
+            font-size: 14px;
+            margin-top: 4px;
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .diptych-list-item strong {
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }
+
+        .diptych-context-note {
+            font-family: var(--ppt-font-body);
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--ppt-border);
+        }
+
+        .diptych-context-note strong {
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }
+
+        .diptych-context-note i {
+            color: var(--ppt-accent);
+            margin-right: 6px;
+        }
+
+        /* Ensure no flex growth on list items */
+        .diptych-list-item,
+        .diptych-context-note {
+            flex-shrink: 0;
+        }
+
+        /* Font Awesome import */
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Non-Cover-Page Title Region (fixed template) -->
+        <header class="title-region">
+            <div class="title-region-top-row">
+                <span class="title-region-eyebrow">Developer Track</span>
+                <div class="title-region-rule"></div>
+            </div>
+            <h1 class="title-region-heading">Бізнес-контекст проти контексту впровадження</h1>
+        </header>
+
+        <!-- Conceptual split-focus diptych: two equal vertical zones -->
+        <div class="diptych-body-region">
+            <div class="conceptual-split-diptych">
+                <!-- Left zone: Business context -->
+                <div class="diptych-left-panel">
+                    <div class="diptych-side-label">Бізнес-контекст</div>
+                    <div class="diptych-side-title">Чому та для кого</div>
+                    <ul class="diptych-open-list">
+                        <li class="diptych-list-item">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span><strong>Чому</strong> потрібна можливість — цінність та ціль.</span>
+                        </li>
+                        <li class="diptych-list-item">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span><strong>Хто</strong> використовує — ролі та сценарії.</span>
+                        </li>
+                        <li class="diptych-list-item">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span><strong>Який</strong> очікуваний результат — вимірний ефект.</span>
+                        </li>
+                        <li class="diptych-list-item">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span><strong>Які</strong> бізнес-правила застосовуються.</span>
+                        </li>
+                    </ul>
+                    <div class="diptych-context-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <strong>Фокус:</strong> намір та цінність, без деталей реалізації.
+                    </div>
+                </div>
+
+                <!-- Right zone: Implementation context -->
+                <div class="diptych-right-panel">
+                    <div class="diptych-side-label">Контекст впровадження</div>
+                    <div class="diptych-side-title">Як саме в системі</div>
+                    <ul class="diptych-open-list">
+                        <li class="diptych-list-item">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span><strong>Які компоненти</strong> беруть участь.</span>
+                        </li>
+                        <li class="diptych-list-item">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span><strong>Інтерфейси та дані</strong> — що змінюється.</span>
+                        </li>
+                        <li class="diptych-list-item">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span><strong>Обробка помилок</strong> та відновлення.</span>
+                        </li>
+                        <li class="diptych-list-item">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span><strong>Обмеження</strong> та сумісність.</span>
+                        </li>
+                        <li class="diptych-list-item">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span><strong>Залежності</strong> та власники.</span>
+                        </li>
+                    </ul>
+                    <div class="diptych-context-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <strong>Фокус:</strong> технічні деталі, що забезпечують реалізацію.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

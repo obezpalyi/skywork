@@ -1,0 +1,469 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сесія DEV-3 · Аналіз технічного впливу</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    /* slide root: fixed 1280x720 flex column */
+    .slide-root-tia-session {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+    }
+
+    /* non-cover page title region (preserved from DESIGN) */
+    .title-region-dev3 {
+      margin-top: 40px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-eyebrow-badge {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .title-region-divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-main-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* main structural body wrapper: consumes remaining height */
+    .tia-body-wrapper {
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+       /* required for proper flex overflow, but no min-height:0 on content boxes */
+    }
+
+    /* top compact strip: scope + baseline comparison summary */
+    .tia-context-strip {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .tia-scope-block {
+      flex: 1 1 260px;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .tia-scope-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .tia-scope-title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ppt-text-1);
+    }
+
+    .tia-scope-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tia-scope-list-item {
+      font-size: 15px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .tia-scope-list-item i {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      margin-top: 2px;
+      width: 16px;
+      text-align: center;
+    }
+
+    /* baseline comparison panel */
+    .tia-baseline-comparison {
+      flex: 2 1 420px;
+      background: var(--ppt-bg-soft);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .tia-baseline-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tia-baseline-header i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .tia-baseline-header-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .tia-baseline-columns {
+      display: flex;
+      gap: 16px;
+    }
+
+    .tia-baseline-col {
+      flex: 1 1 0;
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-sm);
+      padding: 12px 14px;
+      border: 1px solid var(--ppt-border);
+    }
+
+    .tia-baseline-col-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ppt-text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .tia-baseline-col-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 6px;
+    }
+
+    .tia-baseline-col-desc {
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--ppt-text-2);
+    }
+
+    /* bottom area: two-column grid with objectives & review */
+    .tia-bottom-grid {
+      flex: 1 1 0;
+      display: flex;
+      gap: 24px;
+      
+    }
+
+    .tia-objectives-panel {
+      flex: 1 1 50%;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .tia-objectives-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tia-objectives-heading i {
+      color: var(--ppt-accent);
+      font-size: 20px;
+    }
+
+    .tia-objectives-heading-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .tia-objectives-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tia-objectives-list-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 15px;
+      line-height: 1.45;
+      color: var(--ppt-text-2);
+    }
+
+    .tia-objectives-list-item i {
+      color: var(--ppt-accent-2);
+      font-size: 16px;
+      margin-top: 2px;
+      width: 18px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .tia-review-panel {
+      flex: 1 1 50%;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .tia-review-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tia-review-heading i {
+      color: var(--ppt-warn);
+      font-size: 20px;
+    }
+
+    .tia-review-heading-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .tia-review-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tia-review-list-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 15px;
+      line-height: 1.45;
+      color: var(--ppt-text-2);
+    }
+
+    .tia-review-list-item i {
+      color: var(--ppt-warn);
+      font-size: 16px;
+      margin-top: 2px;
+      width: 18px;
+      text-align: center;
+    }
+
+    /* ensure no fixed heights on text containers */
+    .tia-scope-block, .tia-baseline-comparison, .tia-objectives-panel, .tia-review-panel {
+      height: auto;
+    }
+
+    /* flex column fill for bottom panels */
+    .tia-objectives-panel, .tia-review-panel {
+      justify-content: flex-start;
+    }
+
+    .tia-objectives-list, .tia-review-list {
+      flex: 1 1 0;
+    }
+
+    .tia-baseline-columns {
+      flex: 1 1 0;
+    }
+
+    /* ensure no margin collapse issues */
+    .tia-body-wrapper > * {
+      flex-shrink: 0;
+    }
+  
+html { overflow: hidden; }
+</style>
+  <!-- Font Awesome via CDN (no comment) -->
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-tia-session">
+    <!-- Non-Cover-Page Title Region (preserved from DESIGN) -->
+    <header class="title-region-dev3">
+      <div class="title-region-eyebrow-row">
+        <span class="title-region-eyebrow-badge">Developer Track</span>
+        <div class="title-region-divider-line"></div>
+      </div>
+      <h1 class="title-region-main-heading">Сесія DEV-3: Аналіз технічного впливу запиту на зміни</h1>
+    </header>
+
+    <!-- Main body wrapper: consumes remaining height -->
+    <div class="tia-body-wrapper">
+      <!-- Top strip: scope + baseline comparison -->
+      <div class="tia-context-strip">
+        <div class="tia-scope-block">
+          <div class="tia-scope-label">Обсяг аналізу</div>
+          <div class="tia-scope-title">Технічний вплив змін (TIA)</div>
+          <ul class="tia-scope-list">
+            <li class="tia-scope-list-item"><i class="fa-solid fa-circle-check"></i> Порівняння базових ліній</li>
+            <li class="tia-scope-list-item"><i class="fa-solid fa-check"></i> Прямий і транзитивний вплив</li>
+            <li class="tia-scope-list-item"><i class="fa-solid fa-anchor-circle-check"></i> Оцінка сумісності та міграції</li>
+          </ul>
+        </div>
+        <div class="tia-baseline-comparison">
+          <div class="tia-baseline-header">
+            <i class="fa-solid fa-code-branch"></i>
+            <span class="tia-baseline-header-text">Порівняння базових ліній</span>
+          </div>
+          <div class="tia-baseline-columns">
+            <div class="tia-baseline-col">
+              <div class="tia-baseline-col-label">До зміни</div>
+              <div class="tia-baseline-col-title">Поточна архітектура</div>
+              <div class="tia-baseline-col-desc">Наявні API-контракти, модель даних, інтеграції та технічний борг.</div>
+            </div>
+            <div class="tia-baseline-col">
+              <div class="tia-baseline-col-label">Після зміни</div>
+              <div class="tia-baseline-col-title">Цільовий стан</div>
+              <div class="tia-baseline-col-desc">Оновлені бізнес-правила, нові пріоритети, SLA та події.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom two-column grid: objectives &amp; review -->
+      <div class="tia-bottom-grid" style="margin-bottom: 4px !important;">
+        <div class="tia-objectives-panel">
+          <div class="tia-objectives-heading">
+            <i class="fa-solid fa-bullseye"></i>
+            <span class="tia-objectives-heading-text">Цілі сесії</span>
+          </div>
+          <ul class="tia-objectives-list">
+            <li class="tia-objectives-list-item"><i class="fa-solid fa-arrow-right"></i> Виявити прямий і транзитивний вплив на компоненти</li>
+            <li class="tia-objectives-list-item"><i class="fa-solid fa-arrow-right"></i> Оцінити зворотну сумісність API та подій</li>
+            <li class="tia-objectives-list-item"><i class="fa-solid fa-arrow-right"></i> Підготувати варіанти впровадження для погодження</li>
+            <li class="tia-objectives-list-item"><i class="fa-solid fa-arrow-right"></i> Зафіксувати технічні ризики до початку розробки</li>
+          </ul>
+        </div>
+        <div class="tia-review-panel">
+          <div class="tia-review-heading">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span class="tia-review-heading-text">Точки технічного огляду</span>
+          </div>
+          <ul class="tia-review-list">
+            <li class="tia-review-list-item"><i class="fa-solid fa-circle"></i> Споживачі API та обробники подій</li>
+            <li class="tia-review-list-item"><i class="fa-solid fa-circle"></i> Міграція даних і стратегії відкату</li>
+            <li class="tia-review-list-item"><i class="fa-solid fa-circle"></i> Фіча-флаги та захист нових шляхів</li>
+            <li class="tia-review-list-item"><i class="fa-solid fa-circle"></i> Готовність до передачі в розробку</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

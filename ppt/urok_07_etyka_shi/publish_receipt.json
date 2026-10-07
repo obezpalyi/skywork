@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "status": "success",
+  "operation": "ppt.publish",
+  "kind": "ppt",
+  "page_count": 10,
+  "total_pages": 10,
+  "artifacts": [
+    {
+      "kind": "ppt",
+      "artifact_id": "2102354494571749376",
+      "artifact_version_id": "2102354494580137984",
+      "version": 1,
+      "status": "published",
+      "artifact_type": "presentation",
+      "file_type": "gen_ppt",
+      "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/22/upl_2470ecd8ada94755a5cd6c6269cac9ef/ppt-urok_07_etyka_shi.zip",
+      "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_167f905c6ab849569dd270a6e4f249da/preview.png"
+    }
+  ],
+  "delivery": {
+    "artifact_id": "2102354494571749376",
+    "artifact_version_id": "2102354494580137984",
+    "version": 1,
+    "title": "Етика штучного інтелекту: хто відповідає за рішення ШІ?",
+    "artifact_type": "presentation",
+    "file_type": "gen_ppt",
+    "page_count": 10,
+    "locator_items": [
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_a628e2c5474d4408b3cb48d0edf07b66/1.html",
+        "index": 1,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_9cb26b46a99d4363a9d6f66eb0537dc3/2.html",
+        "index": 2,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_db617d59459f4f29a7994ff6adcd8ca7/3.html",
+        "index": 3,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_e053a519854a406c9f47a54e4a627595/4.html",
+        "index": 4,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_352c5aa8b3464f81a0ee3f9a4e1aef85/5.html",
+        "index": 5,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_6c26b1869e044c279743a7cda217b894/6.html",
+        "index": 6,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_ae3fe12760e34e3e8bf152f0a9fe20fb/7.html",
+        "index": 7,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_eef93f038250403893b0e3e81ef251e0/8.html",
+        "index": 8,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_fd0246ef65084d55a9d6a76931ea3e69/9.html",
+        "index": 9,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_996f6c74191c47fb8e66a61c269af6c2/10.html",
+        "index": 10,
+        "notes": ""
+      }
+    ],
+    "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/22/upl_2470ecd8ada94755a5cd6c6269cac9ef/ppt-urok_07_etyka_shi.zip",
+    "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_167f905c6ab849569dd270a6e4f249da/preview.png",
+    "ppt_style": "html",
+    "metadata": {
+      "artifact_complete": true,
+      "delivery_status": "complete_published",
+      "failed_pages": null,
+      "generation_status": "success",
+      "image_model_used": "",
+      "image_models_used": [],
+      "is_nano_ppt": false,
+      "language": "Ukrainian",
+      "operation_id": "urok_07_etyka_shi",
+      "page_aspect_ratio": "16:9",
+      "page_height": 720,
+      "page_size": "1280_720",
+      "page_width": 1280,
+      "ppt_style": "html",
+      "prepared_state_id": "pps_1697c1dc2aab58ec5f81ab9cd8f8e48c",
+      "prepared_state_version": 1,
+      "publish_mode": "complete",
+      "render_mode": "html",
+      "resume_supported": false,
+      "stop_reason": "",
+      "style": "html",
+      "success_pages": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "total_pages": 10,
+      "used_nano_banana": false
+    }
+  },
+  "deliveryStatus": "complete_published",
+  "idempotency_key_hash": "e6c3f147137215e2",
+  "pre_refresh_path": "ppt/urok_07_etyka_shi/.artifact/pre_refresh/v1",
+  "timing": {
+    "started_at": "2026-09-22T11:09:00.10736019Z",
+    "completed_at": "2026-09-22T11:09:06.397166285Z",
+    "duration_ms": 6289
+  },
+  "bundle_hash": "8220c02541912086e77ccec535cd97851146d87e8f757eead32ab7c2d3fa5e6d"
+}

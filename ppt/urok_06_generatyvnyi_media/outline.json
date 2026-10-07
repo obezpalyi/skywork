@@ -1,0 +1,103 @@
+[
+  {
+    "page_num": 1,
+    "heading": "Як ШІ створює зображення, музику та відео?",
+    "type": "title",
+    "des": "Вступ до генеративного та мультимодального ШІ, що створює контент на основі описів, та обговорення принципів його відповідального використання.",
+    "images": [
+      {
+        "source": "text2image_cover",
+        "url": "https://skyagent-artifacts.skywork.ai/image/5940376570349285532/2102353357345034240/2102353357345034241.png",
+        "img_name": "2102353357345034241.png",
+        "img_desc": "A dimly lit creative studio at dusk, viewed from a slight side angle. In the foreground, a wooden desk holds a vintage film camera and a compact synthesizer keyboard, with scattered sheets of handmade paper. In the center, a large glowing digital canvas floats in mid-air, emitting luminous particles that swirl into a tangible watercolor landscape—a river, an old wooden mill, and trees at sunrise—forming in three-dimensional space. To the right, a grand piano is partially visible, with faint ribbons of light weaving through the air like abstract sound waves. Warm amber and cool teal lighting, cinematic depth of field, realistic wood, fabric, and paint textures, no people, no text.",
+        "img_type": "image",
+        "img_size": "1280x720",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 2,
+    "heading": "Генерація зображень",
+    "type": "content",
+    "des": "Опис процесу створення зображень від шуму до результату на основі промптів, що включають об'єкти, освітлення та стилі.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 3,
+    "heading": "Генерація музики",
+    "type": "content",
+    "des": "Параметри створення музики за жанром, темпом та інструментами, а також важливість опису властивостей замість копіювання виконавців.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 4,
+    "heading": "Генерація відео",
+    "type": "content",
+    "des": "Особливості створення відео з урахуванням руху камери та збереження узгодженості об'єктів між кадрами протягом всієї тривалості ролика.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 5,
+    "heading": "Від промпту до результату",
+    "type": "content",
+    "des": "Схема роботи з ШІ: від аналізу опису та генерації варіантів до обов’язкового редагування та перевірки результату людиною.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 6,
+    "heading": "Як написати промпт для медіа?",
+    "type": "content",
+    "des": "Універсальна формула промпту, що включає об'єкт, дію, стиль, формат і обмеження безпеки для отримання якісного медіаконтенту.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 7,
+    "heading": "Практика «Від промпту до медіа»",
+    "type": "content",
+    "des": "Практична робота в парах над створенням промптів для шкільних проєктів з урахуванням правил приватності та чіткості завдання.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 8,
+    "heading": "Обмеження та типові помилки",
+    "type": "content",
+    "des": "Аналіз технічних недоліків у згенерованому контенті, а також ризиків використання deepfake та оманливого представлення подій.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 9,
+    "heading": "Авторське право, приватність і маркування",
+    "type": "content",
+    "des": "Правила використання чужих образів, перевірка ліцензій та необхідність обов'язкового маркування ШІ-контенту для запобігання дезінформації.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 10,
+    "heading": "Підсумок і exit ticket",
+    "type": "content",
+    "des": "Узагальнення ключових тез уроку, перевірка знань через фінальне опитування та отримання домашнього завдання щодо відповідального використання ШІ.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  }
+]

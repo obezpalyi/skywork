@@ -1,0 +1,154 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "urok_01_shcho_take_ai",
+  "artifact_path": "ppt/urok_01_shcho_take_ai",
+  "pptTitle": "Що таке AI насправді?",
+  "ppt_title": "Що таке AI насправді?",
+  "outlineArtifactPath": "ppt/urok_01_shcho_take_ai/outline.md",
+  "outline_artifact_path": "ppt/urok_01_shcho_take_ai/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-804a0ed96a.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-804a0ed96a.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-804a0ed96a.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_01_shcho_take_ai/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_01_shcho_take_ai/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-804a0ed96a.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-804a0ed96a.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_01_shcho_take_ai/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_01_shcho_take_ai/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи українською мовою окрему навчальну презентацію для уроку інформатики в 11 класі на тему «Що таке AI насправді?». Рівно 10 слайдів на основі наданого плану уроку: проблемне запитання, визначення, алгоритм/дані/модель, вузький ШІ, генеративний ШІ, обмеження, групова вправа, відповідальне використання, підсумок і домашнє завдання.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "auto_increase_ratio": 0.35,
+  "auto_increase_bucket": 0.5898,
+  "region": "US",
+  "prepared_session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "prepared_question_id": "Q-4a812a49c9b3",
+  "prepared_target_path": "ppt/urok_01_shcho_take_ai",
+  "prepared_state_id": "pps_a3512c10844f921b0b513bf3845b9a94",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:3273868dfe382276f4155fc4123e3463791454b1b8ced6d119609d79cf0db23c",
+  "init_request_fingerprint": "sha256:70e5cc291727b285ef7eb0a20053f9729112e21c6f8a79b0c160ce8085ab17ca",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:50f2627ad3df95106d6d86e32c4a8fcffe187f07ff4eab66d777491dbc9aeed2",
+  "outline_artifact_sha256": "sha256:c4cfe9f4a5e2d4232ae962fe207cf1c22a02fa15b9af8a16635fcd312f267a16",
+  "prepared_inputs": [
+    {
+      "path": "ppt/urok_01_shcho_take_ai/design_guideline.md",
+      "size": 8971,
+      "sha256": "sha256:0e86598db306fd27748c3e5d501f83be7ea4d8b859020c653007024a509a9880"
+    },
+    {
+      "path": "ppt/urok_01_shcho_take_ai/final_report.md",
+      "size": 7065,
+      "sha256": "sha256:50f2627ad3df95106d6d86e32c4a8fcffe187f07ff4eab66d777491dbc9aeed2"
+    },
+    {
+      "path": "ppt/urok_01_shcho_take_ai/outline.json",
+      "size": 38917,
+      "sha256": "sha256:f609ddccfa04123e6c26e2498dc85e7a7547b14cfee24a35426dfd89a16a5d0a"
+    },
+    {
+      "path": "ppt/urok_01_shcho_take_ai/outline.md",
+      "size": 3387,
+      "sha256": "sha256:c4cfe9f4a5e2d4232ae962fe207cf1c22a02fa15b9af8a16635fcd312f267a16"
+    },
+    {
+      "path": "ppt/urok_01_shcho_take_ai/prepared_images/cover_4f5ccf3ff32d_2095587088809930753.png",
+      "size": 1055086,
+      "sha256": "sha256:9d6488372f10ca8b167a180e60d324550be12e7a956ae4f29638e950d88a628a"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json",
+      "prepared_images/cover_4f5ccf3ff32d_2095587088809930753.png"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "auto_mode",
+      "auto_increase_miss",
+      "standard_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "generated",
+      "applied": true
+    },
+    "dropped_images": null,
+    "warnings": null,
+    "mock": false
+  }
+}

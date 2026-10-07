@@ -1,0 +1,469 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Самостійна практика, онлайн-тест та сертифікація</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #EEF2F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F1F5F9;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    /* Slide root — exactly 1280x720, flex column */
+    .slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      
+      box-shadow: var(--ppt-shadow-strong);
+      position: relative;
+    }/* Fixed non-cover title region per design */
+    .title-region{
+      margin-top: 32px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .title-region-inner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-accent-bar {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 36px;
+      border-radius: var(--ppt-radius-sm);
+      flex-shrink: 0;
+    }
+
+    .title-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .title-eyebrow {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+      line-height: 1.4;
+    }
+
+    .title-main {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .title-subtitle {
+      margin: 0;
+      margin-left: 16px;
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+      max-width: 1100px;
+    }/* Main body wrapper — consumes remaining height */
+    .body-wrapper{
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px 20px;
+       /* allowed for structural region */
+    }/* Top compact summary band */
+    .practice-summary-band{
+      display: flex;
+      gap: 13px 16px;
+      flex-shrink: 0;
+    }.summary-item{
+      flex: 1;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 13px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px 6px;
+      box-shadow: var(--ppt-shadow-soft);
+    }.summary-item-header{
+      display: flex;
+      align-items: center;
+      gap: 8px 10px;
+    }
+
+    .summary-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--ppt-radius-sm);
+      background-color: var(--ppt-bg-soft);
+      color: var(--ppt-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .summary-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ppt-text-2);
+    }
+
+    .summary-value {
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .summary-note {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }/* Two-column lower section */
+    .lower-grid{
+      flex: 1 1 0;
+      display: flex;
+      gap: 16px 20px;
+      
+    }
+
+    .left-panel {
+      flex: 3;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: var(--ppt-shadow-soft);
+      
+    }.right-panel{
+      flex: 2;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px 14px;
+      box-shadow: var(--ppt-shadow-soft);
+      
+    }
+
+    .panel-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid var(--ppt-border);
+      padding-bottom: 8px;
+    }
+
+    .panel-title i {
+      color: var(--ppt-accent);
+      font-size: 16px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .list-container {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1 1 0;
+      
+    }
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-1);
+      line-height: 1.45;
+    }
+
+    .list-item-icon {
+      color: var(--ppt-accent);
+      font-size: 12px;
+      margin-top: 4px;
+      width: 16px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .list-item-text {
+      flex: 1;
+    }
+
+    .list-item strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }.test-detail-block{
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px 6px;
+      flex-shrink: 0;
+    }.test-detail-row{
+      display: flex;
+      align-items: center;
+      gap: 8px 10px;
+      font-size: 15px;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    .test-detail-row i {
+      color: var(--ppt-accent-2);
+      width: 18px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .test-detail-row strong {
+      font-weight: 600;
+    }.certificate-badge{
+      margin-top: auto;
+      background-color: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 11px 16px;
+      display: flex;
+      align-items: center;
+      gap: 11px 14px;
+      border-left: 4px solid var(--ppt-accent);
+    }
+
+    .certificate-icon {
+      width: 36px;
+      height: 36px;
+      background-color: var(--ppt-accent);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .certificate-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    .certificate-text strong {
+      font-weight: 600;
+    }
+
+    .highlight-note {
+      font-size: 13px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      background-color: var(--ppt-bg);
+      border-radius: var(--ppt-radius-sm);
+      padding: 8px 10px;
+      border: 1px solid var(--ppt-border);
+    }
+
+    /* Fix for list overflow */
+    .list-container {
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+
+    .list-container::-webkit-scrollbar {
+      display: none;
+    }
+
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Non-cover title region (fixed per design) -->
+    <header class="title-region">
+      <div class="title-region-inner">
+        <span class="title-accent-bar"></span>
+        <div class="title-text-group">
+          <span class="title-eyebrow">BA Track | ServiceHub</span>
+          <h1 class="title-main">Самостійна практика, онлайн-тест та сертифікація</h1>
+        </div>
+      </div>
+      <p class="title-subtitle">10 днів практики в навчальному середовищі, фінальний тест та умови отримання сертифіката курсу.</p>
+    </header>
+
+    <!-- Main body wrapper: flex: 1 1 0 -->
+    <div class="body-wrapper">
+      <!-- Top compact summary band -->
+      <div class="practice-summary-band">
+        <div class="summary-item">
+          <div class="summary-item-header">
+            <div class="summary-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <span class="summary-label">Практика</span>
+          </div>
+          <div class="summary-value">10 робочих днів</div>
+          <div class="summary-note">У навчальному середовищі, повторення всіх 4 BA-воркфлоу</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-item-header">
+            <div class="summary-icon"><i class="fa-solid fa-file-signature"></i></div>
+            <span class="summary-label">Онлайн-тест</span>
+          </div>
+          <div class="summary-value">30 питань · 45 хв</div>
+          <div class="summary-note">10 загальних + 20 BA-питань · прохідний бал 75%</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-item-header">
+            <div class="summary-icon"><i class="fa-solid fa-award"></i></div>
+            <span class="summary-label">Сертифікат</span>
+          </div>
+          <div class="summary-value">Бонус після тесту</div>
+          <div class="summary-note">Підтверджує практичне використання Xplore під час курсу</div>
+        </div>
+      </div>
+
+      <!-- Lower two-column section (dominant left, supporting right) -->
+      <div class="lower-grid" style="margin-bottom: 3px !important;">
+        <!-- Left panel: self-practice details -->
+        <div class="left-panel">
+          <div class="panel-title">
+            <i class="fa-solid fa-laptop-code"></i>
+            <span>Самостійна практика: 10 днів</span>
+          </div>
+          <ul class="list-container">
+            <li class="list-item">
+              <i class="fa-solid fa-circle list-item-icon"></i>
+              <span class="list-item-text"><strong>Повторення BA-воркфлоу:</strong> усі чотири робочі процеси (BA-1 … BA-4) у тренувальному середовищі.</span>
+            </li>
+            <li class="list-item">
+              <i class="fa-solid fa-circle list-item-icon"></i>
+              <span class="list-item-text"><strong>Додаткові запити ServiceHub:</strong> обробка нових звернень на зміну для закріплення навичок.</span>
+            </li>
+            <li class="list-item">
+              <i class="fa-solid fa-circle list-item-icon"></i>
+              <span class="list-item-text"><strong>Тестування промптів:</strong> на повних, неповних і конфліктних вхідних даних.</span>
+            </li>
+            <li class="list-item">
+              <i class="fa-solid fa-circle list-item-icon"></i>
+              <span class="list-item-text"><strong>Удосконалення асистента та AI Playbook:</strong> оновлення власної бібліотеки промптів.</span>
+            </li>
+          </ul>
+          <div class="highlight-note">
+            <i class="fa-solid fa-circle-info" style="margin-right: 6px; color: var(--ppt-accent-2);"></i>
+            Практика спрямована на відпрацювання повного циклу: від джерел до оновленого базового плану.
+          </div>
+        </div>
+
+        <!-- Right panel: test &amp; certificate -->
+        <div class="right-panel">
+          <div class="panel-title">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>Онлайн-тест та сертифікат</span>
+          </div>
+          <div class="test-detail-block">
+            <div class="test-detail-row">
+              <i class="fa-solid fa-circle-question"></i>
+              <span><strong>30 питань</strong> · 45 хвилин</span>
+            </div>
+            <div class="test-detail-row">
+              <i class="fa-solid fa-users"></i>
+              <span><strong>10 спільних:</strong> AI-воркфлоу, джерела, безпека, людська перевірка</span>
+            </div>
+            <div class="test-detail-row">
+              <i class="fa-solid fa-briefcase"></i>
+              <span><strong>20 BA-питань:</strong> вимоги, Jira, управління змінами, вплив</span>
+            </div>
+            <div class="test-detail-row">
+              <i class="fa-solid fa-percent"></i>
+              <span><strong>Прохідний бал: 75%</strong> · одна повторна спроба протягом 5 робочих днів</span>
+            </div>
+          </div>
+          <div class="certificate-badge">
+            <div class="certificate-icon"><i class="fa-solid fa-certificate"></i></div>
+            <div class="certificate-text">
+              <strong>Сертифікат — додатковий бонус</strong> після успішного тестування. Підтверджує практичне застосування Xplore під час навчання.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

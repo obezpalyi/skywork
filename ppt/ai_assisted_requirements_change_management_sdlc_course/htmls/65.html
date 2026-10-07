@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0"/>
+  <title>Розподіл ролей у команді</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #E2E8F0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      
+    }
+
+    .slide-root-canvas {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-header {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-breadcrumb {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-h1 {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .subtitle-description-text {
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }
+
+    .role-distribution-content-wrapper {
+      margin-left: 60px;
+      margin-right: 60px;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .left-ba-role-column,
+    .center-qa-role-column,
+    .right-devops-role-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1 1 0;
+    }
+
+    .role-task-card-module {
+      flex: 1;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .role-header-icon-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .role-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 24px;
+    }
+
+    .role-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .role-task-bullet-list {
+      list-style: none;
+      display: block;
+    }
+
+    .responsibility-point-item {
+      display: block;
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+      margin-bottom: 12px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .responsibility-point-item::before {
+      content: "\f058";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--ppt-accent-2);
+      font-size: 14px;
+    }
+
+    .human-control-footer-banner {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 40px;
+      background-color: var(--ppt-accent);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .human-icon-badge {
+      font-size: 20px;
+      color: #FFFFFF;
+    }
+
+    .human-decision-text {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .human-highlight-label {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-canvas">
+    <header class="title-region-header">
+      <div class="title-region-breadcrumb">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-main-h1">Розподіл ролей у команді</h1>
+    </header>
+
+    <div class="subtitle-description-text">
+      Визначення зон відповідальності BA, QA та DevOps у межах спільного процесу для забезпечення якості та цілісності результату.
+    </div>
+
+    <main class="role-distribution-content-wrapper">
+      <!-- Business Analyst Column -->
+      <div class="left-ba-role-column">
+        <div class="role-task-card-module">
+          <div class="role-header-icon-group">
+            <div class="role-icon-wrapper">
+              <i class="fa-solid fa-pen-ruler"></i>
+            </div>
+            <div class="role-title-text">Business Analyst</div>
+          </div>
+          <ul class="role-task-bullet-list">
+            <li class="responsibility-point-item">Екстракція вимог з неструктурованих протоколів та листування.</li>
+            <li class="responsibility-point-item">Формування User Stories та перевірюваних Acceptance Criteria.</li>
+            <li class="responsibility-point-item">Нормалізація Change Requests та оцінка їх бізнес-цінності.</li>
+            <li class="responsibility-point-item">Забезпечення наскрізної traceability до бізнес-цілей проєкту.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quality Assurance Column -->
+      <div class="center-qa-role-column">
+        <div class="role-task-card-module">
+          <div class="role-header-icon-group">
+            <div class="role-icon-wrapper">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <div class="role-title-text">Quality Assurance</div>
+          </div>
+          <ul class="role-task-bullet-list">
+            <li class="responsibility-point-item">Review вимог на тестованість, однозначність та повноту.</li>
+            <li class="responsibility-point-item">Генерація edge cases та розширеного тестового покриття.</li>
+            <li class="responsibility-point-item">Визначення regression scope при внесенні змін до вимог.</li>
+            <li class="responsibility-point-item">Підготовка Test Readiness Reports на базі аналізу якості.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DevOps Column -->
+      <div class="right-devops-role-column">
+        <div class="role-task-card-module">
+          <div class="role-header-icon-group">
+            <div class="role-icon-wrapper">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <div class="role-title-text">DevOps Engineer</div>
+          </div>
+          <ul class="role-task-bullet-list">
+            <li class="responsibility-point-item">Аналіз впливу змін на IaC, конфігурації та середовища.</li>
+            <li class="responsibility-point-item">Оновлення інструкцій підтримки (Runbooks) та моніторингу.</li>
+            <li class="responsibility-point-item">Підготовка планів швидкого відкату (Rollback) для змін.</li>
+            <li class="responsibility-point-item">Фінальний Operational Readiness Review перед релізом.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer class="human-control-footer-banner">
+      <div class="human-icon-badge">
+        <i class="fa-solid fa-user-shield"></i>
+      </div>
+      <div class="human-decision-text">
+        Human-in-the-loop: ШІ готує доказову чернетку — Людина валідує, затверджує та несе відповідальність за результат.
+      </div>
+      <div class="human-highlight-label">Критичний принцип</div>
+    </footer>
+  </div>
+
+</body></html>

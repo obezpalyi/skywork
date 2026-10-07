@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1280, height=720"/>
+  <title>Scope, out of scope, залежності та ризики</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      box-sizing: border-box;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .sdlc-slide-root-canvas {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }.title-region-header-wrapper{
+      margin-top: 32px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 19px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-category-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .title-region-sub-heading {
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      margin-top: 4px;
+    }.sdlc-content-main-container{
+      flex: 1;
+      padding: 0 60px 32px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }.sdlc-scope-grid-layout{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 19px 24px;
+      align-items: stretch;
+    }.sdlc-scope-info-card{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+      transition: transform 0.2s ease;
+    }.sdlc-card-header-group{
+      display: flex;
+      align-items: center;
+      gap: 10px 12px;
+      margin-bottom: 13px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--ppt-bg-soft);
+    }
+
+    .sdlc-card-icon-wrapper {
+      width: 40px;
+      height: 40px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 20px;
+    }
+
+    .sdlc-card-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .sdlc-card-list-items {
+      list-style: none;
+      display: block;
+    }.sdlc-card-list-item{
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .sdlc-card-list-item::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--ppt-accent);
+      font-weight: bold;
+    }
+
+    .sdlc-risk-highlight {
+      color: var(--ppt-bad);
+      font-weight: 600;
+    }.sdlc-footer-note-wrapper{
+      margin-top: 19px;
+      padding: 10px 20px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      border-left: 4px solid var(--ppt-accent-2);
+    }
+
+    .sdlc-footer-note-text {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      font-style: italic;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="sdlc-slide-root-canvas">
+    <!-- Header Section -->
+    <header class="title-region-header-wrapper">
+      <div class="title-region-category-label">
+        AI-MANAGED SDLC PLAYBOOK
+      </div>
+      <h1 class="title-region-main-heading">
+        Scope, out of scope, залежності та ризики
+      </h1>
+      <p class="title-region-sub-heading">
+        Чітке визначення меж роботи, зовнішніх залежностей та потенційних конфліктів зміни з іншими частинами системи.
+      </p>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="sdlc-content-main-container">
+      <div class="sdlc-scope-grid-layout">
+        
+        <!-- Scope Card -->
+        <section class="sdlc-scope-info-card">
+          <div class="sdlc-card-header-group">
+            <div class="sdlc-card-icon-wrapper">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h2 class="sdlc-card-title-text">Scope (Обсяг робіт)</h2>
+          </div>
+          <div class="sdlc-card-list-items">
+            <div class="sdlc-card-list-item">Конкретний перелік функцій, що реалізуються в межах задачі.</div>
+            <div class="sdlc-card-list-item">Чіткі технічні та бізнес-межі виконання.</div>
+            <div class="sdlc-card-list-item">Очікувані зміни в інтерфейсі, логіці або даних.</div>
+          </div>
+        </section>
+
+        <!-- Out of Scope Card -->
+        <section class="sdlc-scope-info-card">
+          <div class="sdlc-card-header-group">
+            <div class="sdlc-card-icon-wrapper">
+              <i class="fa-solid fa-ban"></i>
+            </div>
+            <h2 class="sdlc-card-title-text">Out of Scope</h2>
+          </div>
+          <div class="sdlc-card-list-items">
+            <div class="sdlc-card-list-item">Що свідомо не входить у поточну задачу.</div>
+            <div class="sdlc-card-list-item">Запобігання неконтрольованому розширенню меж (scope creep).</div>
+            <div class="sdlc-card-list-item">Функціональність, що відкладена на наступні етапи.</div>
+          </div>
+        </section>
+
+        <!-- Dependencies Card -->
+        <section class="sdlc-scope-info-card">
+          <div class="sdlc-card-header-group">
+            <div class="sdlc-card-icon-wrapper">
+              <i class="fa-solid fa-link"></i>
+            </div>
+            <h2 class="sdlc-card-title-text">Залежності</h2>
+          </div>
+          <div class="sdlc-card-list-items">
+            <div class="sdlc-card-list-item">Суміжні команди та зовнішні постачальники рішень.</div>
+            <div class="sdlc-card-list-item">Взаємозв&#39;язки з іншими системами та API.</div>
+            <div class="sdlc-card-list-item">Необхідні дані, конфігурації та тестові середовища.</div>
+          </div>
+        </section>
+
+        <!-- Risks Card -->
+        <section class="sdlc-scope-info-card">
+          <div class="sdlc-card-header-group">
+            <div class="sdlc-card-icon-wrapper">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h2 class="sdlc-card-title-text">Ризики</h2>
+          </div>
+          <div class="sdlc-card-list-items">
+            <div class="sdlc-card-list-item">Невизначеність у вимогах або технічна складність.</div>
+            <div class="sdlc-card-list-item">Можливі конфлікти з паралельними змінами в системі.</div>
+            <div class="sdlc-card-list-item">Вплив на стабільність релізу або продуктивне середовище.</div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Footer Annotation -->
+      <footer class="sdlc-footer-note-wrapper">
+        <p class="sdlc-footer-note-text">
+          <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i>
+          AI-асистент допомагає виявити приховані залежності та ризики на основі аналізу всієї проєктної документації, забезпечуючи повноту Jira task.
+        </p>
+      </footer>
+    </main>
+  </div>
+
+</body></html>

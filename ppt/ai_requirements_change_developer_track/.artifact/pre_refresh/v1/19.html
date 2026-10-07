@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Аналіз зворотної сумісності</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-compatibility-analysis-root {
+      width: 1280px; height: 720px;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-bg);
+      
+    }
+
+    /* Non-cover title region — fixed per design */
+    .title-region-compatibility {
+      margin-top: 32px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-region-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-eyebrow-badge {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .title-region-rule-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* main body flex container - fills remaining height */
+    .compatibility-body-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 40px;
+      gap: 18px;
+       /* allowed for flex container, not for text cards */
+    }
+
+    /* top row: two peer cards */
+    .compatibility-peer-row {
+      display: flex;
+      align-items: stretch;
+      gap: 18px;
+      flex: 1 1 0;
+      
+    }
+
+    .compatibility-peer-card {
+      flex: 1;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .compatibility-peer-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .compatibility-peer-card-icon {
+      color: var(--ppt-accent);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .compatibility-peer-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .compatibility-peer-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .compatibility-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      line-height: 1.45;
+      color: var(--ppt-text-2);
+    }
+
+    .compatibility-check-item i {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      margin-top: 3px;
+      width: 16px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .compatibility-check-item strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    /* bottom row: dominant evidence panel */
+    .compatibility-evidence-panel {
+      flex: 1 1 0;
+      background: var(--ppt-bg-soft);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      
+    }
+
+    .compatibility-evidence-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .compatibility-evidence-header i {
+      color: var(--ppt-accent);
+      font-size: 22px;
+    }
+
+    .compatibility-evidence-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .compatibility-evidence-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      flex: 1 1 0;
+      
+    }
+
+    .compatibility-evidence-cell {
+      flex: 1 1 160px;
+      background: var(--ppt-surface);
+      border-left: 3px solid var(--ppt-accent);
+      border-radius: var(--ppt-radius-sm);
+      padding: 12px 14px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .compatibility-evidence-cell-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .compatibility-evidence-cell-text {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .compatibility-evidence-cell-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    /* no flex on list items */
+    .compatibility-check-item, .compatibility-evidence-cell {
+      list-style: none;
+    }
+  
+html { overflow: hidden; }
+</style>
+  <!-- Font Awesome via CDN (explicit import, no comments) -->
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-compatibility-analysis-root">
+    <!-- Fixed title region per design -->
+    <header class="title-region-compatibility">
+      <div class="title-region-eyebrow-row">
+        <span class="title-region-eyebrow-badge">Developer Track</span>
+        <div class="title-region-rule-line"></div>
+      </div>
+      <h1 class="title-region-heading">Аналіз зворотної сумісності</h1>
+    </header>
+
+    <!-- Main body: two peer cards + evidence panel -->
+    <div class="compatibility-body-wrapper">
+      <div class="compatibility-peer-row">
+        <!-- Card 1: Старі клієнти API -->
+        <div class="compatibility-peer-card">
+          <div class="compatibility-peer-card-header">
+            <i class="fa-solid fa-code-branch compatibility-peer-card-icon"></i>
+            <div class="compatibility-peer-card-title">Старі клієнти API</div>
+          </div>
+          <div class="compatibility-peer-card-body">
+            <div class="compatibility-check-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Ігнорування поля:</strong> чи можуть старі клієнти ігнорувати нове поле без помилок?</span>
+            </div>
+            <div class="compatibility-check-item">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>Валідність значення:</strong> чи приймають поточні споживачі новий priority value?</span>
+            </div>
+            <div class="compatibility-check-item">
+              <i class="fa-solid fa-anchor-circle-check"></i>
+              <span><strong>Default-поведінка:</strong> що відбувається, коли дані пріоритету відсутні?</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Версіонування схем -->
+        <div class="compatibility-peer-card">
+          <div class="compatibility-peer-card-header">
+            <i class="fa-solid fa-sitemap compatibility-peer-card-icon"></i>
+            <div class="compatibility-peer-card-title">Версіонування схем</div>
+          </div>
+          <div class="compatibility-peer-card-body">
+            <div class="compatibility-check-item">
+              <i class="fa-solid fa-bridge-circle-check"></i>
+              <span><strong>Версія event-схеми:</strong> чи потрібне версіонування для нових подій ескалації?</span>
+            </div>
+            <div class="compatibility-check-item">
+              <i class="fa-solid fa-building-circle-check"></i>
+              <span><strong>Сумісність даних:</strong> чи є зміни в БД адитивними (без руйнування)?</span>
+            </div>
+            <div class="compatibility-check-item">
+              <i class="fa-solid fa-envelope-circle-check"></i>
+              <span><strong>Контракт API:</strong> чи зберігається зворотна сумісність для старих версій?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Evidence panel: співіснування версій -->
+      <div class="compatibility-evidence-panel">
+        <div class="compatibility-evidence-header">
+          <i class="fa-solid fa-shield"></i>
+          <div class="compatibility-evidence-title">Співіснування версій та відкат</div>
+        </div>
+        <div class="compatibility-evidence-grid" style="margin-bottom: 4px !important;">
+          <div class="compatibility-evidence-cell">
+            <div class="compatibility-evidence-cell-label">Розгортання</div>
+            <div class="compatibility-evidence-cell-text"><strong>Чи можуть старі інстанси</strong> працювати паралельно під час rollout?</div>
+          </div>
+          <div class="compatibility-evidence-cell">
+            <div class="compatibility-evidence-cell-label">Відкат</div>
+            <div class="compatibility-evidence-cell-text"><strong>Що відбувається</strong> при rollback до попередньої версії?</div>
+          </div>
+          <div class="compatibility-evidence-cell">
+            <div class="compatibility-evidence-cell-label">Feature flag</div>
+            <div class="compatibility-evidence-cell-text"><strong>Чи захищає флаг</strong> усі змінені шляхи виконання?</div>
+          </div>
+          <div class="compatibility-evidence-cell">
+            <div class="compatibility-evidence-cell-label">Докази</div>
+            <div class="compatibility-evidence-cell-text"><strong>Вимога:</strong> контракт або реалізація має підтверджувати сумісність.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

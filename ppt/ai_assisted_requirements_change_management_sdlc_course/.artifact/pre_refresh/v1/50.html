@@ -1,0 +1,376 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Approval і decision record</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">:root {
+  --ppt-chart-1: #2563EB;
+  --ppt-chart-2: #06B6D4;
+  --ppt-chart-3: #6366F1;
+  --ppt-chart-4: #F59E0B;
+  --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+      
+      
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background-color: var(--ppt-bg);
+    }
+
+    .title-region-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-breadcrumb {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .content-area-wrapper {
+      flex: 1;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: stretch;
+      gap: 24px;
+    }
+
+    .decision-record-left-column {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .decision-record-right-column {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .dr-structure-card-item {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .dr-structure-header-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .dr-structure-icon-box {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ppt-bg-soft);
+      color: var(--ppt-accent);
+      border-radius: var(--ppt-radius-sm);
+      font-size: 16px;
+    }
+
+    .dr-structure-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .dr-structure-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      flex: 1;
+    }
+
+    .dr-field-entry-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .dr-field-label-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .dr-field-value-text {
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .governance-role-panel-item {
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px;
+      border-left: 4px solid var(--ppt-text-3);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .governance-role-panel-item.human-role {
+      border-left-color: var(--ppt-good);
+      background: #f0fdf4;
+    }
+
+    .governance-role-header-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .governance-role-title-label {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .governance-list-container {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .governance-list-item-row {
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .governance-list-item-row i {
+      margin-top: 4px;
+      font-size: 14px;
+      color: var(--ppt-accent);
+    }
+
+    .human-role .governance-list-item-row i {
+      color: var(--ppt-good);
+    }
+
+    .summary-takeaway-footer-block {
+      background: var(--ppt-text-1);
+      color: var(--ppt-surface);
+      padding: 12px 24px;
+      border-radius: var(--ppt-radius-md);
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .summary-takeaway-footer-block span {
+      color: var(--ppt-accent-2);
+      font-weight: 700;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+
+<div class="slide-root-container">
+  <!-- Title Region -->
+  <header class="title-region-wrapper">
+    <div class="title-region-breadcrumb">
+      AI-MANAGED SDLC PLAYBOOK
+    </div>
+    <h1 class="title-region-main-heading">
+      Approval і decision record
+    </h1>
+  </header>
+
+  <!-- Content Area -->
+  <div class="content-area-wrapper">
+    <!-- Left Column: Structure of DR -->
+    <div class="decision-record-left-column">
+      <div class="dr-structure-card-item">
+        <div class="dr-structure-header-group">
+          <div class="dr-structure-icon-box">
+            <i class="fa-solid fa-file-signature"></i>
+          </div>
+          <div class="dr-structure-title-text">Анатомія Decision Record (DR)</div>
+        </div>
+        
+        <div class="dr-structure-grid-layout">
+          <div class="dr-field-entry-wrapper">
+            <div class="dr-field-label-text">Контекст</div>
+            <div class="dr-field-value-text">Причини виникнення потреби та поточна ситуація.</div>
+          </div>
+          <div class="dr-field-entry-wrapper">
+            <div class="dr-field-label-text">Варіанти</div>
+            <div class="dr-field-value-text">Порівняння альтернатив: від мінімальної до рекомендованої.</div>
+          </div>
+          <div class="dr-field-entry-wrapper">
+            <div class="dr-field-label-text">Критерії</div>
+            <div class="dr-field-value-text">Чим керувалися при виборі (вартість, ризики, швидкість).</div>
+          </div>
+          <div class="dr-field-entry-wrapper">
+            <div class="dr-field-label-text">Рішення</div>
+            <div class="dr-field-value-text">Фінальний вибір та його обґрунтування.</div>
+          </div>
+          <div class="dr-field-entry-wrapper">
+            <div class="dr-field-label-text">Наслідки</div>
+            <div class="dr-field-value-text">Вплив на архітектуру, ресурси та майбутній розвиток.</div>
+          </div>
+          <div class="dr-field-entry-wrapper">
+            <div class="dr-field-label-text">Статус</div>
+            <div class="dr-field-value-text">Дата, Owner, Approver та поточний стан виконання.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-takeaway-footer-block">
+        Правило: <span>AI готує evidence-backed чернетку</span>, людина приймає рішення та відповідальність.
+      </div>
+    </div>
+
+    <!-- Right Column: Governance &amp; Roles -->
+    <div class="decision-record-right-column">
+      <!-- AI Role -->
+      <div class="governance-role-panel-item">
+        <div class="governance-role-header-box">
+          <div class="dr-structure-icon-box" style="background: #e0f2fe;">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="governance-role-title-label">Роль ШІ</div>
+        </div>
+        <ul class="governance-list-container">
+          <li class="governance-list-item-row">
+            <i class="fa-solid fa-circle-check"></i>
+            Збір фактів із різних документів
+          </li>
+          <li class="governance-list-item-row">
+            <i class="fa-solid fa-check"></i>
+            Структурування варіантів рішення
+          </li>
+          <li class="governance-list-item-row">
+            <i class="fa-solid fa-anchor-circle-check"></i>
+            Оцінка ризиків для кожного сценарію
+          </li>
+          <li class="governance-list-item-row">
+            <i class="fa-solid fa-bridge-circle-check"></i>
+            Формування чернетки Decision Record
+          </li>
+        </ul>
+      </div>
+
+      <!-- Human Role -->
+      <div class="governance-role-panel-item human-role">
+        <div class="governance-role-header-box">
+          <div class="dr-structure-icon-box" style="background: #dcfce7; color: var(--ppt-good);">
+            <i class="fa-solid fa-user-check"></i>
+          </div>
+          <div class="governance-role-title-label">Роль людини</div>
+        </div>
+        <ul class="governance-list-container">
+          <li class="governance-list-item-row">
+            <i class="fa-solid fa-shield-halved"></i>
+            Верифікація повноти аналізу ШІ
+          </li>
+          <li class="governance-list-item-row">
+            <i class="fa-solid fa-shield-halved"></i>
+            Вибір оптимального варіанта (Approval)
+          </li>
+          <li class="governance-list-item-row">
+            <i class="fa-solid fa-shield-halved"></i>
+            Фіксація персональної відповідальності
+          </li>
+          <li class="governance-list-item-row">
+            <i class="fa-solid fa-shield-halved"></i>
+            Комунікація рішення стейкхолдерам
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body></html>

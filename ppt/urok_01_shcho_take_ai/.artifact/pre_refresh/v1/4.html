@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Алгоритм, дані та модель</title>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+        :root {
+            --ppt-bg: #F8FAFC;
+            --ppt-bg-soft: #F1F5F9;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E2E8F0;
+            --ppt-border: #CBD5E1;
+            --ppt-text-1: #0F172A;
+            --ppt-text-2: #475569;
+            --ppt-text-3: #64748B;
+            --ppt-accent: #0D9488;
+            --ppt-accent-2: #0891B2;
+            --ppt-chart-1: #0D9488;
+            --ppt-chart-2: #0891B2;
+            --ppt-chart-3: #4F46E5;
+            --ppt-chart-4: #7C3AED;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 6px;
+            --ppt-radius-lg: 10px;
+            --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+            --ppt-font-mono: "IBM Plex Mono", monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: #F8FAFC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            font-family: var(--ppt-font-body);
+        }
+
+        /* Slide root: fixed 1280x720, flex column */
+        .slide-root {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            
+            box-shadow: var(--ppt-shadow-strong);
+        }
+
+        /* ---- Title region (fixed cross-slide pattern) ---- */
+        .title-region {
+            margin-top: 36px;
+            margin-right: 64px;
+            margin-bottom: 24px;
+            margin-left: 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .title-region-top-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-region-badge {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ppt-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--ppt-bg-soft);
+            padding: 4px 8px;
+            border-radius: var(--ppt-radius-sm);
+            display: inline-block;
+        }
+
+        .title-region-main-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .title-accent-line {
+            width: 4px;
+            height: 46px;
+            background: var(--ppt-accent);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .title-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .title-heading {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .title-subtitle {
+            margin: 4px 0 0 0;
+            font-family: var(--ppt-font-body);
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+        }
+
+        /* ---- Main body: flex:1, three open columns with vertical rules ---- */
+        .main-body-region {
+            flex: 1 1 0;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 48px; /* bottom safety gap */
+            display: flex;
+            align-items: stretch;
+             /* allowed? No: min-height:0 prohibited globally. Use default */
+        }
+
+        /* fix: must not use min-height:0; set explicit flex behavior */
+        .components-columns-wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .component-column-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* natural top-to-bottom flow, visible container */
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        /* vertical rule between columns */
+        .component-column-item + .component-column-item {
+            border-left: 1px solid var(--ppt-border);
+        }
+
+        /* first column no left padding? keep alignment */
+        .component-column-item:first-child {
+            padding-left: 0;
+        }
+        .component-column-item:last-child {
+            padding-right: 0;
+        }
+
+        /* mono tag at top of each column */
+        .component-mono-tag {
+            font-family: var(--ppt-font-mono);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            background: var(--ppt-bg-soft);
+            padding: 6px 10px;
+            border-radius: var(--ppt-radius-sm);
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: 18px;
+            letter-spacing: 0.02em;
+            border-left: 3px solid var(--ppt-accent);
+        }
+
+        .component-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+            margin-bottom: 14px;
+        }
+
+        .component-definition {
+            font-family: var(--ppt-font-body);
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.55;
+            margin-bottom: 20px;
+        }
+
+        .component-example-block {
+            margin-top: 8px;
+        }
+
+        .example-label {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ppt-text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+        }
+
+        .example-text {
+            font-family: var(--ppt-font-body);
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            border-left: 2px solid var(--ppt-surface-2);
+            padding-left: 14px;
+        }
+
+        /* small highlight note for contrast */
+        .model-highlight {
+            background: var(--ppt-bg-soft);
+            padding: 12px 14px;
+            border-radius: var(--ppt-radius-md);
+            margin-top: 16px;
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--ppt-text-2);
+            border-left: 3px solid var(--ppt-accent-2);
+        }
+
+        /* ensure no fixed heights, natural flow */
+        .component-column-item > * {
+            flex-shrink: 0;
+        }
+
+        /* remove underline / default */
+        .no-extra {
+            border: none;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Title region: fixed template with dynamic title/subtitle -->
+        <header class="title-region">
+            <div class="title-region-top-row">
+                <span class="title-region-badge">Unit: Artificial Intelligence</span>
+            </div>
+            <div class="title-region-main-row">
+                <div class="title-accent-line"></div>
+                <div class="title-text-wrapper">
+                    <h1 class="title-heading">Алгоритм, дані та модель</h1>
+                    <p class="title-subtitle">Три складові, що перетворюють правила на навчену математичну структуру</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main body: open three-column layout with weak vertical rules -->
+        <div class="main-body-region">
+            <div class="components-columns-wrapper">
+                <!-- Column 1: Алгоритм -->
+                <div class="component-column-item">
+                    <span class="component-mono-tag">01 / алгоритм</span>
+                    <h2 class="component-heading">Послідовність правил</h2>
+                    <p class="component-definition">
+                        Чітко заданий набір інструкцій або дій, які система виконує крок за кроком. 
+                        Алгоритм не навчається — він точно виконує прописану логіку.
+                    </p>
+                    <div class="component-example-block">
+                        <div class="example-label">Приклад</div>
+                        <div class="example-text">
+                            Калькулятор додає числа за фіксованими правилами арифметики, без жодних припущень чи прогнозів.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Дані -->
+                <div class="component-column-item">
+                    <span class="component-mono-tag">02 / дані</span>
+                    <h2 class="component-heading">Приклади та спостереження</h2>
+                    <p class="component-definition">
+                        Набір прикладів або спостережень, на яких система будує свої висновки. 
+                        Дані — це сировина, з якої модель виявляє закономірності.
+                    </p>
+                    <div class="component-example-block">
+                        <div class="example-label">Приклад</div>
+                        <div class="example-text">
+                            Тисячі фотографій котів і собак, розмічених людьми, стають основою для навчання розпізнавання зображень.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Модель -->
+                <div class="component-column-item">
+                    <span class="component-mono-tag">03 / модель</span>
+                    <h2 class="component-heading">Навчена математична структура</h2>
+                    <p class="component-definition">
+                        Модель — це результат навчання: математична структура, що використовує знайдені закономірності 
+                        для прогнозу або генерації нового результату.
+                    </p>
+                    <div class="component-example-block">
+                        <div class="example-label">Приклад</div>
+                        <div class="example-text">
+                            Модель розпізнавання зображень оцінює, що найімовірніше зображено на фото, а не шукає точний збіг із правилом.
+                        </div>
+                    </div>
+                    <div class="model-highlight">
+                        <strong>Ключова відмінність:</strong> калькулятор виконує точні правила, а модель узагальнює на основі даних.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

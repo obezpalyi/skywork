@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Підсумковий проєкт QA Capstone</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+
+        :root {
+            --ppt-bg: #F8FAFC;
+            --ppt-bg-soft: #F1F5F9;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E2E8F0;
+            --ppt-border: #CBD5E1;
+            --ppt-text-1: #0F172A;
+            --ppt-text-2: #475569;
+            --ppt-text-3: #94A3B8;
+            --ppt-accent: #0D9488;
+            --ppt-accent-2: #6366F1;
+            --ppt-chart-1: #0D9488;
+            --ppt-chart-2: #6366F1;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EC4899;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+            --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --ppt-font-display: "Montserrat", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .qa-capstone-slide-root {
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 64px;
+            
+            position: relative;
+        }
+
+        /* Non-Cover-Page Title Region */
+        .title-region-qa-capstone {
+            display: flex;
+            flex-direction: column;
+            margin-top: 48px;
+            margin-bottom: 36px;
+            flex-shrink: 0;
+        }
+
+        .title-region-qa-capstone .title-eyebrow-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .title-region-qa-capstone .title-accent-rail {
+            width: 4px;
+            height: 16px;
+            background-color: var(--ppt-accent);
+        }
+
+        .title-region-qa-capstone .title-eyebrow-text {
+            font-family: var(--ppt-font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+        }
+
+        .title-region-qa-capstone .title-heading-capstone {
+            font-family: var(--ppt-font-display);
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .title-region-qa-capstone .title-subtitle-capstone {
+            font-family: var(--ppt-font-body);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            margin-top: 4px;
+        }
+
+        /* Special Open Layout: Capstone Hero */
+        .capstone-hero-body-layout {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 48px;
+            
+            margin-bottom: 48px;
+        }
+
+        /* Left dominant keyword anchor */
+        .capstone-hero-left-anchor {
+            flex: 0 0 38%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .capstone-hero-left-anchor .capstone-keyword-mega {
+            font-family: var(--ppt-font-display);
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--ppt-text-1);
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .capstone-hero-left-anchor .capstone-keyword-accent {
+            color: var(--ppt-accent);
+        }
+
+        .capstone-hero-left-anchor .capstone-keyword-sub {
+            font-family: var(--ppt-font-body);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--ppt-text-2);
+            margin-top: 12px;
+            line-height: 1.4;
+            max-width: 90%;
+        }
+
+        /* Right column: detailed requirements */
+        .capstone-hero-right-details {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .capstone-task-intro-block {
+            border-left: 3px solid var(--ppt-accent);
+            padding-left: 20px;
+        }
+
+        .capstone-task-intro-block .capstone-task-lead {
+            font-family: var(--ppt-font-body);
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--ppt-text-2);
+        }
+
+        .capstone-task-intro-block .capstone-task-lead strong {
+            color: var(--ppt-text-1);
+            font-weight: 600;
+        }
+
+        .capstone-steps-list-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .capstone-step-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-family: var(--ppt-font-body);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--ppt-text-1);
+            line-height: 1.4;
+        }
+
+        .capstone-step-item .capstone-step-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: var(--ppt-radius-sm);
+            background-color: var(--ppt-bg-soft);
+            color: var(--ppt-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .capstone-step-item .capstone-step-text {
+            flex: 1;
+        }
+
+        .capstone-step-item .capstone-step-text strong {
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }
+
+        .capstone-deliverable-note {
+            margin-top: 8px;
+            padding: 14px 18px;
+            background-color: var(--ppt-surface);
+            border-radius: var(--ppt-radius-lg);
+            border: 1px solid var(--ppt-border);
+            box-shadow: var(--ppt-shadow-soft);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .capstone-deliverable-note i {
+            color: var(--ppt-accent);
+            font-size: 18px;
+            margin-top: 2px;
+        }
+
+        .capstone-deliverable-note .capstone-deliverable-text {
+            font-family: var(--ppt-font-body);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--ppt-text-2);
+        }
+
+        .capstone-deliverable-note .capstone-deliverable-text strong {
+            color: var(--ppt-text-1);
+            font-weight: 600;
+        }
+
+        /* Responsive / safety */
+        .capstone-hero-right-details .capstone-step-item {
+            list-style: none;
+        }
+
+        .capstone-hero-right-details ul {
+            list-style: none;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="qa-capstone-slide-root">
+        <!-- Title Region -->
+        <header class="title-region-qa-capstone">
+            <div class="title-eyebrow-wrapper">
+                <div class="title-accent-rail"></div>
+                <span class="title-eyebrow-text">SERVICEHUB QA TRACK</span>
+            </div>
+            <h1 class="title-heading-capstone">Підсумковий проєкт QA Capstone</h1>
+            <h2 class="title-subtitle-capstone">Комплексне опрацювання нової зміни ServiceHub: від тестованості до готовності</h2>
+        </header>
+
+        <!-- Special Open Layout: Capstone Hero -->
+        <div class="capstone-hero-body-layout">
+            <!-- Left dominant keyword anchor -->
+            <div class="capstone-hero-left-anchor">
+                <div class="capstone-keyword-mega">
+                    QA<br/>
+                    <span class="capstone-keyword-accent">CAPSTONE</span>
+                </div>
+                <div class="capstone-keyword-sub">
+                    Наскрізне завдання на основі нової зміни ServiceHub
+                </div>
+            </div>
+
+            <!-- Right detailed column -->
+            <div class="capstone-hero-right-details">
+                <div class="capstone-task-intro-block">
+                    <p class="capstone-task-lead">
+                        <strong>Мета:</strong> застосувати всі чотири QA-воркфлоу до нової зміни в ServiceHub — від аналізу тестованості до фінального висновку про готовність. Усі висновки мають спиратися на докази, а не на припущення.
+                    </p>
+                </div>
+
+                <ul class="capstone-steps-list-wrapper">
+                    <li class="capstone-step-item">
+                        <span class="capstone-step-icon"><i class="fa-solid fa-circle-question"></i></span>
+                        <span class="capstone-step-text"><strong>1. Тестованість:</strong> виконати review вимог, виявити прогалини та сформулювати уточнювальні запитання.</span>
+                    </li>
+                    <li class="capstone-step-item">
+                        <span class="capstone-step-icon"><i class="fa-solid fa-clipboard-list"></i></span>
+                        <span class="capstone-step-text"><strong>2. Тест-дизайн:</strong> створити тестові умови та збалансований набір тестів.</span>
+                    </li>
+                    <li class="capstone-step-item">
+                        <span class="capstone-step-icon"><i class="fa-solid fa-database"></i></span>
+                        <span class="capstone-step-text"><strong>3. Дані:</strong> підготувати синтетичні тестові дані без реальних персональних даних.</span>
+                    </li>
+                    <li class="capstone-step-item">
+                        <span class="capstone-step-icon"><i class="fa-solid fa-diagram-project"></i></span>
+                        <span class="capstone-step-text"><strong>4. Простежуваність:</strong> побудувати матрицю покриття вимога → тест → результат.</span>
+                    </li>
+                    <li class="capstone-step-item">
+                        <span class="capstone-step-icon"><i class="fa-solid fa-code-branch"></i></span>
+                        <span class="capstone-step-text"><strong>5. Регресія:</strong> визначити прямий і непрямий вплив зміни на існуючі тести.</span>
+                    </li>
+                    <li class="capstone-step-item">
+                        <span class="capstone-step-icon"><i class="fa-solid fa-tag"></i></span>
+                        <span class="capstone-step-text"><strong>6. Класифікація:</strong> класифікувати одне спірне питання як дефект або запит на зміну.</span>
+                    </li>
+                    <li class="capstone-step-item">
+                        <span class="capstone-step-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span class="capstone-step-text"><strong>7. Готовність:</strong> сформувати обґрунтований висновок про готовність до релізу.</span>
+                    </li>
+                </ul>
+
+                <div class="capstone-deliverable-note">
+                    <i class="fa-solid fa-file"></i>
+                    <span class="capstone-deliverable-text">
+                        <strong>Підсумок:</strong> тестовий пакет, реєстр питань, матриця покриття, регресійний звіт і висновок про готовність, що спираються на затверджені вимоги.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

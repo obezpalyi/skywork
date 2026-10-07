@@ -1,0 +1,221 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "ai_assisted_requirements_change_management_sdlc_course",
+  "artifact_path": "ppt/ai_assisted_requirements_change_management_sdlc_course",
+  "pptTitle": "Управління вимогами т…",
+  "ppt_title": "Управління вимогами т…",
+  "outlineArtifactPath": "ppt/ai_assisted_requirements_change_management_sdlc_course/outline.md",
+  "outline_artifact_path": "ppt/ai_assisted_requirements_change_management_sdlc_course/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-bcb5bb24ae.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-bcb5bb24ae.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-bcb5bb24ae.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/ai_assisted_requirements_change_management_sdlc_course/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/ai_assisted_requirements_change_management_sdlc_course/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-bcb5bb24ae.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-bcb5bb24ae.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/ai_assisted_requirements_change_management_sdlc_course/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/ai_assisted_requirements_change_management_sdlc_course/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Згенеруй один повний навчальний PPT-deck українською для курсу «Управління вимогами та змінами в SDLC із застосуванням штучного інтелекту». Курс складається з 9 сесій; для кожної сесії потрібно від 7 до 9 слайдів і не більше 10. Окремо додай вступ до курсу, блок самостійної практики, онлайн-тест і сертифікат як додатковий бонус. Xplore використовувати як практичний засіб реалізації AI-assisted workflows, а не як основну тему курсу. Не згадувати bidXplore, salesXplore, solveXplore або auditXplore.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "auto_increase_ratio": 0.35,
+  "auto_increase_bucket": 0.5247,
+  "region": "US",
+  "prepared_session_id": "019ff605-7524-73f2-9939-8e95015faa7f",
+  "prepared_question_id": "Q-cac174ad8d66",
+  "prepared_target_path": "ppt/ai_assisted_requirements_change_management_sdlc_course",
+  "prepared_state_id": "pps_07aa75cab74104117e4ad73d37df7b05",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "2": [],
+    "20": [],
+    "21": [],
+    "22": [],
+    "23": [],
+    "24": [],
+    "25": [],
+    "26": [],
+    "27": [],
+    "28": [],
+    "29": [],
+    "3": [],
+    "30": [],
+    "31": [],
+    "32": [],
+    "33": [],
+    "34": [],
+    "35": [],
+    "36": [],
+    "37": [],
+    "38": [],
+    "39": [],
+    "4": [],
+    "40": [],
+    "41": [],
+    "42": [],
+    "43": [],
+    "44": [],
+    "45": [],
+    "46": [],
+    "47": [],
+    "48": [],
+    "49": [],
+    "5": [],
+    "50": [],
+    "51": [],
+    "52": [],
+    "53": [],
+    "54": [],
+    "55": [],
+    "56": [],
+    "57": [],
+    "58": [],
+    "59": [],
+    "6": [],
+    "60": [],
+    "61": [],
+    "62": [],
+    "63": [],
+    "64": [],
+    "65": [],
+    "66": [],
+    "67": [],
+    "68": [],
+    "69": [],
+    "7": [],
+    "70": [],
+    "71": [],
+    "72": [],
+    "73": [],
+    "74": [],
+    "75": [],
+    "76": [],
+    "77": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:aa0ba483cad7ea24139c33415a4672203a0f9bb6f8d64c7a57ebb905bf8d6e70",
+  "init_request_fingerprint": "sha256:dfb1bfdd4e7e9c50be0b408dc98edd9d6f39ace077bd1267d1c70ccec5a66227",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:a8de30f92cd16c1b924c475434adb60edd4a4079362ef49b0e7fc48e533ad796",
+  "outline_artifact_sha256": "sha256:79e35cd5218425e95488608325cf8051ab69daf501d8ba90b5388169b0110bcd",
+  "prepared_inputs": [
+    {
+      "path": "ppt/ai_assisted_requirements_change_management_sdlc_course/design_guideline.md",
+      "size": 9360,
+      "sha256": "sha256:04d476cdce47a77392a874d414e48ed702aea79f6b6ac8931ce5a6ca6b8f1eb2"
+    },
+    {
+      "path": "ppt/ai_assisted_requirements_change_management_sdlc_course/final_report.md",
+      "size": 44708,
+      "sha256": "sha256:a8de30f92cd16c1b924c475434adb60edd4a4079362ef49b0e7fc48e533ad796"
+    },
+    {
+      "path": "ppt/ai_assisted_requirements_change_management_sdlc_course/outline.json",
+      "size": 33208,
+      "sha256": "sha256:0d76938552da89b22b9838a283916c8742d751785ed999bcc26013056089546e"
+    },
+    {
+      "path": "ppt/ai_assisted_requirements_change_management_sdlc_course/outline.md",
+      "size": 24022,
+      "sha256": "sha256:79e35cd5218425e95488608325cf8051ab69daf501d8ba90b5388169b0110bcd"
+    },
+    {
+      "path": "ppt/ai_assisted_requirements_change_management_sdlc_course/prepared_images/cover_6094d49d219b_2094331578005917697.png",
+      "size": 1144594,
+      "sha256": "sha256:5fb14071d7c496e3a7c646e840d9e1d9efb546eac9680285168f7e751fa3ec37"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json",
+      "prepared_images/cover_6094d49d219b_2094331578005917697.png"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "auto_mode",
+      "auto_increase_miss",
+      "standard_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "generated",
+      "applied": true
+    },
+    "dropped_images": null,
+    "warnings": null,
+    "mock": false
+  }
+}

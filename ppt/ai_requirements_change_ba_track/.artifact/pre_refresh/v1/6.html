@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Структура багаторазового промпту для бізнес-аналітика</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+:root {
+  --ppt-bg: #F8FAFC;
+  --ppt-bg-soft: #EEF2F6;
+  --ppt-surface: #FFFFFF;
+  --ppt-surface-2: #F1F5F9;
+  --ppt-border: #CBD5E1;
+  --ppt-text-1: #0F172A;
+  --ppt-text-2: #475569;
+  --ppt-text-3: #94A3B8;
+  --ppt-accent: #0D9488;
+  --ppt-accent-2: #6366F1;
+  --ppt-chart-1: #0D9488;
+  --ppt-chart-2: #6366F1;
+  --ppt-chart-3: #F59E0B;
+  --ppt-chart-4: #EC4899;
+  --ppt-good: #10B981;
+  --ppt-warn: #F59E0B;
+  --ppt-bad: #EF4444;
+  --ppt-radius-sm: 2px;
+  --ppt-radius-md: 6px;
+  --ppt-radius-lg: 10px;
+  --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --ppt-font-display: "Inter", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+  --ppt-font-mono: "JetBrains Mono", monospace;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+    }.slide-root{
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0;
+      
+      position: relative;
+    }.title-region{
+      margin-top: 24px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-overline-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-accent-bar {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 32px;
+      border-radius: var(--ppt-radius-sm);
+      flex-shrink: 0;
+    }
+
+    .title-overline-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-overline-text {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+      margin: 0;
+    }
+
+    .title-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-subtitle {
+      margin: 0;
+      margin-left: 16px;
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+    }.body-content{
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 21px;
+      display: flex;
+      flex-direction: column;
+      
+    }.prompt-structure-grid{
+      display: flex;
+      flex: 1 1 0;
+      flex-direction: column;
+      gap: 6px 12px;
+      
+    }
+
+    .prompt-element-row {
+      display: flex;
+      align-items: stretch;
+      flex: 1 1 0;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      box-shadow: var(--ppt-shadow-soft);
+      
+      
+    }
+
+    .prompt-element-marker {
+      width: 72px;
+      background-color: var(--ppt-bg-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border-right: 1px solid var(--ppt-border);
+    }.prompt-element-marker i{
+      font-size: 25px;
+      color: var(--ppt-accent);
+    }.prompt-element-content{
+      padding: 7px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px 6px;
+      flex: 1;
+    }
+
+    .prompt-element-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }.prompt-element-desc{
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }.required-instruction-banner{
+      background-color: var(--ppt-surface-2);
+      border-left: 4px solid var(--ppt-accent-2);
+      padding: 6px 18px;
+      border-radius: 0 var(--ppt-radius-md) var(--ppt-radius-md) 0;
+      display: flex;
+      align-items: center;
+      gap: 6px 12px;
+      flex-shrink: 0;
+    }
+
+    .required-instruction-banner i {
+      font-size: 20px;
+      color: var(--ppt-accent-2);
+      flex-shrink: 0;
+    }
+
+    .required-instruction-text {
+      font-family: var(--ppt-font-mono);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+    }
+
+    .prompt-element-marker i.fa-user-tie,
+    .prompt-element-marker i.fa-diagram-project,
+    .prompt-element-marker i.fa-wand-magic-sparkles,
+    .prompt-element-marker i.fa-table-list,
+    .prompt-element-marker i.fa-circle-check {
+      color: var(--ppt-accent);
+    }
+
+    .prompt-element-marker i.fa-user-tie {
+      color: var(--ppt-accent);
+    }
+
+    .prompt-element-marker i.fa-diagram-project {
+      color: var(--ppt-accent-2);
+    }
+
+    .prompt-element-marker i.fa-wand-magic-sparkles {
+      color: var(--ppt-chart-3);
+    }
+
+    .prompt-element-marker i.fa-table-list {
+      color: var(--ppt-chart-4);
+    }
+
+    .prompt-element-marker i.fa-circle-check {
+      color: var(--ppt-good);
+    }
+
+    .prompt-element-desc strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <header class="title-region">
+      <div class="title-overline-row">
+        <span class="title-accent-bar"></span>
+        <div class="title-overline-wrapper">
+          <span class="title-overline-text">BA Track | ServiceHub</span>
+          <h1 class="title-heading">Структура багаторазового промпту</h1>
+        </div>
+      </div>
+      <p class="title-subtitle">П&#39;ять елементів ефективного промпту для аналітика</p>
+    </header>
+
+    <main class="body-content">
+      <div class="prompt-structure-grid">
+        <!-- Роль -->
+        <div class="prompt-element-row">
+          <div class="prompt-element-marker">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <div class="prompt-element-content">
+            <div class="prompt-element-title">1. Роль</div>
+            <div class="prompt-element-desc">
+              <strong>Хто виконує завдання?</strong> Наприклад, <em>аналітик вимог</em> або <em>рев&#39;юер вимог</em>. Чітко визначена роль задає тон, глибину та фокус відповіді Xplore.
+            </div>
+          </div>
+        </div>
+
+        <!-- Контекст -->
+        <div class="prompt-element-row">
+          <div class="prompt-element-marker">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <div class="prompt-element-content">
+            <div class="prompt-element-title">2. Контекст</div>
+            <div class="prompt-element-desc">
+              <strong>Проєкт, функціонал, зацікавлені сторони</strong> та дозволені документи. Для ServiceHub: протоколи зустрічей, SLA, листування, фрагменти BRD/SRS.
+            </div>
+          </div>
+        </div>
+
+        <!-- Дія -->
+        <div class="prompt-element-row">
+          <div class="prompt-element-marker">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div class="prompt-element-content">
+            <div class="prompt-element-title">3. Дія</div>
+            <div class="prompt-element-desc">
+              <strong>Що саме зробити?</strong> Витягнути, порівняти, перевірити або трансформувати. Наприклад: <em>витягни функціональні вимоги</em> або <em>порівняй SLA</em>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Формат виводу -->
+        <div class="prompt-element-row">
+          <div class="prompt-element-marker">
+            <i class="fa-solid fa-table-list"></i>
+          </div>
+          <div class="prompt-element-content">
+            <div class="prompt-element-title">4. Формат виводу</div>
+            <div class="prompt-element-desc">
+              <strong>Структура результату:</strong> таблиця, список запитань, Jira-завдання або запис рішення. Наприклад: <em>таблиця з колонками «Вимога, Джерело, Статус»</em>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Критерії якості -->
+        <div class="prompt-element-row">
+          <div class="prompt-element-marker">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div class="prompt-element-content">
+            <div class="prompt-element-title">5. Критерії якості</div>
+            <div class="prompt-element-desc">
+              <strong>Повнота, чіткість, простежуваність до джерела</strong> та заборона вигадування. Вказівка: позначати відсутнє або суперечливе як <em>«не визначено»</em>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Обов'язкова інструкція -->
+      <div class="required-instruction-banner" style="margin-bottom: 2px !important;">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="required-instruction-text">
+          Якщо інформація відсутня або суперечлива — не вирішуй мовчки. Познач як «не визначено» або «конфлікт» і сформулюй уточнювальне запитання.
+        </span>
+      </div>
+    </main>
+  </div>
+
+</body></html>

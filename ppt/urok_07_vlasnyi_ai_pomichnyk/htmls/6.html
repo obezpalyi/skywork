@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Конструктор інструкції</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap');
+        :root {
+            --ppt-bg: #F9FAFB;
+            --ppt-bg-soft: #F3F4F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #EEF2FF;
+            --ppt-border: #E5E7EB;
+            --ppt-text-1: #111827;
+            --ppt-text-2: #4B5563;
+            --ppt-text-3: #9CA3AF;
+            --ppt-accent: #10B981;
+            --ppt-accent-2: #6366F1;
+            --ppt-chart-1: #10B981;
+            --ppt-chart-2: #6366F1;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EF4444;
+            --ppt-good: #059669;
+            --ppt-warn: #D97706;
+            --ppt-bad: #DC2626;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 6px;
+            --ppt-radius-lg: 0px;
+            --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --ppt-font-display: "Montserrat", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {width: 1280px; height: 720px; overflow: hidden;   
+             
+            
+            background: transparent;
+        }
+        .slide-root {
+            width: 1280px; height: 720px;
+            display: flex;
+            flex-direction: column;
+            background: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+            color: var(--ppt-text-1);
+            position: relative;
+        }
+        .title-instruction-constructor-header {
+            margin-top: 48px;
+            margin-right: 64px;
+            margin-bottom: 32px;
+            margin-left: 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .title-instruction-constructor-eyebrow-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .title-instruction-constructor-accent-marker {
+            background-color: var(--ppt-accent);
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        .title-instruction-constructor-eyebrow-text {
+            font-family: var(--ppt-font-body);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--ppt-accent);
+            letter-spacing: 0.05em;
+        }
+        .title-instruction-constructor-heading {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+        }
+        .title-instruction-constructor-divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--ppt-border);
+            margin-top: 8px;
+        }
+        .constructor-flow-body-region {
+            flex: 1 1 0;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            
+        }
+        .constructor-flow-intro-line {
+            font-family: var(--ppt-font-body);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--ppt-text-2);
+            flex-shrink: 0;
+        }
+        .constructor-flow-step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1 1 0;
+            
+            justify-content: flex-start;
+        }
+        .constructor-flow-step-row {
+            display: flex;
+            align-items: stretch;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+        .constructor-flow-step-number {
+            width: 56px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--ppt-font-display);
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--ppt-accent-2);
+            line-height: 1;
+        }
+        .constructor-flow-step-content {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 12px 16px;
+            box-shadow: var(--ppt-shadow-soft);
+        }
+        .constructor-flow-step-name {
+            font-family: var(--ppt-font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+        }
+        .constructor-flow-step-example {
+            font-family: var(--ppt-font-body);
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--ppt-text-2);
+            background: var(--ppt-surface-2);
+            border-radius: var(--ppt-radius-sm);
+            padding: 6px 10px;
+            border-left: 3px solid var(--ppt-accent-2);
+        }
+        .constructor-flow-step-example code {
+            font-family: var(--ppt-font-body);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--ppt-text-1);
+            background: transparent;
+        }
+        .constructor-flow-step-example i {
+            margin-right: 6px;
+            color: var(--ppt-accent-2);
+            font-size: 14px;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <header class="title-instruction-constructor-header">
+            <div class="title-instruction-constructor-eyebrow-row">
+                <span class="title-instruction-constructor-accent-marker"></span>
+                <span class="title-instruction-constructor-eyebrow-text">Лабораторна робота: AI-Помічник</span>
+            </div>
+            <h1 class="title-instruction-constructor-heading">Конструктор інструкції</h1>
+            <div class="title-instruction-constructor-divider"></div>
+        </header>
+        <div class="constructor-flow-body-region">
+            <div class="constructor-flow-intro-line">
+                Збираємо системний промпт за чіткою схемою: від ролі й мети до обмежень і самоперевірки.
+            </div>
+            <div class="constructor-flow-step-list">
+                <div class="constructor-flow-step-row">
+                    <div class="constructor-flow-step-number">1</div>
+                    <div class="constructor-flow-step-content">
+                        <div class="constructor-flow-step-name">Роль і мета</div>
+                        <div class="constructor-flow-step-example">
+                            <i class="fa-solid fa-terminal"></i>
+                            <span>Ти — [роль] для [користувача]. Твоя мета — [конкретний результат].</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="constructor-flow-step-row">
+                    <div class="constructor-flow-step-number">2</div>
+                    <div class="constructor-flow-step-content">
+                        <div class="constructor-flow-step-name">Дії та межі</div>
+                        <div class="constructor-flow-step-example">
+                            <i class="fa-solid fa-terminal"></i>
+                            <span>Допомагай у таких діях: […]. Не виконуй: […].</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="constructor-flow-step-row">
+                    <div class="constructor-flow-step-number">3</div>
+                    <div class="constructor-flow-step-content">
+                        <div class="constructor-flow-step-name">Непевні ситуації</div>
+                        <div class="constructor-flow-step-example">
+                            <i class="fa-solid fa-terminal"></i>
+                            <span>Якщо інформації бракує — уточнюй. Якщо відповідь непевна — повідом про це.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="constructor-flow-step-row" style="margin-bottom: 4px !important;">
+                    <div class="constructor-flow-step-number">4</div>
+                    <div class="constructor-flow-step-content">
+                        <div class="constructor-flow-step-name">Приватність і перевірка</div>
+                        <div class="constructor-flow-step-example">
+                            <i class="fa-solid fa-terminal"></i>
+                            <span>Не запитуй приватні дані: […]. Наприкінці пропонуй крок самоперевірки.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

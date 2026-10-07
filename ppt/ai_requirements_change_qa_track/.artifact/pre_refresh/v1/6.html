@@ -1,0 +1,452 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Багаторазовий QA-промпт для аналізу</title>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+
+    :root {
+        --ppt-bg: #F8FAFC;
+        --ppt-bg-soft: #F1F5F9;
+        --ppt-surface: #FFFFFF;
+        --ppt-surface-2: #E2E8F0;
+        --ppt-border: #CBD5E1;
+        --ppt-text-1: #0F172A;
+        --ppt-text-2: #475569;
+        --ppt-text-3: #94A3B8;
+        --ppt-accent: #0D9488;
+        --ppt-accent-2: #6366F1;
+        --ppt-chart-1: #0D9488;
+        --ppt-chart-2: #6366F1;
+        --ppt-chart-3: #F59E0B;
+        --ppt-chart-4: #EC4899;
+        --ppt-good: #10B981;
+        --ppt-warn: #F59E0B;
+        --ppt-bad: #EF4444;
+        --ppt-radius-sm: 2px;
+        --ppt-radius-md: 4px;
+        --ppt-radius-lg: 8px;
+        --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+        --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        --ppt-font-display: "Montserrat", sans-serif;
+        --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+        background: var(--ppt-bg);
+        font-family: var(--ppt-font-body);
+    }
+
+    .qa-prompt-analysis-slide-root {
+        width: 1280px; height: 720px;
+        display: flex;
+        flex-direction: column;
+        background: var(--ppt-bg);
+        
+    }
+
+    /* Non-Cover-Page Title Region */
+    .qa-prompt-analysis-title-region {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        margin-left: 64px;
+        margin-right: 64px;
+        margin-bottom: 24px;
+        flex-shrink: 0;
+    }
+
+    .qa-prompt-analysis-title-eyebrow-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+
+    .qa-prompt-analysis-title-accent-bar {
+        width: 4px;
+        height: 16px;
+        background-color: var(--ppt-accent);
+        flex-shrink: 0;
+    }
+
+    .qa-prompt-analysis-title-eyebrow-label {
+        font-family: var(--ppt-font-display);
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--ppt-accent);
+    }
+
+    .qa-prompt-analysis-title-heading {
+        font-family: var(--ppt-font-display);
+        font-size: 34px;
+        font-weight: 800;
+        color: var(--ppt-text-1);
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .qa-prompt-analysis-title-subheading {
+        font-family: var(--ppt-font-body);
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--ppt-text-2);
+        margin-top: 4px;
+    }
+
+    /* Main body wrapper */
+    .qa-prompt-analysis-body-wrapper {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        margin-left: 64px;
+        margin-right: 64px;
+        margin-bottom: 40px;
+        
+    }
+
+    .qa-prompt-analysis-main-layout {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        
+    }
+
+    /* Left column - prompt structure */
+    .qa-prompt-analysis-left-column {
+        flex: 3 1 0;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    .qa-prompt-structure-panel {
+        flex: 1 1 0;
+        background: var(--ppt-surface);
+        border: 1px solid var(--ppt-border);
+        border-radius: var(--ppt-radius-lg);
+        padding: 20px 24px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--ppt-shadow-soft);
+        
+    }
+
+    .qa-prompt-structure-panel-heading {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .qa-prompt-structure-panel-icon {
+        color: var(--ppt-accent);
+        font-size: 18px;
+        width: 20px;
+        text-align: center;
+    }
+
+    .qa-prompt-structure-panel-title {
+        font-family: var(--ppt-font-display);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--ppt-text-1);
+    }
+
+    .qa-prompt-structure-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1 1 0;
+        justify-content: flex-start;
+    }
+
+    .qa-prompt-structure-list-item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px 14px;
+        background: var(--ppt-bg-soft);
+        border-left: 3px solid var(--ppt-accent);
+        border-radius: var(--ppt-radius-md);
+    }
+
+    .qa-prompt-structure-item-number {
+        font-family: var(--ppt-font-display);
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--ppt-accent);
+        min-width: 22px;
+        line-height: 1.4;
+    }
+
+    .qa-prompt-structure-item-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .qa-prompt-structure-item-title {
+        font-family: var(--ppt-font-body);
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--ppt-text-1);
+        line-height: 1.4;
+    }
+
+    .qa-prompt-structure-item-desc {
+        font-family: var(--ppt-font-body);
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--ppt-text-2);
+        line-height: 1.4;
+    }
+
+    /* Right column - required instruction */
+    .qa-prompt-analysis-right-column {
+        flex: 2 1 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        min-width: 0;
+    }
+
+    .qa-prompt-required-instruction-panel {
+        flex: 1 1 0;
+        background: var(--ppt-surface);
+        border: 1px solid var(--ppt-border);
+        border-radius: var(--ppt-radius-lg);
+        padding: 20px 24px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--ppt-shadow-soft);
+        
+    }
+
+    .qa-prompt-required-instruction-heading {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .qa-prompt-required-instruction-icon {
+        color: var(--ppt-warn);
+        font-size: 18px;
+        width: 20px;
+        text-align: center;
+    }
+
+    .qa-prompt-required-instruction-title {
+        font-family: var(--ppt-font-display);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--ppt-text-1);
+    }
+
+    .qa-prompt-required-instruction-quote {
+        background: var(--ppt-bg-soft);
+        border-radius: var(--ppt-radius-md);
+        padding: 16px 18px;
+        border-left: 3px solid var(--ppt-warn);
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .qa-prompt-required-instruction-quote-text {
+        font-family: var(--ppt-font-body);
+        font-size: 16px;
+        font-weight: 500;
+        font-style: italic;
+        color: var(--ppt-text-2);
+        line-height: 1.6;
+    }
+
+    .qa-prompt-required-instruction-quote-mark {
+        font-family: var(--ppt-font-display);
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--ppt-warn);
+        line-height: 1;
+        margin-bottom: 6px;
+    }
+
+    .qa-prompt-key-principles-panel {
+        background: var(--ppt-surface);
+        border: 1px solid var(--ppt-border);
+        border-radius: var(--ppt-radius-lg);
+        padding: 16px 20px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .qa-prompt-key-principles-heading {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .qa-prompt-key-principles-icon {
+        color: var(--ppt-accent-2);
+        font-size: 16px;
+        width: 18px;
+        text-align: center;
+    }
+
+    .qa-prompt-key-principles-title {
+        font-family: var(--ppt-font-display);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--ppt-text-1);
+    }
+
+    .qa-prompt-key-principles-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .qa-prompt-key-principles-list-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .qa-prompt-key-principles-check-icon {
+        color: var(--ppt-good);
+        font-size: 13px;
+        width: 16px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .qa-prompt-key-principles-text {
+        font-family: var(--ppt-font-body);
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--ppt-text-2);
+        line-height: 1.4;
+    }
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+<div class="qa-prompt-analysis-slide-root">
+    <!-- Non-Cover-Page Title Region -->
+    <header class="qa-prompt-analysis-title-region">
+        <div class="qa-prompt-analysis-title-eyebrow-row">
+            <div class="qa-prompt-analysis-title-accent-bar"></div>
+            <span class="qa-prompt-analysis-title-eyebrow-label">SERVICEHUB QA TRACK</span>
+        </div>
+        <h1 class="qa-prompt-analysis-title-heading">Багаторазовий QA-промпт для аналізу</h1>
+        <h2 class="qa-prompt-analysis-title-subheading">Структура промпту для Xplore: роль рев&#39;юера, контекст системи та вимоги до виявлення прогалин у тестованості</h2>
+    </header>
+
+    <!-- Main Body Wrapper -->
+    <div class="qa-prompt-analysis-body-wrapper">
+        <div class="qa-prompt-analysis-main-layout" style="margin-bottom: 4px !important;">
+            <!-- Left Column: Prompt Structure -->
+            <div class="qa-prompt-analysis-left-column">
+                <div class="qa-prompt-structure-panel">
+                    <div class="qa-prompt-structure-panel-heading">
+                        <i class="fa-solid fa-list-check qa-prompt-structure-panel-icon"></i>
+                        <span class="qa-prompt-structure-panel-title">Структура промпту: 5 компонентів</span>
+                    </div>
+                    <ul class="qa-prompt-structure-list">
+                        <li class="qa-prompt-structure-list-item">
+                            <span class="qa-prompt-structure-item-number">01</span>
+                            <div class="qa-prompt-structure-item-content">
+                                <span class="qa-prompt-structure-item-title">Роль — рев&#39;юер тестованості вимог</span>
+                                <span class="qa-prompt-structure-item-desc">Чітке визначення ролі, яку Xplore виконує під час аналізу вимог.</span>
+                            </div>
+                        </li>
+                        <li class="qa-prompt-structure-list-item">
+                            <span class="qa-prompt-structure-item-number">02</span>
+                            <div class="qa-prompt-structure-item-content">
+                                <span class="qa-prompt-structure-item-title">Контекст — функціонал, базова версія, системи</span>
+                                <span class="qa-prompt-structure-item-desc">Опис функціональності, базової лінії вимог, пов&#39;язаних систем і обмежень тестування.</span>
+                            </div>
+                        </li>
+                        <li class="qa-prompt-structure-list-item">
+                            <span class="qa-prompt-structure-item-number">03</span>
+                            <div class="qa-prompt-structure-item-content">
+                                <span class="qa-prompt-structure-item-title">Дія — виявити прогалини й ризики тестованості</span>
+                                <span class="qa-prompt-structure-item-desc">Інструкція щодо пошуку неоднозначностей, відсутніх передумов і невимірюваних умов.</span>
+                            </div>
+                        </li>
+                        <li class="qa-prompt-structure-list-item">
+                            <span class="qa-prompt-structure-item-number">04</span>
+                            <div class="qa-prompt-structure-item-content">
+                                <span class="qa-prompt-structure-item-title">Результат — таблиця з доказами, ризиком і питанням</span>
+                                <span class="qa-prompt-structure-item-desc">Структурований вивід: доказ із вимоги, оцінка ризику, уточнювальне питання та власник.</span>
+                            </div>
+                        </li>
+                        <li class="qa-prompt-structure-list-item">
+                            <span class="qa-prompt-structure-item-number">05</span>
+                            <div class="qa-prompt-structure-item-content">
+                                <span class="qa-prompt-structure-item-title">Критерії якості — простежуваність, без вигадок</span>
+                                <span class="qa-prompt-structure-item-desc">Вимога посилатися на джерело, не створювати нової поведінки та фіксувати невизначеність.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Required Instruction + Key Principles -->
+            <div class="qa-prompt-analysis-right-column">
+                <div class="qa-prompt-required-instruction-panel">
+                    <div class="qa-prompt-required-instruction-heading">
+                        <i class="fa-solid fa-circle-exclamation qa-prompt-required-instruction-icon"></i>
+                        <span class="qa-prompt-required-instruction-title">Обов&#39;язкова інструкція</span>
+                    </div>
+                    <div class="qa-prompt-required-instruction-quote">
+                        <span class="qa-prompt-required-instruction-quote-mark">&#34;</span>
+                        <p class="qa-prompt-required-instruction-quote-text">Не створюйте очікуваної поведінки, якої немає у затвердженій вимозі. Позначте відсутню інформацію та сформулюйте питання.</p>
+                    </div>
+                </div>
+
+                <div class="qa-prompt-key-principles-panel">
+                    <div class="qa-prompt-key-principles-heading">
+                        <i class="fa-solid fa-shield-halved qa-prompt-key-principles-icon"></i>
+                        <span class="qa-prompt-key-principles-title">Принципи роботи з Xplore</span>
+                    </div>
+                    <ul class="qa-prompt-key-principles-list">
+                        <li class="qa-prompt-key-principles-list-item">
+                            <i class="fa-solid fa-circle-check qa-prompt-key-principles-check-icon"></i>
+                            <span class="qa-prompt-key-principles-text">Посилання на джерело для кожного висновку</span>
+                        </li>
+                        <li class="qa-prompt-key-principles-list-item">
+                            <i class="fa-solid fa-circle-check qa-prompt-key-principles-check-icon"></i>
+                            <span class="qa-prompt-key-principles-text">Заборона вигадування відсутньої поведінки</span>
+                        </li>
+                        <li class="qa-prompt-key-principles-list-item">
+                            <i class="fa-solid fa-circle-check qa-prompt-key-principles-check-icon"></i>
+                            <span class="qa-prompt-key-principles-text">Явне маркування невизначеності та припущень</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body></html>

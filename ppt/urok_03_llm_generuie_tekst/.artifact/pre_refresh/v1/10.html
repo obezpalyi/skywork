@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Підсумок і домашнє завдання</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500&display=swap");
+
+        :root {
+            --ppt-bg: #FDFDFB;
+            --ppt-bg-soft: #F4F5F0;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #EEF0E7;
+            --ppt-border: #D1D5C8;
+            --ppt-text-1: #1A1C1E;
+            --ppt-text-2: #4A4D42;
+            --ppt-text-3: #8A8D7C;
+            --ppt-accent: #00BFA5;
+            --ppt-accent-2: #FF5252;
+            --ppt-chart-1: #00BFA5;
+            --ppt-chart-2: #4DB6AC;
+            --ppt-chart-3: #80CBC4;
+            --ppt-chart-4: #B2DFDB;
+            --ppt-good: #2E7D32;
+            --ppt-warn: #F57C00;
+            --ppt-bad: #C62828;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 6px;
+            --ppt-radius-lg: 10px;
+            --ppt-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --ppt-shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --ppt-font-display: "Outfit", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            font-family: var(--ppt-font-body);
+        }
+
+        .lesson-summary-slide-root {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            box-shadow: var(--ppt-shadow-strong);
+            
+            position: relative;
+        }
+
+        /* Non-cover title region – fixed template */
+        .title-region {
+            margin-top: 48px;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .title-region-eyebrow-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-region-badge {
+            background: var(--ppt-accent);
+            color: white;
+            padding: 4px 12px;
+            font-family: var(--ppt-font-display);
+            font-weight: 800;
+            font-size: 14px;
+            border-radius: var(--ppt-radius-sm);
+            letter-spacing: 1px;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .title-region-divider {
+            height: 1px;
+            flex-grow: 1;
+            background: var(--ppt-border);
+        }
+
+        .title-region-heading {
+            margin: 0;
+            font-family: var(--ppt-font-display);
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+        }
+
+        /* Main body wrapper */
+        .summary-content-flex-wrapper {
+            flex: 1 1 0;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            
+        }
+
+        /* Three-thesis band */
+        .summary-key-theses-panel {
+            background: var(--ppt-surface-2);
+            border-radius: var(--ppt-radius-md);
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-left: 4px solid var(--ppt-accent);
+        }
+
+        .summary-theses-label {
+            font-family: var(--ppt-font-display);
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            color: var(--ppt-text-2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-theses-label i {
+            color: var(--ppt-accent);
+            font-size: 20px;
+        }
+
+        .summary-theses-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .summary-thesis-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--ppt-text-1);
+            line-height: 1.5;
+        }
+
+        .summary-thesis-marker {
+            font-family: var(--ppt-font-display);
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--ppt-accent);
+            min-width: 24px;
+            text-align: center;
+        }
+
+        /* divider for two-column area */
+        .summary-bottom-split {
+            flex: 1 1 0;
+            display: flex;
+            gap: 24px;
+            
+        }
+
+        .summary-left-exit-ticket {
+            flex: 1 1 0;
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 20px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-shadow: var(--ppt-shadow-soft);
+        }
+
+        .summary-exit-title {
+            font-family: var(--ppt-font-display);
+            font-weight: 600;
+            font-size: 22px;
+            color: var(--ppt-text-1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--ppt-accent);
+            padding-bottom: 8px;
+        }
+
+        .summary-exit-title i {
+            color: var(--ppt-accent);
+            font-size: 24px;
+        }
+
+        .summary-exit-prompt {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .summary-exit-prompt-item {
+            background: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-sm);
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 3px solid var(--ppt-accent);
+        }
+
+        .summary-exit-prompt-icon {
+            color: var(--ppt-accent);
+            font-size: 22px;
+            width: 28px;
+            text-align: center;
+        }
+
+        .summary-exit-prompt-text {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+        }
+
+        .summary-exit-prompt-text strong {
+            color: var(--ppt-text-1);
+            font-family: var(--ppt-font-display);
+            font-weight: 600;
+        }
+
+        .summary-right-homework {
+            flex: 1 1 0;
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-md);
+            padding: 20px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: var(--ppt-shadow-soft);
+        }
+
+        .summary-homework-title {
+            font-family: var(--ppt-font-display);
+            font-weight: 600;
+            font-size: 22px;
+            color: var(--ppt-text-1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--ppt-accent);
+            padding-bottom: 8px;
+        }
+
+        .summary-homework-title i {
+            color: var(--ppt-accent);
+            font-size: 24px;
+        }
+
+        .summary-homework-body {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            flex: 1;
+        }
+
+        .summary-homework-task {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            line-height: 1.5;
+            background: var(--ppt-bg-soft);
+            border-radius: var(--ppt-radius-sm);
+            padding: 14px 16px;
+            border-left: 3px solid var(--ppt-accent-2);
+        }
+
+        .summary-homework-task strong {
+            color: var(--ppt-text-1);
+            font-family: var(--ppt-font-display);
+            font-weight: 600;
+        }
+
+        .summary-homework-note {
+            font-size: 15px;
+            color: var(--ppt-text-3);
+            line-height: 1.4;
+            padding-left: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .summary-homework-note i {
+            color: var(--ppt-warn);
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        /* Ensure no fixed heights on non-media containers */
+        .summary-key-theses-panel,
+        .summary-bottom-split,
+        .summary-left-exit-ticket,
+        .summary-right-homework,
+        .summary-theses-list,
+        .summary-exit-prompt,
+        .summary-homework-body {
+            height: auto;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="lesson-summary-slide-root">
+        <!-- Fixed title region -->
+        <header class="title-region">
+            <div class="title-region-eyebrow-row">
+                <span class="title-region-badge">LAB // INFO-11</span>
+                <div class="title-region-divider"></div>
+            </div>
+            <h1 class="title-region-heading">Підсумок і домашнє завдання</h1>
+        </header>
+
+        <!-- Main body -->
+        <div class="summary-content-flex-wrapper">
+            <!-- Three theses -->
+            <div class="summary-key-theses-panel">
+                <div class="summary-theses-label">
+                    <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                    <span>Три головні тези уроку</span>
+                </div>
+                <ul class="summary-theses-list">
+                    <li class="summary-thesis-item">
+                        <span class="summary-thesis-marker">01</span>
+                        <span>LLM працює не з людськими поняттями, а з токенами — частинами тексту, числами та знаками.</span>
+                    </li>
+                    <li class="summary-thesis-item">
+                        <span class="summary-thesis-marker">02</span>
+                        <span>Модель використовує контекст попередніх слів, щоб передбачити найімовірніше продовження.</span>
+                    </li>
+                    <li class="summary-thesis-item">
+                        <span class="summary-thesis-marker">03</span>
+                        <span>Відповідь генерується послідовно, крок за кроком, а не з&#39;являється як готова цілісна фраза.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Split: exit ticket + homework -->
+            <div class="summary-bottom-split" style="margin-bottom: 4px !important;">
+                <!-- Exit ticket -->
+                <div class="summary-left-exit-ticket">
+                    <div class="summary-exit-title">
+                        <i class="fa-solid fa-door-open" aria-hidden="true"></i>
+                        <span>Exit ticket</span>
+                    </div>
+                    <div class="summary-exit-prompt">
+                        <div class="summary-exit-prompt-item">
+                            <div class="summary-exit-prompt-icon">
+                                <i class="fa-solid fa-pen" aria-hidden="true"></i>
+                            </div>
+                            <div class="summary-exit-prompt-text">
+                                <strong>«LLM схожа на…»</strong> — заверши речення, пояснивши чому.
+                            </div>
+                        </div>
+                        <div class="summary-exit-prompt-item">
+                            <div class="summary-exit-prompt-icon">
+                                <i class="fa-solid fa-ban" aria-hidden="true"></i>
+                            </div>
+                            <div class="summary-exit-prompt-text">
+                                <strong>«LLM не можна вважати…»</strong> — поясни, чому це важливо.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Homework -->
+                <div class="summary-right-homework">
+                    <div class="summary-homework-title">
+                        <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+                        <span>Домашнє завдання</span>
+                    </div>
+                    <div class="summary-homework-body">
+                        <div class="summary-homework-task">
+                            <strong>Поясни молодшому школяреві</strong> у 5–7 реченнях, чому чат-бот іноді відповідає впевнено, але помиляється.
+                        </div>
+                        <div class="summary-homework-note">
+                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                            <span>Використай поняття токенів, контексту та послідовної генерації відповіді.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

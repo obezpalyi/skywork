@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Критерії тестованості вимог</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap");
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: transparent;
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px 32px 64px;
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+      
+    }
+
+    /* Non-Cover-Page Title Region */
+    .title-region {
+      display: flex;
+      flex-direction: column;
+      margin-top: 36px;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .title-region-accent-bar {
+      width: 4px;
+      height: 16px;
+      background-color: var(--ppt-accent);
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-title {
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--ppt-text-1);
+    }
+
+    .title-region-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      margin-top: 4px;
+    }
+
+    /* Main content area: 3 open columns with thin vertical rules */
+    .criteria-open-columns-wrapper {
+      flex: 1 1 0;
+      display: flex;
+       /* deliberate to allow internal scroll-free fit */
+    }
+
+    .criteria-column {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+      border-right: 1px solid var(--ppt-border);
+    }
+
+    .criteria-column:first-child {
+      padding-left: 0;
+    }
+
+    .criteria-column:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .criteria-column-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .criteria-column-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      background-color: var(--ppt-bg-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 14px;
+    }
+
+    .criteria-column-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .criteria-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .criteria-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+      font-weight: 400;
+    }
+
+    .criteria-list-item i {
+      color: var(--ppt-accent);
+      font-size: 13px;
+      margin-top: 4px;
+      width: 16px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .criteria-list-item strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .criteria-note-block {
+      margin-top: 24px;
+      padding: 16px 18px;
+      background-color: var(--ppt-bg-soft);
+      border-left: 4px solid var(--ppt-accent);
+      border-radius: var(--ppt-radius-md);
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .criteria-note-block i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+      margin-top: 2px;
+    }
+
+    .criteria-note-block-text {
+      font-weight: 500;
+    }
+
+    .criteria-note-block-text em {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .criteria-note-block-text .not-measurable {
+      color: var(--ppt-bad);
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    /* ensure no fixed heights on text containers */
+    .criteria-column, .criteria-list, .criteria-note-block {
+      height: auto;
+    }
+
+    /* flex column natural flow for visible text containers */
+    .criteria-column {
+      justify-content: flex-start;
+    }
+
+    /* prevent any fixed heights on children */
+    .criteria-column-header, .criteria-list, .criteria-note-block {
+      flex: 0 0 auto;
+    }
+
+    /* keep bottom gap inside slide */
+    .slide-root {
+      padding-bottom: 24px;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title Region (Non-Cover-Page) -->
+    <header class="title-region">
+      <div class="title-region-eyebrow-row">
+        <div class="title-region-accent-bar"></div>
+        <span class="title-region-eyebrow">SERVICEHUB QA TRACK</span>
+      </div>
+      <h1 class="title-region-title">Критерії тестованості вимог</h1>
+      <h2 class="title-region-subtitle">Визначені ролі, стани, тригери та вимірювані умови без неоднозначних формулювань</h2>
+    </header>
+
+    <!-- Open columns layout: Roles, States, Triggers -->
+    <div class="criteria-open-columns-wrapper" style="margin-bottom: 4px !important;">
+      <!-- Column 1: Roles -->
+      <div class="criteria-column">
+        <div class="criteria-column-header">
+          <div class="criteria-column-icon"><i class="fa-solid fa-user-shield"></i></div>
+          <h3 class="criteria-column-heading">Ролі</h3>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span><strong>Ідентифікований актор</strong> та його права</span>
+          </li>
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-check"></i>
+            <span><strong>Комбінації ролей</strong> і перевірка дозволів</span>
+          </li>
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-anchor-circle-check"></i>
+            <span><strong>Рівні доступу</strong> до критичних дій</span>
+          </li>
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-bridge-circle-check"></i>
+            <span><strong>Власник</strong> і версія вимоги</span>
+          </li>
+        </ul>
+        <div class="criteria-note-block">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="criteria-note-block-text">Без визначеної ролі неможливо перевірити <em>авторизацію</em> та <em>розмежування доступу</em>.</div>
+        </div>
+      </div>
+
+      <!-- Column 2: States -->
+      <div class="criteria-column">
+        <div class="criteria-column-header">
+          <div class="criteria-column-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3 class="criteria-column-heading">Стани</h3>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-building-circle-check"></i>
+            <span><strong>Початковий стан</strong> системи перед дією</span>
+          </li>
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-envelope-circle-check"></i>
+            <span><strong>Переходи між станами</strong> та умови зміни</span>
+          </li>
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-file-circle-check"></i>
+            <span><strong>Дані та інтеграції</strong> у кожному стані</span>
+          </li>
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-heart-circle-check"></i>
+            <span><strong>Часові вікна</strong> та стан очікування</span>
+          </li>
+        </ul>
+        <div class="criteria-note-block">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="criteria-note-block-text">Відсутність <em>явного початкового стану</em> унеможливлює відтворюваність тесту.</div>
+        </div>
+      </div>
+
+      <!-- Column 3: Triggers -->
+      <div class="criteria-column">
+        <div class="criteria-column-header">
+          <div class="criteria-column-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3 class="criteria-column-heading">Тригери</h3>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-house-circle-check"></i>
+            <span><strong>Явний тригер</strong> — подія або введення</span>
+          </li>
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-person-circle-check"></i>
+            <span><strong>Спостережуваний результат</strong> після дії</span>
+          </li>
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-plane-circle-check"></i>
+            <span><strong>Вимірювана умова</strong> прийнятності</span>
+          </li>
+          <li class="criteria-list-item">
+            <i class="fa-solid fa-plug-circle-check"></i>
+            <span><strong>Негативні та граничні</strong> правила</span>
+          </li>
+        </ul>
+        <div class="criteria-note-block">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="criteria-note-block-text">Слова <span class="not-measurable">«швидко»</span>, <span class="not-measurable">«зручно»</span>, <span class="not-measurable">«автоматично»</span> не є вимірюваними без операціоналізації.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

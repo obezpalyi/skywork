@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;500&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #64748B;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #10B981;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #10B981;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #6366F1;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Roboto Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .devops-cover-slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      background-image: 
+        radial-gradient(var(--ppt-border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      color: var(--ppt-text-1);
+      display: flex;
+      position: relative;
+      
+    }
+
+    .devops-cover-left-main-content {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 80px;
+      padding-right: 40px;
+      z-index: 1;
+    }
+
+    .devops-cover-left-track-label {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .devops-cover-left-track-label::before {
+      content: "";
+      width: 40px;
+      height: 2px;
+      background-color: var(--ppt-accent);
+    }
+
+    .devops-cover-left-title-group {
+      margin-bottom: 48px;
+    }
+
+    .devops-cover-left-main-title {
+      font-family: var(--ppt-font-display);
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--ppt-text-1);
+      margin-bottom: 16px;
+    }
+
+    .devops-cover-left-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .devops-cover-left-key-message {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--ppt-text-3);
+      border-left: 4px solid var(--ppt-surface-2);
+      padding-left: 20px;
+      max-width: 600px;
+    }
+
+    .devops-cover-right-metadata-band {
+      flex: 1.2;
+      background-color: var(--ppt-surface);
+      border-left: 1px solid var(--ppt-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 40px;
+      box-shadow: var(--ppt-shadow-strong);
+      z-index: 2;
+    }
+
+    .devops-cover-right-info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .devops-cover-right-info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .devops-cover-right-info-label {
+      font-family: var(--ppt-font-body);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .devops-cover-right-info-value {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .devops-cover-right-image-container {
+      width: 100%;
+      height: 220px;
+      border-radius: var(--ppt-radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--ppt-border);
+      box-shadow: var(--ppt-shadow-soft);
+      margin-top: 40px;
+    }
+
+    .devops-cover-right-image-element {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .devops-cover-right-footer-meta {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      color: var(--ppt-text-3);
+      margin-top: auto;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="devops-cover-slide-root">
+    <!-- Main Title Content Section -->
+    <div class="devops-cover-left-main-content">
+      <div class="devops-cover-left-track-label">DevOps Track</div>
+      
+      <div class="devops-cover-left-title-group">
+        <h1 class="devops-cover-left-main-title">
+          ШІ-підтримка вимог та управління змінами в SDLC
+        </h1>
+        <div class="devops-cover-left-subtitle">
+          Повний навчальний курс для DevOps-інженерів
+        </div>
+      </div>
+
+      <div class="devops-cover-left-key-message">
+        Від зміни продукту до контрольованого розгортання, відкату та операційної готовності. Використання Xplore як інструменту підтримки прийняття рішень.
+      </div>
+    </div>
+
+    <!-- Metadata Band Section -->
+    <div class="devops-cover-right-metadata-band">
+      <div class="devops-cover-right-info-section">
+        <div class="devops-cover-right-info-block">
+          <div class="devops-cover-right-info-label">Проєкт</div>
+          <div class="devops-cover-right-info-value">ServiceHub Case Study</div>
+        </div>
+
+        <div class="devops-cover-right-info-block">
+          <div class="devops-cover-right-info-label">Структура</div>
+          <div class="devops-cover-right-info-value">4 Сесії | 29 Слайдів</div>
+        </div>
+
+        <div class="devops-cover-right-info-block">
+          <div class="devops-cover-right-info-label">Інструментарій</div>
+          <div class="devops-cover-right-info-value">Xplore AI Assistant</div>
+        </div>
+
+        <div class="devops-cover-right-image-container">
+          <img src="https://agents-download.skywork.ai/image/rt/c7ffcd0ee245bcaee30021b86c8fda14.jpg" alt="DevOps Workflow Diagram" class="devops-cover-right-image-element"/>
+        </div>
+      </div>
+
+      <div class="devops-cover-right-footer-meta">
+        Дата релізу: 07 вересня 2026<br/>
+        Версія: 1.0.0-stable
+      </div>
+    </div>
+  </div>
+
+</body></html>

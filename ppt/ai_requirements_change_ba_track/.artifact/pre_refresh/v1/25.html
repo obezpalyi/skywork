@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BA Capstone | Підсумкове завдання</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #EEF2F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F1F5F9;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: transparent;
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+    }
+
+    /* Slide root — fixed 1280x720 flex column */
+    .slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      
+      padding: 0;
+      margin: 0;
+    }
+
+    /* ---- Non-cover title region (fixed template) ---- */
+    .title-region {
+      margin-top: 48px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-region-top-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-accent-bar {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 32px;
+      border-radius: var(--ppt-radius-sm);
+      flex-shrink: 0;
+    }
+
+    .title-region-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+      margin-bottom: 2px;
+    }
+
+    .title-region-main-title {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-region-subtitle {
+      margin: 0;
+      margin-left: 16px;
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    /* ---- Main body region (flex: 1) ---- */
+    .capstone-body-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 40px;
+       /* allowed: only for flex item, not text */
+    }
+
+    /* Special open layout: capstone-hero */
+    .capstone-hero-layout {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 24px;
+      width: auto;
+    }
+
+    /* Left hero panel */
+    .capstone-hero-left-panel {
+      flex: 1 1 0;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* open layout: vertically centered hero text */
+      border: 1px solid var(--ppt-border);
+    }
+
+    .capstone-hero-kicker {
+      font-family: var(--ppt-font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ppt-accent);
+      margin-bottom: 16px;
+    }
+
+    .capstone-hero-title {
+      font-family: var(--ppt-font-display);
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1.08;
+      color: var(--ppt-text-1);
+      margin-bottom: 24px;
+    }
+
+    .capstone-hero-description {
+      font-family: var(--ppt-font-body);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      max-width: 90%;
+    }
+
+    /* Right rail: steps + output */
+    .capstone-right-rail {
+      flex: 1.1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .capstone-steps-block {
+      flex: 1 1 0;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 20px 20px 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .capstone-steps-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--ppt-border);
+    }
+
+    .capstone-step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .capstone-step-list-item {
+      display: block;
+      font-size: 15px;
+      line-height: 1.45;
+      color: var(--ppt-text-2);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .capstone-step-list-item::before {
+      content: "›";
+      position: absolute;
+      left: 4px;
+      color: var(--ppt-accent);
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    /* Compact output band */
+    .capstone-output-band {
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 14px 18px;
+      border-left: 4px solid var(--ppt-accent-2);
+    }
+
+    .capstone-output-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ppt-accent-2);
+      margin-bottom: 6px;
+    }
+
+    .capstone-output-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    /* small footnote-style hint */
+    .capstone-human-note {
+      font-size: 13px;
+      color: var(--ppt-text-3);
+      line-height: 1.4;
+      padding-left: 4px;
+      margin-top: 2px;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+
+    <!-- Title region (fixed template) -->
+    <header class="title-region">
+      <div class="title-region-top-row">
+        <span class="title-region-accent-bar"></span>
+        <div class="title-region-text-group">
+          <span class="title-region-eyebrow">BA Track | ServiceHub</span>
+          <h1 class="title-region-main-title">Підсумкове завдання: BA Capstone</h1>
+        </div>
+      </div>
+      <p class="title-region-subtitle">Комплексна вправа з повним циклом управління вимогами на основі нового повідомлення від клієнта ServiceHub</p>
+    </header>
+
+    <!-- Main body — special open layout "capstone-hero" -->
+    <div class="capstone-body-wrapper">
+      <div class="capstone-hero-layout" style="margin-bottom: 4px !important;">
+
+        <!-- Left dominant anchor -->
+        <div class="capstone-hero-left-panel">
+          <div class="capstone-hero-kicker">Фінальний виклик</div>
+          <div class="capstone-hero-title">BA<br/>CAPSTONE</div>
+          <div class="capstone-hero-description">
+            Повний цикл від сирого повідомлення клієнта до оновленого базового плану — із фіксацією фактів, висновків, припущень і запитань.
+          </div>
+        </div>
+
+        <!-- Right rail: steps + expected result -->
+        <div class="capstone-right-rail">
+          <div class="capstone-steps-block">
+            <div class="capstone-steps-heading">Кроки виконання</div>
+            <ul class="capstone-step-list">
+              <li class="capstone-step-list-item">Витягнути бізнес-потребу з нового повідомлення</li>
+              <li class="capstone-step-list-item">Сформулювати уточнювальні запитання</li>
+              <li class="capstone-step-list-item">Створити пакет вимог</li>
+              <li class="capstone-step-list-item">Підготувати Jira-завдання</li>
+              <li class="capstone-step-list-item">Виконати аналіз функціонального впливу</li>
+              <li class="capstone-step-list-item">Підготувати рішення та decision record</li>
+              <li class="capstone-step-list-item">Оновити базовий план після затвердження</li>
+              <li class="capstone-step-list-item">Позначити факти, висновки, припущення, питання</li>
+            </ul>
+          </div>
+
+          <div class="capstone-output-band">
+            <div class="capstone-output-label">Очікуваний результат</div>
+            <div class="capstone-output-text">Пакет вимог + матриця впливу + decision record + оновлений baseline</div>
+          </div>
+
+          <div class="capstone-human-note">
+            Людська перевірка на кожному етапі — Xplore підтримує, але не замінює рішення аналітика.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body></html>

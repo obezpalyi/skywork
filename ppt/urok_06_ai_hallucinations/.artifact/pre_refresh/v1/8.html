@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Які джерела сильніші | Критичне мислення та ШІ</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap");
+    :root {
+      --ppt-bg: #0F172A;
+      --ppt-bg-soft: #1E293B;
+      --ppt-surface: #334155;
+      --ppt-surface-2: #475569;
+      --ppt-border: #38BDF8;
+      --ppt-text-1: #F8FAFC;
+      --ppt-text-2: #CBD5E1;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #38BDF8;
+      --ppt-accent-2: #818CF8;
+      --ppt-chart-1: #38BDF8;
+      --ppt-chart-2: #818CF8;
+      --ppt-chart-3: #2DD4BF;
+      --ppt-chart-4: #F472B6;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+      --ppt-font-display: "Space Grotesk", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: transparent;
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    .source-hierarchy-slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px 48px 64px;
+      position: relative;
+      
+    }
+
+    /* Non-cover title region – fixed template */
+    .title-region-source-hierarchy {
+      margin-top: 48px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-source-hierarchy .title-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-source-hierarchy .title-eyebrow-label {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .title-region-source-hierarchy .title-divider-rule {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-surface);
+    }
+
+    .title-region-source-hierarchy .title-main-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-region-source-hierarchy .title-subheading-text {
+      margin: 0;
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+    }
+
+    /* Main body: asymmetric open layout with left list + right rail */
+    .source-hierarchy-body-layout {
+      flex: 1 1 0;
+      display: flex;
+      gap: 48px;
+      
+    }
+
+    /* Left open hierarchy list */
+    .source-hierarchy-left-list {
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+
+    .source-hierarchy-level-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 12px 16px;
+      background: transparent;
+      border-left: 3px solid var(--ppt-surface-2);
+      transition: border-color 0.1s ease;
+    }
+
+    .source-hierarchy-level-item.is-top-priority {
+      border-left-color: var(--ppt-accent);
+    }
+
+    .source-hierarchy-level-item.is-secondary-priority {
+      border-left-color: var(--ppt-accent-2);
+    }
+
+    .source-hierarchy-level-item.is-third-priority {
+      border-left-color: var(--ppt-chart-3);
+    }
+
+    .source-hierarchy-level-marker {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--ppt-radius-md);
+      background: var(--ppt-bg-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ppt-font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .source-hierarchy-level-item.is-secondary-priority .source-hierarchy-level-marker {
+      color: var(--ppt-accent-2);
+    }
+
+    .source-hierarchy-level-item.is-third-priority .source-hierarchy-level-marker {
+      color: var(--ppt-chart-3);
+    }
+
+    .source-hierarchy-level-item.is-low-priority .source-hierarchy-level-marker {
+      color: var(--ppt-text-3);
+    }
+
+    .source-hierarchy-level-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .source-hierarchy-level-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .source-hierarchy-level-description {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    /* Right evidence rail – weak sources contrast */
+    .source-hierarchy-right-rail {
+      flex: 1.2 1 0;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: stretch;
+      box-shadow: var(--ppt-shadow-soft);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+    }
+
+    .source-hierarchy-rail-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-warn);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .source-hierarchy-rail-heading i {
+      font-size: 15px;
+    }
+
+    .source-hierarchy-rail-example-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .source-hierarchy-rail-example-item {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      padding-left: 12px;
+      position: relative;
+      border-left: 2px solid var(--ppt-warn);
+    }
+
+    .source-hierarchy-rail-example-item strong {
+      color: var(--ppt-text-1);
+      font-weight: 500;
+    }
+
+    .source-hierarchy-rail-note {
+      margin-top: auto;
+      font-family: var(--ppt-font-body);
+      font-size: 13px;
+      color: var(--ppt-text-3);
+      line-height: 1.4;
+      background: rgba(245, 158, 11, 0.08);
+      border-radius: var(--ppt-radius-md);
+      padding: 8px 10px;
+    }
+
+    /* Low-priority line */
+    .source-hierarchy-level-item.is-low-priority {
+      border-left-color: var(--ppt-surface-2);
+      opacity: 0.9;
+    }
+
+    .source-hierarchy-right-rail {
+      height: auto;
+    }
+
+    .source-hierarchy-level-item {
+      height: auto;
+    }
+
+    /* spacing for last item */
+    .source-hierarchy-level-item:last-child {
+      margin-bottom: 0;
+    }
+
+    /* utility for icon margin */
+    .source-hierarchy-level-content i {
+      margin-right: 6px;
+      color: var(--ppt-text-3);
+    }
+  
+html { overflow: hidden; }
+</style>
+  <!-- Font Awesome via CDN (explicit import) -->
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="source-hierarchy-slide-root">
+    <!-- Non-cover title region (fixed) -->
+    <div class="title-region-source-hierarchy">
+      <div class="title-eyebrow-row">
+        <span class="title-eyebrow-label">Критичне мислення &amp; ШІ</span>
+        <div class="title-divider-rule"></div>
+      </div>
+      <h1 class="title-main-heading">Які джерела сильніші</h1>
+      <p class="title-subheading-text">Ієрархія надійності: від офіційних документів до неперевірених переказів</p>
+    </div>
+
+    <!-- Main body: left open hierarchy list + right evidence rail -->
+    <div class="source-hierarchy-body-layout" style="margin-bottom: 4px !important;">
+      <!-- Left: diagnostic list of source reliability levels -->
+      <div class="source-hierarchy-left-list">
+        <!-- Level 1: official document / primary source -->
+        <div class="source-hierarchy-level-item is-top-priority">
+          <div class="source-hierarchy-level-marker">1</div>
+          <div class="source-hierarchy-level-content">
+            <div class="source-hierarchy-level-title">Офіційний документ або першоджерело</div>
+            <div class="source-hierarchy-level-description">
+              <i class="fa-solid fa-file-contract"></i> Найвищий рівень довіри: закони, офіційні звіти, наукові публікації, дані державних установ.
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 2: academic / professional source -->
+        <div class="source-hierarchy-level-item is-secondary-priority">
+          <div class="source-hierarchy-level-marker">2</div>
+          <div class="source-hierarchy-level-content">
+            <div class="source-hierarchy-level-title">Академічне чи професійне джерело</div>
+            <div class="source-hierarchy-level-description">
+              <i class="fa-solid fa-graduation-cap"></i> Рецензовані статті, підручники, експертні матеріали, інженерна документація.
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 3: authoritative reference / news -->
+        <div class="source-hierarchy-level-item is-third-priority">
+          <div class="source-hierarchy-level-marker">3</div>
+          <div class="source-hierarchy-level-content">
+            <div class="source-hierarchy-level-title">Авторитетна довідкова чи новинна організація</div>
+            <div class="source-hierarchy-level-description">
+              <i class="fa-solid fa-newspaper"></i> Перевірені енциклопедії, великі медіа з редакційним контролем, офіційні сайти інституцій.
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 4: posts, forums, unverified -->
+        <div class="source-hierarchy-level-item is-low-priority">
+          <div class="source-hierarchy-level-marker">4</div>
+          <div class="source-hierarchy-level-content">
+            <div class="source-hierarchy-level-title">Дописи, форуми та неперевірені перекази</div>
+            <div class="source-hierarchy-level-description">
+              <i class="fa-solid fa-comments"></i> Найнижчий рівень: соцмережі, блоги, форуми, сайти без фактчекінгу. Можуть містити помилки або маніпуляції.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: narrow vertical rail with weak-source examples for contrast -->
+      <div class="source-hierarchy-right-rail">
+        <div class="source-hierarchy-rail-heading">
+          <i class="fa-solid fa-triangle-exclamation"></i> Слабкі джерела для контрасту
+        </div>
+        <ul class="source-hierarchy-rail-example-list">
+          <li class="source-hierarchy-rail-example-item">
+            <strong>Анонімний пост у соцмережі</strong> — без підтвердження автора та дати.
+          </li>
+          <li class="source-hierarchy-rail-example-item">
+            <strong>Форумне обговорення</strong> — думки непрофесіоналів, часто без джерел.
+          </li>
+          <li class="source-hierarchy-rail-example-item">
+            <strong>Сайт із клікбейтною назвою</strong> — заголовок не відповідає змісту.
+          </li>
+        </ul>
+        <div class="source-hierarchy-rail-note">
+          <i class="fa-solid fa-circle-info"></i> Перевіряйте не лише адресу сайту, а й конкретний зміст сторінки.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

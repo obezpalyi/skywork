@@ -1,0 +1,472 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADR та варіанти технічних рішень</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    /* Slide root: fixed 1280x720 */
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      
+      position: relative;
+    }/* Title region — fixed template from DESIGN */
+    .title-region{
+      margin-top: 32px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-region-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+      white-space: nowrap;
+    }
+
+    .title-region-divider {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }/* Main body wrapper: flex-grow consumes remaining height */
+    .content-body-wrapper{
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      
+    }/* Asymmetric layout: dominant left panel + supporting right column */
+    .adr-layout-container{
+      display: flex;
+      flex: 1 1 0;
+      gap: 19px 24px;
+      
+    }/* LEFT dominant region */
+    .adr-dominant-panel{
+      flex: 3 1 0;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      box-shadow: var(--ppt-shadow-soft);
+      padding: 19px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+      
+    }
+
+    .adr-dominant-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .adr-dominant-subhead {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: -8px;
+    }.adr-decision-label{
+      display: flex;
+      align-items: center;
+      gap: 6px 8px;
+      color: var(--ppt-text-2);
+      font-size: 14px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--ppt-border);
+      padding-bottom: 10px;
+      margin-bottom: 3px;
+    }
+
+    .adr-decision-label i {
+      color: var(--ppt-accent);
+      font-size: 16px;
+      width: 20px;
+      text-align: center;
+    }/* ADR element grid */
+    .adr-elements-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      flex: 1 1 0;
+      
+      align-content: start;
+    }.adr-element-item{
+      display: flex;
+      flex-direction: column;
+      gap: 2px 2px;
+      padding: 6px 10px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      border-left: 3px solid var(--ppt-accent-2);
+    }
+
+    .adr-element-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ppt-text-3);
+    }
+
+    .adr-element-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    .adr-element-value .mono {
+      font-family: var(--ppt-font-mono);
+      font-weight: 500;
+      color: var(--ppt-text-2);
+    }.adr-options-comparison{
+      margin-top: 3px;
+      border-top: 1px dashed var(--ppt-border);
+      padding-top: 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 10px;
+    }
+
+    .adr-options-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }.adr-option-row{
+      display: flex;
+      gap: 10px 12px;
+      align-items: flex-start;
+    }.adr-option-badge{
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-sm);
+      padding: 3px 8px;
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      white-space: nowrap;
+      margin-top: 2px;
+      border: 1px solid var(--ppt-border);
+    }
+
+    .adr-option-desc {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }/* RIGHT supporting column */
+    .adr-supporting-panel{
+      flex: 1.2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+      
+    }.adr-support-card{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      box-shadow: var(--ppt-shadow-soft);
+      padding: 16px 18px;
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 10px;
+      
+    }.adr-support-heading{
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 6px 8px;
+    }
+
+    .adr-support-heading i {
+      color: var(--ppt-accent);
+      font-size: 16px;
+    }.adr-support-list{
+      list-style: none;
+      padding: 0 0;
+      margin: 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px 8px;
+    }
+
+    .adr-support-list li {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .adr-support-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      background: var(--ppt-accent-2);
+      border-radius: 1px;
+    }.adr-approver-block{
+      margin-top: auto;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px 12px;
+    }
+
+    .adr-approver-icon {
+      background: var(--ppt-surface-2);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .adr-approver-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .adr-approver-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ppt-text-3);
+    }
+
+    .adr-approver-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }.adr-xplore-note{
+      display: flex;
+      align-items: flex-start;
+      gap: 6px 8px;
+      padding: 8px 12px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      border-left: 3px solid var(--ppt-accent);
+      font-size: 13px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .adr-xplore-note i {
+      color: var(--ppt-accent);
+      font-size: 16px;
+      margin-top: 1px;
+    }
+
+    /* Bottom safety gap is handled by margin-bottom of content-body-wrapper */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Non-cover title region (fixed layout from DESIGN) -->
+    <header class="title-region">
+      <div class="title-region-eyebrow-row">
+        <span class="title-region-eyebrow">Developer Track</span>
+        <div class="title-region-divider"></div>
+      </div>
+      <h1 class="title-region-heading">ADR та варіанти технічних рішень</h1>
+    </header>
+
+    <!-- Main content body -->
+    <div class="content-body-wrapper">
+      <div class="adr-layout-container" style="margin-bottom: 3px !important;">
+        <!-- LEFT: Dominant panel with ADR elements -->
+        <div class="adr-dominant-panel">
+          <div>
+            <div class="adr-dominant-subhead">Architecture Decision Record</div>
+            <h2 class="adr-dominant-heading">Документування рішення: синхронна чи подієва ескалація</h2>
+          </div>
+
+          <div class="adr-decision-label">
+            <i class="fa-solid fa-code-branch"></i>
+            <span>Приклад рішення для Critical Service Request</span>
+          </div>
+
+          <!-- ADR elements grid -->
+          <div class="adr-elements-grid">
+            <div class="adr-element-item">
+              <span class="adr-element-label">Контекст</span>
+              <span class="adr-element-value">Автоматична ескалація критичних запитів</span>
+            </div>
+            <div class="adr-element-item">
+              <span class="adr-element-label">Драйвери рішення</span>
+              <span class="adr-element-value">Час реакції, масштабованість</span>
+            </div>
+            <div class="adr-element-item">
+              <span class="adr-element-label">Наслідки</span>
+              <span class="adr-element-value">Асинхронність, черги, моніторинг</span>
+            </div>
+            <div class="adr-element-item">
+              <span class="adr-element-label">Сумісність</span>
+              <span class="adr-element-value">Зворотна сумісність API</span>
+            </div>
+            <div class="adr-element-item">
+              <span class="adr-element-label">Операційні впливи</span>
+              <span class="adr-element-value">Нові метрики, логування</span>
+            </div>
+            <div class="adr-element-item">
+              <span class="adr-element-label">Статус</span>
+              <span class="adr-element-value"><span class="mono">Запропоновано</span> · очікує рішення</span>
+            </div>
+          </div>
+
+          <!-- Comparison: options -->
+          <div class="adr-options-comparison">
+            <div class="adr-options-title">Варіанти реалізації</div>
+            <div class="adr-option-row">
+              <span class="adr-option-badge">Опція A</span>
+              <span class="adr-option-desc">Синхронний виклик — простота, але блокування та затримки при пікових навантаженнях.</span>
+            </div>
+            <div class="adr-option-row">
+              <span class="adr-option-badge">Опція B</span>
+              <span class="adr-option-desc">Подієва ескалація — асинхронність, стійкість до відмов, краща масштабованість.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Supporting rail -->
+        <div class="adr-supporting-panel">
+          <div class="adr-support-card">
+            <div class="adr-support-heading">
+              <i class="fa-solid fa-cubes"></i>
+              <span>Роль Xplore</span>
+            </div>
+            <ul class="adr-support-list">
+              <li>Структурує порівняння варіантів</li>
+              <li>Фіксує вплив на API, дані, події</li>
+              <li>Виявляє приховані наслідки та ризики</li>
+              <li>Формує чернетку ADR для рецензування</li>
+            </ul>
+            <div class="adr-xplore-note">
+              <i class="fa-solid fa-robot"></i>
+              <span>Xplore готує аналітику, але рішення затверджує інженерний авторитет.</span>
+            </div>
+          </div>
+
+          <div class="adr-support-card">
+            <div class="adr-support-heading">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Елементи ADR</span>
+            </div>
+            <ul class="adr-support-list">
+              <li>Контекст та драйвери</li>
+              <li>Опції та наслідки</li>
+              <li>Сумісність і операційний вплив</li>
+              <li>Обране рішення та статус</li>
+              <li>Затверджувач (approver)</li>
+            </ul>
+          </div>
+
+          <div class="adr-approver-block">
+            <div class="adr-approver-icon">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="adr-approver-text">
+              <span class="adr-approver-label">Затверджує</span>
+              <span class="adr-approver-name">Архітектор · Tech Lead</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

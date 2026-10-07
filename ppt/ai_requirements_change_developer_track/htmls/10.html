@@ -1,0 +1,471 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сесія DEV-2: Декомпозиція та план впровадження</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    /* slide root — fixed 1280x720 flex column */
+    .session-dev2-decomposition-slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0;               /* no padding on root to avoid size overflow */
+               /* keep all content inside fixed box */
+    }
+
+    /* ---- non-cover title region (exact from DESIGN) ---- */
+    .title-region-dev2-header {
+      margin-top: 40px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 24px;       /* compact but consistent */
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-dev2-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-dev2-eyebrow-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+      white-space: nowrap;
+    }
+
+    .title-region-dev2-divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-dev2-main-title {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* ---- main body wrapper: consumes remaining height below title ---- */
+    .session-dev2-body-content-wrapper {
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 36px;       /* bottom safety gap */
+      display: flex;
+      flex-direction: column;
+                  /* allow inner flex/grid to shrink properly */
+      /* no fixed height — flex handles it, but bounded by slide root */
+    }
+
+    /* -------- layout: dominant left region + right supporting rail (asymmetric) -------- */
+    .session-dev2-main-grid-layout {
+      display: flex;
+      gap: 24px;
+      flex: 1 1 0;
+      
+    }
+
+    /* left dominant column (approx 62%) */
+    .session-dev2-left-dominant-column {
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    /* right supporting column (approx 38%) */
+    .session-dev2-right-support-column {
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    /* ----- shared surface panel (no border, open text region) ----- */
+    .session-dev2-objectives-panel {
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1 1 0;               /* fill column height */
+      
+    }
+
+    .session-dev2-panel-heading-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .session-dev2-panel-heading-icon {
+      color: var(--ppt-accent);
+      font-size: 20px;
+      width: 28px;
+      text-align: center;
+    }
+
+    .session-dev2-panel-heading-text {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .session-dev2-objectives-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 6px;
+    }
+
+    .session-dev2-objectives-list-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      list-style: none;
+    }
+
+    .session-dev2-list-item-marker {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      line-height: 1.6;
+      width: 20px;
+      flex-shrink: 0;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .session-dev2-list-item-text {
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }
+
+    /* ----- input chips / tags (compact, no border card) ----- */
+    .session-dev2-inputs-tags-panel {
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .session-dev2-inputs-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .session-dev2-tags-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .session-dev2-input-tag {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-sm);
+      padding: 5px 12px;
+      font-family: var(--ppt-font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    /* ----- right column: key deliverables + workflow snapshot ----- */
+    .session-dev2-deliverables-panel {
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1 1 0;
+    }
+
+    .session-dev2-deliverables-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .session-dev2-deliverables-list-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      list-style: none;
+    }
+
+    .session-dev2-deliverable-icon {
+      color: var(--ppt-accent);
+      font-size: 15px;
+      width: 22px;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .session-dev2-deliverable-text {
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }
+
+    /* workflow mini-steps (compact, no cards) */
+    .session-dev2-workflow-panel {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1 1 0;
+    }
+
+    .session-dev2-workflow-steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .session-dev2-workflow-step-item {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      list-style: none;
+    }
+
+    .session-dev2-step-number {
+      font-family: var(--ppt-font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      width: 26px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .session-dev2-step-text {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }
+
+    /* no extra decorative elements, no page numbers */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="session-dev2-decomposition-slide-root">
+
+    <!-- Fixed title region (exact structure from DESIGN) -->
+    <header class="title-region-dev2-header">
+      <div class="title-region-dev2-eyebrow-row">
+        <span class="title-region-dev2-eyebrow-label">Developer Track</span>
+        <div class="title-region-dev2-divider-line"></div>
+      </div>
+      <h1 class="title-region-dev2-main-title">Сесія DEV-2: Декомпозиція та план впровадження</h1>
+    </header>
+
+    <!-- Main body: consumes remaining height, asymmetric layout -->
+    <div class="session-dev2-body-content-wrapper">
+      <div class="session-dev2-main-grid-layout" style="margin-bottom: 4px !important;">
+
+        <!-- LEFT dominant column (objectives + inputs) -->
+        <div class="session-dev2-left-dominant-column">
+
+          <!-- Objectives panel (dominant visual anchor) -->
+          <div class="session-dev2-objectives-panel">
+            <div class="session-dev2-panel-heading-row">
+              <i class="fa-solid fa-bullseye session-dev2-panel-heading-icon"></i>
+              <span class="session-dev2-panel-heading-text">Цілі сесії</span>
+            </div>
+            <ul class="session-dev2-objectives-list">
+              <li class="session-dev2-objectives-list-item">
+                <i class="fa-solid fa-chevron-right session-dev2-list-item-marker"></i>
+                <span class="session-dev2-list-item-text">Створити покомпонентний план реалізації для ServiceHub.</span>
+              </li>
+              <li class="session-dev2-objectives-list-item">
+                <i class="fa-solid fa-chevron-right session-dev2-list-item-marker"></i>
+                <span class="session-dev2-list-item-text">Декомпозувати роботу на технічні завдання з чіткими межами.</span>
+              </li>
+              <li class="session-dev2-objectives-list-item">
+                <i class="fa-solid fa-chevron-right session-dev2-list-item-marker"></i>
+                <span class="session-dev2-list-item-text">Описати зміни в API, даних та інтеграціях.</span>
+              </li>
+              <li class="session-dev2-objectives-list-item">
+                <i class="fa-solid fa-chevron-right session-dev2-list-item-marker"></i>
+                <span class="session-dev2-list-item-text">Виявити залежності та сценарії відмов.</span>
+              </li>
+              <li class="session-dev2-objectives-list-item">
+                <i class="fa-solid fa-chevron-right session-dev2-list-item-marker"></i>
+                <span class="session-dev2-list-item-text">Підготувати рішення для технічного рев&#39;ю.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Inputs as compact tags (supporting block) -->
+          <div class="session-dev2-inputs-tags-panel">
+            <div class="session-dev2-inputs-heading">
+              <i class="fa-solid fa-database session-dev2-panel-heading-icon" style="font-size:18px;"></i>
+              <span>Вхідні дані</span>
+            </div>
+            <div class="session-dev2-tags-cloud">
+              <span class="session-dev2-input-tag">Jira backlog</span>
+              <span class="session-dev2-input-tag">Component map</span>
+              <span class="session-dev2-input-tag">OpenAPI</span>
+              <span class="session-dev2-input-tag">Data model</span>
+              <span class="session-dev2-input-tag">Event catalog</span>
+              <span class="session-dev2-input-tag">ADR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT supporting column (deliverables + workflow snapshot) -->
+        <div class="session-dev2-right-support-column">
+
+          <!-- Key deliverables panel -->
+          <div class="session-dev2-deliverables-panel">
+            <div class="session-dev2-panel-heading-row">
+              <i class="fa-solid fa-clipboard-check session-dev2-panel-heading-icon"></i>
+              <span class="session-dev2-panel-heading-text">Результати сесії</span>
+            </div>
+            <ul class="session-dev2-deliverables-list">
+              <li class="session-dev2-deliverables-list-item">
+                <i class="fa-solid fa-file session-dev2-deliverable-icon"></i>
+                <span class="session-dev2-deliverable-text">Implementation plan</span>
+              </li>
+              <li class="session-dev2-deliverables-list-item">
+                <i class="fa-solid fa-circle-question session-dev2-deliverable-icon"></i>
+                <span class="session-dev2-deliverable-text">Technical backlog</span>
+              </li>
+              <li class="session-dev2-deliverables-list-item">
+                <i class="fa-solid fa-code-branch session-dev2-deliverable-icon"></i>
+                <span class="session-dev2-deliverable-text">API &amp; data-change notes</span>
+              </li>
+              <li class="session-dev2-deliverables-list-item">
+                <i class="fa-solid fa-pen-ruler session-dev2-deliverable-icon"></i>
+                <span class="session-dev2-deliverable-text">Draft ADR</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Workflow DEV-2 snapshot (compact steps) -->
+          <div class="session-dev2-workflow-panel">
+            <div class="session-dev2-panel-heading-row">
+              <i class="fa-solid fa-route session-dev2-panel-heading-icon"></i>
+              <span class="session-dev2-panel-heading-text">Workflow DEV-2</span>
+            </div>
+            <ul class="session-dev2-workflow-steps-list">
+              <li class="session-dev2-workflow-step-item">
+                <span class="session-dev2-step-number">01</span>
+                <span class="session-dev2-step-text">Визначити технічний результат</span>
+              </li>
+              <li class="session-dev2-workflow-step-item">
+                <span class="session-dev2-step-number">02</span>
+                <span class="session-dev2-step-text">Ідентифікувати компоненти</span>
+              </li>
+              <li class="session-dev2-workflow-step-item">
+                <span class="session-dev2-step-number">03</span>
+                <span class="session-dev2-step-text">Описати зміни API та даних</span>
+              </li>
+              <li class="session-dev2-workflow-step-item">
+                <span class="session-dev2-step-number">04</span>
+                <span class="session-dev2-step-text">Створити технічні задачі</span>
+              </li>
+              <li class="session-dev2-workflow-step-item">
+                <span class="session-dev2-step-number">05</span>
+                <span class="session-dev2-step-text">ADR та чек-лист впровадження</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body></html>

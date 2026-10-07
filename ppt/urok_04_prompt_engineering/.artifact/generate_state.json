@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "status": "success",
+  "operation": "generate",
+  "operation_id": "urok_04_prompt_engineering",
+  "session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "artifact_path": "ppt/urok_04_prompt_engineering",
+  "display_name": "Prompt engineering",
+  "ppt_style": "html",
+  "page_count": 10,
+  "total_pages": 10,
+  "success_pages": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "language": "Ukrainian",
+  "prepared_state_id": "pps_7ed8be816012739177c0f115d0520b73",
+  "prepared_state_version": 1,
+  "generated_at": "2026-09-03T19:14:33.431250922Z"
+}

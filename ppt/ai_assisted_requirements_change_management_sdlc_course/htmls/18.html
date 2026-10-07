@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <title>Управління вимогами та змінами в SDLC із застосуванням ШІ</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .assistant-instructions-slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .assistant-instructions-header-region {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .assistant-instructions-header-breadcrumb {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .assistant-instructions-header-title {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .assistant-instructions-main-content {
+      flex: 1;
+      padding: 0 60px 40px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .assistant-instructions-comparison-grid {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .assistant-instructions-logic-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      box-shadow: var(--ppt-shadow-soft);
+      padding: 24px;
+    }
+
+    .assistant-instructions-data-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      box-shadow: var(--ppt-shadow-soft);
+      padding: 24px;
+    }
+
+    .assistant-instructions-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--ppt-border);
+      padding-bottom: 12px;
+    }
+
+    .assistant-instructions-card-icon {
+      font-size: 24px;
+      color: var(--ppt-accent);
+    }
+
+    .assistant-instructions-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .assistant-instructions-card-subtitle {
+      font-size: 14px;
+      color: var(--ppt-text-3);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .assistant-instructions-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .assistant-instructions-list-item {
+      display: flex;
+      gap: 12px;
+    }
+
+    .assistant-instructions-item-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--ppt-accent);
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .assistant-instructions-item-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .assistant-instructions-item-label {
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--ppt-text-1);
+    }
+
+    .assistant-instructions-item-desc {
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .assistant-instructions-risk-warning-box {
+      background-color: #FFFBEB;
+      border: 1px solid #FEF3C7;
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .assistant-instructions-warning-icon {
+      color: var(--ppt-warn);
+      font-size: 20px;
+      margin-top: 2px;
+    }
+
+    .assistant-instructions-warning-text {
+      font-size: 16px;
+      color: #92400E;
+      line-height: 1.5;
+    }
+
+    .assistant-instructions-warning-highlight {
+      font-weight: 700;
+    }
+
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+
+  <div class="assistant-instructions-slide-root">
+    
+    <header class="assistant-instructions-header-region">
+      <div class="assistant-instructions-header-breadcrumb">
+        AI-MANAGED SDLC PLAYBOOK
+      </div>
+      <h1 class="assistant-instructions-header-title">
+        Інструкції асистента та дані з документів
+      </h1>
+    </header>
+
+    <main class="assistant-instructions-main-content">
+      
+      <div class="assistant-instructions-comparison-grid">
+        
+        <!-- Logic Column -->
+        <div class="assistant-instructions-logic-column">
+          <div class="assistant-instructions-card-header">
+            <i class="fa-solid fa-gears assistant-instructions-card-icon"></i>
+            <span class="assistant-instructions-card-title">Інструкції (System Prompt)</span>
+          </div>
+          <div class="assistant-instructions-card-subtitle">Як працювати</div>
+          <ul class="assistant-instructions-list">
+            <li class="assistant-instructions-list-item">
+              <div class="assistant-instructions-item-bullet"></div>
+              <div class="assistant-instructions-item-content">
+                <span class="assistant-instructions-item-label">Роль та Персона</span>
+                <span class="assistant-instructions-item-desc">Визначає професійну перспективу (наприклад, &#34;Senior BA Reviewer&#34;).</span>
+              </div>
+            </li>
+            <li class="assistant-instructions-list-item">
+              <div class="assistant-instructions-item-bullet"></div>
+              <div class="assistant-instructions-item-content">
+                <span class="assistant-instructions-item-label">Алгоритми та Правила</span>
+                <span class="assistant-instructions-item-desc">Послідовність дій, логіка перевірки та критерії якості.</span>
+              </div>
+            </li>
+            <li class="assistant-instructions-list-item">
+              <div class="assistant-instructions-item-bullet"></div>
+              <div class="assistant-instructions-item-content">
+                <span class="assistant-instructions-item-label">Формат та Структура</span>
+                <span class="assistant-instructions-item-desc">Вимоги до вихідного артефакту (таблиця, JSON, список).</span>
+              </div>
+            </li>
+            <li class="assistant-instructions-list-item">
+              <div class="assistant-instructions-item-bullet"></div>
+              <div class="assistant-instructions-item-content">
+                <span class="assistant-instructions-item-label">Логіка Ескалації</span>
+                <span class="assistant-instructions-item-desc">Коли асистент має зупинитися та поставити питання людині.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Data Column -->
+        <div class="assistant-instructions-data-column">
+          <div class="assistant-instructions-card-header">
+            <i class="fa-solid fa-file-lines assistant-instructions-card-icon"></i>
+            <span class="assistant-instructions-card-title">Дані документів (Knowledge)</span>
+          </div>
+          <div class="assistant-instructions-card-subtitle">З чим працювати</div>
+          <ul class="assistant-instructions-list">
+            <li class="assistant-instructions-list-item">
+              <div class="assistant-instructions-item-bullet"></div>
+              <div class="assistant-instructions-item-content">
+                <span class="assistant-instructions-item-label">Вимоги та Факти</span>
+                <span class="assistant-instructions-item-desc">Конкретні бізнес-потреби, технічні обмеження, цифри.</span>
+              </div>
+            </li>
+            <li class="assistant-instructions-list-item">
+              <div class="assistant-instructions-item-bullet"></div>
+              <div class="assistant-instructions-item-content">
+                <span class="assistant-instructions-item-label">Погоджені Рішення</span>
+                <span class="assistant-instructions-item-desc">Результати зустрічей, статус-колів та офіційне листування.</span>
+              </div>
+            </li>
+            <li class="assistant-instructions-list-item">
+              <div class="assistant-instructions-item-bullet"></div>
+              <div class="assistant-instructions-item-content">
+                <span class="assistant-instructions-item-label">Термінологія Проєкту</span>
+                <span class="assistant-instructions-item-desc">Глосарій, специфічні назви сутностей та скорочення.</span>
+              </div>
+            </li>
+            <li class="assistant-instructions-list-item">
+              <div class="assistant-instructions-item-bullet"></div>
+              <div class="assistant-instructions-item-content">
+                <span class="assistant-instructions-item-label">Приклади (Few-shot)</span>
+                <span class="assistant-instructions-item-desc">Зразки існуючих гарних вимог або описів задач Jira.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="assistant-instructions-risk-warning-box" style="margin-bottom: 4px !important;">
+        <i class="fa-solid fa-triangle-exclamation assistant-instructions-warning-icon"></i>
+        <div class="assistant-instructions-warning-text">
+          <span class="assistant-instructions-warning-highlight">Критичний ризик:</span> Текст усередині завантаженого документа не повинен непомітно змінювати правила роботи асистента (Prompt Injection). Завжди відокремлюйте інструкції від контексту даних за допомогою чітких розділювачів або налаштувань системної ролі.
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+
+</body></html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Демонстрація ServiceHub та використання Xplore</title>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --ppt-bg: #FDFDFD;
+    --ppt-bg-soft: #F4F7F6;
+    --ppt-surface: #FFFFFF;
+    --ppt-surface-2: #E9EFED;
+    --ppt-border: #D1D9D7;
+    --ppt-text-1: #121417;
+    --ppt-text-2: #4A5552;
+    --ppt-text-3: #879491;
+    --ppt-accent: #007A5E;
+    --ppt-accent-2: #00D3A4;
+    --ppt-chart-1: #007A5E;
+    --ppt-chart-2: #00D3A4;
+    --ppt-chart-3: #121417;
+    --ppt-chart-4: #879491;
+    --ppt-good: #107C10;
+    --ppt-warn: #D83B01;
+    --ppt-bad: #A80000;
+    --ppt-radius-sm: 2px;
+    --ppt-radius-md: 4px;
+    --ppt-radius-lg: 8px;
+    --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+    --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+    --ppt-font-display: "Inter", sans-serif;
+    --ppt-font-body: "Inter", sans-serif;
+    --ppt-font-mono: "JetBrains Mono", monospace;
+  }
+
+  html {
+    font-family: var(--ppt-font-body);
+  }
+
+  body {width: 1280px; height: 720px; overflow: hidden;   
+    background: transparent;
+    
+    
+  }
+
+  .servicehub-xplore-demo-slide-root {
+    width: 1280px; height: 720px;
+    background: var(--ppt-bg);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--ppt-font-body);
+    
+  }
+
+  .title-servicehub-xplore-demo-region {
+    margin-top: 40px;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .title-servicehub-xplore-demo-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .title-servicehub-xplore-demo-eyebrow-badge {
+    font-family: var(--ppt-font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ppt-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--ppt-surface-2);
+    padding: 4px 8px;
+    border-radius: var(--ppt-radius-sm);
+  }
+
+  .title-servicehub-xplore-demo-divider-line {
+    height: 1px;
+    flex-grow: 1;
+    background: var(--ppt-border);
+  }
+
+  .title-servicehub-xplore-demo-heading {
+    margin: 0;
+    font-family: var(--ppt-font-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--ppt-text-1);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .servicehub-xplore-demo-body-wrapper {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-bottom: 40px;
+    
+  }
+
+  .servicehub-xplore-demo-intro-strip {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--ppt-bg-soft);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-md);
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    flex-shrink: 0;
+  }
+
+  .servicehub-xplore-demo-intro-icon-wrapper {
+    font-size: 22px;
+    color: var(--ppt-accent);
+    width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .servicehub-xplore-demo-intro-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .servicehub-xplore-demo-intro-lead {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+    line-height: 1.5;
+  }
+
+  .servicehub-xplore-demo-intro-detail {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.5;
+  }
+
+  .servicehub-xplore-demo-main-grid {
+    flex: 1 1 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    
+  }
+
+  .servicehub-xplore-demo-questions-panel {
+    background: var(--ppt-surface);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-md);
+    box-shadow: var(--ppt-shadow-soft);
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .servicehub-xplore-demo-questions-panel-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .servicehub-xplore-demo-questions-panel-icon {
+    font-size: 18px;
+    color: var(--ppt-accent);
+    width: 22px;
+    text-align: center;
+  }
+
+  .servicehub-xplore-demo-questions-panel-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ppt-text-1);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .servicehub-xplore-demo-question-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .servicehub-xplore-demo-question-list-item {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.45;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .servicehub-xplore-demo-question-list-item::before {
+    content: "\f059";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 13px;
+    color: var(--ppt-accent);
+  }
+
+  .servicehub-xplore-demo-questions-panel-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: auto;
+    background: var(--ppt-bg-soft);
+    border-radius: var(--ppt-radius-sm);
+    padding: 10px 12px;
+  }
+
+  .servicehub-xplore-demo-questions-panel-note-icon {
+    font-size: 14px;
+    color: var(--ppt-warn);
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .servicehub-xplore-demo-questions-panel-note-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.4;
+  }
+
+  .servicehub-xplore-demo-result-panel {
+    background: var(--ppt-surface);
+    border: 1px solid var(--ppt-border);
+    border-radius: var(--ppt-radius-md);
+    box-shadow: var(--ppt-shadow-soft);
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .servicehub-xplore-demo-result-panel-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .servicehub-xplore-demo-result-panel-icon {
+    font-size: 18px;
+    color: var(--ppt-accent);
+    width: 22px;
+    text-align: center;
+  }
+
+  .servicehub-xplore-demo-result-panel-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ppt-text-1);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .servicehub-xplore-demo-result-category-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .servicehub-xplore-demo-result-category-item {
+    display: block;
+  }
+
+  .servicehub-xplore-demo-result-category-label-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+
+  .servicehub-xplore-demo-result-category-marker {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .servicehub-xplore-demo-result-category-marker-confirmed {
+    background: var(--ppt-good);
+  }
+
+  .servicehub-xplore-demo-result-category-marker-inferred {
+    background: var(--ppt-accent);
+  }
+
+  .servicehub-xplore-demo-result-category-marker-option {
+    background: var(--ppt-warn);
+  }
+
+  .servicehub-xplore-demo-result-category-marker-unknown {
+    background: var(--ppt-text-3);
+  }
+
+  .servicehub-xplore-demo-result-category-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ppt-text-1);
+    line-height: 1.3;
+  }
+
+  .servicehub-xplore-demo-result-category-detail {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.45;
+    padding-left: 18px;
+  }
+
+  .servicehub-xplore-demo-result-panel-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: auto;
+    background: var(--ppt-bg-soft);
+    border-radius: var(--ppt-radius-sm);
+    padding: 10px 12px;
+  }
+
+  .servicehub-xplore-demo-result-panel-note-icon {
+    font-size: 14px;
+    color: var(--ppt-accent);
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .servicehub-xplore-demo-result-panel-note-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ppt-text-2);
+    line-height: 1.4;
+  }
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="servicehub-xplore-demo-slide-root">
+    <header class="title-servicehub-xplore-demo-region">
+      <div class="title-servicehub-xplore-demo-eyebrow-row">
+        <span class="title-servicehub-xplore-demo-eyebrow-badge">Developer Track</span>
+        <div class="title-servicehub-xplore-demo-divider-line"></div>
+      </div>
+      <h1 class="title-servicehub-xplore-demo-heading">Демонстрація ServiceHub та використання Xplore</h1>
+    </header>
+
+    <div class="servicehub-xplore-demo-body-wrapper">
+      <div class="servicehub-xplore-demo-intro-strip">
+        <div class="servicehub-xplore-demo-intro-icon-wrapper">
+          <i class="fa-solid fa-microscope"></i>
+        </div>
+        <div class="servicehub-xplore-demo-intro-text-block">
+          <div class="servicehub-xplore-demo-intro-lead">Практичний аналіз запиту Critical Service Request у ServiceHub через Xplore</div>
+          <div class="servicehub-xplore-demo-intro-detail">Xplore структурує технічний контекст, але не підміняє інженерне судження: він відділяє підтверджені факти від гіпотез і позначає точки, де потрібне рішення людини.</div>
+        </div>
+      </div>
+
+      <div class="servicehub-xplore-demo-main-grid" style="margin-bottom: 4px !important;">
+        <div class="servicehub-xplore-demo-questions-panel">
+          <div class="servicehub-xplore-demo-questions-panel-heading">
+            <div class="servicehub-xplore-demo-questions-panel-icon">
+              <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <div class="servicehub-xplore-demo-questions-panel-title">Технічні питання, що виникають</div>
+          </div>
+          <ul class="servicehub-xplore-demo-question-list">
+            <li class="servicehub-xplore-demo-question-list-item">Де визначається пріоритет клієнта в поточній архітектурі?</li>
+            <li class="servicehub-xplore-demo-question-list-item">Чи потрібне нове значення priority в API?</li>
+            <li class="servicehub-xplore-demo-question-list-item">Чи має зберігатися історія ескалації запиту?</li>
+            <li class="servicehub-xplore-demo-question-list-item">Чи є сповіщення синхронними або подієвими?</li>
+            <li class="servicehub-xplore-demo-question-list-item">Як система обробляє повторювані події?</li>
+            <li class="servicehub-xplore-demo-question-list-item">Чи приймають поточні споживачі новий payload?</li>
+            <li class="servicehub-xplore-demo-question-list-item">Чи потрібен feature flag для захисту нового шляху?</li>
+          </ul>
+          <div class="servicehub-xplore-demo-questions-panel-note">
+            <div class="servicehub-xplore-demo-questions-panel-note-icon">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="servicehub-xplore-demo-questions-panel-note-text">Кожне питання потребує власника рішення та визначеного органу прийняття рішень.</div>
+          </div>
+        </div>
+
+        <div class="servicehub-xplore-demo-result-panel">
+          <div class="servicehub-xplore-demo-result-panel-heading">
+            <div class="servicehub-xplore-demo-result-panel-icon">
+              <i class="fa-solid fa-table-list"></i>
+            </div>
+            <div class="servicehub-xplore-demo-result-panel-title">Очікуваний результат Xplore</div>
+          </div>
+          <ul class="servicehub-xplore-demo-result-category-list">
+            <li class="servicehub-xplore-demo-result-category-item">
+              <div class="servicehub-xplore-demo-result-category-label-row">
+                <span class="servicehub-xplore-demo-result-category-marker servicehub-xplore-demo-result-category-marker-confirmed"></span>
+                <span class="servicehub-xplore-demo-result-category-name">Підтверджені факти архітектури</span>
+              </div>
+              <div class="servicehub-xplore-demo-result-category-detail">Задокументована поведінка компонентів та інтерфейсів.</div>
+            </li>
+            <li class="servicehub-xplore-demo-result-category-item">
+              <div class="servicehub-xplore-demo-result-category-label-row">
+                <span class="servicehub-xplore-demo-result-category-marker servicehub-xplore-demo-result-category-marker-inferred"></span>
+                <span class="servicehub-xplore-demo-result-category-name">Виведений вплив</span>
+              </div>
+              <div class="servicehub-xplore-demo-result-category-detail">Ймовірні зміни в сервісах, що потребують верифікації.</div>
+            </li>
+            <li class="servicehub-xplore-demo-result-category-item">
+              <div class="servicehub-xplore-demo-result-category-label-row">
+                <span class="servicehub-xplore-demo-result-category-marker servicehub-xplore-demo-result-category-marker-option"></span>
+                <span class="servicehub-xplore-demo-result-category-name">Варіанти дизайну</span>
+              </div>
+              <div class="servicehub-xplore-demo-result-category-detail">Альтернативні підходи, що потребують інженерного вибору.</div>
+            </li>
+            <li class="servicehub-xplore-demo-result-category-item">
+              <div class="servicehub-xplore-demo-result-category-label-row">
+                <span class="servicehub-xplore-demo-result-category-marker servicehub-xplore-demo-result-category-marker-unknown"></span>
+                <span class="servicehub-xplore-demo-result-category-name">Невідомі параметри</span>
+              </div>
+              <div class="servicehub-xplore-demo-result-category-detail">Прогалини в даних, що потребують уточнення від власників.</div>
+            </li>
+          </ul>
+          <div class="servicehub-xplore-demo-result-panel-note">
+            <div class="servicehub-xplore-demo-result-panel-note-icon">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+            <div class="servicehub-xplore-demo-result-panel-note-text">Рішення щодо дизайну та архітектури ухвалює людина, а не Xplore.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

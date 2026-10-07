@@ -1,0 +1,445 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сесія DEV-4: Готовність до впровадження та Capstone</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-dev4-readiness-capstone {
+      width: 1280px; height: 720px;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+      
+    }
+
+    /* Non-cover title region per design */
+    .title-dev4-readiness-header {
+      margin-top: 40px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-dev4-eyebrow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-dev4-eyebrow-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+      white-space: nowrap;
+    }
+
+    .title-dev4-rule-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-dev4-main-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* Body region consumes remaining height */
+    .body-dev4-content-wrapper {
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top compact summary band */
+    .dev4-approval-summary-band {
+      display: flex;
+      align-items: stretch;
+      gap: 24px;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+    }
+
+    .dev4-approved-decision-panel {
+      flex: 3;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dev4-panel-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ppt-accent);
+      margin-bottom: 12px;
+    }
+
+    .dev4-approved-items-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dev4-approved-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    .dev4-approved-item i {
+      color: var(--ppt-accent);
+      font-size: 15px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .dev4-new-constraint-panel {
+      flex: 2;
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dev4-constraint-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ppt-text-2);
+      margin-bottom: 12px;
+    }
+
+    .dev4-constraint-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dev4-constraint-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    .dev4-constraint-item i {
+      color: var(--ppt-warn);
+      font-size: 14px;
+      margin-top: 2px;
+      width: 18px;
+      text-align: center;
+    }
+
+    /* Main lower region: readiness check / handoff prep */
+    .dev4-readiness-main-grid {
+      flex: 1 1 0;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      
+    }
+
+    .dev4-readiness-left-panel {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 18px 22px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dev4-readiness-right-panel {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 18px 22px;
+      box-shadow: var(--ppt-shadow-soft);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dev4-subsection-title {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dev4-subsection-title i {
+      color: var(--ppt-accent);
+      font-size: 17px;
+    }
+
+    .dev4-checklist-container {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dev4-checklist-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dev4-checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }
+
+    .dev4-checklist-item i {
+      color: var(--ppt-accent);
+      font-size: 15px;
+      margin-top: 2px;
+      width: 18px;
+      text-align: center;
+    }
+
+    .dev4-handoff-note {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--ppt-border);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+      display: flex;
+      gap: 8px;
+    }
+
+    .dev4-handoff-note i {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    /* Right panel content */
+    .dev4-capstone-prep-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dev4-capstone-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }
+
+    .dev4-capstone-item i {
+      color: var(--ppt-accent);
+      font-size: 15px;
+      margin-top: 2px;
+      width: 18px;
+      text-align: center;
+    }
+
+    .dev4-adr-status-box {
+      margin-top: 16px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dev4-adr-status-box i {
+      color: var(--ppt-good);
+      font-size: 16px;
+    }
+
+    .dev4-adr-status-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    /* Ensure no shrink on text items */
+    .dev4-checklist-item, .dev4-capstone-item, .dev4-approved-item, .dev4-constraint-item {
+      flex-shrink: 0;
+    }
+
+    i {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+    }
+  
+html { overflow: hidden; }
+</style>
+  <!-- Font Awesome 6 (free) -->
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-dev4-readiness-capstone">
+    <!-- Title region: fixed template -->
+    <header class="title-dev4-readiness-header">
+      <div class="title-dev4-eyebrow-wrapper">
+        <span class="title-dev4-eyebrow-label">Developer Track</span>
+        <div class="title-dev4-rule-line"></div>
+      </div>
+      <h1 class="title-dev4-main-heading">Сесія DEV-4: Готовність до впровадження та Capstone</h1>
+    </header>
+
+    <!-- Body -->
+    <div class="body-dev4-content-wrapper">
+      <!-- Compact top band: approved decision + new constraints -->
+      <div class="dev4-approval-summary-band">
+        <div class="dev4-approved-decision-panel">
+          <div class="dev4-panel-label">Схвалене рішення</div>
+          <ul class="dev4-approved-items-list">
+            <li class="dev4-approved-item"><i class="fa-solid fa-circle-check"></i> Автоматична ескалація для Critical Service Request</li>
+            <li class="dev4-approved-item"><i class="fa-solid fa-check"></i> Події керують сповіщеннями та звітністю</li>
+            <li class="dev4-approved-item"><i class="fa-solid fa-anchor-circle-check"></i> Розгортання через feature flag</li>
+          </ul>
+        </div>
+        <div class="dev4-new-constraint-panel">
+          <div class="dev4-constraint-label">Нові обмеження</div>
+          <ul class="dev4-constraint-list">
+            <li class="dev4-constraint-item"><i class="fa-solid fa-triangle-exclamation"></i> API зміни мають лишатися зворотно сумісними</li>
+            <li class="dev4-constraint-item"><i class="fa-solid fa-exclamation"></i> Зміна БД без простою (zero-downtime)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main lower grid: readiness + capstone -->
+      <div class="dev4-readiness-main-grid" style="margin-bottom: 4px !important;">
+        <!-- Left: implementation readiness -->
+        <div class="dev4-readiness-left-panel">
+          <div class="dev4-subsection-title">
+            <i class="fa-solid fa-clipboard-check"></i> Перевірка готовності до впровадження
+          </div>
+          <div class="dev4-checklist-container">
+            <ul class="dev4-checklist-list">
+              <li class="dev4-checklist-item"><i class="fa-solid fa-circle-check"></i> Верифіковано схвалений обсяг та статус ADR</li>
+              <li class="dev4-checklist-item"><i class="fa-solid fa-circle-check"></i> Оновлено зміни компонентів і технічні завдання</li>
+              <li class="dev4-checklist-item"><i class="fa-solid fa-circle-check"></i> Зафіксовано зміни API, подій та моделі даних</li>
+              <li class="dev4-checklist-item"><i class="fa-solid fa-circle-check"></i> Оновлено підхід до міграції та чек-лист сумісності</li>
+              <li class="dev4-checklist-item"><i class="fa-solid fa-circle-check"></i> Актуалізовано залежності та реєстр ризиків</li>
+            </ul>
+          </div>
+          <div class="dev4-handoff-note">
+            <i class="fa-solid fa-people-arrows"></i>
+            <span>Підготовлено handoff для QA та DevOps: сценарії помилок, порядок розгортання, конфігурації, метрики та умови відкату.</span>
+          </div>
+        </div>
+
+        <!-- Right: capstone + validation -->
+        <div class="dev4-readiness-right-panel">
+          <div class="dev4-subsection-title">
+            <i class="fa-solid fa-flag-checkered"></i> Developer Capstone: фінальна перевірка
+          </div>
+          <ul class="dev4-capstone-prep-list">
+            <li class="dev4-capstone-item"><i class="fa-solid fa-circle-check"></i> Технічні уточнення та мапа впливу на компоненти</li>
+            <li class="dev4-capstone-item"><i class="fa-solid fa-circle-check"></i> План впровадження з явним API/data впливом</li>
+            <li class="dev4-capstone-item"><i class="fa-solid fa-circle-check"></i> Аналіз сумісності, міграції та фіча-флагів</li>
+            <li class="dev4-capstone-item"><i class="fa-solid fa-circle-check"></i> Оновлення пакету після нових обмежень</li>
+            <li class="dev4-capstone-item"><i class="fa-solid fa-circle-check"></i> Implementation-readiness review</li>
+          </ul>
+          <div class="dev4-adr-status-box">
+            <i class="fa-solid fa-file-shield"></i>
+            <span class="dev4-adr-status-text">ADR має видимий статус і затверджувача; рішення лишається валідним після оновлення пакету.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

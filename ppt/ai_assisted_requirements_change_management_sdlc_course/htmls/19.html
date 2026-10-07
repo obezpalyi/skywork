@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Демонстраційний prompt для review вимог</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">:root {
+  --ppt-chart-1: #2563EB;
+  --ppt-chart-2: #06B6D4;
+  --ppt-chart-3: #6366F1;
+  --ppt-chart-4: #F59E0B;
+  --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-category-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .content-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 0 60px 40px 60px;
+      flex: 1;
+      align-items: stretch;
+    }
+
+    .left-prompt-blueprint-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .right-review-workflow-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .prompt-template-card {
+      background-color: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 12px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .prompt-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--ppt-border);
+    }
+
+    .prompt-icon-wrapper {
+      width: 32px;
+      height: 32px;
+      background-color: var(--ppt-accent);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .prompt-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .prompt-body-code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ppt-text-1);
+      white-space: pre-wrap;
+      padding: 16px;
+      background-color: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      border-left: 3px solid var(--ppt-accent-2);
+      flex: 1;
+    }
+
+    .review-checklist-card {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section-subtitle-text {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      margin-bottom: 8px;
+    }
+
+    .workflow-steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .workflow-step-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 8px 0;
+    }
+
+    .step-number-badge {
+      min-width: 24px;
+      height: 24px;
+      background-color: var(--ppt-bg-soft);
+      border: 1px solid var(--ppt-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+    }
+
+    .step-content-box {
+      flex: 1;
+    }
+
+    .step-title-bold {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      font-size: 16px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .step-desc-muted {
+      color: var(--ppt-text-2);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .human-review-callout {
+      margin-top: auto;
+      background-color: rgba(37, 99, 235, 0.05);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px;
+      border: 1px dashed var(--ppt-accent);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--ppt-accent);
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .callout-text {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .prompt-highlight {
+      color: var(--ppt-accent);
+      font-weight: 700;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-container">
+    <header class="title-region-wrapper">
+      <div class="title-category-label">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-main-heading">Демонстраційний prompt для review вимог</h1>
+    </header>
+
+    <main class="content-layout-grid" style="margin-bottom: 4px !important;">
+      <!-- Left Column: The Prompt Structure -->
+      <section class="left-prompt-blueprint-column">
+        <div class="prompt-template-card">
+          <div class="prompt-card-header">
+            <div class="prompt-icon-wrapper">
+              <i class="fa-solid fa-terminal"></i>
+            </div>
+            <div class="prompt-card-title">Prompt: Requirements Reviewer</div>
+          </div>
+          <div class="prompt-body-code">«Ти — <span class="prompt-highlight">reviewer вимог</span>.
+
+Використовуй лише надані документи.
+
+Для кожної вимоги:
+1. Наведи коротке формулювання;
+2. Вкажи <span class="prompt-highlight">джерело</span>;
+3. Перевір повноту та однозначність;
+4. Назви ризик;
+5. Сформулюй уточнююче питання.
+
+Якщо даних недостатньо — напиши <span class="prompt-highlight">&#34;не визначено&#34;</span>.
+У разі суперечностей — покажи конфлікт.»</div>
+        </div>
+      </section>
+
+      <!-- Right Column: Algorithm and Self-Review -->
+      <section class="right-review-workflow-column">
+        <div class="review-checklist-card">
+          <div>
+            <h2 class="section-subtitle-text">Алгоритм виконання запиту</h2>
+            <div class="workflow-steps-list">
+              <div class="workflow-step-item">
+                <div class="step-number-badge">1</div>
+                <div class="step-content-box">
+                  <span class="step-title-bold">Ізоляція контексту</span>
+                  <span class="step-desc-muted">Асистент фокусується лише на поточному SDLC-baseline.</span>
+                </div>
+              </div>
+              <div class="workflow-step-item">
+                <div class="step-number-badge">2</div>
+                <div class="step-content-box">
+                  <span class="step-title-bold">Аналітичне сканування</span>
+                  <span class="step-desc-muted">Пошук невідповідностей між бізнес-ціллю та описом.</span>
+                </div>
+              </div>
+              <div class="workflow-step-item">
+                <div class="step-number-badge">3</div>
+                <div class="step-content-box">
+                  <span class="step-title-bold">Виявлення &#34;Галюцинацій&#34;</span>
+                  <span class="step-desc-muted">Маркування тверджень, що не мають прямого джерела.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="human-review-callout">
+            <div class="callout-title">
+              <i class="fa-solid fa-user-check"></i>
+              Human Self-Review Checklist
+            </div>
+            <div class="callout-text">
+              • Чи кожне уточнююче питання є конструктивним?<br/>
+              • Чи дійсно &#34;не визначені&#34; дані відсутні в документах?<br/>
+              • Чи не пропущено критичні нефункціональні вимоги?
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body></html>

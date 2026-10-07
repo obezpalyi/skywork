@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps промпт для аналізу вимог</title>
+  <!-- Font Awesome 6 (free) -->
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    /* ===== Base theme (imported from DESIGN) ===== */
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;500&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #64748B;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #10B981;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #10B981;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #6366F1;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Roboto Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    /* ===== Slide root: fixed 1280x720 ===== */
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      
+      position: relative;
+      padding: 0 60px 24px 60px;  /* bottom safety gap */
+    }
+
+    /* ===== Title Region (from DESIGN) ===== */
+    .title-region {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-left: 6px solid var(--ppt-accent);
+      padding-left: 20px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .title-region-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--ppt-text-1);
+      margin: 0;
+    }
+
+    .title-region-subheading {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      margin-top: 2px;
+    }
+
+    /* ===== Main body wrapper (fills remaining height) ===== */
+    .main-content-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+        /* allow internal scrolling if needed, but no fixed heights */
+    }
+
+    /* ---- Grid layout: 2 columns, left prompt structure, right safety rules ---- */
+    .devops-prompt-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;  /* left slightly wider */
+      gap: 24px;
+      flex: 1 1 0;
+      align-items: stretch;
+    }
+
+    /* ===== Left column: prompt structure ===== */
+    .prompt-structure-column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 22px;
+      box-shadow: var(--ppt-shadow-soft);
+      justify-content: flex-start;  /* natural top-to-bottom */
+    }
+
+    .prompt-structure-column-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .prompt-structure-column-header i {
+      font-size: 18px;
+      color: var(--ppt-accent);
+      width: 24px;
+      text-align: center;
+    }
+
+    .prompt-structure-column-header-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .prompt-step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .prompt-step-list-item {
+      display: block;  /* block-level, no flex on list item itself */
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+      padding-left: 6px;
+      border-left: 2px solid var(--ppt-border);
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+
+    .prompt-step-list-item strong {
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      font-family: var(--ppt-font-body);
+    }
+
+    /* ===== Right column: safety rules ===== */
+    .safety-rules-column {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: var(--ppt-bg-soft);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 22px;
+      justify-content: flex-start;
+    }
+
+    .safety-rules-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .safety-rules-header i {
+      font-size: 18px;
+      color: var(--ppt-bad);
+      width: 24px;
+      text-align: center;
+    }
+
+    .safety-rules-header-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .safety-rule-block {
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 14px;
+      border-left: 4px solid var(--ppt-warn);
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .safety-rule-block-title {
+      font-family: var(--ppt-font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .safety-rule-block-title i {
+      color: var(--ppt-warn);
+      font-size: 14px;
+      width: 18px;
+      text-align: center;
+    }
+
+    .safety-rule-block-text {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    /* ===== Bottom note (required instruction) ===== */
+    .required-instruction-note {
+      margin-top: 16px;
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--ppt-border);
+      flex-shrink: 0;
+    }
+
+    .required-instruction-note i {
+      color: var(--ppt-bad);
+      font-size: 18px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .required-instruction-note-text {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ppt-text-1);
+      font-weight: 500;
+    }
+
+    .required-instruction-note-text span {
+      background: var(--ppt-surface);
+      padding: 2px 6px;
+      border-radius: var(--ppt-radius-sm);
+      font-weight: 400;
+      color: var(--ppt-text-2);
+    }
+
+    /* no flex on list items, no justify-content space-between */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title Region (fixed template) -->
+    <header class="title-region">
+      <div class="title-region-eyebrow">DEVOPS TRACK | AI-ASSISTED SDLC</div>
+      <h1 class="title-region-heading">DevOps промпт для аналізу вимог</h1>
+      <div class="title-region-subheading">Структура промпту для аналізу операційних потреб із дотриманням правил безпеки</div>
+    </header>
+
+    <!-- Main content wrapper (fills remaining height) -->
+    <div class="main-content-wrapper">
+      <!-- Two-column layout -->
+      <div class="devops-prompt-grid">
+        <!-- Left column: prompt structure -->
+        <div class="prompt-structure-column">
+          <div class="prompt-structure-column-header">
+            <i class="fa-solid fa-list-ul"></i>
+            <span class="prompt-structure-column-header-title">Структура промпту</span>
+          </div>
+          <ul class="prompt-step-list">
+            <li class="prompt-step-list-item"><strong>1. Роль</strong> — операційний рев&#39;юер вимог.</li>
+            <li class="prompt-step-list-item"><strong>2. Контекст</strong> — вимога, сервіси, топологія, середовища, ранбуки.</li>
+            <li class="prompt-step-list-item"><strong>3. Дія</strong> — виявити операційні потреби, прогалини та ризики.</li>
+            <li class="prompt-step-list-item"><strong>4. Вихід</strong> — таблиця доказів із власником і наступним кроком.</li>
+            <li class="prompt-step-list-item"><strong>5. Критерії якості</strong> — простежуваність, жодних вигаданих конфігурацій, явна невизначеність.</li>
+          </ul>
+        </div>
+
+        <!-- Right column: safety rules -->
+        <div class="safety-rules-column">
+          <div class="safety-rules-header">
+            <i class="fa-solid fa-shield"></i>
+            <span class="safety-rules-header-title">Правила безпеки</span>
+          </div>
+          <div class="safety-rule-block">
+            <div class="safety-rule-block-title">
+              <i class="fa-solid fa-lock"></i> Секрети та значення
+            </div>
+            <div class="safety-rule-block-text">
+              Ніколи не виводити секрети або прод-значення. Використовуйте плейсхолдери для чутливих параметрів.
+            </div>
+          </div>
+          <div class="safety-rule-block">
+            <div class="safety-rule-block-title">
+              <i class="fa-solid fa-user-check"></i> Авторизоване джерело
+            </div>
+            <div class="safety-rule-block-text">
+              Ідентифікуйте авторизоване джерело або власника для кожного параметра. Без цього — лише плейсхолдер.
+            </div>
+          </div>
+          <div class="safety-rule-block">
+            <div class="safety-rule-block-title">
+              <i class="fa-solid fa-ban"></i> Заборона інференсу
+            </div>
+            <div class="safety-rule-block-text">
+              Xplore не вгадує прод-значення. Всі невідомі параметри позначаються як невизначені.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Required instruction note (bottom) -->
+      <div class="required-instruction-note" style="margin-bottom: 4px !important;">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div class="required-instruction-note-text">
+          Обов&#39;язкова інструкція: <span>“Never output secrets or infer production values. Use placeholders for sensitive parameters and identify the authorized source or owner.”</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

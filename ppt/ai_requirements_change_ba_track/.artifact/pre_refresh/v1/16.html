@@ -1,0 +1,415 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сесія BA-3: Запит на зміни та аналіз впливу</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">:root {
+  --ppt-bg: #F8FAFC;
+  --ppt-bg-soft: #EEF2F6;
+  --ppt-surface: #FFFFFF;
+  --ppt-surface-2: #F1F5F9;
+  --ppt-border: #CBD5E1;
+  --ppt-text-1: #0F172A;
+  --ppt-text-2: #475569;
+  --ppt-text-3: #94A3B8;
+  --ppt-accent: #0D9488;
+  --ppt-accent-2: #6366F1;
+  --ppt-chart-1: #0D9488;
+  --ppt-chart-2: #6366F1;
+  --ppt-chart-3: #F59E0B;
+  --ppt-chart-4: #EC4899;
+  --ppt-good: #10B981;
+  --ppt-warn: #F59E0B;
+  --ppt-bad: #EF4444;
+  --ppt-radius-sm: 2px;
+  --ppt-radius-md: 6px;
+  --ppt-radius-lg: 10px;
+  --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --ppt-font-display: "Inter", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+  --ppt-font-mono: "JetBrains Mono", monospace;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: #F8FAFC;
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-bg);
+      color: var(--ppt-text-1);
+      
+    }/* Non-cover page title region — strictly from DESIGN */
+    .title-header{
+      margin-top: 23px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-rule-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-accent-bar {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 32px;
+      border-radius: var(--ppt-radius-sm);
+      flex-shrink: 0;
+    }
+
+    .title-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-eyebrow {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+
+    .title-main-text {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-subtitle-text {
+      margin: 0;
+      margin-left: 16px;
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+    }/* Main body — single structural wrapper with flex growth */
+    .ba3-main-content-wrapper{
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px 20px;
+       /* no, we must NOT use min-height:0 globally; but this is a structural flex item; we instead rely on flex-basis 0 and fixed slide height */
+    }/* top description line — compact intro */
+    .ba3-intro-strip{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 6px 12px;
+      background: var(--ppt-surface-2);
+      border-left: 4px solid var(--ppt-accent);
+      padding: 6px 16px;
+      border-radius: 0 var(--ppt-radius-md) var(--ppt-radius-md) 0;
+    }
+
+    .ba3-intro-icon {
+      color: var(--ppt-accent);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .ba3-intro-text {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }/* two-column asymmetric layout: dominant left + right rail */
+    .ba3-columns-layout{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: row;
+      gap: 10px 20px;
+      align-items: stretch;
+    }.ba3-left-dominant-column{
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px 16px;
+      min-width: 0;
+    }.ba3-right-support-column{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 16px;
+      min-width: 0;
+    }/* left column: two stacked surfaces */
+    .ba3-left-upper-card, .ba3-left-lower-card{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 11px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }.ba3-card-title-row{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 7px;
+    }
+
+    .ba3-card-title-icon {
+      color: var(--ppt-accent-2);
+      font-size: 18px;
+      width: 22px;
+      text-align: center;
+    }
+
+    .ba3-card-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }.ba3-list-container{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px 10px;
+      padding: 0 0;
+      margin: 0 0;
+    }.ba3-list-item{
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 6px 10px;
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }
+
+    .ba3-list-marker {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      width: 18px;
+      margin-top: 2px;
+      text-align: center;
+    }
+
+    .ba3-list-item strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }/* right column: two stacked cards, last one has accent background */
+    .ba3-right-card{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 9px 18px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ba3-right-card-accent {
+      background: #F0FDFA;
+      border-color: var(--ppt-accent);
+    }.ba3-highlight-number-row{
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 4px 8px;
+      margin-bottom: 4px;
+    }
+
+    .ba3-highlight-number {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-accent);
+      line-height: 1.2;
+    }
+
+    .ba3-highlight-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }.ba3-caption-text{
+      font-size: 13px;
+      color: var(--ppt-text-3);
+      line-height: 1.4;
+      margin-top: 2px;
+    }.ba3-divider{
+      height: 1px;
+      background: var(--ppt-border);
+      margin: 6px 0 6px 0;
+    }.ba3-inline-tag-row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 8px;
+      margin-top: 4px;
+    }.ba3-inline-tag{
+      background: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: 20px;
+      padding: 2px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+    }/* bottom compact strip for key takeaway */
+    .ba3-bottom-note-strip{
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 6px 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6px 12px;
+      border-left: 4px solid var(--ppt-accent-2);
+    }
+
+    .ba3-bottom-note-icon {
+      color: var(--ppt-accent-2);
+      font-size: 18px;
+    }
+
+    .ba3-bottom-note-text {
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .ba3-bottom-note-text strong {
+      color: var(--ppt-text-1);
+    }
+
+    /* no flex on li, no display flex on list items */
+    /* ensure all list item containers have list-style none */
+  
+html { overflow: hidden; }
+</style>
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title region exactly per DESIGN -->
+    <header class="title-header">
+      <div class="title-rule-wrapper">
+        <span class="title-accent-bar"></span>
+        <div class="title-text-group">
+          <span class="title-eyebrow">BA Track | ServiceHub</span>
+          <h1 class="title-main-text">Сесія BA-3: Запит на зміни та аналіз впливу</h1>
+        </div>
+      </div>
+      <p class="title-subtitle-text">Від неструктурованого повідомлення клієнта до оцінки бізнес-впливу</p>
+    </header>
+
+    <!-- Main content body -->
+    <div class="ba3-main-content-wrapper">
+      <!-- compact intro line -->
+      <div class="ba3-intro-strip">
+        <div class="ba3-intro-icon"><i class="fa-solid fa-bullhorn"></i></div>
+        <div class="ba3-intro-text">
+          Запит на <strong>Critical Service Request</strong>: клієнт потребує швидшої обробки, автоматичної ескалації та видимості для менеджерів. Без чіткого визначення критеріїв, SLA та правил.
+        </div>
+      </div>
+
+      <!-- two-column layout -->
+      <div class="ba3-columns-layout">
+        <!-- left dominant column -->
+        <div class="ba3-left-dominant-column">
+          <div class="ba3-left-upper-card">
+            <div class="ba3-card-title-row">
+              <div class="ba3-card-title-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+              <div class="ba3-card-title-text">Що не визначено в запиті</div>
+            </div>
+            <ul class="ba3-list-container">
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-circle"></i></span><span><strong>Критерії пріоритетного клієнта</strong> — відсутнє визначення, хто саме має право створювати критичні запити.</span></li>
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-circle"></i></span><span><strong>SLA та ескалація</strong> — не вказано час реакції, правила ескалації, сповіщення для менеджерів.</span></li>
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-circle"></i></span><span><strong>Ролі та права</strong> — хто може створювати, хто бачить, які канали сповіщення.</span></li>
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-circle"></i></span><span><strong>Поведінка поза робочим часом</strong> та <strong>звітність</strong> — без визначення.</span></li>
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-circle"></i></span><span><strong>Міграція існуючих запитів</strong> та <strong>затвердження релізу</strong> — відкриті питання.</span></li>
+            </ul>
+          </div>
+          <div class="ba3-left-lower-card">
+            <div class="ba3-card-title-row">
+              <div class="ba3-card-title-icon"><i class="fa-solid fa-sitemap"></i></div>
+              <div class="ba3-card-title-text">Ключові кроки аналізу впливу</div>
+            </div>
+            <ul class="ba3-list-container">
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-arrow-right"></i></span><span><strong>Зафіксувати оригінальний запит</strong> без інтерпретацій.</span></li>
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-arrow-right"></i></span><span><strong>Сформулювати бізнес-ціль</strong> та бажаний результат.</span></li>
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-arrow-right"></i></span><span><strong>Зв&#39;язати запит</strong> з поточним базовим планом вимог.</span></li>
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-arrow-right"></i></span><span><strong>Оцінити бізнес- та функціональний вплив</strong> на ролі, правила, UI, дані, інтеграції.</span></li>
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-arrow-right"></i></span><span><strong>Підготувати варіанти рішення</strong> та зафіксувати рішення.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- right support column -->
+        <div class="ba3-right-support-column">
+          <div class="ba3-right-card">
+            <div class="ba3-card-title-row">
+              <div class="ba3-card-title-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <div class="ba3-card-title-text">Ризики без аналізу</div>
+            </div>
+            <ul class="ba3-list-container">
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-circle-question"></i></span><span>Невірні припущення про SLA</span></li>
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-circle-question"></i></span><span>Пропущені залежності</span></li>
+              <li class="ba3-list-item"><span class="ba3-list-marker"><i class="fa-solid fa-circle-question"></i></span><span>Незафіксовані рішення</span></li>
+            </ul>
+            <div class="ba3-divider"></div>
+            <div class="ba3-highlight-number-row">
+              <span class="ba3-highlight-number">9+</span>
+              <span class="ba3-highlight-label">невизначених аспектів</span>
+            </div>
+            <div class="ba3-caption-text">критерії, ролі, SLA, ескалація, сповіщення, поза робочим часом, звітність, міграція, затвердження</div>
+          </div>
+
+          <div class="ba3-right-card ba3-right-card-accent">
+            <div class="ba3-card-title-row">
+              <div class="ba3-card-title-icon"><i class="fa-solid fa-robot"></i></div>
+              <div class="ba3-card-title-text">Роль Xplore</div>
+            </div>
+            <p style="font-size: 15px; color: var(--ppt-text-2); line-height: 1.5; margin-bottom: 4px;">
+              Інструмент допомагає нормалізувати запит, але <strong>класифікацію та рішення</strong> підтверджує власник.
+            </p>
+            <div class="ba3-inline-tag-row">
+              <span class="ba3-inline-tag">нормалізація</span>
+              <span class="ba3-inline-tag">аналіз впливу</span>
+              <span class="ba3-inline-tag">підготовка питань</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- bottom compact note -->
+      <div class="ba3-bottom-note-strip" style="margin-bottom: 2px !important;">
+        <div class="ba3-bottom-note-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <div class="ba3-bottom-note-text">
+          <strong>Результат сесії:</strong> структурований запит на зміну, матриця впливу, порівняння рішень та пакет для затвердження.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

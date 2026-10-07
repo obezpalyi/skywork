@@ -1,0 +1,19 @@
+{
+  "artifact_id": "",
+  "artifact_path": "artifacts/ai_requirements_change_management_course_plan.docx",
+  "artifact_type": "document",
+  "display_name": "Практична модель роботи з вимогами та змінами з використанням ШІ",
+  "file_type": "gen_doc_convert",
+  "file_url": "",
+  "idempotency_key": "cli:90d458b9d81d0e89925a4c266d666fef122a795d3e73a1c08b33006460a5",
+  "locator_items": null,
+  "metadata": null,
+  "page_count": 0,
+  "path": "artifacts/ai_requirements_change_management_course_plan.docx",
+  "preview_url": "",
+  "session_id": "019ff605-7524-73f2-9939-8e95015faa7f",
+  "size_bytes": 52809,
+  "title": "Практична модель роботи з вимогами та змінами з використанням ШІ",
+  "version_summary": "Published from skywork-cli",
+  "zip_url": ""
+}

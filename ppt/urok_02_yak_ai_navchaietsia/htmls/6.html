@@ -1,0 +1,514 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Вправа «Фрум чи лора?»</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+
+    :root {
+      --ppt-bg: #F9F9F7;
+      --ppt-bg-soft: #F0F0EB;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E5E5E0;
+      --ppt-border: #2D2D2D;
+      --ppt-text-1: #1A1A1A;
+      --ppt-text-2: #4A4A4A;
+      --ppt-text-3: #757575;
+      --ppt-accent: #00A896;
+      --ppt-accent-2: #FF6B6B;
+      --ppt-chart-1: #00A896;
+      --ppt-chart-2: #028090;
+      --ppt-chart-3: #F4D35E;
+      --ppt-chart-4: #EE964B;
+      --ppt-good: #27AE60;
+      --ppt-warn: #F39C12;
+      --ppt-bad: #E74C3C;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+    }.slide-root{
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0;
+      
+      box-shadow: var(--ppt-shadow-strong);
+    }.title-region{
+      margin-top: 29px;
+      margin-right: 64px;
+      margin-bottom: 14px;
+      margin-left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-accent-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-accent-bar {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 24px;
+      display: block;
+    }
+
+    .title-eyebrow {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .title-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-subheading {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      margin-top: 4px;
+      line-height: 1.4;
+    }.exercise-body-wrapper{
+      flex: 1 1 0;
+      margin-right: 64px;
+      margin-left: 64px;
+      margin-bottom: 29px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px 24px;
+      
+    }.exercise-instruction-panel{
+      display: flex;
+      flex-direction: column;
+      gap: 7px 12px;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      padding: 12px 24px;
+      border-radius: var(--ppt-radius-md);
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .instruction-title-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .instruction-icon {
+      color: var(--ppt-accent);
+      font-size: 22px;
+      width: 30px;
+      text-align: center;
+    }
+
+    .instruction-title-text {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .instruction-detail-text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      max-width: 90%;
+    }.exercise-main-split{
+      display: flex;
+      flex-direction: row;
+      gap: 14px 24px;
+      flex: 1 1 0;
+      
+    }.exercise-card-left-panel{
+      flex: 2 1 0;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px 18px;
+      box-shadow: var(--ppt-shadow-soft);
+      
+    }.left-panel-heading{
+      display: flex;
+      align-items: center;
+      gap: 6px 10px;
+    }
+
+    .left-panel-heading-icon {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .left-panel-heading-text {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }.fruit-card-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px 16px;
+      align-items: start;
+    }.fruit-card-item{
+      background-color: var(--ppt-bg-soft);
+      border: 1px solid var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px 8px;
+    }
+
+    .fruit-card-icon-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .fruit-icon-large {
+      font-size: 28px;
+      color: var(--ppt-accent);
+    }
+
+    .fruit-shape-icon {
+      font-size: 22px;
+      color: var(--ppt-text-3);
+    }.fruit-attributes-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px 6px;
+    }.fruit-attribute-item{
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      display: flex;
+      align-items: center;
+      gap: 4px 6px;
+    }
+
+    .attribute-icon {
+      font-size: 12px;
+      width: 16px;
+      color: var(--ppt-accent);
+    }.fruit-label-badge{
+      align-self: flex-start;
+      background-color: var(--ppt-accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .fruit-label-badge-alt {
+      background-color: var(--ppt-accent-2);
+    }
+
+    .right-role-panel {
+      flex: 1 1 0;
+      background-color: var(--ppt-bg-soft);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .right-role-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .right-role-heading-icon {
+      color: var(--ppt-accent);
+      font-size: 20px;
+    }
+
+    .right-role-heading-text {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .role-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .role-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .role-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--ppt-text-1);
+    }
+
+    .role-icon {
+      font-size: 14px;
+      width: 22px;
+      color: var(--ppt-accent);
+    }
+
+    .role-bold-text {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .role-note-text {
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      padding-left: 4px;
+    }
+
+    .group-rule-highlight {
+      margin-top: 8px;
+      background-color: var(--ppt-surface);
+      border-left: 4px solid var(--ppt-accent);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-radius: 0 var(--ppt-radius-sm) var(--ppt-radius-sm) 0;
+    }
+
+    .group-rule-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .group-rule-title i {
+      color: var(--ppt-accent);
+      font-size: 14px;
+    }
+
+    .group-rule-desc {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <header class="title-region">
+      <div class="title-accent-row">
+        <span class="title-accent-bar"></span>
+        <span class="title-eyebrow">УРОК ІНФОРМАТИКИ | ШТУЧНИЙ ІНТЕЛЕКТ</span>
+      </div>
+      <h1 class="title-heading">Вправа «Фрум чи лора?»</h1>
+      <div class="title-subheading">Класифікуємо вигадані фрукти за ознаками та формулюємо власне правило</div>
+    </header>
+
+    <main class="exercise-body-wrapper">
+      <!-- Instruction panel -->
+      <div class="exercise-instruction-panel">
+        <div class="instruction-title-block">
+          <i class="fa-solid fa-bullseye instruction-icon"></i>
+          <span class="instruction-title-text">Завдання для групи</span>
+        </div>
+        <div class="instruction-detail-text">
+          Розгляньте навчальні картки: колір, форма, розмір і кількість плям. Знайдіть закономірність, яка відрізняє «фрум» від «лора», і сформулюйте власне правило класифікації.
+        </div>
+      </div>
+
+      <!-- Main split: left cards + right roles -->
+      <div class="exercise-main-split" style="margin-bottom: 2px !important;">
+        <!-- Left: fruit cards -->
+        <div class="exercise-card-left-panel">
+          <div class="left-panel-heading">
+            <i class="fa-solid fa-apple-whole left-panel-heading-icon"></i>
+            <span class="left-panel-heading-text">Навчальні картки</span>
+          </div>
+          <div class="fruit-card-grid">
+            <!-- card 1: фрум -->
+            <div class="fruit-card-item">
+              <div class="fruit-card-icon-row">
+                <i class="fa-solid fa-circle fruit-icon-large" style="color: #e74c3c;"></i>
+                <i class="fa-solid fa-circle fruit-shape-icon"></i>
+              </div>
+              <ul class="fruit-attributes-list">
+                <li class="fruit-attribute-item"><i class="fa-solid fa-palette attribute-icon"></i>Червоний</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-shapes attribute-icon"></i>Круглий</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-expand attribute-icon"></i>Великий</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle attribute-icon" style="font-size: 10px;"></i>2 плями</li>
+              </ul>
+              <span class="fruit-label-badge">ФРУМ</span>
+            </div>
+            <!-- card 2: лора -->
+            <div class="fruit-card-item">
+              <div class="fruit-card-icon-row">
+                <i class="fa-solid fa-circle fruit-icon-large" style="color: #f39c12;"></i>
+                <i class="fa-solid fa-square fruit-shape-icon"></i>
+              </div>
+              <ul class="fruit-attributes-list">
+                <li class="fruit-attribute-item"><i class="fa-solid fa-palette attribute-icon"></i>Помаранчевий</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-shapes attribute-icon"></i>Квадратний</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle-question attribute-icon"></i>Середній</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle attribute-icon" style="font-size: 10px;"></i>1 пляма</li>
+              </ul>
+              <span class="fruit-label-badge fruit-label-badge-alt">ЛОРА</span>
+            </div>
+            <!-- card 3: фрум -->
+            <div class="fruit-card-item">
+              <div class="fruit-card-icon-row">
+                <i class="fa-solid fa-circle fruit-icon-large" style="color: #27ae60;"></i>
+                <i class="fa-solid fa-circle fruit-shape-icon"></i>
+              </div>
+              <ul class="fruit-attributes-list">
+                <li class="fruit-attribute-item"><i class="fa-solid fa-palette attribute-icon"></i>Зелений</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-shapes attribute-icon"></i>Круглий</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle-question attribute-icon"></i>Малий</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle attribute-icon" style="font-size: 10px;"></i>3 плями</li>
+              </ul>
+              <span class="fruit-label-badge">ФРУМ</span>
+            </div>
+            <!-- card 4: лора -->
+            <div class="fruit-card-item">
+              <div class="fruit-card-icon-row">
+                <i class="fa-solid fa-circle fruit-icon-large" style="color: #8e44ad;"></i>
+                <i class="fa-solid fa-square fruit-shape-icon"></i>
+              </div>
+              <ul class="fruit-attributes-list">
+                <li class="fruit-attribute-item"><i class="fa-solid fa-palette attribute-icon"></i>Фіолетовий</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-shapes attribute-icon"></i>Квадратний</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle-question attribute-icon"></i>Великий</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle attribute-icon" style="font-size: 10px;"></i>0 плям</li>
+              </ul>
+              <span class="fruit-label-badge fruit-label-badge-alt">ЛОРА</span>
+            </div>
+            <!-- card 5: фрум -->
+            <div class="fruit-card-item">
+              <div class="fruit-card-icon-row">
+                <i class="fa-solid fa-circle fruit-icon-large" style="color: #2980b9;"></i>
+                <i class="fa-solid fa-circle fruit-shape-icon"></i>
+              </div>
+              <ul class="fruit-attributes-list">
+                <li class="fruit-attribute-item"><i class="fa-solid fa-palette attribute-icon"></i>Синій</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-shapes attribute-icon"></i>Круглий</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle-question attribute-icon"></i>Середній</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle attribute-icon" style="font-size: 10px;"></i>2 плями</li>
+              </ul>
+              <span class="fruit-label-badge">ФРУМ</span>
+            </div>
+            <!-- card 6: лора -->
+            <div class="fruit-card-item">
+              <div class="fruit-card-icon-row">
+                <i class="fa-solid fa-circle fruit-icon-large" style="color: #e67e22;"></i>
+                <i class="fa-solid fa-square fruit-shape-icon"></i>
+              </div>
+              <ul class="fruit-attributes-list">
+                <li class="fruit-attribute-item"><i class="fa-solid fa-palette attribute-icon"></i>Помаранчевий</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-shapes attribute-icon"></i>Квадратний</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle-question attribute-icon"></i>Малий</li>
+                <li class="fruit-attribute-item"><i class="fa-solid fa-circle attribute-icon" style="font-size: 10px;"></i>1 пляма</li>
+              </ul>
+              <span class="fruit-label-badge fruit-label-badge-alt">ЛОРА</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: roles + rule -->
+        <div class="right-role-panel">
+          <div class="right-role-heading">
+            <i class="fa-solid fa-users right-role-heading-icon"></i>
+            <span class="right-role-heading-text">Ролі в групі</span>
+          </div>
+          <div class="role-list-container">
+            <ul class="role-list">
+              <li class="role-list-item">
+                <i class="fa-solid fa-circle-question role-icon"></i>
+                <span><span class="role-bold-text">Аналітик ознак</span> — досліджує колір, форму, розмір</span>
+              </li>
+              <li class="role-list-item">
+                <i class="fa-solid fa-pen role-icon"></i>
+                <span><span class="role-bold-text">Укладач правила</span> — формулює гіпотезу</span>
+              </li>
+              <li class="role-list-item">
+                <i class="fa-solid fa-circle-check role-icon"></i>
+                <span><span class="role-bold-text">Перевіряльник</span> — тестує на всіх картках</span>
+              </li>
+              <li class="role-list-item">
+                <i class="fa-solid fa-comment-dots role-icon"></i>
+                <span><span class="role-bold-text">Доповідач</span> — представляє правило класу</span>
+              </li>
+            </ul>
+          </div>
+          <div class="group-rule-highlight">
+            <div class="group-rule-title">
+              <i class="fa-solid fa-lightbulb"></i>
+              <span>Очікуваний результат</span>
+            </div>
+            <div class="group-rule-desc">
+              Спільне правило, яке пояснює, чому картка належить до «фрум» чи «лора», з опорою на 2–3 ознаки.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body></html>

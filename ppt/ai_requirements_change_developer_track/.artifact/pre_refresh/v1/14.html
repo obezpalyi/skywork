@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Контракти API, даних та подій</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-bg);
+      
+      padding: 0;
+    }
+
+    /* Non-Cover-Page Title Region — fixed design contract */
+    .title-region {
+      margin-top: 40px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-badge {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+      white-space: nowrap;
+    }
+
+    .title-region-divider {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-title {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* Main body wrapper — flex growth consumes remaining height */
+    .body-content-wrapper {
+      flex: 1 1 0;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+       /* allowed only for structural wrapper, but global prohibition says no min-height:0 anywhere. So we do NOT use it. */
+    }
+
+    /* Since min-height:0 is prohibited globally, we rely on flex growth with natural content. */
+    .contracts-layout {
+      display: flex;
+      gap: 24px;
+      width: 100%;
+      flex: 1 1 0;
+      align-items: stretch;
+    }
+
+    /* Left column — API & Data contracts */
+    .contracts-left-column {
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .api-contract-panel {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 20px 16px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel-heading-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .panel-heading-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--ppt-radius-sm);
+      background: var(--ppt-surface-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 14px;
+    }
+
+    .panel-heading-text {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .contract-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contract-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .contract-list-marker {
+      width: 6px;
+      height: 6px;
+      border-radius: 1px;
+      background: var(--ppt-accent);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .contract-list-item strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    .data-contract-panel {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 20px 16px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Right column — Events & Audit */
+    .contracts-right-column {
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .event-contract-panel {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 20px 16px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .audit-contract-panel {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 20px 16px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mono-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      color: var(--ppt-accent);
+      background: var(--ppt-surface-2);
+      padding: 2px 6px;
+      border-radius: var(--ppt-radius-sm);
+      display: inline-block;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Compact note row at bottom */
+    .contracts-footnote-row {
+      margin-top: 16px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-left: 3px solid var(--ppt-accent);
+      flex-shrink: 0;
+    }
+
+    .footnote-icon {
+      color: var(--ppt-accent);
+      font-size: 16px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .footnote-text {
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+    }
+
+    .footnote-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    /* Ensure no fixed heights on text panels, only flex distribution */
+    .contracts-left-column > div,
+    .contracts-right-column > div {
+       /* not allowed per global rule — we must avoid min-height:0. So we do NOT set it. */
+    }
+
+    /* Override: we cannot use min-height:0, so we rely on flex and natural content */
+    .api-contract-panel,
+    .data-contract-panel,
+    .event-contract-panel,
+    .audit-contract-panel {
+      min-height: auto;
+    }
+
+    /* list items block-level flow */
+    .contract-list-item {
+      display: flex; /* allowed for inline row of marker + text, not a list item layout module */
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Non-Cover-Page Title Region (fixed template) -->
+    <header class="title-region">
+      <div class="title-region-eyebrow-row">
+        <span class="title-region-badge">Developer Track</span>
+        <div class="title-region-divider"></div>
+      </div>
+      <h1 class="title-region-title">Контракти API, даних та подій</h1>
+    </header>
+
+    <!-- Main content body -->
+    <div class="body-content-wrapper">
+      <div class="contracts-layout">
+        <!-- Left column: API + Data -->
+        <div class="contracts-left-column">
+          <!-- API contract panel -->
+          <div class="api-contract-panel">
+            <div class="panel-heading-row">
+              <div class="panel-heading-icon">
+                <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+              </div>
+              <div class="panel-heading-text">Контракти API</div>
+            </div>
+            <ul class="contract-list">
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Нові/змінені поля</strong> – додавання поля пріоритету в Ticket API</span>
+              </li>
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Правила валідації</strong> – обов’язковість, формат, допустимі значення</span>
+              </li>
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Поведінка старих клієнтів</strong> – значення за замовчуванням при відсутності даних</span>
+              </li>
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Підхід до версіонування</strong> – сумісні зміни без порушення контракту</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Data contract panel -->
+          <div class="data-contract-panel">
+            <div class="panel-heading-row">
+              <div class="panel-heading-icon">
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
+              </div>
+              <div class="panel-heading-text">Контракти даних</div>
+            </div>
+            <ul class="contract-list">
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Міграція даних</strong> – перенесення існуючих запитів, історії ескалацій</span>
+              </li>
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Нові поля стану/історії</strong> – фіксація змін у життєвому циклі запиту</span>
+              </li>
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Значення за замовчуванням</strong> – пріоритет, дефолтні правила SLA</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right column: Events + Audit -->
+        <div class="contracts-right-column">
+          <!-- Event contract panel -->
+          <div class="event-contract-panel">
+            <div class="panel-heading-row">
+              <div class="panel-heading-icon">
+                <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+              </div>
+              <div class="panel-heading-text">Контракти подій</div>
+            </div>
+            <ul class="contract-list">
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Схема події</strong> – нова подія ескалації з полями пріоритету</span>
+              </li>
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Ідемпотентність</strong> – повторювані події обробляються без дублікатів</span>
+              </li>
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Ретрії та дублікати</strong> – політика повторної обробки</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Audit contract panel -->
+          <div class="audit-contract-panel">
+            <div class="panel-heading-row">
+              <div class="panel-heading-icon">
+                <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+              </div>
+              <div class="panel-heading-text">Аудит і контроль</div>
+            </div>
+            <ul class="contract-list">
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Вимоги до аудиту</strong> – журналювання змін пріоритету та ескалацій</span>
+              </li>
+              <li class="contract-list-item">
+                <span class="contract-list-marker"></span>
+                <span><strong>Простежуваність</strong> – зв’язок подій із бізнес-змінами</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compact footnote / review note -->
+      <div class="contracts-footnote-row" style="margin-bottom: 4px !important;">
+        <div class="footnote-icon">
+          <i class="fa-solid fa-user-check" aria-hidden="true"></i>
+        </div>
+        <div class="footnote-text">
+          <strong>Кожна пропозиція зміни контракту</strong> потребує перегляду розробником або архітектором перед включенням у план.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome Icons -->
+  
+
+</body></html>

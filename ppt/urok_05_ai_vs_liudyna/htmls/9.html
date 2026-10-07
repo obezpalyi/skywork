@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Модель «ШІ допомагає — людина відповідає»</title>
+
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+  :root {
+    --ppt-bg: #F8F9FA;
+    --ppt-bg-soft: #EEF2F6;
+    --ppt-surface: #FFFFFF;
+    --ppt-surface-2: #E9ECEF;
+    --ppt-border: #CED4DA;
+    --ppt-text-1: #212529;
+    --ppt-text-2: #495057;
+    --ppt-text-3: #6C757D;
+    --ppt-accent: #6366F1;
+    --ppt-accent-2: #F43F5E;
+    --ppt-chart-1: #6366F1;
+    --ppt-chart-2: #F43F5E;
+    --ppt-chart-3: #10B981;
+    --ppt-chart-4: #F59E0B;
+    --ppt-good: #10B981;
+    --ppt-warn: #F59E0B;
+    --ppt-bad: #EF4444;
+    --ppt-radius-sm: 4px;
+    --ppt-radius-md: 12px;
+    --ppt-radius-lg: 20px;
+    --ppt-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --ppt-shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --ppt-font-display: "Inter", sans-serif;
+    --ppt-font-body: "Inter", sans-serif;
+    --ppt-font-mono: "JetBrains Mono", monospace;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {width: 1280px; height: 720px; overflow: hidden;   
+    background: var(--ppt-bg);
+  }
+
+  .slide-root {
+    width: 1280px; height: 720px;
+    background: var(--ppt-bg);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--ppt-font-body);
+    color: var(--ppt-text-1);
+    
+    position: relative;
+  }
+
+  .title-region {
+    margin-top: 48px;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .title-region-top-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .title-region-eyebrow {
+    font-family: var(--ppt-font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ppt-accent);
+    background: var(--ppt-bg-soft);
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .title-region-divider {
+    height: 1px;
+    flex-grow: 1;
+    background: var(--ppt-border);
+  }
+
+  .title-region-title {
+    margin: 0;
+    font-family: var(--ppt-font-display);
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--ppt-text-1);
+    line-height: 1.2;
+  }
+
+  .model-body-wrapper {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 40px;
+    
+  }
+
+  .model-split-layout {
+    flex: 1 1 0;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    align-items: stretch;
+    
+  }
+
+  .model-left-human-side {
+    display: flex;
+    flex-direction: column;
+    padding-right: 32px;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .model-left-side-label {
+    font-family: var(--ppt-font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ppt-accent-2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .model-left-side-title {
+    font-family: var(--ppt-font-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--ppt-text-1);
+    line-height: 1.2;
+  }
+
+  .model-left-accent-block {
+    background: rgba(99, 102, 241, 0.06);
+    border-left: 4px solid var(--ppt-accent);
+    padding: 12px 16px;
+    border-radius: 0 var(--ppt-radius-md) var(--ppt-radius-md) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .model-left-accent-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ppt-text-1);
+    line-height: 1.4;
+  }
+
+  .model-left-accent-icon {
+    width: 24px;
+    color: var(--ppt-accent);
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .model-left-note {
+    font-size: 15px;
+    color: var(--ppt-text-3);
+    line-height: 1.4;
+    margin-top: 4px;
+  }
+
+  .model-divider-line {
+    background: var(--ppt-border);
+    width: 1px;
+    height: 100%;
+  }
+
+  .model-right-ai-side {
+    display: flex;
+    flex-direction: column;
+    padding-left: 32px;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .model-right-side-label {
+    font-family: var(--ppt-font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ppt-accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .model-right-side-title {
+    font-family: var(--ppt-font-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--ppt-text-1);
+    line-height: 1.2;
+  }
+
+  .model-right-accent-block {
+    background: rgba(244, 63, 94, 0.05);
+    border-left: 4px solid var(--ppt-accent-2);
+    padding: 12px 16px;
+    border-radius: 0 var(--ppt-radius-md) var(--ppt-radius-md) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .model-right-accent-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ppt-text-1);
+    line-height: 1.4;
+  }
+
+  .model-right-accent-icon {
+    width: 24px;
+    color: var(--ppt-accent-2);
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .model-right-note {
+    font-size: 15px;
+    color: var(--ppt-text-3);
+    line-height: 1.4;
+    margin-top: 4px;
+  }
+
+  .model-risk-callout {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--ppt-surface);
+    border-radius: var(--ppt-radius-md);
+    padding: 12px 16px;
+    box-shadow: var(--ppt-shadow-soft);
+    border: 1px solid var(--ppt-border);
+  }
+
+  .model-risk-icon {
+    color: var(--ppt-warn);
+    font-size: 22px;
+    width: 28px;
+    text-align: center;
+  }
+
+  .model-risk-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ppt-text-2);
+    line-height: 1.4;
+  }
+
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+<div class="slide-root">
+  <header class="title-region">
+    <div class="title-region-top-line">
+      <span class="title-region-eyebrow">Інформатика 11 клас</span>
+      <div class="title-region-divider"></div>
+    </div>
+    <h1 class="title-region-title">Модель «ШІ допомагає — людина відповідає»</h1>
+  </header>
+
+  <div class="model-body-wrapper">
+    <div class="model-split-layout">
+      <!-- Ліва частина: Людина відповідає -->
+      <div class="model-left-human-side">
+        <div class="model-left-side-label">
+          <i class="fa-solid fa-circle-user"></i>
+          Людина відповідає
+        </div>
+        <div class="model-left-side-title">Мета, контроль,<br/>відповідальність</div>
+        <div class="model-left-accent-block">
+          <div class="model-left-accent-item">
+            <span class="model-left-accent-icon"><i class="fa-solid fa-bullseye"></i></span>
+            <span>Визначає мету та критерії успіху</span>
+          </div>
+          <div class="model-left-accent-item">
+            <span class="model-left-accent-icon"><i class="fa-solid fa-database"></i></span>
+            <span>Обирає дані та формулює запит</span>
+          </div>
+          <div class="model-left-accent-item">
+            <span class="model-left-accent-icon"><i class="fa-solid fa-check-double"></i></span>
+            <span>Перевіряє результат і приймає рішення</span>
+          </div>
+          <div class="model-left-accent-item">
+            <span class="model-left-accent-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+            <span>Несе відповідальність за наслідки</span>
+          </div>
+        </div>
+        <div class="model-left-note">
+          Людський контроль має бути тим сильнішим, чим вищий ризик рішення.
+        </div>
+      </div>
+
+      <!-- Вертикальний розділювач -->
+      <div class="model-divider-line"></div>
+
+      <!-- Права частина: ШІ допомагає -->
+      <div class="model-right-ai-side">
+        <div class="model-right-side-label">
+          <i class="fa-solid fa-robot"></i>
+          ШІ допомагає
+        </div>
+        <div class="model-right-side-title">Аналіз, генерація,<br/>автоматизація</div>
+        <div class="model-right-accent-block">
+          <div class="model-right-accent-item">
+            <span class="model-right-accent-icon"><i class="fa-solid fa-chart-line"></i></span>
+            <span>Аналізує великі обсяги даних</span>
+          </div>
+          <div class="model-right-accent-item">
+            <span class="model-right-accent-icon"><i class="fa-solid fa-lightbulb"></i></span>
+            <span>Генерує варіанти та чернетки</span>
+          </div>
+          <div class="model-right-accent-item">
+            <span class="model-right-accent-icon"><i class="fa-solid fa-layer-group"></i></span>
+            <span>Узагальнює інформацію</span>
+          </div>
+          <div class="model-right-accent-item">
+            <span class="model-right-accent-icon"><i class="fa-solid fa-gears"></i></span>
+            <span>Автоматизує повторювані операції</span>
+          </div>
+        </div>
+        <div class="model-right-note">
+          Якість роботи ШІ залежить від даних, інструкції та людської перевірки.
+        </div>
+      </div>
+    </div>
+
+    <!-- Нижній callout: рівень контролю -->
+    <div class="model-risk-callout" style="margin-bottom: 4px !important;">
+      <span class="model-risk-icon"><i class="fa-solid fa-shield-halved"></i></span>
+      <span class="model-risk-text">Чим вищий ризик рішення — тим сильніший людський контроль</span>
+    </div>
+  </div>
+</div>
+
+</body></html>

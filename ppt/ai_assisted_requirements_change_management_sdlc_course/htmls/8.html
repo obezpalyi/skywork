@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Як AI-асистент працює з корпоративними знаннями</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      box-sizing: border-box;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      
+    }
+
+    .sdlc-slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      
+    }.title-region-wrapper{
+      margin-top: 32px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }.sdlc-main-content-layout{
+      flex: 1;
+      display: flex;
+      gap: 32px 40px;
+      padding: 0 60px 32px 60px;
+      align-items: stretch;
+    }
+
+    .left-workflow-column-wrapper {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .right-control-column-wrapper {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .sdlc-process-stage-card {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+      box-shadow: var(--ppt-shadow-soft);
+      position: relative;
+    }
+
+    .sdlc-stage-icon-box {
+      width: 48px;
+      height: 48px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--ppt-accent);
+      font-size: 20px;
+    }
+
+    .sdlc-stage-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sdlc-stage-title-label {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .sdlc-stage-description-text {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }.sdlc-control-verification-panel{
+      background: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-accent);
+      border-radius: var(--ppt-radius-lg);
+      padding: 19px 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px 20px;
+    }.sdlc-panel-header-group{
+      border-bottom: 2px solid var(--ppt-border);
+      padding-bottom: 10px;
+      margin-bottom: 3px;
+    }
+
+    .sdlc-panel-heading-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }.sdlc-checklist-items-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px 16px;
+    }.sdlc-checklist-item-wrapper{
+      display: block;
+      padding: 10px 12px;
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      border-left: 4px solid var(--ppt-warn);
+      box-shadow: var(--ppt-shadow-soft);
+    }.sdlc-checklist-question-text{
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 3px;
+    }
+
+    .sdlc-checklist-note-text {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      color: var(--ppt-text-2);
+    }.sdlc-footer-principle-badge{
+      margin-top: auto;
+      background: var(--ppt-text-1);
+      color: var(--ppt-surface);
+      padding: 8px 16px;
+      border-radius: var(--ppt-radius-sm);
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .sdlc-connector-line {
+      width: 2px;
+      height: 16px;
+      background: var(--ppt-border);
+      margin-left: 44px;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="sdlc-slide-root">
+    <header class="title-region-wrapper">
+      <div class="title-region-label">AI-MANAGED SDLC PLAYBOOK</div>
+      <h1 class="title-region-heading">Як AI-асистент працює з корпоративними знаннями</h1>
+    </header>
+
+    <main class="sdlc-main-content-layout" style="margin-bottom: 3px !important;">
+      <!-- Left Column: The Workflow -->
+      <div class="left-workflow-column-wrapper">
+        <div class="sdlc-process-stage-card">
+          <div class="sdlc-stage-icon-box">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <div class="sdlc-stage-text-group">
+            <div class="sdlc-stage-title-label">1. Доступ до корпусу знань</div>
+            <div class="sdlc-stage-description-text">Отримує дозволений набір документів: ТЗ, Jira, Wiki, протоколи зустрічей та листування.</div>
+          </div>
+        </div>
+
+        <div class="sdlc-process-stage-card">
+          <div class="sdlc-stage-icon-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="sdlc-stage-text-group">
+            <div class="sdlc-stage-title-label">2. Пошук релевантних фрагментів</div>
+            <div class="sdlc-stage-description-text">Знаходить конкретні уривки тексту, що безпосередньо стосуються запиту користувача.</div>
+          </div>
+        </div>
+
+        <div class="sdlc-process-stage-card">
+          <div class="sdlc-stage-icon-box">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <div class="sdlc-stage-text-group">
+            <div class="sdlc-stage-title-label">3. Формування відповіді</div>
+            <div class="sdlc-stage-description-text">Синтезує відповідь виключно на основі знайденого контексту, не додаючи зовнішніх припущень.</div>
+          </div>
+        </div>
+
+        <div class="sdlc-process-stage-card">
+          <div class="sdlc-stage-icon-box">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div class="sdlc-stage-text-group">
+            <div class="sdlc-stage-title-label">4. Аналіз та структурування</div>
+            <div class="sdlc-stage-description-text">Порівнює версії, знаходить суперечності та узагальнює дані у робочі артефакти.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Control &amp; Verification -->
+      <div class="right-control-column-wrapper">
+        <div class="sdlc-control-verification-panel">
+          <div class="sdlc-panel-header-group">
+            <div class="sdlc-panel-heading-title">
+              <i class="fa-solid fa-clipboard-check" style="color: var(--ppt-warn);"></i>
+              Контрольні запитання
+            </div>
+          </div>
+
+          <div class="sdlc-checklist-items-list">
+            <div class="sdlc-checklist-item-wrapper">
+              <div class="sdlc-checklist-question-text">Яке джерело використано?</div>
+              <div class="sdlc-checklist-note-text">Посилання на конкретний документ або протокол.</div>
+            </div>
+
+            <div class="sdlc-checklist-item-wrapper">
+              <div class="sdlc-checklist-question-text">Яка версія документа?</div>
+              <div class="sdlc-checklist-note-text">Перевірка актуальності baseline вимог.</div>
+            </div>
+
+            <div class="sdlc-checklist-item-wrapper">
+              <div class="sdlc-checklist-question-text">Чи є суперечливі джерела?</div>
+              <div class="sdlc-checklist-note-text">Маркування конфліктів між старими й новими рішеннями.</div>
+            </div>
+
+            <div class="sdlc-checklist-item-wrapper">
+              <div class="sdlc-checklist-question-text">Що є фактом, а що висновком?</div>
+              <div class="sdlc-checklist-note-text">Відділення підтверджених даних від логічних припущень.</div>
+            </div>
+          </div>
+
+          <div class="sdlc-footer-principle-badge">
+            AI не перетворює непідтверджену відповідь на факт без Human Review.
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body></html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>OPS-2: Робочий процес — Матриця операційного впливу</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;500&display=swap");
+
+        :root {
+            --ppt-bg: #F8FAFC;
+            --ppt-bg-soft: #F1F5F9;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E2E8F0;
+            --ppt-border: #CBD5E1;
+            --ppt-text-1: #0F172A;
+            --ppt-text-2: #475569;
+            --ppt-text-3: #64748B;
+            --ppt-accent: #2563EB;
+            --ppt-accent-2: #10B981;
+            --ppt-chart-1: #2563EB;
+            --ppt-chart-2: #10B981;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #6366F1;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Roboto Mono", monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: var(--ppt-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            font-family: var(--ppt-font-body);
+        }
+
+        .slide-root {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 60px 40px 60px;
+            
+            position: relative;
+        }
+
+        /* Non-cover page title region (fixed cross-slide contract) */
+        .title-region {
+            margin-top: 40px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-left: 6px solid var(--ppt-accent);
+            padding-left: 20px;
+            flex-shrink: 0;
+        }
+
+        .title-region-eyebrow {
+            font-family: var(--ppt-font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .title-region-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--ppt-text-1);
+            margin: 0;
+        }
+
+        .title-region-subtitle {
+            font-family: var(--ppt-font-body);
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            margin-top: 2px;
+        }
+
+        /* Main body wrapper — fills remaining height */
+        .workflow-matrix-body {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+             /* no — prohibited */
+            /* min-height: 0 is globally forbidden; we simply avoid it */
+        }
+
+        /* Open impact-matrix layout: weak-line comparison matrix */
+        .impact-matrix-container {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 20px 24px 16px 24px;
+            box-shadow: var(--ppt-shadow-soft);
+            
+        }
+
+        .matrix-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            flex-shrink: 0;
+        }
+
+        .matrix-header-title {
+            font-family: var(--ppt-font-display);
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--ppt-text-1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .matrix-header-title i {
+            color: var(--ppt-accent);
+            font-size: 20px;
+        }
+
+        .matrix-legend {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--ppt-text-3);
+            align-items: center;
+        }
+
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-tag {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+        }
+
+        .tag-new-metric { background: var(--ppt-accent); }
+        .tag-config { background: var(--ppt-warn); }
+        .tag-rollback { background: var(--ppt-bad); }
+
+        /* Table-style open matrix with weak horizontal lines */
+        .impact-table {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .impact-table-row {
+            display: grid;
+            grid-template-columns: 1.4fr 1.2fr 1.6fr 1.6fr 1.2fr 1.2fr;
+            border-bottom: 1px solid var(--ppt-border);
+            align-items: center;
+            min-height: 44px;
+        }
+
+        .impact-table-row:last-child {
+            border-bottom: none;
+        }
+
+        .impact-table-header {
+            font-family: var(--ppt-font-display);
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--ppt-text-2);
+            background: var(--ppt-bg-soft);
+            border-bottom: 1px solid var(--ppt-border);
+            border-radius: 0;
+            letter-spacing: 0.02em;
+            min-height: 36px;
+        }
+
+        .impact-table-header > div {
+            padding: 8px 12px;
+            font-weight: 600;
+        }
+
+        .impact-table-cell {
+            padding: 8px 12px;
+            color: var(--ppt-text-2);
+            line-height: 1.4;
+            border-right: 1px solid var(--ppt-bg-soft);
+            font-size: 13px;
+        }
+
+        .impact-table-cell:last-child {
+            border-right: none;
+        }
+
+        .cell-strong {
+            color: var(--ppt-text-1);
+            font-weight: 600;
+            font-family: var(--ppt-font-display);
+        }
+
+        .tag-status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: var(--ppt-font-display);
+            background: var(--ppt-bg-soft);
+            border: 1px solid var(--ppt-border);
+            color: var(--ppt-text-2);
+        }
+
+        .tag-status-new { background: rgba(37, 99, 235, 0.12); border-color: rgba(37, 99, 235, 0.3); color: var(--ppt-accent); }
+        .tag-status-config { background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.3); color: #b45309; }
+        .tag-status-rollback { background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); color: var(--ppt-bad); }
+
+        /* bottom note area */
+        .matrix-footnote {
+            margin-top: 12px;
+            padding-top: 8px;
+            border-top: 1px solid var(--ppt-bg-soft);
+            font-size: 12px;
+            color: var(--ppt-text-3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .matrix-footnote i {
+            color: var(--ppt-accent);
+            margin-right: 6px;
+        }
+
+        .footnote-text {
+            display: flex;
+            align-items: center;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Title Region (fixed per design) -->
+        <header class="title-region">
+            <div class="title-region-eyebrow">DEVOPS TRACK | AI-ASSISTED SDLC</div>
+            <h1 class="title-region-heading">Робочий процес OPS-2: Матриця операційного впливу</h1>
+            <div class="title-region-subtitle">Мапування змін на сервіси · відмінності середовищ · нові метрики та сповіщення</div>
+        </header>
+
+        <!-- Main body: impact matrix open layout -->
+        <div class="workflow-matrix-body">
+            <div class="impact-matrix-container">
+                <!-- Matrix header with legend -->
+                <div class="matrix-header">
+                    <div class="matrix-header-title">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        Матриця впливу зміни → сервіси, конфігурація, спостережуваність
+                    </div>
+                    <div class="matrix-legend">
+                        <span class="legend-item"><span class="legend-tag tag-new-metric"></span> нова метрика</span>
+                        <span class="legend-item"><span class="legend-tag tag-config"></span> конфігурація</span>
+                        <span class="legend-item"><span class="legend-tag tag-rollback"></span> rollback</span>
+                    </div>
+                </div>
+
+                <!-- Open table: weak horizontal lines, no cell fills -->
+                <div class="impact-table">
+                    <!-- Header row -->
+                    <div class="impact-table-row impact-table-header">
+                        <div>Сервіс / середовище</div>
+                        <div>Джерело зміни</div>
+                        <div>Інфраструктура / IaC</div>
+                        <div>Метрики та алерти</div>
+                        <div>Ризик / безпека</div>
+                        <div>Статус</div>
+                    </div>
+
+                    <!-- Data row 1 -->
+                    <div class="impact-table-row">
+                        <div class="impact-table-cell cell-strong">critical-svc-api <span style="font-weight:400; color:var(--ppt-text-3);">(PROD)</span></div>
+                        <div class="impact-table-cell">Critical Service Request</div>
+                        <div class="impact-table-cell">+ replica set, config map</div>
+                        <div class="impact-table-cell"><span class="tag-status tag-status-new">нова метрика: sla_timer</span></div>
+                        <div class="impact-table-cell">доступ до секретів</div>
+                        <div class="impact-table-cell"><span class="tag-status tag-status-new">новий алерт</span></div>
+                    </div>
+
+                    <!-- Data row 2 -->
+                    <div class="impact-table-row">
+                        <div class="impact-table-cell cell-strong">escalation-worker <span style="font-weight:400; color:var(--ppt-text-3);">(DEV/TEST)</span></div>
+                        <div class="impact-table-cell">технічний дизайн</div>
+                        <div class="impact-table-cell">зміна env: NOTIFY_CHANNEL</div>
+                        <div class="impact-table-cell"><span class="tag-status tag-status-new">escalation_success</span></div>
+                        <div class="impact-table-cell">немає</div>
+                        <div class="impact-table-cell"><span class="tag-status tag-status-config">конфіг</span></div>
+                    </div>
+
+                    <!-- Data row 3 -->
+                    <div class="impact-table-row">
+                        <div class="impact-table-cell cell-strong">notification-svc <span style="font-weight:400; color:var(--ppt-text-3);">(STAGE)</span></div>
+                        <div class="impact-table-cell">інтеграція Teams</div>
+                        <div class="impact-table-cell">feature-flag: teams_integration</div>
+                        <div class="impact-table-cell"><span class="tag-status tag-status-new">notify_failure</span></div>
+                        <div class="impact-table-cell">зовнішній endpoint</div>
+                        <div class="impact-table-cell"><span class="tag-status tag-status-config">очікує власника</span></div>
+                    </div>
+
+                    <!-- Data row 4 -->
+                    <div class="impact-table-row">
+                        <div class="impact-table-cell cell-strong">data-migrator <span style="font-weight:400; color:var(--ppt-text-3);">(PROD)</span></div>
+                        <div class="impact-table-cell">зміна моделі даних</div>
+                        <div class="impact-table-cell">міграція БД, зворотна сумісність</div>
+                        <div class="impact-table-cell">—</div>
+                        <div class="impact-table-cell">цілісність даних</div>
+                        <div class="impact-table-cell"><span class="tag-status tag-status-rollback">rollback план</span></div>
+                    </div>
+
+                    <!-- Data row 5 -->
+                    <div class="impact-table-row">
+                        <div class="impact-table-cell cell-strong">monitoring-stack <span style="font-weight:400; color:var(--ppt-text-3);">(всі середовища)</span></div>
+                        <div class="impact-table-cell">SLO / SLA вимога</div>
+                        <div class="impact-table-cell">дашборд + alert rules</div>
+                        <div class="impact-table-cell"><span class="tag-status tag-status-new">alert: SLA_remaining</span></div>
+                        <div class="impact-table-cell">помилкові спрацювання</div>
+                        <div class="impact-table-cell"><span class="tag-status tag-status-new">узгодити з SLO</span></div>
+                    </div>
+                </div>
+
+                <!-- Footnote with source context -->
+                <div class="matrix-footnote" style="margin-bottom: 4px !important;">
+                    <div class="footnote-text">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Джерело: Critical Service Request · технічний дизайн · конфігураційний інвентар
+                    </div>
+                    <div class="footnote-text">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Xplore структурує дані, але не отримує credentials
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

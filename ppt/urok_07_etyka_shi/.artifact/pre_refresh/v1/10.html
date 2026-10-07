@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Підсумок і exit ticket</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap");
+
+    :root {
+      --ppt-bg: #FDFCFB;
+      --ppt-bg-soft: #F4F2EF;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9ECEF;
+      --ppt-border: #D8D2C2;
+      --ppt-text-1: #1A1A1A;
+      --ppt-text-2: #4A4A4A;
+      --ppt-text-3: #6C757D;
+      --ppt-accent: #005F73;
+      --ppt-accent-2: #9B2226;
+      --ppt-chart-1: #005F73;
+      --ppt-chart-2: #0A9396;
+      --ppt-chart-3: #EE9B00;
+      --ppt-chart-4: #BB3E03;
+      --ppt-good: #0A9396;
+      --ppt-warn: #E9D8A6;
+      --ppt-bad: #9B2226;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 8px;
+      --ppt-radius-lg: 0px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.08);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Manrope", sans-serif;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-strong);
+      
+      position: relative;
+    }/* Non-Cover Title Region — fixed layout per design */
+    .title-region{
+      margin-top: 26px;
+      margin-right: 64px;
+      margin-bottom: 21px;
+      margin-left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-accent-bar {
+      width: 24px;
+      height: 4px;
+      background-color: var(--ppt-accent);
+    }
+
+    .title-region-label {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--ppt-text-1);
+    }
+
+    .title-region-divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--ppt-border);
+      margin-top: 12px;
+    }/* Main content wrapper — fills remaining height */
+    .conclusion-content-wrapper{
+      flex: 1 1 0;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      
+    }/* Top takeaway block */
+    .closing-thesis-block{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-left: 6px solid var(--ppt-accent);
+      padding: 13px 28px;
+      border-radius: var(--ppt-radius-md);
+      box-shadow: var(--ppt-shadow-soft);
+    }.closing-thesis-heading{
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+      margin-bottom: 9px;
+      display: flex;
+      align-items: center;
+      gap: 6px 10px;
+    }.closing-thesis-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 12px;
+    }.closing-thesis-item{
+      display: flex;
+      gap: 9px 14px;
+      align-items: flex-start;
+      font-size: 19px;
+      line-height: 1.5;
+      color: var(--ppt-text-1);
+      font-weight: 500;
+    }.closing-thesis-item i{
+      color: var(--ppt-accent);
+      margin-top: 4px;
+      font-size: 18px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .closing-thesis-item strong {
+      color: var(--ppt-text-1);
+      font-weight: 700;
+    }/* Lower two-column reflection + homework */
+    .reflection-homework-split{
+      flex: 1 1 0;
+      display: flex;
+      gap: 15px 24px;
+      margin-top: 15px;
+      
+    }.reflection-column-left{
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 15px 28px;
+      border: 1px solid var(--ppt-border);
+    }.reflection-column-heading{
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px 10px;
+    }
+
+    .reflection-column-heading i {
+      color: var(--ppt-accent);
+    }.exit-ticket-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 12px;
+    }.exit-ticket-list-item{
+      display: flex;
+      gap: 8px 12px;
+      align-items: flex-start;
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }.exit-ticket-list-item i{
+      color: var(--ppt-accent-2);
+      margin-top: 3px;
+      font-size: 15px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .exit-ticket-list-item strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }.homework-card-right{
+      flex: 0.9;
+      display: flex;
+      flex-direction: column;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 15px 28px;
+      box-shadow: var(--ppt-shadow-soft);
+    }.homework-card-heading{
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px 10px;
+    }
+
+    .homework-card-heading i {
+      color: var(--ppt-accent-2);
+    }
+
+    .homework-card-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ppt-text-2);
+    }
+
+    .homework-card-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }.homework-card-action{
+      margin-top: 13px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-sm);
+      padding: 9px 16px;
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--ppt-text-1);
+      border-left: 4px solid var(--ppt-accent);
+    }
+
+    .homework-card-action i {
+      color: var(--ppt-accent);
+      margin-right: 10px;
+    }
+
+    /* Ensure no fixed heights on text containers */
+    .closing-thesis-block,
+    .reflection-column-left,
+    .homework-card-right {
+      height: auto;
+    }
+
+    .reflection-homework-split {
+      align-items: stretch;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Fixed Title Region (non-cover) -->
+    <div class="title-region">
+      <div class="title-region-eyebrow">
+        <div class="title-region-accent-bar"></div>
+        <span class="title-region-label">Етика та ШІ</span>
+      </div>
+      <h1 class="title-region-heading">Підсумок і exit ticket</h1>
+      <div class="title-region-divider"></div>
+    </div>
+
+    <!-- Main content -->
+    <div class="conclusion-content-wrapper">
+      <!-- Core theses block -->
+      <div class="closing-thesis-block">
+        <div class="closing-thesis-heading">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <span>Три головні тези уроку</span>
+        </div>
+        <ul class="closing-thesis-list">
+          <li class="closing-thesis-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span><strong>Технічна можливість ≠ етична допустимість.</strong> Система може бути ефективною, але це не виправдовує її застосування без аналізу наслідків для людей.</span>
+          </li>
+          <li class="closing-thesis-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span><strong>«Так вирішив алгоритм» не знімає відповідальності.</strong> Відповідальність завжди залишається на людях: розробниках, організаціях, операторах та користувачах.</span>
+          </li>
+          <li class="closing-thesis-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span><strong>Справедливість, приватність, згода, прозорість і людський контроль</strong> мають бути передбачені ще до запуску системи, а не як реакція на проблеми.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Reflection + Homework split -->
+      <div class="reflection-homework-split" style="margin-bottom: 2px !important;">
+        <!-- Exit ticket column -->
+        <div class="reflection-column-left">
+          <div class="reflection-column-heading">
+            <i class="fa-solid fa-clipboard-question"></i>
+            <span>Exit ticket — 6 питань для рефлексії</span>
+          </div>
+          <ul class="exit-ticket-list">
+            <li class="exit-ticket-list-item">
+              <i class="fa-solid fa-chevron-right"></i>
+              <span><strong>1.</strong> Яке етичне питання ШІ вас найбільше турбує?</span>
+            </li>
+            <li class="exit-ticket-list-item">
+              <i class="fa-solid fa-chevron-right"></i>
+              <span><strong>2.</strong> Чим небезпечні упереджені дані для ухвалення рішень?</span>
+            </li>
+            <li class="exit-ticket-list-item">
+              <i class="fa-solid fa-chevron-right"></i>
+              <span><strong>3.</strong> Яке право має користувач, на якого впливає рішення ШІ?</span>
+            </li>
+            <li class="exit-ticket-list-item">
+              <i class="fa-solid fa-chevron-right"></i>
+              <span><strong>4.</strong> Назвіть один ефективний запобіжник проти несправедливих рішень.</span>
+            </li>
+            <li class="exit-ticket-list-item">
+              <i class="fa-solid fa-chevron-right"></i>
+              <span><strong>5.</strong> У якій ситуації потрібен обов&#39;язковий людський контроль?</span>
+            </li>
+            <li class="exit-ticket-list-item">
+              <i class="fa-solid fa-chevron-right"></i>
+              <span><strong>6.</strong> Хто має нести відповідальність за фінальне рішення?</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Homework card -->
+        <div class="homework-card-right">
+          <div class="homework-card-heading">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <span>Домашнє завдання</span>
+          </div>
+          <div class="homework-card-text">
+            <strong>Створіть етичну карту</strong> реального або уявного AI-кейсу. Використайте шаблон із попереднього слайда: мета, ризики, людський контроль, умови безпечного використання.
+          </div>
+          <div class="homework-card-action">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Завершіть речення: <em>«Ми дозволили б використовувати цю систему лише за умови, що…»</em></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

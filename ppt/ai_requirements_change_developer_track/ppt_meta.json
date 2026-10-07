@@ -1,0 +1,193 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "ai_requirements_change_developer_track",
+  "artifact_path": "ppt/ai_requirements_change_developer_track",
+  "pptTitle": "AI-assisted Requirements and Change Mana…",
+  "ppt_title": "AI-assisted Requirements and Change Mana…",
+  "outlineArtifactPath": "ppt/ai_requirements_change_developer_track/outline.md",
+  "outline_artifact_path": "ppt/ai_requirements_change_developer_track/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-795f9df553.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-795f9df553.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-795f9df553.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/ai_requirements_change_developer_track/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/ai_requirements_change_developer_track/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-795f9df553.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/019ff605-7524-73f2-9939-8e95015faa7f/artifact-publish/outline-795f9df553.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/ai_requirements_change_developer_track/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/ai_requirements_change_developer_track/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи окрему навчальну презентацію для Developer Track курсу AI-assisted Requirements and Change Management in SDLC. Презентація має містити 29 слайдів: 3 вступні, чотири рольові сесії по 6 слайдів кожна та 2 завершальні. Не більше 10 слайдів на сесію. Використай навчальний проєкт ServiceHub, Developer workflows, Developer capstone, 10 робочих днів самостійної практики й онлайн-тест. Xplore подавай як практичний засіб технічного аналізу, а не як автономний генератор інженерних рішень.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "auto_increase_ratio": 0.35,
+  "auto_increase_bucket": 0.3657,
+  "region": "US",
+  "prepared_session_id": "019ff605-7524-73f2-9939-8e95015faa7f",
+  "prepared_question_id": "Q-00cb192032b6",
+  "prepared_target_path": "ppt/ai_requirements_change_developer_track",
+  "prepared_state_id": "pps_ba8a4ad5e834ae1c1d51d717cb3bba9b",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "2": [],
+    "20": [],
+    "21": [],
+    "22": [],
+    "23": [],
+    "24": [],
+    "25": [],
+    "26": [],
+    "27": [],
+    "28": [],
+    "29": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:0560045e3c240c3d1c2acee6448abae9d24b457b885b12c07a50169cbc0fb5bf",
+  "init_request_fingerprint": "sha256:fed322e920efbe83a3774358e7340e047d01526bf7277cc8077f3335a0e4ed29",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:0133f36ecac7193a8d229fa0a14d5f4f2eaf8e3f423c9a163f4b53e9db3cfb14",
+  "outline_artifact_sha256": "sha256:91c975c4d7ed6ae00a6b6a8d40d39d692b4a0dbe6bf9fe74c9ec9210458c8f05",
+  "prepared_inputs": [
+    {
+      "path": "ppt/ai_requirements_change_developer_track/design_guideline.md",
+      "size": 9777,
+      "sha256": "sha256:19606e07ecf0dd3d27365639a47ac95e2e6904ae603a451f2a35f77d0bc912f9"
+    },
+    {
+      "path": "ppt/ai_requirements_change_developer_track/final_report.md",
+      "size": 14100,
+      "sha256": "sha256:0133f36ecac7193a8d229fa0a14d5f4f2eaf8e3f423c9a163f4b53e9db3cfb14"
+    },
+    {
+      "path": "ppt/ai_requirements_change_developer_track/outline.json",
+      "size": 30830,
+      "sha256": "sha256:4fc94c64e4b0486c9123452cb900031e83d84365b2eaa2f73a100a823897181f"
+    },
+    {
+      "path": "ppt/ai_requirements_change_developer_track/outline.md",
+      "size": 9800,
+      "sha256": "sha256:91c975c4d7ed6ae00a6b6a8d40d39d692b4a0dbe6bf9fe74c9ec9210458c8f05"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success_with_warnings",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "auto_mode",
+      "auto_increase_miss",
+      "standard_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "ambiguous",
+      "errorCode": "ambiguousResult",
+      "retryable": false
+    },
+    "dropped_images": null,
+    "warnings": [
+      {
+        "scope": "image_description",
+        "image_index": 5,
+        "source": "search",
+        "error_code": "internalError",
+        "impact": "dropped_candidate",
+        "terminal": false
+      },
+      {
+        "scope": "image_description",
+        "image_index": 17,
+        "source": "search",
+        "error_code": "internalError",
+        "impact": "dropped_candidate",
+        "terminal": false
+      },
+      {
+        "scope": "image_description",
+        "image_index": 23,
+        "source": "search",
+        "error_code": "internalError",
+        "impact": "dropped_candidate",
+        "terminal": false
+      }
+    ],
+    "mock": false
+  }
+}

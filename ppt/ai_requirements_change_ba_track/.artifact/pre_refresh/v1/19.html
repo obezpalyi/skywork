@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Матриця функціонального впливу змін</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #EEF2F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F1F5F9;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EC4899;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    /* Slide root: fixed 1280x720, flex column */
+    .impact-matrix-slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 56px 40px 56px; /* bottom safety gap */
+      
+    }
+
+    /* ===== Title Region (fixed per DESIGN) ===== */
+    .title-region-impact-matrix {
+      margin-top: 48px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-impact-matrix-header-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-impact-matrix-accent-bar {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 32px;
+      border-radius: var(--ppt-radius-sm);
+      flex-shrink: 0;
+    }
+
+    .title-region-impact-matrix-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .title-region-impact-matrix-eyebrow {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+      line-height: 1.4;
+    }
+
+    .title-region-impact-matrix-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .title-region-impact-matrix-subtitle {
+      margin: 0;
+      margin-left: 16px;
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    /* ===== Body Region: Open impact-matrix layout ===== */
+    .impact-matrix-body-region {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+       /* not applied to text cards; this is a structural wrapper */
+    }
+
+    /* Context line (compact) */
+    .impact-matrix-context-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-shrink: 0;
+    }
+
+    .impact-matrix-context-chip {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--ppt-accent);
+      background: var(--ppt-surface-2);
+      padding: 4px 10px;
+      border-radius: var(--ppt-radius-md);
+      border: 1px solid var(--ppt-border);
+      white-space: nowrap;
+    }
+
+    .impact-matrix-context-text {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    /* Open table: no outer border, row separators only */
+    .impact-matrix-open-table-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      
+    }
+
+    .impact-matrix-table {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .impact-matrix-table-header-group {
+      background-color: var(--ppt-bg-soft);
+    }
+
+    .impact-matrix-table-header-cell {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--ppt-border);
+      vertical-align: middle;
+      letter-spacing: 0.02em;
+    }
+
+    .impact-matrix-table-row {
+      border-bottom: 1px solid var(--ppt-border);
+    }
+
+    .impact-matrix-table-row:last-child {
+      border-bottom: none;
+    }
+
+    .impact-matrix-table-object-cell {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      padding: 12px 14px;
+      vertical-align: top;
+      width: 22%;
+      line-height: 1.4;
+    }
+
+    .impact-matrix-table-desc-cell {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      padding: 12px 14px;
+      vertical-align: top;
+      width: 46%;
+      line-height: 1.5;
+      border-left: 1px solid var(--ppt-border);
+    }
+
+    .impact-matrix-table-risk-cell {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      padding: 12px 14px;
+      vertical-align: top;
+      width: 32%;
+      line-height: 1.5;
+      border-left: 1px solid var(--ppt-border);
+    }
+
+    .impact-matrix-table-risk-emphasis {
+      color: var(--ppt-bad);
+      font-weight: 500;
+    }
+
+    /* legend / handoff note */
+    .impact-matrix-aux-note {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--ppt-border);
+      font-family: var(--ppt-font-body);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+
+    .impact-matrix-aux-note strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    /* Code-like inline accent */
+    .impact-matrix-mono-tag {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      background: var(--ppt-surface-2);
+      padding: 2px 6px;
+      border-radius: var(--ppt-radius-sm);
+      color: var(--ppt-accent-2);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="impact-matrix-slide-root">
+
+    <!-- Title region (fixed per DESIGN) -->
+    <header class="title-region-impact-matrix">
+      <div class="title-region-impact-matrix-header-row">
+        <span class="title-region-impact-matrix-accent-bar"></span>
+        <div class="title-region-impact-matrix-text-group">
+          <span class="title-region-impact-matrix-eyebrow">BA Track | ServiceHub</span>
+          <h1 class="title-region-impact-matrix-heading">Матриця функціонального впливу змін</h1>
+        </div>
+      </div>
+      <p class="title-region-impact-matrix-subtitle">Аналіз впливу на ролі, бізнес-правила, UI, дані, інтеграції та Jira-беклог</p>
+    </header>
+
+    <!-- Main body: open impact matrix -->
+    <div class="impact-matrix-body-region">
+      <div class="impact-matrix-context-line">
+        <span class="impact-matrix-context-chip">Critical Service Request</span>
+        <span class="impact-matrix-context-text">Зміна впливає на 12 об&#39;єктів, поза межами BA — фіксуються як handoff-питання.</span>
+      </div>
+
+      <!-- Open table without outer borders -->
+      <div class="impact-matrix-open-table-wrapper">
+        <table class="impact-matrix-table">
+          <thead class="impact-matrix-table-header-group">
+            <tr>
+              <th class="impact-matrix-table-header-cell" style="width:22%;">Об&#39;єкт впливу</th>
+              <th class="impact-matrix-table-header-cell" style="width:46%;">Опис зміни / наслідок</th>
+              <th class="impact-matrix-table-header-cell" style="width:32%;">Ризик / дія</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="impact-matrix-table-row">
+              <td class="impact-matrix-table-object-cell">Ролі користувачів</td>
+              <td class="impact-matrix-table-desc-cell">Пріоритетний клієнт отримує право створювати Critical Request; додається роль &#34;менеджер&#34; для перегляду та ескалації.</td>
+              <td class="impact-matrix-table-risk-cell">Не визначені критерії пріоритетності — <span class="impact-matrix-table-risk-emphasis">потрібне рішення власника</span>; оновлення матриці ролей.</td>
+            </tr>
+            <tr class="impact-matrix-table-row">
+              <td class="impact-matrix-table-object-cell">Бізнес-правила</td>
+              <td class="impact-matrix-table-desc-cell">Нове правило SLA: ескалація через 2 год, автоматичне сповіщення відповідальних менеджерів, пріоритетна обробка.</td>
+              <td class="impact-matrix-table-risk-cell">Конфлікт із поточним SLA (2 год vs 4 год) — <span class="impact-matrix-table-risk-emphasis">заблокувати до уточнення</span>.</td>
+            </tr>
+            <tr class="impact-matrix-table-row">
+              <td class="impact-matrix-table-object-cell">UI / UX</td>
+              <td class="impact-matrix-table-desc-cell">Нова форма створення запиту з полем &#34;критичність&#34;, віджет статусу ескалації для менеджера.</td>
+              <td class="impact-matrix-table-risk-cell">Відсутність стану &#34;поза робочим часом&#34; — <span class="impact-matrix-table-risk-emphasis">додати edge-case</span>.</td>
+            </tr>
+            <tr class="impact-matrix-table-row">
+              <td class="impact-matrix-table-object-cell">Дані</td>
+              <td class="impact-matrix-table-desc-cell">Нова сутність &#34;критичний запит&#34;, атрибут &#34;пріоритетний клієнт&#34;, історія ескалацій та рішень.</td>
+              <td class="impact-matrix-table-risk-cell">Міграція існуючих запитів не визначена — <span class="impact-matrix-table-risk-emphasis">відкрите питання</span>.</td>
+            </tr>
+            <tr class="impact-matrix-table-row">
+              <td class="impact-matrix-table-object-cell">Інтеграції</td>
+              <td class="impact-matrix-table-desc-cell">Сповіщення через email/чат, оновлення Jira-епіку, синхронізація з SLA-движком.</td>
+              <td class="impact-matrix-table-risk-cell">Немає визначення каналів і форматів — <span class="impact-matrix-table-risk-emphasis">handoff до DevOps</span>.</td>
+            </tr>
+            <tr class="impact-matrix-table-row">
+              <td class="impact-matrix-table-object-cell">Jira-завдання</td>
+              <td class="impact-matrix-table-desc-cell">Новий epic &#34;Critical Request&#34;, задачі на UI, бізнес-логіку, сповіщення, тести.</td>
+              <td class="impact-matrix-table-risk-cell">Критерії приймання не визначені — <span class="impact-matrix-table-risk-emphasis">потрібна перевірка DoR</span>.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Handoff note (auxiliary text) -->
+        <div class="impact-matrix-aux-note" style="margin-bottom: 4px !important;">
+          <strong>Handoff:</strong> впливи поза межами BA (наприклад, інфраструктура, ліцензії) фіксуються як передані питання, а не вирішуються мовчки. <span class="impact-matrix-mono-tag">BA-3</span> <span class="impact-matrix-mono-tag">functional-impact</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

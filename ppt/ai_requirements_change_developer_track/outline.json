@@ -1,0 +1,570 @@
+[
+  {
+    "page_num": 1,
+    "heading": "AI-assisted Requirements and Change Management in SDLC: Developer Track",
+    "type": "title",
+    "des": "Титульна сторінка навчального курсу для розробників, присвяченого переходу від схвалених вимог до технічно обґрунтованої реалізації за допомогою штучного інтелекту.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/e1d8b2a718a5c567a6133c4c2aee2e4f.jpg",
+        "filename": "Building an Effective Architecture Review Board (ARB).",
+        "img_desc": "An illustration shows three software professionals collaborating around a desk, with one person seated at a laptop and two standing nearby in discussion. Abstract connected nodes, document icons, and geometric shapes in the background suggest software architecture, planning, and review activities. The figures wear orange, white, and dark-colored clothing, while the clean white background and flat vector style create a modern professional aesthetic. The composition centers on the team and workspace, with ample open space and balanced technical motifs.",
+        "caption": "Flat vector illustration of a software architecture review meeting, with three colleagues discussing around a laptop and abstract planning symbols in the background.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1021x439",
+        "title": "Building an Effective Architecture Review Board (ARB).",
+        "width": 1021,
+        "height": 439,
+        "query": "software developer architecture review meeting"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/202b0618530f070f7fe03e5a9f07514d.jpg",
+        "filename": "Build and operate an effective architecture review board | AWS Architecture  Blog",
+        "img_desc": "A clean horizontal process diagram illustrates a software development and operations lifecycle. Blue rounded rectangles show the sequence \"PLAN,\" \"DESIGN,\" \"BUILD,\" \"TEST,\" \"DEPLOY,\" \"OPERATE,\" and \"MAINTAIN,\" connected by right-pointing arrows. Two dotted callout boxes above the workflow are labeled \"ARB Design Review\" and \"ARB Validate Review,\" with feedback arrows leading back into the process. A long return arrow connects maintenance back to testing, emphasizing an iterative cycle. The diagram uses a minimal white background, blue-and-white color scheme, and clear structured composition.",
+        "caption": "A blue workflow diagram showing planning, design, building, testing, deployment, operation, and maintenance, with architecture review checkpoints and an iterative feedback loop.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x235",
+        "title": "Build and operate an effective architecture review board | AWS Architecture  Blog",
+        "width": 1024,
+        "height": 235,
+        "query": "software developer architecture review meeting"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/8d44a1defeee70b5b258dd4b0665099d.jpg",
+        "filename": "What is API-first? The API-first Approach Explained | Postman",
+        "img_desc": "An illustrated API-first technology concept is shown at the center, with a stylized city and connected infrastructure inside a shield-like geometric frame. Several circular icons surrounding the central graphic depict connected services and technical elements, including a server, cloud, user, building, and software component. Thin colored connector lines link the icons to the central illustration. The design uses clean flat vector graphics, pastel blue, orange, yellow, green, and gray accents, and a transparent or black-looking background. The composition is balanced and clearly references software architecture and interconnected systems.",
+        "caption": "A clean vector illustration representing an API-first software ecosystem, with a connected city-like architecture and surrounding service icons.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "400x400",
+        "title": "What is API-first? The API-first Approach Explained | Postman",
+        "width": 400,
+        "height": 400,
+        "query": "software engineering team API design workshop"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/35425f190f2b77fbdd75ac0c2246b8fd.jpg",
+        "filename": "Building a Successful Data Migration Team: Roles, Challenges, and Best  Practices",
+        "img_desc": "A clear organizational flowchart presents the structure of a data migration project team. The central Data Migration Project Manager oversees roles including the Data Architect, Data Migration Analysts, Data Engineer, Data Quality Analyst, and Business Analyst, with connections to QA Engineers/Testers, additional technical roles, and a Security Specialist. Each role is shown in a white rounded rectangle with a brief responsibility label, connected by gray arrows on a black background. The layout is clean, legible, and focused on team relationships and responsibilities.",
+        "caption": "Organizational flowchart showing key roles and reporting relationships in a data migration project team.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x610",
+        "title": "Building a Successful Data Migration Team: Roles, Challenges, and Best  Practices",
+        "width": 1024,
+        "height": 610,
+        "query": "software database migration planning team"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/237a630fba2ca2e9ffb98f5194ec6617.jpg",
+        "filename": "Engineering team in artificial intelligence tech company workplace conducts code  reviews teamworking | Premium Photo",
+        "img_desc": "Four colleagues wearing blue lanyards collaborate in a modern office workspace. One woman holds a tablet while discussing something with the group, a man examines a laptop, and another woman gestures toward the screen. Code-filled monitors are visible in the foreground, supporting the scene of an engineering team conducting a code review. The image uses natural office lighting, neutral tones, and a documentary-style composition with the team centered in the frame.",
+        "caption": "Engineering colleagues collaborate around laptops and code-filled monitors during a team code review in a modern office.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "626x417",
+        "title": "Engineering team in artificial intelligence tech company workplace conducts code  reviews teamworking | Premium Photo",
+        "width": 626,
+        "height": 417,
+        "query": "engineering team code review office"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/a4504a6b5144024dc8cfbf6fb689f1d1.jpg",
+        "filename": "How to Build a Software Development Team from Scratch - KORE1",
+        "img_desc": "A group of five software professionals gathers around a desk in a modern office, reviewing code displayed on a desktop monitor. One team member points toward the screen while others look on, and a colleague works on a laptop in the foreground. The office features glass partitions, orange panels, multiple monitors, and geometric ceiling lights. The image has a polished, realistic photographic style with warm orange and neutral gray tones, clear focus, and a balanced workplace composition.",
+        "caption": "A software engineering team collaborates on a code review around a workstation in a modern office.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x558",
+        "title": "How to Build a Software Development Team from Scratch - KORE1",
+        "width": 1024,
+        "height": 558,
+        "query": "engineering team code review office"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 2,
+    "heading": "Чому цей трек важливий для розробників",
+    "type": "content",
+    "des": "Огляд проблем неповних вимог та технічних ризиків, які вирішуються через покращення декомпозиції завдань, аналізу залежностей та документування архітектурних рішень.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 3,
+    "heading": "Навчальний маршрут та фінальні результати",
+    "type": "content",
+    "des": "Опис чотирьох сесій курсу та перелік вихідних документів, включаючи технічні звіти, плани впровадження, ADR та персональний AI Playbook розробника.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/e1d8b2a718a5c567a6133c4c2aee2e4f.jpg",
+        "filename": "Building an Effective Architecture Review Board (ARB).",
+        "img_desc": "An illustration shows three software professionals collaborating around a desk, with one person seated at a laptop and two standing nearby in discussion. Abstract connected nodes, document icons, and geometric shapes in the background suggest software architecture, planning, and review activities. The figures wear orange, white, and dark-colored clothing, while the clean white background and flat vector style create a modern professional aesthetic. The composition centers on the team and workspace, with ample open space and balanced technical motifs.",
+        "caption": "Flat vector illustration of a software architecture review meeting, with three colleagues discussing around a laptop and abstract planning symbols in the background.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1021x439",
+        "title": "Building an Effective Architecture Review Board (ARB).",
+        "width": 1021,
+        "height": 439,
+        "query": "software developer architecture review meeting"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 4,
+    "heading": "Сесія DEV-1: Технічний аналіз вимог",
+    "type": "content",
+    "des": "Визначення цілей сесії та вхідних даних, таких як беклог Jira, діаграми контексту, специфікації API та моделі даних для ServiceHub.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 5,
+    "heading": "Бізнес-контекст проти контексту впровадження",
+    "type": "content",
+    "des": "Розмежування бізнес-цілей та технічних деталей реалізації, таких як інтерфейси, обробка помилок, обмеження та сумісність компонентів системи.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 6,
+    "heading": "Багаторазовий промпт для розробника",
+    "type": "content",
+    "des": "Структура промпту для технічного огляду вимог в Xplore, що включає роль, контекст, дію та критерії якості для виявлення ризиків.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 7,
+    "heading": "Workflow DEV-1: Від вимог до технічного уточнення",
+    "type": "content",
+    "des": "Покроковий процес ідентифікації технічних можливостей, перевірки критеріїв прийнятності та формування запитань для зацікавлених сторін проекту.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 8,
+    "heading": "Демонстрація ServiceHub та використання Xplore",
+    "type": "content",
+    "des": "Практичне використання Xplore для аналізу запиту на критичне обслуговування, розділення підтверджених фактів, припущень та невідомих технічних параметрів.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 9,
+    "heading": "Практика та результати першої сесії",
+    "type": "content",
+    "des": "Завдання для учасників щодо мапування вимог, виявлення обмежень та створення звіту про технічне уточнення з верифікованими шаблонами промптів.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 10,
+    "heading": "Сесія DEV-2: Декомпозиція та план впровадження",
+    "type": "content",
+    "des": "Цілі сесії щодо створення покомпонентного плану реалізації, декомпозиції роботи на технічні завдання та опису змін в API.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 11,
+    "heading": "Декомпозиція на рівні компонентів",
+    "type": "content",
+    "des": "Аналіз змін для кожного сервісу ServiceHub, включаючи відповідальність, вплив на інтерфейси, дані та сценарії відмов.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/35425f190f2b77fbdd75ac0c2246b8fd.jpg",
+        "filename": "Building a Successful Data Migration Team: Roles, Challenges, and Best  Practices",
+        "img_desc": "A clear organizational flowchart presents the structure of a data migration project team. The central Data Migration Project Manager oversees roles including the Data Architect, Data Migration Analysts, Data Engineer, Data Quality Analyst, and Business Analyst, with connections to QA Engineers/Testers, additional technical roles, and a Security Specialist. Each role is shown in a white rounded rectangle with a brief responsibility label, connected by gray arrows on a black background. The layout is clean, legible, and focused on team relationships and responsibilities.",
+        "caption": "Organizational flowchart showing key roles and reporting relationships in a data migration project team.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x610",
+        "title": "Building a Successful Data Migration Team: Roles, Challenges, and Best  Practices",
+        "width": 1024,
+        "height": 610,
+        "query": "software database migration planning team"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 12,
+    "heading": "Workflow DEV-2: Від вимог до плану впровадження",
+    "type": "content",
+    "des": "Алгоритм створення плану: від визначення результатів до створення технічних завдань, чек-листів впровадження та чернеток ADR.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/202b0618530f070f7fe03e5a9f07514d.jpg",
+        "filename": "Build and operate an effective architecture review board | AWS Architecture  Blog",
+        "img_desc": "A clean horizontal process diagram illustrates a software development and operations lifecycle. Blue rounded rectangles show the sequence \"PLAN,\" \"DESIGN,\" \"BUILD,\" \"TEST,\" \"DEPLOY,\" \"OPERATE,\" and \"MAINTAIN,\" connected by right-pointing arrows. Two dotted callout boxes above the workflow are labeled \"ARB Design Review\" and \"ARB Validate Review,\" with feedback arrows leading back into the process. A long return arrow connects maintenance back to testing, emphasizing an iterative cycle. The diagram uses a minimal white background, blue-and-white color scheme, and clear structured composition.",
+        "caption": "A blue workflow diagram showing planning, design, building, testing, deployment, operation, and maintenance, with architecture review checkpoints and an iterative feedback loop.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x235",
+        "title": "Build and operate an effective architecture review board | AWS Architecture  Blog",
+        "width": 1024,
+        "height": 235,
+        "query": "software developer architecture review meeting"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 13,
+    "heading": "Технічний беклог та управління залежностями",
+    "type": "content",
+    "des": "Формування технічних завдань з чітким контекстом, контрактами та візуалізацією залежностей між компонентами системи.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 14,
+    "heading": "Контракти API, даних та подій",
+    "type": "content",
+    "des": "Фіксація змін у полях API, правилах валідації, схемах подій та вимогах до аудиту для забезпечення цілісності системи.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/8d44a1defeee70b5b258dd4b0665099d.jpg",
+        "filename": "What is API-first? The API-first Approach Explained | Postman",
+        "img_desc": "An illustrated API-first technology concept is shown at the center, with a stylized city and connected infrastructure inside a shield-like geometric frame. Several circular icons surrounding the central graphic depict connected services and technical elements, including a server, cloud, user, building, and software component. Thin colored connector lines link the icons to the central illustration. The design uses clean flat vector graphics, pastel blue, orange, yellow, green, and gray accents, and a transparent or black-looking background. The composition is balanced and clearly references software architecture and interconnected systems.",
+        "caption": "A clean vector illustration representing an API-first software ecosystem, with a connected city-like architecture and surrounding service icons.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "400x400",
+        "title": "What is API-first? The API-first Approach Explained | Postman",
+        "width": 400,
+        "height": 400,
+        "query": "software engineering team API design workshop"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 15,
+    "heading": "ADR та варіанти технічних рішень",
+    "type": "content",
+    "des": "Процес документування архітектурних рішень за допомогою Xplore для порівняння варіантів реалізації та їхніх наслідків.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/237a630fba2ca2e9ffb98f5194ec6617.jpg",
+        "filename": "Engineering team in artificial intelligence tech company workplace conducts code  reviews teamworking | Premium Photo",
+        "img_desc": "Four colleagues wearing blue lanyards collaborate in a modern office workspace. One woman holds a tablet while discussing something with the group, a man examines a laptop, and another woman gestures toward the screen. Code-filled monitors are visible in the foreground, supporting the scene of an engineering team conducting a code review. The image uses natural office lighting, neutral tones, and a documentary-style composition with the team centered in the frame.",
+        "caption": "Engineering colleagues collaborate around laptops and code-filled monitors during a team code review in a modern office.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "626x417",
+        "title": "Engineering team in artificial intelligence tech company workplace conducts code  reviews teamworking | Premium Photo",
+        "width": 626,
+        "height": 417,
+        "query": "engineering team code review office"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 16,
+    "heading": "Сесія DEV-3: Аналіз технічного впливу запиту на зміни",
+    "type": "content",
+    "des": "Визначення цілей аналізу змін (TIA), порівняння базових ліній та оцінка сумісності перед початком розробки.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 17,
+    "heading": "Workflow DEV-3: Алгоритм аналізу технічного впливу",
+    "type": "content",
+    "des": "Процес ідентифікації змінених бізнес-правил, мапування їх на компоненти та перевірки потреб у міграції даних.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 18,
+    "heading": "Прямий та транзитивний вплив змін",
+    "type": "content",
+    "des": "Аналіз безпосередніх змін у сервісах та опосередкованого впливу на споживачів API, синхронізацію з CRM та звітність.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 19,
+    "heading": "Аналіз зворотної сумісності",
+    "type": "content",
+    "des": "Перевірка здатності старих клієнтів працювати з новими полями API, версіонування схем та співіснування версій додатків.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 20,
+    "heading": "Міграція, фіча-флаги та стратегії відкату",
+    "type": "content",
+    "des": "Планування міграції існуючих даних, використання фіча-флагів для захисту нових шляхів виконання та визначення критеріїв їх видалення.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 21,
+    "heading": "Практика та результати аналізу впливу",
+    "type": "content",
+    "des": "Створення матриці технічного впливу, чек-листа міграції та оновлення реєстру ризиків на основі кейсу ServiceHub.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 22,
+    "heading": "Сесія DEV-4: Готовність до впровадження та Capstone",
+    "type": "content",
+    "des": "Фінальна перевірка схвалених рішень, врахування нових обмежень щодо сумісності та підготовка до передачі в розробку.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/a4504a6b5144024dc8cfbf6fb689f1d1.jpg",
+        "filename": "How to Build a Software Development Team from Scratch - KORE1",
+        "img_desc": "A group of five software professionals gathers around a desk in a modern office, reviewing code displayed on a desktop monitor. One team member points toward the screen while others look on, and a colleague works on a laptop in the foreground. The office features glass partitions, orange panels, multiple monitors, and geometric ceiling lights. The image has a polished, realistic photographic style with warm orange and neutral gray tones, clear focus, and a balanced workplace composition.",
+        "caption": "A software engineering team collaborates on a code review around a workstation in a modern office.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x558",
+        "title": "How to Build a Software Development Team from Scratch - KORE1",
+        "width": 1024,
+        "height": 558,
+        "query": "engineering team code review office"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 23,
+    "heading": "Workflow DEV-4: Оновлення технічного пакету",
+    "type": "content",
+    "des": "Процес верифікації обсягу робіт, оновлення технічних завдань та підготовки матеріалів для QA та DevOps.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 24,
+    "heading": "Пакет технічної передачі для QA та DevOps",
+    "type": "content",
+    "des": "Формування описів для тестування та розгортання, включаючи сценарії помилок, порядок міграції, конфігурації та метрики.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 25,
+    "heading": "Підсумкове завдання Developer Capstone",
+    "type": "content",
+    "des": "Практичне завдання з повного циклу технічного аналізу нової зміни в ServiceHub: від уточнення до перевірки готовності.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 26,
+    "heading": "Критерії оцінювання Capstone проєкту",
+    "type": "content",
+    "des": "Вимоги до успішного результату: збереження бізнес-наміру, простежуваність завдань, явний опис впливу на API та готовність до handoff.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 27,
+    "heading": "Персональний AI Playbook розробника",
+    "type": "content",
+    "des": "Збірка перевірених промптів для всіх етапів SDLC, чек-листи готовності та журнал виправлення помилок у промптах.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 28,
+    "heading": "Самостійна практика та підготовка",
+    "type": "content",
+    "des": "План на 10 робочих днів для повторення воркфлоу розробника, тестування промптів на складних контекстах та вдосконалення Playbook.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 29,
+    "heading": "Підсумковий онлайн-тест та сертифікація",
+    "type": "content",
+    "des": "Структура фінального тесту з 30 питань, умови проходження та отримання сертифіката, що підтверджує навички використання Xplore.",
+    "images": [],
+    "videos": [],
+    "audios": []
+  }
+]

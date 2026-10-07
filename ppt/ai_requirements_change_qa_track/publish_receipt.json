@@ -1,0 +1,245 @@
+{
+  "ok": true,
+  "status": "success",
+  "operation": "ppt.publish",
+  "kind": "ppt",
+  "page_count": 29,
+  "total_pages": 29,
+  "artifacts": [
+    {
+      "kind": "ppt",
+      "artifact_id": "2096989115531653120",
+      "artifact_version_id": "2096989115540041728",
+      "version": 1,
+      "status": "published",
+      "artifact_type": "presentation",
+      "file_type": "gen_ppt",
+      "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/07/upl_8b56f9b186f9427e9e712ad46d89d902/ppt-ai_requirements_change_qa_track.zip",
+      "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_1e78cc41ed014521bfd183474a70ffb5/preview.png"
+    }
+  ],
+  "delivery": {
+    "artifact_id": "2096989115531653120",
+    "artifact_version_id": "2096989115540041728",
+    "version": 1,
+    "title": "AI-assisted Requirements and Change Mana…",
+    "artifact_type": "presentation",
+    "file_type": "gen_ppt",
+    "page_count": 29,
+    "locator_items": [
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_e210f4fc9f68478898b3d97816b01a3f/1.html",
+        "index": 1,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_e746038b193a470f84f35a96cfda92be/2.html",
+        "index": 2,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_1192d1085ad948158b6041bf51578044/3.html",
+        "index": 3,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_e2faa38874bc4c03940866ac474d0ce2/4.html",
+        "index": 4,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_0e372aa78d9146fd8f5b6d1b7fb7e983/5.html",
+        "index": 5,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_32b03855e16041b790fe4a9cbf9677c9/6.html",
+        "index": 6,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_b3ab81274f40429a87bad6288e8d68bc/7.html",
+        "index": 7,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_8b318cb2ed7149f69330c4db814339a7/8.html",
+        "index": 8,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_ef9b85d35b3a41e18a52b3f2f357bca3/9.html",
+        "index": 9,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_5adb4fd61e9d42559367f6b4a4871a51/10.html",
+        "index": 10,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_ad734357be2c426fae794f7efac804ec/11.html",
+        "index": 11,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_2539683b13304d7eb17ee667b13d764e/12.html",
+        "index": 12,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_13e041375b4d4f9d8ff14f0c42ba5942/13.html",
+        "index": 13,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_4fac7009b93144919e46cba82f2406b6/14.html",
+        "index": 14,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_d6b8957b2f694da68826b1c5a4e9374b/15.html",
+        "index": 15,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_5864db8f159d4987bd2c6330d0d42ec2/16.html",
+        "index": 16,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_ded63d7aafd4468aa8ae0e612bff3870/17.html",
+        "index": 17,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_6efede73a21044b7b927d73cd320fc49/18.html",
+        "index": 18,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_b7d969651dc8449dbdc00dc92b7e7cfe/19.html",
+        "index": 19,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_e554e42799044dda919af5d7fcea05f6/20.html",
+        "index": 20,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_3d4ad1f2dc734d2f8248bf692808ff4e/21.html",
+        "index": 21,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_6a77704e35ad44b9a33574abd12b26ca/22.html",
+        "index": 22,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_a18df73bc713429781e86309e7388eb3/23.html",
+        "index": 23,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_be23fac9d9404311b56576fda4dce02d/24.html",
+        "index": 24,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_fa584aa334344852b60afddfdcc7b350/25.html",
+        "index": 25,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_4784b7325f84451095b29a4aed0c3427/26.html",
+        "index": 26,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_ec20b6f326314ec48cf4f2b684cedd66/27.html",
+        "index": 27,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_9de24bc1fd3340ee8a1030f463e70554/28.html",
+        "index": 28,
+        "notes": ""
+      },
+      {
+        "url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_e2943e739d6d4a529edf75da0ed50ca4/29.html",
+        "index": 29,
+        "notes": ""
+      }
+    ],
+    "zip_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/2026/09/07/upl_8b56f9b186f9427e9e712ad46d89d902/ppt-ai_requirements_change_qa_track.zip",
+    "preview_url": "https://skyagent-artifacts.skywork.ai/router/agent-artifact/a0d305ca34a268b1055a3beee5b66538/ppt/upl_1e78cc41ed014521bfd183474a70ffb5/preview.png",
+    "ppt_style": "html",
+    "metadata": {
+      "artifact_complete": true,
+      "delivery_status": "complete_published",
+      "failed_pages": null,
+      "generation_status": "success",
+      "image_model_used": "",
+      "image_models_used": [],
+      "is_nano_ppt": false,
+      "language": "Ukrainian",
+      "operation_id": "ai_requirements_change_qa_track",
+      "page_aspect_ratio": "16:9",
+      "page_height": 720,
+      "page_size": "1280_720",
+      "page_width": 1280,
+      "ppt_style": "html",
+      "prepared_state_id": "pps_7ec18d22cdf8689e5d21d0681e71d2b8",
+      "prepared_state_version": 1,
+      "publish_mode": "complete",
+      "render_mode": "html",
+      "resume_supported": false,
+      "stop_reason": "",
+      "style": "html",
+      "success_pages": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "total_pages": 29,
+      "used_nano_banana": false
+    }
+  },
+  "deliveryStatus": "complete_published",
+  "idempotency_key_hash": "fa3936589f57dc4d",
+  "pre_refresh_path": "ppt/ai_requirements_change_qa_track/.artifact/pre_refresh/v1",
+  "timing": {
+    "started_at": "2026-09-07T15:48:43.322591575Z",
+    "completed_at": "2026-09-07T15:49:01.067457519Z",
+    "duration_ms": 17744
+  },
+  "bundle_hash": "163e6b3e6a77afdd340411c2c8c45e020e0f3630f7c0a1d6d9e279352a336f31"
+}

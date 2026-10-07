@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Формула якісного промпту</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Inter:wght@400;600&display=swap");
+
+        :root {
+            --ppt-bg: #FDFCFB;
+            --ppt-bg-soft: #F3F4F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #EEF2FF;
+            --ppt-border: #E5E7EB;
+            --ppt-text-1: #111827;
+            --ppt-text-2: #4B5563;
+            --ppt-text-3: #9CA3AF;
+            --ppt-accent: #6366F1;
+            --ppt-accent-2: #10B981;
+            --ppt-chart-1: #6366F1;
+            --ppt-chart-2: #10B981;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EC4899;
+            --ppt-good: #059669;
+            --ppt-warn: #D97706;
+            --ppt-bad: #DC2626;
+            --ppt-radius-sm: 4px;
+            --ppt-radius-md: 8px;
+            --ppt-radius-lg: 16px;
+            --ppt-shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --ppt-font-display: "Montserrat", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+        }*{
+            margin: 0 0;
+            padding: 0 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background-color: var(--ppt-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            font-family: var(--ppt-font-body);
+        }.slide-root{
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 0;
+            
+            box-shadow: var(--ppt-shadow-strong);
+        }.title-region{
+            margin-top: 26px;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .title-eyebrow-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-eyebrow-badge {
+            background-color: var(--ppt-accent);
+            color: white;
+            font-family: var(--ppt-font-display);
+            font-weight: 800;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .title-eyebrow-section-label {
+            color: var(--ppt-text-3);
+            font-family: var(--ppt-font-body);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .title-main-heading {
+            margin: 0;
+            color: var(--ppt-text-1);
+            font-family: var(--ppt-font-display);
+            font-weight: 800;
+            font-size: 38px;
+            line-height: 1.2;
+        }
+
+        .title-accent-rule {
+            width: 60px;
+            height: 4px;
+            background-color: var(--ppt-accent);
+            border-radius: 2px;
+            margin-top: 8px;
+        }.formula-body-wrapper{
+            flex: 1 1 0;
+            margin-left: 64px;
+            margin-right: 64px;
+            margin-bottom: 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }.formula-flow-container{
+            display: flex;
+            flex-direction: column;
+            gap: 8px 12px;
+            width: 100%;
+        }.formula-flow-item{
+            display: flex;
+            align-items: center;
+            gap: 15px 24px;
+            background-color: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 10px 24px;
+            box-shadow: var(--ppt-shadow-soft);
+            transition: none;
+        }
+
+        .formula-flow-number {
+            font-family: var(--ppt-font-display);
+            font-weight: 800;
+            font-size: 44px;
+            color: var(--ppt-accent);
+            line-height: 1;
+            min-width: 70px;
+            text-align: left;
+        }.formula-flow-content{
+            display: flex;
+            flex-direction: column;
+            gap: 2px 4px;
+        }
+
+        .formula-flow-component-title {
+            font-family: var(--ppt-font-display);
+            font-weight: 600;
+            font-size: 22px;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+        }
+
+        .formula-flow-component-desc {
+            font-family: var(--ppt-font-body);
+            font-weight: 400;
+            font-size: 16px;
+            color: var(--ppt-text-2);
+            line-height: 1.45;
+        }.formula-flow-note{
+            display: flex;
+            align-items: center;
+            gap: 8px 12px;
+            margin-top: 5px;
+            background-color: var(--ppt-surface-2);
+            border-radius: var(--ppt-radius-md);
+            padding: 8px 20px;
+        }
+
+        .formula-flow-note-icon {
+            color: var(--ppt-accent);
+            font-size: 20px;
+            width: 28px;
+            text-align: center;
+        }
+
+        .formula-flow-note-text {
+            font-family: var(--ppt-font-body);
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--ppt-text-1);
+            line-height: 1.4;
+        }
+
+        .formula-flow-note-highlight {
+            font-weight: 600;
+            color: var(--ppt-accent);
+        }
+
+        /* ensure no fixed heights, only content-driven */
+        .formula-flow-item, .formula-flow-note {
+            height: auto;
+        }
+
+        .formula-flow-container {
+            height: auto;
+        }
+
+        /* no flex on list items */
+        .formula-flow-item {
+            display: flex;
+        }
+
+        /* all good */
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-root">
+        <!-- Cross-slide consistent title region -->
+        <header class="title-region">
+            <div class="title-eyebrow-wrapper">
+                <span class="title-eyebrow-badge">IT CLASS</span>
+                <span class="title-eyebrow-section-label">Prompt Engineering</span>
+            </div>
+            <h1 class="title-main-heading">Формула якісного промпту</h1>
+            <div class="title-accent-rule"></div>
+        </header>
+
+        <!-- Special open layout: prompt-formula-flow (numbered argument flow) -->
+        <div class="formula-body-wrapper">
+            <div class="formula-flow-container" style="margin-bottom: 2px !important;">
+                <!-- 1. Роль або аудиторія -->
+                <div class="formula-flow-item">
+                    <div class="formula-flow-number">1</div>
+                    <div class="formula-flow-content">
+                        <div class="formula-flow-component-title">Роль або аудиторія</div>
+                        <div class="formula-flow-component-desc">Хто допомагає (репетитор, редактор, критик) і для кого призначена відповідь.</div>
+                    </div>
+                </div>
+                <!-- 2. Конкретне завдання -->
+                <div class="formula-flow-item">
+                    <div class="formula-flow-number">2</div>
+                    <div class="formula-flow-content">
+                        <div class="formula-flow-component-title">Конкретне завдання</div>
+                        <div class="formula-flow-component-desc">Чітко сформульована мета: що саме модель має зробити.</div>
+                    </div>
+                </div>
+                <!-- 3. Контекст -->
+                <div class="formula-flow-item">
+                    <div class="formula-flow-number">3</div>
+                    <div class="formula-flow-content">
+                        <div class="formula-flow-component-title">Контекст</div>
+                        <div class="formula-flow-component-desc">Важливі вихідні умови, які впливають на відповідь (рівень знань, обмеження).</div>
+                    </div>
+                </div>
+                <!-- 4. Обмеження -->
+                <div class="formula-flow-item">
+                    <div class="formula-flow-number">4</div>
+                    <div class="formula-flow-content">
+                        <div class="formula-flow-component-title">Обмеження</div>
+                        <div class="formula-flow-component-desc">Обсяг, складність, часові рамки, заборона певних тем або даних.</div>
+                    </div>
+                </div>
+                <!-- 5. Формат відповіді -->
+                <div class="formula-flow-item">
+                    <div class="formula-flow-number">5</div>
+                    <div class="formula-flow-content">
+                        <div class="formula-flow-component-title">Формат відповіді</div>
+                        <div class="formula-flow-component-desc">Список, таблиця, план, код, тест — структура, у якій подати результат.</div>
+                    </div>
+                </div>
+                <!-- 6. Критерій перевірки -->
+                <div class="formula-flow-item">
+                    <div class="formula-flow-number">6</div>
+                    <div class="formula-flow-content">
+                        <div class="formula-flow-component-title">Критерій перевірки</div>
+                        <div class="formula-flow-component-desc">Як оцінити якість: припущення, джерела, відповідність вимогам.</div>
+                    </div>
+                </div>
+
+                <!-- Compact note: ambiguity removal -->
+                <div class="formula-flow-note">
+                    <i class="fa-solid fa-lightbulb formula-flow-note-icon"></i>
+                    <div class="formula-flow-note-text">
+                        <span class="formula-flow-note-highlight">Принцип:</span> не кожен промпт потребує всіх компонентів, але що складніша задача — то важливіше прибрати неоднозначність.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

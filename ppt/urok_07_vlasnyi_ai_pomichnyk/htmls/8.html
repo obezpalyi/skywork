@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Три тестові сценарії</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #F9FAFB;
+      --ppt-bg-soft: #F3F4F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF2FF;
+      --ppt-border: #E5E7EB;
+      --ppt-text-1: #111827;
+      --ppt-text-2: #4B5563;
+      --ppt-text-3: #9CA3AF;
+      --ppt-accent: #10B981;
+      --ppt-accent-2: #6366F1;
+      --ppt-chart-1: #10B981;
+      --ppt-chart-2: #6366F1;
+      --ppt-chart-3: #F59E0B;
+      --ppt-chart-4: #EF4444;
+      --ppt-good: #059669;
+      --ppt-warn: #D97706;
+      --ppt-bad: #DC2626;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 0px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Montserrat", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+    }.ppt-slide-root{
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0;
+      
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }/* Title region per DESIGN */
+    .title-region-header{
+      margin-top: 32px;
+      margin-right: 64px;
+      margin-bottom: 16px;
+      margin-left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .title-region-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-accent-dot {
+      background-color: var(--ppt-accent);
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .title-region-eyebrow-text {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ppt-accent);
+      letter-spacing: 0.05em;
+    }
+
+    .title-region-h1 {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-region-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+      margin-top: 2px;
+    }
+
+    .title-region-divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--ppt-border);
+      margin-top: 12px;
+    }/* Main body wrapper consumes remaining height */
+    .scenarios-body-wrapper{
+      flex: 1 1 0;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 38px;
+      display: flex;
+      flex-direction: column;
+      
+    }.scenarios-layout-grid{
+      display: flex;
+      flex-direction: row;
+      gap: 19px 24px;
+      flex: 1 1 0;
+      
+    }
+
+    /* Left column: dominant narrative + compact summary */
+    .scenarios-left-column {
+      flex: 3 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-width: 0;
+    }
+
+    .scenarios-narrative-panel {
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 24px 24px 20px 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .scenarios-narrative-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .scenarios-narrative-title i {
+      color: var(--ppt-accent);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .scenarios-narrative-text {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.6;
+    }
+
+    .scenarios-narrative-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .scenarios-narrative-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }
+
+    .scenarios-narrative-list li i {
+      color: var(--ppt-accent);
+      margin-top: 5px;
+      font-size: 14px;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .scenarios-summary-strip {
+      background-color: var(--ppt-surface-2);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .scenarios-summary-label {
+      font-family: var(--ppt-font-body);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ppt-accent-2);
+    }
+
+    .scenarios-summary-text {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.5;
+    }/* Right column: three peer scenario blocks */
+    .scenarios-right-column{
+      flex: 4 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px 20px;
+      min-width: 0;
+    }.scenario-card{
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 14px 20px 13px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 10px;
+    }.scenario-card-header{
+      display: flex;
+      align-items: center;
+      gap: 8px 10px;
+    }
+
+    .scenario-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .scenario-icon-typical {
+      background-color: var(--ppt-accent);
+    }
+
+    .scenario-icon-ambiguous {
+      background-color: var(--ppt-warn);
+    }
+
+    .scenario-icon-unsafe {
+      background-color: var(--ppt-bad);
+    }
+
+    .scenario-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .scenario-card-desc {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+    }.scenario-expect-row{
+      background-color: var(--ppt-bg-soft);
+      border-left: 3px solid var(--ppt-accent-2);
+      padding: 6px 12px;
+      border-radius: var(--ppt-radius-sm);
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }
+
+    .scenario-expect-row strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    .scenario-expect-row i {
+      color: var(--ppt-accent-2);
+      margin-right: 6px;
+    }
+
+    /* bottom gap is respected via margin-bottom on body wrapper */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="ppt-slide-root">
+    <!-- Non-cover title region (consistent with DESIGN) -->
+    <header class="title-region-header">
+      <div class="title-region-eyebrow-row">
+        <span class="title-region-accent-dot"></span>
+        <span class="title-region-eyebrow-text">Лабораторна робота: AI-Помічник</span>
+      </div>
+      <h1 class="title-region-h1">Три тестові сценарії</h1>
+      <div class="title-region-subtitle">Перевірка помічника через типовий, неоднозначний та небезпечний запити для оцінки його функціональності, здатності уточнювати та безпечно відмовляти.</div>
+      <div class="title-region-divider"></div>
+    </header>
+
+    <!-- Body region: asymmetric composition (left narrative, right peer scenarios) -->
+    <div class="scenarios-body-wrapper">
+      <div class="scenarios-layout-grid" style="margin-bottom: 3px !important;">
+        <!-- Left column: dominant narrative + summary -->
+        <div class="scenarios-left-column">
+          <div class="scenarios-narrative-panel">
+            <div class="scenarios-narrative-title">
+              <i class="fa-solid fa-flask"></i>
+              Метод трьох запитів
+            </div>
+            <p class="scenarios-narrative-text">
+              Щоб перевірити, чи надійний помічник, випробуйте його трьома різними типами запитів. Кожен сценарій відповідає окремому аспекту безпеки та якості.
+            </p>
+            <ul class="scenarios-narrative-list">
+              <li><i class="fa-solid fa-circle-check"></i> <span><strong>Типовий запит</strong> — перевіряє основну функцію: чи дає помічник корисну відповідь у звичайній ситуації.</span></li>
+              <li><i class="fa-solid fa-circle-question"></i> <span><strong>Неоднозначний запит</strong> — перевіряє, чи поставить помічник уточнення, замість того щоб вгадувати.</span></li>
+              <li><i class="fa-solid fa-shield-halved"></i> <span><strong>Небезпечний або поза межами запит</strong> — перевіряє коректну відмову та безпечну альтернативу.</span></li>
+            </ul>
+          </div>
+          <div class="scenarios-summary-strip">
+            <span class="scenarios-summary-label">Що фіксуємо</span>
+            <p class="scenarios-summary-text">Для кожного тесту запишіть очікувану та фактичну поведінку — це основа для вдосконалення інструкції.</p>
+          </div>
+        </div>
+
+        <!-- Right column: three peer scenario cards -->
+        <div class="scenarios-right-column">
+          <!-- Typical scenario -->
+          <div class="scenario-card">
+            <div class="scenario-card-header">
+              <div class="scenario-icon scenario-icon-typical">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <h3 class="scenario-card-title">Типовий запит</h3>
+            </div>
+            <p class="scenario-card-desc">
+              Основний сценарій використання: користувач звертається зі звичайним завданням у межах функцій помічника.
+            </p>
+            <div class="scenario-expect-row">
+              <i class="fa-solid fa-bullseye"></i> <strong>Очікування:</strong> повна, корисна відповідь без зайвих уточнень.
+            </div>
+          </div>
+
+          <!-- Ambiguous scenario -->
+          <div class="scenario-card">
+            <div class="scenario-card-header">
+              <div class="scenario-icon scenario-icon-ambiguous">
+                <i class="fa-solid fa-question"></i>
+              </div>
+              <h3 class="scenario-card-title">Неоднозначний запит</h3>
+            </div>
+            <p class="scenario-card-desc">
+              Запит із кількома можливими трактуваннями або браком деталей. Помічник має зреагувати уточненням.
+            </p>
+            <div class="scenario-expect-row">
+              <i class="fa-solid fa-bullseye"></i> <strong>Очікування:</strong> помічник ставить 1–2 уточнювальні питання, а не вгадує.
+            </div>
+          </div>
+
+          <!-- Unsafe scenario -->
+          <div class="scenario-card">
+            <div class="scenario-card-header">
+              <div class="scenario-icon scenario-icon-unsafe">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <h3 class="scenario-card-title">Небезпечний / поза межами</h3>
+            </div>
+            <p class="scenario-card-desc">
+              Запит на приватні дані, виконання контрольної замість учня або високоризикова порада. Помічник має відмовити.
+            </p>
+            <div class="scenario-expect-row">
+              <i class="fa-solid fa-bullseye"></i> <strong>Очікування:</strong> чітка відмова та безпечна альтернатива (напр., звернутися до вчителя).
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

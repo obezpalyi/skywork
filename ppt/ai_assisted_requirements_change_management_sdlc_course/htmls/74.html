@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>План пілоту та результат курсу</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      box-sizing: border-box;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      
+    }.title-region-wrapper{
+      margin-top: 32px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-kicker {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }.pilot-plan-content-wrapper{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0 60px 32px 60px;
+    }.pilot-plan-focus-statement-container{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 32px 40px;
+    }.pilot-plan-focus-icon-box{
+      font-size: 48px;
+      color: var(--ppt-accent);
+      margin-bottom: 19px;
+    }
+
+    .pilot-plan-focus-main-text {
+      font-family: var(--ppt-font-display);
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      max-width: 900px;
+    }.pilot-plan-focus-sub-text{
+      font-family: var(--ppt-font-body);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      margin-top: 16px;
+      max-width: 800px;
+    }.pilot-plan-evidence-strip-row{
+      display: flex;
+      gap: 19px 24px;
+      margin-top: 32px;
+      padding-top: 26px;
+      border-top: 1px solid var(--ppt-border);
+    }.pilot-plan-metric-item-block{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px 8px;
+    }.pilot-plan-metric-header-group{
+      display: flex;
+      align-items: center;
+      gap: 10px 12px;
+    }
+
+    .pilot-plan-metric-icon-element {
+      color: var(--ppt-accent-2);
+      font-size: 20px;
+    }
+
+    .pilot-plan-metric-label-text {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pilot-plan-metric-value-display {
+      font-family: var(--ppt-font-display);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+    }
+
+    .pilot-plan-metric-desc-paragraph {
+      font-family: var(--ppt-font-body);
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-container">
+    <header class="title-region-wrapper">
+      <div class="title-region-kicker">
+        AI-MANAGED SDLC PLAYBOOK
+      </div>
+      <h1 class="title-region-main-heading">
+        План пілоту та результат курсу
+      </h1>
+    </header>
+
+    <main class="pilot-plan-content-wrapper">
+      <div class="pilot-plan-focus-statement-container">
+        <div class="pilot-plan-focus-icon-box">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <div class="pilot-plan-focus-main-text">
+          Від навчання до практики: запуск пілотного workflow у реальному проєкті
+        </div>
+        <div class="pilot-plan-focus-sub-text">
+          Консолідація набутих навичок у персональний AI Playbook для масштабування AI-assisted моделі роботи в команді.
+        </div>
+      </div>
+
+      <div class="pilot-plan-evidence-strip-row" style="margin-bottom: 3px !important;">
+        <div class="pilot-plan-metric-item-block">
+          <div class="pilot-plan-metric-header-group">
+            <i class="fa-solid fa-gauge-high pilot-plan-metric-icon-element"></i>
+            <span class="pilot-plan-metric-label-text">Швидкість аналізу</span>
+          </div>
+          <div class="pilot-plan-metric-value-display">-40% часу</div>
+          <div class="pilot-plan-metric-desc-paragraph">
+            Очікуване скорочення часу на відновлення контексту та первинний аналіз вимог.
+          </div>
+        </div>
+
+        <div class="pilot-plan-metric-item-block">
+          <div class="pilot-plan-metric-header-group">
+            <i class="fa-solid fa-shield pilot-plan-metric-icon-element"></i>
+            <span class="pilot-plan-metric-label-text">Якість артефактів</span>
+          </div>
+          <div class="pilot-plan-metric-value-display">100% покриття</div>
+          <div class="pilot-plan-metric-desc-paragraph">
+            Повна відповідність Acceptance Criteria та відсутність пропущених edge cases у Jira tasks.
+          </div>
+        </div>
+
+        <div class="pilot-plan-metric-item-block">
+          <div class="pilot-plan-metric-header-group">
+            <i class="fa-solid fa-link pilot-plan-metric-icon-element"></i>
+            <span class="pilot-plan-metric-label-text">Traceability</span>
+          </div>
+          <div class="pilot-plan-metric-value-display">Evidence-backed</div>
+          <div class="pilot-plan-metric-desc-paragraph">
+            Гарантований зв&#39;язок кожного технічного рішення з першоджерелом у документації.
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body></html>

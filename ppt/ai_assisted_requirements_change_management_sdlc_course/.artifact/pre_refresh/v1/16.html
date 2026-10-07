@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Формат результату та критерії приймання</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root-container {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      
+    }
+
+    .title-region-wrapper {
+      margin-top: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-subtitle {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .content-layout-main-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding-left: 60px;
+      padding-right: 60px;
+      margin-bottom: 40px;
+      flex: 1;
+      align-items: stretch;
+    }
+
+    .criteria-column-box-item {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px;
+      box-shadow: var(--ppt-shadow-soft);
+      flex: 1;
+    }
+
+    .column-header-group-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .column-icon-container-box {
+      width: 40px;
+      height: 40px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .column-title-text-label {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+    }
+
+    .criteria-list-stack-container {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .criteria-list-item-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .criteria-item-title-row {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .criteria-item-desc-text {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+      padding-left: 0px;
+    }
+
+    .format-badge-grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .format-badge-item-tag {
+      background-color: var(--ppt-bg-soft);
+      padding: 8px 12px;
+      border-radius: var(--ppt-radius-sm);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ppt-text-2);
+      text-align: center;
+      border: 1px solid var(--ppt-border);
+    }
+
+    .footer-note-section-wrapper {
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 40px;
+      padding: 16px 24px;
+      background-color: var(--ppt-surface-2);
+      border-left: 4px solid var(--ppt-warn);
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .footer-note-content-row {
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .footer-note-content-row strong {
+      color: var(--ppt-text-1);
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-container">
+    <!-- Header Region -->
+    <header class="title-region-wrapper">
+      <div class="title-region-subtitle">
+        AI-MANAGED SDLC PLAYBOOK
+      </div>
+      <h1 class="title-region-main-heading">
+        Формат результату та критерії приймання
+      </h1>
+    </header>
+
+    <!-- Main Grid Content -->
+    <main class="content-layout-main-grid">
+      <!-- Column 1: Специфікація структури -->
+      <section class="criteria-column-box-item">
+        <div class="column-header-group-wrapper">
+          <div class="column-icon-container-box">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h2 class="column-title-text-label">Специфікація структури</h2>
+        </div>
+        <div class="criteria-list-stack-container">
+          <div class="criteria-list-item-block">
+            <div class="criteria-item-title-row">Тип артефакту</div>
+            <div class="criteria-item-desc-text">Чітке визначення очікуваного виходу (таблиця, опис, список перевірки).</div>
+          </div>
+          <div class="criteria-list-item-block">
+            <div class="criteria-item-title-row">Обов&#39;язкові поля</div>
+            <div class="criteria-item-desc-text">Перелік атрибутів: ID, Source, Acceptance Criteria, Priority, Risks.</div>
+          </div>
+          <div class="criteria-list-item-block">
+            <div class="criteria-item-title-row">Порядок розділів</div>
+            <div class="criteria-item-desc-text">Логічна послідовність викладу від контексту до деталей реалізації.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Column 2: Контроль достовірності -->
+      <section class="criteria-column-box-item">
+        <div class="column-header-group-wrapper">
+          <div class="column-icon-container-box">
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+          <h2 class="column-title-text-label">Контроль достовірності</h2>
+        </div>
+        <div class="criteria-list-stack-container">
+          <div class="criteria-list-item-block">
+            <div class="criteria-item-title-row">Маркування фактів</div>
+            <div class="criteria-item-desc-text">Явне розділення підтверджених даних та логічних припущень асистента.</div>
+          </div>
+          <div class="criteria-list-item-block">
+            <div class="criteria-item-title-row">Посилання на джерела</div>
+            <div class="criteria-item-desc-text">Кожен висновок має супроводжуватися назвою документа та номером розділу.</div>
+          </div>
+          <div class="criteria-list-item-block">
+            <div class="criteria-item-title-row">Умови неповноти</div>
+            <div class="criteria-item-desc-text">Визначення випадків, коли AI повинен зупинитися та запитати уточнення.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Column 3: Бібліотека форматів -->
+      <section class="criteria-column-box-item">
+        <div class="column-header-group-wrapper">
+          <div class="column-icon-container-box">
+            <i class="fa-solid fa-circle-question"></i>
+          </div>
+          <h2 class="column-title-text-label">Бібліотека форматів</h2>
+        </div>
+        <div class="criteria-list-stack-container">
+          <div class="criteria-list-item-block">
+            <div class="criteria-item-title-row">Стандартні шаблони:</div>
+            <div class="format-badge-grid-layout">
+              <div class="format-badge-item-tag">Requirements Table</div>
+              <div class="format-badge-item-tag">Jira Task Spec</div>
+              <div class="format-badge-item-tag">Impact Matrix</div>
+              <div class="format-badge-item-tag">Decision Record</div>
+              <div class="format-badge-item-tag">QA Checklist</div>
+              <div class="format-badge-item-tag">Summary Report</div>
+            </div>
+          </div>
+          <div class="criteria-list-item-block" style="margin-top: 12px;">
+            <div class="criteria-item-title-row">Спосіб візуалізації</div>
+            <div class="criteria-item-desc-text">Використання Markdown таблиць або структурованих списків для зручного копіювання.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Note -->
+    <footer class="footer-note-section-wrapper">
+      <div class="footer-note-content-row">
+        <i class="fa-solid fa-triangle-exclamation" style="color: var(--ppt-warn); margin-right: 8px;"></i>
+        <strong>Принцип Human-in-the-Loop:</strong> Замість «проаналізуй документ» використовуйте конкретну структуру. Якщо AI пропонує нову вимогу, якої немає в джерелах — це дефект prompt-інструкції або галюцинація.
+      </div>
+    </footer>
+  </div>
+
+</body></html>

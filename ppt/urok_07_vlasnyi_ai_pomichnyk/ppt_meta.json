@@ -1,0 +1,163 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "urok_07_vlasnyi_ai_pomichnyk",
+  "artifact_path": "ppt/urok_07_vlasnyi_ai_pomichnyk",
+  "pptTitle": "Створюємо власного AI-…",
+  "ppt_title": "Створюємо власного AI-…",
+  "outlineArtifactPath": "ppt/urok_07_vlasnyi_ai_pomichnyk/outline.md",
+  "outline_artifact_path": "ppt/urok_07_vlasnyi_ai_pomichnyk/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-1262d69cb6.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-1262d69cb6.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-1262d69cb6.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_07_vlasnyi_ai_pomichnyk/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_07_vlasnyi_ai_pomichnyk/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-1262d69cb6.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-1262d69cb6.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_07_vlasnyi_ai_pomichnyk/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_07_vlasnyi_ai_pomichnyk/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи українською мовою окрему навчальну презентацію для уроку інформатики в 11 класі на тему «Створюємо власного AI-помічника». Рівно 10 слайдів: вибір реальної проблеми, приклади помічників, картка проєкту, системна інструкція, конструктор інструкції, безпека й межі, три тестові сценарії, удосконалення, захист мініпроєкту та рубрика на 12 балів.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "auto_increase_ratio": 0.35,
+  "auto_increase_bucket": 0.5898,
+  "region": "US",
+  "prepared_session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "prepared_question_id": "Q-4a812a49c9b3",
+  "prepared_target_path": "ppt/urok_07_vlasnyi_ai_pomichnyk",
+  "prepared_state_id": "pps_af242cbde505e8d628175bffad07eaf2",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:3273868dfe382276f4155fc4123e3463791454b1b8ced6d119609d79cf0db23c",
+  "init_request_fingerprint": "sha256:c727bef893d5aa65e10779b23dfd0dbef92db5e6ba5fe599598d8f3320c2da70",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:da334e2ffbbdaaba3ceffaef49fe66e2a7feeb520383d6e4c065011a155d0c72",
+  "outline_artifact_sha256": "sha256:f33410960fe701dac71b12cbc833f434773c7040eee02614c9c83845f9389778",
+  "prepared_inputs": [
+    {
+      "path": "ppt/urok_07_vlasnyi_ai_pomichnyk/design_guideline.md",
+      "size": 8760,
+      "sha256": "sha256:1a2d00d0c54205a56b5aaec9951d95eac20bafd854376023589a79232701957c"
+    },
+    {
+      "path": "ppt/urok_07_vlasnyi_ai_pomichnyk/final_report.md",
+      "size": 5705,
+      "sha256": "sha256:da334e2ffbbdaaba3ceffaef49fe66e2a7feeb520383d6e4c065011a155d0c72"
+    },
+    {
+      "path": "ppt/urok_07_vlasnyi_ai_pomichnyk/outline.json",
+      "size": 45458,
+      "sha256": "sha256:e4b47e8b37cee1bb25c493147d6de3d9b764b86473f2cfc9d959be3fc71e5f19"
+    },
+    {
+      "path": "ppt/urok_07_vlasnyi_ai_pomichnyk/outline.md",
+      "size": 3289,
+      "sha256": "sha256:f33410960fe701dac71b12cbc833f434773c7040eee02614c9c83845f9389778"
+    },
+    {
+      "path": "ppt/urok_07_vlasnyi_ai_pomichnyk/prepared_images/cover_1016e6365d27_2095592379558969345.png",
+      "size": 1104414,
+      "sha256": "sha256:72d21657e4e892dda5f831163fc03d098d558ea572fcf6f3c2b3ec3dbb6063f0"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success_with_warnings",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json",
+      "prepared_images/cover_1016e6365d27_2095592379558969345.png"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "auto_mode",
+      "auto_increase_miss",
+      "standard_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "generated",
+      "applied": true
+    },
+    "dropped_images": null,
+    "warnings": [
+      {
+        "scope": "image_description",
+        "image_index": 0,
+        "source": "search",
+        "error_code": "internalError",
+        "impact": "dropped_candidate",
+        "terminal": false
+      }
+    ],
+    "mock": false
+  }
+}

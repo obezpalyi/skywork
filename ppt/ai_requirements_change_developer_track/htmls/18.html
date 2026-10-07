@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Прямий та транзитивний вплив змін</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }/* slide root */
+    .slide-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 56px 26px 56px;
+      
+      box-shadow: var(--ppt-shadow-strong);
+    }/* title region — design contract */
+    .title-ai-requirements-region{
+      margin-top: 26px;
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-ai-requirements-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-ai-requirements-eyebrow-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+      white-space: nowrap;
+    }
+
+    .title-ai-requirements-divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-ai-requirements-main-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+    }/* main body region — flex 1 to fill remaining */
+    .impact-diagnostic-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: row;
+      gap: 26px 40px;
+      
+      /* border safety: no clipping */
+    }
+
+    /* left column: direct impact — dominant */
+    .impact-diagnostic-left-direct {
+      flex: 2.4;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .impact-diagnostic-left-heading-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .impact-diagnostic-left-kicker {
+      font-family: var(--ppt-font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .impact-diagnostic-left-title {
+      font-family: var(--ppt-font-display);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .impact-diagnostic-direct-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .impact-diagnostic-direct-item {
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--ppt-surface);
+      border-left: 3px solid var(--ppt-accent);
+      padding: 14px 16px;
+      border-radius: var(--ppt-radius-md);
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .impact-diagnostic-direct-item-icon {
+      color: var(--ppt-accent);
+      font-size: 18px;
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .impact-diagnostic-direct-item-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .impact-diagnostic-direct-item-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .impact-diagnostic-direct-item-desc {
+      font-size: 15px;
+      color: var(--ppt-text-2);
+      line-height: 1.45;
+    }/* right column: transitive rail */
+    .impact-diagnostic-right-transitive{
+      flex: 1.2;
+      border-left: 2px dashed var(--ppt-border);
+      padding-left: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px 14px;
+      min-width: 0;
+    }.impact-diagnostic-right-heading-block{
+      display: flex;
+      flex-direction: column;
+      gap: 4px 6px;
+    }
+
+    .impact-diagnostic-right-kicker {
+      font-family: var(--ppt-font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ppt-warn);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .impact-diagnostic-right-title {
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }.impact-diagnostic-rail-list{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 12px;
+    }.impact-diagnostic-rail-item{
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px 10px;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 8px 14px;
+      border-left: 3px solid var(--ppt-warn);
+    }
+
+    .impact-diagnostic-rail-icon {
+      color: var(--ppt-warn);
+      font-size: 15px;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }.impact-diagnostic-rail-content{
+      display: flex;
+      flex-direction: column;
+      gap: 2px 3px;
+    }
+
+    .impact-diagnostic-rail-item-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .impact-diagnostic-rail-item-desc {
+      font-size: 14px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    /* small annotation at bottom-left of direct column */
+    .impact-diagnostic-context-note {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--ppt-text-3);
+      font-family: var(--ppt-font-mono);
+      line-height: 1.4;
+      background: var(--ppt-surface-2);
+      padding: 8px 12px;
+      border-radius: var(--ppt-radius-sm);
+      width: fit-content;
+    }
+
+    /* ensure no fixed heights on content containers: all auto-driven */
+  
+html { overflow: hidden; }
+</style>
+  <!-- Font Awesome -->
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Non-cover title region per design contract -->
+    <header class="title-ai-requirements-region">
+      <div class="title-ai-requirements-eyebrow-row">
+        <span class="title-ai-requirements-eyebrow-label">Developer Track</span>
+        <div class="title-ai-requirements-divider-line"></div>
+      </div>
+      <h1 class="title-ai-requirements-main-heading">Прямий та транзитивний вплив змін</h1>
+    </header>
+
+    <!-- Main body: special layout impact-diagnostic-rail -->
+    <div class="impact-diagnostic-body-wrapper" style="margin-bottom: 2px !important;">
+      <!-- left: direct impact (dominant) -->
+      <div class="impact-diagnostic-left-direct">
+        <div class="impact-diagnostic-left-heading-block">
+          <div class="impact-diagnostic-left-kicker">Прямий вплив</div>
+          <div class="impact-diagnostic-left-title">Безпосередні зміни в сервісах</div>
+        </div>
+
+        <ul class="impact-diagnostic-direct-list">
+          <li class="impact-diagnostic-direct-item">
+            <i class="fa-solid fa-bolt impact-diagnostic-direct-item-icon"></i>
+            <div class="impact-diagnostic-direct-item-content">
+              <span class="impact-diagnostic-direct-item-title">Новий критичний пріоритет</span>
+              <span class="impact-diagnostic-direct-item-desc">Додавання значення priority у сервісі Ticket Service та SLA-правил для критичних запитів.</span>
+            </div>
+          </li>
+          <li class="impact-diagnostic-direct-item">
+            <i class="fa-solid fa-clock impact-diagnostic-direct-item-icon"></i>
+            <div class="impact-diagnostic-direct-item-content">
+              <span class="impact-diagnostic-direct-item-title">Нове правило SLA та ескалації</span>
+              <span class="impact-diagnostic-direct-item-desc">Оновлення логіки SLA і Escalation Service для автоматичної ескалації критичних інцидентів.</span>
+            </div>
+          </li>
+          <li class="impact-diagnostic-direct-item">
+            <i class="fa-solid fa-bell impact-diagnostic-direct-item-icon"></i>
+            <div class="impact-diagnostic-direct-item-content">
+              <span class="impact-diagnostic-direct-item-title">Оновлені сповіщення</span>
+              <span class="impact-diagnostic-direct-item-desc">Зміна шаблонів та тригерів Notification Service для подій критичного рівня.</span>
+            </div>
+          </li>
+          <li class="impact-diagnostic-direct-item">
+            <i class="fa-solid fa-chart-line impact-diagnostic-direct-item-icon"></i>
+            <div class="impact-diagnostic-direct-item-content">
+              <span class="impact-diagnostic-direct-item-title">Нова звітність та аудит</span>
+              <span class="impact-diagnostic-direct-item-desc">Розширення Reporting Service для критичних запитів і запис нових подій в Audit Service.</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="impact-diagnostic-context-note">
+          <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i>Базова лінія: Critical Service Request
+        </div>
+      </div>
+
+      <!-- right: transitive impact rail -->
+      <div class="impact-diagnostic-right-transitive">
+        <div class="impact-diagnostic-right-heading-block">
+          <div class="impact-diagnostic-right-kicker">Транзитивний вплив</div>
+          <div class="impact-diagnostic-right-title">Опосередковані наслідки</div>
+        </div>
+
+        <ul class="impact-diagnostic-rail-list">
+          <li class="impact-diagnostic-rail-item">
+            <i class="fa-solid fa-plug impact-diagnostic-rail-icon"></i>
+            <div class="impact-diagnostic-rail-content">
+              <span class="impact-diagnostic-rail-item-title">Споживачі Ticket API</span>
+              <span class="impact-diagnostic-rail-item-desc">Клієнти, що читають або оновлюють пріоритети, потребують перевірки сумісності.</span>
+            </div>
+          </li>
+          <li class="impact-diagnostic-rail-item">
+            <i class="fa-solid fa-chart-pie impact-diagnostic-rail-icon"></i>
+            <div class="impact-diagnostic-rail-content">
+              <span class="impact-diagnostic-rail-item-title">Розрахунки в дашбордах</span>
+              <span class="impact-diagnostic-rail-item-desc">Агрегації за пріоритетами можуть змінитися через новий рівень critical.</span>
+            </div>
+          </li>
+          <li class="impact-diagnostic-rail-item">
+            <i class="fa-solid fa-circle-question impact-diagnostic-rail-icon"></i>
+            <div class="impact-diagnostic-rail-content">
+              <span class="impact-diagnostic-rail-item-title">CRM-синхронізація</span>
+              <span class="impact-diagnostic-rail-item-desc">Можливі колізії при маппінгу нового статусу в зовнішніх системах.</span>
+            </div>
+          </li>
+          <li class="impact-diagnostic-rail-item">
+            <i class="fa-solid fa-arrows-rotate impact-diagnostic-rail-icon"></i>
+            <div class="impact-diagnostic-rail-content">
+              <span class="impact-diagnostic-rail-item-title">Підписники подій</span>
+              <span class="impact-diagnostic-rail-item-desc">Event-споживачі мають обробити нову структуру повідомлень.</span>
+            </div>
+          </li>
+          <li class="impact-diagnostic-rail-item">
+            <i class="fa-solid fa-database impact-diagnostic-rail-icon"></i>
+            <div class="impact-diagnostic-rail-content">
+              <span class="impact-diagnostic-rail-item-title">Зберігання та ретенція</span>
+              <span class="impact-diagnostic-rail-item-desc">Нові поля історії потребують оновлення політики зберігання.</span>
+            </div>
+          </li>
+          <li class="impact-diagnostic-rail-item">
+            <i class="fa-solid fa-circle-question impact-diagnostic-rail-icon"></i>
+            <div class="impact-diagnostic-rail-content">
+              <span class="impact-diagnostic-rail-item-title">Ретраї та черги</span>
+              <span class="impact-diagnostic-rail-item-desc">Повторні спроби обробки подій мають враховувати новий тип пріоритету.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body></html>

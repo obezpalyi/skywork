@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <title>AI-assisted Requirements and Change Management in SDLC: Developer Track</title>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">:root {
+  --ppt-chart-1: #007A5E;
+  --ppt-chart-2: #00D3A4;
+  --ppt-chart-3: #121417;
+  --ppt-chart-4: #879491;
+  --ppt-good: #107C10;
+  --ppt-warn: #D83B01;
+  --ppt-bad: #A80000;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+        :root {
+            --ppt-bg: #FDFDFD;
+            --ppt-bg-soft: #F4F7F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E9EFED;
+            --ppt-border: #D1D9D7;
+            --ppt-text-1: #121417;
+            --ppt-text-2: #4A5552;
+            --ppt-text-3: #879491;
+            --ppt-accent: #007A5E;
+            --ppt-accent-2: #00D3A4;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+            --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+            --ppt-font-mono: "JetBrains Mono", monospace;
+        }*{
+            box-sizing: border-box;
+            margin: 0 0;
+            padding: 0 0;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+
+        .developer-track-slide-root-container {
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            background-image: 
+                linear-gradient(var(--ppt-border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--ppt-border) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: right top;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            
+        }/* Scrim to fade the grid on the left side */
+        .developer-track-background-overlay-scrim{
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--ppt-bg) 0%, var(--ppt-bg) 50%, rgba(253, 253, 253, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 64px 80px 48px 80px;
+        }.developer-track-main-content-wrapper{
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            gap: 32px 40px;
+        }
+
+        .developer-track-left-content-block {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            height: 100%;
+        }
+
+        .developer-track-right-visual-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            height: 100%;
+        }
+
+        .developer-track-title-region-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            flex: 1 1 auto;
+        }
+
+        .developer-track-title-heading-group {
+            display: flex;
+            flex-direction: column;
+            border-left: 8px solid var(--ppt-accent-2);
+            padding-left: 32px;
+        }
+
+        .developer-track-main-title-text {
+            font-family: var(--ppt-font-display);
+            font-size: 60px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--ppt-text-1);
+            margin-bottom: 16px;
+        }
+
+        .developer-track-role-badge-text {
+            font-family: var(--ppt-font-mono);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .developer-track-subtitle-description-text {
+            font-family: var(--ppt-font-body);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--ppt-text-2);
+            max-width: 580px;
+        }.developer-track-metadata-footer-region{
+            display: flex;
+            flex-direction: column;
+            gap: 13px 16px;
+            margin-top: auto;
+            border-top: 1px solid var(--ppt-border);
+            padding-top: 26px;
+        }.developer-track-metadata-grid-wrapper{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 19px 24px;
+        }.developer-track-metadata-item-row{
+            display: flex;
+            flex-direction: column;
+            gap: 3px 4px;
+        }
+
+        .developer-track-metadata-item-label {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ppt-text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .developer-track-metadata-item-value {
+            font-family: var(--ppt-font-mono);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+        }
+
+        .developer-track-concept-image-container {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .developer-track-concept-image-element {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: var(--ppt-radius-lg);
+            filter: drop-shadow(var(--ppt-shadow-strong));
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="developer-track-slide-root-container">
+        <div class="developer-track-background-overlay-scrim">
+            <div class="developer-track-main-content-wrapper">
+                <!-- Left Section -->
+                <div class="developer-track-left-content-block">
+                    <div class="developer-track-title-region-container">
+                        <div class="developer-track-title-heading-group">
+                            <span class="developer-track-role-badge-text">Developer Track</span>
+                            <h1 class="developer-track-main-title-text">
+                                AI-assisted Requirements and Change Management in SDLC
+                            </h1>
+                        </div>
+                        <p class="developer-track-subtitle-description-text">
+                            Від схваленої вимоги до технічно обґрунтованого та готового до перегляду пакету впровадження.
+                        </p>
+                    </div>
+
+                    <div class="developer-track-metadata-footer-region">
+                        <div class="developer-track-metadata-grid-wrapper">
+                            <div class="developer-track-metadata-item-row">
+                                <span class="developer-track-metadata-item-label">Навчальний кейс</span>
+                                <span class="developer-track-metadata-item-value">ServiceHub Project</span>
+                            </div>
+                            <div class="developer-track-metadata-item-row">
+                                <span class="developer-track-metadata-item-label">Інструментарій</span>
+                                <span class="developer-track-metadata-item-value">Xplore AI Analysis</span>
+                            </div>
+                            <div class="developer-track-metadata-item-row">
+                                <span class="developer-track-metadata-item-label">Практика</span>
+                                <span class="developer-track-metadata-item-value">10 робочих днів</span>
+                            </div>
+                            <div class="developer-track-metadata-item-row">
+                                <span class="developer-track-metadata-item-label">Фінальний результат</span>
+                                <span class="developer-track-metadata-item-value">Developer AI Playbook</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="developer-track-right-visual-block">
+                    <div class="developer-track-concept-image-container">
+                        <img src="https://agents-download.skywork.ai/image/rt/8d44a1defeee70b5b258dd4b0665099d.jpg" alt="API-first Software Architecture Concept" class="developer-track-concept-image-element"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

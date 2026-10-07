@@ -1,0 +1,481 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Не професії, а задачі · AI vs людина</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #F8F9FA;
+      --ppt-bg-soft: #EEF2F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9ECEF;
+      --ppt-border: #CED4DA;
+      --ppt-text-1: #212529;
+      --ppt-text-2: #495057;
+      --ppt-text-3: #6C757D;
+      --ppt-accent: #6366F1;
+      --ppt-accent-2: #F43F5E;
+      --ppt-chart-1: #6366F1;
+      --ppt-chart-2: #F43F5E;
+      --ppt-chart-3: #10B981;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 4px;
+      --ppt-radius-md: 12px;
+      --ppt-radius-lg: 20px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    html, body {width: 1280px; height: 720px; overflow: hidden;   
+      
+      
+      background: transparent;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }.slide-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+      display: flex;
+      flex-direction: column;
+      padding: 0 0;
+      margin: 0 0;
+      
+      position: relative;
+    }/* Title region — exactly per DESIGN */
+    .title-region{
+      margin-top: 26px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-topline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ppt-accent);
+      background: var(--ppt-bg-soft);
+      padding: 4px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .title-region-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }/* Main body — fills remaining height below title */
+    .professions-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 29px;
+      gap: 14px 18px;
+      
+    }/* Dominant narrative area — asymmetric (left 2/3) */
+    .professions-main-area{
+      display: flex;
+      flex-direction: row;
+      gap: 16px 20px;
+      flex: 1 1 0;
+      
+    }
+
+    .professions-left-column {
+      flex: 2 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      
+    }.professions-right-column{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 11px 14px;
+      
+    }
+
+    /* Shared role blocks */
+    .role-block {
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--ppt-shadow-soft);
+      border: 1px solid var(--ppt-border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1 1 0;
+    }
+
+    .role-block-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .role-block-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--ppt-radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .role-block-icon-teacher {
+      background: var(--ppt-accent);
+    }
+
+    .role-block-icon-programmer {
+      background: var(--ppt-accent-2);
+    }
+
+    .role-block-icon-doctor {
+      background: var(--ppt-good);
+    }
+
+    .role-block-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.25;
+    }
+
+    .role-block-subtitle {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ppt-text-3);
+      line-height: 1.4;
+    }
+
+    .role-block-divider {
+      height: 1px;
+      background: var(--ppt-border);
+      margin: 2px 0 6px 0;
+    }
+
+    .role-block-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .role-task-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--ppt-bg-soft);
+      color: var(--ppt-text-2);
+      flex-shrink: 0;
+      margin-top: 2px;
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+
+    .role-badge-ai {
+      background: rgba(99, 102, 241, 0.12);
+      color: var(--ppt-accent);
+    }
+
+    .role-badge-human {
+      background: rgba(244, 63, 94, 0.12);
+      color: var(--ppt-accent-2);
+    }
+
+    .role-badge-both {
+      background: rgba(16, 185, 129, 0.12);
+      color: #0f766e;
+    }
+
+    .role-task-text {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+    }
+
+    .role-task-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }/* Right column supporting block — "висновок" */
+    .professions-conclusion-block{
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 18px;
+      border-left: 6px solid var(--ppt-accent);
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 10px;
+    }
+
+    .professions-conclusion-title {
+      font-family: var(--ppt-font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .professions-conclusion-title i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+    }
+
+    .professions-conclusion-text {
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--ppt-text-2);
+    }.professions-conclusion-quote{
+      font-family: var(--ppt-font-mono);
+      font-size: 14px;
+      background: var(--ppt-surface);
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: var(--ppt-text-2);
+      border: 1px solid var(--ppt-border);
+      margin-top: 3px;
+    }/* Compact bottom insight band */
+    .professions-insight-band{
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-md);
+      padding: 11px 20px;
+      display: flex;
+      align-items: center;
+      gap: 13px 16px;
+      box-shadow: var(--ppt-shadow-soft);
+      border: 1px solid var(--ppt-border);
+      flex-shrink: 0;
+    }
+
+    .professions-insight-icon {
+      color: var(--ppt-accent);
+      font-size: 28px;
+      width: 44px;
+      text-align: center;
+    }
+
+    .professions-insight-text {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+      line-height: 1.4;
+    }
+
+    .professions-insight-text span {
+      font-weight: 700;
+      color: var(--ppt-accent);
+    }
+
+    .professions-insight-text .human-accent {
+      color: var(--ppt-accent-2);
+    }
+
+    .professions-insight-note {
+      font-size: 14px;
+      color: var(--ppt-text-3);
+      margin-left: auto;
+      white-space: nowrap;
+      font-weight: 400;
+    }
+
+    /* Ensure no flex on list items */
+    .role-block-content, .professions-conclusion-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .role-task-row {
+      display: flex;
+    }
+
+    /* All containers inside use relative width, no fixed px widths */
+    .professions-main-area,
+    .professions-left-column,
+    .professions-right-column {
+      width: auto;
+    }
+
+    .role-block, .professions-conclusion-block {
+      width: auto;
+    }
+
+    /* fix: list items not flex */
+    .role-task-row {
+      list-style: none;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Fixed title region -->
+    <header class="title-region">
+      <div class="title-region-topline">
+        <span class="title-region-eyebrow">Інформатика 11 клас</span>
+        <div class="title-region-line"></div>
+      </div>
+      <h1 class="title-region-heading">Не професії, а задачі</h1>
+    </header>
+
+    <!-- Main body: asymmetric composition -->
+    <div class="professions-body-wrapper">
+      <!-- Dominant left + supporting right -->
+      <div class="professions-main-area">
+        <!-- Left column: 3 role blocks -->
+        <div class="professions-left-column">
+          <!-- Вчитель -->
+          <div class="role-block">
+            <div class="role-block-header">
+              <div class="role-block-icon role-block-icon-teacher"><i class="fa-solid fa-chalkboard"></i></div>
+              <div>
+                <div class="role-block-title">Вчитель</div>
+                <div class="role-block-subtitle">ШІ пропонує — вчитель знає клас</div>
+              </div>
+            </div>
+            <div class="role-block-divider"></div>
+            <div class="role-block-content">
+              <div class="role-task-row">
+                <span class="role-badge role-badge-ai"><i class="fa-solid fa-robot"></i> ШІ</span>
+                <span class="role-task-text"><strong>Чернетка вправ</strong> — швидка генерація варіантів завдань</span>
+              </div>
+              <div class="role-task-row">
+                <span class="role-badge role-badge-human"><i class="fa-solid fa-user"></i> Людина</span>
+                <span class="role-task-text"><strong>Оцінка доречності</strong> — вчитель знає реальний рівень класу</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Програміст -->
+          <div class="role-block">
+            <div class="role-block-header">
+              <div class="role-block-icon role-block-icon-programmer"><i class="fa-solid fa-code"></i></div>
+              <div>
+                <div class="role-block-title">Програміст</div>
+                <div class="role-block-subtitle">Кодова заготовка — людина відповідає</div>
+              </div>
+            </div>
+            <div class="role-block-divider"></div>
+            <div class="role-block-content">
+              <div class="role-task-row">
+                <span class="role-badge role-badge-ai"><i class="fa-solid fa-robot"></i> ШІ</span>
+                <span class="role-task-text"><strong>Створює заготовку коду</strong> — пришвидшує рутинну частину</span>
+              </div>
+              <div class="role-task-row">
+                <span class="role-badge role-badge-human"><i class="fa-solid fa-user"></i> Людина</span>
+                <span class="role-task-text"><strong>Вимоги, тести, безпека</strong> — визначає критерії та відповідає за продукт</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: лікар + висновок -->
+        <div class="professions-right-column">
+          <!-- Лікар -->
+          <div class="role-block">
+            <div class="role-block-header">
+              <div class="role-block-icon role-block-icon-doctor"><i class="fa-solid fa-user-astronaut"></i></div>
+              <div>
+                <div class="role-block-title">Лікар</div>
+                <div class="role-block-subtitle">Аналіз даних ≠ рішення</div>
+              </div>
+            </div>
+            <div class="role-block-divider"></div>
+            <div class="role-block-content">
+              <div class="role-task-row">
+                <span class="role-badge role-badge-ai"><i class="fa-solid fa-robot"></i> ШІ</span>
+                <span class="role-task-text"><strong>Допомагає аналізувати</strong> дані, зображення, тенденції</span>
+              </div>
+              <div class="role-task-row">
+                <span class="role-badge role-badge-human"><i class="fa-solid fa-user"></i> Людина</span>
+                <span class="role-task-text"><strong>Остаточне рішення</strong> — професійна відповідальність лікаря</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Висновок (ключова ідея) -->
+          <div class="professions-conclusion-block">
+            <div class="professions-conclusion-title">
+              <i class="fa-solid fa-circle-question"></i> Розподіл ролей
+            </div>
+            <div class="professions-conclusion-text">
+              ШІ виконує рутинні кроки (чернетки, аналіз, генерація), а людина зберігає контроль над критеріями, контекстом і відповідальністю.
+            </div>
+            <div class="professions-conclusion-quote">
+              <i class="fa-solid fa-quote-left" style="margin-right: 6px; color: var(--ppt-accent);"></i>Не професія, а конкретне завдання визначає, хто його виконує краще.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compact insight band (conclusion) -->
+      <div class="professions-insight-band" style="margin-bottom: 3px !important;">
+        <div class="professions-insight-icon"><i class="fa-solid fa-brain"></i></div>
+        <div class="professions-insight-text">
+          <span>Ефективність</span> народжується в співпраці: <span class="human-accent">людина</span> задає напрям, <span>ШІ</span> прискорює виконання.
+        </div>
+        <div class="professions-insight-note">Завдання всередині професії ≠ професія</div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

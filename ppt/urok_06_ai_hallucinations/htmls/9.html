@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Промпт, який допомагає перевіряти</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --ppt-bg: #0F172A;
+  --ppt-bg-soft: #1E293B;
+  --ppt-surface: #334155;
+  --ppt-surface-2: #475569;
+  --ppt-border: #38BDF8;
+  --ppt-text-1: #F8FAFC;
+  --ppt-text-2: #CBD5E1;
+  --ppt-text-3: #94A3B8;
+  --ppt-accent: #38BDF8;
+  --ppt-accent-2: #818CF8;
+  --ppt-chart-1: #38BDF8;
+  --ppt-chart-2: #818CF8;
+  --ppt-chart-3: #2DD4BF;
+  --ppt-chart-4: #F472B6;
+  --ppt-good: #10B981;
+  --ppt-warn: #F59E0B;
+  --ppt-bad: #EF4444;
+  --ppt-radius-sm: 2px;
+  --ppt-radius-md: 4px;
+  --ppt-radius-lg: 8px;
+  --ppt-shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --ppt-shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --ppt-font-display: "Space Grotesk", sans-serif;
+  --ppt-font-body: "Inter", sans-serif;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: #0F172A;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      
+      box-shadow: var(--ppt-shadow-strong);
+    }
+
+    /* Title region — fixed per design */
+    .title-region {
+      margin-top: 48px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-eyebrow-label {
+      font-family: var(--ppt-font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+      white-space: nowrap;
+    }
+
+    .title-divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-surface);
+    }
+
+    .title-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-subheading {
+      margin: 0;
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+    }
+
+    /* Main body wrapper — flex grow to fill remaining space */
+    .prompt-body-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 48px;
+      gap: 24px;
+       /* allowed for layout container, not for text cards */
+    }
+
+    /* dominant prompt block */
+    .prompt-dominant-block {
+      display: flex;
+      flex: 1 1 0;
+      flex-direction: column;
+      gap: 16px;
+      
+    }
+
+    .prompt-main-card {
+      background: var(--ppt-bg-soft);
+      border: 1px solid var(--ppt-surface);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1 1 0;
+      
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .prompt-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .prompt-icon-circle {
+      width: 40px;
+      height: 40px;
+      background: rgba(56, 189, 248, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ppt-accent);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .prompt-card-title {
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+    }
+
+    .prompt-text-box {
+      background: var(--ppt-bg);
+      border-left: 4px solid var(--ppt-accent);
+      border-radius: 0 var(--ppt-radius-md) var(--ppt-radius-md) 0;
+      padding: 16px 18px;
+      font-family: var(--ppt-font-body);
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ppt-text-2);
+      flex: 1 1 0;
+      
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .prompt-line {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .prompt-bullet {
+      color: var(--ppt-accent);
+      font-size: 14px;
+      margin-top: 6px;
+      width: 18px;
+      flex-shrink: 0;
+    }
+
+    .prompt-text {
+      flex: 1;
+    }
+
+    .prompt-note {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      color: var(--ppt-text-3);
+      margin-top: 8px;
+      border-top: 1px solid var(--ppt-surface);
+      padding-top: 12px;
+      line-height: 1.4;
+    }
+
+    /* supporting two-column row */
+    .prompt-support-row {
+      display: flex;
+      gap: 20px;
+      flex: 0 0 auto;
+    }
+
+    .prompt-support-card {
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-lg);
+      padding: 18px 20px;
+      flex: 1;
+      border: 1px solid var(--ppt-surface);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .support-card-label {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-accent-2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .support-card-label i {
+      font-size: 16px;
+      width: 20px;
+    }
+
+    .support-card-text {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      color: var(--ppt-text-2);
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .support-bullet {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .support-bullet i {
+      color: var(--ppt-accent);
+      font-size: 12px;
+      margin-top: 5px;
+      width: 16px;
+    }
+
+    .support-bullet span {
+      flex: 1;
+    }
+
+    .support-note {
+      margin-top: 4px;
+      font-size: 15px;
+      color: var(--ppt-text-3);
+      line-height: 1.4;
+      border-top: 1px solid var(--ppt-surface);
+      padding-top: 8px;
+    }
+
+    /* explicit chart/image not used, no extra decoration */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Non-cover title region (fixed) -->
+    <div class="title-region">
+      <div class="title-eyebrow-row">
+        <span class="title-eyebrow-label">Критичне мислення &amp; ШІ</span>
+        <div class="title-divider-line"></div>
+      </div>
+      <h1 class="title-heading">Промпт, який допомагає перевіряти</h1>
+      <p class="title-subheading">Спеціальні вказівки, що змушують модель маркувати факти, припущення та чесно визнавати невпевненість</p>
+    </div>
+
+    <!-- Body wrapper -->
+    <div class="prompt-body-wrapper">
+      <!-- Dominant region: prompt example -->
+      <div class="prompt-dominant-block">
+        <div class="prompt-main-card">
+          <div class="prompt-card-header">
+            <div class="prompt-icon-circle">
+              <i class="fa-solid fa-terminal"></i>
+            </div>
+            <div class="prompt-card-title">Готовий промпт для перевірки</div>
+          </div>
+          <div class="prompt-text-box">
+            <div class="prompt-line">
+              <i class="fa-solid fa-chevron-right prompt-bullet"></i>
+              <div class="prompt-text">«Поясни тему коротко. Окремо познач:</div>
+            </div>
+            <div class="prompt-line">
+              <i class="fa-solid fa-chevron-right prompt-bullet"></i>
+              <div class="prompt-text">— факти, які потрібно перевірити;</div>
+            </div>
+            <div class="prompt-line">
+              <i class="fa-solid fa-chevron-right prompt-bullet"></i>
+              <div class="prompt-text">— припущення або спрощення;</div>
+            </div>
+            <div class="prompt-line">
+              <i class="fa-solid fa-chevron-right prompt-bullet"></i>
+              <div class="prompt-text">— пошукові запити чи типи надійних джерел.</div>
+            </div>
+            <div class="prompt-line">
+              <i class="fa-solid fa-chevron-right prompt-bullet"></i>
+              <div class="prompt-text">Не вигадуй посилань і прямо напиши, якщо не впевнений / не впевнена».</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Supporting row: two cards -->
+      <div class="prompt-support-row" style="margin-bottom: 4px !important;">
+        <div class="prompt-support-card">
+          <div class="support-card-label">
+            <i class="fa-solid fa-shield"></i>
+            <span>Що це дає</span>
+          </div>
+          <div class="support-card-text">
+            <div class="support-bullet">
+              <i class="fa-solid fa-circle"></i>
+              <span>Модель розділяє факти, припущення та незнання</span>
+            </div>
+            <div class="support-bullet">
+              <i class="fa-solid fa-circle"></i>
+              <span>Зменшує ризик вигаданих деталей і цитат</span>
+            </div>
+            <div class="support-bullet">
+              <i class="fa-solid fa-circle"></i>
+              <span>Заохочує вказувати на власну невпевненість</span>
+            </div>
+          </div>
+        </div>
+        <div class="prompt-support-card">
+          <div class="support-card-label">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Важливо пам&#39;ятати</span>
+          </div>
+          <div class="support-card-text">
+            <div class="support-bullet">
+              <i class="fa-solid fa-circle"></i>
+              <span>Такий промпт знижує ризик, але не скасовує самостійної перевірки</span>
+            </div>
+            <div class="support-bullet">
+              <i class="fa-solid fa-circle"></i>
+              <span>Модель може некоректно позначити межі знань</span>
+            </div>
+            <div class="support-bullet">
+              <i class="fa-solid fa-circle"></i>
+              <span>Завжди звіряйте ключові твердження з джерелами</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Передбач наступне слово - LLM Урок</title>
+  <!-- Шрифти -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <!-- Іконки -->
+  
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500&display=swap");
+
+:root {
+  --ppt-chart-1: #00BFA5;
+  --ppt-chart-2: #4DB6AC;
+  --ppt-chart-3: #80CBC4;
+  --ppt-chart-4: #B2DFDB;
+  --ppt-good: #2E7D32;
+  --ppt-warn: #F57C00;
+  --ppt-bad: #C62828;
+}
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    :root {
+      --ppt-bg: #FDFDFB;
+      --ppt-bg-soft: #F4F5F0;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #EEF0E7;
+      --ppt-border: #D1D5C8;
+      --ppt-text-1: #1A1C1E;
+      --ppt-text-2: #4A4D42;
+      --ppt-text-3: #8A8D7C;
+      --ppt-accent: #00BFA5;
+      --ppt-accent-2: #FF5252;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --ppt-font-display: "Outfit", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .prediction-lab-slide-root {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+    }
+
+    .prediction-lab-header {
+      margin-top: 48px;
+      margin-left: 64px;
+      margin-right: 64px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .prediction-lab-header-tag-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .prediction-lab-header-tag {
+      background: var(--ppt-accent);
+      color: white;
+      padding: 4px 12px;
+      font-family: var(--ppt-font-display);
+      font-weight: 800;
+      font-size: 14px;
+      border-radius: var(--ppt-radius-sm);
+      letter-spacing: 1px;
+    }
+
+    .prediction-lab-header-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .prediction-lab-header-title {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    /* Main Content Layout */
+    .prediction-lab-content-wrapper {
+      flex: 1;
+      display: flex;
+      gap: 32px;
+      padding: 0 64px 48px 64px;
+      align-items: stretch;
+    }
+
+    .prediction-lab-left-column {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .prediction-lab-right-column {
+      flex: 0.8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Interactive Container */
+    .prediction-lab-interactive-module {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 32px;
+      height: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .prediction-lab-instruction {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed var(--ppt-border);
+    }
+
+    .prediction-lab-instruction-icon {
+      color: var(--ppt-accent);
+      font-size: 20px;
+    }
+
+    .prediction-lab-instruction-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .prediction-lab-sentence-box {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .prediction-lab-sentence-text {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--ppt-text-1);
+    }
+
+    .prediction-lab-sentence-text span.highlight {
+      color: var(--ppt-accent);
+      border-bottom: 3px solid var(--ppt-accent);
+      transition: all 0.3s ease;
+    }
+
+    /* Controls Panel */
+    .prediction-lab-controls-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: 480px;
+    }
+
+    .prediction-lab-option-card {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+      position: relative;
+      
+    }
+
+    .prediction-lab-option-card:hover {
+      border-color: var(--ppt-accent);
+      transform: translateX(4px);
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .prediction-lab-option-card.active {
+      border-color: var(--ppt-accent);
+      background: var(--ppt-surface-2);
+    }
+
+    .prediction-lab-option-word {
+      font-size: 22px;
+      font-weight: 600;
+      z-index: 1;
+    }
+
+    .prediction-lab-option-prob {
+      font-family: var(--ppt-font-display);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--ppt-accent);
+      z-index: 1;
+    }
+
+    .prediction-lab-option-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: var(--ppt-accent);
+      opacity: 0.05;
+      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .prediction-lab-navigation {
+      margin-top: auto;
+      display: flex;
+      gap: 12px;
+    }
+
+    .prediction-lab-nav-btn {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid var(--ppt-border);
+      background: var(--ppt-surface);
+      border-radius: var(--ppt-radius-sm);
+      font-family: var(--ppt-font-display);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .prediction-lab-nav-btn:hover {
+      background: var(--ppt-bg-soft);
+      border-color: var(--ppt-text-3);
+    }
+
+    .prediction-lab-nav-btn.primary {
+      background: var(--ppt-text-1);
+      color: white;
+      border: none;
+    }
+
+    .prediction-lab-nav-btn.primary:hover {
+      background: var(--ppt-accent);
+    }
+
+    .prediction-lab-summary-box {
+      margin-top: 24px;
+      padding: 16px;
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-md);
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      border-left: 4px solid var(--ppt-accent);
+    }
+
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+
+  <div class="prediction-lab-slide-root">
+    
+    <!-- Заголовок -->
+    <header class="prediction-lab-header">
+      <div class="prediction-lab-header-tag-line">
+        <span class="prediction-lab-header-tag">LAB // INFO-11</span>
+        <div class="prediction-lab-header-line"></div>
+      </div>
+      <h1 class="prediction-lab-header-title">
+        Передбач наступне слово
+      </h1>
+    </header>
+
+    <!-- Основний контент -->
+    <div class="prediction-lab-content-wrapper" style="margin-bottom: 4px !important;">
+      
+      <!-- Ліва колонка: Візуалізація речення -->
+      <div class="prediction-lab-left-column">
+        <div class="prediction-lab-interactive-module" data-interaction-trigger="true" data-runtime-root="true" id="prediction-module">
+          <div class="prediction-lab-instruction">
+            <i class="fa-solid fa-microchip prediction-lab-instruction-icon"></i>
+            <span class="prediction-lab-instruction-text">Симуляція генерації тексту</span>
+          </div>
+          
+          <div class="prediction-lab-sentence-box">
+            <p class="prediction-lab-sentence-text" id="display-sentence">
+              Взимку сніг зазвичай <span class="highlight">...</span>
+            </p>
+          </div>
+
+          <div class="prediction-lab-summary-box">
+            <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i>
+            Кілька продовжень можуть бути доречними, але вони мають різну <strong>ймовірність</strong> залежно від контексту.
+          </div>
+        </div>
+      </div>
+
+      <!-- Права колонка: Керування та вибір -->
+      <div class="prediction-lab-right-column">
+        <div class="prediction-lab-controls-panel">
+          <div id="options-container" style="display: flex; flex-direction: column; gap: 12px;">
+            <!-- Options will be injected by JS -->
+          </div>
+
+          <div class="prediction-lab-navigation">
+            <button class="prediction-lab-nav-btn" onclick="resetLab()">
+              <i class="fa-solid fa-rotate-left"></i> Скинути
+            </button>
+            <button class="prediction-lab-nav-btn primary" onclick="nextSentence()">
+              Наступне <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Скрипт логіки -->
+    <script>
+      const labData = [
+        {
+          start: "Взимку сніг зазвичай",
+          options: [
+            { word: "випадає", prob: 85 },
+            { word: "тане", prob: 10 },
+            { word: "блищить", prob: 5 }
+          ]
+        },
+        {
+          start: "На уроці інформатики ми",
+          options: [
+            { word: "програмуємо", prob: 60 },
+            { word: "пишемо", prob: 30 },
+            { word: "граємо", prob: 10 }
+          ]
+        },
+        {
+          start: "Щоб захистити пароль, потрібно",
+          options: [
+            { word: "змінити", prob: 50 },
+            { word: "приховати", prob: 40 },
+            { word: "запам'ятати", prob: 10 }
+          ]
+        }
+      ];
+
+      let currentIdx = 0;
+
+      function renderOptions() {
+        const container = document.getElementById('options-container');
+        const data = labData[currentIdx];
+        container.innerHTML = '';
+
+        data.options.forEach((opt, index) => {
+          const card = document.createElement('div');
+          card.className = 'prediction-lab-option-card';
+          card.onclick = () => selectWord(opt.word, index);
+          
+          card.innerHTML = `
+            <div class="prediction-lab-option-bar" style="width: ${opt.prob}%"></div>
+            <span class="prediction-lab-option-word">${opt.word}</span>
+            <span class="prediction-lab-option-prob">${opt.prob}%</span>
+          `;
+          container.appendChild(card);
+        });
+
+        document.getElementById('display-sentence').innerHTML = `${data.start} <span class="highlight">...</span>`;
+      }
+
+      function selectWord(word, index) {
+        const data = labData[currentIdx];
+        document.getElementById('display-sentence').innerHTML = `${data.start} <span class="highlight">${word}</span>`;
+        
+        const cards = document.querySelectorAll('.prediction-lab-option-card');
+        cards.forEach((c, i) => {
+          c.classList.remove('active');
+          if(i === index) c.classList.add('active');
+        });
+      }
+
+      function nextSentence() {
+        currentIdx = (currentIdx + 1) % labData.length;
+        renderOptions();
+      }
+
+      function resetLab() {
+        renderOptions();
+      }
+
+      // Initial render
+      renderOptions();
+    </script>
+  </div>
+
+
+</body></html>

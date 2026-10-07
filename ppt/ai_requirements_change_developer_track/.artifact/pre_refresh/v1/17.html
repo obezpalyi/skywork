@@ -1,0 +1,437 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workflow DEV-3: Алгоритм аналізу технічного впливу</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+    :root {
+      --ppt-bg: #FDFDFD;
+      --ppt-bg-soft: #F4F7F6;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E9EFED;
+      --ppt-border: #D1D9D7;
+      --ppt-text-1: #121417;
+      --ppt-text-2: #4A5552;
+      --ppt-text-3: #879491;
+      --ppt-accent: #007A5E;
+      --ppt-accent-2: #00D3A4;
+      --ppt-chart-1: #007A5E;
+      --ppt-chart-2: #00D3A4;
+      --ppt-chart-3: #121417;
+      --ppt-chart-4: #879491;
+      --ppt-good: #107C10;
+      --ppt-warn: #D83B01;
+      --ppt-bad: #A80000;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 4px 16px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    .slide-root {
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      position: relative;
+      
+    }
+
+    /* Non-Cover Title Region — fixed template */
+    .title-region {
+      margin-top: 40px;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-eyebrow {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-surface-2);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .title-region-line {
+      height: 1px;
+      flex-grow: 1;
+      background: var(--ppt-border);
+    }
+
+    .title-region-title {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* Main content: flex-grow to consume remaining height */
+    .workflow-body {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      margin-left: 56px;
+      margin-right: 56px;
+      margin-bottom: 40px;
+      gap: 16px;
+       /* not set, but we use flex-basis: 0 */
+      /* bottom safety gap via margin-bottom */
+    }
+
+    /* Left-right asymmetric layout: dominant left panel + supporting right rail */
+    .workflow-content-grid {
+      display: flex;
+      flex: 1 1 0;
+      gap: 20px;
+      align-items: stretch;
+      
+    }
+
+    .workflow-left-dominant {
+      flex: 2 1 0;
+      background: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-lg);
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid var(--ppt-border);
+    }
+
+    .workflow-right-supporting {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      
+    }
+
+    /* Supporting cards */
+    .supporting-card-visual {
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 14px 16px;
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .supporting-card-visual:last-child {
+      flex: 1 1 0;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title i {
+      color: var(--ppt-accent);
+      font-size: 18px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .card-divider {
+      height: 1px;
+      background: var(--ppt-border);
+      margin: 4px 0;
+    }
+
+    .card-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card-list-item {
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--ppt-text-2);
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .card-list-item::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--ppt-accent);
+      font-size: 14px;
+    }
+
+    /* Step list in left panel */
+    .step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      flex: 1 1 0;
+    }
+
+    .step-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      line-height: 1.4;
+      color: var(--ppt-text-1);
+      font-weight: 500;
+    }
+
+    .step-number {
+      font-family: var(--ppt-font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ppt-accent);
+      background: var(--ppt-surface-2);
+      border-radius: var(--ppt-radius-sm);
+      padding: 2px 8px;
+      min-width: 28px;
+      text-align: center;
+      flex-shrink: 0;
+      margin-top: 0;
+    }
+
+    .step-text {
+      color: var(--ppt-text-2);
+      font-weight: 400;
+    }
+
+    .step-list-item strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    /* left panel header */
+    .left-panel-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--ppt-border);
+      padding-bottom: 8px;
+    }
+
+    .left-panel-heading h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .left-panel-heading span {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      color: var(--ppt-text-3);
+      background: var(--ppt-surface);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+      border: 1px solid var(--ppt-border);
+    }
+
+    /* Visual step mini-map in right support */
+    .mini-map-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .mini-map-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .mini-map-node {
+      font-family: var(--ppt-font-mono);
+      font-size: 11px;
+      background: var(--ppt-bg-soft);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-sm);
+      padding: 2px 6px;
+      color: var(--ppt-text-1);
+      white-space: nowrap;
+    }
+
+    .mini-map-node.accent {
+      border-color: var(--ppt-accent);
+      color: var(--ppt-accent);
+      font-weight: 600;
+    }
+
+    .mini-map-arrow {
+      color: var(--ppt-text-3);
+      font-size: 12px;
+    }
+
+    /* Bottom compact strip */
+    .workflow-footnote {
+      flex-shrink: 0;
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-md);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .workflow-footnote i {
+      color: var(--ppt-accent);
+      font-size: 16px;
+    }
+
+    .workflow-footnote strong {
+      font-weight: 600;
+      color: var(--ppt-text-1);
+    }
+
+    /* Ensure no fixed heights on text containers, only flex sizing */
+    .workflow-left-dominant, .supporting-card-visual {
+       /* intentionally not set, we avoid min-height:0 globally */
+    }
+
+    /* Override: we do NOT use min-height:0 anywhere, so remove if present */
+    .workflow-left-dominant, .supporting-card-visual, .workflow-content-grid {
+       /* this is violation, so we use flex-basis instead */
+    }
+
+    /* Correct: no min-height:0, use flex-basis and overflow hidden? no overflow hidden needed */
+    .workflow-content-grid { 
+      /* use flex-basis 0 via flex: 1 1 0 */
+    }
+
+    /* Font Awesome import */
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+    /* Use link instead of @import for reliability */
+  
+html { overflow: hidden; }
+</style>
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title Region (fixed template) -->
+    <header class="title-region">
+      <div class="title-region-header">
+        <span class="title-region-eyebrow">Developer Track</span>
+        <div class="title-region-line"></div>
+      </div>
+      <h1 class="title-region-title">Workflow DEV-3: Алгоритм аналізу технічного впливу</h1>
+    </header>
+
+    <!-- Main content -->
+    <div class="workflow-body">
+      <!-- Left-right asymmetric composition -->
+      <div class="workflow-content-grid">
+        <!-- Dominant left: workflow steps -->
+        <div class="workflow-left-dominant">
+          <div class="left-panel-heading">
+            <h2><i class="fa-solid fa-diagram-project" style="color: var(--ppt-accent); margin-right: 8px;"></i>Процес аналізу впливу</h2>
+            <span>9 кроків</span>
+          </div>
+          <ul class="step-list">
+            <li class="step-list-item"><span class="step-number">01</span><span class="step-text"><strong>Виявити змінені бізнес-правила</strong> — порівняти стару та оновлену базові лінії, визначити нові правила для критичного обслуговування.</span></li>
+            <li class="step-list-item"><span class="step-number">02</span><span class="step-text"><strong>Зіставити зміни з компонентами</strong> — визначити сервіси, що зачіпають правила (Ticket, SLA, Notification).</span></li>
+            <li class="step-list-item"><span class="step-number">03</span><span class="step-text"><strong>Перевірити споживачів API та подій</strong> — знайти клієнтів Ticket API, підписників подій, синхронізацію з CRM.</span></li>
+            <li class="step-list-item"><span class="step-number">04</span><span class="step-text"><strong>Проаналізувати дані та міграцію</strong> — оцінити нові поля, сховище ескалацій, вимоги до backfill.</span></li>
+            <li class="step-list-item"><span class="step-number">05</span><span class="step-text"><strong>Оцінити зворотну сумісність</strong> — чи можуть старі клієнти ігнорувати нове поле, версіонування схеми.</span></li>
+            <li class="step-list-item"><span class="step-number">06</span><span class="step-text"><strong>Розглянути фіча-флаги та fallback</strong> — захист нових шляхів, поведінка за замовчуванням.</span></li>
+            <li class="step-list-item"><span class="step-number">07</span><span class="step-text"><strong>Визначити взаємодію з технічним боргом</strong> — чи впливають накопичені обмеження на реалізацію.</span></li>
+            <li class="step-list-item"><span class="step-number">08</span><span class="step-text"><strong>Створити записи ризиків та залежностей</strong> — задокументувати прямі та транзитивні впливи.</span></li>
+            <li class="step-list-item"><span class="step-number">09</span><span class="step-text"><strong>Підготувати варіанти рішень</strong> — для схвалення технічним комітетом, з явними компромісами.</span></li>
+          </ul>
+        </div>
+
+        <!-- Supporting right rail -->
+        <div class="workflow-right-supporting">
+          <div class="supporting-card-visual">
+            <div class="card-title"><i class="fa-solid fa-bullseye"></i>Фокус аналізу</div>
+            <div class="card-divider"></div>
+            <ul class="card-list">
+              <li class="card-list-item">Змінені бізнес-правила та їх технічне втілення</li>
+              <li class="card-list-item">Мапування на компоненти ServiceHub</li>
+              <li class="card-list-item">Перевірка міграції даних</li>
+              <li class="card-list-item">Споживачі API та подій</li>
+            </ul>
+          </div>
+          <div class="supporting-card-visual">
+            <div class="card-title"><i class="fa-solid fa-code-branch"></i>Потік залежностей</div>
+            <div class="card-divider"></div>
+            <div class="mini-map-flow">
+              <div class="mini-map-row"><span class="mini-map-node">Бізнес-правило</span><span class="mini-map-arrow"><i class="fa-solid fa-arrow-right"></i></span><span class="mini-map-node accent">Компонент</span></div>
+              <div class="mini-map-row"><span class="mini-map-node accent">API/Події</span><span class="mini-map-arrow"><i class="fa-solid fa-arrow-right"></i></span><span class="mini-map-node">Споживачі</span></div>
+              <div class="mini-map-row"><span class="mini-map-node">Дані</span><span class="mini-map-arrow"><i class="fa-solid fa-arrow-right"></i></span><span class="mini-map-node accent">Міграція</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compact bottom strip: conclusion -->
+      <div class="workflow-footnote" style="margin-bottom: 4px !important;">
+        <i class="fa-solid fa-circle-info"></i>
+        <span><strong>Результат:</strong> технічна матриця впливу, оновлений реєстр ризиків, варіанти рішень для схвалення — до початку розробки.</span>
+      </div>
+    </div>
+  </div>
+
+</body></html>

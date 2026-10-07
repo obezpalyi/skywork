@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Чого сучасний ШІ не гарантує</title>
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+    :root {
+      --ppt-bg: #F8FAFC;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E2E8F0;
+      --ppt-border: #CBD5E1;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #64748B;
+      --ppt-accent: #0D9488;
+      --ppt-accent-2: #0891B2;
+      --ppt-chart-1: #0D9488;
+      --ppt-chart-2: #0891B2;
+      --ppt-chart-3: #4F46E5;
+      --ppt-chart-4: #7C3AED;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+      --ppt-font-mono: "IBM Plex Mono", monospace;
+    }*{
+      margin: 0 0;
+      padding: 0 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: var(--ppt-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }.slide-root{
+      width: 1280px; height: 720px;
+      background: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 0 64px 30px 64px;
+      font-family: var(--ppt-font-body);
+      
+    }.title-region-limitations{
+      margin-top: 26px;
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .title-region-top-marker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-region-marker-label {
+      font-family: var(--ppt-font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ppt-bg-soft);
+      padding: 4px 8px;
+      border-radius: var(--ppt-radius-sm);
+    }
+
+    .title-region-main-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .title-region-accent-line {
+      width: 4px;
+      height: 44px;
+      background: var(--ppt-accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .title-region-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-region-heading {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    .title-region-subheading {
+      margin: 4px 0 0 0;
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+    }.limitations-body-wrapper{
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: row;
+      gap: 18px 28px;
+      
+    }.limitations-diagnostic-left{
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 11px 18px;
+      justify-content: flex-start;
+    }.limitation-item-block{
+      background: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-left: 4px solid var(--ppt-bad);
+      border-radius: var(--ppt-radius-md);
+      padding: 9px 18px;
+      box-shadow: var(--ppt-shadow-soft);
+    }.limitation-item-title-row{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 5px;
+    }
+
+    .limitation-item-icon {
+      color: var(--ppt-bad);
+      font-size: 18px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .limitation-item-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      font-family: var(--ppt-font-display);
+    }
+
+    .limitation-item-desc {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      padding-left: 36px;
+    }.limitations-evidence-rail{
+      flex: 1.2;
+      background: var(--ppt-accent-2);
+      border-radius: var(--ppt-radius-md);
+      padding: 13px 20px 10px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--ppt-shadow-soft);
+      
+    }.evidence-rail-heading{
+      font-family: var(--ppt-font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      color: #F0FDFA;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      padding-bottom: 6px;
+    }.evidence-rail-item{
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px 4px;
+    }
+
+    .evidence-rail-question {
+      font-size: 15px;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 1.4;
+    }
+
+    .evidence-rail-annotation {
+      font-size: 13px;
+      color: #E0F2FE;
+      line-height: 1.4;
+    }.evidence-rail-footer-note{
+      margin-top: auto;
+      font-size: 13px;
+      color: #F0FDFA;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      padding-top: 8px;
+      line-height: 1.4;
+    }
+  
+html { overflow: hidden; }
+</style>
+  
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root">
+    <!-- Title region fixed contract -->
+    <header class="title-region-limitations">
+      <div class="title-region-top-marker">
+        <span class="title-region-marker-label">Unit: Artificial Intelligence</span>
+      </div>
+      <div class="title-region-main-block">
+        <div class="title-region-accent-line"></div>
+        <div class="title-region-text-group">
+          <h1 class="title-region-heading">Чого сучасний ШІ не гарантує</h1>
+          <p class="title-region-subheading">Відсутність істинності, життєвого досвіду та відповідальності попри переконливість</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Body: diagnostic list left + evidence rail right -->
+    <div class="limitations-body-wrapper" style="margin-bottom: 2px !important;">
+      <!-- Left list of limitations -->
+      <div class="limitations-diagnostic-left">
+        <div class="limitation-item-block">
+          <div class="limitation-item-title-row">
+            <i class="fa-solid fa-circle-exclamation limitation-item-icon"></i>
+            <span class="limitation-item-title">Не гарантує істинності</span>
+          </div>
+          <div class="limitation-item-desc">Модель прогнозує ймовірний текст або результат, але не перевіряє фактичну правильність. Переконлива відповідь може бути хибною.</div>
+        </div>
+
+        <div class="limitation-item-block">
+          <div class="limitation-item-title-row">
+            <i class="fa-solid fa-brain limitation-item-icon"></i>
+            <span class="limitation-item-title">Без людського досвіду</span>
+          </div>
+          <div class="limitation-item-desc">ШІ не має особистого життєвого досвіду, емоцій чи тілесного сприйняття. Він оперує статистичними закономірностями, а не розумінням.</div>
+        </div>
+
+        <div class="limitation-item-block">
+          <div class="limitation-item-title-row">
+            <i class="fa-solid fa-scale-balanced limitation-item-icon"></i>
+            <span class="limitation-item-title">Не несе відповідальності</span>
+          </div>
+          <div class="limitation-item-desc">Система не має моральної чи юридичної відповідальності за свої відповіді. Відповідальність завжди лежить на людині, яка використовує результат.</div>
+        </div>
+
+        <div class="limitation-item-block">
+          <div class="limitation-item-title-row">
+            <i class="fa-solid fa-user-shield limitation-item-icon"></i>
+            <span class="limitation-item-title">Не знає вашої мети</span>
+          </div>
+          <div class="limitation-item-desc">Без чіткого контексту ШІ не розуміє намірів користувача. Він реагує лише на вхідний запит, а не на прихований задум.</div>
+        </div>
+
+        <div class="limitation-item-block">
+          <div class="limitation-item-title-row">
+            <i class="fa-solid fa-ghost limitation-item-icon"></i>
+            <span class="limitation-item-title">Не має свідомості чи намірів</span>
+          </div>
+          <div class="limitation-item-desc">Природна мова не означає розуміння чи емоції. Не варто приписувати системі свідомість, наміри або людське мислення.</div>
+        </div>
+      </div>
+
+      <!-- Right narrow evidence rail -->
+      <div class="limitations-evidence-rail">
+        <div class="evidence-rail-heading">
+          <i class="fa-solid fa-microscope" style="margin-right: 6px;"></i> Чому це важливо
+        </div>
+
+        <div class="evidence-rail-item">
+          <span class="evidence-rail-question">Перевіряйте факти</span>
+          <span class="evidence-rail-annotation">Навіть авторитетний тон не гарантує точності — шукайте джерела.</span>
+        </div>
+
+        <div class="evidence-rail-item">
+          <span class="evidence-rail-question">Контекст вирішує</span>
+          <span class="evidence-rail-annotation">Без чіткої постановки задачі результат може бути нерелевантним.</span>
+        </div>
+
+        <div class="evidence-rail-item">
+          <span class="evidence-rail-question">Відповідальність — на людині</span>
+          <span class="evidence-rail-annotation">Юридичні та етичні наслідки застосування ШІ несе користувач.</span>
+        </div>
+
+        <div class="evidence-rail-item">
+          <span class="evidence-rail-question">Не антропоморфізуйте</span>
+          <span class="evidence-rail-annotation">Свідомість, емоції, наміри — це людські риси, ШІ їх не має.</span>
+        </div>
+
+        <div class="evidence-rail-footer-note">
+          <i class="fa-solid fa-triangle-exclamation" style="margin-right: 4px;"></i> Критичне мислення — головний інструмент роботи з ШІ.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

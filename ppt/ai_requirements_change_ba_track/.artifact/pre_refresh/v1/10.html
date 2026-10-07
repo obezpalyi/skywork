@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Сесія BA-2: Якість вимог та завдання в Jira</title>
+    
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap");
+
+        :root {
+            --ppt-bg: #F8FAFC;
+            --ppt-bg-soft: #EEF2F6;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #F1F5F9;
+            --ppt-border: #CBD5E1;
+            --ppt-text-1: #0F172A;
+            --ppt-text-2: #475569;
+            --ppt-text-3: #94A3B8;
+            --ppt-accent: #0D9488;
+            --ppt-accent-2: #6366F1;
+            --ppt-chart-1: #0D9488;
+            --ppt-chart-2: #6366F1;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #EC4899;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 6px;
+            --ppt-radius-lg: 10px;
+            --ppt-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+            --ppt-shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Inter", sans-serif;
+            --ppt-font-mono: "JetBrains Mono", monospace;
+        }*{
+            margin: 0 0;
+            padding: 0 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background-color: var(--ppt-bg);
+            font-family: var(--ppt-font-body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .slide-container-ba2 {
+            width: 1280px; height: 720px;
+            background-color: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0 56px;
+            
+            box-shadow: var(--ppt-shadow-strong);
+        }/* Title region per design */
+        .title-region-ba2{
+            margin-top: 18px;
+            margin-bottom: 9px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .title-row-ba2 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-accent-ba2 {
+            background-color: var(--ppt-accent);
+            width: 4px;
+            height: 32px;
+            border-radius: var(--ppt-radius-sm);
+            flex-shrink: 0;
+        }
+
+        .title-text-wrapper-ba2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-eyebrow-ba2 {
+            font-family: var(--ppt-font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ppt-accent);
+            margin-bottom: 2px;
+        }
+
+        .title-heading-ba2 {
+            font-family: var(--ppt-font-display);
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--ppt-text-1);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .title-subtitle-ba2 {
+            margin: 0;
+            margin-left: 16px;
+            font-family: var(--ppt-font-body);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+        }/* Main content body: flex-1 to fill remaining height */
+        .main-content-ba2{
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: row;
+            gap: 9px 24px;
+             /* allowed? yes, but avoid min-height:0 per rule; we use overflow hidden on parent */
+            padding-bottom: 15px;
+            align-items: stretch;
+        }/* Left column: 60% width, full height */
+        .left-region-ba2{
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 8px 16px;
+            min-width: 0;
+        }/* Right column: 40% width */
+        .right-region-ba2{
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 6px 16px;
+            min-width: 0;
+        }/* Shared surface styles */
+        .surface-block-ba2{
+            background-color: var(--ppt-surface);
+            border-radius: var(--ppt-radius-lg);
+            padding: 9px 20px;
+            box-shadow: var(--ppt-shadow-soft);
+            border: 1px solid var(--ppt-border);
+            display: flex;
+            flex-direction: column;
+            gap: 5px 10px;
+        }
+
+        .block-title-ba2 {
+            font-family: var(--ppt-font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .block-title-ba2 i {
+            color: var(--ppt-accent);
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+        }.block-list-ba2{
+            list-style: none;
+            padding: 0 0;
+            margin: 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 3px 6px;
+        }.block-list-ba2 li{
+            font-size: 15px;
+            line-height: 1.45;
+            color: var(--ppt-text-2);
+            display: flex;
+            gap: 4px 8px;
+            align-items: flex-start;
+        }.block-list-ba2 li i{
+            color: var(--ppt-accent);
+            font-size: 12px;
+            margin-top: 2px;
+            width: 16px;
+            flex-shrink: 0;
+        }.mono-label-ba2{
+            font-family: var(--ppt-font-mono);
+            font-size: 11px;
+            color: var(--ppt-text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2px;
+        }.divider-ba2{
+            height: 1px;
+            background-color: var(--ppt-border);
+            margin: 2px 0;
+        }
+
+        /* Left column specific blocks */
+        .left-region-ba2 .surface-block-ba2 {
+            flex: 1 1 0;
+        }
+
+        .left-region-ba2 .surface-block-ba2:first-child {
+            flex: 1.2;
+        }
+
+        /* Right column blocks */
+        .right-region-ba2 .surface-block-ba2 {
+            flex: 1 1 0;
+        }/* KPI style for emphasis */
+        .quality-metric-ba2{
+            display: flex;
+            align-items: baseline;
+            gap: 4px 8px;
+            margin-top: 3px;
+        }
+
+        .quality-metric-number-ba2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--ppt-accent);
+            font-family: var(--ppt-font-display);
+        }
+
+        .quality-metric-label-ba2 {
+            font-size: 15px;
+            color: var(--ppt-text-2);
+        }.accent-chip-ba2{
+            background-color: var(--ppt-bg-soft);
+            border-radius: 20px;
+            padding: 2px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            display: inline-flex;
+            align-items: center;
+            gap: 2px 6px;
+        }
+
+        .accent-chip-ba2 i {
+            color: var(--ppt-accent);
+        }/* Right column list with compact spacing */
+        .right-region-ba2 .block-list-ba2 li{
+            font-size: 13px;
+        }
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="slide-container-ba2">
+        <!-- Title Region (per design) -->
+        <header class="title-region-ba2">
+            <div class="title-row-ba2">
+                <span class="title-accent-ba2"></span>
+                <div class="title-text-wrapper-ba2">
+                    <span class="title-eyebrow-ba2">BA Track | ServiceHub</span>
+                    <h1 class="title-heading-ba2">Сесія BA-2: Якість вимог та завдання в Jira</h1>
+                </div>
+            </div>
+            <p class="title-subtitle-ba2">Перевірка здоров&#39;я вимог, покращення критеріїв приймання та трансформація у готові до розробки завдання</p>
+        </header>
+
+        <!-- Main content: two-column asymmetric layout -->
+        <div class="main-content-ba2" style="margin-bottom: 2px !important;">
+            <!-- Left column (dominant, 60%) -->
+            <div class="left-region-ba2">
+                <!-- Вхідні матеріали -->
+                <div class="surface-block-ba2">
+                    <div class="block-title-ba2">
+                        <i class="fa-solid fa-database"></i>
+                        <span>Вхідні матеріали сесії</span>
+                    </div>
+                    <ul class="block-list-ba2">
+                        <li><i class="fa-solid fa-circle"></i><span>Канонічний пакет вимог (Requirements Pack)</span></li>
+                        <li><i class="fa-solid fa-circle"></i><span>Незавершений Jira Epic та елементи беклогу різної якості</span></li>
+                        <li><i class="fa-solid fa-circle"></i><span>Definition of Ready (DoR) та матриця бізнес-правил</span></li>
+                    </ul>
+                    <div class="quality-metric-ba2">
+                        <span class="quality-metric-number-ba2">6</span>
+                        <span class="quality-metric-label-ba2">вимірів якості аналізу</span>
+                    </div>
+                </div>
+
+                <!-- Цілі сесії -->
+                <div class="surface-block-ba2">
+                    <div class="block-title-ba2">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <span>Цілі сесії</span>
+                    </div>
+                    <ul class="block-list-ba2">
+                        <li><i class="fa-solid fa-check"></i><span>Провести health-check вимог за 6 вимірами якості</span></li>
+                        <li><i class="fa-solid fa-check"></i><span>Покращити критерії приймання (Acceptance Criteria)</span></li>
+                        <li><i class="fa-solid fa-check"></i><span>Трансформувати затверджену вимогу в Jira-завдання, готові до review</span></li>
+                        <li><i class="fa-solid fa-check"></i><span>Зберегти наскрізну простежуваність (end-to-end traceability)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Ключовий фокус -->
+                <div class="surface-block-ba2">
+                    <div class="block-title-ba2">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>Фокус аналітика</span>
+                    </div>
+                    <ul class="block-list-ba2">
+                        <li><i class="fa-solid fa-asterisk"></i><span>Кожна проблема фіксується з доказом, ризиком та власником</span></li>
+                        <li><i class="fa-solid fa-asterisk"></i><span>Xplore пропонує виправлення, але рішення приймає BA</span></li>
+                        <li><i class="fa-solid fa-asterisk"></i><span>Результат: review-ready Jira tasks + traceability matrix</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right column (supporting, 40%) -->
+            <div class="right-region-ba2">
+                <!-- Шість вимірів якості -->
+                <div class="surface-block-ba2">
+                    <div class="block-title-ba2">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                        <span>Модель якості вимог</span>
+                    </div>
+                    <div class="mono-label-ba2">6 вимірів</div>
+                    <ul class="block-list-ba2">
+                        <li><i class="fa-solid fa-circle"></i><span><strong>Повнота</strong> – актори, тригери, умови</span></li>
+                        <li><i class="fa-solid fa-circle"></i><span><strong>Несуперечливість</strong> – відсутність конфліктів</span></li>
+                        <li><i class="fa-solid fa-circle"></i><span><strong>Чіткість</strong> – однозначні терміни</span></li>
+                        <li><i class="fa-solid fa-circle"></i><span><strong>Тестованість</strong> – об&#39;єктивна перевірка</span></li>
+                        <li><i class="fa-solid fa-circle"></i><span><strong>Здійсненність</strong> – видимі обмеження</span></li>
+                        <li><i class="fa-solid fa-circle"></i><span><strong>Простежуваність</strong> – джерело, власник, версія</span></li>
+                    </ul>
+                </div>
+
+                <!-- Робота з Xplore -->
+                <div class="surface-block-ba2">
+                    <div class="block-title-ba2">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>Роль Xplore</span>
+                    </div>
+                    <ul class="block-list-ba2">
+                        <li><i class="fa-solid fa-circle-question"></i><span>Виявлення дублікатів та неоднозначностей</span></li>
+                        <li><i class="fa-solid fa-circle-question"></i><span>Порівняння формулювань і значень</span></li>
+                        <li><i class="fa-solid fa-circle-question"></i><span>Генерація уточнювальних запитань</span></li>
+                        <li><i class="fa-solid fa-circle-question"></i><span>Ранжування проблем за впливом</span></li>
+                        <li><i class="fa-solid fa-circle-question"></i><span>Пропозиції виправлень (не рішень)</span></li>
+                    </ul>
+                    <div class="divider-ba2"></div>
+                    <div class="accent-chip-ba2">
+                        <i class="fa-solid fa-user-check"></i>
+                        <span>BA приймає, відхиляє або редагує</span>
+                    </div>
+                </div>
+
+                <!-- Очікуваний результат -->
+                <div class="surface-block-ba2">
+                    <div class="block-title-ba2">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                        <span>Результат сесії</span>
+                    </div>
+                    <ul class="block-list-ba2">
+                        <li><i class="fa-solid fa-file"></i><span>Звіт про якість вимог</span></li>
+                        <li><i class="fa-solid fa-circle-question"></i><span>Фрагмент беклогу, готовий до review</span></li>
+                        <li><i class="fa-solid fa-link"></i><span>Матриця простежуваності</span></li>
+                        <li><i class="fa-solid fa-comment-dots"></i><span>Багаторазові промпти для генерації та рев&#39;ю Jira</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

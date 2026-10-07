@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Самостійна практика · DevOps Track</title>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;500&display=swap");
+
+        :root {
+            --ppt-bg: #F8FAFC;
+            --ppt-bg-soft: #F1F5F9;
+            --ppt-surface: #FFFFFF;
+            --ppt-surface-2: #E2E8F0;
+            --ppt-border: #CBD5E1;
+            --ppt-text-1: #0F172A;
+            --ppt-text-2: #475569;
+            --ppt-text-3: #64748B;
+            --ppt-accent: #2563EB;
+            --ppt-accent-2: #10B981;
+            --ppt-chart-1: #2563EB;
+            --ppt-chart-2: #10B981;
+            --ppt-chart-3: #F59E0B;
+            --ppt-chart-4: #6366F1;
+            --ppt-good: #10B981;
+            --ppt-warn: #F59E0B;
+            --ppt-bad: #EF4444;
+            --ppt-radius-sm: 2px;
+            --ppt-radius-md: 4px;
+            --ppt-radius-lg: 8px;
+            --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --ppt-font-display: "Inter", sans-serif;
+            --ppt-font-body: "Roboto Mono", monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {width: 1280px; height: 720px; overflow: hidden;   
+            background: transparent; /* slide root uses --ppt-bg */
+            font-family: var(--ppt-font-body);
+            color: var(--ppt-text-1);
+        }
+
+        /* Slide root: fixed 1280x720, flex column */
+        .devops-practice-slide-root {
+            width: 1280px; height: 720px;
+            background: var(--ppt-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 0; /* no outer padding, title region handles margins */
+             /* contain content, but bottom gap preserved */
+        }
+
+        /* ---- Title region (fixed cross-slide template) ---- */
+        .title-region-devops-practice {
+            margin-top: 40px;
+            margin-left: 60px;
+            margin-right: 60px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-left: 6px solid var(--ppt-accent);
+            padding-left: 20px;
+            flex-shrink: 0;
+        }
+
+        .title-region-devops-practice .title-eyebrow {
+            font-family: var(--ppt-font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ppt-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 0;
+        }
+
+        .title-region-devops-practice .title-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--ppt-text-1);
+            margin: 0;
+        }
+
+        .title-region-devops-practice .title-subheading {
+            font-family: var(--ppt-font-body);
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--ppt-text-2);
+            margin-top: 2px;
+        }
+
+        /* ---- Body: single structural wrapper, consumes remaining height ---- */
+        .practice-body-flex-wrapper {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: row;
+            margin-left: 60px;
+            margin-right: 60px;
+            margin-bottom: 40px; /* bottom safety gap */
+             /* allowed? global prohibition says NO min-height:0 anywhere */
+            /* override: we must NOT use min-height:0. Remove it. */
+            gap: 32px;
+            align-items: stretch;
+        }
+
+        /* Left region: 10-day task list (dominant) */
+        .left-practice-days-region {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            background: var(--ppt-surface);
+            border: 1px solid var(--ppt-border);
+            border-radius: var(--ppt-radius-lg);
+            padding: 24px 20px 20px 20px;
+            box-shadow: var(--ppt-shadow-soft);
+             /* PROHIBITED — remove */
+             /* no, content must be visible */
+        }
+
+        /* We must avoid min-height:0 entirely. Use natural content flow. */
+        .left-practice-days-region {
+            min-height: auto; /* explicit auto, no min-height:0 */
+        }
+
+        .practice-days-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0; /* no gap between items, use margins */
+            padding: 0;
+            margin: 0;
+        }
+
+        .practice-day-item {
+            padding: 10px 0 10px 0;
+            border-bottom: 1px solid var(--ppt-surface-2);
+            display: block;
+        }
+
+        .practice-day-item:last-child {
+            border-bottom: none;
+        }
+
+        .day-marker-and-text {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: baseline;
+        }
+
+        .day-number-badge {
+            font-family: var(--ppt-font-display);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ppt-accent);
+            background: var(--ppt-bg-soft);
+            padding: 2px 8px;
+            border-radius: var(--ppt-radius-sm);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .day-task-text {
+            font-family: var(--ppt-font-body);
+            font-size: 14px;
+            line-height: 1.45;
+            color: var(--ppt-text-2);
+        }
+
+        .day-task-text strong {
+            font-weight: 500;
+            color: var(--ppt-text-1);
+        }
+
+        /* Right rail: expected outcomes (thin rail) */
+        .right-outcomes-rail-region {
+            width: 220px;
+            flex-shrink: 0;
+            background: var(--ppt-bg-soft);
+            border-left: 4px solid var(--ppt-accent-2);
+            padding: 20px 16px 16px 16px;
+            border-radius: 0 var(--ppt-radius-md) var(--ppt-radius-md) 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .rail-heading {
+            font-family: var(--ppt-font-display);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--ppt-text-1);
+            line-height: 1.3;
+            border-bottom: 1px solid var(--ppt-border);
+            padding-bottom: 8px;
+        }
+
+        .rail-outcome-item {
+            font-size: 13px;
+            line-height: 1.4;
+            color: var(--ppt-text-2);
+            padding-left: 12px;
+            border-left: 2px solid var(--ppt-accent-2);
+        }
+
+        .rail-outcome-item strong {
+            font-weight: 500;
+            color: var(--ppt-text-1);
+        }
+
+        /* No extra modules, no cards beyond these */
+        .practice-body-flex-wrapper {
+            /* ensure no overflow */
+        }
+
+        /* remove any min-height:0 from all elements — we do not use it */
+        .left-practice-days-region,
+        .practice-days-list,
+        .practice-day-item,
+        .right-outcomes-rail-region {
+            min-height: auto;
+        }
+
+        /* Ensure no fixed heights on containers */
+        .left-practice-days-region,
+        .right-outcomes-rail-region {
+            height: auto;
+        }
+
+        /* no width in px for inner containers */
+        .right-outcomes-rail-region {
+            width: 220px; /* fixed width for rail is acceptable? width rule: avoid fixed px for inner blocks, but rail is a structural column. Use flex-basis? */
+            /* use flex: 0 0 220px instead */
+            flex: 0 0 220px;
+            width: auto; /* override */
+        }
+
+        .right-outcomes-rail-region {
+            flex: 0 0 220px;
+            width: auto;
+        }
+
+        /* Left region must be flex and column */
+        .left-practice-days-region {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* items inside left region: list */
+        .practice-days-list {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .practice-day-item {
+            flex: none; /* items natural height */
+        }
+
+        /* ensure bottom gap: body margin-bottom 40px, root height 720 */
+    
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+    <div class="devops-practice-slide-root">
+        <!-- Title region -->
+        <header class="title-region-devops-practice">
+            <div class="title-eyebrow">DEVOPS TRACK | AI-ASSISTED SDLC</div>
+            <h1 class="title-heading">Самостійна практика та закріплення навичок</h1>
+            <div class="title-subheading">Десять робочих днів для повторення воркфлоу, тестування промптів на складних кейсах та вдосконалення Playbook.</div>
+        </header>
+
+        <!-- Body: left task list + right rail -->
+        <div class="practice-body-flex-wrapper">
+            <!-- Left region: 10-day task list -->
+            <div class="left-practice-days-region">
+                <ul class="practice-days-list">
+                    <li class="practice-day-item">
+                        <div class="day-marker-and-text">
+                            <span class="day-number-badge">День 1</span>
+                            <span class="day-task-text"><strong>Повторення OPS-1:</strong> операційні вимоги, мапа сервісів і власників.</span>
+                        </div>
+                    </li>
+                    <li class="practice-day-item">
+                        <div class="day-marker-and-text">
+                            <span class="day-number-badge">День 2</span>
+                            <span class="day-task-text"><strong>Повторення OPS-2:</strong> матриця операційного впливу, IaC та конфігурація.</span>
+                        </div>
+                    </li>
+                    <li class="practice-day-item">
+                        <div class="day-marker-and-text">
+                            <span class="day-number-badge">День 3</span>
+                            <span class="day-task-text"><strong>Повторення OPS-3:</strong> план розгортання, відкат, чекліст готовності.</span>
+                        </div>
+                    </li>
+                    <li class="practice-day-item">
+                        <div class="day-marker-and-text">
+                            <span class="day-number-badge">День 4</span>
+                            <span class="day-task-text"><strong>Повторення OPS-4:</strong> оновлення ранбуку, уроки інцидентів, go/no-go.</span>
+                        </div>
+                    </li>
+                    <li class="practice-day-item">
+                        <div class="day-marker-and-text">
+                            <span class="day-number-badge">День 5</span>
+                            <span class="day-task-text"><strong>Новий ServiceHub запит:</strong> аналіз вимог, вплив на середовища.</span>
+                        </div>
+                    </li>
+                    <li class="practice-day-item">
+                        <div class="day-marker-and-text">
+                            <span class="day-number-badge">День 6</span>
+                            <span class="day-task-text"><strong>Тест на неповному контексті:</strong> виявлення пропущених параметрів.</span>
+                        </div>
+                    </li>
+                    <li class="practice-day-item">
+                        <div class="day-marker-and-text">
+                            <span class="day-number-badge">День 7</span>
+                            <span class="day-task-text"><strong>Конфліктні вимоги:</strong> пріоритизація та ескалація.</span>
+                        </div>
+                    </li>
+                    <li class="practice-day-item">
+                        <div class="day-marker-and-text">
+                            <span class="day-number-badge">День 8</span>
+                            <span class="day-task-text"><strong>Оновлення промптів:</strong> ітерації за результатами тестів.</span>
+                        </div>
+                    </li>
+                    <li class="practice-day-item">
+                        <div class="day-marker-and-text">
+                            <span class="day-number-badge">День 9</span>
+                            <span class="day-task-text"><strong>Capstone-чернетка:</strong> повний цикл для нового запиту.</span>
+                        </div>
+                    </li>
+                    <li class="practice-day-item">
+                        <div class="day-marker-and-text">
+                            <span class="day-number-badge">День 10</span>
+                            <span class="day-task-text"><strong>Фіналізація Playbook:</strong> рев’ю, лог помилок, готовність до тесту.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right rail: expected outcomes per stage -->
+            <div class="right-outcomes-rail-region">
+                <div class="rail-heading">Очікувані результати</div>
+                <div class="rail-outcome-item"><strong>Тиждень 1:</strong> відтворені всі 4 воркфлоу на базових кейсах.</div>
+                <div class="rail-outcome-item"><strong>Тиждень 2:</strong> протестовані промпти на неповних і конфліктних даних.</div>
+                <div class="rail-outcome-item"><strong>Фінал:</strong> оновлений DevOps AI Playbook з логом помилок.</div>
+                <div class="rail-outcome-item"><strong>Критерій:</strong> жоден production-секрет не передано асистенту.</div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

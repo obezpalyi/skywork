@@ -1,0 +1,151 @@
+{
+  "route": "standard",
+  "ppt_style": "html",
+  "deck_slug": "urok_06_generatyvnyi_media",
+  "artifact_path": "ppt/urok_06_generatyvnyi_media",
+  "pptTitle": "Як ШІ створює зображе…",
+  "ppt_title": "Як ШІ створює зображе…",
+  "outlineArtifactPath": "ppt/urok_06_generatyvnyi_media/outline.md",
+  "outline_artifact_path": "ppt/urok_06_generatyvnyi_media/outline.md",
+  "required_next_command": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-9387e0ab4c.json",
+  "outlineArtifactPublish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-9387e0ab4c.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-9387e0ab4c.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_06_generatyvnyi_media/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_06_generatyvnyi_media/outline.md"
+    }
+  },
+  "outline_artifact_publish": {
+    "required": true,
+    "status": "pending",
+    "tool": "exec_command",
+    "requestJsonPath": ".skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-9387e0ab4c.json",
+    "cmd": "skywork-cli artifact publish --request-json .skywork/runtime/sessions/01a0689a-7895-7322-aa8c-658b2d33583d/artifact-publish/outline-9387e0ab4c.json",
+    "codeNativeCardAvailable": true,
+    "publishArtifactArgs": {
+      "path": "ppt/urok_06_generatyvnyi_media/outline.md",
+      "request": {
+        "artifact_type": "presentation",
+        "file_type": "ppt_outline",
+        "metadata": {
+          "file_type": "ppt_outline",
+          "kind": "ppt_outline"
+        },
+        "title": "outline.md",
+        "version_summary": "Publish PPT outline"
+      }
+    },
+    "timeoutSeconds": 900,
+    "request": {
+      "artifactType": "presentation",
+      "fileType": "ppt_outline",
+      "path": "ppt/urok_06_generatyvnyi_media/outline.md"
+    }
+  },
+  "page_aspect_ratio": "16:9",
+  "user_query": "Створи навчальну презентацію українською мовою для 11 класу на тему «Як ШІ створює зображення, музику та відео?». Потрібно рівно 10 слайдів, без програмування, з прикладами промптів, практичною вправою та правилами безпечного використання AI-контенту.",
+  "language": "Ukrainian",
+  "image_model": "auto",
+  "force_html": true,
+  "preference_mode": "auto",
+  "preference_source": "implicit_default",
+  "effective_mode": "html",
+  "override_reasons": [
+    "implicit_auto_mode"
+  ],
+  "region": "US",
+  "prepared_session_id": "01a0689a-7895-7322-aa8c-658b2d33583d",
+  "prepared_question_id": "Q-71ead7b392dc",
+  "prepared_target_path": "ppt/urok_06_generatyvnyi_media",
+  "prepared_state_id": "pps_2474b26873f24c1cb63242c9ec3c6ba3",
+  "prepared_state_version": 1,
+  "media_binding_hash": "e3b0c44298fc1c14",
+  "media_binding_pages": {
+    "1": [],
+    "10": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "init_request_id": "sha256:195efbc50a70d34278dc5ac8c9c46302977f9714c834d511c0678dfcc6de565a",
+  "init_request_fingerprint": "sha256:661e71fae01fcbf781c6c332d01711d1695f99fdc01888923968e794ed581632",
+  "init_status": "succeeded",
+  "prepared_final_report_sha256": "sha256:8156c79cdf179867968dae2b19334b7a0d265bb9bb62bd4f673915048f2934d6",
+  "outline_artifact_sha256": "sha256:9ea952a2fdb7b2a034de81de1ecd8fe99b74c36b652ab0881bc8f2124ffe67ad",
+  "prepared_inputs": [
+    {
+      "path": "ppt/urok_06_generatyvnyi_media/design_guideline.md",
+      "size": 7368,
+      "sha256": "sha256:cb46fc24ef7e7cb9cd5a47ee22fc1e1e03f37d6029cd7488aa51479d3654ffb6"
+    },
+    {
+      "path": "ppt/urok_06_generatyvnyi_media/final_report.md",
+      "size": 7295,
+      "sha256": "sha256:8156c79cdf179867968dae2b19334b7a0d265bb9bb62bd4f673915048f2934d6"
+    },
+    {
+      "path": "ppt/urok_06_generatyvnyi_media/outline.json",
+      "size": 5348,
+      "sha256": "sha256:043ec973e5ff3e760a5344a58fc02ee61b934fb59a84cc7423d391fabd332ce0"
+    },
+    {
+      "path": "ppt/urok_06_generatyvnyi_media/outline.md",
+      "size": 3331,
+      "sha256": "sha256:9ea952a2fdb7b2a034de81de1ecd8fe99b74c36b652ab0881bc8f2124ffe67ad"
+    },
+    {
+      "path": "ppt/urok_06_generatyvnyi_media/prepared_images/cover_3b0eaee65f13_2102353357345034241.png",
+      "size": 1250925,
+      "sha256": "sha256:11e54738a2634a2dbc20271bea06f9aa4adb73aaa458669dd22b5ca279147d28"
+    }
+  ],
+  "init_response_snapshot": {
+    "status": "success",
+    "render_mode": "html",
+    "prepared_paths": [
+      "outline.json",
+      "outline.md",
+      "design_guideline.md",
+      "ppt_meta.json",
+      "prepared_images/cover_3b0eaee65f13_2102353357345034241.png"
+    ],
+    "source_files": null,
+    "template_files": null,
+    "route_reasons": [
+      "force_html",
+      "implicit_auto_mode"
+    ],
+    "cover": {
+      "status": "generated",
+      "applied": true
+    },
+    "dropped_images": null,
+    "warnings": null,
+    "mock": false
+  }
+}

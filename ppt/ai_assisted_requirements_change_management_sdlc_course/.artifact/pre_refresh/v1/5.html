@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>П’ять наскрізних AI-workflows</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --ppt-bg: #FCFCFD;
+      --ppt-bg-soft: #F1F5F9;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #F8FAFC;
+      --ppt-border: #E2E8F0;
+      --ppt-text-1: #0F172A;
+      --ppt-text-2: #475569;
+      --ppt-text-3: #94A3B8;
+      --ppt-accent: #2563EB;
+      --ppt-accent-2: #06B6D4;
+      --ppt-chart-1: #2563EB;
+      --ppt-chart-2: #06B6D4;
+      --ppt-chart-3: #6366F1;
+      --ppt-chart-4: #F59E0B;
+      --ppt-good: #10B981;
+      --ppt-warn: #F59E0B;
+      --ppt-bad: #EF4444;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 6px;
+      --ppt-radius-lg: 10px;
+      --ppt-shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --ppt-shadow-strong: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --ppt-font-display: "Plus Jakarta Sans", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }*{
+      box-sizing: border-box;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: var(--ppt-font-body);
+      color: var(--ppt-text-1);
+    }
+
+    .slide-root-canvas {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+    }.title-region-header{
+      margin-top: 32px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--ppt-accent);
+      padding-left: 24px;
+    }
+
+    .title-region-breadcrumb {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ppt-accent);
+    }
+
+    .title-region-main-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+      margin: 0;
+    }.sdlc-workflow-main-content{
+      flex: 1;
+      padding-left: 60px;
+      padding-right: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }.sdlc-workflow-steps-container{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 19px 24px;
+      padding-left: 48px;
+    }
+
+    .sdlc-workflow-vertical-axis {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background-color: var(--ppt-border);
+    }.sdlc-workflow-item-block{
+      display: flex;
+      align-items: flex-start;
+      gap: 26px 32px;
+      position: relative;
+    }
+
+    .sdlc-workflow-number-marker {
+      position: absolute;
+      left: -60px;
+      width: 48px;
+      height: 48px;
+      background-color: var(--ppt-bg);
+      border: 2px solid var(--ppt-accent);
+      color: var(--ppt-accent);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 800;
+      z-index: 2;
+    }.sdlc-workflow-text-content{
+      display: flex;
+      flex-direction: column;
+      gap: 3px 4px;
+    }
+
+    .sdlc-workflow-accent-title {
+      font-family: var(--ppt-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sdlc-workflow-accent-title i {
+      font-size: 18px;
+      color: var(--ppt-text-3);
+    }
+
+    .sdlc-workflow-body-description {
+      font-family: var(--ppt-font-body);
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      max-width: 900px;
+    }.sdlc-workflow-footer-principle{
+      margin-top: 16px;
+      background-color: var(--ppt-surface-2);
+      border: 1px dashed var(--ppt-border);
+      padding: 10px 24px;
+      border-radius: var(--ppt-radius-md);
+      display: flex;
+      align-items: center;
+      gap: 13px 16px;
+    }
+
+    .sdlc-workflow-footer-label {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--ppt-text-3);
+    }
+
+    .sdlc-workflow-footer-text {
+      font-family: var(--ppt-font-body);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ppt-text-1);
+    }
+
+    .sdlc-workflow-footer-text span {
+      color: var(--ppt-accent);
+      font-weight: 700;
+    }
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <div class="slide-root-canvas">
+    <header class="title-region-header">
+      <div class="title-region-breadcrumb">
+        AI-MANAGED SDLC PLAYBOOK
+      </div>
+      <h1 class="title-region-main-heading">
+        П’ять наскрізних AI-workflows
+      </h1>
+    </header>
+
+    <main class="sdlc-workflow-main-content">
+      <div class="sdlc-workflow-steps-container">
+        <div class="sdlc-workflow-vertical-axis"></div>
+
+        <!-- Workflow 1 -->
+        <div class="sdlc-workflow-item-block">
+          <div class="sdlc-workflow-number-marker">1</div>
+          <div class="sdlc-workflow-text-content">
+            <div class="sdlc-workflow-accent-title">
+              <i class="fa-solid fa-file-import"></i>
+              Document → Requirements
+            </div>
+            <div class="sdlc-workflow-body-description">
+              Аналіз протоколів зустрічей, листування та ТЗ для витягування бізнес-цілей, функціональних вимог та обмежень із посиланням на джерела.
+            </div>
+          </div>
+        </div>
+
+        <!-- Workflow 2 -->
+        <div class="sdlc-workflow-item-block">
+          <div class="sdlc-workflow-number-marker">2</div>
+          <div class="sdlc-workflow-text-content">
+            <div class="sdlc-workflow-accent-title">
+              <i class="fa-solid fa-list-check"></i>
+              Requirement → Jira Task
+            </div>
+            <div class="sdlc-workflow-body-description">
+              Генерація структурованих задач у беклог з описом scope, out-of-scope та Acceptance Criteria у форматі Given / When / Then.
+            </div>
+          </div>
+        </div>
+
+        <!-- Workflow 3 -->
+        <div class="sdlc-workflow-item-block">
+          <div class="sdlc-workflow-number-marker">3</div>
+          <div class="sdlc-workflow-text-content">
+            <div class="sdlc-workflow-accent-title">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+              Requirement → Quality Review
+            </div>
+            <div class="sdlc-workflow-body-description">
+              Автоматичний Health Check вимог на повноту (Completeness), несуперечливість (Consistency) та можливість тестування (Testability).
+            </div>
+          </div>
+        </div>
+
+        <!-- Workflow 4 -->
+        <div class="sdlc-workflow-item-block">
+          <div class="sdlc-workflow-number-marker">4</div>
+          <div class="sdlc-workflow-text-content">
+            <div class="sdlc-workflow-accent-title">
+              <i class="fa-solid fa-shuffle"></i>
+              Change Request → Impact Matrix
+            </div>
+            <div class="sdlc-workflow-body-description">
+              Нормалізація запиту на зміну та побудова матриці впливу на існуючі вимоги, код, тести, інфраструктуру та терміни релізу.
+            </div>
+          </div>
+        </div>
+
+        <!-- Workflow 5 -->
+        <div class="sdlc-workflow-item-block">
+          <div class="sdlc-workflow-number-marker">5</div>
+          <div class="sdlc-workflow-text-content">
+            <div class="sdlc-workflow-accent-title">
+              <i class="fa-solid fa-box-open"></i>
+              Approved Change → Updated Delivery Pack
+            </div>
+            <div class="sdlc-workflow-body-description">
+              Синхронне оновлення всього пакету артефактів: від вимог у baseline до Regression Scope, Release Notes та інструкцій для підтримки.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sdlc-workflow-footer-principle">
+        <div class="sdlc-workflow-footer-label">Основний принцип:</div>
+        <div class="sdlc-workflow-footer-text">
+          Кожна коротка теоретична теза ➔ <span>AI-workflow</span> ➔ готовий робочий <span>артефакт</span>.
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body></html>

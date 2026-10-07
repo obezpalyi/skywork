@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="uk"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Два способи навчити комп’ютер</title>
+  
+  <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"/><style data-ppt-theme-fallback="">@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+body { width: 1280px; height: 720px; overflow: hidden; }
+
+html { overflow: hidden; }
+</style><style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {width: 1280px; height: 720px; overflow: hidden;   
+      background: #F9F9F7;
+      font-family: var(--ppt-font-body);
+    }
+
+    /* Base theme tokens */
+    :root {
+      --ppt-bg: #F9F9F7;
+      --ppt-bg-soft: #F0F0EB;
+      --ppt-surface: #FFFFFF;
+      --ppt-surface-2: #E5E5E0;
+      --ppt-border: #2D2D2D;
+      --ppt-text-1: #1A1A1A;
+      --ppt-text-2: #4A4A4A;
+      --ppt-text-3: #757575;
+      --ppt-accent: #00A896;
+      --ppt-accent-2: #FF6B6B;
+      --ppt-chart-1: #00A896;
+      --ppt-chart-2: #028090;
+      --ppt-chart-3: #F4D35E;
+      --ppt-chart-4: #EE964B;
+      --ppt-good: #27AE60;
+      --ppt-warn: #F39C12;
+      --ppt-bad: #E74C3C;
+      --ppt-radius-sm: 2px;
+      --ppt-radius-md: 4px;
+      --ppt-radius-lg: 8px;
+      --ppt-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+      --ppt-shadow-strong: 0 8px 24px rgba(0,0,0,0.1);
+      --ppt-font-display: "Inter", sans-serif;
+      --ppt-font-body: "Inter", sans-serif;
+    }
+
+    /* Slide root: fixed 1280x720 flex column */
+    .slide-root-compare-methods {
+      width: 1280px; height: 720px;
+      background-color: var(--ppt-bg);
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 0 64px 0 64px;
+      
+    }
+
+    /* Title region: fixed layout per design */
+    .title-region-compare-methods {
+      margin-top: 48px;
+      margin-right: 0;
+      margin-bottom: 32px;
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .title-label-wrapper-compare-methods {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-accent-bar-compare-methods {
+      background-color: var(--ppt-accent);
+      width: 4px;
+      height: 24px;
+    }
+
+    .title-eyebrow-text-compare-methods {
+      font-family: var(--ppt-font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ppt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 0;
+    }
+
+    .title-heading-compare-methods {
+      margin: 0;
+      font-family: var(--ppt-font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ppt-text-1);
+      line-height: 1.2;
+    }
+
+    /* Main body region: flex grow, consumes remaining height */
+    .compare-methods-body-wrapper {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+       /* allowed only on structural wrapper? No: min-height:0 prohibited globally. */
+      /* use explicit content-driven height via flex; no min-height */
+    }
+
+    /* Replaced min-height:0 with valid approach: the flex column already has bounded height from parent */
+    .compare-methods-body-wrapper {
+       /* forbidden! remove */
+    }
+
+    /* Fix: no min-height anywhere. We rely on flex:1 and natural content. */
+    .compare-methods-body-wrapper {
+      min-height: auto;
+    }
+
+    /* Two column asymmetric layout: left dominant, right supporting */
+    .compare-methods-split-layout {
+      display: flex;
+      align-items: stretch;
+      flex: 1 1 0;
+      gap: 32px;
+    }
+
+    /* Left column: dominant region (60%) */
+    .left-method-rules-column {
+      flex: 3 1 0;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px 28px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* visible container: natural flow */
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .left-method-rules-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .left-method-rules-icon {
+      color: var(--ppt-accent);
+      font-size: 24px;
+      width: 32px;
+      text-align: center;
+    }
+
+    .left-method-rules-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: block;
+    }
+
+    .left-method-rules-list-item {
+      font-family: var(--ppt-font-body);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      margin-bottom: 20px;
+      padding-left: 8px;
+      position: relative;
+    }
+
+    .left-method-rules-list-item::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--ppt-accent);
+      margin-right: 12px;
+      border-radius: 1px;
+    }
+
+    .left-method-rules-annotation {
+      font-size: 15px;
+      color: var(--ppt-text-3);
+      line-height: 1.4;
+      margin-top: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--ppt-surface-2);
+    }
+
+    /* Right column: supporting (40%) */
+    .right-method-ml-column {
+      flex: 2 1 0;
+      background-color: var(--ppt-surface);
+      border: 1px solid var(--ppt-border);
+      border-radius: var(--ppt-radius-lg);
+      padding: 24px 28px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-shadow: var(--ppt-shadow-soft);
+    }
+
+    .right-method-ml-heading {
+      font-family: var(--ppt-font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ppt-text-1);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .right-method-ml-icon {
+      color: var(--ppt-accent-2);
+      font-size: 24px;
+      width: 32px;
+      text-align: center;
+    }
+
+    .right-method-ml-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .right-method-ml-list-item {
+      font-family: var(--ppt-font-body);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ppt-text-2);
+      margin-bottom: 20px;
+      padding-left: 8px;
+    }
+
+    .right-method-ml-list-item::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--ppt-accent-2);
+      margin-right: 12px;
+      border-radius: 1px;
+    }
+
+    .right-method-ml-annotation {
+      font-size: 15px;
+      color: var(--ppt-text-3);
+      line-height: 1.4;
+      margin-top: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--ppt-surface-2);
+    }
+
+    /* Bottom discussion band: compact, not a peer card */
+    .compare-methods-discussion-band {
+      margin-top: 24px;
+      background-color: var(--ppt-bg-soft);
+      border-radius: var(--ppt-radius-md);
+      padding: 16px 20px 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid var(--ppt-surface-2);
+    }
+
+    .discussion-band-icon {
+      color: var(--ppt-warn);
+      font-size: 24px;
+      width: 36px;
+      text-align: center;
+    }
+
+    .discussion-band-text {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ppt-text-2);
+      line-height: 1.4;
+    }
+
+    .discussion-band-text strong {
+      color: var(--ppt-text-1);
+      font-weight: 600;
+    }
+
+    /* No fixed heights for non-chart containers */
+    .compare-methods-body-wrapper, .compare-methods-split-layout, .left-method-rules-column, .right-method-ml-column {
+       /* prohibited, must remove */
+    }
+
+    /* correct reset */
+    .compare-methods-body-wrapper, .compare-methods-split-layout, .left-method-rules-column, .right-method-ml-column {
+      min-height: auto;
+    }
+
+    /* ensure no min-height used anywhere */
+    .left-method-rules-list, .right-method-ml-list {
+      min-height: auto;
+    }
+
+    /* all class names contain three segments */
+  
+html { overflow: hidden; }
+</style>
+<meta name="PageAspectRatio" content="16:9"/><meta name="PageSize" content="1280_720"/></head>
+<body>
+  <!-- Slide root: fixed 1280x720 flex column -->
+  <div class="slide-root-compare-methods">
+    <!-- Title region from DESIGN -->
+    <header class="title-region-compare-methods" style="margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;">
+      <div class="title-label-wrapper-compare-methods">
+        <span class="title-accent-bar-compare-methods"></span>
+        <span class="title-eyebrow-text-compare-methods">УРОК ІНФОРМАТИКИ | ШТУЧНИЙ ІНТЕЛЕКТ</span>
+      </div>
+      <h1 class="title-heading-compare-methods">Два способи навчити комп’ютер</h1>
+    </header>
+
+    <!-- Main body: flex:1 consumes remaining height -->
+    <div class="compare-methods-body-wrapper">
+      <div class="compare-methods-split-layout">
+        <!-- Left column: rules approach (dominant) -->
+        <div class="left-method-rules-column">
+          <div class="left-method-rules-heading">
+            <i class="fa-solid fa-code left-method-rules-icon"></i>
+            <span>Підхід 1 · Жорсткі правила</span>
+          </div>
+          <ul class="left-method-rules-list">
+            <li class="left-method-rules-list-item">Вручну записати точні правила для кожної можливої ситуації.</li>
+            <li class="left-method-rules-list-item">Підходить, коли варіантів мало й вони чітко визначені.</li>
+            <li class="left-method-rules-list-item">Швидко стає неможливим, коли кількість випадків величезна.</li>
+          </ul>
+          <div class="left-method-rules-annotation">
+            Приклад: класифікація листя за формою — правила на кшталт «якщо краї зубчасті → дуб».
+          </div>
+        </div>
+
+        <!-- Right column: ML approach (supporting) -->
+        <div class="right-method-ml-column">
+          <div class="right-method-ml-heading">
+            <i class="fa-solid fa-brain right-method-ml-icon"></i>
+            <span>Підхід 2 · Машинне навчання</span>
+          </div>
+          <ul class="right-method-ml-list">
+            <li class="right-method-ml-list-item">Показати багато прикладів із правильними відповідями.</li>
+            <li class="right-method-ml-list-item">Система сама виявляє закономірності в даних.</li>
+            <li class="right-method-ml-list-item">Ефективно для складних задач із великою варіативністю.</li>
+          </ul>
+          <div class="right-method-ml-annotation">
+            Приклад: розпізнавання листя за тисячами фото, де правила неочевидні.
+          </div>
+        </div>
+      </div>
+
+      <!-- Discussion band: compact conclusion -->
+      <div class="compare-methods-discussion-band" style="margin-bottom: 4px !important;">
+        <i class="fa-solid fa-comments discussion-band-icon"></i>
+        <div class="discussion-band-text">
+          <strong>Обговорення:</strong> для яких задач правила легко сформулювати, а для яких кількість варіантів надто велика?
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

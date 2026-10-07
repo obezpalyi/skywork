@@ -1,0 +1,552 @@
+[
+  {
+    "page_num": 1,
+    "heading": "AI hallucinations",
+    "type": "title",
+    "des": "Вступ до теми галюцинацій генеративного ШІ, мета якого — навчитися розпізнавати вигадані факти та опанувати навички фактчекінгу відповідей чат-ботів.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/6f5aeeca3c5c08a66944aa4bed5bf23e.jpg",
+        "filename": "How close are we to an accurate AI fake news detector?",
+        "img_desc": "A four-part infographic explains outcomes for an AI fake news detector using a two-by-two layout. The top row is labeled \"Hit\" and \"Miss,\" while the bottom row is labeled \"Correct Rejection\" and \"False Alarm.\" Each section contains a stylized newspaper icon with statements about whether there is a moon, paired with labels identifying the news as fake or factual. Dark blue header and footer panels contrast with red and green text and icon outlines on a white background. The graphic is a clear, simple explanatory diagram with readable text and balanced composition.",
+        "caption": "A two-by-two infographic illustrating hits, misses, correct rejections, and false alarms in fake news detection.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "754x802",
+        "title": "How close are we to an accurate AI fake news detector?",
+        "width": 754,
+        "height": 802,
+        "query": "AI chatbot misinformation concept"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/23359628ac759416eb6324378e00270f.jpg",
+        "filename": "Top 10 Sites To Help Students Check Their Facts",
+        "img_desc": "A group of diverse school-aged students gather around an open laptop in a bright classroom. Several children look toward the screen with engaged expressions, while colorful classroom materials are visible in the background. The image is a sharp, well-lit candid-style photograph with warm colors and a close, collaborative composition.",
+        "caption": "Diverse students collaborate around a laptop in a colorful classroom while researching and checking information.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "800x433",
+        "title": "Top 10 Sites To Help Students Check Their Facts",
+        "width": 800,
+        "height": 433,
+        "query": "students fact checking laptops classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/025055b6eb0a70bdbf3f7400fe9c8fc0.jpg",
+        "filename": "The backlash against screens in schools is escalating | Scientific American",
+        "img_desc": "A classroom scene shows several students working on laptops at wooden desks. A boy in the center is in sharp focus, typing on a silver laptop, while other students work in the background and foreground with similar devices. The room is warmly lit by daylight from the windows, with green walls and a shallow depth of field that emphasizes the central student. The composition conveys widespread laptop use in a school learning environment.",
+        "caption": "Students using laptops during class, with a central boy focused on his computer.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x682",
+        "title": "The backlash against screens in schools is escalating | Scientific American",
+        "width": 1024,
+        "height": 682,
+        "query": "students fact checking laptops classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/b6cf67792e49b6e1426f3d5a395560e0.jpg",
+        "filename": "Neuroscientist Jared Horvath: Silicon Valley pushed computers in classrooms,  plummeting test scores | Fortune",
+        "img_desc": "A classroom scene shows two school-aged students working together at a desk beside an open white laptop. One student in a red sweater appears to be using the computer, while the other leans over with a pencil near handwritten worksheets. Several other students are working at desks in the background, with bookshelves, classroom materials, and a whiteboard visible. The image has a bright, candid documentary style, warm natural colors, and a clear foreground-focused composition.",
+        "caption": "Two students collaborate on laptop-based schoolwork in a busy classroom.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x652",
+        "title": "Neuroscientist Jared Horvath: Silicon Valley pushed computers in classrooms,  plummeting test scores | Fortune",
+        "width": 1024,
+        "height": 652,
+        "query": "students fact checking laptops classroom"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c08cf7d1c84d99889a0e376540dac55b.jpg",
+        "filename": "Fact check Images - Free Download on Magnific (formerly Freepik)",
+        "img_desc": "A magnifying glass is positioned on the left against a vivid red background. Inside the lens, bold white text reads \"FACT CHECK.\" The image uses a simple, high-contrast conceptual composition with strong red, black, and white color tones, clearly conveying verification or information checking.",
+        "caption": "A magnifying glass highlighting the words \"FACT CHECK\" on a bright red background.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "740x370",
+        "title": "Fact check Images - Free Download on Magnific (formerly Freepik)",
+        "width": 740,
+        "height": 370,
+        "query": "fact check verification magnifying glass"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/4c9ad2855d81ebf7e8ae8b3a64e90661.jpg",
+        "filename": "5 AI-powered fact-checking tools for journalists | International  Journalists' Network",
+        "img_desc": "A black magnifying glass is held by a hand in the foreground over a blue background filled with repeated white \"facts\" text. The image clearly conveys fact-checking or verification. It uses a high-contrast photographic style, with the magnifying glass centered prominently and the hand entering from the lower right. The blue gradient background and repeated typography create a clean, modern editorial aesthetic.",
+        "caption": "A hand holding a magnifying glass over repeated \"facts\" text, symbolizing fact-checking and verification.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x513",
+        "title": "5 AI-powered fact-checking tools for journalists | International  Journalists' Network",
+        "width": 1024,
+        "height": 513,
+        "query": "fact check verification magnifying glass"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/0b567b12ad1863f62e7b31452599adbf.jpg",
+        "filename": "Broken Link Vector Art, Icons, and Graphics for Free Download",
+        "img_desc": "A minimalist black vector illustration shows two interlocking chain links broken apart at the center, with small fragments emphasizing the break. The graphic is centered on a plain white background with strong contrast and ample negative space. Its simple icon-like composition clearly represents a broken link, matching the search concept.",
+        "caption": "Minimal black broken-chain-link icon on a white background, symbolizing a broken or invalid link.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x574",
+        "title": "Broken Link Vector Art, Icons, and Graphics for Free Download",
+        "width": 1024,
+        "height": 574,
+        "query": "fake citation broken link concept"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/f8ef2f199cf2ef88bd40cf4fa9d5880e.jpg",
+        "filename": "Impacts of AI on Critical Thinking in Education",
+        "img_desc": "An illustrated educational scene shows a friendly robot on the left, a human head silhouette with a glowing brain and question mark in the center, and a student writing in an open notebook on the right. Circuit patterns appear behind the robot, while question marks surround the student, visually connecting artificial intelligence with questioning and critical thinking in education. The image uses warm orange, navy blue, cream, and light blue tones in a clean cartoon style. The composition is balanced across three related visual elements on a light background.",
+        "caption": "Cartoon illustration linking artificial intelligence, critical thinking, and education through a robot, a thinking head, and a student taking notes.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "568x378",
+        "title": "Impacts of AI on Critical Thinking in Education",
+        "width": 568,
+        "height": 378,
+        "query": "critical thinking artificial intelligence education"
+      },
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/711e67a58fd803aa70efef85fed48dd5.jpg",
+        "filename": "AI \u0026 Critical Thinking: Transforming Education Today",
+        "img_desc": "A clean circular infographic presents the benefits of AI in education management systems. The central text is surrounded by four colored looping arrows labeled Data-Driven Decision-Making, Enhanced Assessments, Accessibility and Inclusivity, and Remote Learning and Online Education. Each section includes a small line icon, with blue, yellow, orange, and magenta outlines on a white background. The diagram is legible, balanced, and visually structured, though the provided webpage title and search query are not visible in the graphic.",
+        "caption": "Circular infographic showing four benefits of AI in education management systems: data-driven decision-making, enhanced assessments, accessibility and inclusivity, and remote online education.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "552x555",
+        "title": "AI \u0026 Critical Thinking: Transforming Education Today",
+        "width": 552,
+        "height": 555,
+        "query": "critical thinking artificial intelligence education"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 2,
+    "heading": "Якій відповіді ви довіритеся?",
+    "type": "content",
+    "des": "Інтерактивне порівняння двох варіантів відповідей ШІ для виявлення ознак надійності та обговорення важливості перевірки впевнено наведених цитат і джерел.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/b6cf67792e49b6e1426f3d5a395560e0.jpg",
+        "filename": "Neuroscientist Jared Horvath: Silicon Valley pushed computers in classrooms,  plummeting test scores | Fortune",
+        "img_desc": "A classroom scene shows two school-aged students working together at a desk beside an open white laptop. One student in a red sweater appears to be using the computer, while the other leans over with a pencil near handwritten worksheets. Several other students are working at desks in the background, with bookshelves, classroom materials, and a whiteboard visible. The image has a bright, candid documentary style, warm natural colors, and a clear foreground-focused composition.",
+        "caption": "Two students collaborate on laptop-based schoolwork in a busy classroom.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x652",
+        "title": "Neuroscientist Jared Horvath: Silicon Valley pushed computers in classrooms,  plummeting test scores | Fortune",
+        "width": 1024,
+        "height": 652,
+        "query": "students fact checking laptops classroom"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 3,
+    "heading": "Що таке галюцинація ШІ",
+    "type": "content",
+    "des": "Визначення галюцинації як правдоподібної, але неточної або вигаданої частини відповіді, що включає неіснуючі посилання, дати чи помилкові пояснення.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/0b567b12ad1863f62e7b31452599adbf.jpg",
+        "filename": "Broken Link Vector Art, Icons, and Graphics for Free Download",
+        "img_desc": "A minimalist black vector illustration shows two interlocking chain links broken apart at the center, with small fragments emphasizing the break. The graphic is centered on a plain white background with strong contrast and ample negative space. Its simple icon-like composition clearly represents a broken link, matching the search concept.",
+        "caption": "Minimal black broken-chain-link icon on a white background, symbolizing a broken or invalid link.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x574",
+        "title": "Broken Link Vector Art, Icons, and Graphics for Free Download",
+        "width": 1024,
+        "height": 574,
+        "query": "fake citation broken link concept"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 4,
+    "heading": "Чому це відбувається",
+    "type": "content",
+    "des": "Пояснення механізму роботи мовних моделей як статистичного передбачення тексту, де неповний контекст або прогалини в навчанні спонукають систему до вигадування.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/711e67a58fd803aa70efef85fed48dd5.jpg",
+        "filename": "AI \u0026 Critical Thinking: Transforming Education Today",
+        "img_desc": "A clean circular infographic presents the benefits of AI in education management systems. The central text is surrounded by four colored looping arrows labeled Data-Driven Decision-Making, Enhanced Assessments, Accessibility and Inclusivity, and Remote Learning and Online Education. Each section includes a small line icon, with blue, yellow, orange, and magenta outlines on a white background. The diagram is legible, balanced, and visually structured, though the provided webpage title and search query are not visible in the graphic.",
+        "caption": "Circular infographic showing four benefits of AI in education management systems: data-driven decision-making, enhanced assessments, accessibility and inclusivity, and remote online education.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "552x555",
+        "title": "AI \u0026 Critical Thinking: Transforming Education Today",
+        "width": 552,
+        "height": 555,
+        "query": "critical thinking artificial intelligence education"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 5,
+    "heading": "Червоні прапорці",
+    "type": "content",
+    "des": "Перелік ознак потенційної помилки: надто точні числа без джерел, дивні посилання, категоричний тон та суперечність тверджень базовим фактам.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/4c9ad2855d81ebf7e8ae8b3a64e90661.jpg",
+        "filename": "5 AI-powered fact-checking tools for journalists | International  Journalists' Network",
+        "img_desc": "A black magnifying glass is held by a hand in the foreground over a blue background filled with repeated white \"facts\" text. The image clearly conveys fact-checking or verification. It uses a high-contrast photographic style, with the magnifying glass centered prominently and the hand entering from the lower right. The blue gradient background and repeated typography create a clean, modern editorial aesthetic.",
+        "caption": "A hand holding a magnifying glass over repeated \"facts\" text, symbolizing fact-checking and verification.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x513",
+        "title": "5 AI-powered fact-checking tools for journalists | International  Journalists' Network",
+        "width": 1024,
+        "height": 513,
+        "query": "fact check verification magnifying glass"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 6,
+    "heading": "Алгоритм фактчекінгу",
+    "type": "content",
+    "des": "Покрокова інструкція перевірки інформації: виділення тверджень, пошук першоджерел, порівняння з незалежними ресурсами та формування остаточного вердикту.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/c08cf7d1c84d99889a0e376540dac55b.jpg",
+        "filename": "Fact check Images - Free Download on Magnific (formerly Freepik)",
+        "img_desc": "A magnifying glass is positioned on the left against a vivid red background. Inside the lens, bold white text reads \"FACT CHECK.\" The image uses a simple, high-contrast conceptual composition with strong red, black, and white color tones, clearly conveying verification or information checking.",
+        "caption": "A magnifying glass highlighting the words \"FACT CHECK\" on a bright red background.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "740x370",
+        "title": "Fact check Images - Free Download on Magnific (formerly Freepik)",
+        "width": 740,
+        "height": 370,
+        "query": "fact check verification magnifying glass"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 7,
+    "heading": "Лабораторія фактчекінгу",
+    "type": "content",
+    "des": "Практична групова робота з аналізу відповідей ШІ за допомогою таблиці, що включає пошукові запити, перевірку контексту та обґрунтування достовірності.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/23359628ac759416eb6324378e00270f.jpg",
+        "filename": "Top 10 Sites To Help Students Check Their Facts",
+        "img_desc": "A group of diverse school-aged students gather around an open laptop in a bright classroom. Several children look toward the screen with engaged expressions, while colorful classroom materials are visible in the background. The image is a sharp, well-lit candid-style photograph with warm colors and a close, collaborative composition.",
+        "caption": "Diverse students collaborate around a laptop in a colorful classroom while researching and checking information.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "800x433",
+        "title": "Top 10 Sites To Help Students Check Their Facts",
+        "width": 800,
+        "height": 433,
+        "query": "students fact checking laptops classroom"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 8,
+    "heading": "Які джерела сильніші",
+    "type": "content",
+    "des": "Ієрархія надійності ресурсів, де пріоритет надається офіційним документам та академічним виданням перед дописами у соцмережах та форумами.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/025055b6eb0a70bdbf3f7400fe9c8fc0.jpg",
+        "filename": "The backlash against screens in schools is escalating | Scientific American",
+        "img_desc": "A classroom scene shows several students working on laptops at wooden desks. A boy in the center is in sharp focus, typing on a silver laptop, while other students work in the background and foreground with similar devices. The room is warmly lit by daylight from the windows, with green walls and a shallow depth of field that emphasizes the central student. The composition conveys widespread laptop use in a school learning environment.",
+        "caption": "Students using laptops during class, with a central boy focused on his computer.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "1024x682",
+        "title": "The backlash against screens in schools is escalating | Scientific American",
+        "width": 1024,
+        "height": 682,
+        "query": "students fact checking laptops classroom"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 9,
+    "heading": "Промпт, який допомагає перевіряти",
+    "type": "content",
+    "des": "Використання спеціальних вказівок для ШІ, щоб змусити модель маркувати факти, припущення та вказувати на власну невпевненість у відповіді.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/f8ef2f199cf2ef88bd40cf4fa9d5880e.jpg",
+        "filename": "Impacts of AI on Critical Thinking in Education",
+        "img_desc": "An illustrated educational scene shows a friendly robot on the left, a human head silhouette with a glowing brain and question mark in the center, and a student writing in an open notebook on the right. Circuit patterns appear behind the robot, while question marks surround the student, visually connecting artificial intelligence with questioning and critical thinking in education. The image uses warm orange, navy blue, cream, and light blue tones in a clean cartoon style. The composition is balanced across three related visual elements on a light background.",
+        "caption": "Cartoon illustration linking artificial intelligence, critical thinking, and education through a robot, a thinking head, and a student taking notes.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "568x378",
+        "title": "Impacts of AI on Critical Thinking in Education",
+        "width": 568,
+        "height": 378,
+        "query": "critical thinking artificial intelligence education"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  },
+  {
+    "page_num": 10,
+    "heading": "Підсумок і exit ticket",
+    "type": "content",
+    "des": "Узагальнення трьох кроків перевірки та домашнє завдання з верифікації тверджень чат-бота за допомогою порівняльної таблиці.",
+    "images": [
+      {
+        "tool": "search_images",
+        "source": "search",
+        "url": "https://agents-download.skywork.ai/image/rt/6f5aeeca3c5c08a66944aa4bed5bf23e.jpg",
+        "filename": "How close are we to an accurate AI fake news detector?",
+        "img_desc": "A four-part infographic explains outcomes for an AI fake news detector using a two-by-two layout. The top row is labeled \"Hit\" and \"Miss,\" while the bottom row is labeled \"Correct Rejection\" and \"False Alarm.\" Each section contains a stylized newspaper icon with statements about whether there is a moon, paired with labels identifying the news as fake or factual. Dark blue header and footer panels contrast with red and green text and icon outlines on a white background. The graphic is a clear, simple explanatory diagram with readable text and balanced composition.",
+        "caption": "A two-by-two infographic illustrating hits, misses, correct rejections, and false alarms in fake news detection.",
+        "quality_level": "high",
+        "reason": {
+          "1": "No",
+          "2": "No",
+          "3": "No",
+          "4": "No",
+          "5": "No",
+          "6": "No",
+          "7": "No",
+          "8": "No",
+          "9": "No"
+        },
+        "img_size": "754x802",
+        "title": "How close are we to an accurate AI fake news detector?",
+        "width": 754,
+        "height": 802,
+        "query": "AI chatbot misinformation concept"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  }
+]
